@@ -81,8 +81,94 @@ body {
   animation: pulse-slow 6s ease-in-out infinite;
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes signal {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-signal {
+  animation: signal 2s ease-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+  50% { box-shadow: 0 0 20px 2px rgba(250, 204, 21, 0.15); }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+/* Terminal scanline overlay */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Yellow text glow */
+.text-glow {
+  text-shadow: 0 0 16px rgba(250, 204, 21, 0.35);
+}
+
+/* Hexagonal clip */
+.clip-hex {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-pulse-slow {
+  .animate-pulse-slow,
+  .animate-blink,
+  .animate-scanline,
+  .animate-signal,
+  .animate-float,
+  .animate-glow,
+  .animate-slide-up {
     animation: none;
   }
 }

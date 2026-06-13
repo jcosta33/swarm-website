@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { DroneIcon } from "./DroneIcon";
+import { SignalPulse } from "./SignalPulse";
 
 const steps = [
   { number: "01", label: "Pull", description: "Capture the ticket and intent in an intake file." },
@@ -13,17 +14,21 @@ export function LoopDiagram() {
   return (
     <ol className="grid gap-6 md:grid-cols-6">
       {steps.map((step, index) => (
-        <li key={step.label} className="relative flex flex-col gap-2">
-          <div className="flex items-center gap-2">
+        <li key={step.label} className="group relative flex flex-col gap-3 rounded-2xl border border-factory-800 bg-factory-950/50 p-4 transition-colors duration-300 hover:border-swarm-yellow/30 hover:bg-factory-950">
+          <div className="flex items-center justify-between">
             <span className="font-mono text-xs font-medium text-swarm-yellow">{step.number}</span>
+            <SignalPulse className="h-5 w-5 opacity-60 group-hover:opacity-100" />
+          </div>
+          <div className="flex items-center gap-2">
+            <DroneIcon className="h-5 w-5 text-swarm-yellow" />
             <span className="font-heading text-lg font-bold uppercase tracking-tight text-concrete-100">
               {step.label}
             </span>
           </div>
           <p className="text-sm leading-relaxed text-concrete-400">{step.description}</p>
           {index < steps.length - 1 && (
-            <ArrowRight
-              className="absolute -right-3 top-1 hidden h-4 w-4 text-factory-700 md:block"
+            <div
+              className="absolute -right-4 top-1/2 hidden h-px w-8 -translate-y-1/2 bg-gradient-to-r from-swarm-yellow/60 to-transparent md:block"
               aria-hidden="true"
             />
           )}

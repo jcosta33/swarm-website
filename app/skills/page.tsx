@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "../components/Section";
 import { Card } from "../components/Card";
-import { CodeBlock } from "../components/CodeBlock";
+import { TerminalWindow } from "../components/TerminalWindow";
 
 export const metadata: Metadata = {
   title: "Skills — Swarm",
@@ -65,14 +65,25 @@ export default function SkillsPage() {
         <h2 className="font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
           Install one skill
         </h2>
-        <CodeBlock>{`# list what's available
-npx skills add jcosta33/swarm-skills --list
-
-# install a single skill into the current repo
-npx skills add jcosta33/swarm-skills --skill persona-skeptic
-
-# or copy the folder if you don't use the Vercel skills CLI
-cp -R skills/persona-skeptic <your-repo>/.agents/skills/`}</CodeBlock>
+        <TerminalWindow title="terminal">
+          <p className="text-concrete-500">
+            <span className="text-concrete-500"># list what&apos;s available</span>
+          </p>
+          <p className="text-concrete-100">
+            <span className="text-swarm-yellow">$</span> npx skills add jcosta33/swarm-skills --list
+          </p>
+          <p className="mt-2 text-concrete-500"># install a single skill into the current repo</p>
+          <p className="text-concrete-100">
+            <span className="text-swarm-yellow">$</span> npx skills add jcosta33/swarm-skills --skill persona-skeptic
+          </p>
+          <p className="mt-2 text-concrete-500">
+            # or copy the folder if you don&apos;t use the Vercel skills CLI
+          </p>
+          <p className="text-concrete-100">
+            <span className="text-swarm-yellow">$</span> cp -R skills/persona-skeptic{" "}
+            &lt;your-repo&gt;/.agents/skills/
+          </p>
+        </TerminalWindow>
         <p className="text-concrete-400">
           Skills name abstract command slots like <code>cmdTest</code> and <code>cmdLint</code>;
           your repo&apos;s <code>AGENTS.md</code> supplies the real commands. That is what makes them

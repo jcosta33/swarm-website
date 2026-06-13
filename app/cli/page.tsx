@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "../components/Section";
 import { Card } from "../components/Card";
-import { CodeBlock } from "../components/CodeBlock";
+import { TerminalWindow } from "../components/TerminalWindow";
 import { Badge } from "../components/Badge";
+import { SignalPulse } from "../components/SignalPulse";
 
 export const metadata: Metadata = {
   title: "CLI — Swarm",
@@ -42,6 +43,7 @@ export default function CliPage() {
               swarm-cli
             </h1>
             <Badge variant="hazard">In flux</Badge>
+            <SignalPulse className="h-5 w-5" />
           </div>
           <p className="mt-6 text-xl leading-relaxed text-concrete-100">
             The reference CLI for the Swarm framework. It is quality-of-life automation around the
@@ -60,20 +62,40 @@ export default function CliPage() {
         <h2 className="font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
           Install
         </h2>
-        <CodeBlock>{`# Node.js >= 22.6.0 and git >= 2.5 required
-npm install -g swarm-cli
-
-# or link from a local clone
-npm link`}</CodeBlock>
+        <TerminalWindow title="terminal">
+          <p className="text-concrete-400">
+            <span className="text-concrete-500"># Node.js &gt;= 22.6.0 and git &gt;= 2.5 required</span>
+          </p>
+          <p className="mt-1 text-concrete-100">
+            <span className="text-swarm-yellow">$</span> npm install -g swarm-cli
+          </p>
+          <p className="mt-2 text-concrete-400">
+            <span className="text-concrete-500"># or link from a local clone</span>
+          </p>
+          <p className="text-concrete-100">
+            <span className="text-swarm-yellow">$</span> npm link
+          </p>
+        </TerminalWindow>
       </Section>
 
       <Section className="flex flex-col gap-8">
         <h2 className="font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
           First run
         </h2>
-        <CodeBlock>{`swarm init    # scaffold the workspace
-swarm doctor  # verify the environment
-swarm         # launch the interactive dashboard`}</CodeBlock>
+        <TerminalWindow title="terminal">
+          <p className="text-concrete-100">
+            <span className="text-swarm-yellow">$</span> swarm init{" "}
+            <span className="text-concrete-500"># scaffold the workspace</span>
+          </p>
+          <p className="mt-1 text-concrete-100">
+            <span className="text-swarm-yellow">$</span> swarm doctor{" "}
+            <span className="text-concrete-500"># verify the environment</span>
+          </p>
+          <p className="mt-1 text-concrete-100">
+            <span className="text-swarm-yellow">$</span> swarm{" "}
+            <span className="text-concrete-500"># launch the interactive dashboard</span>
+          </p>
+        </TerminalWindow>
       </Section>
 
       <Section className="flex flex-col gap-12">
