@@ -47,6 +47,19 @@ support.
 ## Run summary
 
 - Changed files:
+  - `app/page.tsx` — full homepage (hero, problem, loop, example, features, final CTA)
+  - `app/components/HeroHexGrid.tsx` — animated SVG hex grid
+  - `app/components/LoopDiagram.tsx` — six-step loop diagram
+  - `app/components/Button.tsx` — added `asChild` support for Link usage
+  - `app/globals.css` — added `animate-pulse-slow` keyframes and reduced-motion fallback
+  - `public/og-home.png` — generated Open Graph image
 - Verify results:
-- Out-of-scope edits:
-- Blocked questions:
+  - `npm run build` — passes
+  - `npm run lint` — passes
+  - `npx tsc --noEmit` — passes
+  - Lighthouse (mobile): Performance 95, Accessibility 100, Best Practices 100, SEO 100
+  - axe-core: 0 violations
+  - 375px viewport: 0px horizontal body overflow
+  - Metadata: title, description, and OG image present in rendered HTML
+- Out-of-scope edits: none
+- Blocked questions: none

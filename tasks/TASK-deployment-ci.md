@@ -48,6 +48,22 @@ gates.
 ## Run summary
 
 - Changed files:
+  - `next.config.ts` — static export (`output: 'export'`, `distDir: 'dist'`, `trailingSlash: true`, unoptimized images)
+  - `.github/workflows/ci.yml` — CI pipeline: type check, lint, build, linkinator, axe, Lighthouse with thresholds
+  - `package.json` — added dev tools: `@axe-core/cli`, `lighthouse`, `linkinator`, `serve`
+  - `vercel.json` — Vercel build/output config
+  - `.env.example` — documented (no secrets required)
+  - `README.md` — stack, dev, build, quality gates, deployment notes
+  - `.gitignore` — added `/dist`
+  - `eslint.config.mjs` — ignore `dist/**`
 - Verify results:
-- Out-of-scope edits:
-- Blocked questions:
+  - `npm run build` — passes; static export to `dist/` with 12 routes
+  - `npm run lint` — passes
+  - `npx tsc --noEmit` — passes
+  - `linkinator` on served `dist/` — 18 links scanned, 0 broken (GitHub/external skipped)
+  - `axe` on served `dist/` — 0 violations
+  - `lighthouse` (desktop) — Performance 100, Accessibility 100, Best Practices 100, SEO 100
+  - `dist/` contains no markdown from Swarm workspace folders
+  - Vercel production deployment not yet verified (requires push to `main` after merge)
+- Out-of-scope edits: none
+- Blocked questions: none

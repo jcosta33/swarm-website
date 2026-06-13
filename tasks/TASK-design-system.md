@@ -64,6 +64,25 @@ Implement:
 ## Run summary
 
 - Changed files:
+  - `app/globals.css` — added Swarm color/font tokens, reduced-motion support, hazard-stripe utility
+  - `app/layout.tsx` — wired Inter, JetBrains Mono, Space Grotesk; added Shell wrapper; updated metadata
+  - `app/components/Button.tsx` — primary/secondary/disabled button
+  - `app/components/Card.tsx` — bordered surface with hover lift
+  - `app/components/Badge.tsx` — default/hazard/success badges
+  - `app/components/Section.tsx` — max-width wrapper
+  - `app/components/CodeBlock.tsx` — styled preformatted block
+  - `app/components/HazardStripe.tsx` — reusable hazard-stripe divider
+  - `app/components/Logo.tsx` — Swarm wordmark SVG
+  - `app/components/Shell.tsx` — nav + footer, mobile menu at `lg`
+  - `app/kitchen-sink/page.tsx` — component preview route with `robots: noindex`
+  - `app/page.tsx` — replaced default Next.js landing with placeholder
+  - `package.json` — added `lucide-react`
 - Verify results:
-- Out-of-scope edits:
-- Blocked questions:
+  - `npm run build` — passes (routes: /, /kitchen-sink, /_not-found)
+  - `npm run lint` — passes
+  - `npx tsc --noEmit` — passes
+  - `/kitchen-sink` — renders Button, Card, Badge, Section, CodeBlock, HazardStripe, icons, typography
+  - Contrast check — all 10 default combos pass WCAG AA thresholds
+  - Reduced motion — `@media (prefers-reduced-motion: reduce)` disables animations/transitions and sets `scroll-behavior: auto`
+- Out-of-scope edits: none
+- Blocked questions: none

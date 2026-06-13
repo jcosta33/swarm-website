@@ -116,6 +116,17 @@ and a "Back to hive" link.
 - `app/cli/page.tsx`
 - `app/not-found.tsx`
 
+## Sources
+
+All marketing copy derives from the `swarm` framework repo
+(`https://github.com/jcosta33/swarm`). The authoritative sources are tracked in
+`CONTENT.md` and reviewed quarterly for drift.
+
+- Homepage, `/what-is-swarm`: `docs/01-what-is-swarm.md`
+- `/the-loop`: `docs/02-basic-workflow.md`
+- `/get-started`: `docs/ADOPTING.md`
+- `/skills`, `/cli`: placeholder pages linking to their future repos.
+
 ## Dropped from sources
 
 - `/docs` subsite — docs live in the `swarm` repo; website links there.

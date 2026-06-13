@@ -1,46 +1,44 @@
 # swarm-website
 
-> The marketing website for [Swarm](https://github.com/jcosta33/swarm) — a lightweight spec and review workflow for teams using coding agents.
-
-This repo is two things at once:
-
-1. **A Next.js website** deployed to Vercel, marketing Swarm with a tongue-in-cheek, open-source vibe.
-2. **A Swarm workspace** — we use Swarm to build the website about Swarm.
+The public marketing site for [Swarm](https://github.com/jcosta33/swarm), a lightweight spec and review workflow for teams using coding agents.
 
 ## Stack
 
-- **Framework:** Next.js 15+ (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Deployment:** Vercel
-- **Design vibe:** drone swarm meets bee hive meets industrial factory — yellow primary, concrete greys, hazard stripes, laid-back copy.
+- Next.js 16 (App Router)
+- Tailwind CSS v4
+- TypeScript
+- Lucide React
 
-## Get started
+## Local development
 
-```sh
+```bash
 npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Swarm workspace
+## Build
 
-This repo uses the [Swarm starter kit](https://github.com/jcosta33/swarm-starter-kit). Work is planned in:
+```bash
+npm run build
+```
 
-- `specs/` — website features and pages
-- `tasks/` — implementation tasks
-- `reviews/` — review packets
-- `findings/` — durable lessons
-- `change-plans/` — multi-step changes
-- `decisions/` — ADRs for the website
-- `status.md` — the workboard
+The site is statically exported to `dist/`.
 
-Guides live in `.agents/skills/` and are surfaced to Claude Code via `.claude/skills`.
+## Quality gates
 
-## Design direction
+```bash
+npm run lint
+npx tsc --noEmit
+npx linkinator dist/ --skip "^https://github.com"
+npx axe http://localhost:3000 --exit
+```
 
-- **Primary color:** yellow (bees, swarm, attention).
-- **Secondary:** concrete greys, steel blues, hazard orange accents.
-- **Aesthetic:** drone swarm + factory floor + construction site — functional, modular, slightly mechanical.
-- **Tone:** laid back, self-aware, open-source. No corporate buzzword soup.
+## Deployment
+
+Pushes to `main` deploy to Vercel automatically. Pull requests receive preview deployments.
+
+## Content sources
+
+Marketing copy is sourced from the `swarm` repo docs. See `CONTENT.md` for the source map and review cadence.

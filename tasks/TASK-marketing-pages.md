@@ -45,6 +45,22 @@ and `/cli`, and the custom 404 page.
 ## Run summary
 
 - Changed files:
+  - `app/what-is-swarm/page.tsx` — framework explainer with is/is-not lists, adjacent-tools table, failure-modes grid
+  - `app/the-loop/page.tsx` — six-step loop with code examples
+  - `app/get-started/page.tsx` — starter-kit and existing-project adoption paths
+  - `app/skills/page.tsx` — placeholder "Coming soon" page
+  - `app/cli/page.tsx` — placeholder "Coming soon" page
+  - `app/colophon/page.tsx` — colophon page (linked from footer)
+  - `app/not-found.tsx` — Swarm-branded 404 with nav/footer
+  - `next.config.ts` — static export (`output: 'export'`, `distDir: 'dist'`, `trailingSlash: true`)
+  - `eslint.config.mjs` — ignore `dist/**`
+  - `public/og-*.png` — generated OG images for all pages
 - Verify results:
-- Out-of-scope edits:
-- Blocked questions:
+  - `npm run build` — passes; 11 static routes generated
+  - `npm run lint` — passes
+  - `npx tsc --noEmit` — passes
+  - `linkinator` on `dist/` served locally — 19 links scanned, 0 broken (GitHub links skipped)
+  - All page titles match `<Page name> — Swarm` pattern
+  - `/colophon/` route resolves (footer link no longer broken)
+- Out-of-scope edits: none
+- Blocked questions: none

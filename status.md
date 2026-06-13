@@ -22,12 +22,12 @@ type: status
 | REVIEW-SPEC-homepage | review | blocked | `reviews/REVIEW-SPEC-homepage.md` |
 | REVIEW-SPEC-marketing-pages | review | blocked | `reviews/REVIEW-SPEC-marketing-pages.md` |
 | REVIEW-SPEC-examples-section | review | blocked | `reviews/REVIEW-SPEC-examples-section.md` |
-| TASK-design-system | task | ready | `tasks/TASK-design-system.md` |
-| TASK-homepage | task | ready | `tasks/TASK-homepage.md` |
-| TASK-marketing-pages | task | ready | `tasks/TASK-marketing-pages.md` |
-| TASK-seo | task | ready | `tasks/TASK-seo.md` |
-| TASK-deployment-ci | task | ready | `tasks/TASK-deployment-ci.md` |
-| TASK-content-workflow | task | ready | `tasks/TASK-content-workflow.md` |
+| TASK-design-system | task | review-ready | `tasks/TASK-design-system.md` |
+| TASK-homepage | task | review-ready | `tasks/TASK-homepage.md` |
+| TASK-marketing-pages | task | review-ready | `tasks/TASK-marketing-pages.md` |
+| TASK-seo | task | review-ready | `tasks/TASK-seo.md` |
+| TASK-deployment-ci | task | review-ready | `tasks/TASK-deployment-ci.md` |
+| TASK-content-workflow | task | review-ready | `tasks/TASK-content-workflow.md` |
 
 ## Human attention
 
