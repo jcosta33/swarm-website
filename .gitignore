@@ -1,0 +1,26 @@
+.DS_Store
+ALL_FILES.txt
+SWARM_COMPREHENSIVE_REPORT.md
+
+# Next.js
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+/coverage
+/.next/
+/out/
+/build
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.env*
+.vercel
+*.tsbuildinfo
+next-env.d.ts

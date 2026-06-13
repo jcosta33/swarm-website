@@ -1,0 +1,38 @@
+---
+type: status
+---
+
+# Workboard — swarm-website
+
+| Item | Type | State | Link |
+|---|---|---|---|
+| INTAKE-website | intake | closed | `intake/website.md` |
+| SPEC-design-system | spec | ready | `specs/design-system/spec.md` |
+| SPEC-homepage | spec | ready | `specs/homepage/spec.md` |
+| SPEC-marketing-pages | spec | ready | `specs/marketing-pages/spec.md` |
+| SPEC-examples-section | spec | deferred | `specs/examples-section/spec.md` |
+| SPEC-deployment | spec | ready | `specs/deployment/spec.md` |
+| SPEC-accessibility | spec | ready | `specs/accessibility/spec.md` |
+| SPEC-seo | spec | ready | `specs/seo/spec.md` |
+| SPEC-testing | spec | ready | `specs/testing/spec.md` |
+| SPEC-content-workflow | spec | ready | `specs/content-workflow/spec.md` |
+| CHANGE-website-launch | change-plan | ready | `change-plans/website-launch.md` |
+| FINDING-website-launch-gaps | finding | accepted | `findings/FINDING-website-launch-gaps.md` |
+| REVIEW-SPEC-design-system | review | blocked | `reviews/REVIEW-SPEC-design-system.md` |
+| REVIEW-SPEC-homepage | review | blocked | `reviews/REVIEW-SPEC-homepage.md` |
+| REVIEW-SPEC-marketing-pages | review | blocked | `reviews/REVIEW-SPEC-marketing-pages.md` |
+| REVIEW-SPEC-examples-section | review | blocked | `reviews/REVIEW-SPEC-examples-section.md` |
+| TASK-design-system | task | ready | `tasks/TASK-design-system.md` |
+| TASK-homepage | task | ready | `tasks/TASK-homepage.md` |
+| TASK-marketing-pages | task | ready | `tasks/TASK-marketing-pages.md` |
+| TASK-seo | task | ready | `tasks/TASK-seo.md` |
+| TASK-deployment-ci | task | ready | `tasks/TASK-deployment-ci.md` |
+| TASK-content-workflow | task | ready | `tasks/TASK-content-workflow.md` |
+
+## Human attention
+
+- The four initial self-reviews are `blocked` because they were self-reviews.
+  In a multi-agent team, an independent reviewer should re-review the fixed
+  specs before implementation begins.
+- The first implementation task is `TASK-design-system` (wave 1 of
+  CHANGE-website-launch).

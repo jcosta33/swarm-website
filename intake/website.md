@@ -1,0 +1,36 @@
+---
+type: intake
+id: INTAKE-website
+source: product
+status: open
+---
+
+# Marketing website for Swarm
+
+Build a public marketing website for the Swarm framework. It should feel like an
+open-source project: tongue-in-cheek, laid back, not corporate. Visual theme:
+drone swarm + bee hive + industrial factory. Yellow primary, concrete greys,
+hazard accents.
+
+## Must cover
+
+- Homepage with clear value prop and CTA
+- Explanation of what Swarm is and isn't
+- The Swarm loop (Pull → Spec → Task → Run → Review → Close)
+- Link to starter kit and docs
+- Link to GitHub
+- Responsive, fast, deployable to Vercel
+
+## Nice to cover
+
+- Animated bee/drone motifs
+- Dark mode default (factory floor at night)
+- Example/case-study section
+- Skills marketplace teaser
+- CLI teaser
+
+## Constraints
+
+- Next.js + TypeScript + Tailwind CSS
+- Deploy to Vercel from `main`
+- Co-located Swarm workspace for planning
