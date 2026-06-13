@@ -11,5 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/the-loop/`, lastModified: new Date() },
     { url: `${BASE_URL}/get-started/`, lastModified: new Date() },
     { url: `${BASE_URL}/skills/`, lastModified: new Date() },
+    { url: `${BASE_URL}/cli/`, lastModified: new Date() },
   ];
 }

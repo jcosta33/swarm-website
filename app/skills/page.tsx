@@ -135,7 +135,7 @@ cp -R skills/persona-skeptic <your-repo>/.agents/skills/`}</CodeBlock>
             >
               swarm-cli
             </Link>
-            , still in the lab.
+            . It is real, but the command surface is still settling.
           </p>
           <p className="mt-6">
             <Link
