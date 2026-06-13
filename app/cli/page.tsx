@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "CLI — Swarm",
   description:
     "The future command-line companion for Swarm specs, tasks, and checks. Coming soon.",
+  robots: "noindex",
   openGraph: {
     title: "CLI — Swarm",
     description:

@@ -44,15 +44,14 @@ jobs:
 
       - name: Lighthouse audit
         run: npx lighthouse http://127.0.0.1:3000 --output=json --output-path=./lighthouse.json --chrome-flags="--headless --no-sandbox" --preset=desktop --only-categories=performance,accessibility,best-practices,seo
-        continue-on-error: true
 
       - name: Check Lighthouse thresholds
         run: |
           node -e "
             const fs = require('fs');
             if (!fs.existsSync('./lighthouse.json')) {
-              console.log('Lighthouse report not found; skipping threshold check.');
-              process.exit(0);
+              console.error('Lighthouse report not found; threshold check cannot run.');
+              process.exit(1);
             }
             const report = require('./lighthouse.json');
             const scores = {

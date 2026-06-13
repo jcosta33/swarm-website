@@ -4,6 +4,8 @@ import { Section } from "./components/Section";
 
 export const metadata = {
   title: "Page not found — Swarm",
+  description: "The requested page could not be found on the Swarm website.",
+  robots: "noindex",
 };
 
 export default function NotFoundPage() {
