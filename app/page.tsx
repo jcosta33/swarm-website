@@ -220,7 +220,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {walls.map((wall) => {
               const Icon = wall.icon;
               return (
@@ -301,7 +301,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="reveal grid gap-6 lg:grid-cols-2">
             <TerminalWindow title="specs/shell/spec.md">
               <p className="text-concrete-500">
                 <span className="text-swarm-yellow">##</span> AC-003 — Global shell includes nav and footer
@@ -369,7 +369,7 @@ export default function HomePage() {
               Built for validation, not generation.
             </h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
               <Card
                 key={feature.title}
