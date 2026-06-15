@@ -24,13 +24,13 @@ import {
 import { Button } from "../components/Button";
 
 export const metadata: Metadata = {
-  title: "What is Swarm — Swarm",
+  title: "What is Calma — Calma",
   description:
-    "AI writes code that looks right. Swarm is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown; no runtime required.",
+    "AI writes code that looks right. Calma is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown; no runtime required.",
   openGraph: {
-    title: "What is Swarm — Swarm",
+    title: "What is Calma — Calma",
     description:
-      "Swarm is a lightweight spec and review workflow that keeps humans in the driver seat while coding agents do the work. Plain markdown; no runtime required.",
+      "Calma is a lightweight spec and review workflow that keeps humans in the driver seat while coding agents do the work. Plain markdown; no runtime required.",
     type: "website",
     images: ["/og-what-is-swarm.png"],
   },
@@ -74,42 +74,42 @@ const adjacent = [
     examples: "Claude Code, Cursor, Copilot, …",
     does: "write the code",
     relation:
-      "Swarm ships no agent. It shapes the inputs any agent works from and the output you review. Bring whichever agent you have.",
+      "Calma ships no agent. It shapes the inputs any agent works from and the output you review. Bring whichever agent you have.",
   },
   {
     product: "Spec-driven workflows",
     examples: "GitHub Spec Kit, Kiro, Tessl",
     does: "turn a written spec into an implementation",
     relation:
-      "Same family, opposite end. They optimize authoring the spec and generating the code; Swarm bets on the review side — every requirement carries a verification method, and the packet shows the evidence per line. Honestly? Author with one, gate with the other.",
+      "Same family, opposite end. They optimize authoring the spec and generating the code; Calma bets on the review side — every requirement carries a verification method, and the packet shows the evidence per line. Honestly? Author with one, gate with the other.",
   },
   {
     product: "Issue trackers",
     examples: "Jira, Linear, GitHub Issues",
     does: "hold the backlog and the conversation",
     relation:
-      "The ticket stays where it is. Swarm snapshots it into an intake file and interprets it into a spec an agent can act on.",
+      "The ticket stays where it is. Calma snapshots it into an intake file and interprets it into a spec an agent can act on.",
   },
   {
     product: "Docs portals",
     examples: "wikis, Notion, docs sites",
     does: "describe the system after the fact",
     relation:
-      "A Swarm spec is a working document — acceptance criteria, verification methods, open questions. It drives the change rather than documenting it later.",
+      "A Calma spec is a working document — acceptance criteria, verification methods, open questions. It drives the change rather than documenting it later.",
   },
   {
     product: "Review tooling",
     examples: "PRs, CI, review bots",
     does: "gate the merge",
     relation:
-      "Swarm does not replace the PR. The review packet rides alongside it and tells the reviewer where to look; CI output is the evidence the packet cites.",
+      "Calma does not replace the PR. The review packet rides alongside it and tells the reviewer where to look; CI output is the evidence the packet cites.",
   },
   {
     product: "Refactoring tooling",
     examples: "codemods, OpenRewrite, …",
     does: "execute mechanical change",
     relation:
-      "Swarm's change plan states what must survive the change and how to check it; a codemod is one way a task executes a step of that plan.",
+      "Calma's change plan states what must survive the change and how to check it; a codemod is one way a task executes a step of that plan.",
   },
 ];
 
@@ -152,7 +152,7 @@ const failureModes = [
   },
 ];
 
-export default function WhatIsSwarmPage() {
+export default function WhatIsCalmaPage() {
   return (
     <div className="flex flex-col gap-24 py-24">
       <Section>
@@ -164,11 +164,11 @@ export default function WhatIsSwarmPage() {
             </span>
           </div>
           <h1 className="font-heading text-4xl font-bold uppercase tracking-tight text-concrete-100 sm:text-5xl lg:text-6xl">
-            What is <span className="text-swarm-yellow text-glow">Swarm</span>
+            What is <span className="text-swarm-yellow text-glow">Calma</span>
             <TerminalCursor className="ml-2 align-middle" />
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            A lightweight spec-and-review discipline for teams using coding agents. Swarm assumes the
+            A lightweight spec-and-review discipline for teams using coding agents. Calma assumes the
             agent will drift, over-engineer, or skip the edge case — and gives you the files to catch
             it before it ships.
           </p>
@@ -182,7 +182,7 @@ export default function WhatIsSwarmPage() {
               <span className="text-swarm-yellow">$</span> cat what-is-swarm.md
             </p>
             <p className="mt-2 text-concrete-100">
-              Swarm is a spec-and-review workflow for teams using coding agents. Turn tickets into
+              Calma is a spec-and-review workflow for teams using coding agents. Turn tickets into
               clear specs, specs into agent-ready tasks, and agent output into evidence a human can
               review.
             </p>
@@ -204,7 +204,7 @@ export default function WhatIsSwarmPage() {
             <span>capabilities.conf — loaded</span>
           </div>
           <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
-            What Swarm is
+            What Calma is
           </h2>
           <ul className="mt-6 space-y-4">
             {isList.map((item) => {
@@ -227,7 +227,7 @@ export default function WhatIsSwarmPage() {
             <span>capabilities.conf — excluded</span>
           </div>
           <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
-            What Swarm is not
+            What Calma is not
           </h2>
           <ul className="mt-6 space-y-3">
             {isNotList.map((item) => (
@@ -250,7 +250,7 @@ export default function WhatIsSwarmPage() {
             <span>network.map — adjacent nodes</span>
           </div>
           <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
-            Where Swarm sits
+            Where Calma sits
           </h2>
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

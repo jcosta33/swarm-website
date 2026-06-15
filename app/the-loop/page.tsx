@@ -14,11 +14,11 @@ import { TerminalCursor } from "../components/TerminalCursor";
 const stepIcons = [Inbox, FileText, ListChecks, Terminal, ScanEye, GitMerge];
 
 export const metadata: Metadata = {
-  title: "The loop — Swarm",
+  title: "The loop — Calma",
   description:
     "Pull → Spec → Task → Run → Review → Close. The six steps that keep a human at every decision gate while agents do the typing.",
   openGraph: {
-    title: "The loop — Swarm",
+    title: "The loop — Calma",
     description:
       "Pull → Spec → Task → Run → Review → Close. The six steps that keep humans in the driver seat while agents do the work.",
     type: "website",

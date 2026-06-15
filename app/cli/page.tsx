@@ -24,13 +24,13 @@ import { Badge } from "../components/Badge";
 import { PilotLamp } from "../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "CLI — Swarm",
+  title: "CLI — Calma",
   description:
-    "swarm-cli is optional command-line help for the Swarm workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
+    "calma-cli is optional command-line help for the Calma workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
   openGraph: {
-    title: "CLI — Swarm",
+    title: "CLI — Calma",
     description:
-      "swarm-cli is the optional reference companion for the Swarm framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
+      "calma-cli is the optional reference companion for the Calma framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
     type: "website",
     images: ["/og-cli.png"],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const commands = [
   { cmd: "check [file]", what: "Lint a spec, or render the whole-workspace verdict. Exit 0 clean / 1 warnings / 2 blocking — so it drops straight into pre-commit and CI.", icon: ShieldCheck },
   { cmd: "review <task>", what: "Reconcile a finished run — the agent's self-report against the actual git diff against the spec. Surfaces omitted edits, out-of-scope changes, and unbacked claims. Never a verdict; that stays yours.", icon: ScanEye },
-  { cmd: "worktree", what: "Create / list / remove / prune isolated git worktrees — one per task on swarm/<slug>, so parallel agents never trample each other.", icon: GitBranch },
+  { cmd: "worktree", what: "Create / list / remove / prune isolated git worktrees — one per task on calma/<slug>, so parallel agents never trample each other.", icon: GitBranch },
   { cmd: "status", what: "Print the workspace board — specs, tasks, reviews, and the gaps between them. --json for scripts, -i for an interactive board.", icon: LayoutDashboard },
   { cmd: "new <task|spec>", what: "Cut a task packet from a spec, or scaffold a fresh spec from the template.", icon: Plus },
   { cmd: "init [dir]", what: "Scaffold the workspace into a new or existing repo, conflict-safe — walked through on Get started.", icon: Blocks },
@@ -62,7 +62,7 @@ const principles = [
   {
     title: "It never renders the verdict",
     icon: ShieldCheck,
-    text: "swarm check tells you what is malformed or unverified. Whether the code is actually done is a call a human makes, every time.",
+    text: "calma check tells you what is malformed or unverified. Whether the code is actually done is a call a human makes, every time.",
   },
 ];
 
@@ -74,15 +74,15 @@ export default function CliPage() {
           <div className="mb-6 inline-flex items-center gap-3 panel-raised brushed-metal px-4 py-1.5">
             <SignalPulse className="h-4 w-4" />
             <span className="text-xs font-mono font-medium uppercase tracking-widest engraved">
-              swarm-cli — reference implementation
+              calma-cli — reference implementation
             </span>
           </div>
           <h1 className="font-heading text-4xl font-bold uppercase tracking-tight text-concrete-100 sm:text-5xl lg:text-6xl">
-            swarm<span className="text-swarm-yellow text-glow">-cli</span>
+            calma<span className="text-swarm-yellow text-glow">-cli</span>
             <TerminalCursor className="ml-2 align-middle" />
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Optional command-line help for the Swarm workflow. The framework is just markdown and
+            Optional command-line help for the Calma workflow. The framework is just markdown and
             conventions; the CLI does the chores — checks your specs, isolates each task in its own git
             worktree, reconciles a finished run against the diff, and prints the board.
           </p>
@@ -107,7 +107,7 @@ export default function CliPage() {
         <Panel brushed className="p-2">
           <TerminalWindow title="terminal">
             <p className="text-concrete-500">
-              # not on npm yet — clone and link from source; the binary it provides is called swarm
+              # not on npm yet — clone and link from source; the binary it provides is called calma
             </p>
             <p className="text-concrete-100">
               <span className="text-swarm-yellow">$</span> git clone https://github.com/jcosta33/swarm-cli.git{" "}
@@ -115,7 +115,7 @@ export default function CliPage() {
             </p>
             <p className="mt-2 text-concrete-500"># then run commands as</p>
             <p className="text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm --help
+              <span className="text-swarm-yellow">$</span> calma --help
             </p>
           </TerminalWindow>
         </Panel>
@@ -130,19 +130,19 @@ export default function CliPage() {
           <TerminalWindow title="terminal">
             <p className="text-concrete-500"># scaffold a workspace first — see Get started</p>
             <p className="text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm check{" "}
+              <span className="text-swarm-yellow">$</span> calma check{" "}
               <span className="text-concrete-500"># lint a spec or the whole workspace; exit 0/1/2</span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm worktree create auth-refresh --task TASK-12{" "}
+              <span className="text-swarm-yellow">$</span> calma worktree create auth-refresh --task TASK-12{" "}
               <span className="text-concrete-500"># isolate the task on its own branch</span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm review TASK-12{" "}
+              <span className="text-swarm-yellow">$</span> calma review TASK-12{" "}
               <span className="text-concrete-500"># reconcile the finished run — diff vs report vs spec</span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm status -i{" "}
+              <span className="text-swarm-yellow">$</span> calma status -i{" "}
               <span className="text-concrete-500"># the board — specs, tasks, reviews, gaps</span>
             </p>
           </TerminalWindow>
@@ -161,7 +161,7 @@ export default function CliPage() {
           <p className="mt-4 text-concrete-400">
             The set that runs today — and &ldquo;advertised equals dispatchable&rdquo; is checked by its own
             test, so this list cannot quietly lie to you. The one worth knowing first is{" "}
-            <code className="text-swarm-yellow">swarm review</code>: it reconciles a finished run — the
+            <code className="text-swarm-yellow">calma review</code>: it reconciles a finished run — the
             agent&apos;s self-report against the real diff against the spec — and routes the mismatches to
             a human, without ever rendering the verdict.
           </p>
@@ -179,7 +179,7 @@ export default function CliPage() {
                       </HexBadge>
                       <div>
                         <h3 className="font-mono text-sm font-semibold text-drone-green">
-                          swarm {c.cmd}
+                          calma {c.cmd}
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-concrete-400">{c.what}</p>
                       </div>
@@ -200,10 +200,10 @@ export default function CliPage() {
             <span>design.md — why a CLI?</span>
           </div>
           <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
-            Why a CLI if Swarm is markdown-only?
+            Why a CLI if Calma is markdown-only?
           </h2>
           <p className="mt-4 text-concrete-400">
-            The workflow itself is just conventions and files — you can run all of Swarm with a text
+            The workflow itself is just conventions and files — you can run all of Calma with a text
             editor and a straight face. The CLI is optional: it scaffolds the workspace, runs the checks
             at a gate, and keeps one worktree per task so parallel agents do not trample each other. It
             is a helper, not an orchestrator, and it never renders the verdict. Use it for less typing;

@@ -8,7 +8,7 @@ import { Logo } from "./Logo";
 import { Section } from "./Section";
 
 const navLinks = [
-  { label: "What is Swarm", href: "/what-is-swarm" },
+  { label: "What is Calma", href: "/what-is-swarm" },
   { label: "Loop", href: "/the-loop" },
   { label: "Skills", href: "/skills" },
   { label: "CLI", href: "/cli" },
@@ -142,9 +142,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-panel-border panel-raised">
+      <header className="sticky top-0 z-40">
         <Section as="div" className="flex h-16 items-center justify-between">
-          <Link href="/" className="focus-ring rounded-sm" aria-label="Swarm home">
+          <Link href="/" className="focus-ring rounded-sm" aria-label="Calma home">
             <div className="panel-raised brushed-metal p-1.5">
               <Logo className="h-6 w-auto text-concrete-100" />
             </div>
@@ -228,13 +228,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
           className="flex flex-col gap-8 py-12 md:flex-row md:items-center md:justify-between"
         >
           <div className="flex flex-col gap-2">
-            <Link href="/" aria-label="Swarm home" className="focus-ring rounded-sm w-fit">
+            <Link href="/" aria-label="Calma home" className="focus-ring rounded-sm w-fit">
               <div className="panel-raised brushed-metal p-1.5">
                 <Logo className="h-5 w-auto text-concrete-100" />
               </div>
             </Link>
             <p className="text-sm text-concrete-400">
-              Built with Swarm. The agents don&apos;t get to grade their own homework — a different session
+              Built with Calma. The agents don&apos;t get to grade their own homework — a different session
               reviewed it, a human merged it.
             </p>
           </div>
@@ -259,7 +259,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </nav>
 
           <p className="text-sm text-concrete-400">
-            © {new Date().getFullYear()} Swarm contributors.
+            © {new Date().getFullYear()} Calma contributors.
           </p>
         </Section>
       </div>

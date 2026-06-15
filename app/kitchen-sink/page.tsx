@@ -12,7 +12,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { AlertTriangle, CheckCircle, Wrench } from "lucide-react";
 
 export const metadata = {
-  title: "Kitchen sink — Swarm",
+  title: "Kitchen sink — Calma",
   robots: "noindex, nofollow",
 };
 
@@ -118,7 +118,7 @@ export default function KitchenSinkPage() {
         <TerminalWindow title="terminal">
           <p className="text-concrete-500"># CRT monitor panel</p>
           <p className="text-concrete-100">
-            <span className="text-swarm-yellow">$</span> swarm status
+            <span className="text-swarm-yellow">$</span> calma status
           </p>
           <p className="mt-1 text-drone-green">✓ all systems nominal</p>
         </TerminalWindow>

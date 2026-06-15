@@ -4,8 +4,8 @@ import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 
 export const metadata: Metadata = {
-  title: "Colophon — Swarm",
-  description: "How the Swarm website is built and by whom.",
+  title: "Colophon — Calma",
+  description: "How the Calma website is built and by whom.",
   robots: "noindex",
   alternates: {
     canonical: "/colophon/",
@@ -31,7 +31,7 @@ export default function ColophonPage() {
                 Colophon
               </h1>
               <p className="mt-2 text-concrete-400">
-                Built with Swarm: drafted by agents, reviewed by a session that didn&apos;t write it,
+                Built with Calma: drafted by agents, reviewed by a session that didn&apos;t write it,
                 merged by a human.
               </p>
             </div>

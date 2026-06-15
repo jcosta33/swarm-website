@@ -8,13 +8,13 @@ import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 
 export const metadata: Metadata = {
-  title: "Get started — Swarm",
+  title: "Get started — Calma",
   description:
-    "Adopt Swarm in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+    "Adopt Calma in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
   openGraph: {
-    title: "Get started — Swarm",
+    title: "Get started — Calma",
     description:
-      "Adopt Swarm in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+      "Adopt Calma in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
     type: "website",
     images: ["/og-get-started.png"],
   },
@@ -70,7 +70,7 @@ export default function GetStartedPage() {
               New repo
             </h2>
             <p className="mt-2 text-concrete-400">
-              Use the GitHub template to create a fresh Swarm workspace with the folder structure,
+              Use the GitHub template to create a fresh Calma workspace with the folder structure,
               templates, and agent guides already in place.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function GetStartedPage() {
           Prefer the command line?
         </h2>
         <p className="max-w-2xl text-concrete-400">
-          <code className="text-swarm-yellow">swarm init</code> scaffolds the same workspace into a new
+          <code className="text-swarm-yellow">calma init</code> scaffolds the same workspace into a new
           or existing repo — conflict-safe, so it never clobbers files you already have. The CLI is not
           on npm under that name yet (the name is taken), so install it from source.
         </p>
@@ -132,11 +132,11 @@ export default function GetStartedPage() {
             </p>
             <p className="mt-2 text-concrete-500"># then, in a new or existing repo</p>
             <p className="text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm init{" "}
+              <span className="text-swarm-yellow">$</span> calma init{" "}
               <span className="text-concrete-500"># scaffold the workspace, conflict-safe</span>
             </p>
             <p className="text-concrete-100">
-              <span className="text-swarm-yellow">$</span> swarm check{" "}
+              <span className="text-swarm-yellow">$</span> calma check{" "}
               <span className="text-concrete-500"># confirm it is well-formed; exit 0/1/2</span>
             </p>
           </TerminalWindow>
@@ -194,7 +194,7 @@ export default function GetStartedPage() {
             <ListDot />
             <span>
               <strong className="text-concrete-100">decisions/</strong> — an ADR ledger, seeded
-              with why you adopted Swarm.
+              with why you adopted Calma.
             </span>
           </li>
         </ul>

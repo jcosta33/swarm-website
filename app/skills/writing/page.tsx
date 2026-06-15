@@ -25,13 +25,13 @@ import { TerminalCursor } from "../../components/TerminalCursor";
 import { PilotLamp } from "../../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "Writing a skill — Swarm",
+  title: "Writing a skill — Calma",
   description:
-    "How to write a Swarm skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+    "How to write a Calma skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
   openGraph: {
-    title: "Writing a skill — Swarm",
+    title: "Writing a skill — Calma",
     description:
-      "How to write a Swarm skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+      "How to write a Calma skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
     type: "website",
     images: ["/og-skills.png"],
   },

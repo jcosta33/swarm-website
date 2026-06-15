@@ -32,13 +32,13 @@ import { SignalPulse } from "../components/SignalPulse";
 import { TerminalCursor } from "../components/TerminalCursor";
 
 export const metadata: Metadata = {
-  title: "Skills — Swarm",
+  title: "Skills — Calma",
   description:
-    "Optional agent guides for Swarm workflows: conditioning stances and code-authoring depth. Not shortcuts — discipline prompts that load when the work matches.",
+    "Optional agent guides for Calma workflows: conditioning stances and code-authoring depth. Not shortcuts — discipline prompts that load when the work matches.",
   openGraph: {
-    title: "Skills — Swarm",
+    title: "Skills — Calma",
     description:
-      "An optional catalog of agent guides for Swarm workflows: conditioning stances and code-authoring depth, installable into any agent CLI.",
+      "An optional catalog of agent guides for Calma workflows: conditioning stances and code-authoring depth, installable into any agent CLI.",
     type: "website",
     images: ["/og-skills.png"],
   },
@@ -89,7 +89,7 @@ const authoring = [
   {
     skill: "implement-task",
     icon: Terminal,
-    use: "the full Swarm task-packet frame, long form",
+    use: "the full Calma task-packet frame, long form",
   },
   {
     skill: "write-feature",
@@ -150,7 +150,7 @@ export default function SkillsPage() {
             </span>
           </div>
           <h1 className="font-heading text-4xl font-bold uppercase tracking-tight text-concrete-100 sm:text-5xl lg:text-6xl">
-            Swarm <span className="text-swarm-yellow text-glow">skills</span>
+            Calma <span className="text-swarm-yellow text-glow">skills</span>
             <TerminalCursor className="ml-2 align-middle" />
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
@@ -312,7 +312,7 @@ export default function SkillsPage() {
             <span>authoring.guide — write your own</span>
           </div>
           <h2 className="mt-3 font-heading text-2xl font-bold uppercase tracking-tight text-concrete-100">
-            How to write a Swarm skill
+            How to write a Calma skill
           </h2>
           <p className="mt-4 text-concrete-400">
             Skills are plain markdown, but their structure is evidence-backed: directive
@@ -346,7 +346,7 @@ export default function SkillsPage() {
               href="/cli/"
               className="text-swarm-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              swarm-cli
+              calma-cli
             </Link>
             . It is real, but the command surface is still settling.
           </p>

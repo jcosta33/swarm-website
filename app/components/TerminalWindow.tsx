@@ -7,7 +7,7 @@ export interface TerminalWindowProps {
   title?: string;
 }
 
-export function TerminalWindow({ children, className = "", title = "swarm" }: TerminalWindowProps) {
+export function TerminalWindow({ children, className = "", title = "calma" }: TerminalWindowProps) {
   return (
     <div
       role="region"

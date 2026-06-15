@@ -26,17 +26,17 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://swarmframework.dev"),
-  title: "Swarm — A spec-and-review workflow for coding agents",
+  title: "Calma — A spec-and-review workflow for coding agents",
   description:
-    "Swarm is a lightweight framework that helps teams ship better code with agents: specs, tasks, reviews, findings, and change plans.",
+    "Calma is a lightweight framework that helps teams ship better code with agents: specs, tasks, reviews, findings, and change plans.",
   openGraph: {
     type: "website",
-    siteName: "Swarm",
+    siteName: "Calma",
     images: ["/og-home.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Swarm — A spec-and-review workflow for coding agents",
+    title: "Calma — A spec-and-review workflow for coding agents",
     description:
       "Specs agents can work from, tasks that bound them, and reviews that show the evidence. Plain markdown, any agent, no runtime.",
     images: ["/og-home.png"],

@@ -27,13 +27,13 @@ import { SignalPulse } from "./components/SignalPulse";
 import { PilotLamp } from "./components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "Swarm — specs for humans, tasks for agents",
+  title: "Calma — specs for humans, tasks for agents",
   description:
-    "AI writes code that looks right. Swarm is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
+    "AI writes code that looks right. Calma is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
   openGraph: {
-    title: "Swarm — specs for humans, tasks for agents",
+    title: "Calma — specs for humans, tasks for agents",
     description:
-      "AI writes code that looks right. Swarm is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
+      "AI writes code that looks right. Calma is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
     type: "website",
     images: ["/og-home.png"],
   },
@@ -83,13 +83,13 @@ const walls = [
 const features = [
   {
     title: "Spec-first, not vibes-first",
-    command: "swarm new",
+    command: "calma new",
     description:
       "Write the contract once. The task packet bounds scope and tells the agent, in writing, what not to touch.",
   },
   {
     title: "Review by exception",
-    command: "swarm check",
+    command: "calma check",
     description:
       "Every requirement names how it is verified. The review packet shows the evidence per line — so you read the exceptions, not the whole 40-file diff.",
   },
@@ -132,17 +132,17 @@ export default function HomePage() {
             <Panel brushed className="mx-auto mt-10 max-w-2xl p-2 text-left">
               <TerminalWindow>
                 <p className="text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> swarm status
+                  <span className="text-swarm-yellow">$</span> calma status
                 </p>
                 <p className="mt-1 text-concrete-100">
                   Only 29% of developers trust the accuracy of AI output. 84% use it anyway.
                 </p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> swarm init
+                  <span className="text-swarm-yellow">$</span> calma init
                 </p>
                 <p className="mt-1 text-drone-green">✓ scaffolded .agents/ workspace</p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> swarm new spec --title &quot;every claim needs evidence&quot;
+                  <span className="text-swarm-yellow">$</span> calma new spec --title &quot;every claim needs evidence&quot;
                 </p>
                 <p className="mt-1 text-concrete-100">
                   Turn tickets into clear specs, specs into agent-ready tasks, and agent output into
@@ -214,7 +214,7 @@ export default function HomePage() {
               >
                 METR
               </Link>
-              ). Swarm does not answer that with hustle. It turns every change into a spec, a task,
+              ). Calma does not answer that with hustle. It turns every change into a spec, a task,
               and a review packet with pasted evidence — so &quot;almost right&quot; has to prove it is right
               before it ships.
             </p>
@@ -406,7 +406,7 @@ export default function HomePage() {
             Stop shipping &quot;almost right&quot; code.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-concrete-400">
-            Swarm will not make you 10x, and it is not trying to replace you — it is trying to put you
+            Calma will not make you 10x, and it is not trying to replace you — it is trying to put you
             back in charge of the firehose. Copy the starter kit, write one spec, and give your agents a
             contract they can read. You still make the calls; they just finally know what you meant.
           </p>
@@ -427,7 +427,7 @@ export default function HomePage() {
               href="/what-is-swarm/"
               className="text-swarm-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              what Swarm is
+              what Calma is
             </Link>{" "}
             or{" "}
             <Link

@@ -3,7 +3,7 @@ export function Logo({ className = "" }: { className?: string }) {
     <span
       className={`inline-flex items-center gap-1.5 font-heading text-base font-bold uppercase tracking-tight ${className}`}
     >
-      Swarm
+      Calma
       <span className="relative inline-flex h-[1.1em] w-[1.1em] items-center justify-center rounded-[2px] border border-panel-border bg-panel-edge shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_1px_2px_rgba(0,0,0,0.5)]">
         <span className="absolute inset-0 rounded-[2px] bg-gradient-to-b from-white/10 to-transparent" />
         <svg
