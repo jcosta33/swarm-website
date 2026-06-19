@@ -101,7 +101,7 @@ const features = [
   },
   {
     title: "No enforcement theater",
-    command: "# convention · checklist · enforced",
+    command: "# convention · checklist · toolable · enforced",
     description:
       "Every rule says what kind of guarantee it is — and cheerfully admits when the honest answer is “nothing checks this yet.”",
   },
@@ -140,9 +140,9 @@ export default function HomePage() {
                 <p className="mt-2 text-concrete-500">
                   <span className="text-swarm-yellow">$</span> swarm init
                 </p>
-                <p className="mt-1 text-drone-green">✓ scaffolded .agents/ workspace</p>
+                <p className="mt-1 text-drone-green">✓ scaffolded workspace (specs/, tasks/, reviews/, status.md)</p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> swarm new spec --title &quot;every claim needs evidence&quot;
+                  <span className="text-swarm-yellow">$</span> swarm new spec evidence --title &quot;every claim needs evidence&quot;
                 </p>
                 <p className="mt-1 text-concrete-100">
                   Turn tickets into clear specs, specs into agent-ready tasks, and agent output into
