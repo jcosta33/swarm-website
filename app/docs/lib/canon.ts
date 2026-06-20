@@ -4,7 +4,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
-export const CANON = path.join(process.cwd(), "..", "swarm", "docs");
+// The canon: the local sibling checkout in dev, else the vendored clone the prebuild step fetches
+// on CI/Vercel (see scripts/ensure-canon.mjs). Single source either way; the vendor copy is ephemeral.
+const SIBLING = path.join(process.cwd(), "..", "swarm", "docs");
+const VENDOR = path.join(process.cwd(), ".swarm-canon", "docs");
+export const CANON = fs.existsSync(SIBLING) ? SIBLING : VENDOR;
 
 export function canonAvailable(): boolean {
   return fs.existsSync(CANON);
