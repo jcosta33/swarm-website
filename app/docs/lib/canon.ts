@@ -11,7 +11,11 @@ export function canonAvailable(): boolean {
 }
 
 // Every .md under the canon, as a slug ('01-what-is-swarm', 'reference/checks', 'adrs/0091-...').
+// Guard: if the canon is absent (e.g. a CI/Vercel build without the sibling swarm repo), return []
+// rather than throwing — the build degrades to an empty docs tree instead of a hard crash. W3 must
+// make the canon available to the build (submodule or pre-build sync). [skeptic REVISE]
 export function listDocs(): string[] {
+  if (!canonAvailable()) return [];
   const out: string[] = [];
   const walk = (dir: string) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
