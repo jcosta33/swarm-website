@@ -103,7 +103,7 @@ export default function CliPage() {
           <span>install.sh</span>
         </div>
         <Panel brushed className="p-2">
-          <TerminalWindow title="terminal">
+          <TerminalWindow title="terminal" ariaLabel="install">
             <p className="text-concrete-500">
               # not on npm yet — clone, build, and link from source; the binary it provides is called swarm
             </p>
@@ -125,7 +125,7 @@ export default function CliPage() {
           <span>the-loop.sh — a task, end to end</span>
         </div>
         <Panel brushed className="p-2">
-          <TerminalWindow title="terminal">
+          <TerminalWindow title="terminal" ariaLabel="example session">
             <p className="text-concrete-500"># scaffold a workspace first — see Get started</p>
             <p className="text-concrete-100">
               <span className="text-swarm-yellow">$</span> swarm check{" "}
