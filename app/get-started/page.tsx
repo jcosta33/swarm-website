@@ -221,6 +221,28 @@ export default function GetStartedPage() {
       </Section>
 
       <Section>
+        <Card screws className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-4">
+            <KitIcon>
+              <Terminal className="h-6 w-6" aria-hidden="true" />
+            </KitIcon>
+            <div>
+              <Heading>On Claude Code?</Heading>
+              <p className="mt-2 text-concrete-400">
+                Copy a worker definition — an independent reviewer, a read-only explorer, a bounded
+                spec author — each running a role in a fresh, isolated context.
+              </p>
+            </div>
+          </div>
+          <Button variant="secondary" asChild className="w-full md:w-auto">
+            <Link href="/agents/">
+              Browse agents <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
+        </Card>
+      </Section>
+
+      <Section>
         <p className="text-concrete-400">
           Not sure which path fits? Read{" "}
           <Link

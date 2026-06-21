@@ -11,6 +11,7 @@ const navLinks = [
   { label: "What is Calma", href: "/what-is-swarm" },
   { label: "Loop", href: "/the-loop" },
   { label: "Skills", href: "/skills" },
+  { label: "Agents", href: "/agents" },
   { label: "CLI", href: "/cli" },
   { label: "Get started", href: "/get-started" },
   { label: "Docs", href: "/docs" },
@@ -20,6 +21,7 @@ const navLinks = [
 const footerLinks = [
   { label: "Get started", href: "/get-started" },
   { label: "Skills", href: "/skills" },
+  { label: "Agents", href: "/agents" },
   { label: "CLI", href: "/cli" },
   { label: "GitHub", href: "https://github.com/jcosta33/swarm" },
   { label: "Starter kit", href: "https://github.com/jcosta33/swarm-starter-kit" },

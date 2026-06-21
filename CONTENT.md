@@ -20,6 +20,7 @@ The framework's canonical docs live in the `swarm` repo:
 | `/the-loop` | `docs/02-basic-workflow.md`, `specs/design-system/spec.md` (loop diagram) |
 | `/get-started` | `docs/ADOPTING.md` (adoption paths) |
 | `/skills` | `swarm-skills` repo (future work) |
+| `/agents` | `swarm-agents` repo (Claude-Code-first worker definitions; ADR-0092) |
 | `/cli` | `swarm-cli` repo (future work) |
 
 ## Quarterly review

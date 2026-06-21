@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/get-started/",
     "/skills/",
     "/skills/writing/",
+    "/agents/",
     "/cli/",
   ];
   const marketingEntries = marketing.map((p) => ({ url: `${BASE_URL}${p}`, lastModified: now }));
