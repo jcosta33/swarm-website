@@ -2,27 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import type { NavSection } from "../lib/canon";
 
 const norm = (p: string) => p.replace(/\/+$/, "");
 
 // Client component: the layout (server) computes `nav` and passes it down so node:fs stays server-side;
 // here we light up the active page from the pathname. Collapsed groups auto-open when they hold it.
-// On mobile the whole tree is tucked behind a disclosure so the opened doc isn't pushed ~1.8 screens
-// down past the full nav; on desktop (and no-JS) it stays expanded and the toggle is hidden via CSS.
+// The mobile collapse is a PURE-CSS disclosure (a visually-hidden checkbox + label, see docs.css) —
+// no JS toggles the open state, so the collapsed mobile state is the initial render and there is no
+// post-hydration layout shift. On desktop (and with no JS/CSS) the nav is simply always shown.
 export function DocsNav({ nav }: { nav: NavSection[] }) {
   const current = norm(usePathname() || "");
   const isActive = (slug: string) => norm(`/docs/${slug}`) === current;
-  const [open, setOpen] = useState(true); // SSR + desktop default: expanded
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 64rem)");
-    const sync = () => setOpen(!mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
 
   const groups = nav.map((sec) => {
     const items = sec.items.map((it) => {
@@ -57,15 +48,14 @@ export function DocsNav({ nav }: { nav: NavSection[] }) {
   });
 
   return (
-    <details
-      className="docs-nav-disclosure"
-      open={open}
-      onToggle={(e) => setOpen((e.currentTarget as HTMLDetailsElement).open)}
-    >
-      <summary className="docs-nav-summary">Browse the docs</summary>
+    <div className="docs-nav-disclosure">
+      <input type="checkbox" id="docs-nav-toggle" className="docs-nav-toggle" aria-label="Toggle documentation menu" />
+      <label htmlFor="docs-nav-toggle" className="docs-nav-summary">
+        Browse the docs
+      </label>
       <nav className="docs-nav" aria-label="Documentation">
         {groups}
       </nav>
-    </details>
+    </div>
   );
 }

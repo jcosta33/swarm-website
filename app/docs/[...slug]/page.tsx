@@ -90,9 +90,15 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   const dir = path.posix.dirname(slugPath);
   const html = await renderDoc(md, dir === "." ? "" : dir);
 
-  // Prev/next within the reading order, so a deep-doc / search landing isn't a dead end.
+  // Prev/next within the reading order, so a deep-doc / search landing isn't a dead end. Use each
+  // doc's real title (not the short nav label) so a section-index page reads as e.g. "Worked
+  // examples", never a bare "Overview" that's ambiguous at a section seam.
   const seq = docSequence();
   const i = seq.findIndex((d) => d.slug === slugPath);
+  const pagerLabel = (s: string): string => {
+    const m = readDoc(s);
+    return m ? titleOf(m) : seq.find((d) => d.slug === s)?.label ?? s;
+  };
   const prev = i > 0 ? seq[i - 1] : null;
   const next = i >= 0 && i < seq.length - 1 ? seq[i + 1] : null;
 
@@ -107,7 +113,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
           {prev ? (
             <Link className="docs-pager-link docs-pager-prev" href={`/docs/${prev.slug}/`} rel="prev">
               <span className="docs-pager-dir">← Previous</span>
-              <span className="docs-pager-title">{prev.label}</span>
+              <span className="docs-pager-title">{pagerLabel(prev.slug)}</span>
             </Link>
           ) : (
             <span />
@@ -115,7 +121,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
           {next ? (
             <Link className="docs-pager-link docs-pager-next" href={`/docs/${next.slug}/`} rel="next">
               <span className="docs-pager-dir">Next →</span>
-              <span className="docs-pager-title">{next.label}</span>
+              <span className="docs-pager-title">{pagerLabel(next.slug)}</span>
             </Link>
           ) : (
             <span />

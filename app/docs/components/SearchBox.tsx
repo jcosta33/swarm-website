@@ -55,6 +55,8 @@ export function SearchBox() {
     document.body.appendChild(s);
   }, []);
 
-  // role="search" turns this into a named landmark (aria-label on a roleless <div> is ignored).
-  return <div className="docs-search" ref={ref} role="search" aria-label="Search documentation" />;
+  // No role/aria-label on the wrapper: on the built site Pagefind renders its own
+  // <form role="search" aria-label="Search this site">, so a wrapper role would create a second,
+  // duplicate search landmark. The input itself is still named via the aria-label pass above.
+  return <div className="docs-search" ref={ref} />;
 }

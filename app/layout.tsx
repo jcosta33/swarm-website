@@ -19,6 +19,12 @@ const siteGraph = {
       url: SITE_URL,
       description:
         "Calma is a lightweight spec-and-review workflow for teams shipping code with coding agents.",
+      sameAs: [
+        "https://github.com/jcosta33/swarm",
+        "https://github.com/jcosta33/swarm-starter-kit",
+        "https://github.com/jcosta33/swarm-skills",
+        "https://github.com/jcosta33/swarm-cli",
+      ],
     },
     {
       "@type": "WebSite",

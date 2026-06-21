@@ -174,7 +174,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   link={link}
                   isActive={active}
                   showIndicator
-                  className={`text-sm font-medium transition-colors focus-ring rounded-sm ${
+                  className={`text-sm font-medium transition-[color] focus-ring rounded-sm ${
                     active
                       ? "text-swarm-yellow"
                       : "text-concrete-400 hover:text-swarm-yellow"
@@ -216,7 +216,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                     isActive={active}
                     showIndicator
                     onClick={() => setMenuOpen(false)}
-                    className={`min-h-11 -mx-2 px-2 text-base font-medium transition-colors focus-ring rounded-sm ${
+                    className={`min-h-11 -mx-2 px-2 text-base font-medium transition-[color] focus-ring rounded-sm ${
                       active
                         ? "text-swarm-yellow"
                         : "text-concrete-100 hover:text-swarm-yellow"
@@ -265,7 +265,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   link={link}
                   isActive={active}
                   showIndicator
-                  className={`min-h-11 text-sm font-medium transition-colors focus-ring rounded-sm ${
+                  className={`min-h-11 text-sm font-medium transition-[color] focus-ring rounded-sm ${
                     active
                       ? "text-swarm-yellow"
                       : "text-concrete-400 hover:text-swarm-yellow"
