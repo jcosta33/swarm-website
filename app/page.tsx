@@ -148,7 +148,7 @@ const faqs = [
   },
   {
     q: "Is there a runtime or a service to install?",
-    a: "No. The whole workflow is markdown files you can read, diff, and grep. An optional reference CLI does chores — checking specs, isolating tasks in worktrees, printing the board — but it never runs your agent and never renders the verdict, and you can skip it entirely.",
+    a: "No. The whole workflow is markdown files you can read, diff, and grep. An optional reference CLI does chores — checking specs, isolating tasks in worktrees, printing the board, and launching a prepared task on your agent — but it never becomes an agent of its own (no model loop, no edits) and never renders the verdict, and you can skip it entirely.",
   },
   {
     q: "What is “review by exception”?",
