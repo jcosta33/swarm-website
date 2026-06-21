@@ -23,9 +23,10 @@ import { TerminalCursor } from "./components/TerminalCursor";
 import { TerminalWindow } from "./components/TerminalWindow";
 import { DroneIcon } from "./components/DroneIcon";
 import { HexBadge } from "./components/HexBadge";
-import { SignalPulse } from "./components/SignalPulse";
 import { PilotLamp } from "./components/PilotLamp";
 import { JsonLd } from "./components/JsonLd";
+import { Eyebrow } from "./components/Eyebrow";
+import { PageHero } from "./components/PageHero";
 
 // The product itself, as a citable entity for answer engines and rich results. Version + the free
 // offer match the v0.1.0 badge and the markdown-only, no-runtime reality stated in the copy.
@@ -137,21 +138,17 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden border-b border-panel-border py-24 sm:py-32">
         <HeroHexGrid />
         <Section className="relative z-10">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-3 panel-raised brushed-metal px-4 py-1.5">
-              <SignalPulse className="h-4 w-4" />
-              <span className="text-xs font-mono font-medium uppercase tracking-widest engraved">
-                v0.1.0 — spec-and-review workflow
-              </span>
-            </div>
-
-            <h1 className="font-heading text-4xl font-bold uppercase tracking-tight text-concrete-100 sm:text-6xl lg:text-7xl">
-              AI writes code.
-              <br />
-              <span className="text-swarm-yellow text-glow">You keep the wheel.</span>
-              <TerminalCursor className="ml-2 align-middle" />
-            </h1>
-
+          <PageHero
+            eyebrow="v0.1.0 — spec-and-review workflow"
+            titleSize="hero"
+            title={
+              <>
+                AI writes code.
+                <br />
+                <span className="text-swarm-yellow text-glow">You keep the wheel.</span>
+              </>
+            }
+          >
             <Panel brushed className="mx-auto mt-10 max-w-2xl p-2 text-left">
               <TerminalWindow>
                 <p className="text-concrete-500">
@@ -205,7 +202,7 @@ export default function HomePage() {
                 <Link href="/docs/">Read the docs</Link>
               </Button>
             </div>
-          </div>
+          </PageHero>
         </Section>
       </section>
 
@@ -415,12 +412,12 @@ export default function HomePage() {
       <section className="relative py-24">
         <HazardStripe height="sm" />
         <Section className="py-16 text-center">
-          <div className="mx-auto inline-flex items-center gap-3 panel-raised brushed-metal px-4 py-1.5">
-            <Users className="h-4 w-4 text-drone-green" aria-hidden="true" />
-            <span className="text-xs font-mono font-medium uppercase tracking-widest engraved">
-              human approval required
-            </span>
-          </div>
+          <Eyebrow
+            icon={<Users className="h-4 w-4 text-drone-green" aria-hidden="true" />}
+            className="mx-auto"
+          >
+            human approval required
+          </Eyebrow>
           <h2 className="mt-6 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
             Stop shipping &quot;almost right&quot; code.
           </h2>

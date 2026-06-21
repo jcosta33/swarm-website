@@ -40,19 +40,35 @@ export function SearchBox() {
         mo.observe(el, { childList: true, subtree: true });
       }
     };
-    if (window.PagefindUI) {
-      init();
+    const load = () => {
+      if (window.PagefindUI) {
+        init();
+        return;
+      }
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "/pagefind/pagefind-ui.css";
+      document.head.appendChild(css);
+      const s = document.createElement("script");
+      s.src = "/pagefind/pagefind-ui.js";
+      s.async = true;
+      s.onload = init;
+      document.body.appendChild(s);
+    };
+
+    // A deep-linked search (?q=) must load now so it can run on arrival; otherwise defer the ~131KB
+    // Pagefind UI off the critical path until the browser is idle. The .docs-search min-height
+    // (docs.css) reserves the input's space, so the deferred mount causes no layout shift.
+    if (new URLSearchParams(window.location.search).get("q")) {
+      load();
       return;
     }
-    const css = document.createElement("link");
-    css.rel = "stylesheet";
-    css.href = "/pagefind/pagefind-ui.css";
-    document.head.appendChild(css);
-    const s = document.createElement("script");
-    s.src = "/pagefind/pagefind-ui.js";
-    s.async = true;
-    s.onload = init;
-    document.body.appendChild(s);
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(load, { timeout: 3000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = window.setTimeout(load, 1200);
+    return () => window.clearTimeout(t);
   }, []);
 
   // No role/aria-label on the wrapper: on the built site Pagefind renders its own

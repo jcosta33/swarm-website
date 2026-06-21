@@ -20,6 +20,9 @@ if (existsSync(sibling)) {
 } else if (existsSync(vendorDocs)) {
   console.log("[ensure-canon] using the vendored .swarm-canon/docs");
 } else {
-  console.log(`[ensure-canon] cloning ${repo}@${ref} -> .swarm-canon`);
-  execSync(`git clone --depth 1 --branch ${ref} ${repo} ${vendor}`, { stdio: "inherit" });
+  // Full clone (NOT --depth 1): the docs site reads per-file git dates from this history for
+  // sitemap lastModified + each doc's TechArticle datePublished/dateModified. A shallow clone would
+  // collapse every file's date to the single HEAD commit. The canon is markdown-only, so cheap.
+  console.log(`[ensure-canon] cloning ${repo}@${ref} -> .swarm-canon (full history for doc dates)`);
+  execSync(`git clone --branch ${ref} ${repo} ${vendor}`, { stdio: "inherit" });
 }

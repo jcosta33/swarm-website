@@ -2,7 +2,7 @@ import path from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { listDocs, readDoc, humanizeSegment, docSequence } from "../lib/canon";
+import { listDocs, readDoc, humanizeSegment, docSequence, docDates } from "../lib/canon";
 import { renderDoc, titleOf, descriptionOf } from "../lib/render";
 import { JsonLd } from "../../components/JsonLd";
 import { DocsToc } from "../components/DocsToc";
@@ -43,7 +43,12 @@ function breadcrumbFor(slug: string[], leafTitle: string) {
 
 // TechArticle for each doc — gives answer engines an article-level entity (headline + description)
 // tied back to the WebSite/Organization, so a doc page is citable as a documentation article.
-function articleFor(slug: string[], title: string, description: string) {
+function articleFor(
+  slug: string[],
+  title: string,
+  description: string,
+  dates: { created: string; modified: string } | null
+) {
   const url = `${SITE_URL}/docs/${slug.join("/")}/`;
   // Google recommends headline <=110 chars; a few ADR titles run longer. Keep the full title in
   // `name` and a word-boundary-trimmed form in `headline`.
@@ -59,6 +64,8 @@ function articleFor(slug: string[], title: string, description: string) {
     url,
     mainEntityOfPage: url,
     image: `${SITE_URL}/og-home.png`,
+    // Real git dates when history is available (omitted otherwise, never a fake build-time date).
+    ...(dates ? { datePublished: dates.created, dateModified: dates.modified } : {}),
     isPartOf: { "@id": `${SITE_URL}/#website` },
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
@@ -116,7 +123,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   return (
     <>
       <JsonLd data={breadcrumbFor(slug, titleOf(md))} />
-      <JsonLd data={articleFor(slug, titleOf(md), descriptionOf(md))} />
+      <JsonLd data={articleFor(slug, titleOf(md), descriptionOf(md), docDates(slugPath))} />
       <div className="docs-prose" data-pagefind-body>
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
