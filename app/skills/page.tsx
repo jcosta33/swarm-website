@@ -306,7 +306,7 @@ export default function SkillsPage() {
       </Section>
 
       <Section>
-        <Card hardware className="max-w-2xl border-panel-border hover:border-brass/50">
+        <Card screws className="max-w-2xl border-panel-border hover:border-brass/50">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-brass">
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>authoring.guide — write your own</span>
@@ -328,7 +328,7 @@ export default function SkillsPage() {
       </Section>
 
       <Section>
-        <Card hardware className="max-w-2xl border-panel-border">
+        <Card screws className="max-w-2xl border-panel-border">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-concrete-400">
             <ShieldCheck className="h-4 w-4" />
             <span>security.note — no runtime</span>

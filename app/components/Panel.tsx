@@ -22,7 +22,6 @@ export function Panel({
   const base = variant === "inset" ? "panel-inset" : "panel-raised";
   return (
     <div
-      data-screws={screws ? "true" : undefined}
       className={`${base} relative overflow-hidden ${
         screws ? "screw-corners screw-corners-bottom" : ""
       } ${className}`}

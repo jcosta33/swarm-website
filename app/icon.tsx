@@ -1,10 +1,9 @@
 import { ImageResponse } from "next/og";
 
-// Generated at build (works under output:export) — no logo asset needed. The hex "drone" mark
-// (matches DroneIcon) in swarm-yellow on the chassis black; a visual mark, no brand text.
-export const dynamic = "force-static"; // required for output:export (generated at build, not runtime)
-export const size = { width: 512, height: 512 };
-export const contentType = "image/png";
+// Generated at build (works under output:export) — no logo asset needed. The hex "drone" mark in
+// swarm-yellow on chassis black; a visual mark, no brand text. Emits 192 + 512 (purpose any) — the
+// pair Chrome requires for PWA installability, and the favicon Next wires into <head>.
+export const dynamic = "force-static";
 
 const MARK =
   "data:image/svg+xml," +
@@ -17,7 +16,16 @@ const MARK =
       `</svg>`
   );
 
-export default function Icon() {
+export function generateImageMetadata() {
+  return [
+    { id: "icon-192", size: { width: 192, height: 192 }, contentType: "image/png" },
+    { id: "icon-512", size: { width: 512, height: 512 }, contentType: "image/png" },
+  ];
+}
+
+export default function Icon({ id }: { id: string }) {
+  const dim = id === "icon-192" ? 192 : 512;
+  const mark = Math.round(dim * 0.66);
   return new ImageResponse(
     (
       <div
@@ -30,10 +38,9 @@ export default function Icon() {
           background: "#0A0A08",
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={MARK} width={340} height={340} alt="" />
+        <img src={MARK} width={mark} height={mark} alt="" />
       </div>
     ),
-    { ...size }
+    { width: dim, height: dim }
   );
 }

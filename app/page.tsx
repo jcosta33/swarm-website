@@ -242,7 +242,7 @@ export default function HomePage() {
               return (
                 <Card
                   key={wall.title}
-                  hardware
+                  screws
                   rivets
                   className="group h-full border-panel-border hover:border-hazard-orange/50"
                 >
@@ -389,7 +389,7 @@ export default function HomePage() {
             {features.map((feature) => (
               <Card
                 key={feature.title}
-                hardware
+                screws
                 className="group h-full border-panel-border hover:border-swarm-yellow/50"
               >
                 <div className="flex items-start justify-between gap-2">

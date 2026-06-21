@@ -268,7 +268,7 @@ export default function WhatIsCalmaPage() {
         <ul className="reveal grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {failureModes.map((fm) => (
             <li key={fm.mode}>
-              <Card hardware className="group h-full border-panel-border hover:border-hazard-orange/50">
+              <Card screws className="group h-full border-panel-border hover:border-hazard-orange/50">
                 <div className="flex items-start gap-3">
                   <HexBadge color="orange">
                     <ShieldAlert className="h-5 w-5" aria-hidden="true" />
@@ -288,7 +288,7 @@ export default function WhatIsCalmaPage() {
       </Section>
 
       <Section>
-        <Card hardware className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <Card screws className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <Heading>See how it actually runs</Heading>
             <p className="mt-2 text-concrete-400">

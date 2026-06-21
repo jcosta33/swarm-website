@@ -101,7 +101,7 @@ export default function WritingSkillsPage() {
       </Section>
 
       <Section>
-        <Card hardware className="mx-auto max-w-4xl border-panel-border">
+        <Card screws className="mx-auto max-w-4xl border-panel-border">
           <nav aria-label="On this page">
             <p className="text-xs font-mono uppercase tracking-wide text-concrete-500">On this page</p>
             <ol className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
@@ -197,7 +197,7 @@ export default function WritingSkillsPage() {
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Card hardware className="border-panel-border hover:border-hazard-orange/50">
+          <Card screws className="border-panel-border hover:border-hazard-orange/50">
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-hazard-orange">
               Passive (weak)
             </h3>
@@ -207,7 +207,7 @@ export default function WritingSkillsPage() {
             </p>
             <p className="mt-3 text-xs text-concrete-400">activates less reliably (self-reported)</p>
           </Card>
-          <Card hardware className="border-panel-border hover:border-drone-green/50">
+          <Card screws className="border-panel-border hover:border-drone-green/50">
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-drone-green">
               Directive (strong)
             </h3>
@@ -267,7 +267,7 @@ export default function WritingSkillsPage() {
           {anatomyItems.map((item) => {
             const Icon = item.icon;
             return (
-              <Card key={item.title} hardware className="h-full border-panel-border">
+              <Card key={item.title} screws className="h-full border-panel-border">
                 <HexBadge color="green" className="mb-4">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </HexBadge>
@@ -329,7 +329,7 @@ export default function WritingSkillsPage() {
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
-          <Card hardware className="border-panel-border">
+          <Card screws className="border-panel-border">
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
               empirical-proof
             </h3>
@@ -338,7 +338,7 @@ export default function WritingSkillsPage() {
               paraphrase, no &ldquo;✅ all passing&rdquo;.
             </p>
           </Card>
-          <Card hardware className="border-panel-border">
+          <Card screws className="border-panel-border">
             <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
               write-testing
             </h3>
@@ -465,7 +465,7 @@ export default function WritingSkillsPage() {
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {scopeExclusions.map((item) => (
             <li key={item.title}>
-              <Card hardware className="h-full border-panel-border">
+              <Card screws className="h-full border-panel-border">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-hazard-orange">
                     {item.title}
@@ -484,7 +484,7 @@ export default function WritingSkillsPage() {
       </Section>
 
       <Section id="next-steps">
-        <Card hardware className="max-w-3xl border-panel-border">
+        <Card screws className="max-w-3xl border-panel-border">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-concrete-400">
             <GitBranch className="h-4 w-4" />
             <span>next steps</span>

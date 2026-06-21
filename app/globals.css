@@ -245,9 +245,7 @@ body::after {
 }
 
 .screw-corners::before,
-.screw-corners::after,
-[data-screws="true"]::before,
-[data-screws="true"]::after {
+.screw-corners::after {
   content: "";
   position: absolute;
   width: 12px;
@@ -262,14 +260,12 @@ body::after {
   z-index: 10;
 }
 
-.screw-corners::before,
-[data-screws="true"]::before {
+.screw-corners::before {
   top: 8px;
   left: 8px;
 }
 
-.screw-corners::after,
-[data-screws="true"]::after {
+.screw-corners::after {
   top: 8px;
   right: 8px;
 }

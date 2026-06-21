@@ -3,40 +3,34 @@
 // (W3: a git submodule or a pre-build sync of swarm/docs — tracked as a deploy concern).
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 
 // The canon: the local sibling checkout in dev, else the vendored clone the prebuild step fetches
 // on CI/Vercel (see scripts/ensure-canon.mjs). Single source either way; the vendor copy is ephemeral.
 const SIBLING = path.join(process.cwd(), "..", "swarm", "docs");
 const VENDOR = path.join(process.cwd(), ".swarm-canon", "docs");
 export const CANON = fs.existsSync(SIBLING) ? SIBLING : VENDOR;
-const REPO_ROOT = path.join(CANON, ".."); // the git repo that contains docs/
 
 export function canonAvailable(): boolean {
   return fs.existsSync(CANON);
 }
 
-// Real created/modified dates for a doc, from the canon's git history (author dates, oldest→newest).
-// Needs full history — ensure-canon.mjs does a full clone (not --depth 1) so this works on Vercel.
-// Degrades to null (caller falls back to build time) if git/history is unavailable. Cached per build.
-const datesCache = new Map<string, { created: string; modified: string } | null>();
-export function docDates(slug: string): { created: string; modified: string } | null {
-  if (datesCache.has(slug)) return datesCache.get(slug) ?? null;
-  let result: { created: string; modified: string } | null = null;
+// Real created/modified dates per doc (git author dates), PRECOMPUTED once by the prebuild
+// (scripts/ensure-canon.mjs -> .swarm-canon-dates.json) so the build spawns no git per doc per
+// worker. Returns null when a doc isn't in the map (untracked, or git unavailable) — the caller then
+// falls back to build time (sitemap) or omits the dates (TechArticle). Loaded + cached once.
+type DocDate = { created: string; modified: string };
+let datesMap: Record<string, DocDate> | null = null;
+function loadDates(): Record<string, DocDate> {
+  if (datesMap) return datesMap;
   try {
-    const rel = path.posix.join("docs", `${slug}.md`);
-    const out = execFileSync(
-      "git",
-      ["-C", REPO_ROOT, "log", "--follow", "--format=%aI", "--", rel],
-      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
-    ).trim();
-    const lines = out.split(/\r?\n/).filter(Boolean);
-    if (lines.length) result = { modified: lines[0], created: lines[lines.length - 1] };
+    datesMap = JSON.parse(fs.readFileSync(path.join(process.cwd(), ".swarm-canon-dates.json"), "utf8"));
   } catch {
-    result = null;
+    datesMap = {};
   }
-  datesCache.set(slug, result);
-  return result;
+  return datesMap as Record<string, DocDate>;
+}
+export function docDates(slug: string): DocDate | null {
+  return loadDates()[slug] ?? null;
 }
 
 // Every .md under the canon, as a slug ('01-what-is-swarm', 'reference/checks', 'adrs/0091-...').

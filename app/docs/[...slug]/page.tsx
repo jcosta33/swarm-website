@@ -11,10 +11,11 @@ export const dynamicParams = false;
 
 const SITE_URL = "https://swarmframework.dev";
 
-// Build a BreadcrumbList where every `item` URL is guaranteed to resolve: section dirs link to their
-// README page when one exists, else fall back to the docs landing — never a dir route that 404s.
+// Build a BreadcrumbList. A section dir links to its README page when one exists; a section with no
+// README (e.g. reference/) emits a name-only, NON-navigable intermediate crumb (no `item`) rather
+// than duplicating the position-1 "Docs" URL — Google rejects breadcrumbs with duplicate item URLs.
 function breadcrumbFor(slug: string[], leafTitle: string) {
-  const crumbs: { name: string; url: string }[] = [{ name: "Docs", url: `${SITE_URL}/docs/` }];
+  const crumbs: { name: string; url?: string }[] = [{ name: "Docs", url: `${SITE_URL}/docs/` }];
   let acc = "";
   slug.forEach((seg, i) => {
     acc += (acc ? "/" : "") + seg;
@@ -26,7 +27,7 @@ function breadcrumbFor(slug: string[], leafTitle: string) {
     crumbs.push(
       readme
         ? { name: titleOf(readme), url: `${SITE_URL}/docs/${acc}/README/` }
-        : { name: humanizeSegment(seg), url: `${SITE_URL}/docs/` }
+        : { name: humanizeSegment(seg) } // no own page -> name-only crumb, no duplicate URL
     );
   });
   return {
@@ -36,7 +37,7 @@ function breadcrumbFor(slug: string[], leafTitle: string) {
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      item: c.url,
+      ...(c.url ? { item: c.url } : {}),
     })),
   };
 }
@@ -61,6 +62,7 @@ function articleFor(
     headline,
     description,
     inLanguage: "en",
+    author: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Calma" },
     url,
     mainEntityOfPage: url,
     image: `${SITE_URL}/og-home.png`,

@@ -68,7 +68,7 @@ export default function KitchenSinkPage() {
             <h3 className="font-heading text-lg font-bold">Default card</h3>
             <p className="mt-2 text-concrete-400">A raised module with a machined lip.</p>
           </Card>
-          <Card hardware brushed rivets>
+          <Card screws brushed rivets>
             <h3 className="font-heading text-lg font-bold">Hardware card</h3>
             <p className="mt-2 text-concrete-400">Visible screws and rivets.</p>
           </Card>
@@ -102,9 +102,9 @@ export default function KitchenSinkPage() {
       <Section className="flex flex-col gap-6">
         <Heading>Rack row</Heading>
         <RackRow>
-          <Card hardware>Module A</Card>
-          <Card hardware>Module B</Card>
-          <Card hardware>Module C</Card>
+          <Card screws>Module A</Card>
+          <Card screws>Module B</Card>
+          <Card screws>Module C</Card>
         </RackRow>
       </Section>
 

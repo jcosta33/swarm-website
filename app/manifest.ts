@@ -14,10 +14,11 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: "#0A0A08",
     theme_color: "#0A0A08",
-    // Next serves the build-generated icons at these extensionless routes (dist/icon, dist/apple-icon).
+    // Build-generated icons (app/icon.tsx generateImageMetadata). 192 + 512 satisfy Chrome's
+    // install criteria.
     icons: [
-      { src: "/icon", sizes: "512x512", type: "image/png", purpose: "any" },
-      { src: "/apple-icon", sizes: "180x180", type: "image/png" },
+      { src: "/icon/icon-192", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icon/icon-512", sizes: "512x512", type: "image/png", purpose: "any" },
     ],
   };
 }

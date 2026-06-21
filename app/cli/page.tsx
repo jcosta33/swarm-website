@@ -173,7 +173,7 @@ export default function CliPage() {
             const Icon = c.icon;
             return (
               <li key={c.cmd} className="min-w-0">
-                <Card hardware className="group h-full border-panel-border hover:border-drone-green/50">
+                <Card screws className="group h-full border-panel-border hover:border-drone-green/50">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex min-w-0 items-start gap-4">
                       <HexBadge color="green">
@@ -215,7 +215,7 @@ export default function CliPage() {
             const Icon = p.icon;
             return (
               <li key={p.title}>
-                <Card hardware className="group h-full border-panel-border hover:border-brass/50">
+                <Card screws className="group h-full border-panel-border hover:border-brass/50">
                   <HexBadge color="orange" className="mb-4">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </HexBadge>
@@ -231,7 +231,7 @@ export default function CliPage() {
       </Section>
 
       <Section>
-        <Card hardware className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <Card screws className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <Heading>Don&apos;t need the CLI yet?</Heading>
             <p className="mt-2 text-concrete-400">
@@ -248,7 +248,7 @@ export default function CliPage() {
       </Section>
 
       <Section>
-        <Card hardware className="max-w-2xl border-panel-border">
+        <Card screws className="max-w-2xl border-panel-border">
           <Heading>Reference repository</Heading>
           <p className="mt-4 text-concrete-400">
             The CLI is developed in the open. Issues, feature requests, and adversarial review are

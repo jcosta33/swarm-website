@@ -67,7 +67,7 @@ export default function GetStartedPage() {
       </Section>
 
       <Section className="reveal grid gap-8 md:grid-cols-2">
-        <Card hardware className="flex flex-col gap-6">
+        <Card screws className="flex flex-col gap-6">
           <KitIcon>
             <Rocket className="h-6 w-6" aria-hidden="true" />
           </KitIcon>
@@ -89,7 +89,7 @@ export default function GetStartedPage() {
           </Button>
         </Card>
 
-        <Card hardware className="flex flex-col gap-6">
+        <Card screws className="flex flex-col gap-6">
           <KitIcon>
             <FolderPlus className="h-6 w-6" aria-hidden="true" />
           </KitIcon>
@@ -199,7 +199,7 @@ export default function GetStartedPage() {
       </Section>
 
       <Section>
-        <Card hardware className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <Card screws className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-start gap-4">
             <KitIcon>
               <Wrench className="h-6 w-6" aria-hidden="true" />

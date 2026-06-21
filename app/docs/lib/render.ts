@@ -22,39 +22,52 @@ const REPO_ROOT = path.join(CANON, ".."); // the swarm repo root (docs/ lives un
 const GH_BLOB = "https://github.com/jcosta33/swarm/blob/main/";
 const repoHas = (repoRel: string): boolean => fs.existsSync(path.join(REPO_ROOT, repoRel));
 
+// Concatenated text of an mdast node (to unwrap a dead link to plain text).
+const mdastText = (n: { type?: string; value?: string; children?: unknown[] }): string =>
+  n.type === "text"
+    ? (n.value ?? "")
+    : (n.children ?? []).map((c) => mdastText(c as typeof n)).join("");
+
 // Rewrite an internal relative link to a site route, resolving relative to the current file's dir.
 // - target under docs/ that exists -> /docs/<slug>  (a directory -> its README if present)
-// - target that escapes docs/, or a dangling/unknown target -> the GitHub source URL (honest:
-//   the file lives in the repo, just not in the docs site; a truly-dangling canon link 404s at
-//   source too — surfaced, not papered over as a /docs route). [skeptic REVISE]
+// - target that exists in the repo but not on the docs site -> the GitHub source URL
+// - a target that exists NOWHERE (canon link-rot — a removed file) -> unwrap to plain text, so a
+//   reader never clicks a styled link into a GitHub 404. (Upstream fix is in the canon.)
 const rewriteMdLinks: Plugin<[string], Root> = (currentDir) => (tree) => {
-  visit(tree, "link", (node) => {
+  visit(tree, "link", (node, index, parent) => {
     const u = node.url ?? "";
     if (/^(https?:|mailto:|#|\/)/.test(u)) return; // external / pure-anchor / already-absolute
     const hash = u.indexOf("#");
     const pathPart = hash >= 0 ? u.slice(0, hash) : u;
     const anchor = hash >= 0 ? u.slice(hash) : "";
     if (pathPart === "") return;
+    const unwrap = () => {
+      if (index !== undefined && parent) {
+        parent.children[index] = { type: "text", value: mdastText(node) };
+      }
+    };
     // repo-relative target (docs/<currentDir>/<pathPart>, normalized)
     const repoTarget = path.posix.normalize(path.posix.join("docs", currentDir, pathPart));
     if (repoTarget.startsWith("docs/")) {
       const docsRel = repoTarget.slice("docs/".length);
       if (pathPart.endsWith(".md")) {
-        node.url = repoHas(repoTarget)
-          ? "/docs/" + docsRel.replace(/\.md$/, "") + anchor
-          : GH_BLOB + repoTarget + anchor; // dangling canon link -> source (canon bug, off the site gate)
+        if (repoHas(repoTarget)) node.url = "/docs/" + docsRel.replace(/\.md$/, "") + anchor;
+        else unwrap(); // dangling canon link -> plain text (was a GitHub 404)
         return;
       }
-      // directory / extensionless -> its README if present, else the source tree
+      // directory / extensionless -> its README if present, else the source tree (if it exists)
       if (repoHas(repoTarget + "/README.md")) {
         node.url = "/docs/" + docsRel.replace(/\/$/, "") + "/README" + anchor;
-      } else {
+      } else if (repoHas(repoTarget)) {
         node.url = GH_BLOB + repoTarget.replace(/\/$/, "") + anchor;
+      } else {
+        unwrap();
       }
       return;
     }
-    // escapes docs/ (e.g. ../../checks/README.md, .agents/...) -> GitHub source
-    node.url = GH_BLOB + repoTarget + anchor;
+    // escapes docs/ (e.g. ../../checks/README.md, .agents/...) -> GitHub source if it exists, else text
+    if (repoHas(repoTarget)) node.url = GH_BLOB + repoTarget + anchor;
+    else unwrap();
   });
 };
 
@@ -134,9 +147,16 @@ export async function renderDoc(
 }
 
 // First H1 as the page title (the canon's numbered/reference pages carry no frontmatter).
+// Strip inline-code ticks AND any heading markers they wrapped (e.g. an H1 containing `## Open
+// decisions` must not leak "## Open decisions" into <title>/og/JSON-LD).
 export function titleOf(markdown: string): string {
   const m = markdown.match(/^#\s+(.+)$/m);
-  return m ? m[1].replace(/`/g, "").trim() : "Swarm docs";
+  if (!m) return "Swarm docs";
+  return m[1]
+    .replace(/`/g, "")
+    .replace(/(^|\s)#{1,6}\s+/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 // First real prose paragraph as the meta description (brand-neutral — the doc's own content).
@@ -153,32 +173,47 @@ export function descriptionOf(markdown: string): string {
   const isHeading = (line: string): boolean => line.startsWith("#");
   const isProse = (line: string): boolean =>
     line !== "" && !isHeading(line) && !/^[>|\-*+`<_]/.test(line);
-  const parts: string[] = [];
-  let started = false;
+  const clean = (s: string): string =>
+    s
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links → text
+      .replace(/[`*_]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  // Collect each prose paragraph with the section heading it sits under. Fenced code blocks are
+  // skipped wholesale — their content isn't prose and must never become the description.
+  const paragraphs: { heading: string; text: string }[] = [];
+  let current: string[] = [];
   let lastHeading = "";
+  let inCode = false;
+  const flush = () => {
+    if (current.length) paragraphs.push({ heading: lastHeading, text: clean(current.join(" ")) });
+    current = [];
+  };
   for (const raw of body.split(/\r?\n/)) {
     const line = raw.trim();
-    if (isHeading(line)) {
-      if (started) break; // a new heading ends the paragraph we were collecting
+    if (line.startsWith("```") || line.startsWith("~~~")) {
+      flush();
+      inCode = !inCode;
+    } else if (inCode) {
+      continue; // inside a fenced code block
+    } else if (isHeading(line)) {
+      flush();
       lastHeading = line.replace(/^#+\s*/, "").replace(/[`*_]/g, "").trim().toLowerCase();
-      continue;
-    }
-    if (!started) {
-      if (!isProse(line)) continue; // skip the H1 / subtitle / front matter until prose begins
-      if (SKIP_SECTIONS.has(lastHeading)) continue; // skip a skipped-section's body, keep scanning
-      started = true;
-      parts.push(line);
+    } else if (isProse(line)) {
+      current.push(line);
     } else {
-      if (!isProse(line)) break; // blank line or non-prose line ends the paragraph
-      parts.push(line);
+      flush(); // blank or non-prose (table/list) ends the current paragraph
     }
   }
-  const text = parts
-    .join(" ")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links → text
-    .replace(/[`*_]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  flush();
+
+  // Skip skipped-section bodies (ADR "Status"); prefer the first substantial paragraph — not a short
+  // colon lead-in like "Three pieces, three homes:" that precedes a table.
+  const candidates = paragraphs.filter((p) => p.text && !SKIP_SECTIONS.has(p.heading));
+  const chosen =
+    candidates.find((p) => p.text.length >= 40 && !p.text.endsWith(":")) ?? candidates[0];
+  const text = chosen?.text ?? "";
   if (!text) return "Swarm documentation";
   if (text.length <= 155) return text;
   const slice = text.slice(0, 152);
