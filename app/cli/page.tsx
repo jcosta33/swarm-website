@@ -151,7 +151,7 @@ export default function CliPage() {
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-drone-green">
-            <Bug className="h-4 w-4" />
+            <Bug className="h-4 w-4" aria-hidden="true" />
             <span>commands.md — kept in sync, checked by test</span>
           </div>
           <Heading className="mt-3">Commands that already dispatch</Heading>

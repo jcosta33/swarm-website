@@ -55,5 +55,6 @@ export function SearchBox() {
     document.body.appendChild(s);
   }, []);
 
-  return <div className="docs-search" ref={ref} aria-label="Search documentation" />;
+  // role="search" turns this into a named landmark (aria-label on a roleless <div> is ignored).
+  return <div className="docs-search" ref={ref} role="search" aria-label="Search documentation" />;
 }

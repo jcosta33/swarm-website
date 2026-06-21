@@ -47,7 +47,10 @@ export function DocsNav({ nav }: { nav: NavSection[] }) {
       </details>
     ) : (
       <div key={sec.title} className="docs-nav-group">
-        <h2>{sec.title}</h2>
+        {/* A styled <p>, not <h2>: the sidebar sits before the article <h1> in the DOM, so heading
+            group titles here would put h2s ahead of the page h1. The <nav> is already a labelled
+            landmark, so these are group labels, not document headings. */}
+        <p className="docs-nav-title">{sec.title}</p>
         <ul>{items}</ul>
       </div>
     );

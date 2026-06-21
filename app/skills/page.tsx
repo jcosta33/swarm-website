@@ -206,7 +206,7 @@ export default function SkillsPage() {
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-swarm-yellow">
-            <Sparkles className="h-4 w-4" />
+            <Sparkles className="h-4 w-4" aria-hidden="true" />
             <span>stances.conf — cognitive postures</span>
           </div>
           <Heading className="mt-3">Conditioning stances</Heading>
@@ -254,7 +254,7 @@ export default function SkillsPage() {
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-drone-green">
-            <Hammer className="h-4 w-4" />
+            <Hammer className="h-4 w-4" aria-hidden="true" />
             <span>authoring.conf — change-shape guides</span>
           </div>
           <Heading className="mt-3">Code-authoring depth</Heading>
@@ -304,7 +304,7 @@ export default function SkillsPage() {
       <Section>
         <Card hardware className="max-w-2xl border-panel-border hover:border-brass/50">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-brass">
-            <Terminal className="h-4 w-4" />
+            <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>authoring.guide — write your own</span>
           </div>
           <Heading className="mt-3">How to write a Calma skill</Heading>

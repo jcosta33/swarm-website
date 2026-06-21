@@ -46,7 +46,11 @@ export type NavSection = { title: string; items: { slug: string; label: string }
 export const humanizeSegment = (seg: string): string =>
   seg.replace(/^\d+[-_]?/, "").replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
-const labelFor = (slug: string): string => humanizeSegment(slug.split("/").pop() ?? slug);
+const labelFor = (slug: string): string => {
+  const base = slug.split("/").pop() ?? slug;
+  // A section's README is its index page — show it as "Overview", not the bare filename.
+  return base === "README" ? "Overview" : humanizeSegment(base);
+};
 
 export function buildNav(): NavSection[] {
   const docs = listDocs();
@@ -55,10 +59,16 @@ export function buildNav(): NavSection[] {
   const examples = docs.filter((s) => s.startsWith("examples/"));
   const reference = docs.filter((s) => s.startsWith("reference/"));
   const adrs = docs.filter((s) => s.startsWith("adrs/"));
+  // A section's own README (its index page) sorts after the numbered entries alphabetically; hoist it
+  // to the front so it reads first in both the sidebar and the prev/next pager.
+  const hoistReadme = (slugs: string[]): string[] => [
+    ...slugs.filter((s) => s.endsWith("/README")),
+    ...slugs.filter((s) => !s.endsWith("/README")),
+  ];
   const sec = (title: string, slugs: string[], collapsed = false): NavSection => ({
     title,
     collapsed,
-    items: slugs.map((slug) => ({ slug, label: labelFor(slug) })),
+    items: hoistReadme(slugs).map((slug) => ({ slug, label: labelFor(slug) })),
   });
   return [
     sec("Start here", top),

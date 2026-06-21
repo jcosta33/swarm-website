@@ -416,7 +416,22 @@ body::after {
 
 /* Mechanical button press */
 .toggle {
-  transition: transform 80ms ease, box-shadow 80ms ease;
+  transition: transform 80ms ease, box-shadow 80ms ease, color 140ms ease, background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+/* CTA micro-interaction — a forward arrow nudges right on hover/focus. Targets lucide's
+   .lucide-arrow-right class specifically (not svg:last-child), so a lone *leading* back-arrow
+   never slides the wrong way. Button-scoped via .btn (the bare .toggle hamburger is unaffected),
+   and fully gated behind reduced-motion — transition AND end-state — so there's no movement at all. */
+@media (prefers-reduced-motion: no-preference) {
+  .btn .lucide-arrow-right {
+    transition: transform 150ms ease;
+  }
+  .btn:hover .lucide-arrow-right,
+  .btn:focus-visible .lucide-arrow-right {
+    transform: translateX(2px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

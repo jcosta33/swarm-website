@@ -183,7 +183,7 @@ export default function WhatIsCalmaPage() {
       <Section className="reveal grid gap-12 lg:grid-cols-2">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-drone-green">
-            <CheckCircle className="h-4 w-4" />
+            <CheckCircle className="h-4 w-4" aria-hidden="true" />
             <span>what it is</span>
           </div>
           <Heading className="mt-3">What Calma is</Heading>
@@ -204,7 +204,7 @@ export default function WhatIsCalmaPage() {
 
         <div>
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-hazard-orange">
-            <XCircle className="h-4 w-4" />
+            <XCircle className="h-4 w-4" aria-hidden="true" />
             <span>what it is not</span>
           </div>
           <Heading className="mt-3">What Calma is not</Heading>
@@ -256,7 +256,7 @@ export default function WhatIsCalmaPage() {
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-hazard-orange">
-            <ShieldAlert className="h-4 w-4" />
+            <ShieldAlert className="h-4 w-4" aria-hidden="true" />
             <span>error.log — failure modes detected</span>
           </div>
           <Heading className="mt-3">Failure modes you are already seeing</Heading>

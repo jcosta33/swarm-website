@@ -192,7 +192,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
             aria-label="Toggle navigation menu"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {menuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
           </button>
         </Section>
 
@@ -252,7 +256,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-6" aria-label="Footer">
+          <nav className="flex flex-wrap gap-x-6 gap-y-1" aria-label="Footer">
             {footerLinks.map((link) => {
               const active = isActiveLink(link.href, pathname);
               return (
@@ -261,7 +265,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   link={link}
                   isActive={active}
                   showIndicator
-                  className={`text-sm font-medium transition-colors focus-ring rounded-sm ${
+                  className={`min-h-11 text-sm font-medium transition-colors focus-ring rounded-sm ${
                     active
                       ? "text-swarm-yellow"
                       : "text-concrete-400 hover:text-swarm-yellow"

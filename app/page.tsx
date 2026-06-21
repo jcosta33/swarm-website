@@ -169,7 +169,8 @@ export default function HomePage() {
                   evidence you can review.
                 </p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> _
+                  <span className="text-swarm-yellow">$</span>{" "}
+                  <TerminalCursor className="ml-0.5 align-middle" />
                 </p>
               </TerminalWindow>
             </Panel>
@@ -209,7 +210,7 @@ export default function HomePage() {
         <Section className="flex flex-col gap-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-hazard-orange">
-              <Terminal className="h-4 w-4" />
+              <Terminal className="h-4 w-4" aria-hidden="true" />
               <span>sys.log — 5 warnings detected</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
@@ -303,7 +304,7 @@ export default function HomePage() {
         <Section className="flex flex-col gap-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-drone-green">
-              <CheckCircle className="h-4 w-4" />
+              <CheckCircle className="h-4 w-4" aria-hidden="true" />
               <span>verify.log — evidence required</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
@@ -376,7 +377,7 @@ export default function HomePage() {
         <Section className="flex flex-col gap-12">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-swarm-yellow">
-              <Shield className="h-4 w-4" />
+              <Shield className="h-4 w-4" aria-hidden="true" />
               <span>how it works — 4 moving parts</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
@@ -411,7 +412,7 @@ export default function HomePage() {
         <HazardStripe height="sm" />
         <Section className="py-16 text-center">
           <div className="mx-auto inline-flex items-center gap-3 panel-raised brushed-metal px-4 py-1.5">
-            <Users className="h-4 w-4 text-drone-green" />
+            <Users className="h-4 w-4 text-drone-green" aria-hidden="true" />
             <span className="text-xs font-mono font-medium uppercase tracking-widest engraved">
               human approval required
             </span>
