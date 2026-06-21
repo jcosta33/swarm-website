@@ -68,3 +68,8 @@ export function buildNav(): NavSection[] {
     sec("ADRs", adrs, true),
   ].filter((s) => s.items.length > 0);
 }
+
+// The docs flattened into reading order (the nav sequence) — backs the per-page prev/next pager.
+export function docSequence(): { slug: string; label: string }[] {
+  return buildNav().flatMap((sec) => sec.items);
+}

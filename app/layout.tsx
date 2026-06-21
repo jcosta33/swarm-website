@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Shell } from "./components/Shell";
@@ -50,6 +50,9 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500"],
+  // Mono is only used for code/labels, never the LCP heading — don't let it preload-compete with
+  // Space Grotesk / Inter on the critical path (Lighthouse mobile flagged the extra preload).
+  preload: false,
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -70,15 +73,18 @@ export const metadata: Metadata = {
     images: ["/og-home.png"],
   },
   twitter: {
+    // Card type only — title/description/image cascade per page from each page's metadata + openGraph,
+    // so every route gets its own card instead of inheriting the home page's everywhere.
     card: "summary_large_image",
-    title: "Calma — A spec-and-review workflow for coding agents",
-    description:
-      "Specs agents can work from, tasks that bound them, and reviews that show the evidence. Plain markdown, any agent, no runtime.",
-    images: ["/og-home.png"],
   },
   alternates: {
     canonical: "/",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0A0A08", // --color-chassis: paints the mobile browser UI to match the dark shell
+  colorScheme: "dark",
 };
 
 export default function RootLayout({

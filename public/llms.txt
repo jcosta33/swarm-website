@@ -29,6 +29,7 @@ Calma keeps a human in charge of the firehose. Agents draft, run, and paste the 
 
 ## Optional
 
+- [Full documentation, concatenated](https://swarmframework.dev/llms-full.txt): Every user-facing doc (the numbered path, the tutorial, and the worked examples) in one markdown file for full-context ingestion.
 - [Documentation home](https://swarmframework.dev/docs/): The full documentation, including the reference layer and the decision ledger.
 - [Get started](https://swarmframework.dev/get-started/): The two adoption paths — copy the starter kit, or run it by hand.
 - [The CLI](https://swarmframework.dev/cli/): The optional reference companion and its command surface.

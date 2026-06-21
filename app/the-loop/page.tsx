@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "Pull → Spec → Task → Run → Review → Close. The six steps that keep humans in the driver seat while agents do the work.",
     type: "website",
+    siteName: "Calma",
     images: ["/og-the-loop.png"],
   },
   alternates: {

@@ -1,7 +1,8 @@
 import path from "node:path";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { listDocs, readDoc, humanizeSegment } from "../lib/canon";
+import { listDocs, readDoc, humanizeSegment, docSequence } from "../lib/canon";
 import { renderDoc, titleOf, descriptionOf } from "../lib/render";
 import { JsonLd } from "../../components/JsonLd";
 
@@ -66,10 +67,45 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   if (md === null) notFound();
   const dir = path.posix.dirname(slugPath);
   const html = await renderDoc(md, dir === "." ? "" : dir);
+
+  // Prev/next within the reading order, so a deep-doc / search landing isn't a dead end.
+  const seq = docSequence();
+  const i = seq.findIndex((d) => d.slug === slugPath);
+  const prev = i > 0 ? seq[i - 1] : null;
+  const next = i >= 0 && i < seq.length - 1 ? seq[i + 1] : null;
+
   return (
     <>
       <JsonLd data={breadcrumbFor(slug, titleOf(md))} />
       <div dangerouslySetInnerHTML={{ __html: html }} />
+
+      {(prev || next) && (
+        <nav className="docs-pager" aria-label="Documentation pages">
+          {prev ? (
+            <Link className="docs-pager-link docs-pager-prev" href={`/docs/${prev.slug}/`} rel="prev">
+              <span className="docs-pager-dir">← Previous</span>
+              <span className="docs-pager-title">{prev.label}</span>
+            </Link>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <Link className="docs-pager-link docs-pager-next" href={`/docs/${next.slug}/`} rel="next">
+              <span className="docs-pager-dir">Next →</span>
+              <span className="docs-pager-title">{next.label}</span>
+            </Link>
+          ) : (
+            <span />
+          )}
+        </nav>
+      )}
+
+      <div className="docs-bridge">
+        <p>
+          Ready to run the loop on your own repo?{" "}
+          <Link href="/get-started/">Get started</Link> — copy the kit and write your first spec.
+        </p>
+      </div>
     </>
   );
 }

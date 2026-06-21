@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     description:
       "Calma is a lightweight spec and review workflow that keeps humans in the driver seat while coding agents do the work. Plain markdown; no runtime required.",
     type: "website",
+    siteName: "Calma",
     images: ["/og-what-is-swarm.png"],
   },
   alternates: {

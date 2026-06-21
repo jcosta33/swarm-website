@@ -89,10 +89,50 @@
    the Pagefind search input, neither of which ships any :focus style of its own. */
 .docs-nav a:focus-visible,
 .docs-nav-group > summary:focus-visible,
+.docs-nav-summary:focus-visible,
 .docs-search input:focus-visible {
   outline: 2px solid var(--color-swarm-yellow);
   outline-offset: 2px;
   border-radius: var(--radius-panel);
+}
+
+/* Mobile sidebar disclosure — hidden on desktop (nav is always expanded there); on mobile it's the
+   collapse toggle that keeps the article above the fold. The disclosure relies on native <details>
+   open/closed (DocsNav drives `open` from a matchMedia), so no force-open CSS hack is needed. */
+.docs-nav-summary {
+  display: none;
+}
+@media (max-width: 64rem) {
+  .docs-nav-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-heading), sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-concrete-100);
+    padding: 0.6rem 0.85rem;
+    background: var(--color-panel-raised);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--radius-panel);
+  }
+  .docs-nav-summary::-webkit-details-marker {
+    display: none;
+  }
+  .docs-nav-summary::after {
+    content: "▾";
+    color: var(--color-brass);
+  }
+  .docs-nav-disclosure[open] > .docs-nav-summary {
+    margin-bottom: 1rem;
+  }
+  .docs-nav-disclosure[open] > .docs-nav-summary::after {
+    content: "▴";
+  }
 }
 
 /* ---------- Search (Pagefind UI, themed via its CSS variables) ---------- */
@@ -107,6 +147,11 @@
   --pagefind-ui-border-radius: var(--radius-panel);
   --pagefind-ui-font: var(--font-sans), sans-serif;
   margin-bottom: 1.5rem;
+}
+/* Pagefind ships its placeholder at opacity:0.2 (~1.8:1 — fails AA). Lift it to a legible cue. */
+.docs-search input::placeholder {
+  opacity: 1;
+  color: var(--color-concrete-500);
 }
 
 /* ---------- Prose ---------- */
@@ -294,6 +339,69 @@
 /* Docs index landing */
 .docs-prose section {
   margin: 1.5rem 0;
+}
+
+/* ---------- Per-page footer: prev/next pager + get-started bridge ---------- */
+.docs-prose .docs-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-panel-border);
+}
+.docs-prose .docs-pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-panel-border);
+  border-radius: var(--radius-panel);
+  background: var(--color-panel-raised);
+  text-decoration: none;
+  transition: border-color 0.12s, background-color 0.12s;
+}
+.docs-prose .docs-pager-link:hover {
+  border-color: var(--color-brass);
+  background: var(--color-panel-recessed);
+}
+.docs-prose .docs-pager-next {
+  text-align: right;
+}
+.docs-prose .docs-pager-dir {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-brass);
+}
+.docs-prose .docs-pager-title {
+  color: var(--color-concrete-100);
+  font-weight: 500;
+}
+.docs-prose .docs-pager-link:hover .docs-pager-title {
+  color: var(--color-swarm-yellow);
+}
+.docs-prose .docs-bridge {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-panel-border);
+  border-left: 3px solid var(--color-swarm-yellow);
+  border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
+  background: var(--color-panel-raised);
+  font-size: 0.95rem;
+  color: var(--color-concrete-300);
+}
+.docs-prose .docs-bridge p {
+  margin: 0;
+}
+@media (max-width: 40rem) {
+  .docs-prose .docs-pager {
+    grid-template-columns: 1fr;
+  }
+  .docs-prose .docs-pager-next {
+    text-align: left;
+  }
 }
 
 @media (max-width: 64rem) { /* lg — matches the global nav's mobile switch */
