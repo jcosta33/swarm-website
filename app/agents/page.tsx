@@ -105,7 +105,7 @@ export default function AgentsPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="agents.catalog — 8 agents · claude code"
+          eyebrow="agents.catalog — 8 agents · claude code · ports to codex"
           title={<>Calma <span className="text-swarm-yellow text-glow">agents</span></>}
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
@@ -305,6 +305,30 @@ export default function AgentsPage() {
             >
               How the delegation trace works →
             </Link>
+          </p>
+        </Card>
+      </Section>
+
+      <Section>
+        <Card screws className="max-w-2xl border-panel-border">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase text-concrete-400">
+            <Terminal className="h-4 w-4" aria-hidden="true" />
+            <span>portability — one source, a second runner</span>
+          </div>
+          <Heading className="mt-3">Claude Code first, and it ports</Heading>
+          <p className="mt-4 text-concrete-400">
+            The definitions are authored for Claude Code, but they are the single source — they don&apos;t
+            get hand-copied for other tools. <code className="text-swarm-yellow">swarm agents emit --codex</code>{" "}
+            generates Codex <code className="text-swarm-yellow">.codex/agents/*.toml</code> from the same
+            files, and the shared discipline — evidence over assertion, reconcile-only, no self-issued
+            verdict — ports through the open <code className="text-swarm-yellow">AGENTS.md</code> format that
+            Codex, Cursor, Copilot, Gemini CLI, and Aider all read.
+          </p>
+          <p className="mt-4 text-concrete-400">
+            What does <em>not</em> travel, stated plainly: the tool-scoping allowlist and the hooks are
+            Claude-Code-only structural enforcement. Every emitted file says so in its header — a Codex
+            adopter gets the prose discipline and scopes tools in their own config. The discipline is
+            portable; the enforcement is not.
           </p>
         </Card>
       </Section>

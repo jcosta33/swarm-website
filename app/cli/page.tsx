@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 
 const commands = [
   { cmd: "init [dir]", what: "Scaffold the workspace into a new or existing repo, conflict-safe — walked through on Get started.", icon: Blocks },
-  { cmd: "update [--check]", what: "Tell you whether your workspace has drifted behind the latest starter kit, and what you would gain by updating. Read-only — it never rewrites your files.", icon: ShieldCheck },
+  { cmd: "update [--check|--write]", what: "--check tells you whether your workspace drifted behind the latest starter kit (read-only). --write refreshes the kit-owned guidance — templates, skill guides, hooks — conflict-safe (a customized file is backed up, never lost). Your specs, tasks, reviews, board, and AGENTS.md are yours; --write never touches them.", icon: ShieldCheck },
   { cmd: "check [file]", what: "Lint a spec, or render the whole-workspace verdict. Exit 0 clean / 1 warnings / 2 blocking — so it drops straight into pre-commit and CI.", icon: ShieldCheck },
   { cmd: "worktree", what: "Create / list / remove / prune isolated git worktrees — one per task on swarm/<slug>, so parallel agents never trample each other.", icon: GitBranch },
   { cmd: "status", what: "Print the workspace board — specs, tasks, reviews, and the gaps between them. --json for scripts, -i for an interactive board.", icon: LayoutDashboard },
@@ -56,6 +56,7 @@ const commands = [
   { cmd: "promote <task>", what: "Scaffold a candidate finding from a finished task, source pre-filled. It asserts no lesson — you decide what was learned.", icon: Plus },
   { cmd: "run <task> --agent <name>", what: "Launch a prepared task on your own coding agent in its worktree and record the launch. It runs the agent; it never becomes one — no model loop, no edits of its own.", icon: Terminal },
   { cmd: "show <task|spec|review|checks>", what: "Project a parsed artifact as JSON — read-only, renders no verdict. It is how editors, CI, and the MCP server read your workspace.", icon: Blocks },
+  { cmd: "agents emit --codex", what: "Generate Codex .codex/agents/*.toml from your Claude Code agent definitions — one source, generated for a second runner. Only the prose discipline ports; tool-scoping and hooks are Claude-Code-only, and every emitted file says so.", icon: Terminal },
 ];
 
 const principles = [
