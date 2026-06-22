@@ -203,7 +203,7 @@ export default function HomePage() {
                 </p>
                 <p className="mt-1 text-drone-green">✓ scaffolded workspace (specs/, tasks/, reviews/, status.md)</p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-swarm-yellow">$</span> swarm new spec evidence --from intake/JIRA-412.md
+                  <span className="text-swarm-yellow">$</span> swarm new spec evidence --from intake/WEB-412.md
                 </p>
                 <p className="mt-1 text-concrete-100">
                   Turn tickets into clear specs, specs into agent-ready tasks, and agent output into
