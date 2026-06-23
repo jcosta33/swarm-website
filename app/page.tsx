@@ -148,7 +148,7 @@ const faqs = [
   },
   {
     q: "Is there a runtime or a service to install?",
-    a: "No. The whole workflow is markdown files you can read, diff, and grep. An optional reference CLI does chores — checking specs, isolating tasks in worktrees, printing the board, and launching a prepared task on your agent — but it never becomes an agent of its own (no model loop, no edits) and never renders the verdict, and you can skip it entirely.",
+    a: "No. The whole workflow is markdown files you can read, diff, and grep. An optional reference CLI does chores — checking specs, isolating tasks in worktrees, printing the board, launching a prepared task on your agent — but it never becomes an agent (no model loop, no edits), never renders the verdict, and you can skip it entirely.",
   },
   {
     q: "What is “review by exception”?",
@@ -258,7 +258,7 @@ export default function HomePage() {
               Five ways agent code goes sideways.
             </h2>
             <p className="mt-4 text-concrete-400">
-              Coding agents are fast. They are also wrong in ways that look correct: the{" "}
+              Coding agents are fast — and wrong in ways that look correct. The{" "}
               <span className="text-concrete-100">#1 frustration</span> developers report with AI is
               code that is &quot;almost right, but not quite&quot; —{" "}
               <span className="text-concrete-100">66%</span> of them (
@@ -281,9 +281,8 @@ export default function HomePage() {
               >
                 METR
               </Link>
-              ). Corpus does not answer that with hustle. It turns every change into a spec, a task,
-              and a review packet with pasted evidence — so &quot;almost right&quot; has to prove it is right
-              before it ships.
+              ). Corpus doesn't answer that with hustle. Every change becomes a spec, a task, and a
+              review packet with pasted evidence — so &quot;almost right&quot; has to prove itself before it ships.
             </p>
           </div>
 
@@ -506,9 +505,9 @@ export default function HomePage() {
             Stop shipping &quot;almost right&quot; code.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-concrete-400">
-            Corpus will not make you 10x, and it is not trying to replace you — it just puts you
-            back in charge of the firehose. Copy the starter kit, write one spec, and give your agents a
-            contract they can read. You still make the calls; they just finally know what you meant.
+            Corpus won't make you 10x, and it isn't trying to replace you — it puts you back in
+            charge of the firehose. Copy the starter kit, write one spec, give your agents a contract
+            they can read. You make the calls; they finally know what you meant.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <Button asChild className="w-full sm:w-auto">
