@@ -297,7 +297,7 @@ export default function WhatIsCorpusPage() {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-hazard-orange">
             <ShieldAlert className="h-4 w-4" aria-hidden="true" />
-            <span>error.log — failure modes detected</span>
+            <span>dross.log — failure modes detected</span>
           </div>
           <Heading className="mt-3">
             Failure modes you are already seeing

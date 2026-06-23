@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react";
 
+// The hermetic seal — a hexagon enclosing a hexagram with a centred quintessence. Echoes the
+// wordmark Logo; used inline as a section glyph. Strokes inherit currentColor.
 export function DroneIcon({ className = "", style }: { className?: string; style?: CSSProperties }) {
   return (
     <svg
@@ -10,26 +12,28 @@ export function DroneIcon({ className = "", style }: { className?: string; style
       style={style}
       aria-hidden="true"
     >
+      {/* the cell — a hexagon */}
       <path
         d="M16 6L26 11V21L16 26L6 21V11L16 6Z"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.3"
         strokeLinejoin="round"
-        fill="none"
+      />
+      {/* hexagram — fire △ and water ▽ joined */}
+      <path
+        d="M16 9 L22.5 20.5 L9.5 20.5 Z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
       />
       <path
-        d="M16 6V26M6 11L26 21M26 11L6 21"
+        d="M16 23 L9.5 11.5 L22.5 11.5 Z"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
       />
-      <circle cx="16" cy="16" r="3" fill="currentColor" />
-      <path
-        d="M16 2V6M16 26V30M2 16H6M26 16H30"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+      {/* the quintessence */}
+      <circle cx="16" cy="16" r="1.7" fill="currentColor" />
     </svg>
   );
 }

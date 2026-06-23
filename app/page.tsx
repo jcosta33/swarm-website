@@ -266,7 +266,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-hazard-orange">
               <Terminal className="h-4 w-4" aria-hidden="true" />
-              <span>sys.log — 5 warnings detected</span>
+              <span>dross.log — 5 failure modes</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
               Five ways agent code goes sideways.
@@ -347,7 +347,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
               <DroneIcon className="h-4 w-4" />
-              <span>flight.plan — 6 waypoints (+2 optional)</span>
+              <span>opus.seq — 6 stages (+2 optional)</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
               The loop
@@ -377,7 +377,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-drone-green">
               <CheckCircle className="h-4 w-4" aria-hidden="true" />
-              <span>verify.log — evidence required</span>
+              <span>assay.log — evidence required</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
               What a spec looks like
@@ -475,7 +475,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
               <Shield className="h-4 w-4" aria-hidden="true" />
-              <span>how it works — 4 moving parts</span>
+              <span>apparatus — 4 parts</span>
             </div>
             <h2 className="mt-3 font-heading text-3xl font-bold uppercase tracking-tight text-concrete-100 sm:text-4xl">
               Built for validation, not generation.

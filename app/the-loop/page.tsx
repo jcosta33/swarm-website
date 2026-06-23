@@ -188,7 +188,7 @@ export default function TheLoopPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="flight plan — 6 waypoints (+2 for rough terrain)"
+          eyebrow="opus.seq — 6 stages (+2 for rough terrain)"
           title={
             <>
               The <span className="text-corpus-yellow text-glow">loop</span>
