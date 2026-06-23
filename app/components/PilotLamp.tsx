@@ -1,5 +1,5 @@
 export interface PilotLampProps {
-  color?: "amber" | "green" | "red" | "teal" | "off";
+  color?: "amber" | "green" | "red" | "olive" | "off";
   pulse?: boolean;
   className?: string;
   label?: string;

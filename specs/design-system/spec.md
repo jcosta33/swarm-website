@@ -14,7 +14,7 @@ sources:
 
 ## Intent
 
-Establish a single, reusable visual language for the Corpus website: colors,
+Establish a single, reusable visual language for the corpus website: colors,
 typography, spacing, motion, artifact surfaces, and the global shell
 (navigation + footer) that every page shares. The vibe is a three-way fusion:
 1970s institutional sci-fi control surfaces, alchemical geometry, and working
@@ -35,21 +35,22 @@ and CSS custom properties in `app/globals.css`:
 
 | Token | Hex | Usage |
 | --- | --- | --- |
-| `--c-night` | `#050506` | page background, terminal wells |
-| `--c-chassis` | `#090A0D` | app shell |
-| `--c-panel` | `#14161C` | standard dark surfaces |
-| `--c-panel-raised` | `#1D2028` | raised panels and cards |
-| `--c-panel-border` | `#313642` | hairlines and dividers |
-| `--c-albedo` | `#E8DECB` | primary dark-surface text |
-| `--c-mercury` | `#A8B0B8` | secondary dark-surface text |
-| `--c-aurum` | `#D6B45A` | primary gold signal |
-| `--c-brass` | `#B8873A` | secondary gold, borders |
-| `--c-phosphor` | `#48D597` | success / verified |
-| `--c-rubedo` | `#C96A55` | errors / blocked |
-| `--c-paper` | `#E8DECB` | manuscript artifact surfaces |
-| `--c-paper-warm` | `#D8CDB9` | paper depth |
-| `--c-ink` | `#08090B` | text on paper |
-| `--c-pencil` | `#58616E` | marginalia and ruled notes |
+| `--c-night` | `#080604` | page background, terminal wells |
+| `--c-chassis` | `#0F0B08` | app shell |
+| `--c-panel` | `#1A1510` | standard dark surfaces |
+| `--c-panel-raised` | `#241D15` | raised panels and cards |
+| `--c-panel-border` | `#46392C` | warm hairlines and dividers |
+| `--c-albedo` | `#F0E2CC` | primary dark-surface text |
+| `--c-mercury` | `#B8AA96` | secondary dark-surface text |
+| `--c-aurum` | `#D88A24` | primary orangy-gold signal |
+| `--c-brass` | `#A96A24` | secondary gold, borders |
+| `--c-complement` | `#2472D8` | exact HSL complement to aurum; diagnostic accent only |
+| `--c-phosphor` | `#72B35A` | success / verified |
+| `--c-rubedo` | `#C97952` | errors / blocked |
+| `--c-paper` | `#F0E2CC` | manuscript artifact surfaces |
+| `--c-paper-warm` | `#DCC9A9` | paper depth |
+| `--c-ink` | `#100B07` | text on paper |
+| `--c-pencil` | `#5F554A` | marginalia and ruled notes |
 
 Compatibility aliases such as `--color-corpus-yellow`, `--color-hazard-orange`,
 and `--color-drone-green` may remain during migration, but they must map onto
@@ -82,7 +83,7 @@ A `Shell` component renders on every route via `app/layout.tsx`:
     (`https://github.com/jcosta33/corpus`).
   - Mobile: hamburger menu below the `lg` breakpoint (1024px).
 - **Footer:**
-  - Copyright: "© 2026 Corpus contributors.".
+  - Copyright: "© 2026 corpus contributors.".
   - Links: GitHub, Starter kit, Docs, Colophon.
   - Colophon line names the evidence/review discipline without suggesting an
     agent reviewed its own work.
@@ -94,7 +95,7 @@ Verify with: `npm run build` passes; every generated page contains exactly one
 
 At minimum, in `app/components/`:
 
-- `Button` — primary (yellow), secondary (ghost), with hover/active/focus
+- `Button` — primary (orangy gold), secondary (ghost), with hover/active/focus
   states. Disabled state included.
 - `Card` — bordered surface with subtle hover lift.
 - `Badge` / `StatusBadge` — operational labels for READY, PASS, UNVERIFIED,
@@ -130,8 +131,8 @@ searching `app/` finds only Lucide imports or the logo SVG.
 ### AC-007 — Text contrast meets WCAG AA
 
 All text/background combinations in the default palette pass WCAG AA (4.5:1 for
-normal text, 3:1 for large text). The primary yellow is used on dark surfaces,
-never on light surfaces.
+normal text, 3:1 for large text). The primary orangy gold is used on dark
+surfaces, never on light surfaces.
 
 Verify with: automated contrast check via `axe-core` or manual inspection
 report; `npm run build` passes.

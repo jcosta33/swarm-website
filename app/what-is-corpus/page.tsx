@@ -24,23 +24,23 @@ import {
 import { Button } from "../components/Button";
 
 export const metadata: Metadata = {
-  title: "What is Corpus — Corpus",
+  title: "What is corpus — corpus",
   description:
-    "Corpus is a lightweight spec-and-review workflow for teams using coding agents. Plain markdown; no runtime required.",
+    "corpus is a lightweight spec-and-review workflow for teams using coding agents. Plain markdown; no runtime required.",
   openGraph: {
-    title: "What is Corpus — Corpus",
+    title: "What is corpus — corpus",
     description:
-      "Corpus is a lightweight spec and review workflow for teams using coding agents. Plain markdown; no runtime required.",
+      "corpus is a lightweight spec and review workflow for teams using coding agents. Plain markdown; no runtime required.",
     type: "website",
     url: "/what-is-corpus/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-what-is-corpus.png",
         width: 1200,
         height: 630,
-        alt: "What is Corpus — a spec-and-review discipline for coding agents",
+        alt: "What is corpus — a spec-and-review discipline for coding agents",
       },
     ],
   },
@@ -86,42 +86,42 @@ const adjacent = [
     examples: "Claude Code, Cursor, Copilot, …",
     does: "write the code",
     relation:
-      "Corpus ships no agent. It shapes the inputs any agent works from and the output you review. Bring whichever agent you have.",
+      "corpus ships no agent. It shapes the inputs any agent works from and the output you review. Bring whichever agent you have.",
   },
   {
     product: "Spec-driven workflows",
     examples: "",
     does: "turn a written spec into an implementation",
     relation:
-      "Same family, different job. They help author the spec and generate code; Corpus focuses on the review side — every requirement carries a verification method, and the packet shows the evidence per requirement.",
+      "Same family, different job. They help author the spec and generate code; corpus focuses on the review side — every requirement carries a verification method, and the packet shows the evidence per requirement.",
   },
   {
     product: "Issue trackers",
     examples: "Jira, Linear, GitHub Issues",
     does: "hold the backlog and the conversation",
     relation:
-      "The ticket stays where it is. Corpus snapshots it into an intake file and interprets it into a spec an agent can act on.",
+      "The ticket stays where it is. corpus snapshots it into an intake file and interprets it into a spec an agent can act on.",
   },
   {
     product: "Docs portals",
     examples: "wikis, Notion, docs sites",
     does: "describe the system after the fact",
     relation:
-      "A Corpus spec is a working document — acceptance criteria, verification methods, open questions. It drives the change rather than documenting it later.",
+      "A corpus spec is a working document — acceptance criteria, verification methods, open questions. It drives the change rather than documenting it later.",
   },
   {
     product: "Review tooling",
     examples: "PRs, CI, review bots",
     does: "check the merge",
     relation:
-      "Corpus does not replace the PR. The review packet rides alongside it and tells the reviewer where to look; CI output is the evidence the packet cites.",
+      "corpus does not replace the PR. The review packet rides alongside it and tells the reviewer where to look; CI output is the evidence the packet cites.",
   },
   {
     product: "Refactoring tooling",
     examples: "codemods, OpenRewrite, …",
     does: "execute mechanical change",
     relation:
-      "Corpus's change plan states what must survive the change and how to check it; a codemod is one way a task executes a step of that plan.",
+      "corpus's change plan states what must survive the change and how to check it; a codemod is one way a task executes a step of that plan.",
   },
 ];
 
@@ -172,13 +172,13 @@ export default function WhatIsCorpusPage() {
           title={
             <>
               What is{" "}
-              <span className="text-corpus-yellow">Corpus</span>
+              <span className="text-corpus-yellow">corpus</span>
             </>
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
             A lightweight spec-and-review workflow for teams using coding
-            agents. Corpus turns intent into files an agent can run and a human
+            agents. corpus turns intent into files an agent can run and a human
             can verify.
           </p>
         </PageHero>
@@ -192,7 +192,7 @@ export default function WhatIsCorpusPage() {
               what-is-corpus.md
             </p>
             <p className="mt-2 text-concrete-100">
-              Corpus is a spec-and-review workflow for teams using coding
+              corpus is a spec-and-review workflow for teams using coding
               agents. Turn tickets into clear specs, specs into agent-ready
               tasks, and agent output into evidence a human can review.
             </p>
@@ -226,7 +226,7 @@ export default function WhatIsCorpusPage() {
             <CheckCircle className="h-4 w-4" aria-hidden="true" />
             <span>what it is</span>
           </div>
-          <Heading className="mt-3">What Corpus is</Heading>
+          <Heading className="mt-3">What corpus is</Heading>
           <ul className="mt-6 space-y-4">
             {isList.map((item) => {
               const Icon = item.icon;
@@ -250,7 +250,7 @@ export default function WhatIsCorpusPage() {
             <XCircle className="h-4 w-4" aria-hidden="true" />
             <span>what it is not</span>
           </div>
-          <Heading className="mt-3">What Corpus is not</Heading>
+          <Heading className="mt-3">What corpus is not</Heading>
           <ul className="mt-6 space-y-3">
             {isNotList.map((item) => (
               <li
@@ -274,7 +274,7 @@ export default function WhatIsCorpusPage() {
             <DroneIcon className="h-4 w-4" />
             <span>nearby tools</span>
           </div>
-          <Heading className="mt-3">Where Corpus sits</Heading>
+          <Heading className="mt-3">Where corpus sits</Heading>
         </div>
         <ul className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {adjacent.map((row) => (

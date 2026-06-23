@@ -1,7 +1,7 @@
 ---
 type: change-plan
 id: CHANGE-website-launch
-title: Launch the Corpus marketing website
+title: Launch the corpus marketing website
 status: draft
 kind: architecture-cleanup
 owner: corpus-website
@@ -20,11 +20,11 @@ preserves: []
 created: 2026-06-13
 ---
 
-# Change Plan: Launch the Corpus marketing website
+# Change Plan: Launch the corpus marketing website
 
 ## Intent
 
-Take the corpus-website repo from a bare Next.js + Corpus workspace scaffold to a
+Take the corpus-website repo from a bare Next.js + corpus workspace scaffold to a
 deployed marketing site with a homepage, three core marketing pages, and
 production-ready infrastructure.
 
@@ -38,7 +38,7 @@ workflow. This plan sequences the work so each wave leaves the site green.
 ## Baseline
 
 - Next.js 16 + Tailwind CSS scaffold builds successfully.
-- Corpus workspace files are in place.
+- corpus workspace files are in place.
 - Four initial specs exist; reviews blocked them on missing concerns.
 - No pages beyond the default Next.js landing page exist.
 - No deployment target configured.
@@ -60,8 +60,8 @@ workflow. This plan sequences the work so each wave leaves the site green.
 
 | ID     | Behavior                                                            | Verify with                                                |
 | ------ | ------------------------------------------------------------------- | ---------------------------------------------------------- |
-| PG-001 | The default Next.js landing page is replaced by the Corpus homepage | `npm run build` + visual inspection                        |
-| PG-002 | The Corpus workspace files remain untouched by the build            | `dist/` contains no markdown from `specs/`, `tasks/`, etc. |
+| PG-001 | The default Next.js landing page is replaced by the corpus homepage | `npm run build` + visual inspection                        |
+| PG-002 | The corpus workspace files remain untouched by the build            | `dist/` contains no markdown from `specs/`, `tasks/`, etc. |
 | PG-003 | Build output is pure static HTML/JS/CSS                             | `next.config.ts` uses `output: 'export'`                   |
 
 ## Non-goals
@@ -86,7 +86,7 @@ workflow. This plan sequences the work so each wave leaves the site green.
 ## Risk areas
 
 - Tailwind v4 syntax may differ from spec assumptions; verify early in wave 1.
-- Yellow-on-black palette can fail contrast; verify in wave 1.
+- Gold-on-black palette can fail contrast; verify in wave 1.
 - Marketing copy may drift from `corpus` docs; source links must be explicit.
 
 ## Transformation waves

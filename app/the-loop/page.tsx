@@ -23,23 +23,23 @@ import { PaperArtifact } from "../components/PaperArtifact";
 const stepIcons = [Inbox, FileText, ListChecks, Terminal, ScanEye, GitMerge];
 
 export const metadata: Metadata = {
-  title: "The loop — Corpus",
+  title: "The loop — corpus",
   description:
     "Pull → Spec → Task → Run → Review → Close. The six-step workflow for turning agent work into reviewable files.",
   openGraph: {
-    title: "The loop — Corpus",
+    title: "The loop — corpus",
     description:
       "Pull → Spec → Task → Run → Review → Close. A plain workflow for scoping agent work and reviewing the result.",
     type: "website",
     url: "/the-loop/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-the-loop.png",
         width: 1200,
         height: 630,
-        alt: "The Corpus loop — Pull, Spec, Task, Run, Review, Close",
+        alt: "The corpus loop — Pull, Spec, Task, Run, Review, Close",
       },
     ],
   },

@@ -2,7 +2,7 @@
 // points map to Pull, Spec, Task, Run, Review, Close. Kept as HeroHexGrid for
 // the existing import surface.
 const TICKS = Array.from({ length: 72 }, (_, i) => i);
-const GOLD = "#d6b45a";
+const GOLD = "#d88a24";
 
 export function HeroHexGrid({ className = "" }: { className?: string }) {
   return (

@@ -24,23 +24,23 @@ import { Badge } from "../components/Badge";
 import { PilotLamp } from "../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "CLI — Corpus",
+  title: "CLI — corpus",
   description:
-    "corpus-cli is optional command-line help for the Corpus workflow: it checks your specs, sets up one git worktree per task, and prints the board. It does not decide whether code is done.",
+    "corpus-cli is optional command-line help for the corpus workflow: it checks your specs, sets up one git worktree per task, and prints the board. It does not decide whether code is done.",
   openGraph: {
-    title: "CLI — Corpus",
+    title: "CLI — corpus",
     description:
-      "corpus-cli is the optional reference companion for the Corpus framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
+      "corpus-cli is the optional reference companion for the corpus framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
     type: "website",
     url: "/cli/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-cli.png",
         width: 1200,
         height: 630,
-        alt: "corpus-cli — the optional reference companion for the Corpus workflow",
+        alt: "corpus-cli — the optional reference companion for the corpus workflow",
       },
     ],
   },
@@ -143,7 +143,7 @@ export default function CliPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Optional command-line help for the Corpus workflow. The framework is
+            Optional command-line help for the corpus workflow. The framework is
             just markdown and conventions; the CLI does the chores — checks your
             specs, isolates each task in its own git worktree, reconciles a
             finished run against the diff, and prints the board.
@@ -286,11 +286,11 @@ export default function CliPage() {
             <span>design.md — why a CLI?</span>
           </div>
           <Heading className="mt-3">
-            Why a CLI if Corpus is markdown-only?
+            Why a CLI if corpus is markdown-only?
           </Heading>
           <p className="mt-4 text-concrete-400">
             The workflow itself is just conventions and files — you can run all
-            of Corpus with a text editor. The CLI is
+            of corpus with a text editor. The CLI is
             optional: it scaffolds the workspace, runs the checks in CI, and
             keeps one worktree per task so parallel agents do not trample each
             other. It is a helper, not an orchestrator. Use it for less typing;

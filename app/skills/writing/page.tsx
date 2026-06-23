@@ -25,23 +25,23 @@ import { Heading } from "../../components/Heading";
 import { PilotLamp } from "../../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "Writing a skill — Corpus",
+  title: "Writing a skill — corpus",
   description:
-    "How to write a Corpus skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+    "How to write a corpus skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
   openGraph: {
-    title: "Writing a skill — Corpus",
+    title: "Writing a skill — corpus",
     description:
-      "How to write a Corpus skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+      "How to write a corpus skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
     type: "website",
     url: "/skills/writing/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-skills.png",
         width: 1200,
         height: 630,
-        alt: "Writing a Corpus skill — the open Agent Skills format",
+        alt: "Writing a corpus skill — the open Agent Skills format",
       },
     ],
   },

@@ -1,40 +1,44 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Corpus — 1970s control surface + alchemical signal + manuscript archive. */
-  --color-night: #050506;
-  --color-chassis: #090a0d;
-  --color-panel: #14161c;
-  --color-panel-raised: #1d2028;
-  --color-panel-recessed: #050506;
-  --color-panel-border: #313642;
-  --color-panel-edge: #424857;
+  /* corpus — warm control surface + alchemical signal + manuscript archive.
+     Primary gold #D88A24 is HSL(34 71% 49%); its exact complement is #2472D8
+     at HSL(214 71% 49%). The complement is reserved for tiny diagnostic use,
+     while surfaces stay in warm graphite/umber. */
+  --color-night: #080604;
+  --color-chassis: #0f0b08;
+  --color-panel: #1a1510;
+  --color-panel-raised: #241d15;
+  --color-panel-recessed: #0a0705;
+  --color-panel-border: #46392c;
+  --color-panel-edge: #5b4937;
 
-  --color-albedo: #e8decb;
-  --color-mercury: #a8b0b8;
-  --color-ash: #6f7782;
+  --color-albedo: #f0e2cc;
+  --color-mercury: #b8aa96;
+  --color-ash: #7f735f;
   --color-concrete-100: var(--color-albedo);
-  --color-concrete-200: #d8d0c0;
-  --color-concrete-300: #c7bfaf;
+  --color-concrete-200: #e0d0b8;
+  --color-concrete-300: #cbbda7;
   --color-concrete-400: var(--color-mercury);
   --color-concrete-500: var(--color-ash);
-  --color-concrete-900: #08090b;
+  --color-concrete-900: #100b07;
   --color-black: #000000;
 
-  --color-aurum: #d6b45a;
-  --color-brass: #b8873a;
-  --color-amber: #f0a83a;
-  --color-phosphor: #48d597;
-  --color-verdigris: #39a7a0;
-  --color-rubedo: #c96a55;
-  --color-void-blue: #24324b;
-  --color-black-text: #08090b;
+  --color-aurum: #d88a24;
+  --color-brass: #a96a24;
+  --color-amber: #f0a33a;
+  --color-complement: #2472d8;
+  --color-phosphor: #72b35a;
+  --color-verdigris: #8a7a38;
+  --color-rubedo: #c97952;
+  --color-olive: #5f5725;
+  --color-black-text: #100b07;
 
-  --color-paper: #e8decb;
-  --color-paper-warm: #d8cdb9;
-  --color-paper-line: #bfb39e;
-  --color-ink: #08090b;
-  --color-pencil: #58616e;
+  --color-paper: #f0e2cc;
+  --color-paper-warm: #dcc9a9;
+  --color-paper-line: #b9a07d;
+  --color-ink: #100b07;
+  --color-pencil: #5f554a;
 
   /* Compatibility aliases for older component classes while the site migrates. */
   --color-night-raised: var(--color-panel-raised);
@@ -43,11 +47,10 @@
   --color-line-bright: var(--color-panel-edge);
   --color-pewter: var(--color-mercury);
   --color-gold: var(--color-aurum);
-  --color-gold-bright: #ead48c;
-  --color-gold-deep: #7d6228;
+  --color-gold-bright: #f0b85c;
+  --color-gold-deep: #7c3c20;
   --color-cinnabar: var(--color-rubedo);
   --color-aluminium: var(--color-mercury);
-  --color-olive: var(--color-void-blue);
   --color-corpus-yellow: var(--color-aurum);
   --color-hazard-orange: var(--color-rubedo);
   --color-drone-green: var(--color-phosphor);
@@ -60,33 +63,34 @@
   --font-heading: var(--font-space-grotesk);
   --font-display: var(--font-eb-garamond);
 
-  --radius-panel: 6px;
-  --radius-control: 4px;
+  --radius-panel: 8px;
+  --radius-control: 14px;
 }
 
 :root {
   color-scheme: dark;
-  --c-night: #050506;
-  --c-chassis: #090a0d;
-  --c-panel: #14161c;
-  --c-panel-raised: #1d2028;
-  --c-panel-border: #313642;
-  --c-albedo: #e8decb;
-  --c-mercury: #a8b0b8;
-  --c-ash: #6f7782;
-  --c-aurum: #d6b45a;
-  --c-brass: #b8873a;
-  --c-amber: #f0a83a;
-  --c-phosphor: #48d597;
-  --c-verdigris: #39a7a0;
-  --c-rubedo: #c96a55;
-  --c-void-blue: #24324b;
-  --c-paper: #e8decb;
-  --c-paper-warm: #d8cdb9;
-  --c-paper-line: #bfb39e;
-  --c-ink: #08090b;
-  --c-pencil: #58616e;
-  --c-black-text: #08090b;
+  --c-night: #080604;
+  --c-chassis: #0f0b08;
+  --c-panel: #1a1510;
+  --c-panel-raised: #241d15;
+  --c-panel-border: #46392c;
+  --c-albedo: #f0e2cc;
+  --c-mercury: #b8aa96;
+  --c-ash: #7f735f;
+  --c-aurum: #d88a24;
+  --c-brass: #a96a24;
+  --c-amber: #f0a33a;
+  --c-complement: #2472d8;
+  --c-phosphor: #72b35a;
+  --c-verdigris: #8a7a38;
+  --c-rubedo: #c97952;
+  --c-olive: #5f5725;
+  --c-paper: #f0e2cc;
+  --c-paper-warm: #dcc9a9;
+  --c-paper-line: #b9a07d;
+  --c-ink: #100b07;
+  --c-pencil: #5f554a;
+  --c-black-text: #100b07;
 }
 
 html {
@@ -109,10 +113,10 @@ html {
 
 body {
   background:
-    linear-gradient(rgba(49, 54, 66, 0.18) 1px, transparent 1px) fixed,
-    linear-gradient(90deg, rgba(49, 54, 66, 0.14) 1px, transparent 1px) fixed,
-    radial-gradient(120% 80% at 50% -16%, rgba(214, 180, 90, 0.08), transparent 48%) fixed,
-    radial-gradient(90% 70% at 50% 8%, rgba(36, 50, 75, 0.28), transparent 56%) fixed,
+    linear-gradient(rgba(70, 57, 44, 0.22) 1px, transparent 1px) fixed,
+    linear-gradient(90deg, rgba(70, 57, 44, 0.18) 1px, transparent 1px) fixed,
+    radial-gradient(120% 80% at 50% -16%, rgba(216, 138, 36, 0.1), transparent 48%) fixed,
+    radial-gradient(90% 70% at 50% 8%, rgba(95, 87, 37, 0.18), transparent 56%) fixed,
     var(--color-background);
   background-size:
     48px 48px,
@@ -135,7 +139,7 @@ body::before {
   background-image:
     radial-gradient(1px 1px at 18px 22px, rgba(232, 222, 203, 0.16), transparent),
     radial-gradient(1px 1px at 76px 92px, rgba(232, 222, 203, 0.1), transparent),
-    radial-gradient(1px 1px at 142px 44px, rgba(214, 180, 90, 0.12), transparent),
+    radial-gradient(1px 1px at 142px 44px, rgba(216, 138, 36, 0.14), transparent),
     radial-gradient(1px 1px at 210px 132px, rgba(232, 222, 203, 0.1), transparent);
   background-repeat: repeat;
   background-size: 240px 190px;
@@ -177,8 +181,8 @@ body::after {
     45deg,
     transparent,
     transparent 7px,
-    rgba(201, 162, 74, 0.16) 7px,
-    rgba(201, 162, 74, 0.16) 8px
+    rgba(216, 138, 36, 0.18) 7px,
+    rgba(216, 138, 36, 0.18) 8px
   );
 }
 
@@ -359,7 +363,7 @@ body::after {
       transparent 55%
     ),
     linear-gradient(180deg, var(--color-line-bright), var(--color-night-well));
-  border: 1px solid rgba(201, 162, 74, 0.4);
+  border: 1px solid rgba(216, 138, 36, 0.42);
   box-shadow:
     inset 0 1px 0 rgba(235, 208, 138, 0.2),
     0 1px 1px rgba(0, 0, 0, 0.55);
@@ -391,7 +395,7 @@ body::after {
       transparent 55%
     ),
     linear-gradient(180deg, var(--color-line-bright), var(--color-night-well));
-  border: 1px solid rgba(201, 162, 74, 0.4);
+  border: 1px solid rgba(216, 138, 36, 0.42);
   box-shadow:
     inset 0 1px 0 rgba(235, 208, 138, 0.2),
     0 1px 1px rgba(0, 0, 0, 0.55);
@@ -420,13 +424,13 @@ body::after {
   background:
     radial-gradient(
       circle at 35% 35%,
-      rgba(233, 232, 240, 0.4),
+      rgba(240, 226, 204, 0.4),
       transparent 40%
     ),
     var(--color-line-bright);
   box-shadow:
     inset 0 1px 1px rgba(0, 0, 0, 0.5),
-    0 1px 0 rgba(233, 232, 240, 0.08);
+    0 1px 0 rgba(240, 226, 204, 0.08);
 }
 
 .pilot-lamp-amber {
@@ -447,27 +451,27 @@ body::after {
   background:
     radial-gradient(
       circle at 35% 35%,
-      rgba(233, 255, 244, 0.7),
+      rgba(238, 250, 221, 0.68),
       transparent 42%
     ),
     var(--color-phosphor);
   box-shadow:
     inset 0 1px 1px rgba(0, 0, 0, 0.4),
-    0 0 10px rgba(72, 213, 151, 0.42),
+    0 0 10px rgba(114, 179, 90, 0.42),
     0 0 3px var(--color-phosphor);
 }
 
-.pilot-lamp-teal {
+.pilot-lamp-olive {
   background:
     radial-gradient(
       circle at 35% 35%,
-      rgba(232, 255, 253, 0.7),
+      rgba(239, 229, 174, 0.66),
       transparent 42%
     ),
     var(--color-verdigris);
   box-shadow:
     inset 0 1px 1px rgba(0, 0, 0, 0.4),
-    0 0 10px rgba(57, 167, 160, 0.42),
+    0 0 10px rgba(138, 122, 56, 0.44),
     0 0 3px var(--color-verdigris);
 }
 
@@ -489,7 +493,7 @@ body::after {
   background:
     radial-gradient(
       circle at 35% 35%,
-      rgba(233, 232, 240, 0.12),
+      rgba(240, 226, 204, 0.12),
       transparent 40%
     ),
     var(--color-line);
@@ -539,7 +543,7 @@ body::after {
       transparent 50%,
       rgba(0, 0, 0, 0.38) 100%
     ),
-    linear-gradient(180deg, rgba(214, 180, 90, 0.035) 0%, transparent 100%);
+    linear-gradient(180deg, rgba(216, 138, 36, 0.045) 0%, transparent 100%);
   z-index: 2;
 }
 
@@ -575,8 +579,8 @@ body::after {
   border-radius: inherit;
   pointer-events: none;
   background-image:
-    radial-gradient(1px 1px at 18px 22px, rgba(8, 9, 11, 0.07), transparent),
-    radial-gradient(1px 1px at 84px 66px, rgba(8, 9, 11, 0.05), transparent),
+    radial-gradient(1px 1px at 18px 22px, rgba(16, 11, 7, 0.07), transparent),
+    radial-gradient(1px 1px at 84px 66px, rgba(16, 11, 7, 0.05), transparent),
     radial-gradient(1px 1px at 148px 18px, rgba(184, 135, 58, 0.09), transparent);
   background-size: 180px 120px;
   opacity: 0.7;
@@ -613,9 +617,9 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(201, 162, 74, 0.15) 12%,
+    rgba(216, 138, 36, 0.16) 12%,
     var(--color-gold) 50%,
-    rgba(201, 162, 74, 0.15) 88%,
+    rgba(216, 138, 36, 0.16) 88%,
     transparent 100%
   );
   pointer-events: none;
@@ -629,8 +633,8 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(201, 162, 74, 0.5) 30%,
-    rgba(201, 162, 74, 0.5) 70%,
+    rgba(216, 138, 36, 0.55) 30%,
+    rgba(216, 138, 36, 0.55) 70%,
     transparent
   );
 }
@@ -644,7 +648,7 @@ body::after {
   height: 6px;
   transform: translate(-50%, -50%) rotate(45deg);
   background: var(--color-gold);
-  box-shadow: 0 0 8px rgba(201, 162, 74, 0.6);
+  box-shadow: 0 0 8px rgba(216, 138, 36, 0.62);
 }
 
 /* Mechanical button press */

@@ -33,8 +33,8 @@ const numbered = fs
 const order = [...numbered, ...dirDocs("tutorial"), ...dirDocs("examples")];
 
 const header =
-  `# Corpus — full documentation\n\n` +
-  `> Corpus is a lightweight spec-and-review workflow for teams shipping code with AI coding agents. ` +
+  `# corpus — full documentation\n\n` +
+  `> corpus is a lightweight spec-and-review workflow for teams shipping code with AI coding agents. ` +
   `Plain markdown, any agent, no runtime. This file concatenates the user-facing documentation for ` +
   `full-context ingestion by AI assistants.\n\n` +
   `Site: https://corpusframework.dev/ · Canon: https://github.com/jcosta33/corpus\n\n---\n\n`;
@@ -42,7 +42,10 @@ const header =
 const body = order
   .map(
     (rel) =>
-      `<!-- ${rel} -->\n\n${fs.readFileSync(path.join(CANON, rel), "utf8").trim()}\n`,
+      `<!-- ${rel} -->\n\n${fs
+        .readFileSync(path.join(CANON, rel), "utf8")
+        .trim()
+        .replace(/\bCorpus\b/g, "corpus")}\n`,
   )
   .join("\n\n---\n\n");
 

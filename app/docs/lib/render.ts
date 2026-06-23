@@ -27,6 +27,8 @@ const REPO_ROOT = path.join(CANON, ".."); // the corpus repo root (docs/ lives u
 const GH_BLOB = "https://github.com/jcosta33/corpus/blob/main/";
 const repoHas = (repoRel: string): boolean =>
   fs.existsSync(path.join(REPO_ROOT, repoRel));
+const lowercaseCorpus = (value: string): string =>
+  value.replace(/\bCorpus\b/g, "corpus");
 
 // Concatenated text of an mdast node (to unwrap a dead link to plain text).
 const mdastText = (n: {
@@ -193,6 +195,13 @@ const rehypeLabelTaskCheckboxes: Plugin<[], HastRoot> = () => (tree) => {
   });
 };
 
+// Site copy style: the product name is lowercase in all visible text, including code-styled examples.
+const rehypeLowercaseCorpus: Plugin<[], HastRoot> = () => (tree) => {
+  visitParents(tree, "text", (node) => {
+    node.value = lowercaseCorpus(node.value);
+  });
+};
+
 // Wide code blocks and tables scroll horizontally inside their own overflow-x:auto boxes (docs.css).
 // A scrollable region that isn't keyboard-focusable can't be scrolled without a mouse (axe
 // `scrollable-region-focusable`). Make every <pre>/<table> a tab stop so keyboard users reach it.
@@ -241,6 +250,7 @@ export async function renderDoc(
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeExternalLinks)
+    .use(rehypeLowercaseCorpus)
     .use(rehypeSlug)
     .use(rehypeCollectHeadings(headings))
     .use(rehypeLabelTaskCheckboxes)
@@ -255,10 +265,11 @@ export async function renderDoc(
 // decisions` must not leak "## Open decisions" into <title>/og/JSON-LD).
 export function titleOf(markdown: string): string {
   const m = markdown.match(/^#\s+(.+)$/m);
-  if (!m) return "Corpus docs";
+  if (!m) return "corpus docs";
   return m[1]
     .replace(/`/g, "")
     .replace(/(^|\s)#{1,6}\s+/g, "$1")
+    .replace(/\bCorpus\b/g, "corpus")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -281,6 +292,7 @@ export function descriptionOf(markdown: string): string {
     s
       .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // links → text
       .replace(/[`*_]/g, "")
+      .replace(/\bCorpus\b/g, "corpus")
       .replace(/\s+/g, " ")
       .trim();
 
@@ -326,7 +338,7 @@ export function descriptionOf(markdown: string): string {
     candidates.find((p) => p.text.length >= 40 && !p.text.endsWith(":")) ??
     candidates[0];
   const text = chosen?.text ?? "";
-  if (!text) return "Corpus documentation";
+  if (!text) return "corpus documentation";
   if (text.length <= 155) return text;
   const slice = text.slice(0, 152);
   const cut = slice.lastIndexOf(" ");

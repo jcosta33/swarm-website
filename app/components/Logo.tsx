@@ -1,11 +1,11 @@
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`inline-flex items-center gap-2.5 font-display text-base font-semibold lowercase ${className}`}
+      className={`inline-flex items-center gap-2.5 align-middle font-display text-base font-semibold leading-none lowercase ${className}`}
     >
       <svg
         viewBox="0 0 32 32"
-        className="h-[1.55em] w-[1.55em] shrink-0"
+        className="h-[1.45em] w-[1.45em] shrink-0 translate-y-[0.01em]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -19,9 +19,9 @@ export function Logo({ className = "" }: { className?: string }) {
             y2="30"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#ead48c" />
-            <stop offset="0.55" stopColor="#d6b45a" />
-            <stop offset="1" stopColor="#b8873a" />
+            <stop stopColor="#f0b85c" />
+            <stop offset="0.55" stopColor="#d88a24" />
+            <stop offset="1" stopColor="#a96a24" />
           </linearGradient>
         </defs>
         <circle
@@ -65,15 +65,15 @@ export function Logo({ className = "" }: { className?: string }) {
               cx={x}
               cy={py}
               r="1.35"
-              fill="#050506"
+              fill="#080604"
               stroke="url(#corpus-gilt)"
               strokeWidth="0.9"
             />
           ));
         })}
-        <circle cx="16" cy="16" r="1.55" fill="#d6b45a" />
+        <circle cx="16" cy="16" r="1.55" fill="#d88a24" />
       </svg>
-      <span className="tracking-[0.02em]">corpus</span>
+      <span className="leading-none tracking-[0.02em]">corpus</span>
     </span>
   );
 }

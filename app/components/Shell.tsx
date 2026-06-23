@@ -8,7 +8,7 @@ import { Logo } from "./Logo";
 import { Section } from "./Section";
 
 const navLinks = [
-  { label: "What is Corpus", href: "/what-is-corpus" },
+  { label: "What is corpus", href: "/what-is-corpus" },
   { label: "Loop", href: "/the-loop" },
   { label: "Skills", href: "/skills" },
   { label: "Agents", href: "/agents" },
@@ -81,7 +81,7 @@ function NavLink({
       </span>
       {isActive && showIndicator && (
         <span
-          className="absolute -bottom-2 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-corpus-yellow shadow-[0_0_8px_rgba(201,162,74,0.7)]"
+          className="absolute -bottom-2 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-corpus-yellow shadow-[0_0_8px_rgba(216,138,36,0.72)]"
           aria-hidden="true"
         />
       )}
@@ -96,9 +96,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // The header is sticky and transparent at the top (so the hero reads full-bleed), but once the
-  // page scrolls, content would otherwise bleed through it. Opaque the chassis past a few px. The
-  // colour transition is neutralized automatically under prefers-reduced-motion (globals.css).
+  // The header is always opaque; scroll only adds a small shadow so content never bleeds through.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -159,17 +157,15 @@ export function Shell({ children }: { children: React.ReactNode }) {
       </a>
 
       <header
-        className={`sticky top-0 z-40 border-b transition-colors duration-200 ${
-          scrolled || menuOpen
-            ? "border-panel-border bg-panel-raised/90 backdrop-blur-sm"
-            : "border-transparent"
+        className={`sticky top-0 z-40 border-b border-panel-border bg-chassis transition-shadow duration-200 ${
+          scrolled || menuOpen ? "shadow-[0_8px_24px_rgba(0,0,0,0.28)]" : ""
         }`}
       >
         <Section as="div" className="flex h-16 items-center justify-between">
           <Link
             href="/"
             className="focus-ring rounded-sm"
-            aria-label="Corpus home"
+            aria-label="corpus home"
           >
             <Logo className="text-lg text-concrete-100" />
           </Link>
@@ -199,7 +195,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <button
             ref={toggleRef}
             type="button"
-            className="toggle inline-flex items-center justify-center rounded-panel border border-panel-border bg-panel-raised p-2 text-concrete-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_0_rgba(0,0,0,0.5)] hover:text-corpus-yellow focus-ring active:translate-y-px active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.45)] lg:hidden"
+            className="toggle inline-flex items-center justify-center rounded-[var(--radius-control)] border border-panel-border bg-panel-raised p-2 text-concrete-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_0_rgba(0,0,0,0.5)] hover:text-corpus-yellow focus-ring active:translate-y-px active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.45)] lg:hidden"
             aria-expanded={menuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setMenuOpen((open) => !open)}
@@ -246,7 +242,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-30 bg-night"
           aria-hidden="true"
           onClick={() => setMenuOpen(false)}
         />
@@ -264,13 +260,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col gap-2">
             <Link
               href="/"
-              aria-label="Corpus home"
+              aria-label="corpus home"
               className="focus-ring rounded-sm w-fit"
             >
               <Logo className="text-base text-concrete-100" />
             </Link>
             <p className="text-sm text-concrete-400">
-              Built with Corpus. Keep the evidence; make the call yourself.
+              Built with corpus. Keep the evidence; make the call yourself.
             </p>
           </div>
 
@@ -293,7 +289,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </nav>
 
           <p className="text-sm text-concrete-400">
-            © {new Date().getFullYear()} Corpus contributors.
+            © {new Date().getFullYear()} corpus contributors.
           </p>
         </Section>
       </div>

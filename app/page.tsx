@@ -27,35 +27,35 @@ import { TerminalWindow } from "./components/TerminalWindow";
 const softwareApp = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Corpus",
+  name: "corpus",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "Any",
   softwareVersion: "0.1.0",
   url: "https://corpusframework.dev",
   description:
-    "Corpus is a lightweight spec-and-review workflow for teams using coding agents. Plain markdown, any agent, no runtime.",
+    "corpus is a lightweight spec-and-review workflow for teams using coding agents. Plain markdown, any agent, no runtime.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   publisher: { "@id": "https://corpusframework.dev/#organization" },
 };
 
 export const metadata: Metadata = {
-  title: "Corpus — structured agent work, checked at every step",
+  title: "corpus — structured agent work, checked at every step",
   description:
     "Define the work, run agents, verify outputs, and preserve evidence with a lightweight markdown workflow.",
   openGraph: {
-    title: "Corpus — structured agent work, checked at every step",
+    title: "corpus — structured agent work, checked at every step",
     description:
       "A lightweight markdown workflow for autonomous coding loops: specs, tasks, reviews, findings, and evidence.",
     type: "website",
     url: "/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Corpus — structured agent work, checked at every step",
+        alt: "corpus — structured agent work, checked at every step",
       },
     ],
   },
@@ -68,7 +68,7 @@ const failureModes = [
   {
     code: "INTAKE",
     title: "Vague tickets",
-    text: "A ticket enters as prose. Corpus preserves it, then turns it into requirements.",
+    text: "A ticket enters as prose. corpus preserves it, then turns it into requirements.",
   },
   {
     code: "SCOPE",
@@ -116,16 +116,16 @@ const features = [
 
 const faqs = [
   {
-    q: "Is Corpus an agent?",
-    a: "No. Your coding tool writes the code. Corpus structures the files around it: specs, tasks, reviews, findings, and the status board.",
+    q: "Is corpus an agent?",
+    a: "No. Your coding tool writes the code. corpus structures the files around it: specs, tasks, reviews, findings, and the status board.",
   },
   {
-    q: "Does Corpus decide whether code ships?",
+    q: "Does corpus decide whether code ships?",
     a: "No. Agents can run checks and paste evidence; a human or independent reviewer owns the result.",
   },
   {
     q: "Do I need the CLI?",
-    a: "No. Corpus works as plain markdown. The optional CLI scaffolds, checks, isolates worktrees, and reconciles facts; it does not become a model loop.",
+    a: "No. corpus works as plain markdown. The optional CLI scaffolds, checks, isolates worktrees, and reconciles facts; it does not become a model loop.",
   },
   {
     q: "Why the seal?",
@@ -177,7 +177,7 @@ export default function HomePage() {
           <PageHero
             eyebrow="workflow / six steps"
             titleSize="hero"
-            title="Corpus"
+            title="corpus"
           >
             <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-100">
               Structured agent work, checked at every step.
@@ -268,7 +268,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-concrete-400">
               Agents can produce a plausible diff faster than a team can verify
-              it. Corpus makes the handoff, scope, evidence, and memory visible
+              it. corpus makes the handoff, scope, evidence, and memory visible
               before the change ships.
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <Eyebrow>plain answers</Eyebrow>
             <h2 className="mt-4 font-heading text-2xl font-bold text-concrete-100 sm:text-3xl">
-              What Corpus does and doesn&apos;t do.
+              What corpus does and doesn&apos;t do.
             </h2>
           </div>
           <div className="grid gap-3">

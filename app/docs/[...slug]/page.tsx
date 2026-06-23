@@ -78,7 +78,7 @@ function articleFor(
     author: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Corpus",
+      name: "corpus",
     },
     url,
     mainEntityOfPage: url,
@@ -104,9 +104,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const md = readDoc(slug.join("/"));
   const canonical = `/docs/${slug.join("/")}/`;
-  if (!md) return { title: "Corpus docs", alternates: { canonical } };
+  if (!md) return { title: "corpus docs", alternates: { canonical } };
   return {
-    title: `${titleOf(md)} · Corpus`,
+    title: `${titleOf(md)} · corpus`,
     description: descriptionOf(md),
     alternates: { canonical }, // self-canonical (was inheriting the home page's "/")
     openGraph: {
@@ -114,7 +114,7 @@ export async function generateMetadata({
       // image come from the layout default but openGraph is replaced wholesale, so restate them.
       type: "article",
       url: canonical,
-      siteName: "Corpus",
+      siteName: "corpus",
       locale: "en_US",
       images: [
         { url: "/og-home.png", width: 1200, height: 630, alt: titleOf(md) },

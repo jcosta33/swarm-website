@@ -68,7 +68,7 @@ export function LoopDiagram() {
           <svg
             viewBox="0 0 100 100"
             className="h-full w-full"
-            aria-label="Six-point Corpus loop seal"
+            aria-label="Six-point corpus loop seal"
             role="img"
           >
             <circle
@@ -84,7 +84,7 @@ export function LoopDiagram() {
               cy="50"
               r="31"
               fill="none"
-              stroke="rgba(214,180,90,0.34)"
+              stroke="rgba(216,138,36,0.36)"
               strokeWidth="0.8"
             />
             <path

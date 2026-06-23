@@ -14,7 +14,7 @@ export function Card({ children, className = "", screws = false, brushed = false
     <div
       className={`panel-raised group relative overflow-hidden ${
         screws ? "screw-corners screw-corners-bottom" : ""
-      } p-7 transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[inset_0_1px_0_rgba(200,163,95,0.55),inset_0_-2px_0_rgba(0,0,0,0.5)] active:translate-y-0 active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.55)] ${className}`}
+      } p-7 transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[inset_0_1px_0_rgba(216,138,36,0.48),inset_0_-2px_0_rgba(0,0,0,0.5)] active:translate-y-0 active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.55)] ${className}`}
     >
       {brushed && (
         <div

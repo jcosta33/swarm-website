@@ -31,7 +31,7 @@ must meet. Implementation is staged in `change-plans/website-launch.md`.
 
 Every marketing page exports a `metadata` object with:
 
-- `title`: "<Page name> — Corpus"
+- `title`: "<Page name> — corpus"
 - `description`: one-sentence summary.
 - `openGraph.images`: `/og-<page>.png` static asset.
 
@@ -54,8 +54,8 @@ external links point to `github.com/jcosta33/corpus*`.
 Content must match the `corpus` repo:
 
 - Definition from `docs/01-what-is-corpus.md` line 5.
-- "What Corpus is" list (lines 31–38).
-- "What Corpus is not" list (lines 40–51).
+- "What corpus is" list (lines 31–38).
+- "What corpus is not" list (lines 40–51).
 - Adjacent-tools table (lines 55–61).
 - Failure-modes table (lines 93–100).
 
@@ -101,11 +101,11 @@ no page claims the CLI or agent catalog decides whether code is done.
 
 ### AC-007 — 404 page uses the global shell
 
-The default Next.js not-found page is replaced with a Corpus-branded 404 that
+The default Next.js not-found page is replaced with a corpus-branded 404 that
 uses the global shell and links back to `/` without stale metaphor language.
 
 Verify with: visit a non-existent route; the 404 page renders with nav/footer
-and a "Back to Corpus" link.
+and a "Back to corpus" link.
 
 ## Open questions
 
@@ -136,5 +136,5 @@ All marketing copy derives from the `corpus` framework repo
 
 ## Dropped from sources
 
-- `/pricing` — Corpus is free/open source.
+- `/pricing` — corpus is free/open source.
 - Full customer case studies — none exist.

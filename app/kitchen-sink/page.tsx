@@ -14,7 +14,7 @@ import { PaperArtifact } from "../components/PaperArtifact";
 import { AlertTriangle, CheckCircle, Wrench } from "lucide-react";
 
 export const metadata = {
-  title: "Kitchen sink — Corpus",
+  title: "Kitchen sink — corpus",
   robots: "noindex, nofollow",
 };
 

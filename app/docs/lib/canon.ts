@@ -74,13 +74,41 @@ export type NavSection = {
   collapsed?: boolean;
 };
 
-// Humanize a single slug segment for a label ('04-writing-specs' -> 'Writing Specs'). Shared so the
+// Humanize a single slug segment for a label ('04-writing-specs' -> 'Writing specs'). Shared so the
 // nav and the docs breadcrumb (docs/[...slug]/page.tsx) derive identical names from one rule.
-export const humanizeSegment = (seg: string): string =>
-  seg
+export const humanizeSegment = (seg: string): string => {
+  const acronyms = new Map([
+    ["adr", "ADR"],
+    ["adrs", "ADRs"],
+    ["ai", "AI"],
+    ["api", "API"],
+    ["ci", "CI"],
+    ["cli", "CLI"],
+    ["json", "JSON"],
+    ["llm", "LLM"],
+    ["llms", "LLMs"],
+    ["mcp", "MCP"],
+    ["pr", "PR"],
+    ["prs", "PRs"],
+    ["ui", "UI"],
+    ["yaml", "YAML"],
+  ]);
+  const words = seg
     .replace(/^\d+[-_]?/, "")
     .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .split(/\s+/)
+    .filter(Boolean);
+
+  return words
+    .map((word, index) => {
+      const lower = word.toLowerCase();
+      if (lower === "corpus") return "corpus";
+      if (acronyms.has(lower)) return acronyms.get(lower);
+      if (index === 0) return lower.charAt(0).toUpperCase() + lower.slice(1);
+      return lower;
+    })
+    .join(" ");
+};
 
 const labelFor = (slug: string): string => {
   const base = slug.split("/").pop() ?? slug;

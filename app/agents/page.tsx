@@ -26,23 +26,23 @@ import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 
 export const metadata: Metadata = {
-  title: "Agents — Corpus",
+  title: "Agents — corpus",
   description:
-    "Claude-Code-first worker definitions for Corpus roles: independent review, read-only exploration, evidence-checking, and bounded authoring. Copy one file into your repo.",
+    "Claude-Code-first worker definitions for corpus roles: independent review, read-only exploration, evidence-checking, and bounded authoring. Copy one file into your repo.",
   openGraph: {
-    title: "Agents — Corpus",
+    title: "Agents — corpus",
     description:
-      "A copy-based catalog of Claude Code subagent definitions for Corpus roles, each in a fresh isolated context with an optional delegation trace.",
+      "A copy-based catalog of Claude Code subagent definitions for corpus roles, each in a fresh isolated context with an optional delegation trace.",
     type: "website",
     url: "/agents/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Corpus agents — Claude-Code-first worker definitions for the Corpus roles",
+        alt: "corpus agents — Claude-Code-first worker definitions for the corpus roles",
       },
     ],
   },
@@ -109,12 +109,12 @@ export default function AgentsPage() {
           eyebrow="worker files / agent roles"
           title={
             <>
-              Corpus <span className="text-corpus-yellow">agents</span>
+              corpus <span className="text-corpus-yellow">agents</span>
             </>
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Claude-Code-first worker definitions for Corpus roles: review,
+            Claude-Code-first worker definitions for corpus roles: review,
             exploration, evidence checking, and bounded authoring.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-concrete-400">

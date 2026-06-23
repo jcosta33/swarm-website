@@ -14,7 +14,7 @@ supersedes:
 
 The original website aesthetic used a bee-hive / drone / factory-floor metaphor.
 That direction made the launch site memorable, but it now over-indexes on hive
-and construction cues while Corpus itself has settled around evidence, review
+and construction cues while corpus itself has settled around evidence, review
 packets, findings, and a six-step loop.
 
 The website needs a visual system that still feels like serious software while
@@ -28,7 +28,7 @@ Adopt a three-way visual language:
 1. **1970s institutional sci-fi** — the structure: panels, terminals, grids,
    rails, lamps, switches, and dense operating surfaces.
 2. **Alchemical geometry** — the symbolic layer: gold ink, circles, seals,
-   transmutation labels, and a six-point mark tied to the six Corpus steps.
+   transmutation labels, and a six-point mark tied to the six corpus steps.
 3. **Manuscript archive** — the artifact layer: paper insets, folio notes,
    marginalia, pencil rules, stamped labels, and evidence ledgers.
 

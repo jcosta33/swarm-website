@@ -10,23 +10,23 @@ import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 
 export const metadata: Metadata = {
-  title: "Get started — Corpus",
+  title: "Get started — corpus",
   description:
-    "Adopt Corpus in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+    "Adopt corpus in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
   openGraph: {
-    title: "Get started — Corpus",
+    title: "Get started — corpus",
     description:
-      "Adopt Corpus in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+      "Adopt corpus in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
     type: "website",
     url: "/get-started/",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-get-started.png",
         width: 1200,
         height: 630,
-        alt: "Get started with Corpus — a new repo or an existing project",
+        alt: "Get started with corpus — a new repo or an existing project",
       },
     ],
   },
@@ -54,7 +54,7 @@ function KitIcon({ children }: { children: React.ReactNode }) {
 function ListDot() {
   return (
     <span
-      className="mt-2.5 h-2 w-2 shrink-0 rounded-sm bg-corpus-yellow shadow-[0_0_8px_rgba(201,162,74,0.7)]"
+      className="mt-2.5 h-2 w-2 shrink-0 rounded-sm bg-corpus-yellow shadow-[0_0_8px_rgba(216,138,36,0.72)]"
       aria-hidden="true"
     />
   );
@@ -86,7 +86,7 @@ export default function GetStartedPage() {
           <div>
             <Heading>New repo</Heading>
             <p className="mt-2 text-concrete-400">
-              Use the GitHub template to create a fresh Corpus workspace with
+              Use the GitHub template to create a fresh corpus workspace with
               the folder structure, templates, and agent guides already in
               place.
             </p>
@@ -237,7 +237,7 @@ export default function GetStartedPage() {
             <ListDot />
             <span>
               <strong className="text-concrete-100">decisions/</strong> — an ADR
-              ledger, seeded with why you adopted Corpus.
+              ledger, seeded with why you adopted corpus.
             </span>
           </li>
         </ul>

@@ -10,7 +10,7 @@ date: 2026-06-13
 
 ## Context
 
-The Corpus marketing website needs a distinctive look that matches the
+The corpus marketing website needs a distinctive look that matches the
 framework's name and philosophy without feeling like a generic SaaS landing
 page.
 

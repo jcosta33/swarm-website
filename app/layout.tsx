@@ -20,10 +20,10 @@ const siteGraph = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Corpus",
+      name: "corpus",
       url: SITE_URL,
       description:
-        "Corpus is a lightweight spec-and-review workflow for teams shipping code with coding agents.",
+        "corpus is a lightweight spec-and-review workflow for teams shipping code with coding agents.",
       sameAs: [
         "https://github.com/jcosta33/corpus",
         "https://github.com/jcosta33/corpus-starter-kit",
@@ -34,7 +34,7 @@ const siteGraph = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Corpus",
+      name: "corpus",
       url: SITE_URL,
       publisher: { "@id": `${SITE_URL}/#organization` },
       potentialAction: {
@@ -74,7 +74,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 // Old-style serif for the title-page voice — the hero headings and the wordmark
-// carry the "Corpus Hermeticum" book character; the rest of the UI stays in the
+// carry the "corpus Hermeticum" book character; the rest of the UI stays in the
 // geometric sans for the straight, scientific read. This is the hero's LCP font,
 // so it preloads (default).
 const ebGaramond = EB_Garamond({
@@ -87,19 +87,19 @@ const ebGaramond = EB_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://corpusframework.dev"),
-  title: "Corpus — A spec-and-review workflow for coding agents",
+  title: "corpus — A spec-and-review workflow for coding agents",
   description:
-    "Corpus is a lightweight framework that helps teams ship better code with agents: specs, tasks, reviews, findings, and change plans.",
+    "corpus is a lightweight framework that helps teams ship better code with agents: specs, tasks, reviews, findings, and change plans.",
   openGraph: {
     type: "website",
-    siteName: "Corpus",
+    siteName: "corpus",
     locale: "en_US",
     images: [
       {
         url: "/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Corpus — a spec-and-review workflow for coding agents",
+        alt: "corpus — a spec-and-review workflow for coding agents",
       },
     ],
   },
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050506", // --color-night: paints the mobile browser UI to match the dark shell
+  themeColor: "#080604", // --color-night: paints the mobile browser UI to match the dark shell
   colorScheme: "dark",
 };
 
