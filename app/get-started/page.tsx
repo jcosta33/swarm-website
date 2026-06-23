@@ -4,6 +4,7 @@ import { ArrowRight, FolderPlus, Rocket, Terminal, Wrench } from "lucide-react";
 import { Section } from "../components/Section";
 import { Card } from "../components/Card";
 import { Button } from "../components/Button";
+import { ActionLink } from "../components/ActionLink";
 import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 import { Heading } from "../components/Heading";
@@ -115,16 +116,15 @@ export default function GetStartedPage() {
               project structure.
             </p>
           </div>
-          <Button variant="secondary" asChild className="mt-auto w-full sm:w-fit">
-            <Link
-              href="/docs/ADOPTING/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read ADOPTING.md{" "}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
+          <ActionLink
+            href="/docs/ADOPTING/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-auto w-full sm:w-fit"
+          >
+            Read ADOPTING.md{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </ActionLink>
         </Card>
       </Section>
 
@@ -260,12 +260,9 @@ export default function GetStartedPage() {
               </p>
             </div>
           </div>
-          <Button variant="secondary" asChild className="w-full md:w-auto">
-            <Link href="/skills/">
-              Browse skills{" "}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
+          <ActionLink href="/skills/" className="w-full md:w-auto">
+            Browse skills <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </ActionLink>
         </Card>
       </Section>
 
@@ -287,12 +284,9 @@ export default function GetStartedPage() {
               </p>
             </div>
           </div>
-          <Button variant="secondary" asChild className="w-full md:w-auto">
-            <Link href="/agents/">
-              Browse agents{" "}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
+          <ActionLink href="/agents/" className="w-full md:w-auto">
+            Browse agents <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </ActionLink>
         </Card>
       </Section>
 

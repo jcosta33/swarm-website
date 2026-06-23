@@ -10,6 +10,7 @@ import {
   Shield,
   Terminal,
 } from "lucide-react";
+import { ActionLink } from "./components/ActionLink";
 import { Badge } from "./components/Badge";
 import { Button } from "./components/Button";
 import { Card } from "./components/Card";
@@ -192,9 +193,9 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button variant="secondary" asChild className="w-full sm:w-auto">
-                <Link href="/docs/">Read the docs</Link>
-              </Button>
+              <ActionLink href="/docs/" className="w-full sm:w-auto">
+                Read the docs
+              </ActionLink>
             </div>
           </PageHero>
 
@@ -422,15 +423,14 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
-            <Button variant="secondary" asChild className="w-full sm:w-auto">
-              <Link
-                href="https://github.com/jcosta33/corpus-starter-kit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Copy the kit
-              </Link>
-            </Button>
+            <ActionLink
+              href="https://github.com/jcosta33/corpus-starter-kit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              Copy the kit
+            </ActionLink>
           </div>
         </Section>
       </section>

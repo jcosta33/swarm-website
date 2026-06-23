@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Terminal,
 } from "lucide-react";
+import { ActionLink } from "../components/ActionLink";
 import { Badge } from "../components/Badge";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
@@ -362,11 +363,9 @@ export default function McpPage() {
                 GitHub <ExternalLink className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
-            <Button variant="secondary" asChild className="w-full sm:w-auto">
-              <Link href="/cli/">
-                See the CLI <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            </Button>
+            <ActionLink href="/cli/" className="w-full sm:w-auto">
+              See the CLI <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </ActionLink>
           </div>
         </Card>
       </Section>

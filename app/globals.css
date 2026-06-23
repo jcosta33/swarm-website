@@ -63,8 +63,8 @@
   --font-heading: var(--font-space-grotesk);
   --font-display: var(--font-eb-garamond);
 
-  --radius-panel: 8px;
-  --radius-control: 14px;
+  --radius-panel: 10px;
+  --radius-control: 10px;
 }
 
 :root {
