@@ -321,7 +321,7 @@ export default function SkillsPage() {
               href="/cli/"
               className="text-swarm-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              corpus-cli
+              swarm-cli
             </Link>
             . It is real, but the command surface is still settling.
           </p>

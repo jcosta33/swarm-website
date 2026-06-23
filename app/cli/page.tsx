@@ -26,17 +26,17 @@ import { PilotLamp } from "../components/PilotLamp";
 export const metadata: Metadata = {
   title: "CLI — Corpus",
   description:
-    "corpus-cli is optional command-line help for the Corpus workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
+    "swarm-cli is optional command-line help for the Corpus workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
   openGraph: {
     title: "CLI — Corpus",
     description:
-      "corpus-cli is the optional reference companion for the Corpus framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
+      "swarm-cli is the optional reference companion for the Corpus framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
     type: "website",
     url: "/cli/",
     siteName: "Corpus",
     locale: "en_US",
     images: [
-      { url: "/og-cli.png", width: 1200, height: 630, alt: "corpus-cli — the optional reference companion for the Corpus workflow" },
+      { url: "/og-cli.png", width: 1200, height: 630, alt: "swarm-cli — the optional reference companion for the Corpus workflow" },
     ],
   },
   alternates: {
@@ -82,8 +82,8 @@ export default function CliPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="corpus-cli — reference implementation"
-          title={<>corpus<span className="text-swarm-yellow text-glow">-cli</span></>}
+          eyebrow="swarm-cli — reference implementation"
+          title={<>swarm<span className="text-swarm-yellow text-glow">-cli</span></>}
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
             Optional command-line help for the Corpus workflow. The framework is just markdown and
