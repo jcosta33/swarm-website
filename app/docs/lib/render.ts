@@ -336,7 +336,7 @@ const rehypeLabelWrappedTextCodeBlocks: Plugin<[], HastRoot> = () => (tree) => {
 
     const lines = hastText(code.children).trim().split("\n");
     const hasLongProseLine = lines.some(
-      (line) => line.length > 38 && /\s/.test(line),
+      (line) => line.length > 30 && /\s/.test(line),
     );
     if (!hasLongProseLine) return;
 
