@@ -226,12 +226,23 @@ export default function GetStartedPage() {
             </span>
           </li>
         </ul>
+        <p className="text-concrete-400">
+          More setup notes:{" "}
+          <TextLink
+            href="/docs/ADOPTING/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            docs/ADOPTING.md
+          </TextLink>
+        </p>
       </Section>
 
-      <Section>
+      <Section className="grid gap-6 md:grid-cols-2">
         <Card
           screws
-          contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
+          className="h-full"
+          contentClassName="flex h-full flex-col gap-6"
         >
           <div className="flex items-start gap-4">
             <KitIcon>
@@ -244,45 +255,31 @@ export default function GetStartedPage() {
               </p>
             </div>
           </div>
-          <ActionLink href="/skills/" className="w-fit md:w-auto">
+          <ActionLink href="/skills/" className="mt-auto w-fit">
             Browse skills <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ActionLink>
         </Card>
-      </Section>
 
-      <Section>
         <Card
           screws
-          contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
+          className="h-full"
+          contentClassName="flex h-full flex-col gap-6"
         >
           <div className="flex items-start gap-4">
             <KitIcon>
               <Terminal className="h-6 w-6" aria-hidden="true" />
             </KitIcon>
             <div>
-              <Heading>On Claude Code?</Heading>
+              <Heading>Using Claude Code?</Heading>
               <p className="mt-2 text-concrete-400">
                 Copy a worker definition for review, exploration, or authoring.
               </p>
             </div>
           </div>
-          <ActionLink href="/agents/" className="w-fit md:w-auto">
+          <ActionLink href="/agents/" className="mt-auto w-fit">
             Browse agents <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ActionLink>
         </Card>
-      </Section>
-
-      <Section>
-        <p className="text-concrete-400">
-          More setup notes:{" "}
-          <TextLink
-            href="/docs/ADOPTING/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            docs/ADOPTING.md
-          </TextLink>.
-        </p>
       </Section>
     </div>
   );
