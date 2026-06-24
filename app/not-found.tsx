@@ -1,4 +1,4 @@
-import { ArrowLeft, Search } from "lucide-react";
+import { ArrowLeft, ExternalLink, Search } from "lucide-react";
 import { Section } from "./components/Section";
 import { ActionLink } from "./components/ActionLink";
 import { PaperArtifact } from "./components/PaperArtifact";
@@ -26,8 +26,14 @@ export default function NotFoundPage() {
           <ActionLink href="/">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to Corpus
           </ActionLink>
-          <ActionLink href="/docs/">
+          <ActionLink
+            href="/docs/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Search docs (opens in a new tab)"
+          >
             <Search className="h-4 w-4" aria-hidden="true" /> Search docs
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </ActionLink>
         </div>
       </div>
