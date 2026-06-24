@@ -621,6 +621,12 @@
     border-left: 1px solid rgba(70, 57, 44, 0.72);
   }
 
+  .docs-prose tr:has(> td[data-label="Term"]):has(
+      > td[data-label="Meaning"]
+    ) {
+    grid-template-columns: minmax(8rem, 0.42fr) minmax(0, 1fr);
+  }
+
   .docs-prose tr:has(> td:first-child > code:only-child):has(
       > td:nth-child(3):last-child
     ) {
