@@ -24,7 +24,7 @@ const facts = [
 
 export default function ColophonPage() {
   return (
-    <Section className="grid gap-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <Section className="grid gap-6 py-20 md:min-h-[calc(100svh-16rem)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
       <Panel brushed className="p-2">
         <TerminalWindow
           title="build.manifest"
