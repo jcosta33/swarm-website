@@ -432,6 +432,7 @@
   margin: 1.25rem 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  position: relative;
   scrollbar-color: rgba(216, 138, 36, 0.72) rgba(38, 29, 22, 0.85);
   scrollbar-width: thin;
   /* recessed CRT screen — top glint glass + inner shadow, same family as the marketing terminals */
@@ -453,6 +454,20 @@
   background: rgba(216, 138, 36, 0.72);
   border: 2px solid rgba(38, 29, 22, 0.85);
   border-radius: 999px;
+}
+.docs-prose pre::after,
+.docs-table-scroll::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 2rem;
+  pointer-events: none;
+  border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 6, 4, 0),
+    rgba(8, 6, 4, 0.84)
+  );
 }
 .docs-prose pre code {
   background: none;
@@ -480,6 +495,7 @@
   margin: 1.5rem 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  position: relative;
   scrollbar-color: rgba(216, 138, 36, 0.72) rgba(38, 29, 22, 0.85);
   scrollbar-width: thin;
   border: 1px solid var(--color-panel-border);
@@ -497,26 +513,6 @@
   margin: 0;
 }
 @media (max-width: 48rem) {
-  .docs-prose pre,
-  .docs-table-scroll {
-    position: relative;
-  }
-
-  .docs-prose pre::after,
-  .docs-table-scroll::after {
-    content: "";
-    position: absolute;
-    inset: 0 0 0 auto;
-    width: 2rem;
-    pointer-events: none;
-    border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
-    background: linear-gradient(
-      90deg,
-      rgba(8, 6, 4, 0),
-      rgba(8, 6, 4, 0.84)
-    );
-  }
-
   .docs-prose table {
     min-width: 38rem;
   }
