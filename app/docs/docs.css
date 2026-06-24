@@ -434,9 +434,9 @@
 
 /* Links (#4) */
 .docs-prose a {
-  color: var(--color-brass);
+  color: var(--color-gold);
   text-decoration: underline;
-  text-decoration-color: rgba(200, 163, 95, 0.4);
+  text-decoration-color: rgba(216, 138, 36, 0.52);
   text-underline-offset: 2px;
   transition:
     color 0.12s,
@@ -864,7 +864,7 @@
 .docs-index-section-heading span {
   font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
-  color: var(--color-brass);
+  color: var(--color-gold);
 }
 
 .docs-index-section-compact p {
