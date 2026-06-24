@@ -7,11 +7,11 @@
      while surfaces stay in warm graphite/umber. */
   --color-night: #0c0a08;
   --color-chassis: #0f0b08;
-  --color-section-band: #030302;
+  --color-section-band: #050403;
   --color-panel: #1a1510;
   --color-panel-raised: #241d15;
   --color-panel-recessed: #0a0705;
-  --color-footer: #050403;
+  --color-footer: #070604;
   --color-panel-border: #46392c;
   --color-panel-edge: #5b4937;
 
@@ -73,11 +73,11 @@
   color-scheme: dark;
   --c-night: #0c0a08;
   --c-chassis: #0f0b08;
-  --c-section-band: #030302;
+  --c-section-band: #050403;
   --c-panel: #1a1510;
   --c-panel-raised: #241d15;
   --c-panel-border: #46392c;
-  --c-footer: #050403;
+  --c-footer: #070604;
   --c-albedo: #f0e2cc;
   --c-mercury: #b8aa96;
   --c-ash: #7f735f;
