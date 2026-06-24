@@ -8,6 +8,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
+import { PageHero } from "../components/PageHero";
 
 export const metadata: Metadata = {
   title: "Get started — Corpus",
@@ -63,19 +64,13 @@ function ListDot() {
 export default function GetStartedPage() {
   return (
     <div className="flex flex-col gap-16 py-16 sm:gap-20 sm:py-20">
-      <Section>
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase text-brass">
-            <span>setup / first workspace</span>
-          </div>
-          <h1 className="mt-3 font-heading text-4xl font-bold tracking-tight text-concrete-100 sm:text-5xl">
-            Get started
-          </h1>
-          <p className="mt-6 text-xl leading-relaxed text-concrete-400">
+      <Section className="ambient-header">
+        <PageHero eyebrow="setup / first workspace" title="Get started">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-concrete-400 sm:text-xl">
             Start with the starter kit. Use the CLI when you want scaffolding
             and checks.
           </p>
-        </div>
+        </PageHero>
       </Section>
 
       <Section className="reveal grid gap-6 md:grid-cols-2">

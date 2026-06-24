@@ -92,6 +92,14 @@ export const metadata: Metadata = {
   title: "Corpus — Spec and review workflow",
   description:
     "Corpus is a markdown workflow for specs, tasks, reviews, findings, and evidence.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon/icon-192", sizes: "192x192", type: "image/png" },
+      { url: "/icon/icon-512", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     siteName: "Corpus",
