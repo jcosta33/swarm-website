@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Inbox,
   FileText,
@@ -11,7 +10,6 @@ import {
 } from "lucide-react";
 import { Section } from "../components/Section";
 import { Card } from "../components/Card";
-import { Button } from "../components/Button";
 import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 import { GiltBand } from "../components/GiltBand";
@@ -328,12 +326,13 @@ export default function TheLoopPage() {
               </TextLink>
             </p>
           </div>
-          <Button asChild className="w-full md:w-auto">
-            <Link href="/get-started/">
-              Set up your workspace{" "}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
+          <TextLink
+            href="/get-started/"
+            className="shrink-0 gap-2 text-base font-semibold"
+          >
+            Set up your workspace{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </TextLink>
         </Card>
       </Section>
 

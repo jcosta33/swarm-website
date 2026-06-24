@@ -200,7 +200,7 @@ export default function WhatIsCorpusPage() {
       </Section>
 
       <Section className="reveal grid gap-12 lg:grid-cols-2">
-        <div>
+        <Panel variant="inset" className="h-full p-5 sm:p-6">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-phosphor">
             <CheckCircle className="h-4 w-4" aria-hidden="true" />
             <span>what it is</span>
@@ -222,7 +222,7 @@ export default function WhatIsCorpusPage() {
               );
             })}
           </ul>
-        </div>
+        </Panel>
 
         <Panel variant="inset" className="h-full p-5 sm:p-6">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-rubedo">
