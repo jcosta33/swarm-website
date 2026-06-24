@@ -559,15 +559,67 @@
   margin: 0;
 }
 @media (max-width: 48rem) {
+  .docs-table-scroll {
+    overflow-x: visible;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .docs-table-scroll::after {
+    display: none;
+  }
+
   .docs-prose table {
-    table-layout: fixed;
+    display: block;
     min-width: 100%;
   }
 
-  .docs-prose th,
+  .docs-prose thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .docs-prose tbody {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .docs-prose tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--radius-panel);
+    background: rgba(36, 29, 21, 0.74);
+  }
+
   .docs-prose td {
-    padding: 0.45rem 0.5rem;
+    display: grid;
+    gap: 0.2rem;
+    border: 0;
+    padding: 0.65rem 0.75rem;
     overflow-wrap: anywhere;
+  }
+
+  .docs-prose td + td {
+    border-top: 1px solid rgba(70, 57, 44, 0.72);
+  }
+
+  .docs-prose td::before {
+    content: attr(data-label);
+    font-family: var(--font-mono), monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-brass);
+  }
+
+  .docs-prose td[data-label=""]::before {
+    display: none;
   }
 }
 .docs-prose thead {

@@ -216,6 +216,52 @@ const rehypeWrapTables: Plugin<[], HastRoot> = () => (tree) => {
   });
 };
 
+const elementChildren = (node: HastElement): HastElement[] =>
+  node.children.filter(
+    (child): child is HastElement => child.type === "element",
+  );
+
+const firstDescendant = (
+  node: HastElement,
+  tagName: string,
+): HastElement | null => {
+  if (node.tagName === tagName) return node;
+  for (const child of elementChildren(node)) {
+    const found = firstDescendant(child, tagName);
+    if (found) return found;
+  }
+  return null;
+};
+
+// Mobile docs tables render as stacked records. Add each column label to its body cells so CSS can
+// show the header near the value without duplicating or editing the source markdown.
+const rehypeLabelTableCells: Plugin<[], HastRoot> = () => (tree) => {
+  visit(tree, "element", (table) => {
+    if (table.tagName !== "table") return;
+    const thead = elementChildren(table).find((child) => child.tagName === "thead");
+    const headerRow = thead
+      ? firstDescendant(thead, "tr")
+      : firstDescendant(table, "tr");
+    if (!headerRow) return;
+
+    const headers = elementChildren(headerRow)
+      .filter((cell) => cell.tagName === "th")
+      .map((cell) => hastText(cell.children).trim())
+      .filter(Boolean);
+    if (headers.length === 0) return;
+
+    visit(table, "element", (row) => {
+      if (row.tagName !== "tr" || row === headerRow) return;
+      elementChildren(row)
+        .filter((cell) => cell.tagName === "td")
+        .forEach((cell, index) => {
+          cell.properties = cell.properties ?? {};
+          cell.properties.dataLabel = headers[index] ?? "";
+        });
+    });
+  });
+};
+
 // Wide code blocks and table shells scroll horizontally inside overflow-x:auto boxes (docs.css).
 // A scrollable region that isn't keyboard-focusable can't be scrolled without a mouse (axe
 // `scrollable-region-focusable`). Make every <pre>/table shell a tab stop so keyboard users reach it.
@@ -279,6 +325,7 @@ export async function renderDoc(
     .use(rehypeSlug)
     .use(rehypeCollectHeadings(headings))
     .use(rehypeLabelTaskCheckboxes)
+    .use(rehypeLabelTableCells)
     .use(rehypeWrapTables)
     .use(rehypeFocusableScrollables)
     .use(rehypeStringify, { allowDangerousHtml: true })
