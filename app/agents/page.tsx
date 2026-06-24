@@ -218,7 +218,7 @@ export default function AgentsPage() {
             <Badge variant="unverified">toolable limits</Badge>
           </div>
         </div>
-        <ul className="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="reveal grid gap-4 sm:grid-cols-2">
           {readOnly.map((a) => {
             const Icon = a.icon;
             return (
@@ -274,7 +274,7 @@ export default function AgentsPage() {
             <Badge variant="draft">review required</Badge>
           </div>
         </div>
-        <ul className="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="reveal grid gap-4 sm:grid-cols-2">
           {authoring.map((a) => {
             const Icon = a.icon;
             return (
