@@ -34,7 +34,7 @@ export function Logo({ className = "" }: { className?: string }) {
           >
             <stop stopColor="#f0b85c" />
             <stop offset="0.55" stopColor="#d88a24" />
-            <stop offset="1" stopColor="#a96a24" />
+            <stop offset="1" stopColor="#bf7927" />
           </linearGradient>
         </defs>
         <circle
