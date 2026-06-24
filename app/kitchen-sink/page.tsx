@@ -139,7 +139,11 @@ export default function KitchenSinkPage() {
       <Section className="flex flex-col gap-6">
         <Heading>Code block</Heading>
         <CodeBlock>{`loop:
-  spec -> task -> run -> review -> close`}</CodeBlock>
+  spec
+  -> task
+  -> run
+  -> review
+  -> close`}</CodeBlock>
       </Section>
 
       <Section className="flex flex-col gap-6">
