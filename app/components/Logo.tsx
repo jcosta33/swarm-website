@@ -42,13 +42,13 @@ export function Logo({ className = "" }: { className?: string }) {
           cy="16"
           r="13.6"
           stroke={`url(#${gradientId})`}
-          strokeWidth="1"
+          strokeWidth="1.35"
           opacity="0.95"
         />
         <polygon
           points={points.map(([x, y]) => `${x},${y}`).join(" ")}
           stroke={`url(#${gradientId})`}
-          strokeWidth="1"
+          strokeWidth="1.4"
           strokeLinejoin="round"
         />
         {points.map(([x, y]) => (
@@ -59,7 +59,7 @@ export function Logo({ className = "" }: { className?: string }) {
             x2={x}
             y2={y}
             stroke={`url(#${gradientId})`}
-            strokeWidth="0.65"
+            strokeWidth="0.9"
             opacity="0.75"
           />
         ))}
@@ -68,13 +68,13 @@ export function Logo({ className = "" }: { className?: string }) {
             key={`${x}-${y}`}
             cx={x}
             cy={y}
-            r="1.35"
+            r="1.45"
             fill="#080604"
             stroke={`url(#${gradientId})`}
-            strokeWidth="0.9"
+            strokeWidth="1.1"
           />
         ))}
-        <circle cx="16" cy="16" r="1.55" fill="#d88a24" />
+        <circle cx="16" cy="16" r="1.75" fill="#d88a24" />
       </svg>
       <span className="text-[1.1em] font-bold leading-[0.92]">
         Corpus
