@@ -560,7 +560,14 @@
 }
 @media (max-width: 48rem) {
   .docs-prose table {
-    min-width: 38rem;
+    table-layout: fixed;
+    min-width: 100%;
+  }
+
+  .docs-prose th,
+  .docs-prose td {
+    padding: 0.45rem 0.5rem;
+    overflow-wrap: anywhere;
   }
 }
 .docs-prose thead {

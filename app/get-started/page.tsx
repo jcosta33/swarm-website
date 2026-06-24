@@ -78,8 +78,8 @@ export default function GetStartedPage() {
         </div>
       </Section>
 
-      <Section className="reveal grid gap-8 md:grid-cols-2">
-        <Card screws className="h-full" contentClassName="flex h-full flex-col gap-8">
+      <Section className="reveal grid gap-6 md:grid-cols-2">
+        <Card screws className="h-full" contentClassName="flex h-full flex-col gap-5">
           <KitIcon>
             <Rocket className="h-6 w-6" aria-hidden="true" />
           </KitIcon>
@@ -94,14 +94,14 @@ export default function GetStartedPage() {
             href="https://github.com/jcosta33/corpus-starter-kit"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto w-full sm:w-fit"
+            className="mt-1 w-fit justify-start"
           >
             Use the starter kit{" "}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ActionLink>
         </Card>
 
-        <Card screws className="h-full" contentClassName="flex h-full flex-col gap-8">
+        <Card screws className="h-full" contentClassName="flex h-full flex-col gap-5">
           <KitIcon>
             <FolderPlus className="h-6 w-6" aria-hidden="true" />
           </KitIcon>
@@ -115,7 +115,7 @@ export default function GetStartedPage() {
             href="/docs/ADOPTING/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto w-full sm:w-fit"
+            className="mt-1 w-fit justify-start"
           >
             Read the adopting guide{" "}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -244,7 +244,7 @@ export default function GetStartedPage() {
               </p>
             </div>
           </div>
-          <ActionLink href="/skills/" className="w-full md:w-auto">
+          <ActionLink href="/skills/" className="w-fit md:w-auto">
             Browse skills <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ActionLink>
         </Card>
@@ -266,7 +266,7 @@ export default function GetStartedPage() {
               </p>
             </div>
           </div>
-          <ActionLink href="/agents/" className="w-full md:w-auto">
+          <ActionLink href="/agents/" className="w-fit md:w-auto">
             Browse agents <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ActionLink>
         </Card>

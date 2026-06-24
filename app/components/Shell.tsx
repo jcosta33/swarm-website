@@ -164,7 +164,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           headerIsOpaque
             ? "border-panel-border bg-chassis shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
             : "border-transparent bg-transparent"
-        }`}
+        } site-header`}
       >
         <Section as="div" className="flex h-16 items-center justify-between">
           <Link
@@ -172,7 +172,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             className="focus-ring inline-flex min-h-11 items-center rounded-sm"
             aria-label="Corpus home"
           >
-            <Logo className="text-lg text-concrete-100" />
+            <Logo className="text-xl text-concrete-100" />
           </Link>
 
           <nav
@@ -273,7 +273,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               aria-label="Corpus home"
               className="focus-ring inline-flex min-h-11 w-fit items-center rounded-sm"
             >
-              <Logo className="text-base text-concrete-100" />
+              <Logo className="text-xl text-concrete-100" />
             </Link>
             <p className="text-sm text-concrete-400">
               Built with Corpus. Keep the evidence; make the call yourself.

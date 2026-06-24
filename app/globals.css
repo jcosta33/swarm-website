@@ -7,7 +7,7 @@
      while surfaces stay in warm graphite/umber. */
   --color-night: #0c0a08;
   --color-chassis: #0f0b08;
-  --color-section-band: #050403;
+  --color-section-band: #0a0806;
   --color-panel: #1a1510;
   --color-panel-raised: #241d15;
   --color-panel-recessed: #0a0705;
@@ -33,7 +33,7 @@
   --color-phosphor: #72b35a;
   --color-verdigris: #8a7a38;
   --color-rubedo: #c97952;
-  --color-olive: #5f5725;
+  --color-olive: #a8933a;
   --color-black-text: #100b07;
 
   --color-paper: #f0e2cc;
@@ -73,7 +73,7 @@
   color-scheme: dark;
   --c-night: #0c0a08;
   --c-chassis: #0f0b08;
-  --c-section-band: #050403;
+  --c-section-band: #0a0806;
   --c-panel: #1a1510;
   --c-panel-raised: #241d15;
   --c-panel-border: #46392c;
@@ -88,7 +88,7 @@
   --c-phosphor: #72b35a;
   --c-verdigris: #8a7a38;
   --c-rubedo: #c97952;
-  --c-olive: #5f5725;
+  --c-olive: #a8933a;
   --c-paper: #f0e2cc;
   --c-paper-warm: #dcc9a9;
   --c-paper-line: #b9a07d;
@@ -152,6 +152,7 @@ body::before {
     radial-gradient(1px 1px at 210px 132px, rgba(232, 222, 203, 0.06), transparent);
   background-repeat: repeat;
   background-size: 240px 190px;
+  animation: archival-tooth-drift 36s linear infinite;
 }
 
 /* Edge vignette — deepens the chassis toward the frame. */
@@ -197,6 +198,31 @@ body::after {
 .soft-link:hover {
   color: var(--color-gold-bright);
   text-decoration-color: var(--color-gold-bright);
+}
+
+.site-header[data-nav-state="transparent"] {
+  background-color: transparent;
+}
+
+.site-header[data-nav-state="opaque"] {
+  background-color: var(--c-chassis);
+}
+
+@keyframes archival-tooth-drift {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      240px 190px,
+      -240px 190px,
+      120px -95px,
+      -120px -95px;
+  }
 }
 
 /* Route header ruling — faint manuscript marks behind the hero title. */

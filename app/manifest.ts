@@ -12,13 +12,22 @@ export default function manifest(): MetadataRoute.Manifest {
       "A markdown workflow for specs, tasks, reviews, findings, and evidence.",
     start_url: "/",
     display: "standalone",
-    background_color: "#080604",
     theme_color: "#080604",
     // Build-generated icons (app/icon.tsx generateImageMetadata). 192 + 512 satisfy Chrome's
     // install criteria.
     icons: [
-      { src: "/icon/icon-192", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/icon/icon-512", sizes: "512x512", type: "image/png", purpose: "any" },
+      {
+        src: "/icon/icon-192",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icon/icon-512",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
+      },
     ],
   };
 }
