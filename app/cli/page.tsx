@@ -341,12 +341,9 @@ export default function CliPage() {
           </p>
           <p className="mt-4 text-concrete-400">
             Using an MCP client?{" "}
-            <TextLink
-              href="/mcp/"
-            >
+            <TextLink href="/mcp/">
               corpus-mcp exposes the same read-only facts
-            </TextLink>{" "}
-            .
+            </TextLink>.
           </p>
         </Card>
       </Section>

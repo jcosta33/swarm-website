@@ -164,12 +164,7 @@ export default function GetStartedPage() {
         </Panel>
         <p className="text-concrete-400">
           CLI details:{" "}
-          <TextLink
-            href="/cli/"
-          >
-            the CLI page
-          </TextLink>
-          .
+          <TextLink href="/cli/">the CLI page</TextLink>.
         </p>
       </Section>
 
@@ -226,8 +221,8 @@ export default function GetStartedPage() {
           <li className="flex items-start gap-3 text-concrete-400">
             <ListDot />
             <span>
-              <strong className="text-concrete-100">decisions/</strong> — an ADR
-              records for local decisions.
+              <strong className="text-concrete-100">decisions/</strong> — ADRs
+              for local decisions.
             </span>
           </li>
         </ul>
@@ -286,8 +281,7 @@ export default function GetStartedPage() {
             rel="noopener noreferrer"
           >
             docs/ADOPTING.md
-          </TextLink>{" "}
-          .
+          </TextLink>.
         </p>
       </Section>
     </div>

@@ -388,12 +388,7 @@ export default function SkillsPage() {
             A skill is a markdown guide your agent reads when the work matches.
             Read it before installing and pin to a commit. For scaffolding and
             checks, use{" "}
-            <TextLink
-              href="/cli/"
-            >
-              corpus-cli
-            </TextLink>
-            .
+            <TextLink href="/cli/">corpus-cli</TextLink>.
           </p>
           <p className="mt-6">
             <TextLink
