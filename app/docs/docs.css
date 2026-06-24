@@ -411,6 +411,7 @@
 .docs-prose p,
 .docs-prose li {
   margin: 0.7rem 0;
+  overflow-wrap: anywhere;
 }
 .docs-prose strong {
   color: var(--color-concrete-100);
