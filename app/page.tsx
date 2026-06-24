@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
+  ExternalLink,
   FileText,
   GitBranch,
   ListChecks,
@@ -193,8 +194,15 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
-              <ActionLink href="/docs/" className="w-full sm:w-auto">
+              <ActionLink
+                href="/docs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Read the docs (opens in a new tab)"
+                className="w-full sm:w-auto"
+              >
                 Read the docs
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </ActionLink>
             </div>
           </PageHero>
