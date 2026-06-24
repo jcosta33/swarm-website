@@ -325,26 +325,34 @@ export default function CliPage() {
       </Section>
 
       <Section>
-        <Card screws className="max-w-2xl border-panel-border">
-          <Heading>Reference repository</Heading>
-          <p className="mt-4 text-concrete-400">
-            Source, issues, and release notes live on GitHub.
-          </p>
-          <p className="mt-6">
-            <TextLink
-              href="https://github.com/jcosta33/corpus-cli"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open corpus-cli on GitHub →
-            </TextLink>
-          </p>
-          <p className="mt-4 text-concrete-400">
-            Using an MCP client?{" "}
-            <TextLink href="/mcp/">
-              corpus-mcp exposes the same read-only facts
-            </TextLink>.
-          </p>
+        <Card
+          screws
+          className="border-panel-border"
+          contentClassName="grid gap-6 md:grid-cols-[1fr_0.9fr] md:items-center"
+        >
+          <div>
+            <Heading>Reference repository</Heading>
+            <p className="mt-4 text-concrete-400">
+              Source, issues, and release notes live on GitHub.
+            </p>
+          </div>
+          <div className="space-y-4 md:justify-self-end md:text-right">
+            <p>
+              <TextLink
+                href="https://github.com/jcosta33/corpus-cli"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open corpus-cli on GitHub →
+              </TextLink>
+            </p>
+            <p className="text-concrete-400">
+              Using an MCP client?{" "}
+              <TextLink href="/mcp/">
+                corpus-mcp exposes the same read-only facts
+              </TextLink>.
+            </p>
+          </div>
         </Card>
       </Section>
     </div>
