@@ -74,7 +74,7 @@ function NavLink({
       rel={external ? "noopener noreferrer" : undefined}
       aria-label={external ? `${link.label} (opens in new tab)` : undefined}
       aria-current={isActive ? "page" : undefined}
-      className={`relative inline-flex items-center ${className}`}
+      className={`relative inline-flex min-w-11 items-center ${className}`}
       onClick={onClick}
     >
       <span className="inline-flex items-center gap-1.5">
@@ -288,7 +288,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   key={link.label}
                   link={link}
                   isActive={active}
-                  className={`min-h-11 min-w-8 justify-center px-1 text-sm font-medium transition-[color] focus-ring rounded-sm ${
+                  className={`min-h-11 min-w-11 justify-center px-1 text-sm font-medium transition-[color] focus-ring rounded-sm ${
                     active
                       ? "text-corpus-yellow"
                       : "text-concrete-400 hover:text-corpus-yellow"
