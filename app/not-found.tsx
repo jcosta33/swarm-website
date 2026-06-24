@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function NotFoundPage() {
   return (
-    <Section className="grid flex-1 gap-8 py-24 md:grid-cols-[0.8fr_1fr] md:items-center">
+    <Section className="grid gap-8 py-24 md:min-h-[calc(100svh-16rem)] md:grid-cols-[0.8fr_1fr] md:items-center md:py-16">
       <div className="text-center md:text-left">
         <h1 className="font-heading text-6xl font-bold text-corpus-yellow">
           404
