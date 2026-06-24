@@ -334,9 +334,38 @@
     auto;
   font-size: 0.76rem;
 }
+.docs-source-path {
+  min-width: 0;
+}
 .docs-source-note a {
   color: var(--color-ink);
   text-decoration-color: rgba(8, 9, 11, 0.35);
+}
+@media (max-width: 48rem) {
+  .docs-source-note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.2rem 0.55rem;
+    padding: 0.45rem 0.55rem;
+    line-height: 1.35;
+  }
+
+  .docs-source-path {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .docs-source-path a {
+    display: inline;
+  }
+
+  .docs-source-date {
+    grid-column: 2;
+    font-size: 0.7rem;
+    color: rgba(8, 9, 11, 0.72);
+  }
 }
 
 .docs-prose p,
@@ -427,15 +456,27 @@
 }
 
 /* Tables — bordered panel with an engraved header */
-.docs-prose table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.9rem;
+.docs-table-scroll {
   margin: 1.5rem 0;
-  display: block;
   overflow-x: auto;
   border: 1px solid var(--color-panel-border);
   border-radius: var(--radius-panel);
+}
+.docs-table-scroll:focus-visible {
+  outline: 2px solid var(--color-corpus-yellow);
+  outline-offset: 2px;
+}
+.docs-prose table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 42rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+@media (max-width: 48rem) {
+  .docs-prose table {
+    min-width: 38rem;
+  }
 }
 .docs-prose thead {
   background: var(--color-panel-raised);

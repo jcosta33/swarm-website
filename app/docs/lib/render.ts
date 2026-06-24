@@ -193,16 +193,51 @@ const rehypeLabelTaskCheckboxes: Plugin<[], HastRoot> = () => (tree) => {
   });
 };
 
-// Wide code blocks and tables scroll horizontally inside their own overflow-x:auto boxes (docs.css).
+// Put tables inside a scrollable shell. Letting the table itself be the scroll container forces
+// narrow mobile columns to wrap into confetti before overflow can help.
+const rehypeWrapTables: Plugin<[], HastRoot> = () => (tree) => {
+  visit(tree, "element", (node, index, parent) => {
+    if (node.tagName !== "table" || index === undefined || !parent) return;
+    if (!("children" in parent)) return;
+    if (
+      "tagName" in parent &&
+      parent.tagName === "div" &&
+      hasClass(parent, "docs-table-scroll")
+    )
+      return SKIP;
+    const wrapper: HastElement = {
+      type: "element",
+      tagName: "div",
+      properties: { className: ["docs-table-scroll"] },
+      children: [node],
+    };
+    parent.children[index] = wrapper as ElementContent;
+    return SKIP;
+  });
+};
+
+// Wide code blocks and table shells scroll horizontally inside overflow-x:auto boxes (docs.css).
 // A scrollable region that isn't keyboard-focusable can't be scrolled without a mouse (axe
-// `scrollable-region-focusable`). Make every <pre>/<table> a tab stop so keyboard users reach it.
+// `scrollable-region-focusable`). Make every <pre>/table shell a tab stop so keyboard users reach it.
 const rehypeFocusableScrollables: Plugin<[], HastRoot> = () => (tree) => {
   visit(tree, "element", (node) => {
-    if (node.tagName !== "pre" && node.tagName !== "table") return;
+    const isTableShell =
+      node.tagName === "div" && hasClass(node, "docs-table-scroll");
+    if (node.tagName !== "pre" && !isTableShell) return;
     node.properties = node.properties ?? {};
     node.properties.tabIndex = 0;
   });
 };
+
+function hasClass(node: HastElement, className: string): boolean {
+  const value = node.properties?.className;
+  const classes = Array.isArray(value)
+    ? value
+    : typeof value === "string"
+      ? value.split(/\s+/)
+      : [];
+  return classes.includes(className);
+}
 
 // Plain-text content of a hast element (heading labels for the on-this-page TOC).
 const hastText = (nodes: ElementContent[]): string =>
@@ -244,6 +279,7 @@ export async function renderDoc(
     .use(rehypeSlug)
     .use(rehypeCollectHeadings(headings))
     .use(rehypeLabelTaskCheckboxes)
+    .use(rehypeWrapTables)
     .use(rehypeFocusableScrollables)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown);

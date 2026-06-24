@@ -170,7 +170,7 @@ export default async function DocPage({
         <h1 className="docs-article-title">{title}</h1>
         <div className="docs-source-note" data-pagefind-ignore>
           <span className="paper-stamp">source</span>
-          <span>
+          <span className="docs-source-path">
             Source:{" "}
             <Link
               href={`https://github.com/jcosta33/corpus/blob/main/docs/${slugPath}.md`}
@@ -180,7 +180,11 @@ export default async function DocPage({
               corpus/docs/{slugPath}.md
             </Link>
           </span>
-          {dates && <span>Modified: {dates.modified.slice(0, 10)}</span>}
+          {dates && (
+            <span className="docs-source-date">
+              Modified: {dates.modified.slice(0, 10)}
+            </span>
+          )}
         </div>
         <div className="docs-article-html" dangerouslySetInnerHTML={{ __html: html }} />
 
