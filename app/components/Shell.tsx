@@ -283,7 +283,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <div className="gilt-trim border-t border-panel-border bg-footer">
+      <div className="site-footer gilt-trim overflow-hidden border-t border-panel-border bg-footer">
         <Section
           as="footer"
           className="flex flex-col gap-8 py-12 md:flex-row md:items-center md:justify-between"
