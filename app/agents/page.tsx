@@ -97,6 +97,17 @@ const authoring = [
   },
 ];
 
+const rosterMap = [
+  { label: "Review", file: "corpus-reviewer", tone: "read-only" },
+  { label: "Explore", file: "corpus-explorer", tone: "read-only" },
+  { label: "Evidence", file: "corpus-evidence-checker", tone: "read-only" },
+  { label: "Challenge", file: "corpus-challenger", tone: "read-only" },
+  { label: "Spec", file: "corpus-spec-author", tone: "write one artifact" },
+  { label: "Research", file: "corpus-researcher", tone: "write one artifact" },
+  { label: "Audit", file: "corpus-auditor", tone: "write one artifact" },
+  { label: "Docs", file: "corpus-documentarian", tone: "write one artifact" },
+];
+
 function repoHref(agent: string) {
   return `https://github.com/jcosta33/corpus-agents/blob/main/agents/${agent}.md`;
 }
@@ -163,6 +174,36 @@ export default function AgentsPage() {
             when to delegate.
           </p>
         </Card>
+      </Section>
+
+      <Section>
+        <Panel brushed screws className="p-0">
+          <div className="grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4">
+            {rosterMap.map((item, index) => (
+              <a
+                key={item.file}
+                href={repoHref(item.file)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${item.file} definition on GitHub (opens in new tab)`}
+                className="group block bg-panel-raised/95 p-5 transition-[background-color] hover:bg-panel focus-ring sm:p-6"
+              >
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h2 className="mt-3 font-heading text-xl font-bold text-concrete-100">
+                  {item.label}
+                </h2>
+                <p className="mt-2 font-mono text-xs leading-relaxed text-brass">
+                  {item.file}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-concrete-400">
+                  {item.tone}
+                </p>
+              </a>
+            ))}
+          </div>
+        </Panel>
       </Section>
 
       <Section className="flex flex-col gap-8">
