@@ -205,35 +205,39 @@ export default function SkillsPage() {
         </div>
         <Panel brushed className="p-2">
           <TerminalWindow title="terminal">
-            <p className="text-concrete-500"># list what&apos;s available</p>
+            <p className="text-concrete-500"># choose a catalog + skill</p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}npx skills add
-              jcosta33/corpus-skills --list
+              <span className="text-corpus-yellow">$</span>{" "}CMD=&quot;npx skills add&quot;
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}CAT=jcosta33/corpus-skills
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}SK=persona-skeptic
             </p>
             <p className="mt-2 text-concrete-500">
-              # install into the current repo
+              # inspect, then install locally
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic
+              <span className="text-corpus-yellow">$</span>{" "}$CMD &quot;$CAT&quot; --list
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}$CMD &quot;$CAT&quot; --skill &quot;$SK&quot;
             </p>
             <p className="mt-2 text-concrete-500">
-              # or install globally / for one agent
-            </p>
-            <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic -g
-            </p>
-            <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic -a claude-code
+              # scopes: -g / -a claude-code
             </p>
             <p className="mt-2 text-concrete-500">
-              # no CLI? copy the folder into your agent&apos;s skills directory
+              # no CLI? copy the folder
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}cp -R
-              skills/persona-skeptic &lt;your-repo&gt;/.agents/skills/
+              <span className="text-corpus-yellow">$</span>{" "}REPO=&lt;your-repo&gt;
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}DEST=&quot;$REPO&quot;/.agents/skills
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}cp -R skills/&quot;$SK&quot; &quot;$DEST&quot;/
             </p>
           </TerminalWindow>
         </Panel>
