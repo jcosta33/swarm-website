@@ -118,26 +118,31 @@ const bridgeFlow = [
     label: "Client",
     detail: "Claude Desktop, Cursor, or another MCP host.",
     icon: MessagesSquare,
+    href: "#mcp-config",
   },
   {
     label: "stdio",
     detail: "A local process pipe, not a hosted service.",
     icon: Cable,
+    href: "#install",
   },
   {
     label: "corpus-mcp",
     detail: "Read-only adapter around the workspace.",
     icon: Boxes,
+    href: "#guardrails",
   },
   {
     label: "CLI JSON",
     detail: "Commands return structured facts.",
     icon: Terminal,
+    href: "#mcp-tools",
   },
   {
     label: "Workspace",
     detail: "Markdown artifacts stay the source of truth.",
     icon: FileJson,
+    href: "#source",
   },
 ];
 
@@ -177,32 +182,39 @@ export default function McpPage() {
             {bridgeFlow.map((item, index) => {
               const Icon = item.icon;
               return (
-                <li
-                  key={item.label}
-                  className="relative bg-panel-raised/95 p-5 sm:p-6"
-                >
-                  <div className="flex items-center gap-3">
-                    <HexBadge color="yellow" className="h-10 w-10 shrink-0">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </HexBadge>
-                    <div>
-                      <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
-                        {String(index + 1).padStart(2, "0")}
-                      </p>
-                      <h2 className="font-heading text-lg font-bold text-concrete-100">
-                        {item.label}
-                      </h2>
+                <li key={item.label} className="relative bg-panel-raised/95">
+                  <a
+                    href={item.href}
+                    className="focus-ring group block h-full p-5 transition-colors duration-150 hover:bg-panel sm:p-6"
+                    aria-label={`Jump to ${item.label} details`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <HexBadge color="yellow" className="h-10 w-10 shrink-0">
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                      </HexBadge>
+                      <div className="min-w-0">
+                        <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
+                          {String(index + 1).padStart(2, "0")}
+                        </p>
+                        <h2 className="font-heading text-lg font-bold text-concrete-100">
+                          {item.label}
+                        </h2>
+                      </div>
+                      <ArrowRight
+                        className="ml-auto h-4 w-4 shrink-0 text-brass/70 transition-transform duration-150 group-hover:translate-x-0.5 lg:hidden"
+                        aria-hidden="true"
+                      />
                     </div>
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-concrete-400">
-                    {item.detail}
-                  </p>
-                  {index < bridgeFlow.length - 1 ? (
-                    <ArrowRight
-                      className="absolute right-4 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-brass lg:block"
-                      aria-hidden="true"
-                    />
-                  ) : null}
+                    <p className="mt-3 text-sm leading-relaxed text-concrete-400">
+                      {item.detail}
+                    </p>
+                    {index < bridgeFlow.length - 1 ? (
+                      <ArrowRight
+                        className="absolute right-4 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-brass transition-transform duration-150 group-hover:translate-x-0.5 lg:block"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                  </a>
                 </li>
               );
             })}
@@ -210,7 +222,10 @@ export default function McpPage() {
         </Panel>
       </Section>
 
-      <Section className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <Section
+        id="mcp-config"
+        className="grid scroll-mt-28 gap-6 lg:grid-cols-[1.05fr_0.95fr]"
+      >
         <Panel brushed className="p-2">
           <TerminalWindow title="mcp.json" ariaLabel="corpus-mcp config">
             <p className="text-concrete-500">
@@ -245,7 +260,7 @@ export default function McpPage() {
         </PaperArtifact>
       </Section>
 
-      <Section className="flex flex-col gap-12">
+      <Section id="guardrails" className="flex scroll-mt-28 flex-col gap-12">
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-gold">
             <DroneIcon className="h-4 w-4" />
@@ -279,7 +294,7 @@ export default function McpPage() {
         </ul>
       </Section>
 
-      <Section className="grid gap-6 lg:grid-cols-2">
+      <Section id="mcp-tools" className="grid scroll-mt-28 gap-6 lg:grid-cols-2">
         <Card screws className="border-panel-border">
           <div className="section-kicker section-kicker-olive">
             <Cable className="h-4 w-4" aria-hidden="true" />
@@ -359,7 +374,10 @@ export default function McpPage() {
         </Card>
       </Section>
 
-      <Section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <Section
+        id="install"
+        className="grid scroll-mt-28 gap-6 lg:grid-cols-[0.9fr_1.1fr]"
+      >
         <div>
           <div className="section-kicker section-kicker-muted">
             <Terminal className="h-4 w-4" aria-hidden="true" />
@@ -410,7 +428,7 @@ export default function McpPage() {
         </Panel>
       </Section>
 
-      <Section>
+      <Section id="source" className="scroll-mt-28">
         <Card
           screws
           contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
