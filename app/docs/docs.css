@@ -907,7 +907,7 @@
   }
 
   .docs-index-section-primary {
-    grid-row: span 2;
+    min-height: 100%;
   }
 
   .docs-index-section-wide {
