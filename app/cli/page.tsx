@@ -129,6 +129,39 @@ const principles = [
   },
 ];
 
+const commandFamilies = [
+  {
+    label: "Setup",
+    commands: "init · update",
+    detail: "Create or refresh kit-owned files.",
+    icon: Blocks,
+  },
+  {
+    label: "Check",
+    commands: "check · status",
+    detail: "Report workspace facts and gaps.",
+    icon: ShieldCheck,
+  },
+  {
+    label: "Review",
+    commands: "review · promote",
+    detail: "Compare evidence and draft findings.",
+    icon: ScanEye,
+  },
+  {
+    label: "Run",
+    commands: "worktree · run",
+    detail: "Isolate task work and launch agents.",
+    icon: GitBranch,
+  },
+  {
+    label: "JSON",
+    commands: "show",
+    detail: "Expose parsed artifacts for scripts.",
+    icon: LayoutDashboard,
+  },
+];
+
 export default function CliPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -153,6 +186,42 @@ export default function CliPage() {
             <Badge variant="draft">No verdicts</Badge>
           </div>
         </PageHero>
+      </Section>
+
+      <Section>
+        <Panel brushed screws className="p-0">
+          <ol
+            className="grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
+            aria-label="corpus-cli command families"
+          >
+            {commandFamilies.map((family, index) => {
+              const Icon = family.icon;
+              return (
+                <li key={family.label} className="bg-panel-raised/95 p-5 sm:p-6">
+                  <div className="flex items-center gap-3">
+                    <HexBadge color="olive" className="h-10 w-10 shrink-0">
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    </HexBadge>
+                    <div>
+                      <p className="font-mono text-xs font-semibold uppercase tracking-wide text-olive">
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h2 className="font-heading text-lg font-bold text-concrete-100">
+                        {family.label}
+                      </h2>
+                    </div>
+                  </div>
+                  <p className="mt-3 font-mono text-xs leading-relaxed text-olive">
+                    {family.commands}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-concrete-400">
+                    {family.detail}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
+        </Panel>
       </Section>
 
       <Section className="flex flex-col gap-8">
