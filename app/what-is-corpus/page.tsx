@@ -256,28 +256,35 @@ export default function WhatIsCorpusPage() {
           <Heading className="mt-3">Where Corpus sits</Heading>
         </div>
         <ul className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {adjacent.map((row) => (
+          {adjacent.map((row, index) => (
             <li key={row.product}>
-              <Card className="group h-full border-panel-border hover:border-brass/50">
-                <div className="flex items-start justify-between gap-2">
+              <Card className="relation-card group h-full border-panel-border hover:border-brass/50">
+                <div className="relation-card-head">
                   <div>
-                    <p className="font-mono text-xs text-brass">
+                    <p className="relation-card-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <p className="relation-card-title">
                       {row.product}
                     </p>
                     {row.examples && (
-                      <p className="mt-1 text-xs text-concrete-400">
+                      <p className="relation-card-examples">
                         {row.examples}
                       </p>
                     )}
                   </div>
                   <PilotLamp color="amber" className="shrink-0" />
                 </div>
-                <p className="mt-3 text-sm font-semibold text-concrete-100">
-                  Does: {row.does}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-concrete-400">
-                  {row.relation}
-                </p>
+                <dl className="relation-card-body">
+                  <div>
+                    <dt>Their job</dt>
+                    <dd>{row.does}</dd>
+                  </div>
+                  <div>
+                    <dt>Corpus job</dt>
+                    <dd>{row.relation}</dd>
+                  </div>
+                </dl>
               </Card>
             </li>
           ))}
