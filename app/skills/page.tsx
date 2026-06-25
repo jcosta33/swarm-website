@@ -134,7 +134,7 @@ const authoring = [
 export default function SkillsPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
-      <Section>
+      <Section className="ambient-header">
         <PageHero
           eyebrow="tool index / agent guides"
           title={
