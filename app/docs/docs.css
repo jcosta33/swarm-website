@@ -986,7 +986,10 @@
 
   .docs-index-section-primary {
     grid-area: start;
-    height: 100%;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    align-self: stretch;
   }
 
   .docs-index-section-wide {
