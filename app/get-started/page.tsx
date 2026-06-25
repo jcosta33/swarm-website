@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
-import { ArrowRight, FolderPlus, Rocket, Terminal, Wrench } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  ClipboardList,
+  FileText,
+  FolderPlus,
+  FolderTree,
+  LayoutTemplate,
+  Rocket,
+  ScrollText,
+  Terminal,
+  Wrench,
+} from "lucide-react";
 import { Section } from "../components/Section";
 import { Card } from "../components/Card";
 import { ActionLink } from "../components/ActionLink";
@@ -48,14 +60,44 @@ function KitIcon({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ListDot() {
-  return (
-    <span
-      className="mt-2.5 h-2 w-2 shrink-0 rounded-sm bg-corpus-yellow shadow-[0_0_8px_rgba(216,138,36,0.72)]"
-      aria-hidden="true"
-    />
-  );
-}
+const kitContents = [
+  {
+    name: "AGENTS.md",
+    role: "local contract",
+    text: "The file your agent reads before work starts.",
+    icon: ScrollText,
+  },
+  {
+    name: "Core guides",
+    role: "working method",
+    text: "Write specs, run tasks, review output, save findings.",
+    icon: BookOpen,
+  },
+  {
+    name: "Eight templates",
+    role: "record shapes",
+    text: "Intake, spec, task, review, finding, status, inventory, change plan.",
+    icon: LayoutTemplate,
+  },
+  {
+    name: "Flow folders",
+    role: "workspace map",
+    text: "Specs, tasks, reviews, findings, and related folders.",
+    icon: FolderTree,
+  },
+  {
+    name: "status.md",
+    role: "active board",
+    text: "A small workboard for active items.",
+    icon: ClipboardList,
+  },
+  {
+    name: "decisions/",
+    role: "local ADRs",
+    text: "Decision records for choices that should survive chat.",
+    icon: FileText,
+  },
+];
 
 export default function GetStartedPage() {
   return (
@@ -177,74 +219,55 @@ export default function GetStartedPage() {
         </p>
       </Section>
 
-      <Section className="flex flex-col gap-8">
-        <Heading>Starter kit contents</Heading>
-        <PaperArtifact
-          label="note"
-          title="starter kit contents"
-          meta="workspace / committed artifacts"
-          className="max-w-3xl"
-        >
-          <p>
-            AGENTS.md sets the local contract. Templates shape the records.
-            status.md tracks the work.
-          </p>
-        </PaperArtifact>
-        <ul className="reveal grid gap-4 sm:grid-cols-2">
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">AGENTS.md</strong> — the
-              file your agent reads before work starts.
-            </span>
-          </li>
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">Core guides</strong> —
-              write specs, run tasks, review output, save findings.
-            </span>
-          </li>
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">Eight templates</strong> —
-              intake, spec, task, review, finding, status, inventory,
-              change plan.
-            </span>
-          </li>
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">Flow folders</strong> —
-              specs/, tasks/, reviews/, findings/, and related folders.
-            </span>
-          </li>
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">status.md</strong> — a
-              small workboard for active items.
-            </span>
-          </li>
-          <li className="flex items-start gap-3 text-concrete-400">
-            <ListDot />
-            <span>
-              <strong className="text-concrete-100">decisions/</strong> — ADRs
-              for local decisions.
-            </span>
-          </li>
-        </ul>
-        <p className="text-concrete-400">
-          More setup notes:{" "}
-          <TextLink
-            href="/docs/ADOPTING/"
-            target="_blank"
-            rel="noopener noreferrer"
+      <Section className="grid gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-start">
+        <div className="flex flex-col gap-5">
+          <Heading>Starter kit contents</Heading>
+          <PaperArtifact
+            label="note"
+            title="starter kit contents"
+            meta="workspace / committed artifacts"
           >
-            docs/ADOPTING.md
-          </TextLink>
-        </p>
+            <p>
+              Copy the kit once. It gives the repo a shared map: local rules,
+              record templates, flow folders, and a small board.
+            </p>
+          </PaperArtifact>
+          <p className="text-concrete-400">
+            More setup notes:{" "}
+            <TextLink
+              href="/docs/ADOPTING/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              docs/ADOPTING.md
+            </TextLink>
+          </p>
+        </div>
+
+        <Card screws className="h-full" contentClassName="space-y-5">
+          <div className="section-kicker section-kicker-brass">
+            <FolderTree className="h-4 w-4" aria-hidden="true" />
+            <span>manifest — copied files</span>
+          </div>
+          <ul className="kit-ledger">
+            {kitContents.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <li key={item.name} className="kit-ledger-item">
+                  <div className="kit-ledger-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                  <Icon className="kit-ledger-icon h-4 w-4" aria-hidden="true" />
+                  <div className="min-w-0">
+                    <h3 className="kit-ledger-title">{item.name}</h3>
+                    <p className="kit-ledger-role">{item.role}</p>
+                    <p className="kit-ledger-copy">{item.text}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </Card>
       </Section>
 
       <Section className="grid gap-6 md:grid-cols-2">
