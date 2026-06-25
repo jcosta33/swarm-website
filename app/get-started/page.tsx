@@ -99,6 +99,29 @@ const kitContents = [
   },
 ];
 
+const setupPath = [
+  {
+    label: "Choose",
+    text: "Start fresh or adopt an existing repo.",
+    icon: Rocket,
+  },
+  {
+    label: "Copy",
+    text: "Add the starter kit files once.",
+    icon: FolderPlus,
+  },
+  {
+    label: "Check",
+    text: "Run the CLI check when you want a gate.",
+    icon: Terminal,
+  },
+  {
+    label: "Work",
+    text: "Write a spec, cut a task, keep evidence.",
+    icon: ClipboardList,
+  },
+];
+
 export default function GetStartedPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -109,6 +132,39 @@ export default function GetStartedPage() {
             and checks.
           </p>
         </PageHero>
+      </Section>
+
+      <Section>
+        <Panel brushed screws className="p-0">
+          <ol
+            className="grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
+            aria-label="Corpus setup path"
+          >
+            {setupPath.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <li key={step.label} className="bg-panel-raised/95 p-5 sm:p-6">
+                  <div className="flex items-center gap-3">
+                    <KitIcon>
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </KitIcon>
+                    <div>
+                      <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h2 className="font-heading text-lg font-bold text-concrete-100">
+                        {step.label}
+                      </h2>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-concrete-400">
+                    {step.text}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
+        </Panel>
       </Section>
 
       <Section className="reveal grid gap-6 md:grid-cols-2">
