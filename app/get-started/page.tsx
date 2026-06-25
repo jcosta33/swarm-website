@@ -43,10 +43,6 @@ function KitIcon({ children }: { children: React.ReactNode }) {
         className="brushed-metal absolute inset-0 pointer-events-none z-0"
         aria-hidden="true"
       />
-      <div
-        className="screw-corners screw-corners-bottom absolute inset-0 pointer-events-none z-10"
-        aria-hidden="true"
-      />
       <span className="relative z-10">{children}</span>
     </div>
   );
