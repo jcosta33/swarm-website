@@ -1273,6 +1273,124 @@ body::after {
   }
 }
 
+/* Footer ledger — a quiet close, grouped like an index rather than a link strip. */
+.site-footer {
+  background-image:
+    linear-gradient(rgba(70, 57, 44, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 57, 44, 0.055) 1px, transparent 1px),
+    radial-gradient(70% 100% at 50% 0%, rgba(216, 138, 36, 0.05), transparent 56%);
+  background-size:
+    48px 48px,
+    48px 48px,
+    auto;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 2fr) auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.site-footer-identity {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 18rem;
+}
+
+.site-footer-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.site-footer-link-group {
+  min-width: 0;
+}
+
+.site-footer-link-title {
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.38rem;
+  border-bottom: 1px solid rgba(216, 138, 36, 0.24);
+  color: var(--color-brass);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.site-footer-link-list {
+  display: grid;
+  gap: 0.05rem;
+  justify-items: start;
+}
+
+.site-footer-proof {
+  display: grid;
+  gap: 0.32rem;
+  justify-items: end;
+  margin: 0;
+  padding: 0;
+  color: var(--color-concrete-500);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: right;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.site-footer-proof li {
+  white-space: nowrap;
+}
+
+.site-footer-proof li::before {
+  content: "•";
+  margin-right: 0.38rem;
+  color: var(--color-brass);
+}
+
+.site-footer-year {
+  grid-column: 3;
+  justify-self: end;
+  color: var(--color-concrete-400);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+@media (max-width: 64rem) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .site-footer-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .site-footer-proof,
+  .site-footer-year {
+    grid-column: auto;
+    justify-items: start;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 40rem) {
+  .site-footer-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer-proof li {
+    white-space: normal;
+  }
+}
+
 /* Gilt rule — a thin illuminated top accent */
 .gilt-trim {
   position: relative;

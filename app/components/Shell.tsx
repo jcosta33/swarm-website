@@ -19,19 +19,36 @@ const navLinks = [
   { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
 ];
 
-const footerLinks = [
-  { label: "Get started", href: "/get-started" },
-  { label: "Skills", href: "/skills" },
-  { label: "Agents", href: "/agents" },
-  { label: "CLI", href: "/cli" },
-  { label: "MCP", href: "/mcp" },
-  { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
+const footerGroups = [
   {
-    label: "Starter kit",
-    href: "https://github.com/jcosta33/corpus-starter-kit",
+    title: "Work",
+    links: [
+      { label: "What is Corpus", href: "/what-is-corpus" },
+      { label: "Loop", href: "/the-loop" },
+      { label: "Get started", href: "/get-started" },
+    ],
   },
-  { label: "Docs", href: "/docs" },
-  { label: "Colophon", href: "/colophon" },
+  {
+    title: "Tools",
+    links: [
+      { label: "Skills", href: "/skills" },
+      { label: "Agents", href: "/agents" },
+      { label: "CLI", href: "/cli" },
+      { label: "MCP", href: "/mcp" },
+    ],
+  },
+  {
+    title: "Reference",
+    links: [
+      { label: "Docs", href: "/docs" },
+      { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
+      {
+        label: "Starter kit",
+        href: "https://github.com/jcosta33/corpus-starter-kit",
+      },
+      { label: "Colophon", href: "/colophon" },
+    ],
+  },
 ];
 
 function isExternal(href: string) {
@@ -286,9 +303,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
       <div className="site-footer gilt-trim overflow-hidden border-t border-panel-border bg-footer">
         <Section
           as="footer"
-          className="flex flex-col gap-8 py-12 md:flex-row md:items-center md:justify-between"
+          className="site-footer-grid py-12"
         >
-          <div className="flex flex-col gap-2">
+          <div className="site-footer-identity">
             <Link
               href="/"
               aria-label="Corpus home"
@@ -301,25 +318,38 @@ export function Shell({ children }: { children: React.ReactNode }) {
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-6 gap-y-1" aria-label="Footer">
-            {footerLinks.map((link) => {
-              const active = isActiveLink(link.href, pathname);
-              return (
-                <NavLink
-                  key={link.label}
-                  link={link}
-                  isActive={active}
-                  className={`min-h-11 min-w-11 justify-center px-1 text-sm font-medium transition-[color] focus-ring rounded-sm ${
-                    active
-                      ? "text-corpus-yellow"
-                      : "text-concrete-400 hover:text-corpus-yellow"
-                  }`}
-                />
-              );
-            })}
+          <nav className="site-footer-nav" aria-label="Footer">
+            {footerGroups.map((group) => (
+              <div key={group.title} className="site-footer-link-group">
+                <p className="site-footer-link-title">{group.title}</p>
+                <div className="site-footer-link-list">
+                  {group.links.map((link) => {
+                    const active = isActiveLink(link.href, pathname);
+                    return (
+                      <NavLink
+                        key={link.label}
+                        link={link}
+                        isActive={active}
+                        className={`min-h-11 min-w-11 px-1 text-sm font-medium transition-[color] focus-ring rounded-sm ${
+                          active
+                            ? "text-corpus-yellow"
+                            : "text-concrete-400 hover:text-corpus-yellow"
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </nav>
 
-          <p className="text-sm text-concrete-400">
+          <ul className="site-footer-proof" aria-label="Project note">
+            <li>Plain markdown</li>
+            <li>Human review</li>
+            <li>No runtime required</li>
+          </ul>
+
+          <p className="site-footer-year">
             © {new Date().getFullYear()} Corpus contributors.
           </p>
         </Section>
