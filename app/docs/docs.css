@@ -962,6 +962,7 @@
   display: flex;
   min-height: 2.75rem;
   align-items: center;
+  gap: 0.7rem;
   width: 100%;
   border-radius: var(--radius-panel);
   padding: 0.25rem 0.35rem;
@@ -975,10 +976,38 @@
     text-decoration-color 0.12s;
 }
 
+.docs-index-item-number {
+  display: inline-flex;
+  min-width: 2ch;
+  flex: 0 0 auto;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--color-brass);
+  opacity: 0.72;
+}
+
+.docs-index-item-label {
+  min-width: 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(216, 138, 36, 0.42);
+  text-underline-offset: 0.22rem;
+}
+
 .docs-prose .docs-index-list a:hover,
 .docs-prose .docs-index-list a:focus-visible {
   background: rgba(216, 138, 36, 0.1);
   color: var(--color-corpus-yellow);
+}
+
+.docs-prose .docs-index-list a:hover .docs-index-item-number,
+.docs-prose .docs-index-list a:focus-visible .docs-index-item-number {
+  color: var(--color-corpus-yellow);
+  opacity: 1;
+}
+
+.docs-prose .docs-index-list a:hover .docs-index-item-label,
+.docs-prose .docs-index-list a:focus-visible .docs-index-item-label {
   text-decoration-color: var(--color-corpus-yellow);
 }
 

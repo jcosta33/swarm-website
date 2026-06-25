@@ -25,9 +25,18 @@ function Section({
       </div>
       {intro ? <p>{intro}</p> : null}
       <ul className="docs-index-list">
-        {sec.items.map((it) => (
+        {sec.items.map((it, index) => (
           <li key={it.slug}>
-            <Link href={`/docs/${it.slug}/`}>{it.label}</Link>
+            <Link href={`/docs/${it.slug}/`}>
+              <span
+                className="docs-index-item-number"
+                aria-hidden="true"
+                data-pagefind-ignore
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="docs-index-item-label">{it.label}</span>
+            </Link>
           </li>
         ))}
       </ul>
