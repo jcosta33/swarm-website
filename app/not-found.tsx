@@ -1,4 +1,5 @@
-import { ArrowLeft, Search } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight, BookOpen, GitBranch, Search } from "lucide-react";
 import { Section } from "./components/Section";
 import { ActionLink } from "./components/ActionLink";
 import { PaperArtifact } from "./components/PaperArtifact";
@@ -8,6 +9,27 @@ export const metadata = {
   description: "The requested page was not found.",
   robots: "noindex",
 };
+
+const recoveryRoutes = [
+  {
+    href: "/docs/",
+    label: "Docs index",
+    text: "Find the canonical manual page.",
+    icon: BookOpen,
+  },
+  {
+    href: "/the-loop/",
+    label: "The loop",
+    text: "Review the six-step workflow.",
+    icon: GitBranch,
+  },
+  {
+    href: "/get-started/",
+    label: "Get started",
+    text: "Set up a new or existing workspace.",
+    icon: ArrowRight,
+  },
+];
 
 export default function NotFoundPage() {
   return (
@@ -30,6 +52,41 @@ export default function NotFoundPage() {
             <Search className="h-4 w-4" aria-hidden="true" /> Search docs
           </ActionLink>
         </div>
+        <nav
+          aria-label="Recovery routes"
+          className="mx-auto mt-8 max-w-md overflow-hidden rounded-panel border border-panel-border bg-panel-raised/70 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)] md:mx-0"
+        >
+          {recoveryRoutes.map((route, index) => {
+            const Icon = route.icon;
+            return (
+              <Link
+                key={route.href}
+                href={route.href}
+                className="focus-ring group flex min-h-20 items-center gap-4 border-b border-panel-border/80 px-4 py-3 text-concrete-300 transition-colors last:border-b-0 hover:bg-panel hover:text-concrete-100"
+              >
+                <span className="font-mono text-xs font-semibold text-corpus-yellow">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <Icon
+                  className="h-4 w-4 shrink-0 text-brass"
+                  aria-hidden="true"
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block font-heading text-base font-bold text-concrete-100">
+                    {route.label}
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-relaxed text-concrete-400">
+                    {route.text}
+                  </span>
+                </span>
+                <ArrowRight
+                  className="h-4 w-4 shrink-0 text-brass/70 transition-transform duration-150 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </Link>
+            );
+          })}
+        </nav>
       </div>
       <PaperArtifact
         label="trace"
