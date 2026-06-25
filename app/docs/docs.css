@@ -322,10 +322,14 @@
 }
 
 .docs-prose h2::before {
-  content: "§ ";
-  color: var(--color-brass);
+  content: "§";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: rgba(216, 138, 36, 0.72);
   font-family: var(--font-mono), monospace;
-  font-size: 0.8em;
+  font-size: 0.72em;
+  font-weight: 500;
+  transform: translateY(-0.04em);
 }
 .docs-prose h3 {
   font-size: 1.18rem;
