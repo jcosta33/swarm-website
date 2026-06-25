@@ -79,6 +79,25 @@ const outOfScope = [
   "business logic that belongs in the consuming repo",
 ];
 
+const skillAnatomy = [
+  {
+    label: "Trigger",
+    text: "The description says when the skill loads.",
+  },
+  {
+    label: "Rules",
+    text: "The body gives the agent a short checklist.",
+  },
+  {
+    label: "References",
+    text: "Extra examples stay one hop away.",
+  },
+  {
+    label: "Scope",
+    text: "Repo-specific knowledge stays in AGENTS.md.",
+  },
+];
+
 export default function WritingSkillsPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -100,6 +119,26 @@ export default function WritingSkillsPage() {
             Keep the rest out.
           </p>
         </PageHero>
+      </Section>
+
+      <Section>
+        <Panel brushed screws className="p-0">
+          <ol className="grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4">
+            {skillAnatomy.map((item, index) => (
+              <li key={item.label} className="bg-panel-raised/95 p-5 sm:p-6">
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h2 className="mt-3 font-heading text-xl font-bold text-concrete-100">
+                  {item.label}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-concrete-400">
+                  {item.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Panel>
       </Section>
 
       <Section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
