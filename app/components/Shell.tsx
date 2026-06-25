@@ -53,6 +53,20 @@ function isActiveLink(href: string, pathname: string) {
   );
 }
 
+function getFolioLabel(pathname: string) {
+  const normalizedPath = normalizeHref(pathname);
+  if (normalizedPath === "/") return "Corpus / home";
+  if (normalizedPath.startsWith("/what-is-corpus/")) return "Corpus / overview";
+  if (normalizedPath.startsWith("/the-loop/")) return "Corpus / loop";
+  if (normalizedPath.startsWith("/get-started/")) return "Corpus / setup";
+  if (normalizedPath.startsWith("/agents/")) return "Corpus / agents";
+  if (normalizedPath.startsWith("/skills/")) return "Corpus / skills";
+  if (normalizedPath.startsWith("/cli/")) return "Corpus / cli";
+  if (normalizedPath.startsWith("/mcp/")) return "Corpus / mcp";
+  if (normalizedPath.startsWith("/docs/")) return "Corpus / manual";
+  return "Corpus / record";
+}
+
 function NavLink({
   link,
   onClick,
@@ -93,6 +107,7 @@ function NavLink({
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const folioLabel = getFolioLabel(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -258,7 +273,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
         />
       )}
 
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="site-main-frame flex-1">
+        <div className="folio-rail folio-rail-left" aria-hidden="true">
+          <span>{folioLabel}</span>
+        </div>
+        <div className="folio-rail folio-rail-right" aria-hidden="true">
+          <span>reviewable work</span>
+        </div>
         {children}
       </main>
 
