@@ -173,32 +173,34 @@ export default function AgentsPage() {
         <Panel brushed className="p-2">
           <TerminalWindow title="terminal">
             <p className="text-concrete-500">
-              # copy one agent into your repo (Claude Code reads
-              .claude/agents/)
+              # copy one worker
             </p>
             <p className="text-concrete-100">
               <span className="text-corpus-yellow">$</span>{" "}REPO=&lt;your-repo&gt;
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}AGENTS=&quot;$REPO&quot;/.claude/agents
+              <span className="text-corpus-yellow">$</span>{" "}AGENT=corpus-reviewer.md
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}HOOKS=&quot;$REPO&quot;/.claude/hooks
+              <span className="text-corpus-yellow">$</span>{" "}DEST=&quot;$REPO&quot;/.claude/agents
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}mkdir -p &quot;$AGENTS&quot; &quot;$HOOKS&quot;
+              <span className="text-corpus-yellow">$</span>{" "}mkdir -p &quot;$DEST&quot;
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}cp agents/corpus-reviewer.md &quot;$AGENTS&quot;/
+              <span className="text-corpus-yellow">$</span>{" "}cp agents/&quot;$AGENT&quot; &quot;$DEST&quot;/
             </p>
             <p className="mt-2 text-concrete-500">
-              # optional: the delegation-provenance hook + the read-only guard
+              # optional hooks
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}cp hooks/delegations.sh &quot;$HOOKS&quot;/
+              <span className="text-corpus-yellow">$</span>{" "}DEST=&quot;$REPO&quot;/.claude/hooks
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}cp hooks/readonly-guard.sh &quot;$HOOKS&quot;/
+              <span className="text-corpus-yellow">$</span>{" "}mkdir -p &quot;$DEST&quot;
+            </p>
+            <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}cp hooks/*.sh &quot;$DEST&quot;/
             </p>
           </TerminalWindow>
         </Panel>
