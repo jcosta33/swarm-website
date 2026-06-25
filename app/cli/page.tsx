@@ -259,16 +259,16 @@ export default function CliPage() {
                   screws
                   className="group h-full border-panel-border hover:border-olive/60"
                 >
-                  <div className="relative pr-8">
+                  <div className="catalog-row catalog-row-olive relative pr-8">
                     <div className="flex min-w-0 items-start gap-4">
-                      <HexBadge color="olive">
+                      <HexBadge color="olive" className="catalog-row-badge">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </HexBadge>
                       <div className="min-w-0">
-                        <h3 className="font-mono text-[13px] leading-snug font-semibold text-olive break-words sm:text-sm">
+                        <h3 className="catalog-row-title font-mono text-[13px] leading-snug font-semibold text-olive break-words sm:text-sm">
                           corpus {c.cmd}
                         </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-concrete-400">
+                        <p className="catalog-row-copy mt-1 text-sm leading-relaxed text-concrete-400">
                           {c.what}
                         </p>
                       </div>
@@ -305,15 +305,20 @@ export default function CliPage() {
                   screws
                   className="group h-full border-panel-border hover:border-brass/50"
                 >
-                  <HexBadge color="orange" className="mb-4">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </HexBadge>
-                  <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-concrete-400">
-                    {p.text}
-                  </p>
+                  <div className="catalog-row catalog-row-orange">
+                    <HexBadge
+                      color="orange"
+                      className="catalog-row-badge mb-4"
+                    >
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </HexBadge>
+                    <h3 className="catalog-row-title font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
+                      {p.title}
+                    </h3>
+                    <p className="catalog-row-copy mt-2 text-sm leading-relaxed text-concrete-400">
+                      {p.text}
+                    </p>
+                  </div>
                 </Card>
               </li>
             );

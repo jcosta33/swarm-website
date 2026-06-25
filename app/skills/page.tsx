@@ -278,16 +278,16 @@ export default function SkillsPage() {
                   className="group block rounded-sm focus-ring"
                 >
                   <Card className="h-full border-panel-border hover:border-brass/50">
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="catalog-row flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <HexBadge color="yellow">
+                        <HexBadge color="yellow" className="catalog-row-badge">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </HexBadge>
                         <div>
-                          <h3 className="font-mono text-sm font-semibold text-brass">
+                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-brass">
                             {s.skill}
                           </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-concrete-400">
+                          <p className="catalog-row-copy mt-1 text-sm leading-relaxed text-concrete-400">
                             {s.use}
                           </p>
                         </div>
@@ -330,16 +330,16 @@ export default function SkillsPage() {
                   className="group block rounded-sm focus-ring"
                 >
                   <Card className="h-full border-panel-border hover:border-olive/60">
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="catalog-row catalog-row-olive flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <HexBadge color="olive">
+                        <HexBadge color="olive" className="catalog-row-badge">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </HexBadge>
                         <div>
-                          <h3 className="font-mono text-sm font-semibold text-olive">
+                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-olive">
                             {s.skill}
                           </h3>
-                          <p className="mt-1 text-sm leading-relaxed text-concrete-400">
+                          <p className="catalog-row-copy mt-1 text-sm leading-relaxed text-concrete-400">
                             {s.use}
                           </p>
                         </div>

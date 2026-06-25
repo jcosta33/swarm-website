@@ -813,6 +813,87 @@ body::after {
     0 0 0 1px rgba(216, 138, 36, 0.07);
 }
 
+.catalog-row {
+  --catalog-signal: var(--color-corpus-yellow);
+  --catalog-signal-soft: rgba(216, 138, 36, 0.62);
+  position: relative;
+  min-height: 3.5rem;
+  padding-left: 1rem;
+}
+
+.catalog-row::before {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  bottom: 0.1rem;
+  left: 0;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--catalog-signal),
+    transparent
+  );
+  opacity: 0.38;
+  transform: scaleY(0.62);
+  transform-origin: center;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.catalog-row-olive {
+  --catalog-signal: var(--color-olive);
+  --catalog-signal-soft: rgba(168, 147, 58, 0.62);
+}
+
+.catalog-row-orange {
+  --catalog-signal: var(--color-rubedo);
+  --catalog-signal-soft: rgba(201, 121, 82, 0.62);
+}
+
+.catalog-row-title {
+  color: var(--color-concrete-100);
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease;
+}
+
+.catalog-row-copy {
+  color: var(--color-concrete-300);
+  transition: color 160ms ease;
+}
+
+.catalog-row-badge {
+  transition:
+    filter 160ms ease,
+    transform 160ms ease;
+}
+
+.group:hover .catalog-row::before,
+.group:focus-within .catalog-row::before {
+  opacity: 0.92;
+  transform: scaleY(1);
+}
+
+.group:hover .catalog-row-title,
+.group:focus-within .catalog-row-title {
+  color: var(--catalog-signal);
+  text-shadow: 0 0 14px var(--catalog-signal-soft);
+}
+
+.group:hover .catalog-row-copy,
+.group:focus-within .catalog-row-copy {
+  color: var(--color-concrete-200);
+}
+
+.group:hover .catalog-row-badge,
+.group:focus-within .catalog-row-badge {
+  filter: saturate(1.16) brightness(1.08);
+  transform: translateY(-1px);
+}
+
 .crt-screen {
   background:
     linear-gradient(
@@ -1491,8 +1572,14 @@ body::after {
   .terminal-window:hover,
   .terminal-window:focus-within,
   .paper-artifact:hover,
-  .paper-artifact:focus-within {
+  .paper-artifact:focus-within,
+  .group:hover .catalog-row-badge,
+  .group:focus-within .catalog-row-badge {
     transform: none !important;
+  }
+
+  .catalog-row::before {
+    transform: scaleY(1);
   }
 }
 
