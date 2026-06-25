@@ -200,6 +200,49 @@ body::after {
   text-decoration-color: var(--color-gold-bright);
 }
 
+.link-motion {
+  position: relative;
+  isolation: isolate;
+}
+
+.link-motion::before {
+  content: "";
+  position: absolute;
+  inset: 0.18rem -0.28rem;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    linear-gradient(90deg, rgba(216, 138, 36, 0.1), rgba(216, 138, 36, 0.035));
+  opacity: 0;
+  transform: scaleX(0.94);
+  transform-origin: left center;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.link-motion:hover::before,
+.link-motion:focus-visible::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.link-motion > svg {
+  transition: transform 150ms ease;
+}
+
+.link-motion:hover > svg,
+.link-motion:focus-visible > svg {
+  transform: translateX(0.18rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-motion::before,
+  .link-motion > svg {
+    transform: none !important;
+  }
+}
+
 .site-header[data-nav-state="transparent"] {
   background-color: transparent;
 }

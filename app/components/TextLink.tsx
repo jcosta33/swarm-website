@@ -20,7 +20,7 @@ export function TextLink({
     <Link
       href={href}
       {...props}
-      className={`inline-flex min-h-8 items-center rounded-sm text-corpus-yellow underline decoration-brass/60 underline-offset-4 transition-[color,text-decoration-color] hover:text-gold-bright hover:decoration-gold-bright focus-ring ${className}`}
+      className={`link-motion inline-flex min-h-8 items-center rounded-sm text-corpus-yellow underline decoration-brass/60 underline-offset-4 transition-[color,text-decoration-color] hover:text-gold-bright hover:decoration-gold-bright focus-ring ${className}`}
     >
       {children}
     </Link>

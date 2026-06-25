@@ -55,13 +55,11 @@ export default function DocsIndex() {
         the loop once.
       </p>
       <div className="docs-index-grid">
-        {startHere ? <Section sec={startHere} /> : null}
-        {tutorial || examples ? (
-          <div className="docs-index-stack">
-            {tutorial ? <Section sec={tutorial} /> : null}
-            {examples ? <Section sec={examples} /> : null}
-          </div>
+        {startHere ? (
+          <Section sec={startHere} className="docs-index-section-primary" />
         ) : null}
+        {tutorial ? <Section sec={tutorial} /> : null}
+        {examples ? <Section sec={examples} /> : null}
         {reference ? (
           <Section
             sec={reference}

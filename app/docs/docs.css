@@ -902,6 +902,10 @@
     align-items: stretch;
   }
 
+  .docs-index-section-primary {
+    grid-column: 1 / -1;
+  }
+
   .docs-index-section-wide {
     grid-column: 1 / -1;
   }
@@ -940,6 +944,7 @@
 }
 
 @media (min-width: 52rem) {
+  .docs-index-section-primary .docs-index-list,
   .docs-index-section-wide .docs-index-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
