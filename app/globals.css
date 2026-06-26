@@ -1537,6 +1537,10 @@ body::after {
   isolation: isolate;
   overflow: hidden;
   background-image: var(--process-pattern);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .process-strip > :is(li, a, div)::before,
@@ -1602,11 +1606,24 @@ body::after {
 
 @media (prefers-reduced-motion: no-preference) {
   .process-strip
+    > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover) {
+    transform: translateY(-1px);
+  }
+
+  .process-strip
     :is(a:hover, a:focus-visible)
     .lucide-arrow-right:not(.motion-nudge-x):not(.motion-nudge-x-centered) {
     color: var(--process-signal);
     transform: translateX(0.2rem);
   }
+}
+
+.process-strip > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover) {
+  border-color: rgba(var(--process-rgb), 0.46);
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--process-rgb), 0.08),
+    inset 0 1px 0 rgba(240, 226, 204, 0.05),
+    0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* MCP adapter rail — a read-only path, not another generic card row. */
