@@ -83,7 +83,7 @@ const heroProofs = [
   {
     label: "Any agent",
     text: "Bring the tool you already use.",
-    signal: "core",
+    signal: "muted",
   },
   {
     label: "Human review",

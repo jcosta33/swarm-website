@@ -1415,8 +1415,8 @@
 }
 
 .docs-index-section-tutorial {
-  --docs-index-signal: var(--signal-evidence);
-  --docs-index-rgb: var(--signal-evidence-rgb);
+  --docs-index-signal: var(--signal-greenfield);
+  --docs-index-rgb: var(--signal-greenfield-rgb);
 }
 
 .docs-index-section-examples {
