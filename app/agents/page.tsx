@@ -251,7 +251,7 @@ export default function AgentsPage() {
                       {String(groupIndex * 4 + index + 1).padStart(2, "0")}
                     </p>
                     <ExternalLink
-                      className="h-4 w-4 shrink-0 text-brass/70 transition-[opacity,transform] group-hover:translate-x-0.5 group-hover:opacity-100 group-focus:opacity-100"
+                      className="motion-nudge-x h-4 w-4 shrink-0 text-brass/70 transition-[opacity,transform] group-hover:opacity-100 group-focus:opacity-100"
                       aria-hidden="true"
                     />
                   </div>

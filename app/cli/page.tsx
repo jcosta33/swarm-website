@@ -233,7 +233,7 @@ export default function CliPage() {
                         </h2>
                       </div>
                       <ArrowRight
-                        className="ml-auto h-4 w-4 shrink-0 text-olive/70 transition-transform duration-150 group-hover:translate-x-0.5"
+                        className="motion-nudge-x ml-auto h-4 w-4 shrink-0 text-olive/70"
                         aria-hidden="true"
                       />
                     </div>

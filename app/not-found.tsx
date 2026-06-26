@@ -98,7 +98,7 @@ export default function NotFoundPage() {
                   </span>
                 </span>
                 <ArrowRight
-                  className="h-4 w-4 shrink-0 text-brass/70 transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transform-none"
+                  className="motion-nudge-x h-4 w-4 shrink-0 text-brass/70"
                   aria-hidden="true"
                 />
               </Link>

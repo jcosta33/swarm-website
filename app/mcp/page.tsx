@@ -201,7 +201,7 @@ export default function McpPage() {
                         </h2>
                       </div>
                       <ArrowRight
-                        className="ml-auto h-4 w-4 shrink-0 text-brass/70 transition-transform duration-150 group-hover:translate-x-0.5 lg:hidden"
+                        className="motion-nudge-x ml-auto h-4 w-4 shrink-0 text-brass/70 lg:hidden"
                         aria-hidden="true"
                       />
                     </div>
@@ -210,7 +210,7 @@ export default function McpPage() {
                     </p>
                     {index < bridgeFlow.length - 1 ? (
                       <ArrowRight
-                        className="absolute right-4 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-brass transition-transform duration-150 group-hover:translate-x-0.5 lg:block"
+                        className="motion-nudge-x-centered absolute right-4 top-1/2 hidden h-4 w-4 text-brass lg:block"
                         aria-hidden="true"
                       />
                     ) : null}

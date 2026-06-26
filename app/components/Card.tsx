@@ -33,7 +33,7 @@ export function Card({
     href
       ? "focus-ring block text-left no-underline hover:border-brass/75 hover:shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(240,226,204,0.08)]"
       : ""
-  } p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 sm:p-7 ${className}`;
+  } p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 motion-reduce:hover:translate-y-0 sm:p-7 ${className}`;
   const content = (
     <>
       {brushed && (

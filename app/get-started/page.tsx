@@ -166,7 +166,7 @@ export default function GetStartedPage() {
                         </h2>
                       </div>
                       <ArrowRight
-                        className="ml-auto h-4 w-4 shrink-0 text-brass/70 transition-transform duration-150 group-hover:translate-x-0.5"
+                        className="motion-nudge-x ml-auto h-4 w-4 shrink-0 text-brass/70"
                         aria-hidden="true"
                       />
                     </div>
@@ -207,7 +207,7 @@ export default function GetStartedPage() {
           <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Use the starter kit{" "}
             <ArrowRight
-              className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5"
+              className="motion-nudge-x h-4 w-4"
               aria-hidden="true"
             />
           </span>
@@ -234,7 +234,7 @@ export default function GetStartedPage() {
           <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Read the adopting guide{" "}
             <ArrowRight
-              className="h-4 w-4 transition-transform duration-150 group-hover:translate-x-0.5"
+              className="motion-nudge-x h-4 w-4"
               aria-hidden="true"
             />
           </span>

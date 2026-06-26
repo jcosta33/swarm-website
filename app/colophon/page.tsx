@@ -134,7 +134,7 @@ export default function ColophonPage() {
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               ) : (
                 <ArrowRight
-                  className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-0.5"
+                  className="motion-nudge-x h-3.5 w-3.5"
                   aria-hidden="true"
                 />
               )}

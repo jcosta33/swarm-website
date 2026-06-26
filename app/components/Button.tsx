@@ -40,20 +40,20 @@ export function Button({
       "border border-gold-deep bg-corpus-yellow text-night",
       "shadow-[inset_0_1px_0_rgba(255,224,176,0.55),inset_0_-2px_0_rgba(0,0,0,0.35)]",
       "hover:bg-gold-bright",
-      "active:translate-y-px active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.45)]",
+      "active:translate-y-px active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.45)] motion-reduce:active:translate-y-0",
       "disabled:border-panel-border disabled:bg-panel disabled:text-concrete-400 disabled:shadow-none",
     ].join(" "),
     secondary: [
       "border border-panel-border bg-panel-raised text-concrete-100",
       "shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_0_rgba(0,0,0,0.5)]",
       "hover:border-brass hover:text-corpus-yellow",
-      "active:translate-y-px active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.45)]",
+      "active:translate-y-px active:shadow-[inset_0_2px_5px_rgba(0,0,0,0.45)] motion-reduce:active:translate-y-0",
       "disabled:border-panel-border disabled:text-concrete-400 disabled:shadow-none",
     ].join(" "),
     ghost: [
       "border border-transparent bg-transparent text-concrete-400",
       "hover:border-panel-border hover:bg-panel hover:text-concrete-100",
-      "active:translate-y-px",
+      "active:translate-y-px motion-reduce:active:translate-y-0",
       "disabled:text-concrete-400",
     ].join(" "),
   };

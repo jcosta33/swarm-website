@@ -236,10 +236,38 @@ body::after {
   transform: translateX(0.18rem);
 }
 
+.motion-nudge-x,
+.motion-nudge-x-centered {
+  --motion-nudge-x: 0px;
+  transition: transform 150ms ease;
+}
+
+.motion-nudge-x {
+  transform: translateX(var(--motion-nudge-x));
+}
+
+.motion-nudge-x-centered {
+  transform: translateY(-50%) translateX(var(--motion-nudge-x));
+}
+
+.group:hover .motion-nudge-x,
+.group:focus-within .motion-nudge-x,
+.group:hover .motion-nudge-x-centered,
+.group:focus-within .motion-nudge-x-centered {
+  --motion-nudge-x: 0.125rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .link-motion::before,
   .link-motion > svg {
     transform: none !important;
+  }
+
+  .group:hover .motion-nudge-x,
+  .group:focus-within .motion-nudge-x,
+  .group:hover .motion-nudge-x-centered,
+  .group:focus-within .motion-nudge-x-centered {
+    --motion-nudge-x: 0px;
   }
 }
 
@@ -672,9 +700,13 @@ body::after {
   transform: translateX(0);
 }
 
-.process-strip :is(a:hover, a:focus-visible) .lucide-arrow-right {
-  color: var(--color-corpus-yellow);
-  transform: translateX(0.2rem);
+@media (prefers-reduced-motion: no-preference) {
+  .process-strip
+    :is(a:hover, a:focus-visible)
+    .lucide-arrow-right:not(.motion-nudge-x):not(.motion-nudge-x-centered) {
+    color: var(--color-corpus-yellow);
+    transform: translateX(0.2rem);
+  }
 }
 
 @keyframes pulse-slow {
@@ -1885,6 +1917,8 @@ body::after {
 
   .btn:hover,
   .btn:focus-visible,
+  .btn:active,
+  .toggle:active,
   .panel-raised.group:hover,
   .panel-raised.group:focus-within,
   .panel-raised:hover > .surface-engraving,
