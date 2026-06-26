@@ -25,6 +25,7 @@ import { Heading } from "../components/Heading";
 import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
+import { SignalStat } from "../components/SignalStat";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -225,30 +226,14 @@ export default function AgentsPage() {
         </PaperArtifact>
         <Card screws className="h-full">
           <div className="grid gap-4 sm:grid-cols-3">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                workers
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-concrete-100">
-                8
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                hooks
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-concrete-100">
-                2
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                home
-              </p>
-              <p className="mt-2 font-mono text-sm text-concrete-300">
-                .claude/agents
-              </p>
-            </div>
+            <SignalStat label="workers" value="8" signal="core" />
+            <SignalStat label="hooks" value="2" signal="muted" />
+            <SignalStat
+              label="home"
+              value=".claude/agents"
+              signal="reference"
+              valueClassName="font-mono text-sm text-concrete-300"
+            />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-concrete-400">
             This page is a roster. The repo holds the files; the docs explain

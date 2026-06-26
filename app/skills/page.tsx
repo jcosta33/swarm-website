@@ -29,6 +29,7 @@ import { Heading } from "../components/Heading";
 import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
+import { SignalStat } from "../components/SignalStat";
 import { signalRoles } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -207,30 +208,14 @@ export default function SkillsPage() {
         </PaperArtifact>
         <Card screws className="h-full">
           <div className="grid gap-4 sm:grid-cols-3">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                review
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-concrete-100">
-                4
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                change
-              </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-concrete-100">
-                10
-              </p>
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wide text-brass">
-                file
-              </p>
-              <p className="mt-2 font-mono text-sm text-concrete-300">
-                SKILL.md
-              </p>
-            </div>
+            <SignalStat label="review" value="4" signal="evidence" />
+            <SignalStat label="change" value="10" signal="change" />
+            <SignalStat
+              label="file"
+              value="SKILL.md"
+              signal="reference"
+              valueClassName="font-mono text-sm text-concrete-300"
+            />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-concrete-400">
             Install one guide at a time. The description is the trigger; the
