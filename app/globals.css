@@ -2953,7 +2953,7 @@ body::after {
   line-height: 1.55;
 }
 
-.colophon-terminal-content h1 {
+.colophon-terminal-content h2 {
   font-size: clamp(1.75rem, 7vw, 2rem);
   line-height: 1.05;
 }
@@ -3064,8 +3064,8 @@ body::after {
 
 @media (max-width: 40rem) {
   .colophon-section {
-    padding-top: 5.75rem;
-    padding-bottom: 4rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .colophon-terminal-shell {
@@ -3077,7 +3077,7 @@ body::after {
     font-size: 0.8125rem;
   }
 
-  .colophon-terminal-content h1 {
+  .colophon-terminal-content h2 {
     font-size: 1.75rem;
   }
 

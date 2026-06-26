@@ -6,6 +6,7 @@ import { Card } from "../components/Card";
 import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 import { PaperArtifact } from "../components/PaperArtifact";
+import { PageHero } from "../components/PageHero";
 
 export const metadata: Metadata = {
   title: "Colophon — Corpus",
@@ -60,125 +61,135 @@ const trace = [
 
 export default function ColophonPage() {
   return (
-    <Section className="colophon-section grid content-start gap-5 py-16 sm:gap-6 sm:py-20 md:min-h-[calc(100svh-22rem)] md:items-start md:pt-28 lg:grid-cols-[1.1fr_0.9fr]">
-      <Panel brushed className="colophon-terminal-shell p-1.5 sm:p-2">
-        <TerminalWindow
-          title="build.manifest"
-          contentClassName="colophon-terminal-content max-h-none overflow-visible"
-        >
-          <div className="space-y-4 sm:space-y-5">
-            <div>
-              <h1 className="font-heading text-3xl font-bold tracking-[0] text-concrete-100">
-                Colophon
-              </h1>
-              <p className="mt-2 text-concrete-400">
-                Built with Corpus. Drafted, reviewed, and merged through the
-                same workflow.
-              </p>
-            </div>
-            <dl className="grid gap-3">
-              {facts.map((fact) => (
-                <div
-                  key={fact.label}
-                  className="colophon-fact-row grid grid-cols-[minmax(5.75rem,7rem)_1fr] gap-3 border-t border-concrete-100/10 pt-3 first:border-t-0 first:pt-0"
-                >
-                  <dt className="font-mono text-xs uppercase tracking-wide text-brass">
-                    {fact.label}
-                  </dt>
-                  <dd className="leading-relaxed text-concrete-100">
-                    {fact.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </TerminalWindow>
-      </Panel>
-      <PaperArtifact
-        label="source"
-        title="site record"
-        meta="built with the same corpus workflow"
-        className="colophon-paper"
-      >
-        <p>
-          The website is a Next.js export. Specs, tasks, review notes, and
-          findings live with the source.
-        </p>
-        <p className="mt-4">
-          <Link
-            href="https://github.com/jcosta33/corpus-website"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="focus-ring inline-flex min-h-11 items-center rounded-sm px-1 font-semibold text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink"
-          >
-            Open the website repo
-          </Link>
-        </p>
-      </PaperArtifact>
-
-      <Panel
-        brushed
-        screws
-        className="colophon-build-trace px-4 py-3 sm:px-5 lg:col-span-2"
-      >
-        <div className="colophon-build-trace-inner">
-          <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
-            Build trace
+    <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
+      <Section className="ambient-header">
+        <PageHero eyebrow="site record / build notes" title="Colophon" tone="muted">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-concrete-400 sm:text-xl">
+            How this website is built, sourced, and shipped.
           </p>
-          <ol aria-label="Website build trace">
-            {buildTrace.map((item, index) => (
-              <li key={item}>
-                <span className="colophon-build-trace-dot" aria-hidden="true" />
-                <span>{item}</span>
-                <span className="sr-only">
-                  {index + 1} of {buildTrace.length}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </Panel>
+        </PageHero>
+      </Section>
 
-      <div className="grid gap-4 sm:grid-cols-3 lg:col-span-2">
-        {trace.map((item, index) => (
-          <Card
-            key={item.title}
-            href={item.href}
-            target={item.external || item.newTab ? "_blank" : undefined}
-            rel={item.external || item.newTab ? "noopener noreferrer" : undefined}
-            ariaLabel={`${item.cta}${item.external || item.newTab ? " (opens in new tab)" : ""}`}
-            screws
-            className="colophon-trace-card h-full border-panel-border"
-            contentClassName="flex h-full flex-col space-y-3"
+      <Section className="colophon-section grid content-start gap-5 py-0 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <Panel brushed className="colophon-terminal-shell p-1.5 sm:p-2">
+          <TerminalWindow
+            title="build.manifest"
+            contentClassName="colophon-terminal-content max-h-none overflow-visible"
           >
-            <div className="flex items-baseline justify-between gap-4">
-              <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
-                {item.label}
-              </p>
-              <span className="font-mono text-xs text-brass/70">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+            <div className="space-y-4 sm:space-y-5">
+              <div>
+                <h2 className="font-heading text-3xl font-bold tracking-[0] text-concrete-100">
+                  Build record
+                </h2>
+                <p className="mt-2 text-concrete-400">
+                  Built with Corpus. Drafted, reviewed, and merged through the
+                  same workflow.
+                </p>
+              </div>
+              <dl className="grid gap-3">
+                {facts.map((fact) => (
+                  <div
+                    key={fact.label}
+                    className="colophon-fact-row grid grid-cols-[minmax(5.75rem,7rem)_1fr] gap-3 border-t border-concrete-100/10 pt-3 first:border-t-0 first:pt-0"
+                  >
+                    <dt className="font-mono text-xs uppercase tracking-wide text-brass">
+                      {fact.label}
+                    </dt>
+                    <dd className="leading-relaxed text-concrete-100">
+                      {fact.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-            <h2 className="font-heading text-xl font-bold text-concrete-100">
-              {item.title}
-            </h2>
-            <p className="text-sm leading-relaxed text-concrete-400">
-              {item.text}
+          </TerminalWindow>
+        </Panel>
+        <PaperArtifact
+          label="source"
+          title="site record"
+          meta="built with the same corpus workflow"
+          className="colophon-paper"
+        >
+          <p>
+            The website is a Next.js export. Specs, tasks, review notes, and
+            findings live with the source.
+          </p>
+          <p className="mt-4">
+            <Link
+              href="https://github.com/jcosta33/corpus-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex min-h-11 items-center rounded-sm px-1 font-semibold text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink"
+            >
+              Open the website repo
+            </Link>
+          </p>
+        </PaperArtifact>
+
+        <Panel
+          brushed
+          screws
+          className="colophon-build-trace px-4 py-3 sm:px-5 lg:col-span-2"
+        >
+          <div className="colophon-build-trace-inner">
+            <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+              Build trace
             </p>
-            <span className="mt-auto inline-flex min-h-9 w-fit items-center gap-2 pt-2 font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
-              {item.cta}
-              {item.external ? (
-                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-              ) : (
-                <ArrowRight
-                  className="motion-nudge-x h-3.5 w-3.5"
-                  aria-hidden="true"
-                />
-              )}
-            </span>
-          </Card>
-        ))}
-      </div>
-    </Section>
+            <ol aria-label="Website build trace">
+              {buildTrace.map((item, index) => (
+                <li key={item}>
+                  <span className="colophon-build-trace-dot" aria-hidden="true" />
+                  <span>{item}</span>
+                  <span className="sr-only">
+                    {index + 1} of {buildTrace.length}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Panel>
+
+        <div className="grid gap-4 sm:grid-cols-3 lg:col-span-2">
+          {trace.map((item, index) => (
+            <Card
+              key={item.title}
+              href={item.href}
+              target={item.external || item.newTab ? "_blank" : undefined}
+              rel={item.external || item.newTab ? "noopener noreferrer" : undefined}
+              ariaLabel={`${item.cta}${item.external || item.newTab ? " (opens in new tab)" : ""}`}
+              screws
+              className="colophon-trace-card h-full border-panel-border"
+              contentClassName="flex h-full flex-col space-y-3"
+            >
+              <div className="flex items-baseline justify-between gap-4">
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+                  {item.label}
+                </p>
+                <span className="font-mono text-xs text-brass/70">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h2 className="font-heading text-xl font-bold text-concrete-100">
+                {item.title}
+              </h2>
+              <p className="text-sm leading-relaxed text-concrete-400">
+                {item.text}
+              </p>
+              <span className="mt-auto inline-flex min-h-9 w-fit items-center gap-2 pt-2 font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
+                {item.cta}
+                {item.external ? (
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                ) : (
+                  <ArrowRight
+                    className="motion-nudge-x h-3.5 w-3.5"
+                    aria-hidden="true"
+                  />
+                )}
+              </span>
+            </Card>
+          ))}
+        </div>
+      </Section>
+    </div>
   );
 }
