@@ -1308,82 +1308,158 @@ body::after {
 .process-strip {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
+  --process-pattern: linear-gradient(
+    180deg,
+    rgba(var(--process-rgb), 0.035),
+    transparent 58%
+  );
 }
 
 .process-strip-signal-core {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
+  --process-pattern: linear-gradient(
+    180deg,
+    rgba(var(--process-rgb), 0.035),
+    transparent 58%
+  );
 }
 
 .process-strip-signal-evidence {
   --process-signal: var(--signal-evidence);
   --process-rgb: var(--signal-evidence-rgb);
+  --process-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--process-rgb), 0.04) 0 1px,
+    transparent 1px 11px
+  );
 }
 
 .process-strip-signal-greenfield {
   --process-signal: var(--signal-greenfield);
   --process-rgb: var(--signal-greenfield-rgb);
+  --process-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--process-rgb), 0.045) 0 1px,
+    transparent 1px 14px
+  );
 }
 
 .process-strip-signal-brownfield {
   --process-signal: var(--signal-brownfield);
   --process-rgb: var(--signal-brownfield-rgb);
+  --process-pattern: repeating-linear-gradient(
+    -24deg,
+    rgba(var(--process-rgb), 0.042) 0 1px,
+    transparent 1px 13px
+  );
 }
 
 .process-strip-signal-change {
   --process-signal: var(--signal-change);
   --process-rgb: var(--signal-change-rgb);
+  --process-pattern: repeating-linear-gradient(
+    135deg,
+    rgba(var(--process-rgb), 0.04) 0 1px,
+    transparent 1px 12px
+  );
 }
 
 .process-strip-signal-reference {
   --process-signal: var(--signal-reference);
   --process-rgb: var(--signal-reference-rgb);
+  --process-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--process-rgb), 0.038) 0 1px,
+    transparent 1px 15px
+  );
 }
 
 .process-strip-signal-muted {
   --process-signal: var(--signal-muted);
   --process-rgb: var(--signal-muted-rgb);
+  --process-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--process-rgb), 0.034) 0 1px,
+    transparent 1px 18px
+  );
 }
 
 .process-strip > .process-item-signal-core {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
+  --process-pattern: linear-gradient(
+    180deg,
+    rgba(var(--process-rgb), 0.035),
+    transparent 58%
+  );
 }
 
 .process-strip > .process-item-signal-evidence {
   --process-signal: var(--signal-evidence);
   --process-rgb: var(--signal-evidence-rgb);
+  --process-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--process-rgb), 0.04) 0 1px,
+    transparent 1px 11px
+  );
 }
 
 .process-strip > .process-item-signal-greenfield {
   --process-signal: var(--signal-greenfield);
   --process-rgb: var(--signal-greenfield-rgb);
+  --process-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--process-rgb), 0.045) 0 1px,
+    transparent 1px 14px
+  );
 }
 
 .process-strip > .process-item-signal-brownfield {
   --process-signal: var(--signal-brownfield);
   --process-rgb: var(--signal-brownfield-rgb);
+  --process-pattern: repeating-linear-gradient(
+    -24deg,
+    rgba(var(--process-rgb), 0.042) 0 1px,
+    transparent 1px 13px
+  );
 }
 
 .process-strip > .process-item-signal-change {
   --process-signal: var(--signal-change);
   --process-rgb: var(--signal-change-rgb);
+  --process-pattern: repeating-linear-gradient(
+    135deg,
+    rgba(var(--process-rgb), 0.04) 0 1px,
+    transparent 1px 12px
+  );
 }
 
 .process-strip > .process-item-signal-reference {
   --process-signal: var(--signal-reference);
   --process-rgb: var(--signal-reference-rgb);
+  --process-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--process-rgb), 0.038) 0 1px,
+    transparent 1px 15px
+  );
 }
 
 .process-strip > .process-item-signal-muted {
   --process-signal: var(--signal-muted);
   --process-rgb: var(--signal-muted-rgb);
+  --process-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--process-rgb), 0.034) 0 1px,
+    transparent 1px 18px
+  );
 }
 
 .process-strip > :is(li, a, div) {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  background-image: var(--process-pattern);
 }
 
 .process-strip > :is(li, a, div)::before,
@@ -2288,6 +2364,11 @@ body::after {
 .accent-card {
   --accent-signal: var(--signal-core);
   --accent-rgb: var(--signal-core-rgb);
+  --accent-pattern: linear-gradient(
+    180deg,
+    rgba(var(--accent-rgb), 0.045),
+    transparent 58%
+  );
   --plate-signal: var(--accent-signal);
   --plate-rgb: var(--accent-rgb);
   border-color: rgba(var(--accent-rgb), 0.28);
@@ -2298,6 +2379,7 @@ body::after {
       rgba(var(--accent-rgb), 0.22) 2px,
       transparent 2px
     ),
+    var(--accent-pattern),
     radial-gradient(
       72% 70% at 12% 0%,
       rgba(var(--accent-rgb), 0.105),
@@ -2309,39 +2391,74 @@ body::after {
 .accent-card-aurum {
   --accent-signal: var(--signal-core);
   --accent-rgb: var(--signal-core-rgb);
+  --accent-pattern: linear-gradient(
+    180deg,
+    rgba(var(--accent-rgb), 0.045),
+    transparent 58%
+  );
 }
 
 .accent-card-evidence,
 .accent-card-phosphor {
   --accent-signal: var(--signal-evidence);
   --accent-rgb: var(--signal-evidence-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--accent-rgb), 0.042) 0 1px,
+    transparent 1px 12px
+  );
 }
 
 .accent-card-greenfield {
   --accent-signal: var(--signal-greenfield);
   --accent-rgb: var(--signal-greenfield-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--accent-rgb), 0.05) 0 1px,
+    transparent 1px 14px
+  );
 }
 
 .accent-card-brownfield {
   --accent-signal: var(--signal-brownfield);
   --accent-rgb: var(--signal-brownfield-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    -24deg,
+    rgba(var(--accent-rgb), 0.045) 0 1px,
+    transparent 1px 13px
+  );
 }
 
 .accent-card-change,
 .accent-card-rubedo {
   --accent-signal: var(--signal-change);
   --accent-rgb: var(--signal-change-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    135deg,
+    rgba(var(--accent-rgb), 0.042) 0 1px,
+    transparent 1px 12px
+  );
 }
 
 .accent-card-reference,
 .accent-card-olive {
   --accent-signal: var(--signal-reference);
   --accent-rgb: var(--signal-reference-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    0deg,
+    rgba(var(--accent-rgb), 0.04) 0 1px,
+    transparent 1px 15px
+  );
 }
 
 .accent-card-muted {
   --accent-signal: var(--signal-muted);
   --accent-rgb: var(--signal-muted-rgb);
+  --accent-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--accent-rgb), 0.035) 0 1px,
+    transparent 1px 18px
+  );
 }
 
 .accent-card:hover,
@@ -2368,12 +2485,14 @@ body::after {
 
 .palette-specimen {
   position: relative;
+  --palette-pattern: var(--accent-pattern);
   min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(var(--accent-rgb), 0.28);
   border-radius: var(--radius-panel);
   background:
     linear-gradient(90deg, rgba(var(--accent-rgb), 0.14), transparent 46%),
+    var(--palette-pattern),
     linear-gradient(180deg, rgba(240, 226, 204, 0.035), transparent 42%),
     var(--color-panel);
   padding: 1rem;
@@ -2833,11 +2952,6 @@ body::after {
   --kit-rgb: var(--signal-muted-rgb);
 }
 
-.setup-choice-card-fresh {
-  --choice-signal: var(--signal-greenfield);
-  --choice-rgb: var(--signal-greenfield-rgb);
-}
-
 .setup-choice-card-greenfield {
   --choice-signal: var(--signal-greenfield);
   --choice-rgb: var(--signal-greenfield-rgb);
@@ -2863,11 +2977,6 @@ body::after {
       transparent 1px 18px
     ),
     rgba(10, 7, 5, 0.42);
-}
-
-.setup-choice-card-adopt {
-  --choice-signal: var(--signal-brownfield);
-  --choice-rgb: var(--signal-brownfield-rgb);
 }
 
 .setup-choice-card-brownfield {

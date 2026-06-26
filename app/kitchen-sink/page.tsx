@@ -257,6 +257,14 @@ export default function KitchenSinkPage() {
                   </div>
                   <div>
                     <dt className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-concrete-500">
+                      Surface rule
+                    </dt>
+                    <dd className="mt-1 text-concrete-300">
+                      {signalRoleMeta[role].surface}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-concrete-500">
                       Do not use for
                     </dt>
                     <dd className="mt-1 text-concrete-400">
