@@ -24,6 +24,14 @@ const facts = [
   { label: "Hosting", value: "Vercel" },
 ];
 
+const buildTrace = [
+  "decision",
+  "spec",
+  "review",
+  "export",
+  "deploy",
+];
+
 const trace = [
   {
     label: "WORKFLOW",
@@ -46,6 +54,7 @@ const trace = [
     text: "Canonical framework docs are pulled from the sibling Corpus repository.",
     href: "/docs/",
     cta: "Read the docs",
+    newTab: true,
   },
 ];
 
@@ -107,21 +116,49 @@ export default function ColophonPage() {
         </p>
       </PaperArtifact>
 
+      <Panel
+        brushed
+        screws
+        className="colophon-build-trace px-4 py-3 sm:px-5 lg:col-span-2"
+      >
+        <div className="colophon-build-trace-inner">
+          <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+            Build trace
+          </p>
+          <ol aria-label="Website build trace">
+            {buildTrace.map((item, index) => (
+              <li key={item}>
+                <span className="colophon-build-trace-dot" aria-hidden="true" />
+                <span>{item}</span>
+                <span className="sr-only">
+                  {index + 1} of {buildTrace.length}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Panel>
+
       <div className="grid gap-4 sm:grid-cols-3 lg:col-span-2">
-        {trace.map((item) => (
+        {trace.map((item, index) => (
           <Card
             key={item.title}
             href={item.href}
-            target={item.external ? "_blank" : undefined}
-            rel={item.external ? "noopener noreferrer" : undefined}
-            ariaLabel={`${item.cta}${item.external ? " (opens in new tab)" : ""}`}
+            target={item.external || item.newTab ? "_blank" : undefined}
+            rel={item.external || item.newTab ? "noopener noreferrer" : undefined}
+            ariaLabel={`${item.cta}${item.external || item.newTab ? " (opens in new tab)" : ""}`}
             screws
-            className="h-full border-panel-border"
+            className="colophon-trace-card h-full border-panel-border"
             contentClassName="flex h-full flex-col space-y-3"
           >
-            <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
-              {item.label}
-            </p>
+            <div className="flex items-baseline justify-between gap-4">
+              <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+                {item.label}
+              </p>
+              <span className="font-mono text-xs text-brass/70">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
             <h2 className="font-heading text-xl font-bold text-concrete-100">
               {item.title}
             </h2>
