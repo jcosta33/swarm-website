@@ -865,6 +865,71 @@ body::after {
     transform 180ms ease;
 }
 
+.surface-engraving {
+  border-radius: inherit;
+  opacity: 0.46;
+  background:
+    linear-gradient(90deg, rgba(216, 138, 36, 0.12), transparent 22%) left
+      top / 1px 100% no-repeat,
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 27px,
+      rgba(240, 226, 204, 0.018) 27px,
+      rgba(240, 226, 204, 0.018) 28px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(240, 226, 204, 0.012) 31px,
+      rgba(240, 226, 204, 0.012) 32px
+    );
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.surface-engraving::before,
+.surface-engraving::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.surface-engraving::before {
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(216, 138, 36, 0.32),
+    rgba(216, 138, 36, 0.08),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.surface-engraving::after {
+  right: 1rem;
+  bottom: 1rem;
+  width: 2.6rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(216, 138, 36, 0.32)
+  );
+  opacity: 0.42;
+}
+
+.panel-raised:hover > .surface-engraving,
+.panel-raised:focus-within > .surface-engraving {
+  opacity: 0.66;
+  transform: translateX(0.18rem);
+}
+
 .panel-raised:hover > .surface-glint,
 .panel-raised:focus-within > .surface-glint {
   opacity: 0.68;
@@ -1822,6 +1887,10 @@ body::after {
   .btn:focus-visible,
   .panel-raised.group:hover,
   .panel-raised.group:focus-within,
+  .panel-raised:hover > .surface-engraving,
+  .panel-raised:focus-within > .surface-engraving,
+  .panel-raised:hover > .surface-glint,
+  .panel-raised:focus-within > .surface-glint,
   .terminal-window:hover,
   .terminal-window:focus-within,
   .paper-artifact:hover,

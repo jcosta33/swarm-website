@@ -48,7 +48,14 @@ export function Card({
           aria-hidden="true"
         />
       )}
-      <div className="surface-glint absolute inset-0 pointer-events-none z-[1]" aria-hidden="true" />
+      <div
+        className="surface-engraving absolute inset-0 pointer-events-none z-[1]"
+        aria-hidden="true"
+      />
+      <div
+        className="surface-glint absolute inset-0 pointer-events-none z-[2]"
+        aria-hidden="true"
+      />
       <div className={`relative z-10 min-w-0 ${contentClassName}`}>
         {children}
       </div>
