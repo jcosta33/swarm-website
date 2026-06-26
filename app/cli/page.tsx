@@ -423,48 +423,54 @@ export default function CliPage() {
             ))}
           </ul>
         </div>
-        <div className="grid gap-8">
-          {commandFamilies.map((family) => {
-            const signal = family.signal;
-            const familyCommands = commands.filter(
-              (command) => command.family === family.label,
-            );
-            return (
-              <section
-                key={family.label}
-                id={family.id}
-                className={`cli-command-section cli-command-section-${signal} scroll-mt-28`}
-                aria-labelledby={`${family.id}-heading`}
-              >
-                <div className="cli-command-section-heading mb-4 flex flex-wrap items-end justify-between gap-3 pb-3">
-                  <div>
-                    <p className={`font-mono text-xs font-semibold uppercase tracking-[0.12em] ${signalRoles[signal].text}`}>
-                      {family.commands}
-                    </p>
-                    <h3
-                      id={`${family.id}-heading`}
-                      className="mt-1 font-heading text-xl font-bold text-concrete-100"
-                    >
-                      {family.label} commands
-                    </h3>
+        <Panel brushed screws className="cli-command-catalog p-0">
+          <div className="cli-command-catalog-header">
+            <span>command catalog</span>
+            <span>{commands.length} commands / 5 families</span>
+          </div>
+          <div className="cli-command-catalog-body">
+            {commandFamilies.map((family) => {
+              const signal = family.signal;
+              const familyCommands = commands.filter(
+                (command) => command.family === family.label,
+              );
+              return (
+                <section
+                  key={family.label}
+                  id={family.id}
+                  className={`cli-command-section cli-command-section-${signal} scroll-mt-28`}
+                  aria-labelledby={`${family.id}-heading`}
+                >
+                  <div className="cli-command-section-heading">
+                    <div>
+                      <p className={`font-mono text-xs font-semibold uppercase tracking-[0.12em] ${signalRoles[signal].text}`}>
+                        {family.commands}
+                      </p>
+                      <h3
+                        id={`${family.id}-heading`}
+                        className="mt-1 font-heading text-xl font-bold text-concrete-100"
+                      >
+                        {family.label} commands
+                      </h3>
+                    </div>
+                    <span className="cli-command-count">
+                      {familyCommands.length} command
+                      {familyCommands.length === 1 ? "" : "s"}
+                    </span>
                   </div>
-                  <span className="cli-command-count">
-                    {familyCommands.length} command
-                    {familyCommands.length === 1 ? "" : "s"}
-                  </span>
-                </div>
-                <ul className="grid gap-4 sm:grid-cols-2">
-                  {familyCommands.map((c) => {
-                    const Icon = c.icon;
-                    return (
-                      <li key={c.cmd} className="min-w-0">
-                        <Card
-                          screws
-                          className={`group h-full border-panel-border ${signalRoles[signal].hoverBorder}`}
-                        >
-                          <div className={`catalog-row catalog-row-${signal} relative pr-8`}>
+                  <ul className="cli-command-list">
+                    {familyCommands.map((c) => {
+                      const Icon = c.icon;
+                      return (
+                        <li key={c.cmd} className="min-w-0">
+                          <div
+                            className={`cli-command-row catalog-row catalog-row-${signal} group`}
+                          >
                             <div className="flex min-w-0 items-start gap-4">
-                              <HexBadge color={signal} className="catalog-row-badge">
+                              <HexBadge
+                                color={signal}
+                                className="catalog-row-badge cli-command-row-badge"
+                              >
                                 <Icon className="h-5 w-5" aria-hidden="true" />
                               </HexBadge>
                               <div className="min-w-0">
@@ -478,18 +484,18 @@ export default function CliPage() {
                             </div>
                             <PilotLamp
                               color={signal}
-                              className="absolute top-0 right-0"
+                              className="cli-command-row-lamp"
                             />
                           </div>
-                        </Card>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            );
-          })}
-        </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              );
+            })}
+          </div>
+        </Panel>
       </Section>
 
       <Section
