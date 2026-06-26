@@ -1458,6 +1458,11 @@
 .docs-index-section {
   --docs-index-signal: var(--signal-core);
   --docs-index-rgb: var(--signal-core-rgb);
+  --docs-index-pattern: linear-gradient(
+    180deg,
+    rgba(var(--docs-index-rgb), 0.034),
+    transparent 48%
+  );
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -1467,6 +1472,7 @@
   border-radius: var(--radius-panel);
   background:
     linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.06), transparent 42%),
+    var(--docs-index-pattern),
     rgba(26, 21, 16, 0.58);
   box-shadow: inset 0 1px 0 rgba(240, 226, 204, 0.05);
   transition:
@@ -1494,26 +1500,73 @@
 .docs-index-section-primary {
   --docs-index-signal: var(--signal-core);
   --docs-index-rgb: var(--signal-core-rgb);
+  --docs-index-pattern:
+    radial-gradient(
+      80% 72% at 16% 0%,
+      rgba(var(--docs-index-rgb), 0.09),
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--docs-index-rgb), 0.034),
+      transparent 48%
+    );
 }
 
 .docs-index-section-tutorial {
   --docs-index-signal: var(--signal-greenfield);
   --docs-index-rgb: var(--signal-greenfield-rgb);
+  --docs-index-pattern:
+    repeating-linear-gradient(
+      90deg,
+      rgba(var(--docs-index-rgb), 0.052) 0 1px,
+      transparent 1px 16px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 23px,
+      rgba(var(--docs-index-rgb), 0.022) 23px 24px
+    );
 }
 
 .docs-index-section-examples {
   --docs-index-signal: var(--signal-change);
   --docs-index-rgb: var(--signal-change-rgb);
+  --docs-index-pattern:
+    repeating-linear-gradient(
+      135deg,
+      rgba(var(--docs-index-rgb), 0.044) 0 1px,
+      transparent 1px 12px
+    ),
+    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.028), transparent 48%);
 }
 
 .docs-index-section-reference {
   --docs-index-signal: var(--signal-reference);
   --docs-index-rgb: var(--signal-reference-rgb);
+  --docs-index-pattern:
+    repeating-linear-gradient(
+      0deg,
+      rgba(var(--docs-index-rgb), 0.04) 0 1px,
+      transparent 1px 15px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(var(--docs-index-rgb), 0.018) 0 1px,
+      transparent 1px 28px
+    );
 }
 
 .docs-index-section-adrs {
   --docs-index-signal: var(--signal-muted);
   --docs-index-rgb: var(--signal-muted-rgb);
+  --docs-index-pattern:
+    repeating-linear-gradient(
+      90deg,
+      rgba(var(--docs-index-rgb), 0.04) 0 1px,
+      transparent 1px 18px
+    ),
+    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.024), transparent 52%);
 }
 
 .docs-index-section::after {
