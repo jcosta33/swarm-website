@@ -55,6 +55,7 @@ export default function DocsIndex() {
   const examples = find("Examples");
   const reference = find("Reference");
   const adrs = find("ADRs");
+  const totalPages = nav.reduce((sum, section) => sum + section.items.length, 0);
   const balancedGrid =
     startHere && tutorial && examples ? { startHere, tutorial, examples } : null;
 
@@ -65,6 +66,12 @@ export default function DocsIndex() {
         Start with the numbered pages. Use the tutorial when you want to walk
         the loop once.
       </p>
+      <div className="docs-index-manual" aria-label="Documentation metadata">
+        <span>canon manual</span>
+        <span>{nav.length} sections</span>
+        <span>{totalPages} pages</span>
+        <span>markdown source</span>
+      </div>
       <div
         className={`docs-index-grid ${balancedGrid ? "docs-index-grid-balanced" : ""}`}
       >

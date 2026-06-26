@@ -3,7 +3,13 @@ import type { ReactNode } from "react";
 export interface HexBadgeProps {
   children: ReactNode;
   className?: string;
-  color?: "yellow" | "orange" | "green" | "olive";
+  color?:
+    | "yellow"
+    | "orange"
+    | "green"
+    | "greenfield"
+    | "brownfield"
+    | "olive";
 }
 
 export function HexBadge({
@@ -15,6 +21,8 @@ export function HexBadge({
     yellow: "text-corpus-yellow",
     orange: "text-rubedo",
     green: "text-phosphor",
+    greenfield: "text-greenfield",
+    brownfield: "text-brownfield",
     olive: "text-olive",
   };
 

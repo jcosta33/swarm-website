@@ -3,8 +3,9 @@
 @theme inline {
   /* corpus — warm control surface + alchemical signal + manuscript archive.
      Primary gold #D88A24 is HSL(34 71% 49%); its exact complement is #2472D8
-     at HSL(214 71% 49%). The complement is reserved for tiny diagnostic use,
-     while surfaces stay in warm graphite/umber. */
+     at HSL(214 71% 49%). Blue stays diagnostic-only. Visible color follows
+     semantic roles: gold for workflow, green for proof/fresh starts, clay for
+     change, brownfield for adoption, olive for reference. */
   --color-night: #110e0c;
   --color-chassis: #16100c;
   --color-section-band: #0e0c08;
@@ -31,6 +32,8 @@
   --color-amber: #f0a33a;
   --color-complement: #2472d8;
   --color-phosphor: #72b35a;
+  --color-greenfield: #6fbf87;
+  --color-brownfield: #c17e4e;
   --color-verdigris: #8a7a38;
   --color-rubedo: #c97952;
   --color-olive: #a8933a;
@@ -41,6 +44,10 @@
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
   --signal-evidence-rgb: 114, 179, 90;
+  --signal-greenfield: var(--color-greenfield);
+  --signal-greenfield-rgb: 111, 191, 135;
+  --signal-brownfield: var(--color-brownfield);
+  --signal-brownfield-rgb: 193, 126, 78;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 201, 121, 82;
   --signal-reference: var(--color-olive);
@@ -54,6 +61,12 @@
   --color-ink: #100b07;
   --color-pencil: #5f554a;
 
+  /* Palette grammar:
+     - core: primary loop, CTAs, active nav, current step
+     - evidence: verified output, review/pass states, proof-oriented sections
+     - greenfield/brownfield: fresh workspace vs existing-project adoption only
+     - change: edits, fixes, blocked/attention states
+     - reference: docs, ledgers, command catalogs */
   /* Compatibility aliases for older component classes while the site migrates. */
   --color-night-raised: var(--color-panel-raised);
   --color-night-well: var(--color-panel-recessed);
@@ -98,6 +111,8 @@
   --c-amber: #f0a33a;
   --c-complement: #2472d8;
   --c-phosphor: #72b35a;
+  --c-greenfield: #6fbf87;
+  --c-brownfield: #c17e4e;
   --c-verdigris: #8a7a38;
   --c-rubedo: #c97952;
   --c-olive: #a8933a;
@@ -105,6 +120,10 @@
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
   --signal-evidence-rgb: 114, 179, 90;
+  --signal-greenfield: var(--color-greenfield);
+  --signal-greenfield-rgb: 111, 191, 135;
+  --signal-brownfield: var(--color-brownfield);
+  --signal-brownfield-rgb: 193, 126, 78;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 201, 121, 82;
   --signal-reference: var(--color-olive);
@@ -359,6 +378,16 @@ body::after {
   --section-kicker-rule: rgba(var(--signal-evidence-rgb), 0.26);
 }
 
+.section-kicker-greenfield {
+  --section-kicker-color: var(--signal-greenfield);
+  --section-kicker-rule: rgba(var(--signal-greenfield-rgb), 0.26);
+}
+
+.section-kicker-brownfield {
+  --section-kicker-color: var(--signal-brownfield);
+  --section-kicker-rule: rgba(var(--signal-brownfield-rgb), 0.3);
+}
+
 .site-header[data-nav-state="transparent"] {
   background-color: transparent;
 }
@@ -400,7 +429,7 @@ body::after {
 
 .btn-primary {
   background:
-    linear-gradient(90deg, rgba(114, 179, 90, 0.22), transparent 18%),
+    linear-gradient(90deg, rgba(16, 11, 7, 0.18), transparent 18%),
     linear-gradient(180deg, #f0b85c 0%, #e19a33 48%, #bf7927 100%);
   box-shadow:
     inset 0 1px 0 rgba(255, 238, 190, 0.66),
@@ -428,7 +457,7 @@ body::after {
 
 .btn-primary:hover {
   background:
-    linear-gradient(90deg, rgba(114, 179, 90, 0.28), transparent 20%),
+    linear-gradient(90deg, rgba(16, 11, 7, 0.2), transparent 20%),
     linear-gradient(180deg, #ffcb70 0%, #eba140 50%, #ca812b 100%);
 }
 
@@ -726,6 +755,16 @@ body::after {
   --process-rgb: var(--signal-evidence-rgb);
 }
 
+.process-strip-signal-greenfield {
+  --process-signal: var(--signal-greenfield);
+  --process-rgb: var(--signal-greenfield-rgb);
+}
+
+.process-strip-signal-brownfield {
+  --process-signal: var(--signal-brownfield);
+  --process-rgb: var(--signal-brownfield-rgb);
+}
+
 .process-strip-signal-change {
   --process-signal: var(--signal-change);
   --process-rgb: var(--signal-change-rgb);
@@ -749,6 +788,16 @@ body::after {
 .process-strip > .process-item-signal-evidence {
   --process-signal: var(--signal-evidence);
   --process-rgb: var(--signal-evidence-rgb);
+}
+
+.process-strip > .process-item-signal-greenfield {
+  --process-signal: var(--signal-greenfield);
+  --process-rgb: var(--signal-greenfield-rgb);
+}
+
+.process-strip > .process-item-signal-brownfield {
+  --process-signal: var(--signal-brownfield);
+  --process-rgb: var(--signal-brownfield-rgb);
 }
 
 .process-strip > .process-item-signal-change {
@@ -1695,13 +1744,13 @@ body::after {
 }
 
 .setup-choice-card-fresh {
-  --choice-signal: var(--signal-evidence);
-  --choice-rgb: var(--signal-evidence-rgb);
+  --choice-signal: var(--signal-greenfield);
+  --choice-rgb: var(--signal-greenfield-rgb);
 }
 
 .setup-choice-card-adopt {
-  --choice-signal: var(--signal-change);
-  --choice-rgb: var(--signal-change-rgb);
+  --choice-signal: var(--signal-brownfield);
+  --choice-rgb: var(--signal-brownfield-rgb);
 }
 
 .setup-choice-card :is(.text-corpus-yellow, .text-brass) {

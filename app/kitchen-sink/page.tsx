@@ -283,13 +283,15 @@ export default function KitchenSinkPage() {
             Secondary text for captions and metadata.
           </p>
           <p className="text-corpus-yellow">
-            Accent text for links and highlights.
+            Aurum for the main loop and primary actions.
           </p>
-          <p className="text-rubedo">Rubedo text for blocked states.</p>
-          <p className="text-phosphor">Phosphor text for verified states.</p>
+          <p className="text-phosphor">Phosphor for verified evidence.</p>
+          <p className="text-greenfield">Greenfield for fresh starts.</p>
+          <p className="text-brownfield">Brownfield for adoption paths.</p>
+          <p className="text-rubedo">Rubedo for change and blocked states.</p>
           <p className="text-brass">Brass hardware accent.</p>
+          <p className="text-olive">Olive for reference and ledgers.</p>
           <p className="text-aluminium">Aluminium label accent.</p>
-          <p className="text-phosphor">Phosphor for verified output.</p>
         </div>
       </PreviewSection>
     </div>
