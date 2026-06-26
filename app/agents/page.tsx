@@ -106,21 +106,25 @@ const rosterGroups = [
       {
         label: "Review",
         file: "corpus-reviewer",
+        icon: Scale,
         use: "Review a finished task or PR.",
       },
       {
         label: "Explore",
         file: "corpus-explorer",
+        icon: Compass,
         use: "Read a codebase and report how something works.",
       },
       {
         label: "Evidence",
         file: "corpus-evidence-checker",
+        icon: ShieldCheck,
         use: "Re-run Verify items and flag missing evidence.",
       },
       {
         label: "Challenge",
         file: "corpus-challenger",
+        icon: Swords,
         use: "Pressure-test a proposal before build work starts.",
       },
     ],
@@ -133,21 +137,25 @@ const rosterGroups = [
       {
         label: "Spec",
         file: "corpus-spec-author",
+        icon: PenTool,
         use: "Draft a spec from an intake note.",
       },
       {
         label: "Research",
         file: "corpus-researcher",
+        icon: Microscope,
         use: "Research one question and write a note.",
       },
       {
         label: "Audit",
         file: "corpus-auditor",
+        icon: FileSearch,
         use: "Audit a code area with file:line findings.",
       },
       {
         label: "Docs",
         file: "corpus-documentarian",
+        icon: ScrollText,
         use: "Draft human-facing docs.",
       },
     ],
@@ -222,21 +230,30 @@ export default function AgentsPage() {
         </Card>
       </Section>
 
-      <Section className="grid gap-4 lg:grid-cols-2">
+      <Section className="agent-roster-grid grid gap-4 lg:grid-cols-2">
         {rosterGroups.map((group, groupIndex) => (
-          <Panel key={group.title} brushed screws className="p-0">
-            <div className="border-b border-panel-border bg-panel-raised/95 p-5 sm:p-6">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brass">
-                lane {String(groupIndex + 1).padStart(2, "0")} — {group.tone}
-              </p>
-              <h2 className="mt-2 font-heading text-xl font-bold text-concrete-100">
-                {group.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-concrete-400">
-                {group.note}
-              </p>
+          <Panel key={group.title} brushed className="agent-roster-panel p-0">
+            <div className="agent-roster-header flex min-h-[8.25rem] items-start justify-between gap-5 border-b border-panel-border bg-panel-raised/95 p-5 sm:p-6">
+              <div className="min-w-0">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brass">
+                  lane {String(groupIndex + 1).padStart(2, "0")} — {group.tone}
+                </p>
+                <h2 className="mt-2 font-heading text-xl font-bold text-concrete-100">
+                  {group.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-concrete-400">
+                  {group.note}
+                </p>
+              </div>
+              <div
+                className="agent-roster-manifest grid min-w-16 justify-items-end gap-1 font-mono uppercase leading-none text-brass"
+                aria-hidden="true"
+              >
+                <span>{group.items.length}</span>
+                <span>files</span>
+              </div>
             </div>
-            <div className="grid gap-px bg-panel-border sm:grid-cols-2">
+            <div className="agent-roster-cells grid gap-px bg-panel-border sm:grid-cols-2">
               {group.items.map((item, index) => (
                 <a
                   key={item.file}
@@ -244,8 +261,16 @@ export default function AgentsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${item.file} definition on GitHub (opens in new tab)`}
-                  className="group block h-full bg-panel-raised/95 p-5 transition-[background-color] hover:bg-panel focus-ring sm:p-6"
+                  className="agent-roster-cell group block h-full min-h-[13.25rem] bg-panel-raised/95 p-5 transition-[background-color] hover:bg-panel focus-ring sm:p-6"
                 >
+                  <div className="flex items-start gap-4">
+                    <HexBadge
+                      color={groupIndex === 0 ? "yellow" : "olive"}
+                      className="agent-roster-icon h-10 w-10 border"
+                    >
+                      <item.icon className="h-4 w-4" aria-hidden="true" />
+                    </HexBadge>
+                    <div className="min-w-0 flex-1">
                   <div className="flex items-start justify-between gap-4">
                     <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
                       {String(groupIndex * 4 + index + 1).padStart(2, "0")}
@@ -255,15 +280,17 @@ export default function AgentsPage() {
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className="mt-3 font-heading text-xl font-bold text-concrete-100">
-                    {item.label}
-                  </h3>
-                  <p className="mt-2 font-mono text-xs leading-relaxed text-brass">
-                    {item.file}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-concrete-400">
-                    {item.use}
-                  </p>
+                      <h3 className="mt-3 font-heading text-xl font-bold text-concrete-100">
+                        {item.label}
+                      </h3>
+                      <p className="mt-2 break-words font-mono text-xs leading-relaxed text-brass">
+                        {item.file}
+                      </p>
+                      <p className="mt-3 text-sm leading-relaxed text-concrete-400">
+                        {item.use}
+                      </p>
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>
