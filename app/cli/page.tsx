@@ -148,7 +148,7 @@ const principles = [
     title: "One worktree per task",
     icon: GitBranch,
     text: "Keep parallel runs out of the main checkout.",
-    signal: "core",
+    signal: "change",
   },
   {
     title: "Markdown is the source of truth",
@@ -200,7 +200,7 @@ const commandFamilies = [
     commands: "worktree · run",
     detail: "Isolate task work and launch agents.",
     icon: GitBranch,
-    signal: "core",
+    signal: "change",
   },
   {
     label: "JSON",
@@ -298,7 +298,7 @@ export default function CliPage() {
       </Section>
 
       <Section className="flex flex-col gap-8">
-        <div className="section-kicker section-kicker-gold">
+        <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
           <span>install</span>
         </div>
@@ -344,7 +344,7 @@ export default function CliPage() {
       </Section>
 
       <Section className="flex flex-col gap-8">
-        <div className="section-kicker section-kicker-gold">
+        <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
           <span>the-loop.sh — a task, end to end</span>
         </div>
@@ -438,7 +438,7 @@ export default function CliPage() {
                           screws
                           className="group h-full border-panel-border hover-border-signal-reference"
                         >
-                          <div className="catalog-row catalog-row-olive relative pr-8">
+                          <div className="catalog-row catalog-row-reference relative pr-8">
                             <div className="flex min-w-0 items-start gap-4">
                               <HexBadge color="reference" className="catalog-row-badge">
                                 <Icon className="h-5 w-5" aria-hidden="true" />

@@ -510,7 +510,7 @@ export default function AgentsPage() {
         </Card>
 
         <Card screws className="border-panel-border">
-          <div className="section-kicker section-kicker-brass">
+          <div className="section-kicker section-kicker-reference">
             <Network className="h-4 w-4" />
             <span>delegation trace</span>
           </div>

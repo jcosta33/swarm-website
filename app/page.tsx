@@ -69,7 +69,7 @@ const loopSteps = [
   { label: "Pull", signal: "reference" },
   { label: "Spec", signal: "core" },
   { label: "Task", signal: "change" },
-  { label: "Run", signal: "core" },
+  { label: "Run", signal: "change" },
   { label: "Review", signal: "evidence" },
   { label: "Close", signal: "reference" },
 ] as const satisfies Array<{ label: string; signal: SignalRole }>;
@@ -108,22 +108,22 @@ const failureModes = [
     code: "SCOPE",
     title: "Agent drift",
     text: "Name the files, limits, and checks before the run starts.",
-    accent: "core",
-    lamp: "core",
+    accent: "change",
+    lamp: "change",
   },
   {
     code: "EVIDENCE",
     title: "Unbacked completion",
     text: "A Pass needs output, a CI link, or a named observation.",
-    accent: "evidence",
-    lamp: "evidence",
+    accent: "change",
+    lamp: "change",
   },
   {
     code: "LEDGER",
     title: "Lost findings",
     text: "Save useful lessons so later tasks can reuse them.",
-    accent: "reference",
-    lamp: "reference",
+    accent: "change",
+    lamp: "change",
   },
 ] as const;
 
@@ -281,7 +281,7 @@ export default function HomePage() {
               <div className="min-w-0 rounded-panel border border-panel-border bg-panel p-4">
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.12em] text-amber">
+                    <p className="font-mono text-xs uppercase tracking-[0.12em] text-signal-reference">
                       loop preview
                     </p>
                     <h2 className="mt-1 font-heading text-xl font-bold text-concrete-100 sm:text-2xl">
@@ -294,13 +294,13 @@ export default function HomePage() {
                 <TerminalWindow title="corpus status" className="mt-4">
                   <p className="text-concrete-500"># current run</p>
                   <p>
-                    <span className="text-aurum">$</span> corpus review
+                    <span className="text-signal-core">$</span> corpus review
                     <wbr /> TASK-auth-refresh
                   </p>
                   <p className="mt-2 text-signal-evidence">
                     PASS AC-001 — output pasted
                   </p>
-                  <p className="text-amber">
+                  <p className="text-signal-change">
                     UNVERIFIED AC-002 — manual resize pending
                   </p>
                   <p className="text-concrete-400">

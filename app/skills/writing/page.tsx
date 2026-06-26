@@ -161,7 +161,7 @@ export default function WritingSkillsPage() {
 
       <Section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <div className="section-kicker section-kicker-gold">
+          <div className="section-kicker section-kicker-reference">
             <DroneIcon className="h-4 w-4" />
             <span>layout</span>
           </div>
@@ -195,7 +195,7 @@ export default function WritingSkillsPage() {
 
       <Section className="flex flex-col gap-8">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-brass">
+          <div className="section-kicker section-kicker-core">
             <Terminal className="h-4 w-4" />
             <span>description</span>
           </div>
@@ -230,7 +230,7 @@ export default function WritingSkillsPage() {
 
       <Section className="flex flex-col gap-8">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-olive">
+          <div className="section-kicker section-kicker-reference">
             <BookOpen className="h-4 w-4" />
             <span>body</span>
           </div>
@@ -263,7 +263,7 @@ export default function WritingSkillsPage() {
 
       <Section className="grid gap-6 lg:grid-cols-2">
         <Card screws className="border-panel-border">
-          <div className="section-kicker section-kicker-gold">
+          <div className="section-kicker section-kicker-reference">
             <FileText className="h-4 w-4" />
             <span>references</span>
           </div>
@@ -275,7 +275,7 @@ export default function WritingSkillsPage() {
         </Card>
 
         <Card screws className="border-panel-border">
-          <div className="section-kicker section-kicker-brass">
+          <div className="section-kicker section-kicker-reference">
             <GitBranch className="h-4 w-4" />
             <span>templates</span>
           </div>
@@ -289,7 +289,7 @@ export default function WritingSkillsPage() {
 
       <Section className="flex flex-col gap-8">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-rubedo">
+          <div className="section-kicker section-kicker-change">
             <Shield className="h-4 w-4" />
             <span>scope</span>
           </div>

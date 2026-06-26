@@ -15,14 +15,14 @@ const steps = [
     label: "Pull",
     icon: Inbox,
     description: "Capture the ticket and intent in an intake file.",
-    signal: "core",
+    signal: "reference",
   },
   {
     number: "02",
     label: "Spec",
     icon: FileText,
     description: "Write requirements, each with a verification method.",
-    signal: "reference",
+    signal: "core",
   },
   {
     number: "03",
@@ -37,7 +37,7 @@ const steps = [
     label: "Run",
     icon: Terminal,
     description: "The agent implements and pastes real evidence.",
-    signal: "core",
+    signal: "change",
   },
   {
     number: "05",

@@ -3,7 +3,7 @@
 // evidence = review proof / verified output / pass states
 // greenfield = new workspace or starter-kit paths only
 // brownfield = existing-project adoption paths only
-// change = edits / fixes / blocked or attention states
+// change = edits / fixes / run work / blocked or attention states
 // reference = docs / manuals / command catalogs / ledgers
 // muted = hardware, chrome, and non-semantic labels
 // Prefer these role names over raw color aliases in new component code.
@@ -11,6 +11,7 @@ export const signalRoleMeta = {
   core: {
     label: "core",
     hex: "#D88A24",
+    relationship: "base hue 34deg",
     tone: "orangy gold",
     use: "Corpus identity, primary actions, active navigation, and current loop state.",
     avoid: "Do not use as a generic highlight when a more specific role exists.",
@@ -19,14 +20,16 @@ export const signalRoleMeta = {
   evidence: {
     label: "evidence",
     hex: "#8ABF6B",
+    relationship: "warm green, low-chroma proof accent",
     tone: "proof green",
     use: "Review proof, verified output, pass states, and evidence-oriented sections.",
-    avoid: "Do not use for setup paths or generic 'nice' accents.",
+    avoid: "Do not use for setup paths, existing projects, or generic 'nice' accents.",
     example: "PASS, verified output, human-reviewed evidence.",
   },
   greenfield: {
     label: "greenfield",
     hex: "#5FBD8B",
+    relationship: "soft split-complement green",
     tone: "fresh green",
     use: "Fresh workspace setup paths only.",
     avoid: "Do not use for existing-project adoption or review success.",
@@ -35,6 +38,7 @@ export const signalRoleMeta = {
   brownfield: {
     label: "brownfield",
     hex: "#B9784E",
+    relationship: "earth analogue to primary gold",
     tone: "earth copper",
     use: "Existing-project adoption paths only.",
     avoid: "Do not use for new work, success, or warnings.",
@@ -43,14 +47,16 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     hex: "#CA7059",
+    relationship: "warm red-clay analogue",
     tone: "red clay",
-    use: "Edits, fixes, blocked states, and attention markers.",
+    use: "Edits, fixes, run work, blocked states, and attention markers.",
     avoid: "Do not use for normal navigation or reference material.",
-    example: "Change plans, blocked, unverified, needs attention.",
+    example: "Change plans, run work, blocked, unverified, needs attention.",
   },
   reference: {
     label: "reference",
     hex: "#A6913D",
+    relationship: "ochre ledger analogue",
     tone: "olive ledger",
     use: "Docs, manuals, command catalogs, ledgers, and index surfaces.",
     avoid: "Do not use for proof/pass states or primary calls to action.",
@@ -59,6 +65,7 @@ export const signalRoleMeta = {
   muted: {
     label: "muted",
     hex: "#BF7927",
+    relationship: "aged brass from the primary hue",
     tone: "aged brass",
     use: "Hardware chrome, low-emphasis labels, and neutral UI detail.",
     avoid: "Do not use when the color carries product meaning.",

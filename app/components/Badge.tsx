@@ -19,15 +19,13 @@ export function Badge({ children, variant = "default" }: BadgeProps) {
   const styles = {
     default:
       "border-panel-border bg-panel-raised text-concrete-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]",
-    success:
-      "border-phosphor/60 bg-panel-raised text-phosphor shadow-[inset_0_0_8px_rgba(138,191,107,0.16)]",
-    ready:
-      "border-aurum/65 bg-panel-raised text-aurum shadow-[inset_0_0_8px_rgba(216,138,36,0.15)]",
-    pass: "border-phosphor/60 bg-panel-raised text-phosphor",
-    unverified: "border-amber/70 bg-panel-raised text-amber",
-    blocked: "border-rubedo/70 bg-panel-raised text-rubedo",
-    draft: "border-olive/55 bg-panel-raised text-olive",
-    archived: "border-ash/70 bg-panel-raised text-concrete-400",
+    success: "badge-signal badge-signal-evidence",
+    ready: "badge-signal badge-signal-core",
+    pass: "badge-signal badge-signal-evidence",
+    unverified: "badge-signal badge-signal-change",
+    blocked: "badge-signal badge-signal-change",
+    draft: "badge-signal badge-signal-reference",
+    archived: "badge-signal badge-signal-muted",
   };
 
   return (

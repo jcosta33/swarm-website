@@ -68,7 +68,7 @@
      - core: corpus identity, primary loop, CTAs, active nav, current step
      - evidence: verified output, review/pass states, proof-oriented sections
      - greenfield/brownfield: fresh workspace vs existing-project adoption only
-     - change: edits, fixes, blocked/attention states
+     - change: edits, fixes, run work, blocked/attention states
      - reference: docs, ledgers, command catalogs */
   /* Compatibility aliases for older component classes while the site migrates. */
   --color-night-raised: var(--color-panel-raised);
@@ -408,6 +408,42 @@ body::after {
 
 .text-signal-muted {
   color: var(--signal-muted);
+}
+
+.badge-signal {
+  --badge-signal: var(--signal-core);
+  --badge-rgb: var(--signal-core-rgb);
+  border-color: rgba(var(--badge-rgb), 0.62);
+  background:
+    linear-gradient(180deg, rgba(var(--badge-rgb), 0.1), transparent 70%),
+    var(--color-panel-raised);
+  color: var(--badge-signal);
+  box-shadow: inset 0 0 8px rgba(var(--badge-rgb), 0.15);
+}
+
+.badge-signal-core {
+  --badge-signal: var(--signal-core);
+  --badge-rgb: var(--signal-core-rgb);
+}
+
+.badge-signal-evidence {
+  --badge-signal: var(--signal-evidence);
+  --badge-rgb: var(--signal-evidence-rgb);
+}
+
+.badge-signal-change {
+  --badge-signal: var(--signal-change);
+  --badge-rgb: var(--signal-change-rgb);
+}
+
+.badge-signal-reference {
+  --badge-signal: var(--signal-reference);
+  --badge-rgb: var(--signal-reference-rgb);
+}
+
+.badge-signal-muted {
+  --badge-signal: var(--color-concrete-400);
+  --badge-rgb: var(--signal-muted-rgb);
 }
 
 .hover-border-signal-core:hover,
@@ -2200,6 +2236,17 @@ body::after {
   box-shadow:
     0 0 0 3px rgba(var(--accent-rgb), 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.palette-specimen-relationship {
+  margin-top: 0.35rem;
+  color: var(--color-concrete-500);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
 }
 
 .palette-specimen-hex {

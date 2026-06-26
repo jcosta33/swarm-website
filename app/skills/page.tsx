@@ -438,9 +438,9 @@ export default function SkillsPage() {
       <Section id="write-skill" className="grid scroll-mt-28 gap-6 lg:grid-cols-2">
         <Card
           screws
-          className="h-full border-panel-border hover:border-brass/50"
+          className="h-full border-panel-border hover-border-signal-reference"
         >
-          <div className="section-kicker section-kicker-brass">
+          <div className="section-kicker section-kicker-reference">
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>authoring.guide — write your own</span>
           </div>

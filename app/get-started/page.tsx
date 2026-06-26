@@ -364,7 +364,7 @@ export default function GetStartedPage() {
         </div>
 
         <Card screws className="h-full" contentClassName="space-y-5">
-          <div className="section-kicker section-kicker-brass">
+          <div className="section-kicker section-kicker-reference">
             <FolderTree className="h-4 w-4" aria-hidden="true" />
             <span>manifest — copied files</span>
           </div>
@@ -390,7 +390,7 @@ export default function GetStartedPage() {
       </Section>
 
       <Section id="check" className="flex scroll-mt-28 flex-col gap-6">
-        <div className="section-kicker section-kicker-gold">
+        <div className="section-kicker section-kicker-core">
           <Terminal className="h-4 w-4" aria-hidden="true" />
           <span>or scaffold it with the cli</span>
         </div>

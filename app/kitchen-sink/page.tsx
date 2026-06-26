@@ -39,8 +39,9 @@ const specimenRegister = [
   },
   {
     label: "State",
-    note: "Actions, badges, lamps, toggles, and verified output color.",
+    note: "Semantic palette, actions, badges, lamps, and toggles.",
     links: [
+      { label: "Palette", href: "#palette" },
       { label: "Buttons", href: "#buttons" },
       { label: "Badges", href: "#badges" },
       { label: "Pilot lamps", href: "#pilot-lamps" },
@@ -145,7 +146,7 @@ export default function KitchenSinkPage() {
                         <li key={link.href}>
                           <a
                             href={link.href}
-                            className="focus-ring inline-flex min-h-9 items-center rounded-sm text-sm font-medium text-corpus-yellow underline decoration-corpus-yellow/40 underline-offset-4 transition-[color,text-decoration-color] hover:text-amber hover:decoration-amber sm:min-h-11"
+                            className="focus-ring inline-flex min-h-9 items-center rounded-sm text-sm font-medium text-corpus-yellow underline decoration-corpus-yellow/40 underline-offset-4 transition-[color,text-decoration-color] hover:text-gold-bright hover:decoration-gold-bright sm:min-h-11"
                           >
                             {link.label}
                           </a>
@@ -196,106 +197,12 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="cards" index="03" title="Cards">
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card>
-            <h3 className="font-heading text-lg font-bold">Default card</h3>
-            <p className="mt-2 text-concrete-400">
-              A raised module with a machined lip.
-            </p>
-          </Card>
-          <Card screws brushed rivets>
-            <h3 className="font-heading text-lg font-bold">Hardware card</h3>
-            <p className="mt-2 text-concrete-400">Visible screws and rivets.</p>
-          </Card>
-        </div>
-      </PreviewSection>
-
-      <PreviewSection id="badges" index="04" title="Badges">
-        <div className="flex flex-wrap gap-3">
-          <Badge>default</Badge>
-          <Badge variant="ready">ready</Badge>
-          <Badge variant="pass">pass</Badge>
-          <Badge variant="unverified">unverified</Badge>
-          <Badge variant="blocked">blocked</Badge>
-          <Badge variant="draft">draft</Badge>
-          <Badge variant="archived">archived</Badge>
-        </div>
-      </PreviewSection>
-
-      <PreviewSection id="paper-artifact" index="05" title="Paper artifact">
-        <PaperArtifact
-          label="review"
-          title="REVIEW-example"
-          meta="review packet / example"
-          className="max-w-2xl"
-        >
-          <p>AC-001 — Pass</p>
-          <p className="text-pencil">Evidence: build output pasted, exit 0.</p>
-          <p className="mt-3">AC-002 — Unverified</p>
-          <p className="text-pencil">Evidence missing; route to human attention.</p>
-        </PaperArtifact>
-      </PreviewSection>
-
-      <PreviewSection id="pilot-lamps" index="06" title="Pilot lamps">
-        <div className="flex flex-wrap items-center gap-6">
-          <PilotLamp color="core" pulse label="active" />
-          <PilotLamp color="evidence" label="ok" />
-          <PilotLamp color="change" label="fault" />
-          <PilotLamp color="off" label="idle" />
-        </div>
-      </PreviewSection>
-
-      <PreviewSection id="toggle-switch" index="07" title="Toggle switch">
-        <ToggleButton label="Enable override" />
-      </PreviewSection>
-
-      <PreviewSection id="rack-row" index="08" title="Rack row">
-        <RackRow>
-          <Card screws>Module A</Card>
-          <Card screws>Module B</Card>
-          <Card screws>Module C</Card>
-        </RackRow>
-      </PreviewSection>
-
-      <PreviewSection id="code-block" index="09" title="Code block">
-        <CodeBlock>{`loop:
-  spec
-  -> task
-  -> run
-  -> review
-  -> close`}</CodeBlock>
-      </PreviewSection>
-
-      <PreviewSection id="terminal-window" index="10" title="Terminal window">
-        <TerminalWindow title="terminal">
-          <p className="text-concrete-500"># CRT monitor panel</p>
-          <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span>{" "}corpus status
-          </p>
-          <p className="mt-1 text-signal-evidence">✓ all systems nominal</p>
-        </TerminalWindow>
-      </PreviewSection>
-
-      <PreviewSection id="gilt-divider" index="11" title="Gilt divider">
-        <GiltBand height="md" />
-      </PreviewSection>
-
-      <PreviewSection id="icons" index="12" title="Icons">
-        <div className="flex gap-4 text-corpus-yellow">
-          <AlertTriangle aria-label="Warning" />
-          <CheckCircle aria-label="Success" />
-          <Wrench aria-label="Tools" />
-        </div>
-      </PreviewSection>
-
-      <PreviewSection id="typography" index="13" title="Typography">
+      <PreviewSection id="palette" index="03" title="Semantic palette">
         <div className="space-y-5">
-          <p className="text-concrete-100">
-            Primary text on chassis background.
-          </p>
-          <p className="text-concrete-400">
-            Secondary text for captions and metadata.
+          <p className="max-w-3xl text-concrete-400">
+            Accent colors are labels, not decoration. Pick the role by meaning
+            first; the same role should drive the text, lamp, border, rail, and
+            hover state.
           </p>
           <div className="palette-specimen-grid">
             {paletteRoles.map((role) => (
@@ -313,6 +220,9 @@ export default function KitchenSinkPage() {
                     <h3 className="mt-2 font-heading text-lg font-bold text-concrete-100">
                       {signalRoleMeta[role].tone}
                     </h3>
+                    <p className="palette-specimen-relationship">
+                      {signalRoleMeta[role].relationship}
+                    </p>
                   </div>
                   <span className="palette-specimen-swatch" aria-hidden="true" />
                 </div>
@@ -343,6 +253,110 @@ export default function KitchenSinkPage() {
               </article>
             ))}
           </div>
+        </div>
+      </PreviewSection>
+
+      <PreviewSection id="cards" index="04" title="Cards">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card>
+            <h3 className="font-heading text-lg font-bold">Default card</h3>
+            <p className="mt-2 text-concrete-400">
+              A raised module with a machined lip.
+            </p>
+          </Card>
+          <Card screws brushed rivets>
+            <h3 className="font-heading text-lg font-bold">Hardware card</h3>
+            <p className="mt-2 text-concrete-400">Visible screws and rivets.</p>
+          </Card>
+        </div>
+      </PreviewSection>
+
+      <PreviewSection id="badges" index="05" title="Badges">
+        <div className="flex flex-wrap gap-3">
+          <Badge>default</Badge>
+          <Badge variant="ready">ready</Badge>
+          <Badge variant="pass">pass</Badge>
+          <Badge variant="unverified">unverified</Badge>
+          <Badge variant="blocked">blocked</Badge>
+          <Badge variant="draft">draft</Badge>
+          <Badge variant="archived">archived</Badge>
+        </div>
+      </PreviewSection>
+
+      <PreviewSection id="paper-artifact" index="06" title="Paper artifact">
+        <PaperArtifact
+          label="review"
+          title="REVIEW-example"
+          meta="review packet / example"
+          className="max-w-2xl"
+        >
+          <p>AC-001 — Pass</p>
+          <p className="text-pencil">Evidence: build output pasted, exit 0.</p>
+          <p className="mt-3">AC-002 — Unverified</p>
+          <p className="text-pencil">Evidence missing; route to human attention.</p>
+        </PaperArtifact>
+      </PreviewSection>
+
+      <PreviewSection id="pilot-lamps" index="07" title="Pilot lamps">
+        <div className="flex flex-wrap items-center gap-6">
+          <PilotLamp color="core" pulse label="active" />
+          <PilotLamp color="evidence" label="ok" />
+          <PilotLamp color="change" label="fault" />
+          <PilotLamp color="off" label="idle" />
+        </div>
+      </PreviewSection>
+
+      <PreviewSection id="toggle-switch" index="08" title="Toggle switch">
+        <ToggleButton label="Enable override" />
+      </PreviewSection>
+
+      <PreviewSection id="rack-row" index="09" title="Rack row">
+        <RackRow>
+          <Card screws>Module A</Card>
+          <Card screws>Module B</Card>
+          <Card screws>Module C</Card>
+        </RackRow>
+      </PreviewSection>
+
+      <PreviewSection id="code-block" index="10" title="Code block">
+        <CodeBlock>{`loop:
+  spec
+  -> task
+  -> run
+  -> review
+  -> close`}</CodeBlock>
+      </PreviewSection>
+
+      <PreviewSection id="terminal-window" index="11" title="Terminal window">
+        <TerminalWindow title="terminal">
+          <p className="text-concrete-500"># CRT monitor panel</p>
+          <p className="text-concrete-100">
+              <span className="text-corpus-yellow">$</span>{" "}corpus status
+          </p>
+          <p className="mt-1 text-signal-evidence">✓ all systems nominal</p>
+        </TerminalWindow>
+      </PreviewSection>
+
+      <PreviewSection id="gilt-divider" index="12" title="Gilt divider">
+        <GiltBand height="md" />
+      </PreviewSection>
+
+      <PreviewSection id="icons" index="13" title="Icons">
+        <div className="flex gap-4 text-corpus-yellow">
+          <AlertTriangle aria-label="Warning" />
+          <CheckCircle aria-label="Success" />
+          <Wrench aria-label="Tools" />
+        </div>
+      </PreviewSection>
+
+      <PreviewSection id="typography" index="14" title="Typography">
+        <div className="space-y-5">
+          <p className="text-concrete-100">
+            Primary text on chassis background.
+          </p>
+          <p className="text-concrete-400">
+            Secondary text for captions and metadata.
+          </p>
         </div>
       </PreviewSection>
     </div>
