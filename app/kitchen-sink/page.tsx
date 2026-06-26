@@ -74,15 +74,22 @@ function PreviewSection({
   id,
   index,
   title,
+  registerTone = "muted",
   children,
 }: {
   id: string;
   index: string;
   title: string;
+  registerTone?: SignalRole;
   children: ReactNode;
 }) {
   return (
-    <Section id={id} className="flex scroll-mt-28 flex-col gap-6">
+    <Section
+      id={id}
+      register={`${index} / ${title}`}
+      registerTone={registerTone}
+      className="flex scroll-mt-28 flex-col gap-6"
+    >
       <div className="flex min-w-0 items-center gap-4">
         <span
           aria-hidden="true"
@@ -110,7 +117,7 @@ export default function KitchenSinkPage() {
         </PageHero>
       </Section>
 
-      <Section>
+      <Section register="00 / specimen register" registerTone="muted">
         <nav aria-label="Kitchen sink specimen register">
           <Panel brushed screws className="p-0">
             <div className="grid md:grid-cols-[0.85fr_2fr]">
@@ -188,7 +195,12 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="buttons" index="02" title="Buttons">
+      <PreviewSection
+        id="buttons"
+        index="02"
+        title="Buttons"
+        registerTone="core"
+      >
         <div className="flex flex-wrap gap-4 sm:gap-5">
           <Button>Primary action</Button>
           <Button variant="secondary">Secondary action</Button>
@@ -197,7 +209,12 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="palette" index="03" title="Semantic palette">
+      <PreviewSection
+        id="palette"
+        index="03"
+        title="Semantic palette"
+        registerTone="reference"
+      >
         <div className="space-y-5">
           <p className="max-w-3xl text-concrete-400">
             Accent colors are labels, not decoration. Pick the role by meaning
@@ -271,7 +288,12 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="badges" index="05" title="Badges">
+      <PreviewSection
+        id="badges"
+        index="05"
+        title="Badges"
+        registerTone="evidence"
+      >
         <div className="flex flex-wrap gap-3">
           <Badge>default</Badge>
           <Badge variant="ready">ready</Badge>
@@ -283,7 +305,12 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="paper-artifact" index="06" title="Paper artifact">
+      <PreviewSection
+        id="paper-artifact"
+        index="06"
+        title="Paper artifact"
+        registerTone="reference"
+      >
         <PaperArtifact
           label="review"
           title="REVIEW-example"
@@ -297,7 +324,12 @@ export default function KitchenSinkPage() {
         </PaperArtifact>
       </PreviewSection>
 
-      <PreviewSection id="pilot-lamps" index="07" title="Pilot lamps">
+      <PreviewSection
+        id="pilot-lamps"
+        index="07"
+        title="Pilot lamps"
+        registerTone="evidence"
+      >
         <div className="flex flex-wrap items-center gap-6">
           <PilotLamp color="core" pulse label="active" />
           <PilotLamp color="evidence" label="ok" />
@@ -318,7 +350,12 @@ export default function KitchenSinkPage() {
         </RackRow>
       </PreviewSection>
 
-      <PreviewSection id="code-block" index="10" title="Code block">
+      <PreviewSection
+        id="code-block"
+        index="10"
+        title="Code block"
+        registerTone="reference"
+      >
         <CodeBlock>{`loop:
   spec
   -> task
@@ -327,7 +364,12 @@ export default function KitchenSinkPage() {
   -> close`}</CodeBlock>
       </PreviewSection>
 
-      <PreviewSection id="terminal-window" index="11" title="Terminal window">
+      <PreviewSection
+        id="terminal-window"
+        index="11"
+        title="Terminal window"
+        registerTone="reference"
+      >
         <TerminalWindow title="terminal">
           <p className="text-concrete-500"># CRT monitor panel</p>
           <p className="text-concrete-100">

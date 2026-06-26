@@ -122,7 +122,7 @@ export default function WritingSkillsPage() {
         </PageHero>
       </Section>
 
-      <Section>
+      <Section register="01 / one file" registerTone="reference">
         <Panel
           brushed
           className="mcp-adapter-panel skill-anatomy-panel p-0"
@@ -159,7 +159,11 @@ export default function WritingSkillsPage() {
         </Panel>
       </Section>
 
-      <Section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <Section
+        register="02 / folder"
+        registerTone="reference"
+        className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]"
+      >
         <div>
           <div className="section-kicker section-kicker-reference">
             <DroneIcon className="h-4 w-4" />
@@ -193,7 +197,11 @@ export default function WritingSkillsPage() {
         </Panel>
       </Section>
 
-      <Section className="flex flex-col gap-8">
+      <Section
+        register="03 / load rule"
+        registerTone="core"
+        className="flex flex-col gap-8"
+      >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-core">
             <Terminal className="h-4 w-4" />
@@ -228,7 +236,11 @@ export default function WritingSkillsPage() {
         </Panel>
       </Section>
 
-      <Section className="flex flex-col gap-8">
+      <Section
+        register="04 / checklist"
+        registerTone="reference"
+        className="flex flex-col gap-8"
+      >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-reference">
             <BookOpen className="h-4 w-4" />
@@ -261,7 +273,11 @@ export default function WritingSkillsPage() {
         </ul>
       </Section>
 
-      <Section className="grid gap-6 lg:grid-cols-2">
+      <Section
+        register="05 / extra material"
+        registerTone="reference"
+        className="grid gap-6 lg:grid-cols-2"
+      >
         <Card screws className="border-panel-border">
           <div className="section-kicker section-kicker-reference">
             <FileText className="h-4 w-4" />
@@ -287,7 +303,11 @@ export default function WritingSkillsPage() {
         </Card>
       </Section>
 
-      <Section className="flex flex-col gap-8">
+      <Section
+        register="06 / local knowledge"
+        registerTone="change"
+        className="flex flex-col gap-8"
+      >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-change">
             <Shield className="h-4 w-4" />
@@ -310,7 +330,7 @@ export default function WritingSkillsPage() {
         </ul>
       </Section>
 
-      <Section>
+      <Section register="07 / source" registerTone="muted">
         <div className="mx-auto max-w-5xl">
           <Card
             screws
