@@ -255,8 +255,8 @@ export default function HomePage() {
             <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
               Define the work, run agents, verify outputs, keep the evidence.
             </p>
-            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-              <Button asChild className="w-full sm:w-auto">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild className="w-full max-w-72 sm:w-auto sm:max-w-none">
                 <Link href="/get-started/">
                   Start the loop{" "}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -267,7 +267,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Read the docs (opens in a new tab)"
-                className="w-full sm:w-auto"
+                className="w-auto"
               >
                 Read the docs
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
