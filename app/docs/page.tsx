@@ -60,18 +60,25 @@ export default function DocsIndex() {
     startHere && tutorial && examples ? { startHere, tutorial, examples } : null;
 
   return (
-    <div className="docs-prose" data-pagefind-body>
-      <h1>Corpus documentation</h1>
-      <p>
-        Start with the numbered pages. Use the tutorial when you want to walk
-        the loop once.
-      </p>
-      <div className="docs-index-manual" aria-label="Documentation metadata">
-        <span>canon manual</span>
-        <span>{nav.length} sections</span>
-        <span>{totalPages} pages</span>
-        <span>markdown source</span>
-      </div>
+    <div className="docs-prose docs-index-prose" data-pagefind-body>
+      <header className="docs-index-cover">
+        <div className="docs-index-cover-copy">
+          <p className="docs-index-kicker" data-pagefind-ignore>
+            canon / manual index
+          </p>
+          <h1>Corpus documentation</h1>
+          <p className="docs-index-lede">
+            Start with the numbered pages. Use the tutorial when you want to
+            walk the loop once.
+          </p>
+        </div>
+        <div className="docs-index-manual" aria-label="Documentation metadata">
+          <span>canon manual</span>
+          <span>{nav.length} sections</span>
+          <span>{totalPages} pages</span>
+          <span>markdown source</span>
+        </div>
+      </header>
       <div
         className={`docs-index-grid ${balancedGrid ? "docs-index-grid-balanced" : ""}`}
       >
