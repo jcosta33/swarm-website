@@ -56,16 +56,27 @@ const specimenRegister = [
 
 function PreviewSection({
   id,
+  index,
   title,
   children,
 }: {
   id: string;
+  index: string;
   title: string;
   children: ReactNode;
 }) {
   return (
     <Section id={id} className="flex scroll-mt-28 flex-col gap-6">
-      <Heading>{title}</Heading>
+      <div className="flex min-w-0 items-center gap-4">
+        <span
+          aria-hidden="true"
+          className="font-mono text-xs font-semibold uppercase tracking-wide text-brass"
+        >
+          {index}
+        </span>
+        <Heading className="shrink-0">{title}</Heading>
+        <span className="h-px min-w-8 flex-1 bg-panel-border" aria-hidden="true" />
+      </div>
       {children}
     </Section>
   );
@@ -134,7 +145,7 @@ export default function KitchenSinkPage() {
         </nav>
       </Section>
 
-      <PreviewSection id="panels" title="Panels">
+      <PreviewSection id="panels" index="01" title="Panels">
         <div className="grid gap-6 md:grid-cols-2">
           <Panel className="p-5 sm:p-6">
             <h3 className="font-heading text-lg font-bold">Raised panel</h3>
@@ -161,7 +172,7 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="buttons" title="Buttons">
+      <PreviewSection id="buttons" index="02" title="Buttons">
         <div className="flex flex-wrap gap-4 sm:gap-5">
           <Button>Primary action</Button>
           <Button variant="secondary">Secondary action</Button>
@@ -170,7 +181,7 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="cards" title="Cards">
+      <PreviewSection id="cards" index="03" title="Cards">
         <div className="grid gap-6 md:grid-cols-2">
           <Card>
             <h3 className="font-heading text-lg font-bold">Default card</h3>
@@ -185,7 +196,7 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="badges" title="Badges">
+      <PreviewSection id="badges" index="04" title="Badges">
         <div className="flex flex-wrap gap-3">
           <Badge>default</Badge>
           <Badge variant="ready">ready</Badge>
@@ -197,7 +208,7 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="paper-artifact" title="Paper artifact">
+      <PreviewSection id="paper-artifact" index="05" title="Paper artifact">
         <PaperArtifact
           label="review"
           title="REVIEW-example"
@@ -211,7 +222,7 @@ export default function KitchenSinkPage() {
         </PaperArtifact>
       </PreviewSection>
 
-      <PreviewSection id="pilot-lamps" title="Pilot lamps">
+      <PreviewSection id="pilot-lamps" index="06" title="Pilot lamps">
         <div className="flex flex-wrap items-center gap-6">
           <PilotLamp color="amber" pulse label="active" />
           <PilotLamp color="green" label="ok" />
@@ -220,11 +231,11 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="toggle-switch" title="Toggle switch">
+      <PreviewSection id="toggle-switch" index="07" title="Toggle switch">
         <ToggleButton label="Enable override" />
       </PreviewSection>
 
-      <PreviewSection id="rack-row" title="Rack row">
+      <PreviewSection id="rack-row" index="08" title="Rack row">
         <RackRow>
           <Card screws>Module A</Card>
           <Card screws>Module B</Card>
@@ -232,7 +243,7 @@ export default function KitchenSinkPage() {
         </RackRow>
       </PreviewSection>
 
-      <PreviewSection id="code-block" title="Code block">
+      <PreviewSection id="code-block" index="09" title="Code block">
         <CodeBlock>{`loop:
   spec
   -> task
@@ -241,7 +252,7 @@ export default function KitchenSinkPage() {
   -> close`}</CodeBlock>
       </PreviewSection>
 
-      <PreviewSection id="terminal-window" title="Terminal window">
+      <PreviewSection id="terminal-window" index="10" title="Terminal window">
         <TerminalWindow title="terminal">
           <p className="text-concrete-500"># CRT monitor panel</p>
           <p className="text-concrete-100">
@@ -251,11 +262,11 @@ export default function KitchenSinkPage() {
         </TerminalWindow>
       </PreviewSection>
 
-      <PreviewSection id="gilt-divider" title="Gilt divider">
+      <PreviewSection id="gilt-divider" index="11" title="Gilt divider">
         <GiltBand height="md" />
       </PreviewSection>
 
-      <PreviewSection id="icons" title="Icons">
+      <PreviewSection id="icons" index="12" title="Icons">
         <div className="flex gap-4 text-corpus-yellow">
           <AlertTriangle aria-label="Warning" />
           <CheckCircle aria-label="Success" />
@@ -263,7 +274,7 @@ export default function KitchenSinkPage() {
         </div>
       </PreviewSection>
 
-      <PreviewSection id="typography" title="Typography">
+      <PreviewSection id="typography" index="13" title="Typography">
         <div className="space-y-4">
           <p className="text-concrete-100">
             Primary text on chassis background.
