@@ -199,7 +199,7 @@ const bridgeFlow = [
 
 export default function McpPage() {
   return (
-    <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
+    <div className="flex flex-col gap-10 py-14 sm:gap-12 sm:py-16">
       <Section className="ambient-header">
         <PageHero
           eyebrow="mcp server / read-only adapter"
