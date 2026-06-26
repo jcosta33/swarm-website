@@ -460,8 +460,8 @@
 }
 
 .docs-article-html h2 {
-  --docs-section-signal: var(--color-aurum);
-  --docs-section-rgb: 216, 138, 36;
+  --docs-section-signal: var(--signal-reference);
+  --docs-section-rgb: var(--signal-reference-rgb);
   position: relative;
   display: flex;
   align-items: center;
@@ -481,21 +481,6 @@
     inset 0 1px 0 rgba(240, 226, 204, 0.045),
     inset 0 -1px 0 rgba(0, 0, 0, 0.42);
   counter-increment: docs-section;
-}
-
-.docs-article-html h2:nth-of-type(4n + 2) {
-  --docs-section-signal: var(--color-phosphor);
-  --docs-section-rgb: 114, 179, 90;
-}
-
-.docs-article-html h2:nth-of-type(4n + 3) {
-  --docs-section-signal: var(--color-rubedo);
-  --docs-section-rgb: 201, 121, 82;
-}
-
-.docs-article-html h2:nth-of-type(4n + 4) {
-  --docs-section-signal: var(--color-olive);
-  --docs-section-rgb: 168, 147, 58;
 }
 
 .docs-article-html h2::before {
@@ -534,8 +519,8 @@
 }
 
 .docs-source-note {
-  --docs-source-signal: var(--color-phosphor);
-  --docs-source-rgb: 114, 179, 90;
+  --docs-source-signal: var(--signal-evidence);
+  --docs-source-rgb: var(--signal-evidence-rgb);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1069,8 +1054,8 @@
 }
 
 .docs-index-section {
-  --docs-index-signal: var(--color-aurum);
-  --docs-index-rgb: 216, 138, 36;
+  --docs-index-signal: var(--signal-core);
+  --docs-index-rgb: var(--signal-core-rgb);
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -1085,28 +1070,28 @@
 }
 
 .docs-index-section-primary {
-  --docs-index-signal: var(--color-aurum);
-  --docs-index-rgb: 216, 138, 36;
+  --docs-index-signal: var(--signal-core);
+  --docs-index-rgb: var(--signal-core-rgb);
 }
 
 .docs-index-section-tutorial {
-  --docs-index-signal: var(--color-phosphor);
-  --docs-index-rgb: 114, 179, 90;
+  --docs-index-signal: var(--signal-evidence);
+  --docs-index-rgb: var(--signal-evidence-rgb);
 }
 
 .docs-index-section-examples {
-  --docs-index-signal: var(--color-rubedo);
-  --docs-index-rgb: 201, 121, 82;
+  --docs-index-signal: var(--signal-change);
+  --docs-index-rgb: var(--signal-change-rgb);
 }
 
 .docs-index-section-reference {
-  --docs-index-signal: var(--color-olive);
-  --docs-index-rgb: 168, 147, 58;
+  --docs-index-signal: var(--signal-reference);
+  --docs-index-rgb: var(--signal-reference-rgb);
 }
 
 .docs-index-section-adrs {
-  --docs-index-signal: var(--color-brass);
-  --docs-index-rgb: 191, 121, 39;
+  --docs-index-signal: var(--signal-muted);
+  --docs-index-rgb: var(--signal-muted-rgb);
 }
 
 .docs-index-section::after {

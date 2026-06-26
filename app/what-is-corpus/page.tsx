@@ -225,10 +225,10 @@ export default function WhatIsCorpusPage() {
               Corpus turns requests into specs, specs into tasks, and task
               output into review evidence.
             </p>
-            <p className="mt-2 text-olive">✓ agent does the typing</p>
-            <p className="text-olive">✓ human makes the call</p>
-            <p className="text-olive">✓ every claim needs evidence</p>
-            <p className="text-olive">
+            <p className="mt-2 text-phosphor">✓ agent does the typing</p>
+            <p className="text-phosphor">✓ human makes the call</p>
+            <p className="text-phosphor">✓ every claim needs evidence</p>
+            <p className="text-phosphor">
               ✓ plain markdown, any agent, no runtime
             </p>
             <p className="mt-2 text-concrete-400">

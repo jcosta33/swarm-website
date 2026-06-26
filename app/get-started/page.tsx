@@ -154,7 +154,7 @@ export default function GetStartedPage() {
       <Section>
         <Panel brushed screws className="p-0">
           <ol
-            className="process-strip grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
+            className="process-strip process-strip-signal-core grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
             aria-label="Corpus setup path"
           >
             {setupPath.map((step, index) => {

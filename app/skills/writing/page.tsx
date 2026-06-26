@@ -135,7 +135,7 @@ export default function WritingSkillsPage() {
             </span>
           </div>
           <ol
-            className="mcp-adapter-rail skill-anatomy-rail process-strip grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
+            className="mcp-adapter-rail skill-anatomy-rail process-strip process-strip-signal-reference grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
             aria-label="Skill file anatomy"
           >
             {skillAnatomy.map((item, index) => (

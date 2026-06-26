@@ -72,7 +72,7 @@ export default function NotFoundPage() {
         </PaperArtifact>
         <nav
           aria-label="Recovery routes"
-          className="process-strip overflow-hidden rounded-panel border border-panel-border bg-panel-raised/70 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)]"
+          className="process-strip process-strip-signal-core overflow-hidden rounded-panel border border-panel-border bg-panel-raised/70 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)]"
         >
           {recoveryRoutes.map((route, index) => {
             const Icon = route.icon;

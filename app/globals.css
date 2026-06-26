@@ -36,6 +36,18 @@
   --color-olive: #a8933a;
   --color-black-text: #100b07;
 
+  /* Semantic signal roles. Use these by meaning, not by list position. */
+  --signal-core: var(--color-aurum);
+  --signal-core-rgb: 216, 138, 36;
+  --signal-evidence: var(--color-phosphor);
+  --signal-evidence-rgb: 114, 179, 90;
+  --signal-change: var(--color-rubedo);
+  --signal-change-rgb: 201, 121, 82;
+  --signal-reference: var(--color-olive);
+  --signal-reference-rgb: 168, 147, 58;
+  --signal-muted: var(--color-brass);
+  --signal-muted-rgb: 191, 121, 39;
+
   --color-paper: #f0e2cc;
   --color-paper-warm: #dcc9a9;
   --color-paper-line: #b9a07d;
@@ -89,6 +101,16 @@
   --c-verdigris: #8a7a38;
   --c-rubedo: #c97952;
   --c-olive: #a8933a;
+  --signal-core: var(--color-aurum);
+  --signal-core-rgb: 216, 138, 36;
+  --signal-evidence: var(--color-phosphor);
+  --signal-evidence-rgb: 114, 179, 90;
+  --signal-change: var(--color-rubedo);
+  --signal-change-rgb: 201, 121, 82;
+  --signal-reference: var(--color-olive);
+  --signal-reference-rgb: 168, 147, 58;
+  --signal-muted: var(--color-brass);
+  --signal-muted-rgb: 191, 121, 39;
   --c-paper: #f0e2cc;
   --c-paper-warm: #dcc9a9;
   --c-paper-line: #b9a07d;
@@ -302,19 +324,16 @@ body::after {
   overflow-wrap: anywhere;
 }
 
+.section-kicker-core,
 .section-kicker-gold {
-  --section-kicker-color: var(--color-corpus-yellow);
-  --section-kicker-rule: rgba(216, 138, 36, 0.34);
+  --section-kicker-color: var(--signal-core);
+  --section-kicker-rule: rgba(var(--signal-core-rgb), 0.34);
 }
 
+.section-kicker-secondary,
 .section-kicker-brass {
-  --section-kicker-color: var(--color-brass);
-  --section-kicker-rule: rgba(191, 121, 39, 0.3);
-}
-
-.section-kicker-olive {
-  --section-kicker-color: var(--color-olive);
-  --section-kicker-rule: rgba(168, 147, 58, 0.3);
+  --section-kicker-color: var(--signal-muted);
+  --section-kicker-rule: rgba(var(--signal-muted-rgb), 0.3);
 }
 
 .section-kicker-muted {
@@ -322,14 +341,22 @@ body::after {
   --section-kicker-rule: rgba(184, 170, 150, 0.2);
 }
 
-.section-kicker-rubedo {
-  --section-kicker-color: var(--color-rubedo);
-  --section-kicker-rule: rgba(201, 121, 82, 0.3);
+.section-kicker-reference,
+.section-kicker-olive {
+  --section-kicker-color: var(--signal-reference);
+  --section-kicker-rule: rgba(var(--signal-reference-rgb), 0.3);
 }
 
+.section-kicker-change,
+.section-kicker-rubedo {
+  --section-kicker-color: var(--signal-change);
+  --section-kicker-rule: rgba(var(--signal-change-rgb), 0.3);
+}
+
+.section-kicker-evidence,
 .section-kicker-phosphor {
-  --section-kicker-color: var(--color-phosphor);
-  --section-kicker-rule: rgba(114, 179, 90, 0.26);
+  --section-kicker-color: var(--signal-evidence);
+  --section-kicker-rule: rgba(var(--signal-evidence-rgb), 0.26);
 }
 
 .site-header[data-nav-state="transparent"] {
@@ -684,27 +711,60 @@ body::after {
 }
 
 /* Process strips — linked operating surfaces used for command families and setup paths. */
+.process-strip {
+  --process-signal: var(--signal-core);
+  --process-rgb: var(--signal-core-rgb);
+}
+
+.process-strip-signal-core {
+  --process-signal: var(--signal-core);
+  --process-rgb: var(--signal-core-rgb);
+}
+
+.process-strip-signal-evidence {
+  --process-signal: var(--signal-evidence);
+  --process-rgb: var(--signal-evidence-rgb);
+}
+
+.process-strip-signal-change {
+  --process-signal: var(--signal-change);
+  --process-rgb: var(--signal-change-rgb);
+}
+
+.process-strip-signal-reference {
+  --process-signal: var(--signal-reference);
+  --process-rgb: var(--signal-reference-rgb);
+}
+
+.process-strip-signal-muted {
+  --process-signal: var(--signal-muted);
+  --process-rgb: var(--signal-muted-rgb);
+}
+
+.process-strip > .process-item-signal-core {
+  --process-signal: var(--signal-core);
+  --process-rgb: var(--signal-core-rgb);
+}
+
+.process-strip > .process-item-signal-evidence {
+  --process-signal: var(--signal-evidence);
+  --process-rgb: var(--signal-evidence-rgb);
+}
+
+.process-strip > .process-item-signal-change {
+  --process-signal: var(--signal-change);
+  --process-rgb: var(--signal-change-rgb);
+}
+
+.process-strip > .process-item-signal-reference {
+  --process-signal: var(--signal-reference);
+  --process-rgb: var(--signal-reference-rgb);
+}
+
 .process-strip > :is(li, a, div) {
-  --process-signal: var(--color-aurum);
-  --process-rgb: 216, 138, 36;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-}
-
-.process-strip > :is(li, a, div):nth-child(4n + 2) {
-  --process-signal: var(--color-phosphor);
-  --process-rgb: 114, 179, 90;
-}
-
-.process-strip > :is(li, a, div):nth-child(4n + 3) {
-  --process-signal: var(--color-rubedo);
-  --process-rgb: 201, 121, 82;
-}
-
-.process-strip > :is(li, a, div):nth-child(4n + 4) {
-  --process-signal: var(--color-olive);
-  --process-rgb: 168, 147, 58;
 }
 
 .process-strip > :is(li, a, div)::before,
@@ -1320,8 +1380,8 @@ body::after {
 }
 
 .catalog-row {
-  --catalog-signal: var(--color-corpus-yellow);
-  --catalog-signal-soft: rgba(216, 138, 36, 0.62);
+  --catalog-signal: var(--signal-core);
+  --catalog-signal-soft: rgba(var(--signal-core-rgb), 0.62);
   position: relative;
   min-height: 3.5rem;
   padding-left: 1rem;
@@ -1349,14 +1409,21 @@ body::after {
     transform 160ms ease;
 }
 
+.catalog-row-reference,
 .catalog-row-olive {
-  --catalog-signal: var(--color-olive);
-  --catalog-signal-soft: rgba(168, 147, 58, 0.62);
+  --catalog-signal: var(--signal-reference);
+  --catalog-signal-soft: rgba(var(--signal-reference-rgb), 0.62);
 }
 
+.catalog-row-change,
 .catalog-row-orange {
-  --catalog-signal: var(--color-rubedo);
-  --catalog-signal-soft: rgba(201, 121, 82, 0.62);
+  --catalog-signal: var(--signal-change);
+  --catalog-signal-soft: rgba(var(--signal-change-rgb), 0.62);
+}
+
+.catalog-row-evidence {
+  --catalog-signal: var(--signal-evidence);
+  --catalog-signal-soft: rgba(var(--signal-evidence-rgb), 0.62);
 }
 
 .catalog-row-title {
@@ -1401,8 +1468,8 @@ body::after {
 }
 
 .accent-card {
-  --accent-signal: var(--color-aurum);
-  --accent-rgb: 216, 138, 36;
+  --accent-signal: var(--signal-core);
+  --accent-rgb: var(--signal-core-rgb);
   background-image:
     linear-gradient(
       90deg,
@@ -1417,24 +1484,28 @@ body::after {
     );
 }
 
+.accent-card-core,
 .accent-card-aurum {
-  --accent-signal: var(--color-aurum);
-  --accent-rgb: 216, 138, 36;
+  --accent-signal: var(--signal-core);
+  --accent-rgb: var(--signal-core-rgb);
 }
 
+.accent-card-evidence,
 .accent-card-phosphor {
-  --accent-signal: var(--color-phosphor);
-  --accent-rgb: 114, 179, 90;
+  --accent-signal: var(--signal-evidence);
+  --accent-rgb: var(--signal-evidence-rgb);
 }
 
+.accent-card-change,
 .accent-card-rubedo {
-  --accent-signal: var(--color-rubedo);
-  --accent-rgb: 201, 121, 82;
+  --accent-signal: var(--signal-change);
+  --accent-rgb: var(--signal-change-rgb);
 }
 
+.accent-card-reference,
 .accent-card-olive {
-  --accent-signal: var(--color-olive);
-  --accent-rgb: 168, 147, 58;
+  --accent-signal: var(--signal-reference);
+  --accent-rgb: var(--signal-reference-rgb);
 }
 
 .accent-card:hover,
@@ -1575,8 +1646,8 @@ body::after {
 }
 
 .setup-choice-card {
-  --choice-signal: var(--color-aurum);
-  --choice-rgb: 216, 138, 36;
+  --choice-signal: var(--signal-core);
+  --choice-rgb: var(--signal-core-rgb);
   background-image:
     linear-gradient(
       90deg,
@@ -1601,9 +1672,14 @@ body::after {
     );
 }
 
+.setup-choice-card-fresh {
+  --choice-signal: var(--signal-evidence);
+  --choice-rgb: var(--signal-evidence-rgb);
+}
+
 .setup-choice-card-adopt {
-  --choice-signal: var(--color-phosphor);
-  --choice-rgb: 114, 179, 90;
+  --choice-signal: var(--signal-change);
+  --choice-rgb: var(--signal-change-rgb);
 }
 
 .setup-choice-card :is(.text-corpus-yellow, .text-brass) {

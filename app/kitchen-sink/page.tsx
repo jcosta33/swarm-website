@@ -110,7 +110,7 @@ export default function KitchenSinkPage() {
                   turning this page into product theater.
                 </p>
               </div>
-              <div className="process-strip grid gap-px bg-panel-border sm:grid-cols-3">
+              <div className="process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-3">
                 {specimenRegister.map((group, index) => (
                   <div
                     key={group.label}

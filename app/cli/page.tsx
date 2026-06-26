@@ -231,7 +231,7 @@ export default function CliPage() {
             <span>optional helper surface</span>
           </div>
           <ol
-            className="cli-command-rail process-strip grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
+            className="cli-command-rail process-strip process-strip-signal-reference grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
             aria-label="corpus-cli command families"
           >
             {commandFamilies.map((family, index) => {
@@ -369,7 +369,7 @@ export default function CliPage() {
 
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-phosphor">
+          <div className="section-kicker section-kicker-reference">
             <Bug className="h-4 w-4" aria-hidden="true" />
             <span>commands.md — public surface</span>
           </div>

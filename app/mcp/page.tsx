@@ -200,7 +200,7 @@ export default function McpPage() {
             <span>local stdio bridge</span>
           </div>
           <ol
-            className="mcp-adapter-rail process-strip grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
+            className="mcp-adapter-rail process-strip process-strip-signal-evidence grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
             aria-label="corpus-mcp request path"
           >
             {bridgeFlow.map((item, index) => {
@@ -293,7 +293,7 @@ export default function McpPage() {
 
       <Section id="guardrails" className="flex scroll-mt-28 flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-gold">
+          <div className="section-kicker section-kicker-change">
             <DroneIcon className="h-4 w-4" />
             <span>guardrails.ts</span>
           </div>
@@ -308,8 +308,8 @@ export default function McpPage() {
             const Icon = item.icon;
             return (
               <li key={item.title}>
-                <Card screws className="h-full border-panel-border">
-                  <HexBadge color="yellow" className="mb-4">
+                <Card screws className="h-full border-panel-border hover:border-rubedo/50">
+                  <HexBadge color="orange" className="mb-4">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </HexBadge>
                   <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">

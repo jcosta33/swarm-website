@@ -150,6 +150,7 @@ const skillRoutes = [
     count: "4",
     icon: ShieldCheck,
     text: "Judgment, evidence, research, and challenge stances.",
+    signal: "evidence",
   },
   {
     label: "Change",
@@ -157,6 +158,7 @@ const skillRoutes = [
     count: "10",
     icon: Hammer,
     text: "Feature, fix, refactor, rewrite, migration, performance, tests, docs.",
+    signal: "change",
   },
   {
     label: "Write",
@@ -164,8 +166,9 @@ const skillRoutes = [
     count: "1",
     icon: FileCode,
     text: "The shape for adding a new guide without making it vague.",
+    signal: "reference",
   },
-];
+] as const;
 
 export default function SkillsPage() {
   return (
@@ -237,7 +240,7 @@ export default function SkillsPage() {
       <Section>
         <Panel brushed screws className="p-0">
           <nav
-            className="process-strip grid gap-px bg-panel-border md:grid-cols-3"
+            className="process-strip process-strip-signal-reference grid gap-px bg-panel-border md:grid-cols-3"
             aria-label="Skill catalog sections"
           >
             {skillRoutes.map((route, index) => {
@@ -246,7 +249,7 @@ export default function SkillsPage() {
                 <a
                   key={route.href}
                   href={route.href}
-                  className="focus-ring group block bg-panel-raised/95 p-5 transition-colors duration-150 hover:bg-panel sm:p-6"
+                  className={`process-item-signal-${route.signal} focus-ring group block bg-panel-raised/95 p-5 transition-colors duration-150 hover:bg-panel sm:p-6`}
                   aria-label={`Jump to ${route.label.toLowerCase()} guides`}
                 >
                   <div className="flex items-center gap-3">
@@ -330,7 +333,7 @@ export default function SkillsPage() {
 
       <Section id="review-guides" className="flex scroll-mt-28 flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-gold">
+          <div className="section-kicker section-kicker-evidence">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
             <span>review guides</span>
           </div>
@@ -355,14 +358,14 @@ export default function SkillsPage() {
                   aria-label={`${s.skill} skill on GitHub (opens in new tab)`}
                   className="group block rounded-sm focus-ring"
                 >
-                  <Card className="h-full border-panel-border hover:border-brass/50">
-                    <div className="catalog-row flex items-start justify-between gap-4">
+                  <Card className="h-full border-panel-border hover:border-phosphor/50">
+                    <div className="catalog-row catalog-row-evidence flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <HexBadge color="yellow" className="catalog-row-badge">
+                        <HexBadge color="green" className="catalog-row-badge">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </HexBadge>
                         <div>
-                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-brass">
+                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-phosphor">
                             {s.skill}
                           </h3>
                           <p className="catalog-row-copy mt-1 text-sm leading-relaxed text-concrete-400">
@@ -385,7 +388,7 @@ export default function SkillsPage() {
 
       <Section id="change-guides" className="flex scroll-mt-28 flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-olive">
+          <div className="section-kicker section-kicker-change">
             <Hammer className="h-4 w-4" aria-hidden="true" />
             <span>change guides</span>
           </div>
@@ -407,14 +410,14 @@ export default function SkillsPage() {
                   aria-label={`${s.skill} skill on GitHub (opens in new tab)`}
                   className="group block rounded-sm focus-ring"
                 >
-                  <Card className="h-full border-panel-border hover:border-olive/60">
-                    <div className="catalog-row catalog-row-olive flex items-start justify-between gap-4">
+                  <Card className="h-full border-panel-border hover:border-rubedo/60">
+                    <div className="catalog-row catalog-row-change flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <HexBadge color="olive" className="catalog-row-badge">
+                        <HexBadge color="orange" className="catalog-row-badge">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </HexBadge>
                         <div>
-                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-olive">
+                          <h3 className="catalog-row-title font-mono text-sm font-semibold text-rubedo">
                             {s.skill}
                           </h3>
                           <p className="catalog-row-copy mt-1 text-sm leading-relaxed text-concrete-400">
