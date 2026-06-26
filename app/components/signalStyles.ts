@@ -10,6 +10,8 @@
 // The hue family is intentional: core starts at gold HSL(34 71% 49%),
 // brownfield/change stay in the warm earth arc, greenfield/evidence split into
 // field/proof greens, and reference uses a tempered teal split-complement.
+// A role is more than a color: use the same role for text, lamp, rail, border,
+// hatch, icon, and hover treatment so accents read as product meaning.
 export const signalRoleMeta = {
   core: {
     label: "core",
@@ -41,23 +43,23 @@ export const signalRoleMeta = {
     hex: "#56C978",
     relationship: "field green: HSL(138 51% 56%)",
     tone: "fresh field green",
-    use: "Fresh workspace setup paths and first-run starts.",
+    use: "Fresh workspace setup paths, starter kits, and first-run tutorial paths.",
     surface: "upright seed rows and clean-start setup paths",
     pattern: "upright field rows",
     avoid: "Do not use for existing-project adoption, review success, or generic positive emphasis.",
-    example: "New repo, starter kit, first pass through the docs.",
+    example: "New repo, starter kit, first-run tutorial.",
   },
   brownfield: {
     label: "brownfield",
     family: "setup path",
-    hex: "#AF7650",
-    relationship: "earth analogue: HSL(24 38% 50%)",
+    hex: "#B87D56",
+    relationship: "earth analogue: HSL(24 41% 53%)",
     tone: "brownfield earth",
-    use: "Existing-project adoption paths only.",
+    use: "Existing-project adoption, migration, and repo-history paths only.",
     surface: "diagonal survey hatching and adoption plates",
     pattern: "diagonal survey hatching",
     avoid: "Do not use for new work, success, warnings, or generic warmth.",
-    example: "Existing project, adopt kit, repo with history.",
+    example: "Existing project, adopting guide, repo with history.",
   },
   change: {
     label: "change",

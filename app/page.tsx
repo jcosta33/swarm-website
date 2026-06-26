@@ -313,6 +313,7 @@ export default function HomePage() {
                 label="review"
                 title="REVIEW-auth-refresh"
                 meta="review packet / example"
+                className="home-hero-artifact"
               >
                 <p>
                   AC-001 <span className="paper-stamp ml-2">pass</span>
