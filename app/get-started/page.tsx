@@ -185,18 +185,32 @@ export default function GetStartedPage() {
         id="choose"
         className="reveal grid scroll-mt-28 gap-6 md:grid-cols-2"
       >
+        <div className="md:col-span-2">
+          <div className="section-kicker section-kicker-gold">
+            <Rocket className="h-4 w-4" aria-hidden="true" />
+            <span>choose a path</span>
+          </div>
+          <Heading className="mt-3">Pick a setup path</Heading>
+          <p className="mt-3 max-w-2xl text-concrete-400">
+            Start clean for a fresh workspace. Adopt the kit when the code
+            already exists.
+          </p>
+        </div>
         <Card
           href="https://github.com/jcosta33/corpus-starter-kit"
           target="_blank"
           rel="noopener noreferrer"
           ariaLabel="Use the starter kit on GitHub"
           screws
-          className="h-full"
+          className="setup-choice-card h-full"
           contentClassName="flex h-full flex-col gap-5"
         >
-          <KitIcon>
-            <Rocket className="h-6 w-6" aria-hidden="true" />
-          </KitIcon>
+          <div className="flex items-start justify-between gap-4">
+            <KitIcon>
+              <Rocket className="h-6 w-6" aria-hidden="true" />
+            </KitIcon>
+            <span className="setup-choice-index">Path 01</span>
+          </div>
           <div>
             <Heading>New repo</Heading>
             <p className="mt-2 text-concrete-400">
@@ -204,6 +218,16 @@ export default function GetStartedPage() {
               templates, and guides in place.
             </p>
           </div>
+          <dl className="setup-choice-facts">
+            <div>
+              <dt>Best for</dt>
+              <dd>Starting a Corpus-native workspace.</dd>
+            </div>
+            <div>
+              <dt>Creates</dt>
+              <dd>Folders, templates, local rules, and a board.</dd>
+            </div>
+          </dl>
           <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Use the starter kit{" "}
             <ArrowRight
@@ -219,18 +243,31 @@ export default function GetStartedPage() {
           rel="noopener noreferrer"
           ariaLabel="Read the adopting guide"
           screws
-          className="h-full"
+          className="setup-choice-card h-full"
           contentClassName="flex h-full flex-col gap-5"
         >
-          <KitIcon>
-            <FolderPlus className="h-6 w-6" aria-hidden="true" />
-          </KitIcon>
+          <div className="flex items-start justify-between gap-4">
+            <KitIcon>
+              <FolderPlus className="h-6 w-6" aria-hidden="true" />
+            </KitIcon>
+            <span className="setup-choice-index">Path 02</span>
+          </div>
           <div>
             <Heading>Existing project</Heading>
             <p className="mt-2 text-concrete-400">
               Copy the kit into your repo. Add specs and tasks beside the code.
             </p>
           </div>
+          <dl className="setup-choice-facts">
+            <div>
+              <dt>Best for</dt>
+              <dd>Adding the loop to an active codebase.</dd>
+            </div>
+            <div>
+              <dt>Adds</dt>
+              <dd>Corpus records without replacing your app structure.</dd>
+            </div>
+          </dl>
           <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Read the adopting guide{" "}
             <ArrowRight
