@@ -101,8 +101,8 @@ const failureModes = [
     code: "INTAKE",
     title: "Vague tickets",
     text: "Keep the request. Turn it into checkable requirements.",
-    accent: "reference",
-    lamp: "reference",
+    accent: "change",
+    lamp: "change",
   },
   {
     code: "SCOPE",
@@ -122,8 +122,8 @@ const failureModes = [
     code: "LEDGER",
     title: "Lost findings",
     text: "Save useful lessons so later tasks can reuse them.",
-    accent: "reference",
-    lamp: "reference",
+    accent: "change",
+    lamp: "change",
   },
 ] as const;
 

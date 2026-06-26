@@ -1366,21 +1366,23 @@ body::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(var(--signal-reference-rgb), 0.66),
-    rgba(var(--signal-change-rgb), 0.62) 50%,
-    rgba(var(--signal-reference-rgb), 0.66)
+    rgba(var(--signal-change-rgb), 0),
+    rgba(var(--signal-change-rgb), 0.64) 14%,
+    rgba(var(--signal-change-rgb), 0.7) 50%,
+    rgba(var(--signal-change-rgb), 0.64) 86%,
+    rgba(var(--signal-change-rgb), 0)
   );
-  box-shadow: 0 0 18px rgba(var(--signal-core-rgb), 0.08);
+  box-shadow: 0 0 18px rgba(var(--signal-change-rgb), 0.08);
   opacity: 0.72;
 }
 
 .review-signal-node {
-  --review-node-signal: var(--signal-reference);
-  --review-node-rgb: var(--signal-reference-rgb);
+  --review-node-signal: var(--signal-change);
+  --review-node-rgb: var(--signal-change-rgb);
   --review-node-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--review-node-rgb), 0.035) 0 1px,
-    transparent 1px 14px
+    135deg,
+    rgba(var(--review-node-rgb), 0.038) 0 1px,
+    transparent 1px 12px
   );
   position: relative;
   min-width: 0;
