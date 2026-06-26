@@ -455,7 +455,13 @@
   color: var(--color-concrete-400);
 }
 
+.docs-article-html {
+  counter-reset: docs-section;
+}
+
 .docs-article-html h2 {
+  --docs-section-signal: var(--color-aurum);
+  --docs-section-rgb: 216, 138, 36;
   position: relative;
   display: flex;
   align-items: center;
@@ -463,10 +469,10 @@
   margin: 3rem 0 1rem;
   padding: 0.72rem 0.9rem 0.72rem 0.8rem;
   border: 1px solid rgba(70, 57, 44, 0.82);
-  border-left: 3px solid var(--color-brass);
+  border-left: 3px solid var(--docs-section-signal);
   border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
   background:
-    linear-gradient(90deg, rgba(216, 138, 36, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--docs-section-rgb), 0.08) 1px, transparent 1px),
     linear-gradient(180deg, rgba(36, 29, 21, 0.72), rgba(20, 16, 12, 0.62));
   background-size:
     40px 100%,
@@ -474,21 +480,38 @@
   box-shadow:
     inset 0 1px 0 rgba(240, 226, 204, 0.045),
     inset 0 -1px 0 rgba(0, 0, 0, 0.42);
+  counter-increment: docs-section;
+}
+
+.docs-article-html h2:nth-of-type(4n + 2) {
+  --docs-section-signal: var(--color-phosphor);
+  --docs-section-rgb: 114, 179, 90;
+}
+
+.docs-article-html h2:nth-of-type(4n + 3) {
+  --docs-section-signal: var(--color-rubedo);
+  --docs-section-rgb: 201, 121, 82;
+}
+
+.docs-article-html h2:nth-of-type(4n + 4) {
+  --docs-section-signal: var(--color-olive);
+  --docs-section-rgb: 168, 147, 58;
 }
 
 .docs-article-html h2::before {
+  content: counter(docs-section, decimal-leading-zero);
   display: inline-flex;
-  width: 1.5rem;
+  width: 1.8rem;
   height: 1.5rem;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   margin-right: 0;
-  border: 1px solid rgba(216, 138, 36, 0.42);
+  border: 1px solid rgba(var(--docs-section-rgb), 0.42);
   border-radius: var(--radius-control);
-  background: rgba(216, 138, 36, 0.08);
-  color: var(--color-corpus-yellow);
-  font-size: 0.72rem;
+  background: rgba(var(--docs-section-rgb), 0.09);
+  color: var(--docs-section-signal);
+  font-size: 0.68rem;
   transform: none;
 }
 
@@ -511,6 +534,8 @@
 }
 
 .docs-source-note {
+  --docs-source-signal: var(--color-phosphor);
+  --docs-source-rgb: 114, 179, 90;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -518,10 +543,11 @@
   margin: 0.35rem 0 1.65rem;
   padding: 0.48rem 0.6rem;
   color: var(--color-concrete-400);
-  border: 1px solid rgba(216, 138, 36, 0.28);
+  border: 1px solid rgba(var(--docs-source-rgb), 0.28);
+  border-left: 3px solid var(--docs-source-signal);
   border-radius: var(--radius-panel);
   background:
-    radial-gradient(circle at 0 0, rgba(216, 138, 36, 0.08), transparent 42%),
+    radial-gradient(circle at 0 0, rgba(var(--docs-source-rgb), 0.1), transparent 42%),
     linear-gradient(180deg, rgba(27, 22, 17, 0.78), rgba(18, 14, 11, 0.74));
   background-size:
     auto,
@@ -551,9 +577,9 @@
 .docs-source-note .paper-stamp {
   flex: 0 0 auto;
   width: fit-content;
-  color: var(--color-corpus-yellow);
-  border-color: rgba(216, 138, 36, 0.54);
-  background: rgba(216, 138, 36, 0.08);
+  color: var(--docs-source-signal);
+  border-color: rgba(var(--docs-source-rgb), 0.54);
+  background: rgba(var(--docs-source-rgb), 0.08);
   transform: none;
 }
 .docs-source-date {
@@ -1043,15 +1069,44 @@
 }
 
 .docs-index-section {
+  --docs-index-signal: var(--color-aurum);
+  --docs-index-rgb: 216, 138, 36;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
   margin: 0;
   padding: 0.95rem;
-  border: 1px solid var(--color-panel-border);
+  border: 1px solid rgba(var(--docs-index-rgb), 0.28);
   border-radius: var(--radius-panel);
-  background: rgba(26, 21, 16, 0.58);
+  background:
+    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.06), transparent 42%),
+    rgba(26, 21, 16, 0.58);
   box-shadow: inset 0 1px 0 rgba(240, 226, 204, 0.05);
+}
+
+.docs-index-section-primary {
+  --docs-index-signal: var(--color-aurum);
+  --docs-index-rgb: 216, 138, 36;
+}
+
+.docs-index-section-tutorial {
+  --docs-index-signal: var(--color-phosphor);
+  --docs-index-rgb: 114, 179, 90;
+}
+
+.docs-index-section-examples {
+  --docs-index-signal: var(--color-rubedo);
+  --docs-index-rgb: 201, 121, 82;
+}
+
+.docs-index-section-reference {
+  --docs-index-signal: var(--color-olive);
+  --docs-index-rgb: 168, 147, 58;
+}
+
+.docs-index-section-adrs {
+  --docs-index-signal: var(--color-brass);
+  --docs-index-rgb: 191, 121, 39;
 }
 
 .docs-index-section::after {
@@ -1065,7 +1120,7 @@
       122deg,
       transparent 0%,
       transparent 38%,
-      rgba(240, 184, 92, 0.045) 48%,
+      rgba(var(--docs-index-rgb), 0.07) 48%,
       transparent 60%,
       transparent 100%
     ),
@@ -1133,7 +1188,7 @@
   gap: 1rem;
   margin-bottom: 0.65rem;
   padding-bottom: 0.55rem;
-  border-bottom: 1px solid var(--color-panel-border);
+  border-bottom: 1px solid rgba(var(--docs-index-rgb), 0.24);
 }
 
 .docs-index-section-heading h2 {
@@ -1144,7 +1199,7 @@
 .docs-index-section-heading span {
   font-family: var(--font-mono), monospace;
   font-size: 0.72rem;
-  color: var(--color-gold);
+  color: var(--docs-index-signal);
 }
 
 .docs-index-section-compact p {
@@ -1193,32 +1248,32 @@
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
   letter-spacing: 0.04em;
-  color: var(--color-brass);
-  opacity: 0.72;
+  color: var(--docs-index-signal);
+  opacity: 0.82;
 }
 
 .docs-index-item-label {
   min-width: 0;
   text-decoration: underline;
-  text-decoration-color: rgba(216, 138, 36, 0.42);
+  text-decoration-color: rgba(var(--docs-index-rgb), 0.44);
   text-underline-offset: 0.22rem;
 }
 
 .docs-prose .docs-index-list a:hover,
 .docs-prose .docs-index-list a:focus-visible {
-  background: rgba(216, 138, 36, 0.1);
-  color: var(--color-corpus-yellow);
+  background: rgba(var(--docs-index-rgb), 0.1);
+  color: var(--docs-index-signal);
 }
 
 .docs-prose .docs-index-list a:hover .docs-index-item-number,
 .docs-prose .docs-index-list a:focus-visible .docs-index-item-number {
-  color: var(--color-corpus-yellow);
+  color: var(--docs-index-signal);
   opacity: 1;
 }
 
 .docs-prose .docs-index-list a:hover .docs-index-item-label,
 .docs-prose .docs-index-list a:focus-visible .docs-index-item-label {
-  text-decoration-color: var(--color-corpus-yellow);
+  text-decoration-color: var(--docs-index-signal);
 }
 
 .docs-prose .docs-index-section-compact p a {
