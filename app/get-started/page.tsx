@@ -205,19 +205,24 @@ export default function GetStartedPage() {
           className="setup-choice-card h-full"
           contentClassName="flex h-full flex-col gap-5"
         >
-          <div className="flex items-start justify-between gap-4">
-            <KitIcon>
-              <Rocket className="h-6 w-6" aria-hidden="true" />
-            </KitIcon>
+          <div className="setup-choice-head flex items-start justify-between gap-4">
+            <div className="flex min-w-0 items-start gap-4">
+              <KitIcon>
+                <Rocket className="h-6 w-6" aria-hidden="true" />
+              </KitIcon>
+              <div className="min-w-0">
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+                  starter kit
+                </p>
+                <Heading className="mt-2">New repo</Heading>
+              </div>
+            </div>
             <span className="setup-choice-index">Path 01</span>
           </div>
-          <div>
-            <Heading>New repo</Heading>
-            <p className="mt-2 text-concrete-400">
-              Use the GitHub template for a fresh workspace with folders,
-              templates, and guides in place.
-            </p>
-          </div>
+          <p className="text-concrete-400">
+            Use the GitHub template for a fresh workspace with folders,
+            templates, and guides in place.
+          </p>
           <dl className="setup-choice-facts">
             <div>
               <dt>Best for</dt>
@@ -228,7 +233,8 @@ export default function GetStartedPage() {
               <dd>Folders, templates, local rules, and a board.</dd>
             </div>
           </dl>
-          <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
+          <code className="setup-choice-command">GitHub template</code>
+          <span className="inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Use the starter kit{" "}
             <ArrowRight
               className="motion-nudge-x h-4 w-4"
@@ -246,18 +252,23 @@ export default function GetStartedPage() {
           className="setup-choice-card h-full"
           contentClassName="flex h-full flex-col gap-5"
         >
-          <div className="flex items-start justify-between gap-4">
-            <KitIcon>
-              <FolderPlus className="h-6 w-6" aria-hidden="true" />
-            </KitIcon>
+          <div className="setup-choice-head flex items-start justify-between gap-4">
+            <div className="flex min-w-0 items-start gap-4">
+              <KitIcon>
+                <FolderPlus className="h-6 w-6" aria-hidden="true" />
+              </KitIcon>
+              <div className="min-w-0">
+                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+                  adopting guide
+                </p>
+                <Heading className="mt-2">Existing project</Heading>
+              </div>
+            </div>
             <span className="setup-choice-index">Path 02</span>
           </div>
-          <div>
-            <Heading>Existing project</Heading>
-            <p className="mt-2 text-concrete-400">
-              Copy the kit into your repo. Add specs and tasks beside the code.
-            </p>
-          </div>
+          <p className="text-concrete-400">
+            Copy the kit into your repo. Add specs and tasks beside the code.
+          </p>
           <dl className="setup-choice-facts">
             <div>
               <dt>Best for</dt>
@@ -268,7 +279,8 @@ export default function GetStartedPage() {
               <dd>Corpus records without replacing your app structure.</dd>
             </div>
           </dl>
-          <span className="mt-1 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
+          <code className="setup-choice-command">cp -R corpus-starter-kit/* .</code>
+          <span className="inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-concrete-100 underline decoration-brass/60 underline-offset-4 transition-colors group-hover:text-corpus-yellow group-hover:decoration-corpus-yellow">
             Read the adopting guide{" "}
             <ArrowRight
               className="motion-nudge-x h-4 w-4"
