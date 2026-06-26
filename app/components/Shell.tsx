@@ -19,6 +19,36 @@ const navLinks = [
   { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
 ];
 
+const mobileNavGroups = [
+  {
+    title: "Work",
+    tone: "core",
+    links: [
+      { label: "What is Corpus", href: "/what-is-corpus" },
+      { label: "Loop", href: "/the-loop" },
+      { label: "Get started", href: "/get-started" },
+    ],
+  },
+  {
+    title: "Tools",
+    tone: "reference",
+    links: [
+      { label: "Skills", href: "/skills" },
+      { label: "Agents", href: "/agents" },
+      { label: "CLI", href: "/cli" },
+      { label: "MCP", href: "/mcp" },
+    ],
+  },
+  {
+    title: "Reference",
+    tone: "muted",
+    links: [
+      { label: "Docs", href: "/docs" },
+      { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
+    ],
+  },
+];
+
 const footerGroups = [
   {
     title: "Work",
@@ -254,29 +284,39 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div
             ref={menuRef}
             id="mobile-menu"
-            className="border-t border-panel-border bg-panel-recessed lg:hidden"
+            className="mobile-menu-panel border-t border-panel-border bg-panel-recessed lg:hidden"
           >
             <Section
               as="nav"
-              className="flex flex-col gap-1 py-6"
+              className="mobile-menu-shell"
               aria-label="Mobile"
             >
-              {navLinks.map((link) => {
-                const active = isActiveLink(link.href, pathname);
-                return (
-                  <NavLink
-                    key={link.label}
-                    link={link}
-                    isActive={active}
-                    onClick={() => setMenuOpen(false)}
-                    className={`min-h-11 -mx-2 px-2 text-base font-medium transition-[color] focus-ring rounded-sm ${
-                      active
-                        ? "text-corpus-yellow"
-                        : "text-concrete-100 hover:text-corpus-yellow"
-                    }`}
-                  />
-                );
-              })}
+              <div className="mobile-menu-register" aria-hidden="true">
+                <span>Browse Corpus</span>
+                <span>{folioLabel}</span>
+              </div>
+              {mobileNavGroups.map((group) => (
+                <div
+                  key={group.title}
+                  className={`mobile-menu-group mobile-menu-group-${group.tone}`}
+                >
+                  <p className="mobile-menu-group-title">{group.title}</p>
+                  <div className="mobile-menu-link-list">
+                    {group.links.map((link) => {
+                      const active = isActiveLink(link.href, pathname);
+                      return (
+                        <NavLink
+                          key={link.label}
+                          link={link}
+                          isActive={active}
+                          onClick={() => setMenuOpen(false)}
+                          className="mobile-menu-link min-h-11 text-base font-medium transition-[background-color,border-color,color] focus-ring"
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </Section>
           </div>
         )}
