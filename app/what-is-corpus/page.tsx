@@ -10,7 +10,7 @@ import { PageHero } from "../components/PageHero";
 import { Heading } from "../components/Heading";
 import { PilotLamp } from "../components/PilotLamp";
 import { TextLink } from "../components/TextLink";
-import { signalRoles } from "../components/signalStyles";
+import { signalRoles, type SignalRole } from "../components/signalStyles";
 import {
   ArrowRight,
   CheckCircle,
@@ -77,41 +77,60 @@ const isNotList = [
 const adjacent = [
   {
     product: "Coding agents",
+    role: "execution",
+    signal: "change",
     examples: "Claude Code, Cursor, Copilot, …",
     does: "write the code",
     relation: "Corpus gives them scoped tasks and review records.",
   },
   {
     product: "Spec-driven workflows",
+    role: "requirements",
+    signal: "core",
     examples: "",
     does: "turn a written spec into an implementation",
     relation: "Corpus keeps requirements tied to checks and evidence.",
   },
   {
     product: "Issue trackers",
+    role: "source",
+    signal: "reference",
     examples: "Jira, Linear, GitHub Issues",
     does: "hold the backlog and the conversation",
     relation: "Tickets stay there. Corpus snapshots the work into files.",
   },
   {
     product: "Docs portals",
+    role: "manual",
+    signal: "reference",
     examples: "wikis, Notion, docs sites",
     does: "describe the system after the fact",
     relation: "A Corpus spec drives a change before it ships.",
   },
   {
     product: "Review tooling",
+    role: "proof",
+    signal: "evidence",
     examples: "PRs, CI, review bots",
     does: "check the merge",
     relation: "The review packet tells reviewers where to look.",
   },
   {
     product: "Refactoring tooling",
+    role: "mechanical change",
+    signal: "change",
     examples: "codemods, OpenRewrite, …",
     does: "execute mechanical change",
     relation: "A change plan states what must survive and how to check it.",
   },
-];
+] satisfies Array<{
+  product: string;
+  role: string;
+  signal: SignalRole;
+  examples: string;
+  does: string;
+  relation: string;
+}>;
 
 const boundarySteps = [
   {
@@ -338,14 +357,17 @@ export default function WhatIsCorpusPage() {
         <ul className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {adjacent.map((row, index) => (
             <li key={row.product}>
-                <Card
-                  className={`relation-card group h-full border-panel-border ${signalRoles.muted.hoverBorder}`}
-                >
+              <Card
+                className={`relation-card relation-card-${row.signal} group h-full border-panel-border ${signalRoles[row.signal].hoverBorder}`}
+              >
                 <div className="relation-card-head">
                   <div>
-                    <p className="relation-card-index">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
+                    <div className="relation-card-meta">
+                      <p className="relation-card-index">
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <p className="relation-card-role">{row.role}</p>
+                    </div>
                     <p className="relation-card-title">
                       {row.product}
                     </p>
@@ -355,7 +377,7 @@ export default function WhatIsCorpusPage() {
                       </p>
                     )}
                   </div>
-                      <PilotLamp color="muted" className="shrink-0" />
+                  <PilotLamp color={row.signal} className="shrink-0" />
                 </div>
                 <dl className="relation-card-body">
                   <div>

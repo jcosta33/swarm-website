@@ -4601,6 +4601,72 @@ body::after {
 .relation-card {
   --relation-signal: var(--signal-muted);
   --relation-rgb: var(--signal-muted-rgb);
+  --relation-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--relation-rgb), 0.045) 0 1px,
+    transparent 1px 18px
+  );
+  --plate-signal: var(--relation-signal);
+  --plate-rgb: var(--relation-rgb);
+  border-color: rgba(var(--relation-rgb), 0.24);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(var(--relation-rgb), 0.16),
+      transparent 38%
+    ),
+    var(--relation-pattern),
+    radial-gradient(
+      75% 68% at 16% 0%,
+      rgba(var(--relation-rgb), 0.08),
+      transparent 64%
+    ),
+    linear-gradient(180deg, rgba(232, 222, 203, 0.035), transparent 40%);
+}
+
+.relation-card-core {
+  --relation-signal: var(--signal-core);
+  --relation-rgb: var(--signal-core-rgb);
+  --relation-pattern: repeating-linear-gradient(
+    90deg,
+    rgba(var(--relation-rgb), 0.05) 0 1px,
+    transparent 1px 16px
+  );
+}
+
+.relation-card-evidence {
+  --relation-signal: var(--signal-evidence);
+  --relation-rgb: var(--signal-evidence-rgb);
+  --relation-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 13px,
+    rgba(var(--relation-rgb), 0.06) 13px 14px
+  );
+}
+
+.relation-card-change {
+  --relation-signal: var(--signal-change);
+  --relation-rgb: var(--signal-change-rgb);
+  --relation-pattern: repeating-linear-gradient(
+    -24deg,
+    rgba(var(--relation-rgb), 0.055) 0 1px,
+    transparent 1px 13px
+  );
+}
+
+.relation-card-reference {
+  --relation-signal: var(--signal-reference);
+  --relation-rgb: var(--signal-reference-rgb);
+  --relation-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 22px,
+    rgba(var(--relation-rgb), 0.06) 22px 23px
+  );
+}
+
+.relation-card-muted {
+  --relation-signal: var(--signal-muted);
+  --relation-rgb: var(--signal-muted-rgb);
 }
 
 .relation-card::before {
@@ -4630,11 +4696,37 @@ body::after {
   gap: 0.9rem;
 }
 
+.relation-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
 .relation-card-index {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
   color: var(--relation-signal);
   opacity: 0.78;
+}
+
+.relation-card-role {
+  display: inline-flex;
+  min-height: 1.25rem;
+  align-items: center;
+  border: 1px solid rgba(var(--relation-rgb), 0.28);
+  border-radius: calc(var(--radius-control) - 5px);
+  padding: 0.08rem 0.34rem 0.06rem;
+  background:
+    linear-gradient(180deg, rgba(var(--relation-rgb), 0.085), transparent 72%),
+    rgba(10, 7, 5, 0.2);
+  color: var(--relation-signal);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.56rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .relation-card-title {
@@ -4662,7 +4754,7 @@ body::after {
 .relation-card-body div {
   min-width: 0;
   padding-top: 0.65rem;
-  border-top: 1px solid rgba(70, 57, 44, 0.72);
+  border-top: 1px solid rgba(var(--relation-rgb), 0.24);
 }
 
 .relation-card-body dt {
@@ -4686,7 +4778,7 @@ body::after {
 }
 
 .relation-card-body div:nth-child(2) {
-  border-top-color: rgba(var(--signal-core-rgb), 0.22);
+  border-top-color: rgba(var(--signal-core-rgb), 0.2);
 }
 
 .relation-card-body div:nth-child(2) dt {
