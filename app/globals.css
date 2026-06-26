@@ -1130,7 +1130,7 @@ body::after {
   background-image:
     radial-gradient(
       70% 64% at 18% 0%,
-      rgba(240, 184, 92, 0.08),
+      rgba(var(--process-rgb), 0.09),
       transparent 64%
     ),
     linear-gradient(
@@ -1154,8 +1154,8 @@ body::after {
     height: 1px;
     background: linear-gradient(
       90deg,
-      rgba(216, 138, 36, 0.56),
-      rgba(216, 138, 36, 0.12)
+      rgba(var(--process-rgb), 0.58),
+      rgba(var(--process-rgb), 0.12)
     );
     transform: translateY(-50%);
     pointer-events: none;
@@ -1222,7 +1222,7 @@ body::after {
   background-image:
     radial-gradient(
       70% 64% at 18% 0%,
-      rgba(168, 147, 58, 0.08),
+      rgba(var(--process-rgb), 0.09),
       transparent 64%
     ),
     linear-gradient(
@@ -1246,8 +1246,8 @@ body::after {
     height: 1px;
     background: linear-gradient(
       90deg,
-      rgba(168, 147, 58, 0.54),
-      rgba(168, 147, 58, 0.1)
+      rgba(var(--process-rgb), 0.56),
+      rgba(var(--process-rgb), 0.1)
     );
     transform: translateY(-50%);
     pointer-events: none;
@@ -1766,8 +1766,7 @@ body::after {
   --catalog-signal-soft: rgba(var(--signal-reference-rgb), 0.62);
 }
 
-.catalog-row-change,
-.catalog-row-orange {
+.catalog-row-change {
   --catalog-signal: var(--signal-change);
   --catalog-signal-soft: rgba(var(--signal-change-rgb), 0.62);
 }

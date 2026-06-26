@@ -21,6 +21,7 @@ import { Heading } from "../components/Heading";
 import { Badge } from "../components/Badge";
 import { PilotLamp } from "../components/PilotLamp";
 import { TextLink } from "../components/TextLink";
+import { signalRoles } from "../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "CLI — Corpus",
@@ -167,6 +168,7 @@ const commandFamilies = [
     commands: "init · update · new · pull · agents emit",
     detail: "Create or refresh kit-owned files.",
     icon: Blocks,
+    signal: "core",
   },
   {
     label: "Check",
@@ -174,6 +176,7 @@ const commandFamilies = [
     commands: "check · status",
     detail: "Report workspace facts and gaps.",
     icon: ShieldCheck,
+    signal: "evidence",
   },
   {
     label: "Review",
@@ -181,6 +184,7 @@ const commandFamilies = [
     commands: "review · promote",
     detail: "Compare evidence and draft findings.",
     icon: ScanEye,
+    signal: "evidence",
   },
   {
     label: "Run",
@@ -188,6 +192,7 @@ const commandFamilies = [
     commands: "worktree · run",
     detail: "Isolate task work and launch agents.",
     icon: GitBranch,
+    signal: "core",
   },
   {
     label: "JSON",
@@ -195,8 +200,9 @@ const commandFamilies = [
     commands: "show",
     detail: "Expose parsed artifacts for scripts.",
     icon: LayoutDashboard,
+    signal: "reference",
   },
-];
+] as const;
 
 export default function CliPage() {
   return (
@@ -240,19 +246,24 @@ export default function CliPage() {
               return (
                 <li
                   key={family.label}
-                  className="cli-command-step bg-panel-raised/95"
-                >
+                    className={`cli-command-step ${signalRoles[family.signal].processItem} bg-panel-raised/95`}
+                  >
                   <a
                     href={`#${family.id}`}
                     className="cli-command-link focus-ring group block h-full p-5 transition-colors duration-150 hover:bg-panel sm:p-6"
                     aria-label={`Jump to ${family.label.toLowerCase()} commands`}
                   >
                     <div className="flex items-center gap-3">
-                      <HexBadge color="reference" className="h-10 w-10 shrink-0">
+                      <HexBadge
+                        color={family.signal}
+                        className="h-10 w-10 shrink-0"
+                      >
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </HexBadge>
                       <div className="min-w-0">
-                        <p className="font-mono text-xs font-semibold uppercase tracking-wide text-signal-reference">
+                        <p
+                          className={`font-mono text-xs font-semibold uppercase tracking-wide ${signalRoles[family.signal].text}`}
+                        >
                           {String(index + 1).padStart(2, "0")}
                         </p>
                         <h2 className="font-heading text-lg font-bold text-concrete-100">
@@ -472,7 +483,7 @@ export default function CliPage() {
                   screws
                   className="group h-full border-panel-border hover:border-brass/50"
                 >
-                  <div className="catalog-row catalog-row-orange">
+                    <div className="catalog-row catalog-row-change">
                       <HexBadge
                         color="change"
                         className="catalog-row-badge mb-4"

@@ -140,32 +140,37 @@ const bridgeFlow = [
     detail: "Claude Desktop, Cursor, or another MCP host.",
     icon: MessagesSquare,
     href: "#mcp-config",
+    signal: "reference",
   },
   {
     label: "stdio",
     detail: "A local process pipe, not a hosted service.",
     icon: Cable,
     href: "#install",
+    signal: "core",
   },
   {
     label: "corpus-mcp",
     detail: "Read-only adapter around the workspace.",
     icon: Boxes,
     href: "#guardrails",
+    signal: "evidence",
   },
   {
     label: "CLI JSON",
     detail: "Commands return structured facts.",
     icon: Terminal,
     href: "#mcp-tools",
+    signal: "reference",
   },
   {
     label: "Workspace",
     detail: "Markdown artifacts stay the source of truth.",
     icon: FileJson,
     href: "#source",
+    signal: "reference",
   },
-];
+] as const;
 
 export default function McpPage() {
   return (
@@ -202,7 +207,7 @@ export default function McpPage() {
             <span>local stdio bridge</span>
           </div>
           <ol
-            className="mcp-adapter-rail process-strip process-strip-signal-evidence grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
+            className="mcp-adapter-rail process-strip process-strip-signal-reference grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
             aria-label="corpus-mcp request path"
           >
             {bridgeFlow.map((item, index) => {
@@ -210,7 +215,7 @@ export default function McpPage() {
               return (
                 <li
                   key={item.label}
-                  className="mcp-adapter-step relative bg-panel-raised/95"
+                  className={`mcp-adapter-step ${signalRoles[item.signal].processItem} relative bg-panel-raised/95`}
                 >
                   <a
                     href={item.href}
@@ -218,12 +223,12 @@ export default function McpPage() {
                     aria-label={`Jump to ${item.label} details`}
                   >
                     <div className="flex items-center gap-3">
-                      <HexBadge color="evidence" className="h-10 w-10 shrink-0">
+                      <HexBadge color={item.signal} className="h-10 w-10 shrink-0">
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </HexBadge>
                       <div className="min-w-0">
                         <p
-                          className={`font-mono text-xs font-semibold uppercase tracking-wide ${signalRoles.evidence.text}`}
+                          className={`font-mono text-xs font-semibold uppercase tracking-wide ${signalRoles[item.signal].text}`}
                         >
                           {String(index + 1).padStart(2, "0")}
                         </p>
