@@ -32,8 +32,8 @@ export const signalRoleMeta = {
   },
   greenfield: {
     label: "greenfield",
-    hex: "#62C79D",
-    relationship: "fresh field green: HSL(155 47% 58%)",
+    hex: "#65C37F",
+    relationship: "field green: HSL(137 44% 58%)",
     tone: "fresh field green",
     use: "Fresh workspace setup paths and first-run starts.",
     surface: "upright seed rows and clean-start setup paths",
@@ -43,9 +43,9 @@ export const signalRoleMeta = {
   },
   brownfield: {
     label: "brownfield",
-    hex: "#BC8055",
-    relationship: "earth analogue: HSL(25 44% 54%)",
-    tone: "brownfield copper",
+    hex: "#B2815C",
+    relationship: "earth analogue: HSL(26 36% 53%)",
+    tone: "brownfield earth",
     use: "Existing-project adoption paths only.",
     surface: "diagonal survey hatching and adoption plates",
     pattern: "diagonal survey hatching",

@@ -6,8 +6,8 @@
      complement is #2472D8, HSL(214 71% 49%), reserved for diagnostics only so
      the public site stays warm. The public counterpoint is verdigris #76B8A9,
      HSL(166 32% 59%), used only for reference/manual surfaces. Other accents
-     keep named jobs: proof green #8ABF6B, greenfield #62C79D, brownfield
-     #BC8055, red clay #CA7059. Color is semantic signage:
+     keep named jobs: proof green #8ABF6B, greenfield #65C37F, brownfield
+     #B2815C, red clay #CA7059. Color is semantic signage:
      repeated surfaces should share the same role across text, lamp, border,
      card rail, and hover state. No orphan accent colors. */
   --color-night: #110e0c;
@@ -36,8 +36,8 @@
   --color-amber: #f0a33a;
   --color-complement: #2472d8;
   --color-phosphor: #8abf6b;
-  --color-greenfield: #62c79d;
-  --color-brownfield: #bc8055;
+  --color-greenfield: #65c37f;
+  --color-brownfield: #b2815c;
   --color-verdigris: #76b8a9;
   --color-rubedo: #ca7059;
   --color-olive: var(--color-verdigris);
@@ -49,9 +49,9 @@
   --signal-evidence: var(--color-phosphor);
   --signal-evidence-rgb: 138, 191, 107;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 98, 199, 157;
+  --signal-greenfield-rgb: 101, 195, 127;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 188, 128, 85;
+  --signal-brownfield-rgb: 178, 129, 92;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 202, 112, 89;
   --signal-reference: var(--color-verdigris);
@@ -115,8 +115,8 @@
   --c-amber: #f0a33a;
   --c-complement: #2472d8;
   --c-phosphor: #8abf6b;
-  --c-greenfield: #62c79d;
-  --c-brownfield: #bc8055;
+  --c-greenfield: #65c37f;
+  --c-brownfield: #b2815c;
   --c-verdigris: #76b8a9;
   --c-rubedo: #ca7059;
   --c-olive: var(--c-verdigris);
@@ -125,9 +125,9 @@
   --signal-evidence: var(--color-phosphor);
   --signal-evidence-rgb: 138, 191, 107;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 98, 199, 157;
+  --signal-greenfield-rgb: 101, 195, 127;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 188, 128, 85;
+  --signal-brownfield-rgb: 178, 129, 92;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 202, 112, 89;
   --signal-reference: var(--color-verdigris);

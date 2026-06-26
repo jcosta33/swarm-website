@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/docs/" },
 };
 
+const docsLegend = [
+  { label: "Start", role: "core" },
+  { label: "Tutorial", role: "greenfield" },
+  { label: "Examples", role: "change" },
+  { label: "Reference", role: "reference" },
+  { label: "ADRs", role: "muted" },
+] as const;
+
 function Section({
   sec,
   intro,
@@ -77,6 +85,17 @@ export default function DocsIndex() {
           <span>{nav.length} sections</span>
           <span>{totalPages} pages</span>
           <span>markdown source</span>
+          <ul className="docs-index-legend" aria-label="Documentation color key">
+            {docsLegend.map((item) => (
+              <li
+                key={item.label}
+                className={`docs-index-legend-item docs-index-legend-${item.role}`}
+              >
+                <span>{item.label}</span>
+                <span>{item.role}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </header>
       <div
