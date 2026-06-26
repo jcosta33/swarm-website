@@ -230,7 +230,7 @@ export default function WhatIsCorpusPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="system overview"
-          tone="evidence"
+          tone="reference"
           title={
             <>
               What is{" "}

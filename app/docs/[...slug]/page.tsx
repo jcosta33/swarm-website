@@ -143,6 +143,13 @@ export default async function DocPage({
     title,
   );
   const dates = docDates(slugPath);
+  const docGroup = (() => {
+    if (slug.length > 1) {
+      return humanizeSegment(slug[0]).replace(/^README$/i, "Manual");
+    }
+    return /^\d{2}-/.test(slug[0]) ? "Start here" : "Manual";
+  })();
+  const sourceLabel = `corpus/docs/${slugPath}.md`;
   const titleClassName = [
     "docs-article-title",
     title.length > 56 ? "docs-article-title-long" : "",
@@ -175,25 +182,31 @@ export default async function DocPage({
         )}
       />
       <div className="docs-prose" data-pagefind-body>
-        <h1 className={titleClassName}>{title}</h1>
-        <div className="docs-source-note" data-pagefind-ignore>
-          <span className="paper-stamp">source</span>
-          <span className="docs-source-path">
-            Source:{" "}
-            <Link
-              href={`https://github.com/jcosta33/corpus/blob/main/docs/${slugPath}.md`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              corpus/docs/{slugPath}.md
-            </Link>
-          </span>
-          {dates && (
-            <span className="docs-source-date">
-              Modified: {dates.modified.slice(0, 10)}
+        <header className="docs-article-header">
+          <div className="docs-article-kicker" data-pagefind-ignore>
+            <span>manual page</span>
+            <span>/ {docGroup}</span>
+          </div>
+          <h1 className={titleClassName}>{title}</h1>
+          <div className="docs-source-note" data-pagefind-ignore>
+            <span className="paper-stamp">source</span>
+            <span className="docs-source-path">
+              Source:{" "}
+              <Link
+                href={`https://github.com/jcosta33/corpus/blob/main/docs/${slugPath}.md`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {sourceLabel}
+              </Link>
             </span>
-          )}
-        </div>
+            {dates && (
+              <span className="docs-source-date">
+                Modified: {dates.modified.slice(0, 10)}
+              </span>
+            )}
+          </div>
+        </header>
         <div className="docs-article-html" dangerouslySetInnerHTML={{ __html: html }} />
 
         {(prev || next) && (

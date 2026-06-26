@@ -35,11 +35,11 @@
   --color-brass: #bf7927;
   --color-amber: #f0a33a;
   --color-complement: #2472d8;
-  --color-phosphor: #8abf6b;
-  --color-greenfield: #65c37f;
-  --color-brownfield: #b2815c;
-  --color-verdigris: #76b8a9;
-  --color-rubedo: #ca7059;
+  --color-phosphor: #98c873;
+  --color-greenfield: #56c978;
+  --color-brownfield: #af7650;
+  --color-verdigris: #75bdae;
+  --color-rubedo: #ce7058;
   --color-olive: var(--color-verdigris);
   --color-black-text: #100b07;
 
@@ -47,15 +47,15 @@
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
-  --signal-evidence-rgb: 138, 191, 107;
+  --signal-evidence-rgb: 152, 200, 115;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 101, 195, 127;
+  --signal-greenfield-rgb: 86, 201, 120;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 178, 129, 92;
+  --signal-brownfield-rgb: 175, 118, 80;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 202, 112, 89;
+  --signal-change-rgb: 206, 112, 88;
   --signal-reference: var(--color-verdigris);
-  --signal-reference-rgb: 118, 184, 169;
+  --signal-reference-rgb: 117, 189, 174;
   --signal-muted: var(--color-brass);
   --signal-muted-rgb: 191, 121, 39;
 
@@ -116,24 +116,24 @@
   --c-brass: #bf7927;
   --c-amber: #f0a33a;
   --c-complement: #2472d8;
-  --c-phosphor: #8abf6b;
-  --c-greenfield: #65c37f;
-  --c-brownfield: #b2815c;
-  --c-verdigris: #76b8a9;
-  --c-rubedo: #ca7059;
+  --c-phosphor: #98c873;
+  --c-greenfield: #56c978;
+  --c-brownfield: #af7650;
+  --c-verdigris: #75bdae;
+  --c-rubedo: #ce7058;
   --c-olive: var(--c-verdigris);
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
-  --signal-evidence-rgb: 138, 191, 107;
+  --signal-evidence-rgb: 152, 200, 115;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 101, 195, 127;
+  --signal-greenfield-rgb: 86, 201, 120;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 178, 129, 92;
+  --signal-brownfield-rgb: 175, 118, 80;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 202, 112, 89;
+  --signal-change-rgb: 206, 112, 88;
   --signal-reference: var(--color-verdigris);
-  --signal-reference-rgb: 118, 184, 169;
+  --signal-reference-rgb: 117, 189, 174;
   --signal-muted: var(--color-brass);
   --signal-muted-rgb: 191, 121, 39;
   --c-paper: #f0e2cc;
@@ -1094,6 +1094,7 @@ body::after {
 .page-hero {
   --hero-signal: var(--signal-core);
   --hero-rgb: var(--signal-core-rgb);
+  --hero-pattern: linear-gradient(180deg, transparent, transparent);
   position: relative;
   isolation: isolate;
 }
@@ -1146,6 +1147,7 @@ body::after {
       bottom left / 1px 1.45rem no-repeat,
     linear-gradient(rgba(var(--hero-rgb), 0.16), rgba(var(--hero-rgb), 0.16))
       bottom right / 1px 1.45rem no-repeat,
+    var(--hero-pattern),
     repeating-linear-gradient(
       90deg,
       transparent 0 1.5rem,
@@ -1156,31 +1158,61 @@ body::after {
 .page-hero-tone-evidence {
   --hero-signal: var(--signal-evidence);
   --hero-rgb: var(--signal-evidence-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.7rem,
+    rgba(var(--hero-rgb), 0.055) 0.7rem calc(0.7rem + 1px)
+  );
 }
 
 .page-hero-tone-greenfield {
   --hero-signal: var(--signal-greenfield);
   --hero-rgb: var(--signal-greenfield-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 0.85rem,
+    rgba(var(--hero-rgb), 0.06) 0.85rem calc(0.85rem + 1px)
+  );
 }
 
 .page-hero-tone-brownfield {
   --hero-signal: var(--signal-brownfield);
   --hero-rgb: var(--signal-brownfield-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    -24deg,
+    transparent 0 0.78rem,
+    rgba(var(--hero-rgb), 0.06) 0.78rem calc(0.78rem + 1px)
+  );
 }
 
 .page-hero-tone-change {
   --hero-signal: var(--signal-change);
   --hero-rgb: var(--signal-change-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    135deg,
+    transparent 0 0.78rem,
+    rgba(var(--hero-rgb), 0.052) 0.78rem calc(0.78rem + 1px)
+  );
 }
 
 .page-hero-tone-reference {
   --hero-signal: var(--signal-reference);
   --hero-rgb: var(--signal-reference-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 1.05rem,
+    rgba(var(--hero-rgb), 0.052) 1.05rem calc(1.05rem + 1px)
+  );
 }
 
 .page-hero-tone-muted {
   --hero-signal: var(--signal-muted);
   --hero-rgb: var(--signal-muted-rgb);
+  --hero-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 1.15rem,
+    rgba(var(--hero-rgb), 0.044) 1.15rem calc(1.15rem + 1px)
+  );
 }
 
 .page-hero-title {
@@ -2023,6 +2055,11 @@ body::after {
 .mcp-guardrail-card {
   --guardrail-signal: var(--signal-reference);
   --guardrail-rgb: var(--signal-reference-rgb);
+  --guardrail-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.95rem,
+    rgba(var(--guardrail-rgb), 0.052) 0.95rem calc(0.95rem + 1px)
+  );
   --plate-signal: var(--guardrail-signal);
   --plate-rgb: var(--guardrail-rgb);
   border-color: rgba(var(--guardrail-rgb), 0.3);
@@ -2033,11 +2070,7 @@ body::after {
       rgba(var(--guardrail-rgb), 0.12) 2px,
       transparent 2px
     ),
-    repeating-linear-gradient(
-      135deg,
-      rgba(var(--guardrail-rgb), 0.03) 0 1px,
-      transparent 1px 14px
-    ),
+    var(--guardrail-pattern),
     radial-gradient(
       74% 68% at 16% 0%,
       rgba(var(--guardrail-rgb), 0.12),
@@ -2048,16 +2081,31 @@ body::after {
 .mcp-guardrail-card-reference {
   --guardrail-signal: var(--signal-reference);
   --guardrail-rgb: var(--signal-reference-rgb);
+  --guardrail-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.95rem,
+    rgba(var(--guardrail-rgb), 0.052) 0.95rem calc(0.95rem + 1px)
+  );
 }
 
 .mcp-guardrail-card-change {
   --guardrail-signal: var(--signal-change);
   --guardrail-rgb: var(--signal-change-rgb);
+  --guardrail-pattern: repeating-linear-gradient(
+    135deg,
+    transparent 0 0.72rem,
+    rgba(var(--guardrail-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
+  );
 }
 
 .mcp-guardrail-card-muted {
   --guardrail-signal: var(--signal-muted);
   --guardrail-rgb: var(--signal-muted-rgb);
+  --guardrail-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 1.05rem,
+    rgba(var(--guardrail-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
+  );
 }
 
 .mcp-guardrail-title {
@@ -3312,10 +3360,18 @@ body::after {
 
 .catalog-row {
   --catalog-signal: var(--signal-core);
-  --catalog-signal-soft: rgba(var(--signal-core-rgb), 0.62);
+  --catalog-rgb: var(--signal-core-rgb);
+  --catalog-signal-soft: rgba(var(--catalog-rgb), 0.62);
+  --catalog-pattern: linear-gradient(
+    90deg,
+    rgba(var(--catalog-rgb), 0.05),
+    transparent 56%
+  );
   position: relative;
   min-height: 3.5rem;
   padding-left: 1rem;
+  border-radius: calc(var(--radius-panel) - 2px);
+  background-image: var(--catalog-pattern);
 }
 
 .catalog-row::before {
@@ -3343,32 +3399,72 @@ body::after {
 .catalog-row-reference,
 .catalog-row-olive {
   --catalog-signal: var(--signal-reference);
-  --catalog-signal-soft: rgba(var(--signal-reference-rgb), 0.62);
+  --catalog-rgb: var(--signal-reference-rgb);
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 0.9rem,
+      rgba(var(--catalog-rgb), 0.055) 0.9rem calc(0.9rem + 1px)
+    );
 }
 
 .catalog-row-core {
   --catalog-signal: var(--signal-core);
-  --catalog-signal-soft: rgba(var(--signal-core-rgb), 0.62);
+  --catalog-rgb: var(--signal-core-rgb);
+  --catalog-pattern: linear-gradient(
+    90deg,
+    rgba(var(--catalog-rgb), 0.07),
+    transparent 58%
+  );
 }
 
 .catalog-row-change {
   --catalog-signal: var(--signal-change);
-  --catalog-signal-soft: rgba(var(--signal-change-rgb), 0.62);
+  --catalog-rgb: var(--signal-change-rgb);
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 0.68rem,
+      rgba(var(--catalog-rgb), 0.052) 0.68rem calc(0.68rem + 1px)
+    );
 }
 
 .catalog-row-evidence {
   --catalog-signal: var(--signal-evidence);
-  --catalog-signal-soft: rgba(var(--signal-evidence-rgb), 0.62);
+  --catalog-rgb: var(--signal-evidence-rgb);
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 0.62rem,
+      rgba(var(--catalog-rgb), 0.06) 0.62rem calc(0.62rem + 1px)
+    );
 }
 
 .catalog-row-greenfield {
   --catalog-signal: var(--signal-greenfield);
-  --catalog-signal-soft: rgba(var(--signal-greenfield-rgb), 0.62);
+  --catalog-rgb: var(--signal-greenfield-rgb);
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 0.78rem,
+      rgba(var(--catalog-rgb), 0.06) 0.78rem calc(0.78rem + 1px)
+    );
 }
 
 .catalog-row-brownfield {
   --catalog-signal: var(--signal-brownfield);
-  --catalog-signal-soft: rgba(var(--signal-brownfield-rgb), 0.62);
+  --catalog-rgb: var(--signal-brownfield-rgb);
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
+    repeating-linear-gradient(
+      -24deg,
+      transparent 0 0.72rem,
+      rgba(var(--catalog-rgb), 0.058) 0.72rem calc(0.72rem + 1px)
+    );
 }
 
 .catalog-row-title {
@@ -3663,41 +3759,77 @@ body::after {
 .tool-list-card {
   --tool-signal: var(--signal-reference);
   --tool-rgb: var(--signal-reference-rgb);
+  --tool-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.92rem,
+    rgba(var(--tool-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
+  );
   border-color: rgba(var(--tool-rgb), 0.28);
   background-image:
     linear-gradient(90deg, rgba(var(--tool-rgb), 0.065), transparent 50%),
+    var(--tool-pattern),
     linear-gradient(180deg, rgba(240, 226, 204, 0.025), transparent 44%);
 }
 
 .tool-list-card-core {
   --tool-signal: var(--signal-core);
   --tool-rgb: var(--signal-core-rgb);
+  --tool-pattern: linear-gradient(
+    180deg,
+    rgba(var(--tool-rgb), 0.055),
+    transparent 60%
+  );
 }
 
 .tool-list-card-evidence {
   --tool-signal: var(--signal-evidence);
   --tool-rgb: var(--signal-evidence-rgb);
+  --tool-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.65rem,
+    rgba(var(--tool-rgb), 0.06) 0.65rem calc(0.65rem + 1px)
+  );
 }
 
 .tool-list-card-reference {
   --tool-signal: var(--signal-reference);
   --tool-rgb: var(--signal-reference-rgb);
+  --tool-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.92rem,
+    rgba(var(--tool-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
+  );
 }
 
 .tool-list-card-change {
   --tool-signal: var(--signal-change);
   --tool-rgb: var(--signal-change-rgb);
+  --tool-pattern: repeating-linear-gradient(
+    135deg,
+    transparent 0 0.72rem,
+    rgba(var(--tool-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
+  );
 }
 
 .tool-list-card-muted {
   --tool-signal: var(--signal-muted);
   --tool-rgb: var(--signal-muted-rgb);
+  --tool-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 1.05rem,
+    rgba(var(--tool-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
+  );
 }
 
 /* Signal stats — compact role-coloured readouts for summary panels. */
 .signal-stat {
   --stat-signal: var(--signal-core);
   --stat-rgb: var(--signal-core-rgb);
+  --stat-pattern: linear-gradient(
+    180deg,
+    rgba(var(--stat-rgb), 0.045),
+    transparent 58%
+  );
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -3705,6 +3837,7 @@ body::after {
   border-radius: calc(var(--radius-control) - 2px);
   background:
     linear-gradient(90deg, rgba(var(--stat-rgb), 0.11), transparent 58%),
+    var(--stat-pattern),
     rgba(10, 7, 5, 0.16);
   padding: 0.85rem 0.9rem;
   box-shadow: inset 0 1px 0 rgba(240, 226, 204, 0.035);
@@ -3727,36 +3860,71 @@ body::after {
 .signal-stat-core {
   --stat-signal: var(--signal-core);
   --stat-rgb: var(--signal-core-rgb);
+  --stat-pattern: linear-gradient(
+    180deg,
+    rgba(var(--stat-rgb), 0.045),
+    transparent 58%
+  );
 }
 
 .signal-stat-evidence {
   --stat-signal: var(--signal-evidence);
   --stat-rgb: var(--signal-evidence-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.64rem,
+    rgba(var(--stat-rgb), 0.058) 0.64rem calc(0.64rem + 1px)
+  );
 }
 
 .signal-stat-greenfield {
   --stat-signal: var(--signal-greenfield);
   --stat-rgb: var(--signal-greenfield-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 0.78rem,
+    rgba(var(--stat-rgb), 0.058) 0.78rem calc(0.78rem + 1px)
+  );
 }
 
 .signal-stat-brownfield {
   --stat-signal: var(--signal-brownfield);
   --stat-rgb: var(--signal-brownfield-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    -24deg,
+    transparent 0 0.72rem,
+    rgba(var(--stat-rgb), 0.058) 0.72rem calc(0.72rem + 1px)
+  );
 }
 
 .signal-stat-change {
   --stat-signal: var(--signal-change);
   --stat-rgb: var(--signal-change-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    135deg,
+    transparent 0 0.72rem,
+    rgba(var(--stat-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
+  );
 }
 
 .signal-stat-reference {
   --stat-signal: var(--signal-reference);
   --stat-rgb: var(--signal-reference-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.92rem,
+    rgba(var(--stat-rgb), 0.052) 0.92rem calc(0.92rem + 1px)
+  );
 }
 
 .signal-stat-muted {
   --stat-signal: var(--signal-muted);
   --stat-rgb: var(--signal-muted-rgb);
+  --stat-pattern: repeating-linear-gradient(
+    90deg,
+    transparent 0 1.05rem,
+    rgba(var(--stat-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
+  );
 }
 
 /* Repo manifest — opening readout for corpus-agents and corpus-skills. */
@@ -3847,25 +4015,46 @@ body::after {
 .agent-roster-panel {
   --roster-signal: var(--signal-core);
   --roster-rgb: var(--signal-core-rgb);
+  --roster-pattern: linear-gradient(
+    180deg,
+    rgba(var(--roster-rgb), 0.042),
+    transparent 58%
+  );
   border-color: rgba(var(--roster-rgb), 0.3);
   background:
     linear-gradient(90deg, rgba(var(--roster-rgb), 0.08), transparent 35%),
+    var(--roster-pattern),
     var(--color-panel-raised);
 }
 
 .agent-roster-panel-evidence {
   --roster-signal: var(--signal-evidence);
   --roster-rgb: var(--signal-evidence-rgb);
+  --roster-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.64rem,
+    rgba(var(--roster-rgb), 0.052) 0.64rem calc(0.64rem + 1px)
+  );
 }
 
 .agent-roster-panel-change {
   --roster-signal: var(--signal-change);
   --roster-rgb: var(--signal-change-rgb);
+  --roster-pattern: repeating-linear-gradient(
+    135deg,
+    transparent 0 0.72rem,
+    rgba(var(--roster-rgb), 0.048) 0.72rem calc(0.72rem + 1px)
+  );
 }
 
 .agent-roster-panel-reference {
   --roster-signal: var(--signal-reference);
   --roster-rgb: var(--signal-reference-rgb);
+  --roster-pattern: repeating-linear-gradient(
+    0deg,
+    transparent 0 0.92rem,
+    rgba(var(--roster-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
+  );
 }
 
 .agent-roster-header {
