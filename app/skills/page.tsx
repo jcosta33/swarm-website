@@ -25,6 +25,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { DroneIcon } from "../components/DroneIcon";
 import { HexBadge } from "../components/HexBadge";
 import { PageHero } from "../components/PageHero";
+import { HeroTrace } from "../components/HeroTrace";
 import { Heading } from "../components/Heading";
 import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
@@ -211,6 +212,15 @@ export default function SkillsPage() {
           <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
             Install only the guide that matches the task.
           </p>
+          <HeroTrace
+            ariaLabel="Skill guide trace"
+            items={[
+              { label: "Describe", signal: "reference" },
+              { label: "Match", signal: "core" },
+              { label: "Load", signal: "evidence" },
+              { label: "Run", signal: "change" },
+            ]}
+          />
         </PageHero>
       </Section>
 

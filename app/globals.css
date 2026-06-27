@@ -1973,6 +1973,144 @@ body::after {
   overflow-wrap: break-word;
 }
 
+.hero-trace {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  max-width: min(100%, 56rem);
+  margin: 1.25rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-trace-item {
+  --trace-signal: var(--signal-core);
+  --trace-rgb: var(--signal-core-rgb);
+  --trace-pattern: var(--signal-pattern-core);
+  position: relative;
+  display: grid;
+  min-width: 5.9rem;
+  min-height: 3rem;
+  align-content: center;
+  gap: 0.12rem;
+  overflow: hidden;
+  border: 1px solid rgba(var(--trace-rgb), 0.32);
+  border-radius: calc(var(--radius-control) - 2px);
+  background:
+    linear-gradient(90deg, rgba(var(--trace-rgb), 0.105), transparent 58%),
+    var(--trace-pattern),
+    rgba(18, 13, 9, 0.58);
+  padding: 0.5rem 0.64rem 0.52rem;
+  text-align: left;
+  box-shadow:
+    inset 2px 0 0 rgba(var(--trace-rgb), 0.26),
+    inset 0 1px 0 rgba(240, 226, 204, 0.04);
+}
+
+.hero-trace-item::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 0.24rem;
+  height: 0.24rem;
+  border-radius: 999px;
+  background: var(--trace-signal);
+  box-shadow: 0 0 9px rgba(var(--trace-rgb), 0.42);
+  opacity: 0.82;
+}
+
+.hero-trace-index {
+  color: var(--trace-signal);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.hero-trace-label {
+  color: var(--color-concrete-100);
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  font-size: 0.86rem;
+  font-weight: 760;
+  line-height: 1.1;
+}
+
+.hero-trace-detail {
+  color: var(--color-concrete-400);
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
+
+.hero-trace-item-core {
+  --trace-signal: var(--signal-core);
+  --trace-rgb: var(--signal-core-rgb);
+  --trace-pattern: var(--signal-pattern-core);
+}
+
+.hero-trace-item-evidence {
+  --trace-signal: var(--signal-evidence);
+  --trace-rgb: var(--signal-evidence-rgb);
+  --trace-pattern: var(--signal-pattern-evidence);
+}
+
+.hero-trace-item-greenfield {
+  --trace-signal: var(--signal-greenfield);
+  --trace-rgb: var(--signal-greenfield-rgb);
+  --trace-pattern: var(--signal-pattern-greenfield);
+}
+
+.hero-trace-item-brownfield {
+  --trace-signal: var(--signal-brownfield);
+  --trace-rgb: var(--signal-brownfield-rgb);
+  --trace-pattern: var(--signal-pattern-brownfield);
+}
+
+.hero-trace-item-change {
+  --trace-signal: var(--signal-change);
+  --trace-rgb: var(--signal-change-rgb);
+  --trace-pattern: var(--signal-pattern-change);
+}
+
+.hero-trace-item-reference {
+  --trace-signal: var(--signal-reference);
+  --trace-rgb: var(--signal-reference-rgb);
+  --trace-pattern: var(--signal-pattern-reference);
+}
+
+.hero-trace-item-muted {
+  --trace-signal: var(--signal-muted);
+  --trace-rgb: var(--signal-muted-rgb);
+  --trace-pattern: var(--signal-pattern-muted);
+}
+
+@media (max-width: 40rem) {
+  .hero-trace {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.38rem;
+    width: min(100%, calc(100vw - 2.5rem));
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    margin-top: 1rem;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+
+  .hero-trace-item {
+    min-width: 5.85rem;
+    min-height: 2.58rem;
+    flex: 0 0 5.85rem;
+    padding-block: 0.42rem;
+  }
+
+  .hero-trace-label {
+    font-size: 0.78rem;
+  }
+}
+
 .page-hero-motif span {
   position: absolute;
   width: 0.3rem;

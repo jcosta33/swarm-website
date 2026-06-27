@@ -21,6 +21,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { DroneIcon } from "../components/DroneIcon";
 import { HexBadge } from "../components/HexBadge";
 import { PageHero } from "../components/PageHero";
+import { HeroTrace } from "../components/HeroTrace";
 import { Heading } from "../components/Heading";
 import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
@@ -246,6 +247,15 @@ export default function AgentsPage() {
           <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
             Copy one into a repo when you want a role with its own context.
           </p>
+          <HeroTrace
+            ariaLabel="Agent role trace"
+            items={[
+              { label: "Role", signal: "reference" },
+              { label: "Inputs", signal: "core" },
+              { label: "Tools", signal: "change" },
+              { label: "Evidence", signal: "evidence" },
+            ]}
+          />
         </PageHero>
       </Section>
 

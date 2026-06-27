@@ -7,6 +7,7 @@ import { PaperArtifact } from "../components/PaperArtifact";
 import { DroneIcon } from "../components/DroneIcon";
 import { HexBadge } from "../components/HexBadge";
 import { PageHero } from "../components/PageHero";
+import { HeroTrace } from "../components/HeroTrace";
 import { Heading } from "../components/Heading";
 import { PilotLamp } from "../components/PilotLamp";
 import { TextLink } from "../components/TextLink";
@@ -245,6 +246,16 @@ export default function WhatIsCorpusPage() {
             A markdown workflow for turning requests into scoped agent work,
             review evidence, and saved findings.
           </p>
+          <HeroTrace
+            ariaLabel="Corpus artifact chain"
+            items={[
+              { label: "Intake", signal: "reference" },
+              { label: "Spec", signal: "core" },
+              { label: "Task", signal: "change" },
+              { label: "Review", signal: "evidence" },
+              { label: "Finding", signal: "reference" },
+            ]}
+          />
         </PageHero>
       </Section>
 

@@ -15,6 +15,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { GiltBand } from "../components/GiltBand";
 import { HexBadge } from "../components/HexBadge";
 import { PageHero } from "../components/PageHero";
+import { HeroTrace } from "../components/HeroTrace";
 import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { LoopDiagram } from "../components/LoopDiagram";
@@ -216,6 +217,13 @@ export default function TheLoopPage() {
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
             Six steps for moving agent work from request to review.
           </p>
+          <HeroTrace
+            ariaLabel="Corpus loop trace"
+            items={steps.map((step) => ({
+              label: step.name,
+              signal: step.signal,
+            }))}
+          />
         </PageHero>
       </Section>
 

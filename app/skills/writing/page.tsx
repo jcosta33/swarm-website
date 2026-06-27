@@ -16,6 +16,7 @@ import { TerminalWindow } from "../../components/TerminalWindow";
 import { DroneIcon } from "../../components/DroneIcon";
 import { HexBadge } from "../../components/HexBadge";
 import { PageHero } from "../../components/PageHero";
+import { HeroTrace } from "../../components/HeroTrace";
 import { Heading } from "../../components/Heading";
 import { TextLink } from "../../components/TextLink";
 
@@ -139,6 +140,15 @@ export default function WritingSkillsPage() {
             Write the trigger, the rules, and any references the agent needs.
             Keep the rest out.
           </p>
+          <HeroTrace
+            ariaLabel="Skill file anatomy trace"
+            items={[
+              { label: "Trigger", signal: "reference" },
+              { label: "Rules", signal: "core" },
+              { label: "References", signal: "reference" },
+              { label: "Scope", signal: "change" },
+            ]}
+          />
         </PageHero>
       </Section>
 
