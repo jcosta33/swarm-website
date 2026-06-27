@@ -13,6 +13,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { PageHero } from "../components/PageHero";
+import { SignalKey } from "../components/SignalKey";
 import {
   signalRoleOrder,
   signalRoleMeta,
@@ -60,6 +61,16 @@ const specimenRegister = [
     ],
   },
 ];
+
+const specimenSignalKey = [
+  { label: "Core", role: "core", detail: "identity and primary actions" },
+  { label: "Greenfield", role: "greenfield", detail: "new workspace paths" },
+  { label: "Brownfield", role: "brownfield", detail: "existing repo adoption" },
+  { label: "Change", role: "change", detail: "edits, fixes, attention" },
+  { label: "Evidence", role: "evidence", detail: "review proof and pass states" },
+  { label: "Reference", role: "reference", detail: "manuals and catalogs" },
+  { label: "Muted", role: "muted", detail: "hardware and neutral trim" },
+] as const;
 
 const terminalSpecimenCommand = "corpus status";
 
@@ -161,6 +172,15 @@ export default function KitchenSinkPage() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="border-t border-panel-border p-4 sm:p-5">
+              <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+                Signal key
+              </p>
+              <SignalKey
+                ariaLabel="Kitchen sink semantic signal roles"
+                items={specimenSignalKey}
+              />
             </div>
           </Panel>
         </nav>
