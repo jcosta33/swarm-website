@@ -3739,8 +3739,8 @@ body::after {
     );
 }
 
-.catalog-row-title {
-  color: var(--color-concrete-100);
+.catalog-row .catalog-row-title {
+  color: var(--catalog-signal);
   transition:
     color 160ms ease,
     text-shadow 160ms ease;

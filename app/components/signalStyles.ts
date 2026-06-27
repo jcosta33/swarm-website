@@ -1,10 +1,10 @@
 // Palette grammar:
 // core = corpus identity / loop / primary action
-// evidence = review proof / verified output / pass states
+// evidence = review proof / verified output / pass states, not generic "good"
 // greenfield = new workspace or starter-kit paths only
 // brownfield = existing-project adoption paths only
 // change = edits / fixes / run work / blocked or attention states
-// reference = docs / manuals / command catalogs / ledgers
+// reference = docs / manuals / command catalogs / ledgers / read-only rosters
 // muted = hardware, chrome, and non-semantic labels
 // Prefer these role names over raw color aliases in new component code.
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
@@ -33,7 +33,7 @@ export const signalRoleMeta = {
     use: "Review proof, verified output, pass states, and evidence-oriented sections.",
     surface: "checkpoint ticks, pass lamps, and review rails",
     pattern: "small checkpoint marks and vertical proof ticks",
-    avoid: "Do not use for setup paths, missing evidence, existing projects, or generic 'nice' accents.",
+    avoid: "Do not use for setup paths, read-only lists, missing evidence, existing projects, or generic 'nice' accents.",
     example: "PASS, verified output, human-reviewed evidence.",
   },
   greenfield: {
@@ -78,7 +78,7 @@ export const signalRoleMeta = {
     hex: "#78B8AA",
     relationship: "tempered split-complement: HSL(167 32% 60%)",
     tone: "verdigris ledger",
-    use: "Docs, manuals, command catalogs, ledgers, and index surfaces.",
+    use: "Docs, manuals, command catalogs, ledgers, index surfaces, and read-only rosters.",
     surface: "ledger rules, source notes, and reference shelves",
     pattern: "horizontal ledger rules",
     avoid: "Do not use for proof/pass states or primary calls to action.",
@@ -158,6 +158,16 @@ export const signalRoles = {
 } as const;
 
 export type SignalRole = keyof typeof signalRoles;
+
+export const signalRoleOrder = [
+  "core",
+  "greenfield",
+  "brownfield",
+  "change",
+  "evidence",
+  "reference",
+  "muted",
+] as const satisfies readonly SignalRole[];
 
 export type SignalAlias = "yellow" | "gold" | "orange" | "olive" | "brass";
 

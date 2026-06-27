@@ -33,8 +33,9 @@
 - Components live in `app/components/`.
 - Static assets in `public/`.
 - Design system: warm chassis surfaces with semantic signal roles in
-  `app/components/signalStyles.ts`: core gold, evidence green, greenfield,
-  brownfield, change red clay, reference verdigris, and muted brass.
+  `app/components/signalStyles.ts`: core gold, evidence sage, greenfield field
+  green, brownfield umber, change red clay, reference verdigris, and muted
+  brass.
 - Tone: tongue-in-cheek, laid back, open-source. Avoid corporate buzzwords.
 
 ## Commands

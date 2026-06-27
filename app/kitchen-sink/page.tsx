@@ -14,6 +14,7 @@ import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { PageHero } from "../components/PageHero";
 import {
+  signalRoleOrder,
   signalRoleMeta,
   signalRoles,
   type SignalRole,
@@ -58,16 +59,6 @@ const specimenRegister = [
       { label: "Typography", href: "#typography" },
     ],
   },
-];
-
-const paletteRoles: SignalRole[] = [
-  "core",
-  "greenfield",
-  "brownfield",
-  "change",
-  "evidence",
-  "reference",
-  "muted",
 ];
 
 const terminalSpecimenCommand = "corpus status";
@@ -233,7 +224,7 @@ export default function KitchenSinkPage() {
             </p>
           </div>
           <div className="palette-specimen-grid">
-            {paletteRoles.map((role) => (
+            {signalRoleOrder.map((role) => (
               <article
                 key={role}
                 className={`palette-specimen ${signalRoles[role].accentCard}`}
@@ -361,7 +352,7 @@ export default function KitchenSinkPage() {
         registerTone="evidence"
       >
         <div className="flex flex-wrap items-center gap-6">
-          {paletteRoles.map((role) => (
+          {signalRoleOrder.map((role) => (
             <PilotLamp key={role} color={role} label={role} />
           ))}
           <PilotLamp color="off" label="idle" />
