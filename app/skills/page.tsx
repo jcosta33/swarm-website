@@ -178,7 +178,7 @@ const skillSignalKey = [
   {
     label: "Review",
     role: "evidence",
-    detail: "proof, judgment, research",
+    detail: "proof, review, checked claims",
   },
   {
     label: "Change",
@@ -217,7 +217,7 @@ export default function SkillsPage() {
             items={[
               { label: "Describe", signal: "reference" },
               { label: "Match", signal: "core" },
-              { label: "Load", signal: "evidence" },
+              { label: "Load", signal: "reference" },
               { label: "Run", signal: "change" },
             ]}
           />

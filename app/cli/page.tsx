@@ -177,7 +177,7 @@ const commandFamilies = [
     commands: "init · update · new · pull · agents emit",
     detail: "Create or refresh kit-owned files.",
     icon: Blocks,
-    signal: "core",
+    signal: "reference",
   },
   {
     label: "Check",
@@ -216,7 +216,7 @@ const commandFamilies = [
 const commandSignalKey = [
   {
     label: "Setup",
-    role: "core",
+    role: "reference",
     detail: "create or refresh kit files",
   },
   {

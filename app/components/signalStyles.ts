@@ -1,8 +1,8 @@
 // Palette grammar:
-// core = corpus identity / loop / primary action
-// evidence = review proof / verified output / pass states, not generic "good"
-// greenfield = new workspace or starter-kit paths only
-// brownfield = existing-project adoption paths only
+// core = Corpus identity / loop / primary action
+// evidence = proof / review / verified output, not generic "green means good"
+// greenfield = literal new-repo or starter-kit paths only
+// brownfield = existing-project adoption and migration paths only
 // change = edits / fixes / run work / blocked or attention states
 // reference = docs / manuals / command catalogs / ledgers / read-only rosters
 // muted = hardware, chrome, and non-semantic labels
@@ -12,9 +12,9 @@
 // softer field, sage, umber, clay, and verdigris roles. A role is more than a
 // color: use it for the text, lamp, rail, border, hatch, mark, icon, command
 // plate, and hover state. Setup is not automatically green: only new-workspace
-// paths get greenfield; mixed setup surfaces use core or muted. If a role appears
-// on only one of those surfaces, the color will read as random decoration instead
-// of product meaning.
+// paths get greenfield; mixed setup surfaces use reference, core, or muted. If a
+// role appears on only one of those surfaces, the color will read as random
+// decoration instead of product meaning.
 // In CSS, reach for --signal-pattern-* and --signal-mark-* with the matching
 // --signal-* token before adding a local gradient. Local treatments can adjust
 // strength, not meaning.
@@ -26,7 +26,7 @@ export const signalRoleMeta = {
     relationship: "base hue: HSL(34 71% 49%)",
     wheel: "0° from core",
     tone: "orangy gold",
-    use: "Corpus identity, primary actions, active navigation, and current loop state.",
+    use: "Corpus identity, primary CTAs, active navigation, and current loop state.",
     surface: "solid gilt plate, active rails, and primary controls",
     pattern: "single gilt rail with a soft center glow",
     avoid: "Do not use as a generic highlight when a more specific role exists.",
@@ -37,9 +37,9 @@ export const signalRoleMeta = {
     family: "review / proof",
     hex: "#B8C56F",
     relationship: "olive-sage proof: HSL(69 43% 60%)",
-    wheel: "+37° from core",
+    wheel: "+35° from core",
     tone: "olive-sage proof",
-    use: "Review proof, verified output, pass states, and evidence-oriented sections.",
+    use: "Review proof, verified output, factual claims, pass states, and evidence-oriented sections.",
     surface: "checkpoint ticks, pass lamps, and review rails",
     pattern: "small checkpoint marks and vertical proof ticks",
     avoid: "Do not use for setup paths, read-only lists, missing evidence, existing projects, or generic 'nice' accents.",
@@ -52,7 +52,7 @@ export const signalRoleMeta = {
     relationship: "fresh field green: HSL(131 44% 62%)",
     wheel: "+99° from core",
     tone: "fresh field green",
-    use: "Fresh workspace setup paths, starter kits, and first-run tutorial paths.",
+    use: "Fresh workspace setup paths, starter kits, first-run tutorial paths, and new-repo choices.",
     surface: "new-file icons, starter-kit cards, clean-start rails, and first-run command plates",
     pattern: "upright field rows with sparse seed marks",
     avoid: "Do not use for existing-project adoption, review success, or generic positive emphasis.",
@@ -65,7 +65,7 @@ export const signalRoleMeta = {
     relationship: "survey umber: HSL(27 47% 54%)",
     wheel: "-7° from core",
     tone: "survey umber",
-    use: "Existing-project adoption, migration, and repo-history paths only.",
+    use: "Existing-project adoption, migration, repo-history paths, and brownfield choices only.",
     surface: "existing-project icons, adoption cards, repo-history rails, and migration command plates",
     pattern: "diagonal survey hatching with inherited-ground corner marks",
     avoid: "Do not use for new work, success, warnings, or generic warmth.",
@@ -91,7 +91,7 @@ export const signalRoleMeta = {
     relationship: "tempered split-complement: HSL(171 39% 65%)",
     wheel: "+137° from core",
     tone: "verdigris ledger",
-    use: "Docs, manuals, command catalogs, ledgers, index surfaces, and read-only rosters.",
+    use: "Docs, manuals, command catalogs, ledgers, index surfaces, loaders, and read-only rosters.",
     surface: "ledger rules, source notes, and reference shelves",
     pattern: "horizontal ledger rules",
     avoid: "Do not use for proof/pass states or primary calls to action.",
@@ -187,7 +187,7 @@ export const signalKeyItemByRole = {
   core: {
     label: "Core",
     role: "core",
-    detail: "identity, primary action, current step",
+    detail: "identity, primary CTA, current step",
   },
   greenfield: {
     label: "Greenfield",
@@ -207,7 +207,7 @@ export const signalKeyItemByRole = {
   evidence: {
     label: "Evidence",
     role: "evidence",
-    detail: "review proof, pass states, checked output",
+    detail: "review proof, facts, checked output",
   },
   reference: {
     label: "Reference",
