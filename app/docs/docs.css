@@ -1740,6 +1740,7 @@
   opacity: 0.58;
 }
 
+.docs-index-section-core,
 .docs-index-section-primary {
   --docs-index-signal: var(--signal-core);
   --docs-index-rgb: var(--signal-core-rgb);
@@ -1752,6 +1753,7 @@
     var(--signal-pattern-core);
 }
 
+.docs-index-section-greenfield,
 .docs-index-section-tutorial {
   --docs-index-signal: var(--signal-greenfield);
   --docs-index-rgb: var(--signal-greenfield-rgb);
@@ -1764,6 +1766,7 @@
     );
 }
 
+.docs-index-section-change,
 .docs-index-section-examples {
   --docs-index-signal: var(--signal-change);
   --docs-index-rgb: var(--signal-change-rgb);
@@ -1784,6 +1787,7 @@
     );
 }
 
+.docs-index-section-muted,
 .docs-index-section-adrs {
   --docs-index-signal: var(--signal-muted);
   --docs-index-rgb: var(--signal-muted-rgb);
@@ -1925,7 +1929,7 @@
   padding: 0.25rem 0.35rem;
   color: var(--color-concrete-200);
   font-weight: 500;
-  text-decoration-color: rgba(var(--signal-core-rgb), 0.42);
+  text-decoration-color: rgba(var(--docs-index-rgb), 0.42);
   text-underline-offset: 0.22rem;
   transition:
     background-color 0.12s,
@@ -1954,9 +1958,12 @@
 
 .docs-prose .docs-index-list a:hover,
 .docs-prose .docs-index-list a:focus-visible {
-  background: rgba(var(--docs-index-rgb), 0.1);
   color: var(--docs-index-signal);
   transform: translateX(0.12rem);
+}
+
+.docs-prose .docs-index-section .docs-index-list a:focus-visible {
+  outline-color: var(--docs-index-signal);
 }
 
 .docs-prose .docs-index-list a:hover .docs-index-item-number,

@@ -41,7 +41,7 @@ const mobileNavGroups = [
   },
   {
     title: "Reference",
-    tone: "muted",
+    tone: "reference",
     links: [
       { label: "Docs", href: "/docs" },
       { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
@@ -52,6 +52,7 @@ const mobileNavGroups = [
 const footerGroups = [
   {
     title: "Work",
+    tone: "core",
     links: [
       { label: "What is Corpus", href: "/what-is-corpus" },
       { label: "Loop", href: "/the-loop" },
@@ -60,6 +61,7 @@ const footerGroups = [
   },
   {
     title: "Tools",
+    tone: "reference",
     links: [
       { label: "Skills", href: "/skills" },
       { label: "Agents", href: "/agents" },
@@ -69,6 +71,7 @@ const footerGroups = [
   },
   {
     title: "Reference",
+    tone: "reference",
     links: [
       { label: "Docs", href: "/docs" },
       { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
@@ -345,6 +348,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
           as="footer"
           className="site-footer-grid py-12"
         >
+          <div className="site-footer-register" aria-hidden="true">
+            <span>closing ledger</span>
+            <span>{folioLabel}</span>
+            <span>reviewable work</span>
+          </div>
+
           <div className="site-footer-identity">
             <Link
               href="/"
@@ -360,7 +369,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
           <nav className="site-footer-nav" aria-label="Footer">
             {footerGroups.map((group) => (
-              <div key={group.title} className="site-footer-link-group">
+              <div
+                key={group.title}
+                className={`site-footer-link-group site-footer-link-group-${group.tone}`}
+              >
                 <p className="site-footer-link-title">{group.title}</p>
                 <div className="site-footer-link-list">
                   {group.links.map((link) => {

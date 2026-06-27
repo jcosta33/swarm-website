@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildNav, canonAvailable, type NavSection } from "./lib/canon";
+import type { SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "Documentation · Corpus",
@@ -14,19 +15,24 @@ const docsLegend = [
   { label: "Examples", role: "change" },
   { label: "Reference", role: "reference" },
   { label: "ADRs", role: "muted" },
-] as const;
+] as const satisfies Array<{ label: string; role: SignalRole }>;
 
 function Section({
   sec,
   intro,
+  role = "core",
   className = "",
 }: {
   sec: NavSection;
   intro?: string;
+  role?: SignalRole;
   className?: string;
 }) {
   return (
-    <section className={`docs-index-section ${className}`}>
+    <section
+      className={`docs-index-section docs-index-section-${role} ${className}`}
+      data-color-role={role}
+    >
       <div className="docs-index-section-heading">
         <h2>{sec.title}</h2>
         <span>{sec.items.length}</span>
@@ -105,15 +111,18 @@ export default function DocsIndex() {
           <div className="docs-index-top">
             <Section
               sec={balancedGrid.startHere}
+              role="core"
               className="docs-index-section-primary"
             />
             <div className="docs-index-stack">
               <Section
                 sec={balancedGrid.tutorial}
+                role="greenfield"
                 className="docs-index-section-tutorial"
               />
               <Section
                 sec={balancedGrid.examples}
+                role="change"
                 className="docs-index-section-examples"
               />
             </div>
@@ -121,13 +130,25 @@ export default function DocsIndex() {
         ) : (
           <>
             {startHere ? (
-              <Section sec={startHere} className="docs-index-section-primary" />
+              <Section
+                sec={startHere}
+                role="core"
+                className="docs-index-section-primary"
+              />
             ) : null}
             {tutorial ? (
-              <Section sec={tutorial} className="docs-index-section-tutorial" />
+              <Section
+                sec={tutorial}
+                role="greenfield"
+                className="docs-index-section-tutorial"
+              />
             ) : null}
             {examples ? (
-              <Section sec={examples} className="docs-index-section-examples" />
+              <Section
+                sec={examples}
+                role="change"
+                className="docs-index-section-examples"
+              />
             ) : null}
           </>
         )}
@@ -135,11 +156,15 @@ export default function DocsIndex() {
           <Section
             sec={reference}
             intro="Detailed rules, formats, checks, and glossary."
+            role="reference"
             className="docs-index-section-wide docs-index-section-reference"
           />
         ) : null}
         {adrs && adrs.items.length > 0 ? (
-          <section className="docs-index-section docs-index-section-compact docs-index-section-wide docs-index-section-adrs">
+          <section
+            className="docs-index-section docs-index-section-muted docs-index-section-compact docs-index-section-wide docs-index-section-adrs"
+            data-color-role="muted"
+          >
             <div className="docs-index-section-heading">
               <h2>ADRs</h2>
               <span>{adrs.items.length}</span>
