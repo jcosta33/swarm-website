@@ -66,13 +66,17 @@ export const metadata: Metadata = {
 };
 
 const loopSteps = [
-  { label: "Pull", signal: "reference" },
-  { label: "Spec", signal: "core" },
-  { label: "Task", signal: "change" },
-  { label: "Run", signal: "change" },
-  { label: "Review", signal: "evidence" },
-  { label: "Close", signal: "reference" },
-] as const satisfies Array<{ label: string; signal: SignalRole }>;
+  { label: "Pull", signal: "reference", href: "/the-loop/#pull" },
+  { label: "Spec", signal: "core", href: "/the-loop/#spec" },
+  { label: "Task", signal: "change", href: "/the-loop/#task" },
+  { label: "Run", signal: "change", href: "/the-loop/#run" },
+  { label: "Review", signal: "evidence", href: "/the-loop/#review" },
+  { label: "Close", signal: "reference", href: "/the-loop/#close" },
+] as const satisfies Array<{
+  label: string;
+  signal: SignalRole;
+  href: string;
+}>;
 
 const heroReviewCommand = "corpus review TASK-auth-refresh";
 
@@ -193,19 +197,22 @@ function StepRail() {
   return (
     <ol className="grid min-w-0 gap-2 sm:grid-cols-3">
       {loopSteps.map((step, index) => (
-        <li
-          key={step.label}
-          className={`home-step-rail-item home-step-rail-item-${step.signal} flex min-w-0 items-center justify-between gap-3 rounded-panel border bg-panel px-3 py-2`}
-        >
-          <span
-            className={`font-mono text-xs ${signalRoles[step.signal].text}`}
+        <li key={step.label} className="min-w-0">
+          <Link
+            href={step.href}
+            className={`home-step-rail-item home-step-rail-item-${step.signal} focus-ring flex min-w-0 items-center justify-between gap-3 rounded-panel border bg-panel px-3 py-2 no-underline`}
+            aria-label={`Read the ${step.label} step in the loop`}
           >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="min-w-0 break-words font-heading text-sm font-bold text-concrete-100">
-            {step.label}
-          </span>
-          <PilotLamp color={step.signal} className="scale-75" />
+            <span
+              className={`font-mono text-xs ${signalRoles[step.signal].text}`}
+            >
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span className="min-w-0 break-words font-heading text-sm font-bold text-concrete-100">
+              {step.label}
+            </span>
+            <PilotLamp color={step.signal} className="scale-75" />
+          </Link>
         </li>
       ))}
     </ol>
