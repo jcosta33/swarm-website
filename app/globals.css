@@ -58,6 +58,55 @@
   --signal-muted: var(--color-brass);
   --signal-muted-rgb: 191, 121, 39;
 
+  /* Role patterns: hue + mark travel together, so color does not become decoration. */
+  --signal-pattern-core: linear-gradient(
+    180deg,
+    rgba(var(--signal-core-rgb), 0.045),
+    transparent 58%
+  );
+  --signal-pattern-evidence: repeating-linear-gradient(
+    0deg,
+    rgba(var(--signal-evidence-rgb), 0.04) 0 1px,
+    transparent 1px 11px
+  );
+  --signal-pattern-greenfield: repeating-linear-gradient(
+    90deg,
+    rgba(var(--signal-greenfield-rgb), 0.048) 0 1px,
+    transparent 1px 14px
+  );
+  --signal-pattern-brownfield: repeating-linear-gradient(
+    -24deg,
+    rgba(var(--signal-brownfield-rgb), 0.048) 0 1px,
+    transparent 1px 13px
+  );
+  --signal-pattern-change: repeating-linear-gradient(
+    135deg,
+    rgba(var(--signal-change-rgb), 0.042) 0 1px,
+    transparent 1px 12px
+  );
+  --signal-pattern-reference: repeating-linear-gradient(
+    0deg,
+    rgba(var(--signal-reference-rgb), 0.04) 0 1px,
+    transparent 1px 15px
+  );
+  --signal-pattern-muted: repeating-linear-gradient(
+    90deg,
+    rgba(var(--signal-muted-rgb), 0.034) 0 1px,
+    transparent 1px 18px
+  );
+  --signal-mark-greenfield: radial-gradient(
+    circle at 1.25rem 1.25rem,
+    rgba(var(--signal-greenfield-rgb), 0.28) 0 1.6px,
+    transparent 2.4px
+  );
+  --signal-mark-brownfield: linear-gradient(
+    135deg,
+    transparent 0 calc(100% - 2.1rem),
+    rgba(var(--signal-brownfield-rgb), 0.12) calc(100% - 2.1rem)
+      calc(100% - 2rem),
+    transparent calc(100% - 2rem)
+  );
+
   --color-paper: #f0e2cc;
   --color-paper-warm: #dcc9a9;
   --color-paper-line: #b9a07d;
@@ -1307,61 +1356,37 @@ body::after {
 .page-hero-tone-evidence {
   --hero-signal: var(--signal-evidence);
   --hero-rgb: var(--signal-evidence-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.7rem,
-    rgba(var(--hero-rgb), 0.055) 0.7rem calc(0.7rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-evidence);
 }
 
 .page-hero-tone-greenfield {
   --hero-signal: var(--signal-greenfield);
   --hero-rgb: var(--signal-greenfield-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 0.85rem,
-    rgba(var(--hero-rgb), 0.06) 0.85rem calc(0.85rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-greenfield);
 }
 
 .page-hero-tone-brownfield {
   --hero-signal: var(--signal-brownfield);
   --hero-rgb: var(--signal-brownfield-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    -24deg,
-    transparent 0 0.78rem,
-    rgba(var(--hero-rgb), 0.06) 0.78rem calc(0.78rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-brownfield);
 }
 
 .page-hero-tone-change {
   --hero-signal: var(--signal-change);
   --hero-rgb: var(--signal-change-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    135deg,
-    transparent 0 0.78rem,
-    rgba(var(--hero-rgb), 0.052) 0.78rem calc(0.78rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-change);
 }
 
 .page-hero-tone-reference {
   --hero-signal: var(--signal-reference);
   --hero-rgb: var(--signal-reference-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 1.05rem,
-    rgba(var(--hero-rgb), 0.052) 1.05rem calc(1.05rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-reference);
 }
 
 .page-hero-tone-muted {
   --hero-signal: var(--signal-muted);
   --hero-rgb: var(--signal-muted-rgb);
-  --hero-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 1.15rem,
-    rgba(var(--hero-rgb), 0.044) 1.15rem calc(1.15rem + 1px)
-  );
+  --hero-pattern: var(--signal-pattern-muted);
 }
 
 .page-hero-title {
@@ -1560,11 +1585,7 @@ body::after {
 .review-signal-node {
   --review-node-signal: var(--signal-change);
   --review-node-rgb: var(--signal-change-rgb);
-  --review-node-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--review-node-rgb), 0.038) 0 1px,
-    transparent 1px 12px
-  );
+  --review-node-pattern: var(--signal-pattern-change);
   position: relative;
   min-width: 0;
   min-height: 10rem;
@@ -1626,21 +1647,13 @@ body::after {
 .review-signal-node-reference {
   --review-node-signal: var(--signal-reference);
   --review-node-rgb: var(--signal-reference-rgb);
-  --review-node-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--review-node-rgb), 0.035) 0 1px,
-    transparent 1px 14px
-  );
+  --review-node-pattern: var(--signal-pattern-reference);
 }
 
 .review-signal-node-change {
   --review-node-signal: var(--signal-change);
   --review-node-rgb: var(--signal-change-rgb);
-  --review-node-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--review-node-rgb), 0.038) 0 1px,
-    transparent 1px 12px
-  );
+  --review-node-pattern: var(--signal-pattern-change);
 }
 
 .review-signal-node-head {
@@ -2013,151 +2026,91 @@ body::after {
 .process-strip {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
-  --process-pattern: linear-gradient(
-    180deg,
-    rgba(var(--process-rgb), 0.035),
-    transparent 58%
-  );
+  --process-pattern: var(--signal-pattern-core);
 }
 
 .process-strip-signal-core {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
-  --process-pattern: linear-gradient(
-    180deg,
-    rgba(var(--process-rgb), 0.035),
-    transparent 58%
-  );
+  --process-pattern: var(--signal-pattern-core);
 }
 
 .process-strip-signal-evidence {
   --process-signal: var(--signal-evidence);
   --process-rgb: var(--signal-evidence-rgb);
-  --process-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--process-rgb), 0.04) 0 1px,
-    transparent 1px 11px
-  );
+  --process-pattern: var(--signal-pattern-evidence);
 }
 
 .process-strip-signal-greenfield {
   --process-signal: var(--signal-greenfield);
   --process-rgb: var(--signal-greenfield-rgb);
-  --process-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--process-rgb), 0.045) 0 1px,
-    transparent 1px 14px
-  );
+  --process-pattern: var(--signal-pattern-greenfield);
 }
 
 .process-strip-signal-brownfield {
   --process-signal: var(--signal-brownfield);
   --process-rgb: var(--signal-brownfield-rgb);
-  --process-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--process-rgb), 0.042) 0 1px,
-    transparent 1px 13px
-  );
+  --process-pattern: var(--signal-pattern-brownfield);
 }
 
 .process-strip-signal-change {
   --process-signal: var(--signal-change);
   --process-rgb: var(--signal-change-rgb);
-  --process-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--process-rgb), 0.04) 0 1px,
-    transparent 1px 12px
-  );
+  --process-pattern: var(--signal-pattern-change);
 }
 
 .process-strip-signal-reference {
   --process-signal: var(--signal-reference);
   --process-rgb: var(--signal-reference-rgb);
-  --process-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--process-rgb), 0.038) 0 1px,
-    transparent 1px 15px
-  );
+  --process-pattern: var(--signal-pattern-reference);
 }
 
 .process-strip-signal-muted {
   --process-signal: var(--signal-muted);
   --process-rgb: var(--signal-muted-rgb);
-  --process-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--process-rgb), 0.034) 0 1px,
-    transparent 1px 18px
-  );
+  --process-pattern: var(--signal-pattern-muted);
 }
 
 .process-strip > .process-item-signal-core {
   --process-signal: var(--signal-core);
   --process-rgb: var(--signal-core-rgb);
-  --process-pattern: linear-gradient(
-    180deg,
-    rgba(var(--process-rgb), 0.035),
-    transparent 58%
-  );
+  --process-pattern: var(--signal-pattern-core);
 }
 
 .process-strip > .process-item-signal-evidence {
   --process-signal: var(--signal-evidence);
   --process-rgb: var(--signal-evidence-rgb);
-  --process-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--process-rgb), 0.04) 0 1px,
-    transparent 1px 11px
-  );
+  --process-pattern: var(--signal-pattern-evidence);
 }
 
 .process-strip > .process-item-signal-greenfield {
   --process-signal: var(--signal-greenfield);
   --process-rgb: var(--signal-greenfield-rgb);
-  --process-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--process-rgb), 0.045) 0 1px,
-    transparent 1px 14px
-  );
+  --process-pattern: var(--signal-pattern-greenfield);
 }
 
 .process-strip > .process-item-signal-brownfield {
   --process-signal: var(--signal-brownfield);
   --process-rgb: var(--signal-brownfield-rgb);
-  --process-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--process-rgb), 0.042) 0 1px,
-    transparent 1px 13px
-  );
+  --process-pattern: var(--signal-pattern-brownfield);
 }
 
 .process-strip > .process-item-signal-change {
   --process-signal: var(--signal-change);
   --process-rgb: var(--signal-change-rgb);
-  --process-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--process-rgb), 0.04) 0 1px,
-    transparent 1px 12px
-  );
+  --process-pattern: var(--signal-pattern-change);
 }
 
 .process-strip > .process-item-signal-reference {
   --process-signal: var(--signal-reference);
   --process-rgb: var(--signal-reference-rgb);
-  --process-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--process-rgb), 0.038) 0 1px,
-    transparent 1px 15px
-  );
+  --process-pattern: var(--signal-pattern-reference);
 }
 
 .process-strip > .process-item-signal-muted {
   --process-signal: var(--signal-muted);
   --process-rgb: var(--signal-muted-rgb);
-  --process-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--process-rgb), 0.034) 0 1px,
-    transparent 1px 18px
-  );
+  --process-pattern: var(--signal-pattern-muted);
 }
 
 .process-strip > :is(li, a, div) {
@@ -2474,11 +2427,7 @@ body::after {
 .mcp-guardrail-card {
   --guardrail-signal: var(--signal-reference);
   --guardrail-rgb: var(--signal-reference-rgb);
-  --guardrail-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.95rem,
-    rgba(var(--guardrail-rgb), 0.052) 0.95rem calc(0.95rem + 1px)
-  );
+  --guardrail-pattern: var(--signal-pattern-reference);
   --plate-signal: var(--guardrail-signal);
   --plate-rgb: var(--guardrail-rgb);
   border-color: rgba(var(--guardrail-rgb), 0.3);
@@ -2500,31 +2449,19 @@ body::after {
 .mcp-guardrail-card-reference {
   --guardrail-signal: var(--signal-reference);
   --guardrail-rgb: var(--signal-reference-rgb);
-  --guardrail-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.95rem,
-    rgba(var(--guardrail-rgb), 0.052) 0.95rem calc(0.95rem + 1px)
-  );
+  --guardrail-pattern: var(--signal-pattern-reference);
 }
 
 .mcp-guardrail-card-change {
   --guardrail-signal: var(--signal-change);
   --guardrail-rgb: var(--signal-change-rgb);
-  --guardrail-pattern: repeating-linear-gradient(
-    135deg,
-    transparent 0 0.72rem,
-    rgba(var(--guardrail-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
-  );
+  --guardrail-pattern: var(--signal-pattern-change);
 }
 
 .mcp-guardrail-card-muted {
   --guardrail-signal: var(--signal-muted);
   --guardrail-rgb: var(--signal-muted-rgb);
-  --guardrail-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 1.05rem,
-    rgba(var(--guardrail-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
-  );
+  --guardrail-pattern: var(--signal-pattern-muted);
 }
 
 .mcp-guardrail-title {
@@ -2677,11 +2614,7 @@ body::after {
 .cli-command-section {
   --cli-section-signal: var(--signal-reference);
   --cli-section-rgb: var(--signal-reference-rgb);
-  --cli-section-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--cli-section-rgb), 0.038) 0 1px,
-    transparent 1px 15px
-  );
+  --cli-section-pattern: var(--signal-pattern-reference);
   position: relative;
   border-bottom: 1px solid rgba(var(--cli-section-rgb), 0.18);
   background:
@@ -2693,41 +2626,25 @@ body::after {
 .cli-command-section-core {
   --cli-section-signal: var(--signal-core);
   --cli-section-rgb: var(--signal-core-rgb);
-  --cli-section-pattern: linear-gradient(
-    180deg,
-    rgba(var(--cli-section-rgb), 0.04),
-    transparent 54%
-  );
+  --cli-section-pattern: var(--signal-pattern-core);
 }
 
 .cli-command-section-evidence {
   --cli-section-signal: var(--signal-evidence);
   --cli-section-rgb: var(--signal-evidence-rgb);
-  --cli-section-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--cli-section-rgb), 0.042) 0 1px,
-    transparent 1px 12px
-  );
+  --cli-section-pattern: var(--signal-pattern-evidence);
 }
 
 .cli-command-section-change {
   --cli-section-signal: var(--signal-change);
   --cli-section-rgb: var(--signal-change-rgb);
-  --cli-section-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--cli-section-rgb), 0.042) 0 1px,
-    transparent 1px 12px
-  );
+  --cli-section-pattern: var(--signal-pattern-change);
 }
 
 .cli-command-section-reference {
   --cli-section-signal: var(--signal-reference);
   --cli-section-rgb: var(--signal-reference-rgb);
-  --cli-section-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--cli-section-rgb), 0.038) 0 1px,
-    transparent 1px 15px
-  );
+  --cli-section-pattern: var(--signal-pattern-reference);
 }
 
 .cli-command-catalog {
@@ -2894,11 +2811,7 @@ body::after {
 .skill-guide-catalog {
   --skill-guide-signal: var(--signal-reference);
   --skill-guide-rgb: var(--signal-reference-rgb);
-  --skill-guide-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--skill-guide-rgb), 0.038) 0 1px,
-    transparent 1px 15px
-  );
+  --skill-guide-pattern: var(--signal-pattern-reference);
   overflow: hidden;
   border-color: rgba(var(--skill-guide-rgb), 0.34);
   background:
@@ -2910,21 +2823,13 @@ body::after {
 .skill-guide-catalog-evidence {
   --skill-guide-signal: var(--signal-evidence);
   --skill-guide-rgb: var(--signal-evidence-rgb);
-  --skill-guide-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--skill-guide-rgb), 0.04) 0 1px,
-    transparent 1px 12px
-  );
+  --skill-guide-pattern: var(--signal-pattern-evidence);
 }
 
 .skill-guide-catalog-change {
   --skill-guide-signal: var(--signal-change);
   --skill-guide-rgb: var(--signal-change-rgb);
-  --skill-guide-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--skill-guide-rgb), 0.04) 0 1px,
-    transparent 1px 12px
-  );
+  --skill-guide-pattern: var(--signal-pattern-change);
 }
 
 .skill-guide-catalog-header {
@@ -3446,11 +3351,7 @@ body::after {
 .hex-badge {
   --hex-signal: var(--signal-core);
   --hex-rgb: var(--signal-core-rgb);
-  --hex-pattern: linear-gradient(
-    180deg,
-    rgba(var(--hex-rgb), 0.08),
-    transparent 62%
-  );
+  --hex-pattern: var(--signal-pattern-core);
   color: var(--hex-signal);
   background:
     linear-gradient(180deg, rgba(240, 226, 204, 0.08), transparent 46%),
@@ -3466,71 +3367,43 @@ body::after {
 .hex-badge-core {
   --hex-signal: var(--signal-core);
   --hex-rgb: var(--signal-core-rgb);
-  --hex-pattern: linear-gradient(
-    180deg,
-    rgba(var(--hex-rgb), 0.1),
-    transparent 60%
-  );
+  --hex-pattern: var(--signal-pattern-core);
 }
 
 .hex-badge-evidence {
   --hex-signal: var(--signal-evidence);
   --hex-rgb: var(--signal-evidence-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--hex-rgb), 0.09) 0 1px,
-    transparent 1px 9px
-  );
+  --hex-pattern: var(--signal-pattern-evidence);
 }
 
 .hex-badge-greenfield {
   --hex-signal: var(--signal-greenfield);
   --hex-rgb: var(--signal-greenfield-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--hex-rgb), 0.105) 0 1px,
-    transparent 1px 10px
-  );
+  --hex-pattern: var(--signal-pattern-greenfield);
 }
 
 .hex-badge-brownfield {
   --hex-signal: var(--signal-brownfield);
   --hex-rgb: var(--signal-brownfield-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--hex-rgb), 0.1) 0 1px,
-    transparent 1px 10px
-  );
+  --hex-pattern: var(--signal-pattern-brownfield);
 }
 
 .hex-badge-change {
   --hex-signal: var(--signal-change);
   --hex-rgb: var(--signal-change-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--hex-rgb), 0.095) 0 1px,
-    transparent 1px 10px
-  );
+  --hex-pattern: var(--signal-pattern-change);
 }
 
 .hex-badge-reference {
   --hex-signal: var(--signal-reference);
   --hex-rgb: var(--signal-reference-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--hex-rgb), 0.085) 0 1px,
-    transparent 1px 11px
-  );
+  --hex-pattern: var(--signal-pattern-reference);
 }
 
 .hex-badge-muted {
   --hex-signal: var(--signal-muted);
   --hex-rgb: var(--signal-muted-rgb);
-  --hex-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--hex-rgb), 0.075) 0 1px,
-    transparent 1px 13px
-  );
+  --hex-pattern: var(--signal-pattern-muted);
 }
 
 .hex-badge-rail {
@@ -3781,11 +3654,9 @@ body::after {
   --catalog-signal: var(--signal-core);
   --catalog-rgb: var(--signal-core-rgb);
   --catalog-signal-soft: rgba(var(--catalog-rgb), 0.62);
-  --catalog-pattern: linear-gradient(
-    90deg,
-    rgba(var(--catalog-rgb), 0.05),
-    transparent 56%
-  );
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.05), transparent 56%),
+    var(--signal-pattern-core);
   position: relative;
   min-height: 3.5rem;
   padding-left: 1rem;
@@ -3821,21 +3692,15 @@ body::after {
   --catalog-rgb: var(--signal-reference-rgb);
   --catalog-pattern:
     linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0 0.9rem,
-      rgba(var(--catalog-rgb), 0.055) 0.9rem calc(0.9rem + 1px)
-    );
+    var(--signal-pattern-reference);
 }
 
 .catalog-row-core {
   --catalog-signal: var(--signal-core);
   --catalog-rgb: var(--signal-core-rgb);
-  --catalog-pattern: linear-gradient(
-    90deg,
-    rgba(var(--catalog-rgb), 0.07),
-    transparent 58%
-  );
+  --catalog-pattern:
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.07), transparent 58%),
+    var(--signal-pattern-core);
 }
 
 .catalog-row-change {
@@ -3843,11 +3708,7 @@ body::after {
   --catalog-rgb: var(--signal-change-rgb);
   --catalog-pattern:
     linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
-    repeating-linear-gradient(
-      135deg,
-      transparent 0 0.68rem,
-      rgba(var(--catalog-rgb), 0.052) 0.68rem calc(0.68rem + 1px)
-    );
+    var(--signal-pattern-change);
 }
 
 .catalog-row-evidence {
@@ -3855,11 +3716,7 @@ body::after {
   --catalog-rgb: var(--signal-evidence-rgb);
   --catalog-pattern:
     linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0 0.62rem,
-      rgba(var(--catalog-rgb), 0.06) 0.62rem calc(0.62rem + 1px)
-    );
+    var(--signal-pattern-evidence);
 }
 
 .catalog-row-greenfield {
@@ -3867,11 +3724,7 @@ body::after {
   --catalog-rgb: var(--signal-greenfield-rgb);
   --catalog-pattern:
     linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 0.78rem,
-      rgba(var(--catalog-rgb), 0.06) 0.78rem calc(0.78rem + 1px)
-    );
+    var(--signal-pattern-greenfield);
 }
 
 .catalog-row-brownfield {
@@ -3879,11 +3732,7 @@ body::after {
   --catalog-rgb: var(--signal-brownfield-rgb);
   --catalog-pattern:
     linear-gradient(90deg, rgba(var(--catalog-rgb), 0.055), transparent 56%),
-    repeating-linear-gradient(
-      -24deg,
-      transparent 0 0.72rem,
-      rgba(var(--catalog-rgb), 0.058) 0.72rem calc(0.72rem + 1px)
-    );
+    var(--signal-pattern-brownfield);
 }
 
 .catalog-row .catalog-row-title {
@@ -3930,11 +3779,7 @@ body::after {
 .accent-card {
   --accent-signal: var(--signal-core);
   --accent-rgb: var(--signal-core-rgb);
-  --accent-pattern: linear-gradient(
-    180deg,
-    rgba(var(--accent-rgb), 0.045),
-    transparent 58%
-  );
+  --accent-pattern: var(--signal-pattern-core);
   --plate-signal: var(--accent-signal);
   --plate-rgb: var(--accent-rgb);
   border-color: rgba(var(--accent-rgb), 0.28);
@@ -3957,74 +3802,46 @@ body::after {
 .accent-card-aurum {
   --accent-signal: var(--signal-core);
   --accent-rgb: var(--signal-core-rgb);
-  --accent-pattern: linear-gradient(
-    180deg,
-    rgba(var(--accent-rgb), 0.045),
-    transparent 58%
-  );
+  --accent-pattern: var(--signal-pattern-core);
 }
 
 .accent-card-evidence,
 .accent-card-phosphor {
   --accent-signal: var(--signal-evidence);
   --accent-rgb: var(--signal-evidence-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--accent-rgb), 0.042) 0 1px,
-    transparent 1px 12px
-  );
+  --accent-pattern: var(--signal-pattern-evidence);
 }
 
 .accent-card-greenfield {
   --accent-signal: var(--signal-greenfield);
   --accent-rgb: var(--signal-greenfield-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--accent-rgb), 0.05) 0 1px,
-    transparent 1px 14px
-  );
+  --accent-pattern: var(--signal-pattern-greenfield);
 }
 
 .accent-card-brownfield {
   --accent-signal: var(--signal-brownfield);
   --accent-rgb: var(--signal-brownfield-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--accent-rgb), 0.045) 0 1px,
-    transparent 1px 13px
-  );
+  --accent-pattern: var(--signal-pattern-brownfield);
 }
 
 .accent-card-change,
 .accent-card-rubedo {
   --accent-signal: var(--signal-change);
   --accent-rgb: var(--signal-change-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    135deg,
-    rgba(var(--accent-rgb), 0.042) 0 1px,
-    transparent 1px 12px
-  );
+  --accent-pattern: var(--signal-pattern-change);
 }
 
 .accent-card-reference,
 .accent-card-olive {
   --accent-signal: var(--signal-reference);
   --accent-rgb: var(--signal-reference-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    0deg,
-    rgba(var(--accent-rgb), 0.04) 0 1px,
-    transparent 1px 15px
-  );
+  --accent-pattern: var(--signal-pattern-reference);
 }
 
 .accent-card-muted {
   --accent-signal: var(--signal-muted);
   --accent-rgb: var(--signal-muted-rgb);
-  --accent-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--accent-rgb), 0.035) 0 1px,
-    transparent 1px 18px
-  );
+  --accent-pattern: var(--signal-pattern-muted);
 }
 
 .accent-card:hover,
@@ -4178,11 +3995,7 @@ body::after {
 .tool-list-card {
   --tool-signal: var(--signal-reference);
   --tool-rgb: var(--signal-reference-rgb);
-  --tool-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.92rem,
-    rgba(var(--tool-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
-  );
+  --tool-pattern: var(--signal-pattern-reference);
   border-color: rgba(var(--tool-rgb), 0.28);
   background-image:
     linear-gradient(90deg, rgba(var(--tool-rgb), 0.065), transparent 50%),
@@ -4193,62 +4006,38 @@ body::after {
 .tool-list-card-core {
   --tool-signal: var(--signal-core);
   --tool-rgb: var(--signal-core-rgb);
-  --tool-pattern: linear-gradient(
-    180deg,
-    rgba(var(--tool-rgb), 0.055),
-    transparent 60%
-  );
+  --tool-pattern: var(--signal-pattern-core);
 }
 
 .tool-list-card-evidence {
   --tool-signal: var(--signal-evidence);
   --tool-rgb: var(--signal-evidence-rgb);
-  --tool-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.65rem,
-    rgba(var(--tool-rgb), 0.06) 0.65rem calc(0.65rem + 1px)
-  );
+  --tool-pattern: var(--signal-pattern-evidence);
 }
 
 .tool-list-card-reference {
   --tool-signal: var(--signal-reference);
   --tool-rgb: var(--signal-reference-rgb);
-  --tool-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.92rem,
-    rgba(var(--tool-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
-  );
+  --tool-pattern: var(--signal-pattern-reference);
 }
 
 .tool-list-card-change {
   --tool-signal: var(--signal-change);
   --tool-rgb: var(--signal-change-rgb);
-  --tool-pattern: repeating-linear-gradient(
-    135deg,
-    transparent 0 0.72rem,
-    rgba(var(--tool-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
-  );
+  --tool-pattern: var(--signal-pattern-change);
 }
 
 .tool-list-card-muted {
   --tool-signal: var(--signal-muted);
   --tool-rgb: var(--signal-muted-rgb);
-  --tool-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 1.05rem,
-    rgba(var(--tool-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
-  );
+  --tool-pattern: var(--signal-pattern-muted);
 }
 
 /* Signal stats — compact role-coloured readouts for summary panels. */
 .signal-stat {
   --stat-signal: var(--signal-core);
   --stat-rgb: var(--signal-core-rgb);
-  --stat-pattern: linear-gradient(
-    180deg,
-    rgba(var(--stat-rgb), 0.045),
-    transparent 58%
-  );
+  --stat-pattern: var(--signal-pattern-core);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -4279,71 +4068,43 @@ body::after {
 .signal-stat-core {
   --stat-signal: var(--signal-core);
   --stat-rgb: var(--signal-core-rgb);
-  --stat-pattern: linear-gradient(
-    180deg,
-    rgba(var(--stat-rgb), 0.045),
-    transparent 58%
-  );
+  --stat-pattern: var(--signal-pattern-core);
 }
 
 .signal-stat-evidence {
   --stat-signal: var(--signal-evidence);
   --stat-rgb: var(--signal-evidence-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.64rem,
-    rgba(var(--stat-rgb), 0.058) 0.64rem calc(0.64rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-evidence);
 }
 
 .signal-stat-greenfield {
   --stat-signal: var(--signal-greenfield);
   --stat-rgb: var(--signal-greenfield-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 0.78rem,
-    rgba(var(--stat-rgb), 0.058) 0.78rem calc(0.78rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-greenfield);
 }
 
 .signal-stat-brownfield {
   --stat-signal: var(--signal-brownfield);
   --stat-rgb: var(--signal-brownfield-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    -24deg,
-    transparent 0 0.72rem,
-    rgba(var(--stat-rgb), 0.058) 0.72rem calc(0.72rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-brownfield);
 }
 
 .signal-stat-change {
   --stat-signal: var(--signal-change);
   --stat-rgb: var(--signal-change-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    135deg,
-    transparent 0 0.72rem,
-    rgba(var(--stat-rgb), 0.052) 0.72rem calc(0.72rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-change);
 }
 
 .signal-stat-reference {
   --stat-signal: var(--signal-reference);
   --stat-rgb: var(--signal-reference-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.92rem,
-    rgba(var(--stat-rgb), 0.052) 0.92rem calc(0.92rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-reference);
 }
 
 .signal-stat-muted {
   --stat-signal: var(--signal-muted);
   --stat-rgb: var(--signal-muted-rgb);
-  --stat-pattern: repeating-linear-gradient(
-    90deg,
-    transparent 0 1.05rem,
-    rgba(var(--stat-rgb), 0.042) 1.05rem calc(1.05rem + 1px)
-  );
+  --stat-pattern: var(--signal-pattern-muted);
 }
 
 /* Repo manifest — opening readout for corpus-agents and corpus-skills. */
@@ -4434,11 +4195,7 @@ body::after {
 .agent-roster-panel {
   --roster-signal: var(--signal-core);
   --roster-rgb: var(--signal-core-rgb);
-  --roster-pattern: linear-gradient(
-    180deg,
-    rgba(var(--roster-rgb), 0.042),
-    transparent 58%
-  );
+  --roster-pattern: var(--signal-pattern-core);
   border-color: rgba(var(--roster-rgb), 0.3);
   background:
     linear-gradient(90deg, rgba(var(--roster-rgb), 0.08), transparent 35%),
@@ -4449,31 +4206,19 @@ body::after {
 .agent-roster-panel-evidence {
   --roster-signal: var(--signal-evidence);
   --roster-rgb: var(--signal-evidence-rgb);
-  --roster-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.64rem,
-    rgba(var(--roster-rgb), 0.052) 0.64rem calc(0.64rem + 1px)
-  );
+  --roster-pattern: var(--signal-pattern-evidence);
 }
 
 .agent-roster-panel-change {
   --roster-signal: var(--signal-change);
   --roster-rgb: var(--signal-change-rgb);
-  --roster-pattern: repeating-linear-gradient(
-    135deg,
-    transparent 0 0.72rem,
-    rgba(var(--roster-rgb), 0.048) 0.72rem calc(0.72rem + 1px)
-  );
+  --roster-pattern: var(--signal-pattern-change);
 }
 
 .agent-roster-panel-reference {
   --roster-signal: var(--signal-reference);
   --roster-rgb: var(--signal-reference-rgb);
-  --roster-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 0.92rem,
-    rgba(var(--roster-rgb), 0.05) 0.92rem calc(0.92rem + 1px)
-  );
+  --roster-pattern: var(--signal-pattern-reference);
 }
 
 .agent-roster-header {
@@ -4602,11 +4347,7 @@ body::after {
 .setup-route-key-item {
   --route-signal: var(--signal-muted);
   --route-rgb: var(--signal-muted-rgb);
-  --route-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--route-rgb), 0.035) 0 1px,
-    transparent 1px 16px
-  );
+  --route-pattern: var(--signal-pattern-muted);
   display: inline-flex;
   min-width: min(100%, 15rem);
   min-height: 2.5rem;
@@ -4628,21 +4369,13 @@ body::after {
 .setup-route-key-greenfield {
   --route-signal: var(--signal-greenfield);
   --route-rgb: var(--signal-greenfield-rgb);
-  --route-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--route-rgb), 0.055) 0 1px,
-    transparent 1px 16px
-  );
+  --route-pattern: var(--signal-pattern-greenfield);
 }
 
 .setup-route-key-brownfield {
   --route-signal: var(--signal-brownfield);
   --route-rgb: var(--signal-brownfield-rgb);
-  --route-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--route-rgb), 0.052) 0 1px,
-    transparent 1px 13px
-  );
+  --route-pattern: var(--signal-pattern-brownfield);
 }
 
 .setup-route-key-copy {
@@ -4689,11 +4422,7 @@ body::after {
 .setup-choice-card {
   --choice-signal: var(--signal-core);
   --choice-rgb: var(--signal-core-rgb);
-  --choice-pattern: linear-gradient(
-    180deg,
-    rgba(var(--choice-rgb), 0.035),
-    transparent 42%
-  );
+  --choice-pattern: var(--signal-pattern-core);
   --plate-signal: var(--choice-signal);
   --plate-rgb: var(--choice-rgb);
   border-color: rgba(var(--choice-rgb), 0.36);
@@ -4745,6 +4474,7 @@ body::after {
 .kit-icon {
   --kit-signal: var(--signal-core);
   --kit-rgb: var(--signal-core-rgb);
+  --kit-pattern: var(--signal-pattern-core);
   color: var(--kit-signal);
   border-color: rgba(var(--kit-rgb), 0.34);
   background:
@@ -4753,52 +4483,56 @@ body::after {
       rgba(var(--kit-rgb), 0.18),
       transparent 58%
     ),
+    var(--kit-pattern),
     var(--color-panel-raised);
 }
 
 .kit-icon-core {
   --kit-signal: var(--signal-core);
   --kit-rgb: var(--signal-core-rgb);
+  --kit-pattern: var(--signal-pattern-core);
 }
 
 .kit-icon-evidence {
   --kit-signal: var(--signal-evidence);
   --kit-rgb: var(--signal-evidence-rgb);
+  --kit-pattern: var(--signal-pattern-evidence);
 }
 
 .kit-icon-greenfield {
   --kit-signal: var(--signal-greenfield);
   --kit-rgb: var(--signal-greenfield-rgb);
+  --kit-pattern: var(--signal-pattern-greenfield);
 }
 
 .kit-icon-brownfield {
   --kit-signal: var(--signal-brownfield);
   --kit-rgb: var(--signal-brownfield-rgb);
+  --kit-pattern: var(--signal-pattern-brownfield);
 }
 
 .kit-icon-change {
   --kit-signal: var(--signal-change);
   --kit-rgb: var(--signal-change-rgb);
+  --kit-pattern: var(--signal-pattern-change);
 }
 
 .kit-icon-reference {
   --kit-signal: var(--signal-reference);
   --kit-rgb: var(--signal-reference-rgb);
+  --kit-pattern: var(--signal-pattern-reference);
 }
 
 .kit-icon-muted {
   --kit-signal: var(--signal-muted);
   --kit-rgb: var(--signal-muted-rgb);
+  --kit-pattern: var(--signal-pattern-muted);
 }
 
 .setup-choice-card-greenfield {
   --choice-signal: var(--signal-greenfield);
   --choice-rgb: var(--signal-greenfield-rgb);
-  --choice-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--choice-rgb), 0.045) 0 1px,
-    transparent 1px 16px
-  );
+  --choice-pattern: var(--signal-pattern-greenfield);
   background-image:
     linear-gradient(
       90deg,
@@ -4806,21 +4540,13 @@ body::after {
       rgba(var(--choice-rgb), 0.42) 3px,
       transparent 3px
     ),
-    radial-gradient(
-      circle at 2.1rem 2.1rem,
-      rgba(var(--choice-rgb), 0.34) 0 1.8px,
-      transparent 2.4px
-    ),
+    var(--signal-mark-greenfield),
     radial-gradient(
       circle at calc(100% - 2.1rem) calc(100% - 2.1rem),
       rgba(var(--choice-rgb), 0.22) 0 1.6px,
       transparent 2.3px
     ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(var(--choice-rgb), 0.045) 0 1px,
-      transparent 1px 16px
-    ),
+    var(--choice-pattern),
     repeating-linear-gradient(
       0deg,
       transparent 0 23px,
@@ -4842,33 +4568,21 @@ body::after {
 .setup-choice-card-greenfield .kit-icon {
   background:
     linear-gradient(180deg, rgba(var(--choice-rgb), 0.1), transparent 62%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(var(--choice-rgb), 0.075) 0 1px,
-      transparent 1px 14px
-    ),
+    var(--signal-pattern-greenfield),
     var(--color-panel-raised);
 }
 
 .setup-choice-card-greenfield .setup-choice-command {
   background:
     linear-gradient(90deg, rgba(var(--choice-rgb), 0.11), transparent 42%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(var(--choice-rgb), 0.075) 0 1px,
-      transparent 1px 18px
-    ),
+    var(--signal-pattern-greenfield),
     rgba(10, 7, 5, 0.42);
 }
 
 .setup-choice-card-brownfield {
   --choice-signal: var(--signal-brownfield);
   --choice-rgb: var(--signal-brownfield-rgb);
-  --choice-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--choice-rgb), 0.045) 0 1px,
-    transparent 1px 13px
-  );
+  --choice-pattern: var(--signal-pattern-brownfield);
   background-image:
     linear-gradient(
       90deg,
@@ -4876,17 +4590,8 @@ body::after {
       rgba(var(--choice-rgb), 0.42) 3px,
       transparent 3px
     ),
-    linear-gradient(
-      135deg,
-      transparent 0 calc(100% - 2.1rem),
-      rgba(var(--choice-rgb), 0.1) calc(100% - 2.1rem) calc(100% - 2rem),
-      transparent calc(100% - 2rem)
-    ),
-    repeating-linear-gradient(
-      -24deg,
-      rgba(var(--choice-rgb), 0.045) 0 1px,
-      transparent 1px 13px
-    ),
+    var(--signal-mark-brownfield),
+    var(--choice-pattern),
     repeating-linear-gradient(
       90deg,
       transparent 0 27px,
@@ -4908,22 +4613,14 @@ body::after {
 .setup-choice-card-brownfield .kit-icon {
   background:
     linear-gradient(180deg, rgba(var(--choice-rgb), 0.1), transparent 62%),
-    repeating-linear-gradient(
-      -24deg,
-      rgba(var(--choice-rgb), 0.075) 0 1px,
-      transparent 1px 12px
-    ),
+    var(--signal-pattern-brownfield),
     var(--color-panel-raised);
 }
 
 .setup-choice-card-brownfield .setup-choice-command {
   background:
     linear-gradient(90deg, rgba(var(--choice-rgb), 0.11), transparent 42%),
-    repeating-linear-gradient(
-      -24deg,
-      rgba(var(--choice-rgb), 0.075) 0 1px,
-      transparent 1px 13px
-    ),
+    var(--signal-pattern-brownfield),
     rgba(10, 7, 5, 0.42);
 }
 
@@ -5010,6 +4707,7 @@ body::after {
   color: var(--color-concrete-200);
   background:
     linear-gradient(90deg, rgba(var(--choice-rgb), 0.12), transparent 36%),
+    var(--choice-pattern),
     rgba(10, 7, 5, 0.42);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.78rem;
@@ -5329,11 +5027,7 @@ body::after {
 .relation-card {
   --relation-signal: var(--signal-muted);
   --relation-rgb: var(--signal-muted-rgb);
-  --relation-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--relation-rgb), 0.045) 0 1px,
-    transparent 1px 18px
-  );
+  --relation-pattern: var(--signal-pattern-muted);
   --plate-signal: var(--relation-signal);
   --plate-rgb: var(--relation-rgb);
   border-color: rgba(var(--relation-rgb), 0.24);
@@ -5355,41 +5049,25 @@ body::after {
 .relation-card-core {
   --relation-signal: var(--signal-core);
   --relation-rgb: var(--signal-core-rgb);
-  --relation-pattern: repeating-linear-gradient(
-    90deg,
-    rgba(var(--relation-rgb), 0.05) 0 1px,
-    transparent 1px 16px
-  );
+  --relation-pattern: var(--signal-pattern-core);
 }
 
 .relation-card-evidence {
   --relation-signal: var(--signal-evidence);
   --relation-rgb: var(--signal-evidence-rgb);
-  --relation-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 13px,
-    rgba(var(--relation-rgb), 0.06) 13px 14px
-  );
+  --relation-pattern: var(--signal-pattern-evidence);
 }
 
 .relation-card-change {
   --relation-signal: var(--signal-change);
   --relation-rgb: var(--signal-change-rgb);
-  --relation-pattern: repeating-linear-gradient(
-    -24deg,
-    rgba(var(--relation-rgb), 0.055) 0 1px,
-    transparent 1px 13px
-  );
+  --relation-pattern: var(--signal-pattern-change);
 }
 
 .relation-card-reference {
   --relation-signal: var(--signal-reference);
   --relation-rgb: var(--signal-reference-rgb);
-  --relation-pattern: repeating-linear-gradient(
-    0deg,
-    transparent 0 22px,
-    rgba(var(--relation-rgb), 0.06) 22px 23px
-  );
+  --relation-pattern: var(--signal-pattern-reference);
 }
 
 .relation-card-muted {

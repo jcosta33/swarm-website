@@ -11,6 +11,8 @@
 // The exact complement is reserved for diagnostics; public complements use
 // softer field, sage, umber, clay, and verdigris roles. A role is more than a
 // color: use it for the text, lamp, rail, border, hatch, icon, and hover state.
+// In CSS, reach for --signal-pattern-* with the matching --signal-* token before
+// adding a local gradient. Local treatments can adjust strength, not meaning.
 export const signalRoleMeta = {
   core: {
     label: "core",

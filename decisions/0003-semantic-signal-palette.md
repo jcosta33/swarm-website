@@ -46,6 +46,12 @@ Color is assigned from the object or action, not from mood:
 - Read-only catalogs and rosters are reference.
 - Gold is reserved for Corpus identity and primary action.
 
+Implementation follows the same rule. A role should use the shared CSS signal
+variables for hue and pattern (`--signal-*`, `--signal-*-rgb`, and
+`--signal-pattern-*`) before adding any local treatment. A local treatment may
+change layout, density, or strength, but it should not invent a new meaning for
+green, brown, sage, clay, verdigris, or gold.
+
 ## Consequences
 
 - Positive: accents now carry repeated product meaning instead of decoration.
@@ -53,5 +59,6 @@ Color is assigned from the object or action, not from mood:
   subtle hue differences.
 - Positive: greenfield and brownfield setup paths become distinct and literal.
 - Negative: future components must choose a role before choosing a color.
+- Negative: one-off color flourishes need a product reason before they ship.
 - Neutral: legacy aliases (`yellow`, `gold`, `orange`, `olive`, `brass`) remain
   as compatibility shims in `app/components/signalStyles.ts`.
