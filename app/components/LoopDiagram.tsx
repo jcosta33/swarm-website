@@ -54,7 +54,7 @@ const steps = [
     description: "Merge, save findings, update the board.",
     signal: "reference",
   },
-];
+] as const;
 
 export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
   const sealPoints = steps.map((step, index) => {
@@ -192,7 +192,10 @@ export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
                 <span className="loop-step-index font-mono text-xs font-medium">
                   {step.number}
                 </span>
-                <SignalPulse className="opacity-60 group-hover:opacity-100" />
+                <SignalPulse
+                  color={step.signal}
+                  className="opacity-60 group-hover:opacity-100"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <Icon

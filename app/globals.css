@@ -3786,6 +3786,14 @@ body::after {
 .loop-step-card {
   --loop-step-signal: var(--signal-core);
   --loop-step-rgb: var(--signal-core-rgb);
+  --loop-step-pattern: var(--signal-pattern-core);
+  --loop-step-mark: var(--signal-mark-core);
+}
+
+.panel-raised.loop-step-card {
+  --plate-signal: var(--loop-step-signal);
+  --plate-rgb: var(--loop-step-rgb);
+  border-color: rgba(var(--loop-step-rgb), 0.3);
   background-image:
     linear-gradient(
       90deg,
@@ -3793,11 +3801,24 @@ body::after {
       rgba(var(--loop-step-rgb), 0.22) 2px,
       transparent 2px
     ),
+    var(--loop-step-mark),
+    var(--loop-step-pattern),
     radial-gradient(
       80% 70% at 10% 0%,
       rgba(var(--loop-step-rgb), 0.09),
       transparent 60%
-    );
+  );
+}
+
+.panel-raised.loop-step-card:hover,
+.panel-raised.loop-step-card:focus-visible {
+  border-color: rgba(var(--loop-step-rgb), 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(232, 222, 203, 0.09),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.55),
+    inset 2px 0 0 rgba(var(--loop-step-rgb), 0.28),
+    0 0 0 1px rgba(var(--loop-step-rgb), 0.07),
+    0 8px 20px rgba(0, 0, 0, 0.24);
 }
 
 .loop-step-card::before {
@@ -3829,21 +3850,29 @@ body::after {
 .loop-step-card-core {
   --loop-step-signal: var(--signal-core);
   --loop-step-rgb: var(--signal-core-rgb);
+  --loop-step-pattern: var(--signal-pattern-core);
+  --loop-step-mark: var(--signal-mark-core);
 }
 
 .loop-step-card-evidence {
   --loop-step-signal: var(--signal-evidence);
   --loop-step-rgb: var(--signal-evidence-rgb);
+  --loop-step-pattern: var(--signal-pattern-evidence);
+  --loop-step-mark: var(--signal-mark-evidence);
 }
 
 .loop-step-card-reference {
   --loop-step-signal: var(--signal-reference);
   --loop-step-rgb: var(--signal-reference-rgb);
+  --loop-step-pattern: var(--signal-pattern-reference);
+  --loop-step-mark: var(--signal-mark-reference);
 }
 
 .loop-step-card-change {
   --loop-step-signal: var(--signal-change);
   --loop-step-rgb: var(--signal-change-rgb);
+  --loop-step-pattern: var(--signal-pattern-change);
+  --loop-step-mark: var(--signal-mark-change);
 }
 
 .loop-step-index,

@@ -1,9 +1,15 @@
-import { PilotLamp } from "./PilotLamp";
+import { PilotLamp, type PilotLampProps } from "./PilotLamp";
 
-export function SignalPulse({ className = "" }: { className?: string }) {
+export function SignalPulse({
+  className = "",
+  color = "core",
+}: {
+  className?: string;
+  color?: PilotLampProps["color"];
+}) {
   return (
     <span className={`inline-flex ${className}`} aria-hidden="true">
-      <PilotLamp color="core" pulse />
+      <PilotLamp color={color} pulse />
     </span>
   );
 }
