@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 const docsLegend = [
-  { label: "Start", role: "core" },
-  { label: "Tutorial", role: "greenfield" },
-  { label: "Examples", role: "change" },
-  { label: "Reference", role: "reference" },
-  { label: "ADRs", role: "muted" },
-] as const satisfies Array<{ label: string; role: SignalRole }>;
+  { label: "Start", role: "core", detail: "entry" },
+  { label: "Tutorial", role: "core", detail: "first pass" },
+  { label: "Examples", role: "change", detail: "worked changes" },
+  { label: "Reference", role: "reference", detail: "manual" },
+  { label: "ADRs", role: "muted", detail: "decisions" },
+] as const satisfies Array<{ label: string; role: SignalRole; detail: string }>;
 
 function Section({
   sec,
@@ -98,7 +98,7 @@ export default function DocsIndex() {
                 className={`docs-index-legend-item docs-index-legend-${item.role}`}
               >
                 <span>{item.label}</span>
-                <span>{item.role}</span>
+                <span>{item.detail}</span>
               </li>
             ))}
           </ul>
@@ -117,7 +117,7 @@ export default function DocsIndex() {
             <div className="docs-index-stack">
               <Section
                 sec={balancedGrid.tutorial}
-                role="greenfield"
+                role="core"
                 className="docs-index-section-tutorial"
               />
               <Section
@@ -139,7 +139,7 @@ export default function DocsIndex() {
             {tutorial ? (
               <Section
                 sec={tutorial}
-                role="greenfield"
+                role="core"
                 className="docs-index-section-tutorial"
               />
             ) : null}

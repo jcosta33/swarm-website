@@ -1921,8 +1921,7 @@
     var(--signal-pattern-core);
 }
 
-.docs-index-section-greenfield,
-.docs-index-section-tutorial {
+.docs-index-section-greenfield {
   --docs-index-signal: var(--signal-greenfield);
   --docs-index-rgb: var(--signal-greenfield-rgb);
   --docs-index-pattern:

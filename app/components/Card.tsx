@@ -37,13 +37,12 @@ export function Card({
   const signalSurfaceClass = signalRole
     ? `signal-surface signal-surface-${signalRole}`
     : "";
+  const linkedChromeClassName = signalRole
+    ? "focus-ring block text-left no-underline hover:shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(240,226,204,0.08)]"
+    : "focus-ring block text-left no-underline hover:border-brass/75 hover:shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(240,226,204,0.08)]";
   const chromeClassName = `panel-raised group relative overflow-hidden ${
     screws ? "screw-corners screw-corners-bottom" : ""
-  } ${
-    href
-      ? "focus-ring block text-left no-underline hover:border-brass/75 hover:shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(240,226,204,0.08)]"
-      : ""
-  } ${signalSurfaceClass} p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 motion-reduce:hover:translate-y-0 sm:p-7 ${className}`;
+  } ${href ? linkedChromeClassName : ""} ${signalSurfaceClass} p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 motion-reduce:hover:translate-y-0 sm:p-7 ${className}`;
   const content = (
     <>
       {brushed && (
@@ -79,6 +78,7 @@ export function Card({
         target={target}
         rel={rel}
         aria-label={ariaLabel}
+        data-color-role={signalRole}
         className={chromeClassName}
       >
         {content}
@@ -87,7 +87,7 @@ export function Card({
   }
 
   return (
-    <div className={chromeClassName}>
+    <div data-color-role={signalRole} className={chromeClassName}>
       {content}
     </div>
   );

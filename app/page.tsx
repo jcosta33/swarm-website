@@ -161,16 +161,6 @@ const homeSignalKey = [
     role: "reference",
     detail: "docs, ledgers, catalogs, read-only records",
   },
-  {
-    label: "Greenfield",
-    role: "greenfield",
-    detail: "new repo setup paths only",
-  },
-  {
-    label: "Brownfield",
-    role: "brownfield",
-    detail: "existing project adoption paths only",
-  },
 ] as const;
 
 const features = [
@@ -415,8 +405,9 @@ export default function HomePage() {
                 signal key
               </p>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-concrete-400">
-                Colors are roles, not decoration. The same hue carries the
-                lamp, rail, hatch, and hover state wherever it appears.
+                Signals mark what a record needs: action, change, evidence, or
+                source context. The meaning stays the same wherever the signal
+                appears.
               </p>
             </div>
             <SignalKey
