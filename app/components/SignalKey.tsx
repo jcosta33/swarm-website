@@ -34,6 +34,7 @@ export function SignalKey({
             className={`signal-key-item signal-key-item-${role}`}
             data-color-role={role}
           >
+            <span className="signal-key-swatch" aria-hidden="true" />
             <PilotLamp color={role} className="signal-key-lamp" />
             <span className="signal-key-copy">
               <span className="signal-key-label">{item.label}</span>

@@ -26,7 +26,11 @@ import { PilotLamp } from "./components/PilotLamp";
 import { Section } from "./components/Section";
 import { SignalKey } from "./components/SignalKey";
 import { TerminalWindow } from "./components/TerminalWindow";
-import { signalRoles, type SignalRole } from "./components/signalStyles";
+import {
+  signalRoles,
+  signalSystemKey,
+  type SignalRole,
+} from "./components/signalStyles";
 
 const softwareApp = {
   "@context": "https://schema.org",
@@ -139,29 +143,6 @@ const failureModes = [
   accent: SignalRole;
   lamp: SignalRole;
 }>;
-
-const homeSignalKey = [
-  {
-    label: "Core",
-    role: "core",
-    detail: "identity, primary actions, current step",
-  },
-  {
-    label: "Change",
-    role: "change",
-    detail: "edits, drift, blocked or unverified work",
-  },
-  {
-    label: "Evidence",
-    role: "evidence",
-    detail: "review proof, pass states, checked output",
-  },
-  {
-    label: "Reference",
-    role: "reference",
-    detail: "docs, ledgers, catalogs, read-only records",
-  },
-] as const;
 
 const features = [
   {
@@ -405,14 +386,14 @@ export default function HomePage() {
                 signal key
               </p>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-concrete-400">
-                Signals mark what a record needs: action, change, evidence, or
-                source context. The meaning stays the same wherever the signal
-                appears.
+                Signals mark what a record is doing: setup path, action,
+                change, evidence, source context, or neutral chrome. The role
+                drives the color, lamp, rail, border, and hover state together.
               </p>
             </div>
             <SignalKey
               ariaLabel="Corpus site color role key"
-              items={homeSignalKey}
+              items={signalSystemKey}
               className="home-signal-key"
             />
           </div>

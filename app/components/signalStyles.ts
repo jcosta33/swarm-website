@@ -183,6 +183,56 @@ export const signalRoleOrder = [
   "muted",
 ] as const satisfies readonly SignalRole[];
 
+export const signalKeyItemByRole = {
+  core: {
+    label: "Core",
+    role: "core",
+    detail: "identity, primary action, current step",
+  },
+  greenfield: {
+    label: "Greenfield",
+    role: "greenfield",
+    detail: "new repo, starter kit, first run",
+  },
+  brownfield: {
+    label: "Brownfield",
+    role: "brownfield",
+    detail: "existing project, adoption, migration",
+  },
+  change: {
+    label: "Change",
+    role: "change",
+    detail: "edits, fixes, blocked or unverified work",
+  },
+  evidence: {
+    label: "Evidence",
+    role: "evidence",
+    detail: "review proof, pass states, checked output",
+  },
+  reference: {
+    label: "Reference",
+    role: "reference",
+    detail: "docs, ledgers, catalogs, source context",
+  },
+  muted: {
+    label: "Muted",
+    role: "muted",
+    detail: "hardware, counters, neutral trim",
+  },
+} as const satisfies Record<
+  SignalRole,
+  { label: string; role: SignalRole; detail: string }
+>;
+
+export const signalSystemKey = signalRoleOrder.map(
+  (role) => signalKeyItemByRole[role],
+);
+
+export const setupPathSignalKey = [
+  signalKeyItemByRole.greenfield,
+  signalKeyItemByRole.brownfield,
+] as const;
+
 export type SignalAlias = "yellow" | "gold" | "orange" | "olive" | "brass";
 
 export type SignalInput = SignalRole | SignalAlias;

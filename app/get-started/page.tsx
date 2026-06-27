@@ -24,7 +24,11 @@ import { PageHero } from "../components/PageHero";
 import { HeroTrace } from "../components/HeroTrace";
 import { PilotLamp } from "../components/PilotLamp";
 import { SignalKey } from "../components/SignalKey";
-import { signalRoles, type SignalRole } from "../components/signalStyles";
+import {
+  setupPathSignalKey,
+  signalRoles,
+  type SignalRole,
+} from "../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "Get started — Corpus",
@@ -161,19 +165,6 @@ const setupPath = [
   signal: SignalRole;
 }>;
 
-const setupSignalKey = [
-  {
-    label: "Greenfield",
-    role: "greenfield",
-    detail: "new repo / starter kit",
-  },
-  {
-    label: "Brownfield",
-    role: "brownfield",
-    detail: "existing project adoption",
-  },
-] as const;
-
 export default function GetStartedPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -266,7 +257,7 @@ export default function GetStartedPage() {
           </p>
           <SignalKey
             ariaLabel="Setup path color roles"
-            items={setupSignalKey}
+            items={setupPathSignalKey}
             className="setup-choice-signal-key mt-5"
           />
         </div>
