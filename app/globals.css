@@ -5854,6 +5854,131 @@ body::after {
 }
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
+.agent-page-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.agent-page-nav-link {
+  --agent-nav-signal: var(--signal-reference);
+  --agent-nav-rgb: var(--signal-reference-rgb);
+  --agent-nav-pattern: var(--signal-pattern-reference);
+  --agent-nav-mark: var(--signal-mark-reference);
+  position: relative;
+  display: flex;
+  min-height: 2.75rem;
+  min-width: 0;
+  align-items: center;
+  gap: 0.62rem;
+  overflow: hidden;
+  border: 1px solid rgba(var(--agent-nav-rgb), 0.3);
+  border-radius: var(--radius-control);
+  background:
+    linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.08), transparent 46%),
+    var(--agent-nav-mark),
+    var(--agent-nav-pattern),
+    rgba(26, 21, 16, 0.66);
+  padding: 0.58rem 0.75rem;
+  color: var(--color-concrete-100);
+  text-decoration: none;
+  box-shadow:
+    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.36),
+    inset 0 1px 0 rgba(240, 226, 204, 0.04);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.agent-page-nav-link:hover,
+.agent-page-nav-link:focus-visible {
+  border-color: rgba(var(--agent-nav-rgb), 0.56);
+  box-shadow:
+    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.62),
+    inset 0 1px 0 rgba(240, 226, 204, 0.06),
+    0 0 0 1px rgba(var(--agent-nav-rgb), 0.07);
+  transform: translateY(-1px);
+}
+
+.agent-page-nav-index {
+  flex: 0 0 auto;
+  color: var(--agent-nav-signal);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.agent-page-nav-label {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  font-size: 0.92rem;
+  font-weight: 760;
+  line-height: 1.1;
+}
+
+.agent-page-nav-link > svg {
+  flex: 0 0 auto;
+  color: var(--agent-nav-signal);
+  opacity: 0.76;
+}
+
+.agent-page-nav-link-core {
+  --agent-nav-signal: var(--signal-core);
+  --agent-nav-rgb: var(--signal-core-rgb);
+  --agent-nav-pattern: var(--signal-pattern-core);
+  --agent-nav-mark: var(--signal-mark-core);
+}
+
+.agent-page-nav-link-evidence {
+  --agent-nav-signal: var(--signal-evidence);
+  --agent-nav-rgb: var(--signal-evidence-rgb);
+  --agent-nav-pattern: var(--signal-pattern-evidence);
+  --agent-nav-mark: var(--signal-mark-evidence);
+}
+
+.agent-page-nav-link-change {
+  --agent-nav-signal: var(--signal-change);
+  --agent-nav-rgb: var(--signal-change-rgb);
+  --agent-nav-pattern: var(--signal-pattern-change);
+  --agent-nav-mark: var(--signal-mark-change);
+}
+
+.agent-page-nav-link-reference {
+  --agent-nav-signal: var(--signal-reference);
+  --agent-nav-rgb: var(--signal-reference-rgb);
+  --agent-nav-pattern: var(--signal-pattern-reference);
+  --agent-nav-mark: var(--signal-mark-reference);
+}
+
+.agent-page-nav-link-muted {
+  --agent-nav-signal: var(--signal-muted);
+  --agent-nav-rgb: var(--signal-muted-rgb);
+  --agent-nav-pattern: var(--signal-pattern-muted);
+  --agent-nav-mark: var(--signal-mark-muted);
+}
+
+@media (min-width: 48rem) {
+  .agent-page-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .agent-page-nav {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .agent-page-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .agent-roster-panel {
   --roster-signal: var(--signal-core);
   --roster-rgb: var(--signal-core-rgb);

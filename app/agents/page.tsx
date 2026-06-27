@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ComponentType } from "react";
 import {
+  ArrowRight,
   Compass,
   ExternalLink,
   FileSearch,
@@ -223,6 +224,19 @@ const agentSignalKey = [
   },
 ] as const;
 
+const agentPageNav = [
+  { label: "Roster", href: "#worker-lanes", signal: "reference" },
+  { label: "Install", href: "#install", signal: "reference" },
+  { label: "Read-only", href: "#read-only-workers", signal: "evidence" },
+  { label: "Authoring", href: "#bounded-authoring", signal: "change" },
+  { label: "Limits", href: "#limits", signal: "muted" },
+  { label: "Portability", href: "#portability", signal: "reference" },
+] as const satisfies Array<{
+  label: string;
+  href: string;
+  signal: SignalRole;
+}>;
+
 function repoHref(agent: string) {
   return `https://github.com/jcosta33/corpus-agents/blob/main/agents/${agent}.md`;
 }
@@ -296,6 +310,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="worker-lanes"
         register="02 / worker lanes"
         registerTone="muted"
         className="agent-roster-grid grid gap-4 lg:grid-cols-2"
@@ -305,6 +320,28 @@ export default function AgentsPage() {
           items={agentSignalKey}
           className="lg:col-span-2"
         />
+        <nav
+          className="agent-page-nav lg:col-span-2"
+          aria-label="Agent page sections"
+        >
+          {agentPageNav.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              data-color-role={item.signal}
+              className={`agent-page-nav-link agent-page-nav-link-${item.signal} focus-ring group`}
+            >
+              <span className="agent-page-nav-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="agent-page-nav-label">{item.label}</span>
+              <ArrowRight
+                className="motion-nudge-x h-3.5 w-3.5"
+                aria-hidden="true"
+              />
+            </a>
+          ))}
+        </nav>
         {rosterGroups.map((group, groupIndex) => (
           <Panel
             key={group.title}
@@ -383,6 +420,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="install"
         register="03 / install"
         registerTone="reference"
         className="flex flex-col gap-8"
@@ -434,6 +472,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="read-only-workers"
         register="04 / read-only"
         registerTone="reference"
         className="flex flex-col gap-12"
@@ -499,6 +538,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="bounded-authoring"
         register="05 / bounded authoring"
         registerTone="change"
         className="flex flex-col gap-12"
@@ -564,6 +604,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="limits"
         register="06 / limits"
         registerTone="muted"
         className="grid gap-6 lg:grid-cols-2"
@@ -614,6 +655,7 @@ export default function AgentsPage() {
       </Section>
 
       <Section
+        id="portability"
         register="07 / portability"
         registerTone="reference"
         className="grid gap-6 lg:grid-cols-2"
