@@ -21,6 +21,7 @@ import { Heading } from "../components/Heading";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
 import { PageHero } from "../components/PageHero";
+import { HeroTrace } from "../components/HeroTrace";
 import { PilotLamp } from "../components/PilotLamp";
 import { SignalKey } from "../components/SignalKey";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
@@ -187,6 +188,13 @@ export default function GetStartedPage() {
             Start with the starter kit. Use the CLI when you want scaffolding
             and checks.
           </p>
+          <HeroTrace
+            ariaLabel="Corpus setup path trace"
+            items={setupPath.map((step) => ({
+              label: step.label,
+              signal: step.signal,
+            }))}
+          />
         </PageHero>
       </Section>
 
