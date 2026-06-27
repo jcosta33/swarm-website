@@ -137,7 +137,7 @@ const setupPath = [
     signal: "greenfield",
   },
   {
-    label: "Existing",
+    label: "Existing project",
     text: "Adopt files into a repo with history.",
     icon: FolderTree,
     href: "#choose",
@@ -259,8 +259,7 @@ export default function GetStartedPage() {
           </div>
           <Heading className="mt-3">Pick a setup path</Heading>
           <p className="mt-3 max-w-2xl text-concrete-400">
-            Use greenfield for a new repo. Use brownfield when the code already
-            exists.
+            New repo is greenfield. Existing code is brownfield.
           </p>
           <SignalKey
             ariaLabel="Setup path color roles"

@@ -9,7 +9,8 @@
 // Prefer these role names over raw color aliases in new component code.
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
 // The exact complement is reserved for diagnostics; public complements use
-// softer field, sage, umber, clay, and verdigris roles. A role is more than a
+// softer field, sage, umber, clay, and verdigris roles. Green means
+// greenfield, not "good"; sage means evidence, not "new". A role is more than a
 // color: use it for the text, lamp, rail, border, hatch, mark, icon, command
 // plate, and hover state. Setup is not automatically green: only new-workspace
 // paths get greenfield; mixed setup surfaces use reference, core, or muted. If a
@@ -35,9 +36,9 @@ export const signalRoleMeta = {
   evidence: {
     label: "evidence",
     family: "review / proof",
-    hex: "#B8C56F",
-    relationship: "olive-sage proof: HSL(69 43% 60%)",
-    wheel: "+35° from core",
+    hex: "#B7C96C",
+    relationship: "olive-sage proof: HSL(72 46% 61%)",
+    wheel: "+38° from core",
     tone: "olive-sage proof",
     use: "Review proof, verified output, factual claims, pass states, and evidence-oriented sections.",
     surface: "checkpoint ticks, pass lamps, and review rails",
@@ -48,9 +49,9 @@ export const signalRoleMeta = {
   greenfield: {
     label: "greenfield",
     family: "setup path",
-    hex: "#75C985",
-    relationship: "fresh field green: HSL(131 44% 62%)",
-    wheel: "+99° from core",
+    hex: "#78C487",
+    relationship: "fresh field green: HSL(132 39% 62%)",
+    wheel: "+98° from core",
     tone: "fresh field green",
     use: "Fresh workspace setup paths, starter kits, first-run tutorial paths, and new-repo choices.",
     surface: "new-file icons, starter-kit cards, clean-start rails, and first-run command plates",
@@ -61,9 +62,9 @@ export const signalRoleMeta = {
   brownfield: {
     label: "brownfield",
     family: "setup path",
-    hex: "#C08452",
-    relationship: "survey umber: HSL(27 47% 54%)",
-    wheel: "-7° from core",
+    hex: "#B87545",
+    relationship: "survey umber: HSL(25 45% 50%)",
+    wheel: "-9° from core",
     tone: "survey umber",
     use: "Existing-project adoption, migration, repo-history paths, and brownfield choices only.",
     surface: "existing-project icons, adoption cards, repo-history rails, and migration command plates",
@@ -74,9 +75,9 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#D07960",
-    relationship: "red-clay analogue: HSL(13 54% 60%)",
-    wheel: "-21° from core",
+    hex: "#D2795C",
+    relationship: "red-clay analogue: HSL(15 57% 59%)",
+    wheel: "-19° from core",
     tone: "red clay",
     use: "Edits, fixes, run work, blocked states, and attention markers.",
     surface: "angled change hatching and work-in-progress rails",
@@ -87,9 +88,9 @@ export const signalRoleMeta = {
   reference: {
     label: "reference",
     family: "manual / catalog",
-    hex: "#82C8BD",
-    relationship: "tempered split-complement: HSL(171 39% 65%)",
-    wheel: "+137° from core",
+    hex: "#7FC7BE",
+    relationship: "tempered split-complement: HSL(173 39% 64%)",
+    wheel: "+139° from core",
     tone: "verdigris ledger",
     use: "Docs, manuals, command catalogs, ledgers, index surfaces, loaders, and read-only rosters.",
     surface: "ledger rules, source notes, and reference shelves",
@@ -100,8 +101,8 @@ export const signalRoleMeta = {
   muted: {
     label: "muted",
     family: "hardware / neutral",
-    hex: "#BF7927",
-    relationship: "aged brass analogue: HSL(32 66% 45%)",
+    hex: "#B8844A",
+    relationship: "aged brass analogue: HSL(32 44% 51%)",
     wheel: "-2° from core",
     tone: "aged brass",
     use: "Hardware chrome, low-emphasis labels, and neutral UI detail.",

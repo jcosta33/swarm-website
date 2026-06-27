@@ -7,8 +7,8 @@
      the public site stays warm. Public accents are semantic, not decorative:
      greenfield = literal new-workspace paths, brownfield = existing-project
      adoption, change = active edits/attention, evidence = proof/review,
-     reference = manuals and catalogs. Green does not mean "good"; sage evidence
-     does not mean "new"; setup alone is not green.
+     reference = manuals and catalogs. Green means greenfield, not "good";
+     sage means evidence, not "new"; setup alone is not green.
      The role should travel as a set: text, lamp, rail, border, hatch, hover.
      Panels stay dark; color marks meaning instead of painting surfaces. */
   --color-night: #110e0c;
@@ -33,14 +33,14 @@
   --color-black: #000000;
 
   --color-aurum: #d88a24;
-  --color-brass: #bf7927;
+  --color-brass: #b8844a;
   --color-amber: #f0a33a;
   --color-complement: #2472d8;
-  --color-phosphor: #b8c56f;
-  --color-greenfield: #75c985;
-  --color-brownfield: #c08452;
-  --color-verdigris: #82c8bd;
-  --color-rubedo: #d07960;
+  --color-phosphor: #b7c96c;
+  --color-greenfield: #78c487;
+  --color-brownfield: #b87545;
+  --color-verdigris: #7fc7be;
+  --color-rubedo: #d2795c;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
 
@@ -48,17 +48,17 @@
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
-  --signal-evidence-rgb: 184, 197, 111;
+  --signal-evidence-rgb: 183, 201, 108;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 117, 201, 133;
+  --signal-greenfield-rgb: 120, 196, 135;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 192, 132, 82;
+  --signal-brownfield-rgb: 184, 117, 69;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 208, 121, 96;
+  --signal-change-rgb: 210, 121, 92;
   --signal-reference: var(--color-verdigris);
-  --signal-reference-rgb: 130, 200, 189;
+  --signal-reference-rgb: 127, 199, 190;
   --signal-muted: var(--color-brass);
-  --signal-muted-rgb: 191, 121, 39;
+  --signal-muted-rgb: 184, 132, 74;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -187,7 +187,8 @@
      - change: edits, fixes, run work, blocked/attention states
      - reference: docs, ledgers, command catalogs, source metadata
      - muted: hardware, counters, neutral trim
-     A role must travel as a set: hue, lamp, rail, hatch, border, and hover. */
+     A role must travel as a set: hue, lamp, rail, hatch, border, and hover.
+     When a component cannot use the whole set, prefer neutral chrome. */
   /* Compatibility aliases for older component classes while the site migrates. */
   --color-night-raised: var(--color-panel-raised);
   --color-night-well: var(--color-panel-recessed);
@@ -228,29 +229,29 @@
   --c-mercury: #b8aa96;
   --c-ash: #7f735f;
   --c-aurum: #d88a24;
-  --c-brass: #bf7927;
+  --c-brass: #b8844a;
   --c-amber: #f0a33a;
   --c-complement: #2472d8;
-  --c-phosphor: #b8c56f;
-  --c-greenfield: #75c985;
-  --c-brownfield: #c08452;
-  --c-verdigris: #82c8bd;
-  --c-rubedo: #d07960;
+  --c-phosphor: #b7c96c;
+  --c-greenfield: #78c487;
+  --c-brownfield: #b87545;
+  --c-verdigris: #7fc7be;
+  --c-rubedo: #d2795c;
   --c-olive: var(--c-phosphor);
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
   --signal-evidence: var(--color-phosphor);
-  --signal-evidence-rgb: 184, 197, 111;
+  --signal-evidence-rgb: 183, 201, 108;
   --signal-greenfield: var(--color-greenfield);
-  --signal-greenfield-rgb: 117, 201, 133;
+  --signal-greenfield-rgb: 120, 196, 135;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 192, 132, 82;
+  --signal-brownfield-rgb: 184, 117, 69;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 208, 121, 96;
+  --signal-change-rgb: 210, 121, 92;
   --signal-reference: var(--color-verdigris);
-  --signal-reference-rgb: 130, 200, 189;
+  --signal-reference-rgb: 127, 199, 190;
   --signal-muted: var(--color-brass);
-  --signal-muted-rgb: 191, 121, 39;
+  --signal-muted-rgb: 184, 132, 74;
   --c-paper: #f0e2cc;
   --c-paper-warm: #dcc9a9;
   --c-paper-line: #b9a07d;
