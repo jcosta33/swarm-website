@@ -6052,8 +6052,8 @@ body::after {
   .agent-page-nav-link,
   .section-jump-nav-link {
     flex: 0 0 clamp(8rem, 40vw, 9.75rem);
-    min-height: 2.5rem;
-    padding: 0.5rem 0.62rem;
+    min-height: 2.75rem;
+    padding: 0.58rem 0.64rem;
     scroll-snap-align: start;
   }
 
