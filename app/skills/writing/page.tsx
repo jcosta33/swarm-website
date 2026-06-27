@@ -20,6 +20,7 @@ import { PageHero } from "../../components/PageHero";
 import { HeroTrace } from "../../components/HeroTrace";
 import { Heading } from "../../components/Heading";
 import { TextLink } from "../../components/TextLink";
+import { signalRoles, type SignalRole } from "../../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "Writing a skill — Corpus",
@@ -123,6 +124,20 @@ const skillAnatomy = [
   },
 ];
 
+const writingPageNav = [
+  { label: "Anatomy", href: "#anatomy", signal: "reference" },
+  { label: "Folder", href: "#folder", signal: "reference" },
+  { label: "Trigger", href: "#trigger", signal: "core" },
+  { label: "Rules", href: "#rules", signal: "reference" },
+  { label: "References", href: "#references", signal: "reference" },
+  { label: "Scope", href: "#scope", signal: "change" },
+  { label: "Source", href: "#source", signal: "muted" },
+] as const satisfies Array<{
+  label: string;
+  href: string;
+  signal: SignalRole;
+}>;
+
 export default function WritingSkillsPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -157,7 +172,37 @@ export default function WritingSkillsPage() {
         </PageHero>
       </Section>
 
-      <Section register="01 / one file" registerTone="reference">
+      <nav
+        className="mx-auto w-full max-w-7xl px-6 lg:px-8"
+        aria-label="Writing a skill page sections"
+      >
+        <div className="section-jump-nav">
+          {writingPageNav.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              data-color-role={item.signal}
+              className={`section-jump-nav-link section-jump-nav-link-${item.signal} focus-ring group`}
+            >
+              <span className="section-jump-nav-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="section-jump-nav-label">{item.label}</span>
+              <ArrowRight
+                className={`motion-nudge-x h-3.5 w-3.5 ${signalRoles[item.signal].text}`}
+                aria-hidden="true"
+              />
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <Section
+        id="anatomy"
+        register="01 / one file"
+        registerTone="reference"
+        className="scroll-mt-28"
+      >
         <Panel
           brushed
           className="mcp-adapter-panel skill-anatomy-panel p-0"
@@ -206,9 +251,10 @@ export default function WritingSkillsPage() {
       </Section>
 
       <Section
+        id="folder"
         register="02 / folder"
         registerTone="reference"
-        className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]"
+        className="grid scroll-mt-28 gap-6 lg:grid-cols-[0.9fr_1.1fr]"
       >
         <div>
           <div className="section-kicker section-kicker-reference">
@@ -388,7 +434,12 @@ export default function WritingSkillsPage() {
         </ul>
       </Section>
 
-      <Section register="07 / source" registerTone="muted">
+      <Section
+        id="source"
+        register="07 / source"
+        registerTone="muted"
+        className="scroll-mt-28"
+      >
         <div className="mx-auto max-w-5xl">
           <Card
             screws
