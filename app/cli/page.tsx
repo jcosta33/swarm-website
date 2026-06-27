@@ -236,6 +236,19 @@ const commandSignalKey = [
   },
 ] as const;
 
+const cliPageNav = [
+  { label: "Families", href: "#command-families", signal: "reference" },
+  { label: "Install", href: "#install", signal: "core" },
+  { label: "Run loop", href: "#run-the-loop", signal: "core" },
+  { label: "Commands", href: "#commands", signal: "reference" },
+  { label: "Notes", href: "#design-notes", signal: "muted" },
+  { label: "Source", href: "#source", signal: "reference" },
+] as const satisfies Array<{
+  label: string;
+  href: string;
+  signal: SignalRole;
+}>;
+
 export default function CliPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -264,10 +277,36 @@ export default function CliPage() {
         </PageHero>
       </Section>
 
+      <nav
+        className="mx-auto w-full max-w-7xl px-6 lg:px-8"
+        aria-label="corpus-cli page sections"
+      >
+        <div className="agent-page-nav">
+          {cliPageNav.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              data-color-role={item.signal}
+              className={`agent-page-nav-link agent-page-nav-link-${item.signal} focus-ring group`}
+            >
+              <span className="agent-page-nav-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="agent-page-nav-label">{item.label}</span>
+              <ArrowRight
+                className="motion-nudge-x h-3.5 w-3.5"
+                aria-hidden="true"
+              />
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <Section
+        id="command-families"
         register="01 / command families"
         registerTone="reference"
-        className="space-y-4"
+        className="scroll-mt-28 space-y-4"
       >
         <SignalKey
           ariaLabel="corpus-cli command family color roles"
@@ -331,9 +370,10 @@ export default function CliPage() {
       </Section>
 
       <Section
+        id="install"
         register="02 / install"
         registerTone="core"
-        className="flex flex-col gap-8"
+        className="flex scroll-mt-28 flex-col gap-8"
       >
         <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
@@ -381,9 +421,10 @@ export default function CliPage() {
       </Section>
 
       <Section
+        id="run-the-loop"
         register="03 / run the loop"
         registerTone="core"
-        className="flex flex-col gap-8"
+        className="flex scroll-mt-28 flex-col gap-8"
       >
         <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
@@ -429,9 +470,10 @@ export default function CliPage() {
       </Section>
 
       <Section
+        id="commands"
         register="04 / command reference"
         registerTone="reference"
-        className="flex flex-col gap-12"
+        className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-5xl">
           <div className="section-kicker section-kicker-reference">
@@ -532,9 +574,10 @@ export default function CliPage() {
       </Section>
 
       <Section
+        id="design-notes"
         register="05 / design notes"
         registerTone="muted"
-        className="flex flex-col gap-12"
+        className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-muted">
@@ -580,9 +623,10 @@ export default function CliPage() {
       </Section>
 
       <Section
+        id="source"
         register="06 / source"
         registerTone="reference"
-        className="grid gap-6 lg:grid-cols-2"
+        className="grid scroll-mt-28 gap-6 lg:grid-cols-2"
       >
         <Card
           screws
