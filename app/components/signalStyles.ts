@@ -10,7 +10,9 @@
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
 // The exact complement is reserved for diagnostics; public complements use
 // softer field, sage, umber, clay, and verdigris roles. A role is more than a
-// color: use it for the text, lamp, rail, border, hatch, icon, and hover state.
+// color: use it for the text, lamp, rail, border, hatch, icon, command plate,
+// and hover state. If a role appears on only one of those surfaces, the color
+// will read as random decoration instead of product meaning.
 // In CSS, reach for --signal-pattern-* with the matching --signal-* token before
 // adding a local gradient. Local treatments can adjust strength, not meaning.
 export const signalRoleMeta = {
@@ -45,8 +47,8 @@ export const signalRoleMeta = {
     relationship: "field green: HSL(132 37% 55%)",
     tone: "fresh field green",
     use: "Fresh workspace setup paths, starter kits, and first-run tutorial paths.",
-    surface: "upright seed rows and clean-start setup paths",
-    pattern: "upright field rows",
+    surface: "new-file icons, starter-kit cards, clean-start rails, and first-run command plates",
+    pattern: "upright field rows with sparse seed marks",
     avoid: "Do not use for existing-project adoption, review success, or generic positive emphasis.",
     example: "New repo, starter kit, first-run tutorial.",
   },
@@ -57,8 +59,8 @@ export const signalRoleMeta = {
     relationship: "survey umber: HSL(24 38% 53%)",
     tone: "survey umber",
     use: "Existing-project adoption, migration, and repo-history paths only.",
-    surface: "diagonal survey hatching and adoption plates",
-    pattern: "diagonal survey hatching",
+    surface: "existing-project icons, adoption cards, repo-history rails, and migration command plates",
+    pattern: "diagonal survey hatching with inherited-ground corner marks",
     avoid: "Do not use for new work, success, warnings, or generic warmth.",
     example: "Existing project, adopting guide, repo with history.",
   },

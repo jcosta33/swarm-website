@@ -250,7 +250,7 @@ export default function GetStartedPage() {
         className="reveal grid scroll-mt-28 gap-6 md:grid-cols-2"
       >
         <div className="md:col-span-2">
-          <div className={`section-kicker ${signalRoles.core.sectionKicker}`}>
+          <div className={`section-kicker ${signalRoles.muted.sectionKicker}`}>
             <Rocket className="h-4 w-4" aria-hidden="true" />
             <span>choose a path</span>
           </div>
@@ -288,7 +288,7 @@ export default function GetStartedPage() {
           <div className="setup-choice-head flex items-start justify-between gap-4">
             <div className="flex min-w-0 items-start gap-4">
               <KitIcon signal="greenfield">
-                <Rocket className="h-6 w-6" aria-hidden="true" />
+                <FolderPlus className="h-6 w-6" aria-hidden="true" />
               </KitIcon>
               <div className="min-w-0">
                 <p
@@ -340,7 +340,7 @@ export default function GetStartedPage() {
           <div className="setup-choice-head flex items-start justify-between gap-4">
             <div className="flex min-w-0 items-start gap-4">
               <KitIcon signal="brownfield">
-                <FolderPlus className="h-6 w-6" aria-hidden="true" />
+                <FolderTree className="h-6 w-6" aria-hidden="true" />
               </KitIcon>
               <div className="min-w-0">
                 <p
