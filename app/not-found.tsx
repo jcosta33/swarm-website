@@ -1,9 +1,17 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpen, GitBranch, Search } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  GitBranch,
+  Search,
+  type LucideIcon,
+} from "lucide-react";
 import { Section } from "./components/Section";
 import { ActionLink } from "./components/ActionLink";
 import { PaperArtifact } from "./components/PaperArtifact";
 import { Badge } from "./components/Badge";
+import { signalRoles, type SignalRole } from "./components/signalStyles";
 
 export const metadata = {
   title: "Page not found — Corpus",
@@ -17,20 +25,29 @@ const recoveryRoutes = [
     label: "Docs index",
     text: "Find the canonical manual page.",
     icon: BookOpen,
+    signal: "reference",
   },
   {
     href: "/the-loop/",
     label: "The loop",
     text: "Review the six-step workflow.",
     icon: GitBranch,
+    signal: "core",
   },
   {
     href: "/get-started/",
     label: "Get started",
     text: "Set up a new or existing workspace.",
     icon: ArrowRight,
+    signal: "core",
   },
-];
+] as const satisfies Array<{
+  href: string;
+  label: string;
+  text: string;
+  icon: LucideIcon;
+  signal: SignalRole;
+}>;
 
 export default function NotFoundPage() {
   return (
@@ -72,7 +89,7 @@ export default function NotFoundPage() {
         </PaperArtifact>
         <nav
           aria-label="Recovery routes"
-          className="process-strip process-strip-signal-core overflow-hidden rounded-panel border border-panel-border bg-panel-raised/70 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)]"
+          className="process-strip process-strip-signal-muted overflow-hidden rounded-panel border border-panel-border bg-panel-raised/70 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)]"
         >
           {recoveryRoutes.map((route, index) => {
             const Icon = route.icon;
@@ -80,13 +97,15 @@ export default function NotFoundPage() {
               <Link
                 key={route.href}
                 href={route.href}
-                className="focus-ring group flex min-h-20 items-center gap-4 border-b border-panel-border/80 px-4 py-3 text-concrete-300 transition-colors last:border-b-0 hover:bg-panel hover:text-concrete-100"
+                className={`focus-ring group flex min-h-20 items-center gap-4 border-b border-panel-border/80 px-4 py-3 text-concrete-300 transition-colors last:border-b-0 hover:bg-panel hover:text-concrete-100 ${signalRoles[route.signal].processItem}`}
               >
-                <span className="font-mono text-xs font-semibold text-corpus-yellow">
+                <span
+                  className={`font-mono text-xs font-semibold ${signalRoles[route.signal].text}`}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <Icon
-                  className="h-4 w-4 shrink-0 text-brass"
+                  className={`h-4 w-4 shrink-0 ${signalRoles[route.signal].text}`}
                   aria-hidden="true"
                 />
                 <span className="min-w-0 flex-1">
@@ -98,7 +117,7 @@ export default function NotFoundPage() {
                   </span>
                 </span>
                 <ArrowRight
-                  className="motion-nudge-x h-4 w-4 shrink-0 text-brass/70"
+                  className={`motion-nudge-x h-4 w-4 shrink-0 opacity-70 ${signalRoles[route.signal].text}`}
                   aria-hidden="true"
                 />
               </Link>
