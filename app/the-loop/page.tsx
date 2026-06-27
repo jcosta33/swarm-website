@@ -281,7 +281,7 @@ export default function TheLoopPage() {
               id={step.name.toLowerCase()}
               className={`loop-operating-step loop-operating-step-${step.signal} reveal relative grid scroll-mt-28 gap-8 lg:grid-cols-2 lg:items-start`}
             >
-              <div className="relative">
+              <div className="loop-operating-copy relative">
                 {index < steps.length - 1 && (
                   <div
                     className="loop-operating-rail absolute left-[1.75rem] top-20 hidden h-[calc(100%+4rem)] w-px lg:block"
