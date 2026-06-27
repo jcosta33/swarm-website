@@ -19,6 +19,7 @@ import type {
   Root as HastRoot,
   Element as HastElement,
   ElementContent,
+  RootContent,
 } from "hast";
 
 export type DocHeading = { depth: 2 | 3; id: string; text: string };
@@ -275,6 +276,42 @@ const rehypeFocusableScrollables: Plugin<[], HastRoot> = () => (tree) => {
   });
 };
 
+// Group every h2-led section so the generated manual can carry a consistent ledger surface without
+// requiring source-doc wrappers. Content before the first h2 stays as normal opening prose.
+const rehypeWrapLedgerSections: Plugin<[], HastRoot> = () => (tree) => {
+  const next: RootContent[] = [];
+  let section: HastElement | null = null;
+
+  const flush = () => {
+    if (!section) return;
+    next.push(section as RootContent);
+    section = null;
+  };
+
+  for (const child of tree.children) {
+    if (child.type === "element" && child.tagName === "h2") {
+      flush();
+      section = {
+        type: "element",
+        tagName: "section",
+        properties: { className: ["docs-ledger-section"] },
+        children: [child],
+      };
+      continue;
+    }
+
+    if (section && child.type !== "doctype") {
+      section.children.push(child as ElementContent);
+      continue;
+    }
+
+    next.push(child);
+  }
+
+  flush();
+  tree.children = next;
+};
+
 const normalizeDisplayTitle = (title: string): string =>
   title === "The corpus CLI" ? "The Corpus CLI" : title;
 
@@ -426,6 +463,7 @@ export async function renderDoc(
     .use(rehypeLabelTableCells)
     .use(rehypeWrapTables)
     .use(rehypeFocusableScrollables)
+    .use(rehypeWrapLedgerSections)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown);
   return { html: String(file), headings };
