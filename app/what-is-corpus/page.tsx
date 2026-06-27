@@ -135,6 +135,17 @@ const adjacent = [
 
 const overviewDiagnosticCommand = "cat what-is-corpus.md";
 
+const overviewJumpLinks = [
+  { label: "Boundaries", href: "#boundaries", signal: "muted" },
+  { label: "Nearby tools", href: "#nearby-tools", signal: "reference" },
+  { label: "Failure modes", href: "#failure-modes", signal: "change" },
+  { label: "The loop", href: "#next-step", signal: "core" },
+] as const satisfies Array<{
+  label: string;
+  href: string;
+  signal: SignalRole;
+}>;
+
 const boundarySteps = [
   {
     label: "01",
@@ -260,6 +271,7 @@ export default function WhatIsCorpusPage() {
       </Section>
 
       <Section
+        id="summary"
         register="01 / summary"
         registerTone="evidence"
         className="overview-summary-grid grid gap-4 lg:grid-cols-[1fr_0.9fr]"
@@ -305,7 +317,33 @@ export default function WhatIsCorpusPage() {
         </PaperArtifact>
       </Section>
 
+      <nav
+        className="overview-section-nav-shell mx-auto w-full max-w-7xl px-6 lg:px-8"
+        aria-label="What is Corpus page sections"
+      >
+        <div className="section-jump-nav">
+          {overviewJumpLinks.map((item, index) => (
+            <a
+              key={item.href}
+              href={item.href}
+              data-color-role={item.signal}
+              className={`section-jump-nav-link section-jump-nav-link-${item.signal} focus-ring group`}
+            >
+              <span className="section-jump-nav-index">
+                {String(index + 2).padStart(2, "0")}
+              </span>
+              <span className="section-jump-nav-label">{item.label}</span>
+              <ArrowRight
+                className="motion-nudge-x h-3.5 w-3.5"
+                aria-hidden="true"
+              />
+            </a>
+          ))}
+        </div>
+      </nav>
+
       <Section
+        id="boundaries"
         register="02 / boundaries"
         registerTone="muted"
         className="reveal grid gap-12 lg:grid-cols-2"
@@ -358,6 +396,7 @@ export default function WhatIsCorpusPage() {
       </Section>
 
       <Section
+        id="nearby-tools"
         register="03 / nearby tools"
         registerTone="reference"
         className="flex flex-col gap-12"
@@ -413,6 +452,7 @@ export default function WhatIsCorpusPage() {
       </Section>
 
       <Section
+        id="failure-modes"
         register="04 / failure modes"
         registerTone="change"
         className="flex flex-col gap-12"
@@ -454,7 +494,7 @@ export default function WhatIsCorpusPage() {
         </ul>
       </Section>
 
-      <Section register="05 / next step" registerTone="core">
+      <Section id="next-step" register="05 / next step" registerTone="core">
         <Card
           signal="core"
           screws

@@ -29,13 +29,13 @@ the public marketing palette. Public accents stay warm or tempered:
 
 | Role | Hue | Job | Pattern |
 |---|---:|---|---|
-| Core | `#D88A24` | Corpus identity, primary action, active state, current loop step | gilt rail / seal line |
-| Evidence | `#AAB96A` | review proof, verified output, pass states | checkpoint ticks |
-| Greenfield | `#5FBE73` | new repo, starter kit, first-run setup only | upright field rows |
-| Brownfield | `#B47A50` | existing-project adoption, migration, repo history | diagonal survey hatching |
-| Change | `#CC735A` | edits, fixes, run work, blocked or attention states | angled change hatching |
-| Reference | `#70BDB2` | docs, manuals, ledgers, catalogs, read-only rosters | horizontal ledger rules |
-| Muted | `#BF7927` | hardware chrome, counters, low-emphasis labels | brass ruler marks |
+| Core | `#D88A24` / `HSL(34 71% 49%)` | Corpus identity, primary action, active state, current loop step | gilt rail / seal line |
+| Evidence | `#B8C56F` / `HSL(69 43% 60%)` | review proof, verified output, pass states | checkpoint ticks |
+| Greenfield | `#75C985` / `HSL(131 44% 62%)` | new repo, starter kit, first-run setup only | upright field rows |
+| Brownfield | `#C08452` / `HSL(27 47% 54%)` | existing-project adoption, migration, repo history | diagonal survey hatching |
+| Change | `#D07960` / `HSL(13 54% 60%)` | edits, fixes, run work, blocked or attention states | angled change hatching |
+| Reference | `#82C8BD` / `HSL(171 39% 65%)` | docs, manuals, ledgers, catalogs, read-only rosters | horizontal ledger rules |
+| Muted | `#BF7927` / `HSL(32 66% 45%)` | hardware chrome, counters, low-emphasis labels | brass ruler marks |
 
 Color is assigned from the object or action, not from mood:
 
