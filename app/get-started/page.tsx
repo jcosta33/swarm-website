@@ -22,6 +22,7 @@ import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
 import { PageHero } from "../components/PageHero";
 import { PilotLamp } from "../components/PilotLamp";
+import { SignalKey } from "../components/SignalKey";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -159,25 +160,18 @@ const setupPath = [
   signal: SignalRole;
 }>;
 
-const setupRoutes = [
+const setupSignalKey = [
   {
-    role: "greenfield",
     label: "Greenfield",
-    path: "New repo",
-    note: "Fresh workspace",
+    role: "greenfield",
+    detail: "new repo / starter kit",
   },
   {
-    role: "brownfield",
     label: "Brownfield",
-    path: "Existing project",
-    note: "Adopt current repo",
+    role: "brownfield",
+    detail: "existing project adoption",
   },
-] as const satisfies Array<{
-  role: Extract<SignalRole, "greenfield" | "brownfield">;
-  label: string;
-  path: string;
-  note: string;
-}>;
+] as const;
 
 export default function GetStartedPage() {
   return (
@@ -259,25 +253,14 @@ export default function GetStartedPage() {
           </div>
           <Heading className="mt-3">Pick a setup path</Heading>
           <p className="mt-3 max-w-2xl text-concrete-400">
-            Start clean for a greenfield workspace. Adopt the kit when the code
-            already exists.
+            Use greenfield for a new repo. Use brownfield when the code already
+            exists.
           </p>
-          <ul className="setup-route-key mt-5" aria-label="Setup routes">
-            {setupRoutes.map((route) => (
-              <li
-                key={route.role}
-                className={`setup-route-key-item setup-route-key-${route.role}`}
-                aria-label={`${route.label}: ${route.path}. ${route.note}.`}
-              >
-                <PilotLamp color={route.role} className="scale-75" />
-                <span className="setup-route-key-copy">
-                  <span>{route.label}</span>
-                  <span>{route.path}</span>
-                </span>
-                <span className="setup-route-key-note">{route.note}</span>
-              </li>
-            ))}
-          </ul>
+          <SignalKey
+            ariaLabel="Setup path color roles"
+            items={setupSignalKey}
+            className="setup-choice-signal-key mt-5"
+          />
         </div>
         <Card
           signal="greenfield"
