@@ -231,7 +231,7 @@ const mcpPageNav = [
   { label: "Config", href: "#mcp-config", signal: "reference" },
   { label: "Limits", href: "#guardrails", signal: "change" },
   { label: "Tools", href: "#mcp-tools", signal: "reference" },
-  { label: "Install", href: "#install", signal: "reference" },
+  { label: "Install", href: "#install", signal: "core" },
   { label: "Source", href: "#source", signal: "reference" },
 ] as const satisfies Array<{
   label: string;
@@ -544,11 +544,11 @@ export default function McpPage() {
       <Section
         id="install"
         register="05 / install"
-        registerTone="reference"
+        registerTone="core"
         className="grid scroll-mt-28 gap-6 lg:grid-cols-[0.9fr_1.1fr]"
       >
         <div>
-          <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
+          <div className={`section-kicker ${signalRoles.core.sectionKicker}`}>
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>install.sh</span>
           </div>
