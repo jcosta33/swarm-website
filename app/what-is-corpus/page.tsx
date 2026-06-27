@@ -362,6 +362,7 @@ export default function WhatIsCorpusPage() {
           {adjacent.map((row, index) => (
             <li key={row.product}>
               <Card
+                signal={row.signal}
                 className={`relation-card relation-card-${row.signal} group h-full border-panel-border ${signalRoles[row.signal].hoverBorder}`}
               >
                 <div className="relation-card-head">
@@ -417,6 +418,7 @@ export default function WhatIsCorpusPage() {
           {failureModes.map((fm) => (
             <li key={fm.mode}>
               <Card
+                signal="change"
                 screws
                 className={`group h-full border-panel-border ${signalRoles.change.hoverBorder}`}
               >
@@ -442,6 +444,7 @@ export default function WhatIsCorpusPage() {
 
       <Section register="05 / next step" registerTone="core">
         <Card
+          signal="core"
           screws
           contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
         >

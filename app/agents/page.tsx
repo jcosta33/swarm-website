@@ -417,6 +417,7 @@ export default function AgentsPage() {
                   className="group block rounded-sm focus-ring"
                 >
                   <Card
+                    signal="reference"
                     className={`h-full border-panel-border ${signalRoles.reference.hoverBorder}`}
                   >
                     <div className="catalog-row catalog-row-reference flex items-start justify-between gap-4">
@@ -481,6 +482,7 @@ export default function AgentsPage() {
                   className="group block rounded-sm focus-ring"
                 >
                   <Card
+                    signal="change"
                     className={`h-full border-panel-border ${signalRoles.change.hoverBorder}`}
                   >
                     <div className="catalog-row catalog-row-change flex items-start justify-between gap-4">
@@ -517,7 +519,7 @@ export default function AgentsPage() {
         registerTone="muted"
         className="grid gap-6 lg:grid-cols-2"
       >
-        <Card screws className="border-panel-border">
+        <Card signal="muted" screws className="border-panel-border">
           <div className="section-kicker section-kicker-muted">
             <ShieldCheck className="h-4 w-4" />
             <span>scope.note — toolable, not a wall</span>
@@ -538,7 +540,7 @@ export default function AgentsPage() {
           </p>
         </Card>
 
-        <Card screws className="border-panel-border">
+        <Card signal="reference" screws className="border-panel-border">
           <div className="section-kicker section-kicker-reference">
             <Network className="h-4 w-4" />
             <span>delegation trace</span>
@@ -567,7 +569,7 @@ export default function AgentsPage() {
         registerTone="reference"
         className="grid gap-6 lg:grid-cols-2"
       >
-        <Card screws className="h-full border-panel-border">
+        <Card signal="muted" screws className="h-full border-panel-border">
           <div className="section-kicker section-kicker-muted">
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>portability</span>
@@ -585,7 +587,7 @@ export default function AgentsPage() {
           </p>
         </Card>
 
-        <Card screws className="h-full border-panel-border">
+        <Card signal="reference" screws className="h-full border-panel-border">
           <div className="section-kicker section-kicker-muted">
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>catalog — browse on github</span>

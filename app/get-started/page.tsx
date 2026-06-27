@@ -513,6 +513,7 @@ export default function GetStartedPage() {
         className="grid scroll-mt-28 gap-6 md:grid-cols-2"
       >
         <Card
+          signal="reference"
           screws
           className="h-full"
           contentClassName="flex h-full flex-col gap-6"
@@ -534,6 +535,7 @@ export default function GetStartedPage() {
         </Card>
 
         <Card
+          signal="reference"
           screws
           className="h-full"
           contentClassName="flex h-full flex-col gap-6"

@@ -355,6 +355,7 @@ export default function McpPage() {
             return (
               <li key={item.title}>
                 <Card
+                  signal={item.signal}
                   screws
                   className={`mcp-guardrail-card mcp-guardrail-card-${item.signal} h-full border-panel-border ${signalRoles[item.signal].hoverBorder}`}
                   contentClassName="flex h-full flex-col"
@@ -382,7 +383,7 @@ export default function McpPage() {
         registerTone="reference"
         className="grid scroll-mt-28 gap-6 lg:grid-cols-2"
       >
-        <Card screws className="mcp-fact-card border-panel-border">
+        <Card signal="reference" screws className="mcp-fact-card border-panel-border">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
             <Cable className="h-4 w-4" aria-hidden="true" />
             <span>tools / 10</span>
@@ -418,7 +419,7 @@ export default function McpPage() {
           </div>
         </Card>
 
-        <Card screws className="mcp-fact-card border-panel-border">
+        <Card signal="reference" screws className="mcp-fact-card border-panel-border">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
             <FileJson className="h-4 w-4" aria-hidden="true" />
             <span>resources + prompts</span>
@@ -530,6 +531,7 @@ export default function McpPage() {
         className="scroll-mt-28"
       >
         <Card
+          signal="reference"
           screws
           contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
         >

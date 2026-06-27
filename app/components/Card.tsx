@@ -1,5 +1,9 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
+import {
+  normalizeSignalRole,
+  type SignalInput,
+} from "./signalStyles";
 
 export interface CardProps {
   children: ReactNode;
@@ -13,6 +17,7 @@ export interface CardProps {
   screws?: boolean;
   brushed?: boolean;
   rivets?: boolean;
+  signal?: SignalInput;
 }
 
 export function Card({
@@ -26,14 +31,19 @@ export function Card({
   screws = false,
   brushed = false,
   rivets = false,
+  signal,
 }: CardProps) {
+  const signalRole = signal ? normalizeSignalRole(signal) : undefined;
+  const signalSurfaceClass = signalRole
+    ? `signal-surface signal-surface-${signalRole}`
+    : "";
   const chromeClassName = `panel-raised group relative overflow-hidden ${
     screws ? "screw-corners screw-corners-bottom" : ""
   } ${
     href
       ? "focus-ring block text-left no-underline hover:border-brass/75 hover:shadow-[0_18px_42px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(240,226,204,0.08)]"
       : ""
-  } p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 motion-reduce:hover:translate-y-0 sm:p-7 ${className}`;
+  } ${signalSurfaceClass} p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-px active:translate-y-0 motion-reduce:hover:translate-y-0 sm:p-7 ${className}`;
   const content = (
     <>
       {brushed && (

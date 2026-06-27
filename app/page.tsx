@@ -461,6 +461,7 @@ export default function HomePage() {
               return (
                 <Card
                   key={feature.title}
+                  signal={feature.accent}
                   screws
                   className={`accent-card accent-card-${feature.accent} h-full`}
                 >

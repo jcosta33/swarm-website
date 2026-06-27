@@ -341,6 +341,7 @@ export default function TheLoopPage() {
 
       <Section register="03 / start" registerTone="core">
         <Card
+          signal="core"
           screws
           contentClassName="flex flex-col gap-8 md:flex-row md:items-center md:justify-between"
         >

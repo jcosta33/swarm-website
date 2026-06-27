@@ -7,6 +7,7 @@ import { Panel } from "../components/Panel";
 import { TerminalWindow } from "../components/TerminalWindow";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { PageHero } from "../components/PageHero";
+import type { SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "Colophon — Corpus",
@@ -40,6 +41,7 @@ const trace = [
     text: "Design decisions, specs, tasks, reviews, and findings live in this repo.",
     href: "/the-loop/",
     cta: "Follow the loop",
+    signal: "core",
   },
   {
     label: "OUTPUT",
@@ -48,6 +50,7 @@ const trace = [
     href: "https://github.com/jcosta33/corpus-website",
     cta: "Open source",
     external: true,
+    signal: "reference",
   },
   {
     label: "CONTENT",
@@ -56,8 +59,18 @@ const trace = [
     href: "/docs/",
     cta: "Read the docs",
     newTab: true,
+    signal: "reference",
   },
-];
+] satisfies Array<{
+  label: string;
+  title: string;
+  text: string;
+  href: string;
+  cta: string;
+  external?: boolean;
+  newTab?: boolean;
+  signal: SignalRole;
+}>;
 
 export default function ColophonPage() {
   return (
@@ -153,6 +166,7 @@ export default function ColophonPage() {
           {trace.map((item, index) => (
             <Card
               key={item.title}
+              signal={item.signal}
               href={item.href}
               target={item.external || item.newTab ? "_blank" : undefined}
               rel={item.external || item.newTab ? "noopener noreferrer" : undefined}

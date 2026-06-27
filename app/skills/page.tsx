@@ -479,6 +479,7 @@ export default function SkillsPage() {
         className="grid scroll-mt-28 gap-6 lg:grid-cols-2"
       >
         <Card
+          signal="reference"
           screws
           className="h-full border-panel-border hover-border-signal-reference"
         >
@@ -500,7 +501,7 @@ export default function SkillsPage() {
           </p>
         </Card>
 
-        <Card screws className="h-full border-panel-border">
+        <Card signal="muted" screws className="h-full border-panel-border">
           <div className="section-kicker section-kicker-muted">
             <ShieldCheck className="h-4 w-4" />
             <span>security.note — no runtime</span>
