@@ -76,7 +76,12 @@ export default function ColophonPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
       <Section className="ambient-header">
-        <PageHero eyebrow="site record / build notes" title="Colophon" tone="muted">
+        <PageHero
+          eyebrow="site record / build notes"
+          motif="manual"
+          title="Colophon"
+          tone="muted"
+        >
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-concrete-400 sm:text-xl">
             How this website is built, sourced, and shipped.
           </p>

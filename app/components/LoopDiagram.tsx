@@ -79,9 +79,9 @@ export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
   });
 
   return (
-    <div className="reveal flex flex-col gap-8">
-      <div className="panel-raised grid gap-8 p-5 md:grid-cols-[18rem_1fr] md:items-center">
-        <div className="relative mx-auto aspect-square w-full max-w-[18rem]">
+    <div className="loop-diagram reveal flex min-w-0 flex-col gap-8">
+      <div className="loop-diagram-summary panel-raised grid min-w-0 max-w-full gap-8 p-5 md:grid-cols-[18rem_1fr] md:items-center">
+        <div className="loop-diagram-seal relative mx-auto aspect-square w-full max-w-[18rem]">
           <svg
             viewBox="0 0 100 100"
             className="h-full w-full"
@@ -160,14 +160,14 @@ export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
             ))}
           </svg>
         </div>
-        <div>
+        <div className="loop-diagram-copy min-w-0">
           <p className="font-mono text-xs uppercase tracking-[0.12em] text-brass">
             workflow / six steps
           </p>
           <h2 className="mt-2 font-heading text-2xl font-bold text-concrete-100">
             The loop at a glance.
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-concrete-400">
+          <p className="mt-3 max-w-full text-sm leading-relaxed text-concrete-400 sm:max-w-2xl">
             The mark maps to Pull, Spec, Task, Run, Review, and Close. Each
             pass leaves a file the next step can use.
           </p>

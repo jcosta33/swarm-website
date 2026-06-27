@@ -178,6 +178,7 @@ export default function SkillsPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="tool index / agent guides"
+          motif="catalog"
           tone="reference"
           title={
             <>

@@ -9,12 +9,23 @@ const TITLE_SIZES = {
   hero: "sm:text-6xl lg:text-7xl", // the larger homepage hero
 } as const;
 
+const HERO_MOTIFS = {
+  loop: "page-hero-motif-loop",
+  overview: "page-hero-motif-overview",
+  setup: "page-hero-motif-setup",
+  catalog: "page-hero-motif-catalog",
+  bridge: "page-hero-motif-bridge",
+  manual: "page-hero-motif-manual",
+  internal: "page-hero-motif-internal",
+} as const;
+
 export interface PageHeroProps {
   eyebrow: ReactNode;
   title: ReactNode;
   cursor?: boolean;
   titleSize?: keyof typeof TITLE_SIZES;
   tone?: SignalRole;
+  motif?: keyof typeof HERO_MOTIFS;
   children?: ReactNode;
 }
 
@@ -24,12 +35,19 @@ export function PageHero({
   cursor = false,
   titleSize = "default",
   tone = "core",
+  motif = "overview",
   children,
 }: PageHeroProps) {
   return (
     <div
-      className={`page-hero page-hero-tone-${tone} motion-surface mx-auto w-full min-w-0 max-w-4xl text-center`}
+      className={`page-hero page-hero-tone-${tone} ${HERO_MOTIFS[motif]} motion-surface mx-auto w-full min-w-0 max-w-4xl text-center`}
     >
+      <div className="page-hero-motif" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
       <Eyebrow
         className="mb-6"
         icon={<PilotLamp color={tone} pulse className="scale-90" />}

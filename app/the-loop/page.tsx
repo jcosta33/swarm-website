@@ -206,6 +206,7 @@ export default function TheLoopPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="workflow / six steps"
+          motif="loop"
           title={
             <>
               The <span className="text-corpus-yellow">loop</span>

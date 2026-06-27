@@ -248,6 +248,7 @@ export default function HomePage() {
         <Section className="ambient-header relative z-10">
           <PageHero
             eyebrow="workflow / six steps"
+            motif="loop"
             titleSize="hero"
             title="Corpus"
           >

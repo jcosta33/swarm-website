@@ -176,7 +176,7 @@ const commandFamilies = [
     commands: "init · update · new · pull · agents emit",
     detail: "Create or refresh kit-owned files.",
     icon: Blocks,
-    signal: "core",
+    signal: "greenfield",
   },
   {
     label: "Check",
@@ -218,6 +218,7 @@ export default function CliPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="corpus-cli — reference implementation"
+          motif="catalog"
           tone="reference"
           title={
             <>

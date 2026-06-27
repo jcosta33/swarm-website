@@ -11,7 +11,7 @@ export interface SignalStatProps {
 export function SignalStat({
   label,
   value,
-  signal = "core",
+  signal = "reference",
   valueClassName = "font-heading text-3xl font-bold text-concrete-100",
 }: SignalStatProps) {
   return (

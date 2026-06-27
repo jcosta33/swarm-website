@@ -208,6 +208,7 @@ export default function AgentsPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="worker files / agent roles"
+          motif="catalog"
           tone="reference"
           title={
             <>
@@ -244,7 +245,7 @@ export default function AgentsPage() {
         >
           <p className="repo-manifest-label">role files</p>
           <div className="repo-manifest-grid">
-            <SignalStat label="workers" value="8" signal="core" />
+            <SignalStat label="workers" value="8" signal="reference" />
             <SignalStat label="hooks" value="2" signal="muted" />
             <SignalStat
               label="home"

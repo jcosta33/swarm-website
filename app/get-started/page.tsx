@@ -128,7 +128,7 @@ const setupPath = [
     text: "Start fresh or adopt an existing repo.",
     icon: Rocket,
     href: "#choose",
-    signal: "core",
+    signal: "muted",
   },
   {
     label: "Copy",
@@ -185,6 +185,7 @@ export default function GetStartedPage() {
       <Section className="ambient-header">
         <PageHero
           eyebrow="setup / first workspace"
+          motif="setup"
           title="Get started"
           tone="core"
         >
