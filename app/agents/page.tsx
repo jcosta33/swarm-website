@@ -26,6 +26,7 @@ import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
 import { SignalStat } from "../components/SignalStat";
+import { SignalKey } from "../components/SignalKey";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -198,6 +199,29 @@ const rosterGroups = [
   }>;
 }>;
 
+const agentSignalKey = [
+  {
+    label: "Core",
+    role: "core",
+    detail: "spec intake and loop-start records",
+  },
+  {
+    label: "Evidence",
+    role: "evidence",
+    detail: "review, verify, audit",
+  },
+  {
+    label: "Reference",
+    role: "reference",
+    detail: "explore, research, docs",
+  },
+  {
+    label: "Change",
+    role: "change",
+    detail: "challenge and bounded authoring",
+  },
+] as const;
+
 function repoHref(agent: string) {
   return `https://github.com/jcosta33/corpus-agents/blob/main/agents/${agent}.md`;
 }
@@ -266,6 +290,11 @@ export default function AgentsPage() {
         registerTone="muted"
         className="agent-roster-grid grid gap-4 lg:grid-cols-2"
       >
+        <SignalKey
+          ariaLabel="Agent roster color roles"
+          items={agentSignalKey}
+          className="lg:col-span-2"
+        />
         {rosterGroups.map((group, groupIndex) => (
           <Panel
             key={group.title}

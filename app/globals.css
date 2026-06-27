@@ -578,6 +578,130 @@ body::after {
   color: var(--signal-muted);
 }
 
+.signal-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signal-key-item {
+  --key-signal: var(--signal-core);
+  --key-rgb: var(--signal-core-rgb);
+  --key-pattern: var(--signal-pattern-core);
+  --key-mark: var(--signal-mark-core);
+  position: relative;
+  display: inline-flex;
+  min-height: 3.1rem;
+  min-width: min(100%, 12rem);
+  flex: 1 1 12rem;
+  align-items: center;
+  gap: 0.7rem;
+  overflow: hidden;
+  border: 1px solid rgba(var(--key-rgb), 0.34);
+  border-radius: var(--radius-control);
+  background:
+    linear-gradient(90deg, rgba(var(--key-rgb), 0.11), transparent 48%),
+    var(--key-mark),
+    var(--key-pattern),
+    rgba(26, 21, 16, 0.72);
+  padding: 0.62rem 0.82rem;
+  box-shadow:
+    inset 2px 0 0 rgba(var(--key-rgb), 0.42),
+    inset 0 1px 0 rgba(240, 226, 204, 0.055);
+}
+
+.signal-key-item::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--key-rgb), 0.46),
+    transparent
+  );
+  opacity: 0.72;
+}
+
+.signal-key-lamp {
+  flex: 0 0 auto;
+}
+
+.signal-key-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.16rem;
+  line-height: 1.15;
+}
+
+.signal-key-label {
+  color: var(--key-signal);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.66rem;
+  font-weight: 760;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.signal-key-detail {
+  color: var(--color-concrete-300);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.signal-key-item-core {
+  --key-signal: var(--signal-core);
+  --key-rgb: var(--signal-core-rgb);
+  --key-pattern: var(--signal-pattern-core);
+  --key-mark: var(--signal-mark-core);
+}
+
+.signal-key-item-evidence {
+  --key-signal: var(--signal-evidence);
+  --key-rgb: var(--signal-evidence-rgb);
+  --key-pattern: var(--signal-pattern-evidence);
+  --key-mark: var(--signal-mark-evidence);
+}
+
+.signal-key-item-greenfield {
+  --key-signal: var(--signal-greenfield);
+  --key-rgb: var(--signal-greenfield-rgb);
+  --key-pattern: var(--signal-pattern-greenfield);
+  --key-mark: var(--signal-mark-greenfield);
+}
+
+.signal-key-item-brownfield {
+  --key-signal: var(--signal-brownfield);
+  --key-rgb: var(--signal-brownfield-rgb);
+  --key-pattern: var(--signal-pattern-brownfield);
+  --key-mark: var(--signal-mark-brownfield);
+}
+
+.signal-key-item-change {
+  --key-signal: var(--signal-change);
+  --key-rgb: var(--signal-change-rgb);
+  --key-pattern: var(--signal-pattern-change);
+  --key-mark: var(--signal-mark-change);
+}
+
+.signal-key-item-reference {
+  --key-signal: var(--signal-reference);
+  --key-rgb: var(--signal-reference-rgb);
+  --key-pattern: var(--signal-pattern-reference);
+  --key-mark: var(--signal-mark-reference);
+}
+
+.signal-key-item-muted {
+  --key-signal: var(--signal-muted);
+  --key-rgb: var(--signal-muted-rgb);
+  --key-pattern: var(--signal-pattern-muted);
+  --key-mark: var(--signal-mark-muted);
+}
+
 .badge-signal {
   --badge-signal: var(--signal-core);
   --badge-rgb: var(--signal-core-rgb);

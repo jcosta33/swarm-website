@@ -30,6 +30,7 @@ import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
 import { SignalStat } from "../components/SignalStat";
+import { SignalKey } from "../components/SignalKey";
 import { signalRoles } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -147,7 +148,7 @@ const authoring = [
 
 const skillRoutes = [
   {
-    label: "Review",
+    label: "Review guides",
     href: "#review-guides",
     count: "4",
     icon: ShieldCheck,
@@ -155,7 +156,7 @@ const skillRoutes = [
     signal: "evidence",
   },
   {
-    label: "Change",
+    label: "Change guides",
     href: "#change-guides",
     count: "10",
     icon: Hammer,
@@ -163,12 +164,30 @@ const skillRoutes = [
     signal: "change",
   },
   {
-    label: "Write",
+    label: "Guide format",
     href: "#write-skill",
     count: "1",
     icon: FileCode,
-    text: "The shape for adding a new guide without making it vague.",
+    text: "The file shape for adding a guide without making it vague.",
     signal: "reference",
+  },
+] as const;
+
+const skillSignalKey = [
+  {
+    label: "Review",
+    role: "evidence",
+    detail: "proof, judgment, research",
+  },
+  {
+    label: "Change",
+    role: "change",
+    detail: "implementation work",
+  },
+  {
+    label: "Format",
+    role: "reference",
+    detail: "guide files and catalogs",
   },
 ] as const;
 
@@ -234,7 +253,15 @@ export default function SkillsPage() {
         </Card>
       </Section>
 
-      <Section register="02 / categories" registerTone="muted">
+      <Section
+        register="02 / categories"
+        registerTone="muted"
+        className="space-y-4"
+      >
+        <SignalKey
+          ariaLabel="Skill catalog color roles"
+          items={skillSignalKey}
+        />
         <Panel brushed screws className="p-0">
           <nav
             className="process-strip process-strip-signal-reference grid gap-px bg-panel-border md:grid-cols-3"
@@ -247,7 +274,7 @@ export default function SkillsPage() {
                   key={route.href}
                   href={route.href}
                   className={`${signalRoles[route.signal].processItem} focus-ring group block bg-panel-raised/95 p-5 transition-colors duration-150 hover:bg-panel sm:p-6`}
-                  aria-label={`Jump to ${route.label.toLowerCase()} guides`}
+                  aria-label={`Jump to ${route.label.toLowerCase()}`}
                 >
                   <div className="flex items-center gap-3">
                     <HexBadge color={route.signal} className="h-10 w-10 shrink-0">
@@ -262,7 +289,7 @@ export default function SkillsPage() {
                       <h2
                         className={`font-heading text-lg font-bold ${signalRoles[route.signal].text}`}
                       >
-                        {route.label} guides
+                        {route.label}
                       </h2>
                     </div>
                     <ArrowRight
