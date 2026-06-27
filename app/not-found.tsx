@@ -10,7 +10,6 @@ import {
 import { Section } from "./components/Section";
 import { ActionLink } from "./components/ActionLink";
 import { PaperArtifact } from "./components/PaperArtifact";
-import { Badge } from "./components/Badge";
 import { signalRoles, type SignalRole } from "./components/signalStyles";
 
 export const metadata = {
@@ -23,21 +22,21 @@ const recoveryRoutes = [
   {
     href: "/docs/",
     label: "Docs index",
-    text: "Find the canonical manual page.",
+    text: "Open the manual index.",
     icon: BookOpen,
     signal: "reference",
   },
   {
     href: "/the-loop/",
     label: "The loop",
-    text: "Review the six-step workflow.",
+    text: "See the workflow.",
     icon: GitBranch,
     signal: "core",
   },
   {
     href: "/get-started/",
     label: "Get started",
-    text: "Set up a new or existing workspace.",
+    text: "Set up a workspace.",
     icon: ArrowRight,
     signal: "core",
   },
@@ -51,41 +50,35 @@ const recoveryRoutes = [
 
 export default function NotFoundPage() {
   return (
-    <Section className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-8 overflow-hidden py-20 sm:py-24 md:min-h-[calc(100svh-22rem)] md:grid-cols-[minmax(18rem,0.85fr)_minmax(20rem,0.95fr)] md:items-start md:gap-12 md:pt-28 lg:gap-16">
-      <div className="min-w-0 text-center md:text-left">
-        <h1 className="font-heading text-6xl font-bold text-corpus-yellow">
+    <Section className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 overflow-hidden py-14 sm:py-16 md:min-h-[calc(100svh-28rem)] md:grid-cols-[minmax(18rem,0.78fr)_minmax(20rem,0.95fr)] md:items-center md:gap-10 md:py-20 lg:gap-14">
+      <div className="min-w-0 rounded-panel border border-panel-border bg-panel-raised/70 p-5 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)] sm:p-6">
+        <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-signal-change">
           404
-        </h1>
-        <p className="mt-4 text-2xl font-semibold text-concrete-100">
+        </p>
+        <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-concrete-100 sm:text-5xl">
           Page not found.
+        </h1>
+        <p className="mt-3 max-w-md text-base leading-7 text-concrete-400">
+          The path is not in the current site map. Check the address or use the
+          manual index below.
         </p>
-        <p className="mx-auto mt-2 max-w-md text-concrete-400 md:mx-0">
-          Check the URL, search the docs, or go back home.
-        </p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 md:justify-start">
-          <Badge variant="blocked">missing route</Badge>
-          <Badge variant="draft">no exported page</Badge>
-        </div>
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:items-start md:justify-start">
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
           <ActionLink href="/">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Back to Corpus
           </ActionLink>
           <ActionLink href="/docs/">
-            <Search className="h-4 w-4" aria-hidden="true" /> Search docs
+            <Search className="h-4 w-4" aria-hidden="true" /> Open docs
           </ActionLink>
         </div>
       </div>
       <div className="grid w-full max-w-xl gap-5 md:justify-self-end">
         <PaperArtifact
           label="trace"
-          title="missing route"
+          title="route record"
           meta="no matching exported page"
-          className="w-full"
+          className="w-full !p-4 sm:!p-5"
         >
-          <p>The requested path was not found in the site map.</p>
-          <p className="mt-4 text-pencil">
-            The docs index is usually the fastest way back.
-          </p>
+          <p>Nothing was served for this URL.</p>
         </PaperArtifact>
         <nav
           aria-label="Recovery routes"
@@ -97,7 +90,7 @@ export default function NotFoundPage() {
               <Link
                 key={route.href}
                 href={route.href}
-                className={`focus-ring group flex min-h-20 items-center gap-4 border-b border-panel-border/80 px-4 py-3 text-concrete-300 transition-colors last:border-b-0 hover:bg-panel hover:text-concrete-100 ${signalRoles[route.signal].processItem}`}
+                className={`focus-ring group flex min-h-16 items-center gap-3 border-b border-panel-border/80 px-4 py-3 text-concrete-300 transition-colors last:border-b-0 hover:bg-panel hover:text-concrete-100 ${signalRoles[route.signal].processItem}`}
               >
                 <span
                   className={`font-mono text-xs font-semibold ${signalRoles[route.signal].text}`}
