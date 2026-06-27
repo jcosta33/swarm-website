@@ -31,7 +31,6 @@ import { Badge } from "../components/Badge";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { TextLink } from "../components/TextLink";
 import { SignalStat } from "../components/SignalStat";
-import { SignalKey } from "../components/SignalKey";
 import { signalRoles } from "../components/signalStyles";
 
 export const metadata: Metadata = {
@@ -174,24 +173,6 @@ const skillRoutes = [
   },
 ] as const;
 
-const skillSignalKey = [
-  {
-    label: "Review",
-    role: "evidence",
-    detail: "proof, review, checked claims",
-  },
-  {
-    label: "Change",
-    role: "change",
-    detail: "implementation work",
-  },
-  {
-    label: "Format",
-    role: "reference",
-    detail: "guide files and catalogs",
-  },
-] as const;
-
 export default function SkillsPage() {
   return (
     <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
@@ -268,10 +249,6 @@ export default function SkillsPage() {
         registerTone="muted"
         className="space-y-4"
       >
-        <SignalKey
-          ariaLabel="Skill catalog color roles"
-          items={skillSignalKey}
-        />
         <Panel brushed screws className="p-0">
           <nav
             className="process-strip process-strip-signal-reference grid gap-px bg-panel-border md:grid-cols-3"
