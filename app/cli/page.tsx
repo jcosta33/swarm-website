@@ -333,7 +333,7 @@ export default function CliPage() {
                     className="cli-command-link focus-ring group block h-full p-5 transition-colors duration-150 hover:bg-panel sm:p-6"
                     aria-label={`Jump to ${family.label.toLowerCase()} commands`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="cli-command-heading flex items-center gap-3">
                       <HexBadge
                         color={family.signal}
                         className="h-10 w-10 shrink-0"
@@ -346,7 +346,7 @@ export default function CliPage() {
                         >
                           {String(index + 1).padStart(2, "0")}
                         </p>
-                        <h2 className="font-heading text-lg font-bold text-concrete-100">
+                        <h2 className="cli-command-title font-heading text-lg font-bold text-concrete-100">
                           {family.label}
                         </h2>
                       </div>
@@ -355,10 +355,10 @@ export default function CliPage() {
                         aria-hidden="true"
                       />
                     </div>
-                    <p className="mt-3 font-mono text-xs leading-relaxed text-signal-reference">
+                    <p className="cli-command-code mt-3 font-mono text-xs leading-relaxed text-signal-reference">
                       {family.commands}
                     </p>
-                    <p className="mt-2 text-sm leading-relaxed text-concrete-400">
+                    <p className="cli-command-detail mt-2 text-sm leading-relaxed text-concrete-400">
                       {family.detail}
                     </p>
                   </a>
