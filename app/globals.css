@@ -514,46 +514,31 @@ body::after {
 }
 
 .link-motion > svg {
-  transition: transform 150ms ease;
-}
-
-.link-motion:hover > svg,
-.link-motion:focus-visible > svg {
-  transform: translateX(0.18rem);
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
 }
 
 .motion-nudge-x,
 .motion-nudge-x-centered {
   --motion-nudge-x: 0px;
-  transition: transform 150ms ease;
+  transition:
+    color 150ms ease,
+    opacity 150ms ease;
 }
 
 .motion-nudge-x {
-  transform: translateX(var(--motion-nudge-x));
+  transform: none;
 }
 
 .motion-nudge-x-centered {
-  transform: translateY(-50%) translateX(var(--motion-nudge-x));
-}
-
-.group:hover .motion-nudge-x,
-.group:focus-within .motion-nudge-x,
-.group:hover .motion-nudge-x-centered,
-.group:focus-within .motion-nudge-x-centered {
-  --motion-nudge-x: 0.125rem;
+  transform: translateY(-50%);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .link-motion::before,
   .link-motion > svg {
     transform: none !important;
-  }
-
-  .group:hover .motion-nudge-x,
-  .group:focus-within .motion-nudge-x,
-  .group:hover .motion-nudge-x-centered,
-  .group:focus-within .motion-nudge-x-centered {
-    --motion-nudge-x: 0px;
   }
 }
 
@@ -3457,12 +3442,14 @@ body::after {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  background-color: rgba(28, 22, 16, 0.96);
   background-image:
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.04), transparent 38%),
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.28) 0 2px, transparent 2px),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.018), transparent 34%),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.22) 0 2px, transparent 2px),
     var(--signal-pattern-muted);
   transition:
     border-color 160ms ease,
+    background-color 160ms ease,
     box-shadow 160ms ease;
 }
 
@@ -3477,14 +3464,13 @@ body::after {
 .process-strip > :is(li, a, div)::before {
   inset: 0;
   opacity: 0;
-  transform: translateX(-0.75rem);
   background:
     linear-gradient(
       112deg,
       transparent 0%,
-      rgba(var(--process-rgb), 0.028) 42%,
-      rgba(var(--process-rgb), 0.105) 50%,
-      rgba(var(--process-rgb), 0.028) 58%,
+      rgba(var(--process-rgb), 0.018) 42%,
+      rgba(var(--process-rgb), 0.07) 50%,
+      rgba(var(--process-rgb), 0.018) 58%,
       transparent 100%
     ),
     radial-gradient(
@@ -3493,8 +3479,7 @@ body::after {
       transparent 62%
     );
   transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+    opacity 180ms ease;
 }
 
 .process-strip > :is(li, a, div)::after {
@@ -3505,8 +3490,8 @@ body::after {
   opacity: 0.56;
   background: linear-gradient(
     90deg,
-    rgba(var(--process-rgb), 0.52),
-    rgba(var(--process-rgb), 0.14),
+    rgba(var(--process-rgb), 0.34),
+    rgba(var(--process-rgb), 0.08),
     transparent
   );
 }
@@ -3524,20 +3509,11 @@ body::after {
 
 .process-strip > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover)::before {
   opacity: 1;
-  transform: translateX(0);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .process-strip
-    :is(a:hover, a:focus-visible)
-    .lucide-arrow-right:not(.motion-nudge-x):not(.motion-nudge-x-centered) {
-    color: var(--process-signal);
-    transform: translateX(0.2rem);
-  }
 }
 
 .process-strip > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover) {
   border-color: rgba(var(--process-rgb), 0.46);
+  background-color: rgba(32, 25, 18, 0.98);
   box-shadow:
     inset 0 0 0 1px rgba(var(--process-rgb), 0.08),
     inset 0 1px 0 rgba(240, 226, 204, 0.05),
@@ -5248,13 +5224,11 @@ body::after {
 .panel-raised:hover > .surface-engraving,
 .panel-raised:focus-within > .surface-engraving {
   opacity: 0.66;
-  transform: translateX(0.18rem);
 }
 
 .panel-raised:hover > .surface-glint,
 .panel-raised:focus-within > .surface-glint {
   opacity: 0.68;
-  transform: translateX(0.35rem);
 }
 
 .panel-inset:hover,
