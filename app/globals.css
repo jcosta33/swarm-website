@@ -6533,7 +6533,7 @@ body::after {
 
 @media (max-width: 40rem) {
   .repo-product-page {
-    gap: 2.25rem;
+    gap: 3rem;
   }
 
   .manifest-pair {
@@ -6777,6 +6777,10 @@ body::after {
   .agent-page-nav-link > svg,
   .section-jump-nav-link > svg {
     display: none;
+  }
+
+  .section-jump-nav {
+    margin-top: -0.35rem;
   }
 }
 
