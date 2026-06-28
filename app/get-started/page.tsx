@@ -259,8 +259,7 @@ export default function GetStartedPage() {
           </div>
           <Heading className="mt-3">Pick a setup path</Heading>
           <p className="mt-3 max-w-2xl text-concrete-400">
-            Use greenfield for a fresh repo. Use brownfield when the repo
-            already has history.
+            Fresh repo uses greenfield. Existing repo uses brownfield.
           </p>
           <SignalKey
             ariaLabel="Setup path color roles"
@@ -298,17 +297,17 @@ export default function GetStartedPage() {
             </span>
           </div>
           <p className="text-concrete-400">
-            Use the GitHub template for a fresh workspace with folders,
-            templates, and guides in place.
+            Template repo with flow folders, templates, and guides already in
+            place.
           </p>
           <dl className="setup-choice-facts">
             <div>
               <dt>Best for</dt>
-              <dd>Starting a greenfield Corpus workspace.</dd>
+              <dd>Greenfield workspace.</dd>
             </div>
             <div>
               <dt>Creates</dt>
-              <dd>Folders, templates, local rules, and a board.</dd>
+              <dd>Templates, local rules, and a board.</dd>
             </div>
           </dl>
           <code className="setup-choice-command">GitHub template</code>
@@ -353,16 +352,16 @@ export default function GetStartedPage() {
             </span>
           </div>
           <p className="text-concrete-400">
-            Copy the kit into your repo. Add specs and tasks beside the code.
+            Copy the kit into this repo. Keep the app structure.
           </p>
           <dl className="setup-choice-facts">
             <div>
               <dt>Best for</dt>
-              <dd>Adding the loop to a brownfield codebase.</dd>
+              <dd>Brownfield adoption.</dd>
             </div>
             <div>
               <dt>Adds</dt>
-              <dd>Corpus records without replacing your app structure.</dd>
+              <dd>Corpus records beside the code.</dd>
             </div>
           </dl>
           <code className="setup-choice-command">cp -R corpus-starter-kit/* .</code>
