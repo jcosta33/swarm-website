@@ -133,11 +133,11 @@ export default function KitchenSinkPage() {
                   turning this page into product theater.
                 </p>
               </div>
-              <div className="process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-3">
+              <div className="kitchen-specimen-strip process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-3">
                 {specimenRegister.map((group, index) => (
                   <div
                     key={group.label}
-                    className="bg-panel-raised/95 p-4 sm:p-6"
+                    className="kitchen-specimen-group bg-panel-raised/95 p-4 sm:p-6"
                   >
                     <p className="font-mono text-xs font-semibold uppercase tracking-wide text-corpus-yellow">
                       {String(index + 1).padStart(2, "0")}
@@ -145,10 +145,10 @@ export default function KitchenSinkPage() {
                     <h3 className="mt-2 font-heading text-lg font-bold text-concrete-100 sm:mt-3 sm:text-xl">
                       {group.label}
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-concrete-400 sm:mt-2 md:min-h-[3.75rem]">
+                    <p className="kitchen-specimen-note mt-1 text-sm leading-relaxed text-concrete-400 sm:mt-2 md:min-h-[3.75rem]">
                       {group.note}
                     </p>
-                    <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-0.5 sm:mt-4 sm:grid-cols-1 sm:gap-y-2">
+                    <ul className="kitchen-specimen-links mt-3 grid grid-cols-2 gap-x-4 gap-y-0.5 sm:mt-4 sm:grid-cols-1 sm:gap-y-2">
                       {group.links.map((link) => (
                         <li key={link.href}>
                           <a
