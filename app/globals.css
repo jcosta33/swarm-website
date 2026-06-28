@@ -630,6 +630,10 @@ body::after {
   list-style: none;
 }
 
+.signal-key + .panel-raised {
+  margin-top: 0.9rem;
+}
+
 .signal-key-item {
   --key-signal: var(--signal-core);
   --key-rgb: var(--signal-core-rgb);
@@ -6457,31 +6461,70 @@ body::after {
 }
 
 @media (max-width: 40rem) {
+  .repo-product-page {
+    gap: 2.25rem;
+  }
+
+  .manifest-pair {
+    gap: 0.8rem;
+  }
+
+  .manifest-pair .paper-artifact {
+    padding: 1rem;
+  }
+
+  .manifest-pair .paper-artifact > div:first-child {
+    gap: 0.65rem;
+    padding-bottom: 0.68rem;
+  }
+
+  .manifest-pair .paper-artifact > div:last-child {
+    margin-top: 0.72rem;
+    font-size: 0.8rem;
+    line-height: 1.65;
+  }
+
   .repo-manifest-content {
-    gap: 0.9rem;
+    gap: 0.7rem;
+  }
+
+  .repo-manifest-label {
+    padding-bottom: 0.26rem;
   }
 
   .repo-manifest-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem;
+    gap: 0.48rem;
   }
 
   .repo-manifest-grid .signal-stat {
-    min-height: 4.35rem;
-    padding: 0.65rem 0.72rem 0.72rem;
+    min-height: 3.65rem;
+    padding: 0.52rem 0.62rem 0.6rem;
   }
 
   .repo-manifest-grid .signal-stat:nth-child(3) {
     grid-column: 1 / -1;
-    min-height: 4.5rem;
+    min-height: 3.75rem;
   }
 
   .repo-manifest-grid .signal-stat p:last-child {
-    margin-top: 0.42rem;
+    margin-top: 0.32rem;
+  }
+
+  .repo-manifest-grid .signal-stat:not(:nth-child(3)) p:last-child {
+    font-size: 1.42rem;
+    line-height: 1.05;
+  }
+
+  .repo-manifest-grid .signal-stat:nth-child(3) p:last-child {
+    font-size: 0.78rem;
+    line-height: 1.25;
   }
 
   .repo-manifest-note {
-    padding-top: 0.9rem;
+    padding-top: 0.62rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
   }
 }
 
