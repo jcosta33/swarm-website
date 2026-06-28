@@ -10,6 +10,7 @@ import {
 import { Section } from "./components/Section";
 import { ActionLink } from "./components/ActionLink";
 import { PaperArtifact } from "./components/PaperArtifact";
+import { PilotLamp } from "./components/PilotLamp";
 import { signalRoles, type SignalRole } from "./components/signalStyles";
 
 export const metadata = {
@@ -50,17 +51,24 @@ const recoveryRoutes = [
 
 export default function NotFoundPage() {
   return (
-    <Section className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 overflow-hidden py-14 sm:py-16 md:min-h-[calc(100svh-28rem)] md:grid-cols-[minmax(18rem,0.78fr)_minmax(20rem,0.95fr)] md:items-center md:gap-10 md:py-20 lg:gap-14">
-      <div className="min-w-0 rounded-panel border border-panel-border bg-panel-raised/70 p-5 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)] sm:p-6">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-signal-change">
-          404
+    <Section className="not-found-shell grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 overflow-hidden py-14 sm:py-16 md:min-h-[calc(100svh-28rem)] md:grid-cols-[minmax(18rem,0.82fr)_minmax(20rem,0.95fr)] md:items-center md:gap-10 md:py-20 lg:gap-14">
+      <div className="not-found-control min-w-0 rounded-panel border border-panel-border bg-panel-raised/70 p-5 text-left shadow-[inset_0_1px_0_rgba(240,226,204,0.05)] sm:p-6">
+        <div className="not-found-status-row">
+          <span className="inline-flex items-center gap-2">
+            <PilotLamp color="change" />
+            <span>route check</span>
+          </span>
+          <span>export map</span>
+        </div>
+        <p className="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-signal-change">
+          status / 404
         </p>
         <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-concrete-100 sm:text-5xl">
           Page not found.
         </h1>
         <p className="mt-3 max-w-md text-base leading-7 text-concrete-400">
-          The path is not in the current site map. Check the address or use the
-          manual index below.
+          The path is not in the current site map. Check the address, then use
+          the manual index or workflow routes.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
           <ActionLink href="/">
@@ -76,7 +84,7 @@ export default function NotFoundPage() {
           label="trace"
           title="route record"
           meta="no matching exported page"
-          className="w-full !p-4 sm:!p-5"
+          className="not-found-artifact w-full !p-4 sm:!p-5"
         >
           <p>Nothing was served for this URL.</p>
         </PaperArtifact>
