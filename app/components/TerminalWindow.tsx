@@ -28,8 +28,8 @@ export function TerminalWindow({
       className={`terminal-window relative min-w-0 overflow-hidden rounded-panel border border-panel-border bg-panel-raised shadow-[inset_0_1px_0_rgba(240,226,204,0.08),inset_0_-2px_0_rgba(0,0,0,0.5)] ${className}`}
     >
       <div className="absolute inset-0 brushed-metal pointer-events-none" />
-      <div className="relative flex min-w-0 flex-wrap items-center justify-between gap-2 border-b border-panel-border bg-panel-raised px-4 py-2">
-        <div className="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+      <div className="terminal-toolbar relative flex min-w-0 flex-wrap items-center justify-between gap-2 border-b border-panel-border bg-panel-raised px-4 py-2">
+        <div className="terminal-lamp-row flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
           <PilotLamp color="change" label="pwr" />
           <PilotLamp color="core" pulse label="check" />
           <PilotLamp color="evidence" label="evidence" />
