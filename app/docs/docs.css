@@ -2471,17 +2471,24 @@
   align-items: center;
   gap: 0.7rem;
   width: 100%;
-  border-radius: var(--radius-panel);
-  padding: 0.34rem 0.42rem;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(var(--docs-index-rgb), 0.16);
+  border-radius: calc(var(--radius-panel) - 2px);
+  background:
+    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.028), transparent 42%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 1.4rem,
+      rgba(var(--docs-index-rgb), 0.018) 1.4rem calc(1.4rem + 1px)
+    );
+  padding: 0.38rem 0.54rem;
   color: var(--color-concrete-200);
   font-weight: 500;
-  text-decoration-color: rgba(var(--docs-index-rgb), 0.42);
-  text-underline-offset: 0.22rem;
-  box-shadow: inset 0 -1px 0 rgba(var(--docs-index-rgb), 0.08);
+  text-decoration: none;
   transition:
-    box-shadow 0.12s,
+    border-color 0.12s,
     color 0.12s,
-    text-decoration-color 0.12s;
+    box-shadow 0.12s;
 }
 
 .docs-prose .docs-index-list a::after {
@@ -2511,14 +2518,16 @@
 
 .docs-index-item-label {
   min-width: 0;
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--docs-index-rgb), 0.44);
-  text-underline-offset: 0.22rem;
+  border-bottom: 1px solid rgba(var(--docs-index-rgb), 0.36);
+  line-height: 1.26;
 }
 
 .docs-prose .docs-index-list a:hover,
 .docs-prose .docs-index-list a:focus-visible {
-  box-shadow: inset 0 -1px 0 rgba(var(--docs-index-rgb), 0.2);
+  border-bottom-color: rgba(var(--docs-index-rgb), 0.36);
+  box-shadow:
+    inset 2px 0 0 rgba(var(--docs-index-rgb), 0.28),
+    inset 0 -1px 0 rgba(var(--docs-index-rgb), 0.12);
   color: var(--docs-index-signal);
 }
 
@@ -2539,7 +2548,7 @@
 
 .docs-prose .docs-index-list a:hover .docs-index-item-label,
 .docs-prose .docs-index-list a:focus-visible .docs-index-item-label {
-  text-decoration-color: var(--docs-index-signal);
+  border-bottom-color: var(--docs-index-signal);
 }
 
 @media (prefers-reduced-motion: reduce) {
