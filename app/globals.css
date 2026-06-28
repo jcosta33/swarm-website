@@ -7203,6 +7203,54 @@ body::after {
   }
 }
 
+@media (max-width: 40rem) {
+  .writing-page-nav {
+    overflow: hidden;
+  }
+
+  .writing-page-nav .section-jump-nav {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid rgba(70, 57, 44, 0.58);
+    border-radius: var(--radius-control);
+    background:
+      linear-gradient(90deg, rgba(var(--signal-muted-rgb), 0.055), transparent 54%),
+      var(--signal-pattern-muted),
+      rgba(18, 14, 10, 0.72);
+    box-shadow:
+      inset 0 1px 0 rgba(240, 226, 204, 0.04),
+      0 0 0 1px rgba(0, 0, 0, 0.16);
+    scrollbar-width: none;
+  }
+
+  .writing-page-nav .section-jump-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .writing-page-nav .section-jump-nav-link {
+    min-height: 2.65rem;
+    min-width: 8.15rem;
+    border: 0;
+    border-right: 1px solid rgba(70, 57, 44, 0.42);
+    border-radius: 0;
+    background:
+      linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.016), transparent 48%),
+      linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.14) 0 1px, transparent 1px);
+    box-shadow: inset 1px 0 0 rgba(var(--agent-nav-rgb), 0.08);
+    padding: 0.5rem 0.72rem;
+  }
+
+  .writing-page-nav .section-jump-nav-link:last-child {
+    border-right: 0;
+  }
+
+  .writing-page-nav .section-jump-nav-label {
+    white-space: nowrap;
+  }
+}
+
 .agent-roster-panel {
   --roster-signal: var(--signal-core);
   --roster-rgb: var(--signal-core-rgb);

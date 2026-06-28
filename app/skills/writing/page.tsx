@@ -173,7 +173,7 @@ export default function WritingSkillsPage() {
       </Section>
 
       <nav
-        className="mx-auto w-full max-w-7xl px-6 lg:px-8"
+        className="writing-page-nav mx-auto w-full max-w-7xl px-6 lg:px-8"
         aria-label="Writing a skill page sections"
       >
         <div className="section-jump-nav">
