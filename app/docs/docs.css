@@ -2375,6 +2375,7 @@
 
 .docs-prose .docs-index-list a {
   position: relative;
+  isolation: isolate;
   display: flex;
   min-height: 2.95rem;
   align-items: center;
@@ -2386,9 +2387,25 @@
   font-weight: 500;
   text-decoration-color: rgba(var(--docs-index-rgb), 0.42);
   text-underline-offset: 0.22rem;
+  box-shadow: inset 0 -1px 0 rgba(var(--docs-index-rgb), 0.08);
   transition:
+    box-shadow 0.12s,
     color 0.12s,
     text-decoration-color 0.12s;
+}
+
+.docs-prose .docs-index-list a::after {
+  content: "";
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  width: 0.42rem;
+  height: 1px;
+  pointer-events: none;
+  background: var(--docs-index-signal);
+  opacity: 0.24;
+  transform: translateY(-50%);
+  transition: opacity 0.12s;
 }
 
 .docs-index-item-number {
@@ -2411,7 +2428,13 @@
 
 .docs-prose .docs-index-list a:hover,
 .docs-prose .docs-index-list a:focus-visible {
+  box-shadow: inset 0 -1px 0 rgba(var(--docs-index-rgb), 0.2);
   color: var(--docs-index-signal);
+}
+
+.docs-prose .docs-index-list a:hover::after,
+.docs-prose .docs-index-list a:focus-visible::after {
+  opacity: 0.72;
 }
 
 .docs-prose .docs-index-section .docs-index-list a:focus-visible {
@@ -2433,7 +2456,8 @@
   .docs-article-html h2,
   .docs-index-section,
   .docs-index-section::after,
-  .docs-prose .docs-index-list a {
+  .docs-prose .docs-index-list a,
+  .docs-prose .docs-index-list a::after {
     transition-duration: 0.01ms !important;
     transform: none !important;
   }
