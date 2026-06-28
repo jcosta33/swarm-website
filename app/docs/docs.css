@@ -1030,12 +1030,12 @@
 
   .docs-prose .docs-source-note .docs-source-path a {
     display: inline-flex;
-    min-height: 2rem;
+    min-height: 2.75rem;
     align-items: center;
     margin-top: 0;
     border: 1px solid rgba(var(--signal-core-rgb), 0.22);
     border-radius: calc(var(--radius-control) - 4px);
-    padding: 0.08rem 0.42rem;
+    padding: 0.28rem 0.64rem;
     background: rgba(var(--signal-core-rgb), 0.055);
   }
 
