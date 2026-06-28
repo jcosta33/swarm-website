@@ -264,9 +264,10 @@ export default async function DocPage({
           </nav>
         )}
 
-        <div className="docs-bridge">
+        <div className="docs-bridge" data-pagefind-ignore>
           <p>
-            Next: <Link href="/get-started/">set up a workspace</Link>.
+            <span className="docs-bridge-label">Starter kit: </span>
+            <Link href="/get-started/">Set up a workspace</Link>
           </p>
         </div>
       </div>
