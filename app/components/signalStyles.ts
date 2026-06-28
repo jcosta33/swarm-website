@@ -9,7 +9,7 @@
 // Prefer these role names over raw color aliases in new component code.
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
 // The exact complement is reserved for diagnostics; public complements use
-// softer field, sage, umber, cinnabar red, and verdigris roles. Brown means existing
+// softer field, sage, umber, readable cinnabar red, and verdigris roles. Brown means existing
 // project; green means greenfield, not "good"; sage means evidence, not "new".
 // Violet and electric blue are reserved for package hero accents, not general
 // status or work-state meaning.
@@ -78,8 +78,8 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#C44E58",
-    relationship: "cinnabar red: HSL(355 50% 54%)",
+    hex: "#D15D66",
+    relationship: "cinnabar red: HSL(355 55% 59%)",
     wheel: "-39° from core",
     tone: "muted cinnabar red",
     use: "Edits, fixes, run work, blocked states, and attention markers.",

@@ -7,8 +7,8 @@
      the public site stays warm. Public accents are semantic, not decorative:
      greenfield = literal new-workspace paths, brownfield = existing-project
      adoption, change = active edits/attention, evidence = proof/review,
-     reference = manuals and catalogs. Change is a muted cinnabar red, separate
-     from the orange-gold core; violet/blue are package accents only.
+     reference = manuals and catalogs. Change is a readable cinnabar red, separate
+     from the orange-gold core; violet/blue are muted package accents only.
      Brown means existing-project work.
      Green means greenfield, not "good"; sage means evidence, not "new";
      setup alone is not green.
@@ -43,9 +43,9 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #927ac0;
-  --color-interface-blue: #64a7d8;
-  --color-rubedo: #c44e58;
+  --color-neon-bridge: #a486b1;
+  --color-interface-blue: #5ea8cf;
+  --color-rubedo: #d15d66;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
 
@@ -59,7 +59,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 196, 78, 88;
+  --signal-change-rgb: 209, 93, 102;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -72,9 +72,9 @@
   --package-agents: var(--signal-reference);
   --package-agents-rgb: var(--signal-reference-rgb);
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 100, 167, 216;
+  --package-cli-rgb: 94, 168, 207;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 146, 122, 192;
+  --package-mcp-rgb: 164, 134, 177;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -311,7 +311,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 196, 78, 88;
+  --signal-change-rgb: 209, 93, 102;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -4295,18 +4295,18 @@ body::after {
 
 .mcp-install-ledger {
   overflow: hidden;
-  border: 1px solid rgba(var(--package-mcp-rgb), 0.25);
+  border: 1px solid rgba(var(--package-mcp-rgb), 0.22);
   border-radius: var(--radius-panel);
   background:
-    linear-gradient(90deg, rgba(var(--package-mcp-rgb), 0.058), transparent 58%),
+    linear-gradient(90deg, rgba(var(--package-mcp-rgb), 0.04), transparent 58%),
     repeating-linear-gradient(
       0deg,
-      rgba(var(--package-mcp-rgb), 0.05) 0 1px,
+      rgba(var(--package-mcp-rgb), 0.032) 0 1px,
       transparent 1px 14px
     ),
     rgba(15, 11, 8, 0.52);
   box-shadow:
-    inset 2px 0 0 rgba(var(--package-mcp-rgb), 0.22),
+    inset 2px 0 0 rgba(var(--package-mcp-rgb), 0.16),
     inset 0 1px 0 rgba(240, 226, 204, 0.04);
 }
 
@@ -4318,7 +4318,7 @@ body::after {
 }
 
 .mcp-install-ledger > div + div {
-  border-top: 1px solid rgba(var(--package-mcp-rgb), 0.16);
+  border-top: 1px solid rgba(var(--package-mcp-rgb), 0.12);
 }
 
 .mcp-install-ledger dt {
@@ -6938,18 +6938,18 @@ body::after {
   align-items: center;
   gap: 0.62rem;
   overflow: hidden;
-  border: 1px solid rgba(var(--agent-nav-rgb), 0.24);
+  border: 1px solid rgba(70, 57, 44, 0.54);
   border-radius: var(--radius-control);
   background:
-    linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.045), transparent 46%),
-    linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.3) 0 2px, transparent 2px),
+    linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.024), transparent 46%),
+    linear-gradient(90deg, rgba(var(--agent-nav-rgb), 0.18) 0 2px, transparent 2px),
     var(--signal-pattern-muted),
     rgba(26, 21, 16, 0.66);
   padding: 0.58rem 0.75rem;
   color: var(--color-concrete-100);
   text-decoration: none;
   box-shadow:
-    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.24),
+    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.14),
     inset 0 1px 0 rgba(240, 226, 204, 0.04);
   transition:
     border-color 150ms ease,
@@ -6960,11 +6960,11 @@ body::after {
 .agent-page-nav-link:focus-visible,
 .section-jump-nav-link:hover,
 .section-jump-nav-link:focus-visible {
-  border-color: rgba(var(--agent-nav-rgb), 0.42);
+  border-color: rgba(var(--agent-nav-rgb), 0.34);
   box-shadow:
-    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.42),
+    inset 2px 0 0 rgba(var(--agent-nav-rgb), 0.36),
     inset 0 1px 0 rgba(240, 226, 204, 0.06),
-    0 0 0 1px rgba(var(--agent-nav-rgb), 0.045);
+    0 0 0 1px rgba(var(--agent-nav-rgb), 0.035);
 }
 
 .agent-page-nav-index,
@@ -8706,6 +8706,27 @@ body::after {
     ),
     var(--color-line);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-toolbar .pilot-lamp-change,
+.terminal-toolbar .pilot-lamp-red {
+  --lamp-signal: var(--signal-change);
+  --lamp-rgb: var(--signal-change-rgb);
+  --lamp-highlight: rgba(255, 236, 230, 0.7);
+}
+
+.terminal-toolbar .pilot-lamp-core,
+.terminal-toolbar .pilot-lamp-amber {
+  --lamp-signal: var(--signal-core);
+  --lamp-rgb: var(--signal-core-rgb);
+  --lamp-highlight: rgba(255, 248, 224, 0.7);
+}
+
+.terminal-toolbar .pilot-lamp-evidence,
+.terminal-toolbar .pilot-lamp-green {
+  --lamp-signal: var(--signal-evidence);
+  --lamp-rgb: var(--signal-evidence-rgb);
+  --lamp-highlight: rgba(244, 250, 225, 0.68);
 }
 
 /* Engraved / stamped label text */
