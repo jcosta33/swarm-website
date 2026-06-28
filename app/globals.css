@@ -4141,6 +4141,11 @@ body::after {
     padding: 1.05rem 0.9rem 1.1rem;
   }
 
+  .mcp-adapter-step:last-child .mcp-adapter-step-link {
+    min-height: 5.9rem;
+    padding-block: 0.82rem;
+  }
+
   .mcp-adapter-step-link::before {
     inset: 0.85rem auto 0.85rem 0;
   }
@@ -4172,6 +4177,11 @@ body::after {
     max-width: 16rem;
     font-size: 0.82rem;
     line-height: 1.5;
+  }
+
+  .mcp-adapter-step:last-child .mcp-adapter-detail {
+    margin-top: 0.44rem;
+    max-width: none;
   }
 }
 
@@ -4536,6 +4546,11 @@ body::after {
     padding: 0.95rem 0.85rem 1rem;
   }
 
+  .cli-command-step:last-child .cli-command-link {
+    min-height: 5.9rem;
+    padding-block: 0.82rem;
+  }
+
   .cli-command-heading {
     align-items: flex-start;
     gap: 0.65rem;
@@ -4574,6 +4589,10 @@ body::after {
     margin-top: 0.75rem;
     font-size: 0.82rem;
     line-height: 1.5;
+  }
+
+  .cli-command-step:last-child .cli-command-detail {
+    margin-top: 0.44rem;
   }
 }
 
