@@ -1028,6 +1028,11 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+.docs-source-label {
+  color: var(--color-concrete-400);
+}
+
 .docs-prose .docs-source-note a {
   display: inline-flex;
   min-height: 2.75rem;
@@ -1058,49 +1063,55 @@
 @media (max-width: 48rem) {
   .docs-source-note {
     grid-template-columns: auto minmax(0, 1fr);
-    align-items: flex-start;
-    gap: 0.48rem 0.56rem;
+    align-items: center;
+    gap: 0.34rem 0.56rem;
     margin-top: 0.32rem;
-    padding: 0.58rem 0.62rem;
+    padding: 0.5rem 0.58rem;
     line-height: 1.28;
   }
 
   .docs-source-path {
-    display: grid;
     grid-column: 1 / -1;
     order: 3;
-    gap: 0.24rem;
-    overflow: visible;
-    text-overflow: clip;
-    white-space: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .docs-source-label {
+    display: none;
   }
 
   .docs-prose .docs-source-note .docs-source-path a {
-    display: inline-flex;
-    min-height: 2rem;
-    width: fit-content;
-    align-items: center;
+    display: block;
+    min-height: 1.7rem;
+    max-width: 100%;
     margin-top: 0;
+    overflow: hidden;
     border: 0;
     border-radius: 0;
     padding: 0;
     background: transparent;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .docs-article-ledger {
-    grid-template-columns: 1fr;
-    margin-top: 0.62rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 0.54rem;
   }
 
   .docs-article-ledger div {
-    display: grid;
-    grid-template-columns: minmax(5.75rem, 0.45fr) minmax(0, 1fr);
-    gap: 0.75rem;
-    padding: 0.52rem 0.62rem;
+    display: block;
+    padding: 0.45rem 0.5rem;
   }
 
   .docs-article-ledger dd {
-    margin-top: 0;
+    margin-top: 0.2rem;
+    font-size: 0.66rem;
   }
 
   .docs-source-date {

@@ -196,7 +196,7 @@ export default async function DocPage({
           <div className="docs-source-note" data-pagefind-ignore>
             <span className="paper-stamp">source</span>
             <span className="docs-source-path">
-              Source:{" "}
+              <span className="docs-source-label">Source:</span>{" "}
               <Link
                 href={`https://github.com/jcosta33/corpus/blob/main/docs/${slugPath}.md`}
                 target="_blank"
