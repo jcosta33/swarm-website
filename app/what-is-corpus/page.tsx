@@ -409,7 +409,7 @@ export default function WhatIsCorpusPage() {
           <Heading className="mt-3">Where Corpus sits</Heading>
         </div>
         <BoundaryMap />
-        <ul className="reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="overview-relation-grid reveal grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {adjacent.map((row, index) => (
             <li key={row.product}>
               <Card
@@ -466,13 +466,13 @@ export default function WhatIsCorpusPage() {
             Failure modes you are already seeing
           </Heading>
         </div>
-        <ul className="reveal grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="overview-failure-grid reveal grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {failureModes.map((fm) => (
             <li key={fm.mode}>
               <Card
                 signal="change"
                 screws
-                className={`group h-full border-panel-border ${signalRoles.change.hoverBorder}`}
+                className={`overview-failure-card group h-full border-panel-border ${signalRoles.change.hoverBorder}`}
               >
                 <div className="flex items-start gap-3">
                   <HexBadge color="change">

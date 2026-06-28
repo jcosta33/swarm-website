@@ -7586,8 +7586,16 @@ body::after {
 }
 
 @media (max-width: 639px) {
+  #nearby-tools {
+    gap: 1.65rem;
+  }
+
+  .overview-relation-grid {
+    gap: 0.72rem;
+  }
+
   .relation-card {
-    padding: 1rem 1rem 1.05rem;
+    padding: 0.88rem 0.95rem;
   }
 
   .relation-card-head {
@@ -7611,6 +7619,11 @@ body::after {
     font-size: 0.94rem;
   }
 
+  .relation-card-head .pilot-lamp {
+    height: 0.68rem;
+    width: 0.68rem;
+  }
+
   .relation-card-examples {
     margin-top: 0.12rem;
     font-size: 0.72rem;
@@ -7618,16 +7631,16 @@ body::after {
   }
 
   .relation-card-body {
-    gap: 0.4rem;
-    margin-top: 0.72rem;
+    gap: 0.3rem;
+    margin-top: 0.52rem;
   }
 
   .relation-card-body div {
     display: grid;
-    grid-template-columns: minmax(4.4rem, 0.36fr) 1fr;
+    grid-template-columns: minmax(3.9rem, 0.33fr) 1fr;
     align-items: start;
-    gap: 0.55rem;
-    padding-top: 0.48rem;
+    gap: 0.48rem;
+    padding-top: 0.38rem;
   }
 
   .relation-card-body dt {
@@ -7637,8 +7650,68 @@ body::after {
 
   .relation-card-body dd {
     margin-top: 0;
+    font-size: 0.78rem;
+    line-height: 1.36;
+  }
+
+  #failure-modes {
+    gap: 1.65rem;
+  }
+
+  .overview-failure-grid {
+    gap: 0.7rem;
+  }
+
+  .overview-failure-card {
+    padding: 0.95rem 1rem;
+  }
+
+  .overview-failure-card > .relative {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    column-gap: 0.72rem;
+    row-gap: 0.22rem;
+  }
+
+  .overview-failure-card > .relative > div:first-child {
+    display: contents;
+  }
+
+  .overview-failure-card .hex-badge {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    height: 2.05rem;
+    width: 2.05rem;
+    margin-top: 0.08rem;
+  }
+
+  .overview-failure-card .hex-badge svg {
+    height: 0.95rem;
+    width: 0.95rem;
+  }
+
+  .overview-failure-card > .relative > div:first-child > div:not(.hex-badge) {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .overview-failure-card h3 {
+    font-size: 0.96rem;
+    line-height: 1.2;
+  }
+
+  .overview-failure-card > .relative > p {
+    grid-column: 2;
+    margin-top: 0 !important;
     font-size: 0.82rem;
     line-height: 1.42;
+  }
+
+  .overview-failure-card > .relative > p:nth-of-type(2) {
+    color: var(--color-concrete-100);
+    font-size: 0.8rem;
   }
 }
 
