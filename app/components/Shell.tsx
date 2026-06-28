@@ -463,7 +463,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       <div className="site-footer gilt-trim overflow-hidden border-t border-panel-border bg-footer">
         <Section
           as="footer"
-          className="site-footer-grid py-12"
+          className="site-footer-grid py-14 sm:py-16"
         >
           <div className="site-footer-register" aria-hidden="true">
             <span>closing ledger</span>

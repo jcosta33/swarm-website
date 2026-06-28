@@ -153,7 +153,7 @@ export default function KitchenSinkPage() {
                         <li key={link.href}>
                           <a
                             href={link.href}
-                            className="focus-ring inline-flex min-h-9 items-center rounded-sm text-sm font-medium text-corpus-yellow underline decoration-corpus-yellow/40 underline-offset-4 transition-[color,text-decoration-color] hover:text-gold-bright hover:decoration-gold-bright sm:min-h-11"
+                            className="focus-ring inline-flex min-h-11 min-w-11 items-center rounded-sm text-sm font-medium text-corpus-yellow underline decoration-corpus-yellow/40 underline-offset-4 transition-[color,text-decoration-color] hover:text-gold-bright hover:decoration-gold-bright"
                           >
                             {link.label}
                           </a>
