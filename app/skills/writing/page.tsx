@@ -355,13 +355,19 @@ export default function WritingSkillsPage() {
             The body tells the agent what to do after the skill loads.
           </p>
         </div>
-        <ul className="grid gap-4 sm:grid-cols-3">
+        <ul className="skill-body-rule-list grid gap-4 sm:grid-cols-3">
           {bodyRules.map((item) => {
             const Icon = item.icon;
             return (
               <li key={item.title}>
-                <Card screws className="h-full border-panel-border">
-                  <HexBadge color="reference" className="mb-4">
+                <Card
+                  screws
+                  className="skill-body-rule-card h-full border-panel-border"
+                >
+                  <HexBadge
+                    color="reference"
+                    className="skill-body-rule-icon mb-4"
+                  >
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </HexBadge>
                   <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
