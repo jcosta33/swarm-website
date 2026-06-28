@@ -2235,12 +2235,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0.95rem;
-  border: 1px solid rgba(var(--docs-index-rgb), 0.28);
+  border: 1px solid rgba(var(--docs-index-rgb), 0.22);
   border-radius: var(--radius-panel);
   background:
-    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.06), transparent 42%),
+    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.03), transparent 42%),
     var(--docs-index-pattern),
-    rgba(26, 21, 16, 0.58);
+    rgba(22, 17, 12, 0.68);
   box-shadow: inset 0 1px 0 rgba(240, 226, 204, 0.05);
   transition:
     border-color 160ms ease,
@@ -2254,10 +2254,10 @@
   width: 0.38rem;
   pointer-events: none;
   background:
-    linear-gradient(180deg, transparent, rgba(var(--docs-index-rgb), 0.34), transparent),
+    linear-gradient(180deg, transparent, rgba(var(--docs-index-rgb), 0.28), transparent),
     repeating-linear-gradient(
       0deg,
-      rgba(var(--docs-index-rgb), 0.2) 0 1px,
+      rgba(var(--docs-index-rgb), 0.14) 0 1px,
       transparent 1px 0.55rem
     );
   opacity: 0.58;
@@ -2270,7 +2270,7 @@
   --docs-index-pattern:
     radial-gradient(
       80% 72% at 16% 0%,
-      rgba(var(--docs-index-rgb), 0.09),
+      rgba(var(--docs-index-rgb), 0.05),
       transparent 62%
     ),
     var(--signal-pattern-core);
@@ -2293,8 +2293,12 @@
   --docs-index-signal: var(--signal-change);
   --docs-index-rgb: var(--signal-change-rgb);
   --docs-index-pattern:
-    var(--signal-pattern-change),
-    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.028), transparent 48%);
+    repeating-linear-gradient(
+      135deg,
+      rgba(var(--docs-index-rgb), 0.026) 0 1px,
+      transparent 1px 13px
+    ),
+    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.018), transparent 48%);
 }
 
 .docs-index-section-reference {
@@ -2304,7 +2308,7 @@
     var(--signal-pattern-reference),
     repeating-linear-gradient(
       90deg,
-      rgba(var(--docs-index-rgb), 0.018) 0 1px,
+      rgba(var(--docs-index-rgb), 0.012) 0 1px,
       transparent 1px 28px
     );
 }
@@ -2315,7 +2319,7 @@
   --docs-index-rgb: var(--signal-muted-rgb);
   --docs-index-pattern:
     var(--signal-pattern-muted),
-    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.024), transparent 52%);
+    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.016), transparent 52%);
 }
 
 .docs-index-section::after {
@@ -2329,7 +2333,7 @@
       122deg,
       transparent 0%,
       transparent 38%,
-      rgba(var(--docs-index-rgb), 0.07) 48%,
+      rgba(var(--docs-index-rgb), 0.04) 48%,
       transparent 60%,
       transparent 100%
     ),
@@ -2338,13 +2342,13 @@
       rgba(240, 226, 204, 0.055),
       transparent 60%
     );
-  opacity: 0.42;
+  opacity: 0.34;
   transition: opacity 180ms ease;
 }
 
 .docs-index-section:hover::after,
 .docs-index-section:focus-within::after {
-  opacity: 0.64;
+  opacity: 0.5;
 }
 
 .docs-index-section:hover,
