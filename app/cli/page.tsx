@@ -483,8 +483,9 @@ export default function CliPage() {
           <Heading className="mt-3">Commands</Heading>
           <p className="mt-4 max-w-2xl text-concrete-400">
             Start with <code className="text-corpus-yellow">corpus check</code>
-            and <code className="text-corpus-yellow">corpus review</code>. Use
-            the rest when the workspace needs them.
+            {" "}
+            and <code className="text-corpus-yellow">corpus review</code>. Use the
+            rest when the workspace needs them.
           </p>
           <ul className="cli-command-legend mt-6" aria-label="Command family color key">
             {commandFamilies.map((family) => (
