@@ -2681,10 +2681,12 @@ section.bg-section-band::after {
 @media (max-width: 40rem) {
   .hero-trace {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 0.34rem;
     width: min(100%, 22rem);
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     margin-top: 0.92rem;
     padding: 0.05rem 1.05rem 0.22rem 0;
     scroll-padding-inline: 0.1rem 1.05rem;
