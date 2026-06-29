@@ -241,7 +241,7 @@ const mcpPageNav = [
 
 export default function McpPage() {
   return (
-    <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
+    <div className="repo-product-page flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
       <Section className="ambient-header">
         <PageHero
           eyebrow="mcp server / read-only adapter"

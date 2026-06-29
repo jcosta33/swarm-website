@@ -43,9 +43,9 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #a08aa6;
-  --color-interface-blue: #5bbdcc;
-  --color-rubedo: #c44f43;
+  --color-neon-bridge: #8d8196;
+  --color-interface-blue: #5bb7c8;
+  --color-rubedo: #bd4b4f;
   --color-pwr-red: #d2624e;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
@@ -60,7 +60,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 196, 79, 67;
+  --signal-change-rgb: 189, 75, 79;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -73,9 +73,9 @@
   --package-agents: #8fb08d;
   --package-agents-rgb: 143, 176, 141;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 91, 189, 204;
+  --package-cli-rgb: 91, 183, 200;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 160, 138, 166;
+  --package-mcp-rgb: 141, 129, 150;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -301,9 +301,9 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #a08aa6;
-  --c-interface-blue: #5bbdcc;
-  --c-rubedo: #c44f43;
+  --c-neon-bridge: #8d8196;
+  --c-interface-blue: #5bb7c8;
+  --c-rubedo: #bd4b4f;
   --c-olive: var(--c-phosphor);
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
@@ -314,15 +314,15 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 196, 79, 67;
+  --signal-change-rgb: 189, 75, 79;
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
   --package-agents: #8fb08d;
   --package-agents-rgb: 143, 176, 141;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 91, 189, 204;
+  --package-cli-rgb: 91, 183, 200;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 160, 138, 166;
+  --package-mcp-rgb: 141, 129, 150;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -3071,34 +3071,34 @@ section.bg-section-band::after {
 .page-hero.page-hero-package-mcp {
   --hero-signal: var(--package-mcp);
   --hero-rgb: var(--package-mcp-rgb);
-  --hero-motif-opacity-min: 0.3;
-  --hero-motif-opacity-max: 0.42;
+  --hero-motif-opacity-min: 0.24;
+  --hero-motif-opacity-max: 0.34;
   --hero-pattern: repeating-linear-gradient(
       0deg,
-      rgba(var(--hero-rgb), 0.006) 0 1px,
+      rgba(var(--hero-rgb), 0.004) 0 1px,
       transparent 1px 14px
     ),
-    linear-gradient(180deg, rgba(var(--hero-rgb), 0.004), transparent 44%);
+    linear-gradient(180deg, rgba(var(--hero-rgb), 0.003), transparent 44%);
   --hero-mark: radial-gradient(
       circle at 24% 50%,
-      rgba(var(--hero-rgb), 0.022) 0 0.42rem,
+      rgba(var(--hero-rgb), 0.014) 0 0.42rem,
       transparent 0.46rem
     ),
     radial-gradient(
       circle at 76% 50%,
-      rgba(var(--hero-rgb), 0.02) 0 0.42rem,
+      rgba(var(--hero-rgb), 0.012) 0 0.42rem,
       transparent 0.46rem
     ),
     linear-gradient(
       90deg,
       transparent 16%,
-      rgba(var(--hero-rgb), 0.016),
+      rgba(var(--hero-rgb), 0.01),
       transparent 84%
     );
 }
 
 .page-hero.page-hero-package-mcp .product-name-suffix {
-  color: color-mix(in oklab, var(--package-mcp) 68%, var(--color-concrete-100));
+  color: color-mix(in oklab, var(--package-mcp) 58%, var(--color-concrete-100));
   text-shadow:
     0 0 8px rgba(var(--product-name-suffix-rgb), 0.012),
     0 1px 0 rgba(0, 0, 0, 0.32);
@@ -4622,7 +4622,7 @@ section.bg-section-band::after {
 }
 
 .mcp-install-ledger dt {
-  color: color-mix(in oklab, var(--package-mcp) 82%, var(--color-concrete-100));
+  color: color-mix(in oklab, var(--package-mcp) 62%, var(--color-concrete-100));
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
   font-weight: 800;
@@ -7181,6 +7181,78 @@ section.bg-section-band::after {
   color: var(--color-concrete-400);
   font-size: 0.875rem;
   line-height: 1.6;
+}
+
+.repo-product-page .signal-key-item {
+  border-color: rgba(var(--signal-muted-rgb), 0.16);
+  background:
+    linear-gradient(90deg, rgba(var(--key-rgb), 0.001), transparent 40%),
+    var(--signal-pattern-muted),
+    rgba(23, 18, 13, 0.82);
+  box-shadow:
+    inset 2px 0 0 rgba(var(--key-rgb), 0.038),
+    inset 0 1px 0 rgba(240, 226, 204, 0.052);
+}
+
+.repo-product-page .signal-key-swatch {
+  border-color: rgba(var(--key-rgb), 0.12);
+  background:
+    linear-gradient(180deg, rgba(var(--key-rgb), 0.022), transparent 68%),
+    rgba(10, 7, 5, 0.48);
+}
+
+.repo-product-page .signal-key-lamp {
+  filter: saturate(0.86);
+  opacity: 0.62;
+}
+
+.repo-product-page .signal-key-label {
+  color: color-mix(in oklab, var(--key-signal) 44%, var(--color-concrete-200));
+}
+
+.repo-product-page .process-strip > :is(li, a, div) {
+  background-color: rgba(25, 20, 15, 0.98);
+  background-image:
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.0005), transparent 34%),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.006) 0 1px, transparent 1px),
+    var(--signal-pattern-muted);
+}
+
+.repo-product-page .process-strip > :is(li, a, div)::after {
+  opacity: 0.4;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--process-rgb), 0.022),
+    rgba(var(--process-rgb), 0.006),
+    transparent
+  );
+}
+
+.repo-product-page .process-strip .hex-badge {
+  background:
+    linear-gradient(180deg, rgba(240, 226, 204, 0.052), transparent 48%),
+    radial-gradient(
+      86% 76% at 50% 0%,
+      rgba(var(--process-rgb), 0.028),
+      transparent 66%
+    ),
+    rgba(24, 19, 14, 0.98);
+}
+
+.repo-product-page
+  .process-strip
+  > :is(li, a, div)
+  :is(.text-corpus-yellow, .text-olive, .text-brass, .clip-hex, .motion-nudge-x, .motion-nudge-x-centered) {
+  color: color-mix(in oklab, var(--process-signal) 62%, var(--color-concrete-200));
+}
+
+.repo-product-page .process-strip > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover) {
+  border-color: rgba(var(--process-rgb), 0.14);
+  background-color: rgba(29, 23, 17, 0.99);
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--process-rgb), 0.014),
+    inset 0 1px 0 rgba(240, 226, 204, 0.048),
+    0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 40rem) {

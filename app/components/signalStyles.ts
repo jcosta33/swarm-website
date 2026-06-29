@@ -79,10 +79,10 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#C44F43",
-    relationship: "red-oxide attention: HSL(6 52% 52%)",
+    hex: "#BD4B4F",
+    relationship: "cinnabar attention: HSL(358 46% 52%)",
     wheel: "-39° from core",
-    tone: "red oxide",
+    tone: "cinnabar red",
     use: "Edits, fixes, run work, blocked states, and attention markers.",
     surface: "angled change hatching and work-in-progress rails",
     pattern: "angled change hatching",
