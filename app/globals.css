@@ -6104,7 +6104,10 @@ body::after {
     background-color 160ms ease;
 }
 
-.panel-raised:hover,
+.panel-raised:is(a, button):hover,
+.panel-raised:has(
+    :is(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]))
+  ):hover,
 .panel-raised:focus-within {
   border-color: rgba(var(--plate-rgb), 0.38);
   background-color: #281f17;
@@ -6182,7 +6185,10 @@ body::after {
     );
 }
 
-.panel-raised:where(.signal-surface):hover,
+.panel-raised:where(.signal-surface):is(a, button):hover,
+.panel-raised:where(.signal-surface):has(
+    :is(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]))
+  ):hover,
 .panel-raised:where(.signal-surface):focus-within {
   border-color: rgba(var(--surface-rgb), 0.26);
   box-shadow:
@@ -6367,12 +6373,20 @@ body::after {
   opacity: 0.42;
 }
 
-.panel-raised:hover > .surface-engraving,
+.panel-raised:is(a, button):hover > .surface-engraving,
+.panel-raised:has(
+    :is(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]))
+  ):hover
+  > .surface-engraving,
 .panel-raised:focus-within > .surface-engraving {
   opacity: 0.66;
 }
 
-.panel-raised:hover > .surface-glint,
+.panel-raised:is(a, button):hover > .surface-glint,
+.panel-raised:has(
+    :is(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]))
+  ):hover
+  > .surface-glint,
 .panel-raised:focus-within > .surface-glint {
   opacity: 0.68;
 }
