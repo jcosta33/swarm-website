@@ -278,7 +278,7 @@ export default function CliPage() {
       </Section>
 
       <nav
-        className="mx-auto w-full max-w-7xl px-6 lg:px-8"
+        className="-mt-4 mx-auto w-full max-w-7xl px-6 sm:-mt-6 lg:px-8"
         aria-label="corpus-cli page sections"
       >
         <div className="agent-page-nav">
