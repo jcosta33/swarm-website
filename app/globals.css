@@ -7,8 +7,8 @@
      the public site stays warm. Public accents are semantic, not decorative:
      greenfield = literal new-workspace paths, brownfield = existing-project
      adoption, change = active edits/attention, evidence = proof/review,
-     reference = manuals and catalogs. Change is a readable red-clay signal,
-     separate from the orange-gold core; cyan/faded violet are package accents only.
+     reference = manuals and catalogs. Change is a madder red signal, separate
+     from the orange-gold core; cyan/faded violet are package accents only.
      Brown means existing-project work.
      Green means greenfield, not "good"; sage means evidence, not "new";
      setup alone is not green.
@@ -43,9 +43,9 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #9a849e;
-  --color-interface-blue: #72b9d6;
-  --color-rubedo: #c15a55;
+  --color-neon-bridge: #8d829b;
+  --color-interface-blue: #7ab5c5;
+  --color-rubedo: #c26068;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
 
@@ -59,7 +59,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 193, 90, 85;
+  --signal-change-rgb: 194, 96, 104;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -69,12 +69,12 @@
      continues to use the semantic signal roles below. */
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
-  --package-agents: #82b89b;
-  --package-agents-rgb: 130, 184, 155;
+  --package-agents: #79ad99;
+  --package-agents-rgb: 121, 173, 153;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 114, 185, 214;
+  --package-cli-rgb: 122, 181, 197;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 154, 132, 158;
+  --package-mcp-rgb: 141, 130, 155;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -300,9 +300,9 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #9a849e;
-  --c-interface-blue: #72b9d6;
-  --c-rubedo: #c15a55;
+  --c-neon-bridge: #8d829b;
+  --c-interface-blue: #7ab5c5;
+  --c-rubedo: #c26068;
   --c-olive: var(--c-phosphor);
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
@@ -313,15 +313,15 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 193, 90, 85;
+  --signal-change-rgb: 194, 96, 104;
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
-  --package-agents: #82b89b;
-  --package-agents-rgb: 130, 184, 155;
+  --package-agents: #79ad99;
+  --package-agents-rgb: 121, 173, 153;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 114, 185, 214;
+  --package-cli-rgb: 122, 181, 197;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 154, 132, 158;
+  --package-mcp-rgb: 141, 130, 155;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -672,15 +672,15 @@ body::after {
   align-items: center;
   gap: 0.65rem;
   overflow: hidden;
-  border: 1px solid rgba(var(--key-rgb), 0.14);
+  border: 1px solid rgba(var(--key-rgb), 0.11);
   border-radius: var(--radius-control);
   background:
-    linear-gradient(90deg, rgba(var(--key-rgb), 0.008), transparent 46%),
+    linear-gradient(90deg, rgba(var(--key-rgb), 0.004), transparent 46%),
     var(--signal-pattern-muted),
     rgba(26, 21, 16, 0.78);
   padding: 0.62rem 0.82rem;
   box-shadow:
-    inset 2px 0 0 rgba(var(--key-rgb), 0.14),
+    inset 2px 0 0 rgba(var(--key-rgb), 0.1),
     inset 0 1px 0 rgba(240, 226, 204, 0.055);
 }
 
@@ -690,10 +690,10 @@ body::after {
   width: 1.05rem;
   min-height: 2rem;
   flex: 0 0 auto;
-  border: 1px solid rgba(var(--key-rgb), 0.3);
+  border: 1px solid rgba(var(--key-rgb), 0.22);
   border-radius: calc(var(--radius-control) - 4px);
   background:
-    linear-gradient(180deg, rgba(var(--key-rgb), 0.14), transparent 62%),
+    linear-gradient(180deg, rgba(var(--key-rgb), 0.08), transparent 62%),
     var(--key-mark),
     var(--key-pattern),
     rgba(10, 7, 5, 0.42);
@@ -710,7 +710,7 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(var(--key-rgb), 0.2),
+    rgba(var(--key-rgb), 0.12),
     transparent
   );
   opacity: 0.44;
@@ -718,6 +718,7 @@ body::after {
 
 .signal-key-lamp {
   flex: 0 0 auto;
+  opacity: 0.88;
 }
 
 .signal-key-copy {
@@ -728,7 +729,7 @@ body::after {
 }
 
 .signal-key-label {
-  color: var(--key-signal);
+  color: color-mix(in oklab, var(--key-signal) 78%, var(--color-concrete-200));
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
   font-size: 0.66rem;
   font-weight: 760;
@@ -2607,7 +2608,7 @@ body::after {
   display: inline-block;
   color: var(--product-name-suffix);
   text-shadow:
-    0 0 18px rgba(var(--product-name-suffix-rgb), 0.16),
+    0 0 14px rgba(var(--product-name-suffix-rgb), 0.1),
     0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
@@ -2621,11 +2622,11 @@ body::after {
   border-radius: 999px;
   background: linear-gradient(
     90deg,
-    rgba(var(--product-name-suffix-rgb), 0.66),
-    rgba(var(--product-name-suffix-rgb), 0.16),
+    rgba(var(--product-name-suffix-rgb), 0.52),
+    rgba(var(--product-name-suffix-rgb), 0.12),
     transparent
   );
-  opacity: 0.72;
+  opacity: 0.62;
   pointer-events: none;
 }
 
@@ -2949,7 +2950,7 @@ body::after {
 
 .page-hero.page-hero-package-mcp .product-name-suffix {
   text-shadow:
-    0 0 10px rgba(var(--product-name-suffix-rgb), 0.055),
+    0 0 8px rgba(var(--product-name-suffix-rgb), 0.045),
     0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
@@ -3793,8 +3794,8 @@ body::after {
   overflow: hidden;
   background-color: rgba(28, 22, 16, 0.96);
   background-image:
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.004), transparent 34%),
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.055) 0 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.002), transparent 34%),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.04) 0 1px, transparent 1px),
     var(--signal-pattern-muted);
   transition:
     border-color 160ms ease,
@@ -3818,7 +3819,7 @@ body::after {
       112deg,
       transparent 0%,
       rgba(var(--process-rgb), 0.004) 42%,
-      rgba(var(--process-rgb), 0.016) 50%,
+      rgba(var(--process-rgb), 0.01) 50%,
       rgba(var(--process-rgb), 0.004) 58%,
       transparent 100%
     ),
@@ -3839,8 +3840,8 @@ body::after {
   opacity: 0.56;
   background: linear-gradient(
     90deg,
-    rgba(var(--process-rgb), 0.09),
-    rgba(var(--process-rgb), 0.03),
+    rgba(var(--process-rgb), 0.06),
+    rgba(var(--process-rgb), 0.02),
     transparent
   );
 }
@@ -3861,12 +3862,12 @@ body::after {
 }
 
 .process-strip > :is(li:hover, li:focus-within, a:hover, a:focus-visible, div:hover) {
-  border-color: rgba(var(--process-rgb), 0.28);
+  border-color: rgba(var(--process-rgb), 0.22);
   background-color: rgba(32, 25, 18, 0.98);
   box-shadow:
-    inset 0 0 0 1px rgba(var(--process-rgb), 0.035),
+    inset 0 0 0 1px rgba(var(--process-rgb), 0.024),
     inset 0 1px 0 rgba(240, 226, 204, 0.05),
-    0 12px 24px rgba(0, 0, 0, 0.18);
+    0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 @media (max-width: 40rem) {
@@ -4420,18 +4421,18 @@ body::after {
 
 .mcp-install-ledger {
   overflow: hidden;
-  border: 1px solid rgba(var(--package-mcp-rgb), 0.14);
+  border: 1px solid rgba(var(--package-mcp-rgb), 0.1);
   border-radius: var(--radius-panel);
   background:
-    linear-gradient(90deg, rgba(var(--package-mcp-rgb), 0.014), transparent 58%),
+    linear-gradient(90deg, rgba(var(--package-mcp-rgb), 0.006), transparent 58%),
     repeating-linear-gradient(
       0deg,
-      rgba(var(--package-mcp-rgb), 0.012) 0 1px,
+      rgba(var(--package-mcp-rgb), 0.006) 0 1px,
       transparent 1px 14px
     ),
     rgba(15, 11, 8, 0.52);
   box-shadow:
-    inset 2px 0 0 rgba(var(--package-mcp-rgb), 0.08),
+    inset 2px 0 0 rgba(var(--package-mcp-rgb), 0.06),
     inset 0 1px 0 rgba(240, 226, 204, 0.04);
 }
 
@@ -4443,11 +4444,11 @@ body::after {
 }
 
 .mcp-install-ledger > div + div {
-  border-top: 1px solid rgba(var(--package-mcp-rgb), 0.06);
+  border-top: 1px solid rgba(var(--package-mcp-rgb), 0.04);
 }
 
 .mcp-install-ledger dt {
-  color: var(--package-mcp);
+  color: color-mix(in oklab, var(--package-mcp) 82%, var(--color-concrete-100));
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
   font-weight: 800;
@@ -4529,7 +4530,7 @@ body::after {
   background-image:
     radial-gradient(
       70% 64% at 18% 0%,
-      rgba(var(--process-rgb), 0.024),
+      rgba(var(--process-rgb), 0.014),
       transparent 64%
     ),
     linear-gradient(
@@ -4553,8 +4554,8 @@ body::after {
     height: 1px;
     background: linear-gradient(
       90deg,
-      rgba(var(--process-rgb), 0.56),
-      rgba(var(--process-rgb), 0.1)
+      rgba(var(--process-rgb), 0.34),
+      rgba(var(--process-rgb), 0.07)
     );
     transform: translateY(-50%);
     pointer-events: none;
@@ -4929,9 +4930,9 @@ body::after {
   --skill-guide-pattern: var(--signal-pattern-reference);
   --skill-guide-mark: var(--signal-mark-reference);
   overflow: hidden;
-  border-color: rgba(var(--skill-guide-rgb), 0.34);
+  border-color: rgba(var(--skill-guide-rgb), 0.24);
   background:
-    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.065), transparent 44%),
+    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.026), transparent 44%),
     var(--skill-guide-mark),
     var(--skill-guide-pattern),
     var(--color-panel-raised);
@@ -4956,9 +4957,9 @@ body::after {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-bottom: 1px solid rgba(var(--skill-guide-rgb), 0.24);
+  border-bottom: 1px solid rgba(var(--skill-guide-rgb), 0.16);
   background:
-    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.085), transparent 48%),
+    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.035), transparent 48%),
     rgba(10, 7, 5, 0.28);
   padding: 0.78rem 1rem;
   color: var(--color-concrete-400);
@@ -4970,7 +4971,11 @@ body::after {
 }
 
 .skill-guide-catalog-header span:first-child {
-  color: var(--skill-guide-signal);
+  color: color-mix(
+    in oklab,
+    var(--skill-guide-signal) 82%,
+    var(--color-concrete-100)
+  );
 }
 
 .skill-guide-list {
@@ -4985,7 +4990,7 @@ body::after {
 .skill-guide-row.catalog-row {
   --catalog-signal: var(--skill-guide-signal);
   --catalog-rgb: var(--skill-guide-rgb);
-  --catalog-signal-soft: rgba(var(--skill-guide-rgb), 0.62);
+  --catalog-signal-soft: rgba(var(--skill-guide-rgb), 0.28);
   display: flex;
   min-height: 6.3rem;
   min-width: 0;
@@ -4993,16 +4998,16 @@ body::after {
   justify-content: space-between;
   gap: 1rem;
   overflow: hidden;
-  border: 1px solid rgba(var(--catalog-rgb), 0.2);
+  border: 1px solid rgba(var(--catalog-rgb), 0.14);
   border-radius: calc(var(--radius-panel) - 2px);
   background:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.08), transparent 56%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.028), transparent 56%),
     rgba(10, 7, 5, 0.2);
   color: inherit;
   padding: 0.85rem 0.9rem;
   text-decoration: none;
   box-shadow:
-    inset 2px 0 0 rgba(var(--catalog-rgb), 0.28),
+    inset 2px 0 0 rgba(var(--catalog-rgb), 0.18),
     inset 0 1px 0 rgba(240, 226, 204, 0.035);
   transition:
     border-color 160ms ease,
@@ -5011,11 +5016,11 @@ body::after {
 
 .skill-guide-row.catalog-row:hover,
 .skill-guide-row.catalog-row:focus-visible {
-  border-color: rgba(var(--catalog-rgb), 0.42);
+  border-color: rgba(var(--catalog-rgb), 0.3);
   box-shadow:
-    inset 2px 0 0 rgba(var(--catalog-rgb), 0.52),
+    inset 2px 0 0 rgba(var(--catalog-rgb), 0.34),
     inset 0 1px 0 rgba(240, 226, 204, 0.05),
-    0 0 0 1px rgba(var(--catalog-rgb), 0.055);
+    0 0 0 1px rgba(var(--catalog-rgb), 0.035);
 }
 
 .skill-guide-row-arrow {
@@ -6327,10 +6332,10 @@ body::after {
 .catalog-row {
   --catalog-signal: var(--signal-core);
   --catalog-rgb: var(--signal-core-rgb);
-  --catalog-signal-soft: rgba(var(--catalog-rgb), 0.44);
+  --catalog-signal-soft: rgba(var(--catalog-rgb), 0.28);
   --catalog-mark: var(--signal-mark-core);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
   position: relative;
   min-height: 3.5rem;
@@ -6363,7 +6368,7 @@ body::after {
   --catalog-rgb: var(--signal-reference-rgb);
   --catalog-mark: var(--signal-mark-reference);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
 }
 
@@ -6372,7 +6377,7 @@ body::after {
   --catalog-rgb: var(--signal-core-rgb);
   --catalog-mark: var(--signal-mark-core);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.024), transparent 54%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.014), transparent 54%),
     var(--signal-pattern-muted);
 }
 
@@ -6381,7 +6386,7 @@ body::after {
   --catalog-rgb: var(--signal-change-rgb);
   --catalog-mark: var(--signal-mark-change);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
 }
 
@@ -6390,7 +6395,7 @@ body::after {
   --catalog-rgb: var(--signal-evidence-rgb);
   --catalog-mark: var(--signal-mark-evidence);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
 }
 
@@ -6399,7 +6404,7 @@ body::after {
   --catalog-rgb: var(--signal-greenfield-rgb);
   --catalog-mark: var(--signal-mark-greenfield);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
 }
 
@@ -6408,12 +6413,12 @@ body::after {
   --catalog-rgb: var(--signal-brownfield-rgb);
   --catalog-mark: var(--signal-mark-brownfield);
   --catalog-pattern:
-    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.018), transparent 52%),
+    linear-gradient(90deg, rgba(var(--catalog-rgb), 0.01), transparent 52%),
     var(--signal-pattern-muted);
 }
 
 .catalog-row .catalog-row-title {
-  color: var(--catalog-signal);
+  color: color-mix(in oklab, var(--catalog-signal) 82%, var(--color-concrete-100));
   transition:
     color 160ms ease,
     text-shadow 160ms ease;
@@ -6433,13 +6438,13 @@ body::after {
 .group:focus-within .catalog-row::before,
 .catalog-row:hover::before,
 .catalog-row:focus-visible::before {
-  opacity: 0.74;
+  opacity: 0.62;
 }
 
 .group:hover .catalog-row-title,
 .group:focus-within .catalog-row-title {
   color: var(--catalog-signal);
-  text-shadow: 0 0 10px var(--catalog-signal-soft);
+  text-shadow: 0 0 8px var(--catalog-signal-soft);
 }
 
 .group:hover .catalog-row-copy,
@@ -7513,7 +7518,7 @@ body::after {
 
 .agent-roster-cells {
   background:
-    linear-gradient(90deg, rgba(var(--roster-rgb), 0.16), transparent 24%),
+    linear-gradient(90deg, rgba(var(--roster-rgb), 0.08), transparent 24%),
     var(--color-panel-border);
 }
 
@@ -7534,7 +7539,7 @@ body::after {
     ),
     radial-gradient(
       70% 64% at 20% 0%,
-      rgba(var(--cell-rgb), 0.06),
+      rgba(var(--cell-rgb), 0.028),
       transparent 64%
     ),
     var(--cell-mark),
@@ -7598,7 +7603,7 @@ body::after {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(var(--cell-rgb), 0.76),
+    rgba(var(--cell-rgb), 0.58),
     transparent
   );
   opacity: 0;
@@ -7607,7 +7612,7 @@ body::after {
 
 .agent-roster-cell:hover::before,
 .agent-roster-cell:focus-visible::before {
-  opacity: 0.68;
+  opacity: 0.54;
 }
 
 .agent-roster-icon {
@@ -7615,8 +7620,8 @@ body::after {
 }
 
 .agent-roster-cell-title {
-  color: var(--cell-signal);
-  text-shadow: 0 0 14px rgba(var(--cell-rgb), 0.12);
+  color: color-mix(in oklab, var(--cell-signal) 84%, var(--color-concrete-100));
+  text-shadow: 0 0 10px rgba(var(--cell-rgb), 0.08);
 }
 
 @media (max-width: 40rem) {
