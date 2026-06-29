@@ -8,8 +8,9 @@ const points = [
   [6, 21],
   [6, 11],
 ];
-// The durable spine (Spec · Run · Close) — the triangle the alternate vertices form.
-const spine = [points[0], points[2], points[4]];
+// The durable spine (Spec · Run · Close) — the downward triangle the alternate
+// vertices form; its apex is Run, and the optional first step sits at the top.
+const spine = [points[1], points[3], points[5]];
 
 // The loop mark: the six-step hexagon with its spine triangle inscribed. Echoes the
 // wordmark Logo; used inline as a section glyph. Strokes inherit currentColor.

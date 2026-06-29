@@ -1,20 +1,21 @@
 import { useId } from "react";
 
 // The mark synthesizes the two shapes of the method: the six-step loop is the
-// hexagon; the durable spine (Spec · Run · Close) is the equilateral triangle
-// its three alternate vertices already form. The triangle is not added to the
-// hexagon — it is read out of it. Spine vertices are filled; the three optional
-// steps (Pull · Task · Review) sit between as quiet nodes.
+// hexagon; the durable spine (Spec · Run · Close) is the equilateral triangle its
+// three alternate vertices form. It is read out of the hexagon, not added. The
+// spine triangle points DOWN — its apex is Run, its base spans Spec and Close —
+// because the optional first step (Pull) sits at the top vertex, outside it. The
+// three optional steps (Pull · Task · Review) are the quiet nodes between.
 const HEX: ReadonlyArray<readonly [number, number]> = [
-  [16, 4.2],
-  [26.22, 10.1],
-  [26.22, 21.9],
-  [16, 27.8],
-  [5.78, 21.9],
-  [5.78, 10.1],
+  [16, 4.2], // 0 — top: Pull (optional)
+  [26.22, 10.1], // 1 — Spec (spine)
+  [26.22, 21.9], // 2 — Task (optional)
+  [16, 27.8], // 3 — Run (spine, apex)
+  [5.78, 21.9], // 4 — Review (optional)
+  [5.78, 10.1], // 5 — Close (spine)
 ];
-const SPINE = [HEX[0], HEX[2], HEX[4]] as const;
-const OPTIONAL = [HEX[1], HEX[3], HEX[5]] as const;
+const SPINE = [HEX[1], HEX[3], HEX[5]] as const;
+const OPTIONAL = [HEX[0], HEX[2], HEX[4]] as const;
 
 export function Logo({ className = "" }: { className?: string }) {
   const gradientId = `${useId().replaceAll(":", "")}-corpus-gilt`;
