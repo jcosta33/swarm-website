@@ -2787,8 +2787,8 @@
 
   .docs-layout > aside {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(8.5rem, 0.56fr);
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
     align-items: start;
   }
 
@@ -2821,13 +2821,13 @@
 
   .docs-nav-summary {
     min-height: 2.75rem;
-    gap: 0.16rem 0.45rem;
-    padding: 0.5rem 0.55rem;
+    gap: 0.16rem 0.6rem;
+    padding: 0.56rem 0.68rem;
   }
 
   .docs-nav-summary-main {
     overflow: hidden;
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     line-height: 1;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2835,10 +2835,30 @@
 
   .docs-nav-summary-count {
     overflow: hidden;
-    font-size: 0.52rem;
+    font-size: 0.58rem;
     letter-spacing: 0.07em;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+@media (min-width: 34rem) and (max-width: 40rem) {
+  .docs-layout > aside {
+    grid-template-columns: minmax(0, 1fr) minmax(9.5rem, 0.52fr);
+    gap: 0.5rem;
+  }
+
+  .docs-nav-summary {
+    gap: 0.16rem 0.45rem;
+    padding: 0.5rem 0.55rem;
+  }
+
+  .docs-nav-summary-main {
+    font-size: 0.72rem;
+  }
+
+  .docs-nav-summary-count {
+    font-size: 0.52rem;
   }
 
   .docs-layout > aside:has(.docs-nav-toggle:checked) {
