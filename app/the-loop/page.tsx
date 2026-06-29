@@ -191,7 +191,7 @@ export default function TheLoopPage() {
           eyebrow="flight plan — 6 waypoints (+2 for rough terrain)"
           title={
             <>
-              The <span className="text-corpus-yellow text-glow">loop</span>
+              The <span className="text-suspec-yellow text-glow">loop</span>
             </>
           }
         >
@@ -223,14 +223,14 @@ export default function TheLoopPage() {
                 )}
                 <div className="flex items-start gap-4">
                   <HexBadge color="yellow">
-                    <span className="font-mono text-xs font-bold text-corpus-yellow">
+                    <span className="font-mono text-xs font-bold text-suspec-yellow">
                       {step.number}
                     </span>
                   </HexBadge>
                   <div>
                     <div className="flex items-center gap-2">
                       <Icon
-                        className="h-5 w-5 text-corpus-yellow"
+                        className="h-5 w-5 text-suspec-yellow"
                         aria-hidden="true"
                       />
                       <Heading>{step.name}</Heading>
@@ -252,7 +252,7 @@ export default function TheLoopPage() {
                       }
                     >
                       {line.prompt && (
-                        <span className="text-corpus-yellow">$ </span>
+                        <span className="text-suspec-yellow">$ </span>
                       )}
                       {line.text}
                     </p>

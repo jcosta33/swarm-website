@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Generated at build (works under output:export) — no logo asset needed. The hex "drone" mark in
-// corpus-yellow on chassis black; a visual mark, no brand text. Emits 192 + 512 (purpose any) — the
+// suspec-yellow on chassis black; a visual mark, no brand text. Emits 192 + 512 (purpose any) — the
 // pair Chrome requires for PWA installability, and the favicon Next wires into <head>.
 export const dynamic = "force-static";
 

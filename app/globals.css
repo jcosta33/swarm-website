@@ -11,7 +11,7 @@
   --color-brass: #c8a35f;
   --color-olive: #5a5a3a;
   --color-phosphor: #ffb000;
-  --color-corpus-yellow: #facc15;
+  --color-suspec-yellow: #facc15;
   --color-hazard-orange: #f97316;
   --color-drone-green: #22c55e;
   --color-concrete-100: #f5f5f5;
@@ -100,7 +100,7 @@ body::after {
 
 /* Focus ring */
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-corpus-yellow);
+  outline: 2px solid var(--color-suspec-yellow);
   outline-offset: 2px;
 }
 
@@ -108,8 +108,8 @@ body::after {
 .hazard-stripe {
   background: repeating-linear-gradient(
     45deg,
-    var(--color-corpus-yellow),
-    var(--color-corpus-yellow) 16px,
+    var(--color-suspec-yellow),
+    var(--color-suspec-yellow) 16px,
     var(--color-black) 16px,
     var(--color-black) 32px
   );
@@ -468,8 +468,8 @@ body::after {
   height: 6px;
   background: repeating-linear-gradient(
     45deg,
-    var(--color-corpus-yellow),
-    var(--color-corpus-yellow) 8px,
+    var(--color-suspec-yellow),
+    var(--color-suspec-yellow) 8px,
     var(--color-black) 8px,
     var(--color-black) 16px
   );
@@ -544,6 +544,6 @@ body::after {
 
 /* Branded text selection */
 ::selection {
-  background: var(--color-corpus-yellow);
+  background: var(--color-suspec-yellow);
   color: var(--color-black);
 }

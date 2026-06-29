@@ -1,9 +1,9 @@
-# Corpus — append to a CODE repo's .gitignore. The Corpus workspace commits its
+# Suspec — append to a CODE repo's .gitignore. The Suspec workspace commits its
 # specs, tasks, reviews, and findings; only code-repo scratch is ignored here.
 
 # Agent scratch and transient task hand-offs
 .agents/tmp/
 tmp/
 
-# Local state of the future Corpus CLI (machine state, never committed)
-.corpus/
+# Local state of the future Suspec CLI (machine state, never committed)
+.suspec/

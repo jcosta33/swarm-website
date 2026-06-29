@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     description:
       "Calma is a lightweight spec and review workflow that keeps humans in the driver seat while coding agents do the work. Plain markdown; no runtime required.",
     type: "website",
-    url: "/what-is-corpus/",
+    url: "/what-is-suspec/",
     siteName: "Calma",
     locale: "en_US",
     images: [
       {
-        url: "/og-what-is-corpus.png",
+        url: "/og-what-is-suspec.png",
         width: 1200,
         height: 630,
         alt: "What is Calma — a spec-and-review discipline for coding agents",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "/what-is-corpus/",
+    canonical: "/what-is-suspec/",
   },
 };
 
@@ -171,7 +171,7 @@ export default function WhatIsCalmaPage() {
           title={
             <>
               What is{" "}
-              <span className="text-corpus-yellow text-glow">Calma</span>
+              <span className="text-suspec-yellow text-glow">Calma</span>
             </>
           }
         >
@@ -187,7 +187,7 @@ export default function WhatIsCalmaPage() {
         <Panel brushed className="mx-auto max-w-3xl p-2">
           <TerminalWindow title="diagnostics" className="mx-auto max-w-3xl">
             <p className="text-concrete-400">
-              <span className="text-corpus-yellow">$</span> cat what-is-calma.md
+              <span className="text-suspec-yellow">$</span> cat what-is-calma.md
             </p>
             <p className="mt-2 text-concrete-100">
               Calma is a spec-and-review workflow for teams using coding agents.
@@ -201,7 +201,7 @@ export default function WhatIsCalmaPage() {
               ✓ plain markdown, any agent, no runtime
             </p>
             <p className="mt-2 text-concrete-400">
-              <span className="text-corpus-yellow">$</span> _
+              <span className="text-suspec-yellow">$</span> _
             </p>
           </TerminalWindow>
         </Panel>
@@ -257,7 +257,7 @@ export default function WhatIsCalmaPage() {
 
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
             <DroneIcon className="h-4 w-4" />
             <span>network.map — adjacent nodes</span>
           </div>
@@ -321,7 +321,7 @@ export default function WhatIsCalmaPage() {
                 </div>
                 <p className="mt-4 text-sm text-concrete-400">{fm.looksLike}</p>
                 <p className="mt-3 text-sm text-concrete-100">
-                  <span className="text-corpus-yellow">&gt;</span> {fm.answer}
+                  <span className="text-suspec-yellow">&gt;</span> {fm.answer}
                 </p>
               </Card>
             </li>
@@ -353,12 +353,12 @@ export default function WhatIsCalmaPage() {
         <p className="text-concrete-400">
           Source:{" "}
           <Link
-            href="https://github.com/jcosta33/corpus/blob/main/docs/01-what-is-corpus.md"
+            href="https://github.com/jcosta33/suspec/blob/main/docs/01-what-is-suspec.md"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+            className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
           >
-            docs/01-what-is-corpus.md
+            docs/01-what-is-suspec.md
           </Link>
         </p>
       </Section>

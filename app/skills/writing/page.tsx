@@ -101,7 +101,7 @@ export default function WritingSkillsPage() {
           title={
             <>
               Writing a{" "}
-              <span className="text-corpus-yellow text-glow">skill</span>
+              <span className="text-suspec-yellow text-glow">skill</span>
             </>
           }
         >
@@ -113,12 +113,12 @@ export default function WritingSkillsPage() {
           <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
             This page distills the evidence-backed authoring guide from the{" "}
             <Link
-              href="https://github.com/jcosta33/corpus-skills/tree/main/docs"
+              href="https://github.com/jcosta33/suspec-skills/tree/main/docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              corpus-skills docs
+              suspec-skills docs
             </Link>
             . No shortcuts. No silver bullets. Just a format that makes the
             agent more likely to do the right thing.
@@ -136,7 +136,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#layout"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Layout
                 </a>
@@ -144,7 +144,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#directive-description"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Directive description
                 </a>
@@ -152,7 +152,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#body-anatomy"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Body anatomy
                 </a>
@@ -160,7 +160,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#forced-visible-output"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Forced visible output
                 </a>
@@ -168,7 +168,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#self-containment"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Self-containment
                 </a>
@@ -176,7 +176,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#task-templates"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Task templates
                 </a>
@@ -184,7 +184,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#scope"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Scope
                 </a>
@@ -192,7 +192,7 @@ export default function WritingSkillsPage() {
               <li>
                 <a
                   href="#next-steps"
-                  className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                  className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
                 >
                   Next steps
                 </a>
@@ -203,7 +203,7 @@ export default function WritingSkillsPage() {
       </Section>
 
       <Section id="layout" className="flex flex-col gap-8">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
           <DroneIcon className="h-4 w-4" />
           <span>layout.txt — what a skill folder looks like</span>
         </div>
@@ -247,7 +247,7 @@ export default function WritingSkillsPage() {
           </Heading>
           <p className="mt-4 text-concrete-400">
             Agents scan the{" "}
-            <code className="text-corpus-yellow">description</code> to decide
+            <code className="text-suspec-yellow">description</code> to decide
             whether to load the skill. A self-published 650-trial measurement
             (one author, not peer-reviewed) reported passive descriptions
             activating far less reliably than directive ones with an explicit
@@ -429,7 +429,7 @@ export default function WritingSkillsPage() {
             </h3>
             <p className="mt-2 text-sm text-concrete-400">
               Every claim in{" "}
-              <code className="text-corpus-yellow">## Self-review</code> gets
+              <code className="text-suspec-yellow">## Self-review</code> gets
               its own verbatim pasted output. No paraphrase, no &ldquo;✅ all
               passing&rdquo;.
             </p>
@@ -461,10 +461,10 @@ export default function WritingSkillsPage() {
           <Heading className="mt-3">Self-containment</Heading>
           <p className="mt-4 text-concrete-400">
             A user who installs only{" "}
-            <code className="text-corpus-yellow">write-feature</code> does not
-            have <code className="text-corpus-yellow">empirical-proof</code> in
+            <code className="text-suspec-yellow">write-feature</code> does not
+            have <code className="text-suspec-yellow">empirical-proof</code> in
             context. Therefore{" "}
-            <code className="text-corpus-yellow">write-feature</code> must read
+            <code className="text-suspec-yellow">write-feature</code> must read
             correctly on its own. If a related discipline is load-bearing,
             restate it inline — a sibling may be mentioned only as an optional
             &ldquo;if installed&rdquo; note.
@@ -476,11 +476,11 @@ export default function WritingSkillsPage() {
           </Heading>
           <p className="mt-4 text-concrete-400">
             Skills name abstract command slots —{" "}
-            <code className="text-corpus-yellow">cmdTest</code>,{" "}
-            <code className="text-corpus-yellow">cmdLint</code>,{" "}
-            <code className="text-corpus-yellow">cmdValidate</code> — never
+            <code className="text-suspec-yellow">cmdTest</code>,{" "}
+            <code className="text-suspec-yellow">cmdLint</code>,{" "}
+            <code className="text-suspec-yellow">cmdValidate</code> — never
             concrete commands. The consuming repo&apos;s{" "}
-            <code className="text-corpus-yellow">AGENTS.md</code> Commands table
+            <code className="text-suspec-yellow">AGENTS.md</code> Commands table
             supplies the implementations. An empty slot means ask; a skill never
             invents a command.
           </p>
@@ -493,7 +493,7 @@ export default function WritingSkillsPage() {
 
       <Section id="task-templates" className="flex flex-col gap-12">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
             <FileText className="h-4 w-4" />
             <span>task-template.md — externalised working memory</span>
           </div>
@@ -511,7 +511,7 @@ export default function WritingSkillsPage() {
           </Heading>
           <p className="mt-4 text-concrete-400">
             Ship a{" "}
-            <code className="text-corpus-yellow">
+            <code className="text-suspec-yellow">
               references/task-template.md
             </code>{" "}
             only when at least three of these six criteria hold:
@@ -561,7 +561,7 @@ export default function WritingSkillsPage() {
           </ul>
           <p className="mt-6 text-concrete-400">
             Personas and cross-cutting quality gates like{" "}
-            <code className="text-corpus-yellow">empirical-proof</code>{" "}
+            <code className="text-suspec-yellow">empirical-proof</code>{" "}
             deliberately ship no template — their discipline lives in the body
             and surfaces inside whichever workflow&apos;s task file is in play.
           </p>
@@ -599,7 +599,7 @@ export default function WritingSkillsPage() {
         <p className="max-w-prose text-concrete-400">
           The right home for stack-specific or internal knowledge is the
           consuming repo&apos;s{" "}
-          <code className="text-corpus-yellow">AGENTS.md</code>, not a skill.
+          <code className="text-suspec-yellow">AGENTS.md</code>, not a skill.
         </p>
       </Section>
 
@@ -617,21 +617,21 @@ export default function WritingSkillsPage() {
           <ul className="mt-6 space-y-3">
             <li>
               <Link
-                href="https://github.com/jcosta33/corpus-skills/tree/main/docs"
+                href="https://github.com/jcosta33/suspec-skills/tree/main/docs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="inline-flex items-center gap-2 text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
-                corpus-skills docs{" "}
+                suspec-skills docs{" "}
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
               </Link>
             </li>
             <li>
               <Link
-                href="https://github.com/jcosta33/corpus-skills/tree/main/skills"
+                href="https://github.com/jcosta33/suspec-skills/tree/main/skills"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="inline-flex items-center gap-2 text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
                 Sample skills{" "}
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
@@ -642,7 +642,7 @@ export default function WritingSkillsPage() {
                 href="https://agentskills.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="inline-flex items-center gap-2 text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
                 Open Agent Skills spec{" "}
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />

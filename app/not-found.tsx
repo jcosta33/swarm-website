@@ -12,7 +12,7 @@ export const metadata = {
 export default function NotFoundPage() {
   return (
     <Section className="flex flex-1 flex-col items-center justify-center py-32 text-center">
-      <h1 className="font-heading text-6xl font-bold text-corpus-yellow">
+      <h1 className="font-heading text-6xl font-bold text-suspec-yellow">
         404
       </h1>
       <p className="mt-4 text-2xl font-semibold text-concrete-100">

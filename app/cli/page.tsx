@@ -67,7 +67,7 @@ const commands = [
   },
   {
     cmd: "worktree",
-    what: "Create / list / remove / prune isolated git worktrees — one per task on corpus/<slug>, so parallel agents never trample each other.",
+    what: "Create / list / remove / prune isolated git worktrees — one per task on suspec/<slug>, so parallel agents never trample each other.",
     icon: GitBranch,
   },
   {
@@ -121,7 +121,7 @@ const principles = [
   {
     title: "It never renders the verdict",
     icon: ShieldCheck,
-    text: "corpus check tells you what is malformed or unverified. Whether the code is actually done is a call a human makes, every time.",
+    text: "suspec check tells you what is malformed or unverified. Whether the code is actually done is a call a human makes, every time.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function CliPage() {
           eyebrow="calma-cli — reference implementation"
           title={
             <>
-              calma<span className="text-corpus-yellow text-glow">-cli</span>
+              calma<span className="text-suspec-yellow text-glow">-cli</span>
             </>
           }
         >
@@ -159,7 +159,7 @@ export default function CliPage() {
       </Section>
 
       <Section className="flex flex-col gap-8">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
           <DroneIcon className="h-4 w-4" />
           <span>install.sh</span>
         </div>
@@ -167,24 +167,24 @@ export default function CliPage() {
           <TerminalWindow title="terminal" ariaLabel="install">
             <p className="text-concrete-500">
               # not on npm yet — clone, build, and link from source; the binary
-              it provides is called corpus
+              it provides is called suspec
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> git clone
-              https://github.com/jcosta33/corpus-cli.git &amp;&amp; cd
-              corpus-cli &amp;&amp; npm install &amp;&amp; npm run build
+              <span className="text-suspec-yellow">$</span> git clone
+              https://github.com/jcosta33/suspec-cli.git &amp;&amp; cd
+              suspec-cli &amp;&amp; npm install &amp;&amp; npm run build
               &amp;&amp; npm link
             </p>
             <p className="mt-2 text-concrete-500"># then run commands as</p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus --help
+              <span className="text-suspec-yellow">$</span> suspec --help
             </p>
           </TerminalWindow>
         </Panel>
       </Section>
 
       <Section className="flex flex-col gap-8">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
           <DroneIcon className="h-4 w-4" />
           <span>the-loop.sh — a task, end to end</span>
         </div>
@@ -194,27 +194,27 @@ export default function CliPage() {
               # scaffold a workspace first — see Get started
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus check{" "}
+              <span className="text-suspec-yellow">$</span> suspec check{" "}
               <span className="text-concrete-500">
                 # lint a spec or the whole workspace; exit 0/1/2
               </span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus worktree
+              <span className="text-suspec-yellow">$</span> suspec worktree
               create auth-refresh --task TASK-12{" "}
               <span className="text-concrete-500">
                 # isolate the task on its own branch
               </span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus review
+              <span className="text-suspec-yellow">$</span> suspec review
               TASK-12{" "}
               <span className="text-concrete-500">
                 # reconcile the finished run — diff vs report vs spec
               </span>
             </p>
             <p className="mt-1 text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus status -i{" "}
+              <span className="text-suspec-yellow">$</span> suspec status -i{" "}
               <span className="text-concrete-500">
                 # the board — specs, tasks, reviews, gaps
               </span>
@@ -234,9 +234,9 @@ export default function CliPage() {
             Every command that ships, listed below. In the CLI,
             &ldquo;advertised equals dispatchable&rdquo; is a tested invariant —
             what the help prints, the binary runs. The two worth knowing first:{" "}
-            <code className="text-corpus-yellow">corpus check</code> drops into
+            <code className="text-suspec-yellow">suspec check</code> drops into
             pre-commit and CI on its exit code, and{" "}
-            <code className="text-corpus-yellow">corpus review</code> reconciles
+            <code className="text-suspec-yellow">suspec review</code> reconciles
             a finished run — the agent&apos;s self-report against the real diff
             against the spec — and routes the mismatches to a human, without
             ever rendering the verdict.
@@ -258,7 +258,7 @@ export default function CliPage() {
                       </HexBadge>
                       <div className="min-w-0">
                         <h3 className="font-mono text-sm font-semibold text-drone-green break-words">
-                          corpus {c.cmd}
+                          suspec {c.cmd}
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-concrete-400">
                           {c.what}
@@ -348,10 +348,10 @@ export default function CliPage() {
           </p>
           <p className="mt-6">
             <Link
-              href="https://github.com/jcosta33/corpus-cli"
+              href="https://github.com/jcosta33/suspec-cli"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               Read the full reference on GitHub →
             </Link>

@@ -38,11 +38,11 @@ const softwareApp = {
   applicationCategory: "DeveloperApplication",
   operatingSystem: "Any",
   softwareVersion: "0.1.0",
-  url: "https://corpusframework.dev",
+  url: "https://suspecframework.dev",
   description:
     "Calma is a lightweight spec-and-review workflow that keeps humans in charge of code written by AI agents. Plain markdown, any agent, no runtime.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  publisher: { "@id": "https://corpusframework.dev/#organization" },
+  publisher: { "@id": "https://suspecframework.dev/#organization" },
 };
 
 export const metadata: Metadata = {
@@ -112,13 +112,13 @@ const walls = [
 const features = [
   {
     title: "Spec-first, not vibes-first",
-    command: "corpus new",
+    command: "suspec new",
     description:
       "Write the contract once. The task packet bounds scope and tells the agent, in writing, what not to touch.",
   },
   {
     title: "Review by exception",
-    command: "corpus check",
+    command: "suspec check",
     description:
       "Every requirement names how it is verified. The review packet shows the evidence per requirement — so you read the exceptions, not the whole 40-file diff.",
   },
@@ -190,7 +190,7 @@ export default function HomePage() {
               <>
                 AI writes code.
                 <br />
-                <span className="text-corpus-yellow text-glow">
+                <span className="text-suspec-yellow text-glow">
                   You keep the wheel.
                 </span>
               </>
@@ -199,7 +199,7 @@ export default function HomePage() {
             <Panel brushed className="mx-auto mt-10 max-w-2xl p-2 text-left">
               <TerminalWindow>
                 <p className="text-concrete-500">
-                  <span className="text-corpus-yellow">$</span> corpus status
+                  <span className="text-suspec-yellow">$</span> suspec status
                 </p>
                 <p className="mt-1 text-concrete-500">
                   # the gap Calma is built for:
@@ -209,13 +209,13 @@ export default function HomePage() {
                   use it anyway.
                 </p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-corpus-yellow">$</span> corpus init
+                  <span className="text-suspec-yellow">$</span> suspec init
                 </p>
                 <p className="mt-1 text-drone-green">
                   ✓ scaffolded workspace (specs/, tasks/, reviews/, status.md)
                 </p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-corpus-yellow">$</span> corpus new spec
+                  <span className="text-suspec-yellow">$</span> suspec new spec
                   evidence --from intake/JIRA-412.md
                 </p>
                 <p className="mt-1 text-concrete-100">
@@ -223,7 +223,7 @@ export default function HomePage() {
                   and agent output into evidence you can review.
                 </p>
                 <p className="mt-2 text-concrete-500">
-                  <span className="text-corpus-yellow">$</span>{" "}
+                  <span className="text-suspec-yellow">$</span>{" "}
                   <TerminalCursor className="ml-0.5 align-middle" />
                 </p>
               </TerminalWindow>
@@ -234,7 +234,7 @@ export default function HomePage() {
                 href="https://survey.stackoverflow.co/2025/ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="inline-flex items-center gap-1 text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
                 survey.stackoverflow.co/2025/ai
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
@@ -244,7 +244,7 @@ export default function HomePage() {
             <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
               <Button asChild className="w-full sm:w-auto">
                 <Link
-                  href="https://github.com/jcosta33/corpus-starter-kit"
+                  href="https://github.com/jcosta33/suspec-starter-kit"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -282,7 +282,7 @@ export default function HomePage() {
                 href="https://survey.stackoverflow.co/2025/ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
                 Stack Overflow 2025
               </Link>
@@ -295,7 +295,7 @@ export default function HomePage() {
                 href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+                className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
               >
                 METR
               </Link>
@@ -346,7 +346,7 @@ export default function HomePage() {
         <HazardStripe height="sm" />
         <Section className="mt-12 flex flex-col gap-12">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
               <DroneIcon className="h-4 w-4" />
               <span>flight.plan — 6 waypoints (+2 optional)</span>
             </div>
@@ -363,7 +363,7 @@ export default function HomePage() {
           <p className="text-sm text-concrete-400">
             <Link
               href="/the-loop/"
-              className="inline-flex items-center gap-1 text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="inline-flex items-center gap-1 text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               Walk the full loop, step by step
               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -392,20 +392,20 @@ export default function HomePage() {
           <div className="reveal grid gap-6 lg:grid-cols-2">
             <TerminalWindow title="specs/shell/spec.md">
               <p className="text-concrete-500">
-                <span className="text-corpus-yellow">##</span> AC-003 — Global
+                <span className="text-suspec-yellow">##</span> AC-003 — Global
                 shell includes nav and footer
               </p>
               <p className="mt-2 text-concrete-100">
-                A <span className="text-corpus-yellow">Shell</span> component
+                A <span className="text-suspec-yellow">Shell</span> component
                 renders on every route via{" "}
-                <span className="text-corpus-yellow">app/layout.tsx</span>.
+                <span className="text-suspec-yellow">app/layout.tsx</span>.
               </p>
               <ul className="mt-2 list-disc pl-4 text-concrete-100">
                 <li>Nav: logo, links, mobile hamburger below lg.</li>
                 <li>Footer: copyright, links, colophon line.</li>
               </ul>
               <p className="mt-3 text-concrete-500">
-                <span className="text-corpus-yellow">Verify with:</span> npm run
+                <span className="text-suspec-yellow">Verify with:</span> npm run
                 build passes; every generated page contains exactly one
                 &lt;nav&gt; and one &lt;footer&gt;; nav links are valid.
               </p>
@@ -474,7 +474,7 @@ export default function HomePage() {
       <section className="border-y border-panel-border bg-panel-raised py-24">
         <Section className="flex flex-col gap-12">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
               <Shield className="h-4 w-4" aria-hidden="true" />
               <span>how it works — 4 moving parts</span>
             </div>
@@ -487,7 +487,7 @@ export default function HomePage() {
               <Card
                 key={feature.title}
                 screws
-                className="group h-full border-panel-border hover:border-corpus-yellow/50"
+                className="group h-full border-panel-border hover:border-suspec-yellow/50"
               >
                 <div className="flex items-start justify-between gap-2">
                   <p className="font-mono text-xs text-brass">
@@ -512,7 +512,7 @@ export default function HomePage() {
       <section className="py-24">
         <Section className="flex flex-col gap-12">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
               <DroneIcon className="h-4 w-4" aria-hidden="true" />
               <span>faq.md — common questions</span>
             </div>
@@ -572,7 +572,7 @@ export default function HomePage() {
             </Button>
             <Button variant="secondary" asChild className="w-full sm:w-auto">
               <Link
-                href="https://github.com/jcosta33/corpus-starter-kit"
+                href="https://github.com/jcosta33/suspec-starter-kit"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -583,15 +583,15 @@ export default function HomePage() {
           <p className="mt-6 text-sm text-concrete-400">
             New here? Start with{" "}
             <Link
-              href="/what-is-corpus/"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              href="/what-is-suspec/"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               what Calma is
             </Link>{" "}
             or{" "}
             <Link
               href="/the-loop/"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               the loop
             </Link>

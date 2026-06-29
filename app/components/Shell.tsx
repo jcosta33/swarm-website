@@ -8,23 +8,23 @@ import { Logo } from "./Logo";
 import { Section } from "./Section";
 
 const navLinks = [
-  { label: "What is Calma", href: "/what-is-corpus" },
+  { label: "What is Calma", href: "/what-is-suspec" },
   { label: "Loop", href: "/the-loop" },
   { label: "Skills", href: "/skills" },
   { label: "CLI", href: "/cli" },
   { label: "Get started", href: "/get-started" },
   { label: "Docs", href: "/docs" },
-  { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
+  { label: "GitHub", href: "https://github.com/jcosta33/suspec" },
 ];
 
 const footerLinks = [
   { label: "Get started", href: "/get-started" },
   { label: "Skills", href: "/skills" },
   { label: "CLI", href: "/cli" },
-  { label: "GitHub", href: "https://github.com/jcosta33/corpus" },
+  { label: "GitHub", href: "https://github.com/jcosta33/suspec" },
   {
     label: "Starter kit",
-    href: "https://github.com/jcosta33/corpus-starter-kit",
+    href: "https://github.com/jcosta33/suspec-starter-kit",
   },
   { label: "Docs", href: "/docs" },
   { label: "Colophon", href: "/colophon" },
@@ -79,7 +79,7 @@ function NavLink({
       </span>
       {isActive && showIndicator && (
         <span
-          className="absolute -bottom-2 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-corpus-yellow shadow-[0_0_8px_#FACC15]"
+          className="absolute -bottom-2 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-suspec-yellow shadow-[0_0_8px_#FACC15]"
           aria-hidden="true"
         />
       )}
@@ -151,7 +151,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-full flex-col">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-corpus-yellow focus:px-4 focus:py-2 focus:text-black"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-suspec-yellow focus:px-4 focus:py-2 focus:text-black"
       >
         Skip to main content
       </a>
@@ -186,8 +186,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   showIndicator
                   className={`text-sm font-medium transition-[color] focus-ring rounded-sm ${
                     active
-                      ? "text-corpus-yellow"
-                      : "text-concrete-400 hover:text-corpus-yellow"
+                      ? "text-suspec-yellow"
+                      : "text-concrete-400 hover:text-suspec-yellow"
                   }`}
                 />
               );
@@ -197,7 +197,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <button
             ref={toggleRef}
             type="button"
-            className="toggle inline-flex items-center justify-center rounded-panel border border-panel-border bg-panel-raised p-2 text-concrete-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_0_rgba(0,0,0,0.5)] hover:text-corpus-yellow focus-ring active:translate-y-px active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.45)] lg:hidden"
+            className="toggle inline-flex items-center justify-center rounded-panel border border-panel-border bg-panel-raised p-2 text-concrete-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-2px_0_rgba(0,0,0,0.5)] hover:text-suspec-yellow focus-ring active:translate-y-px active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.45)] lg:hidden"
             aria-expanded={menuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setMenuOpen((open) => !open)}
@@ -231,8 +231,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
                     onClick={() => setMenuOpen(false)}
                     className={`min-h-11 -mx-2 px-2 text-base font-medium transition-[color] focus-ring rounded-sm ${
                       active
-                        ? "text-corpus-yellow"
-                        : "text-concrete-100 hover:text-corpus-yellow"
+                        ? "text-suspec-yellow"
+                        : "text-concrete-100 hover:text-suspec-yellow"
                     }`}
                   />
                 );
@@ -283,8 +283,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   isActive={active}
                   className={`min-h-11 text-sm font-medium transition-[color] focus-ring rounded-sm ${
                     active
-                      ? "text-corpus-yellow"
-                      : "text-concrete-400 hover:text-corpus-yellow"
+                      ? "text-suspec-yellow"
+                      : "text-concrete-400 hover:text-suspec-yellow"
                   }`}
                 />
               );

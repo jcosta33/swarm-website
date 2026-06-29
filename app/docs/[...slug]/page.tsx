@@ -15,7 +15,7 @@ import { DocsToc } from "../components/DocsToc";
 
 export const dynamicParams = false;
 
-const SITE_URL = "https://corpusframework.dev";
+const SITE_URL = "https://suspecframework.dev";
 
 // Build a BreadcrumbList. A section dir links to its README page when one exists; a section with no
 // README (e.g. reference/) emits a name-only, NON-navigable intermediate crumb (no `item`) rather
@@ -104,9 +104,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const md = readDoc(slug.join("/"));
   const canonical = `/docs/${slug.join("/")}/`;
-  if (!md) return { title: "Corpus docs", alternates: { canonical } };
+  if (!md) return { title: "Suspec docs", alternates: { canonical } };
   return {
-    title: `${titleOf(md)} · Corpus`,
+    title: `${titleOf(md)} · Suspec`,
     description: descriptionOf(md),
     alternates: { canonical }, // self-canonical (was inheriting the home page's "/")
     openGraph: {

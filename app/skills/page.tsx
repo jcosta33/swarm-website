@@ -162,7 +162,7 @@ export default function SkillsPage() {
           eyebrow="skills.catalog — 18 skills"
           title={
             <>
-              Calma <span className="text-corpus-yellow text-glow">skills</span>
+              Calma <span className="text-suspec-yellow text-glow">skills</span>
             </>
           }
         >
@@ -180,7 +180,7 @@ export default function SkillsPage() {
       </Section>
 
       <Section className="flex flex-col gap-8">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
           <DroneIcon className="h-4 w-4" />
           <span>install.sh — add one skill</span>
         </div>
@@ -188,48 +188,48 @@ export default function SkillsPage() {
           <TerminalWindow title="terminal">
             <p className="text-concrete-500"># list what&apos;s available</p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> npx skills add
-              jcosta33/corpus-skills --list
+              <span className="text-suspec-yellow">$</span> npx skills add
+              jcosta33/suspec-skills --list
             </p>
             <p className="mt-2 text-concrete-500">
               # install into the current repo
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic
+              <span className="text-suspec-yellow">$</span> npx skills add
+              jcosta33/suspec-skills --skill persona-skeptic
             </p>
             <p className="mt-2 text-concrete-500">
               # or install globally / for one agent
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic -g
+              <span className="text-suspec-yellow">$</span> npx skills add
+              jcosta33/suspec-skills --skill persona-skeptic -g
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> npx skills add
-              jcosta33/corpus-skills --skill persona-skeptic -a claude-code
+              <span className="text-suspec-yellow">$</span> npx skills add
+              jcosta33/suspec-skills --skill persona-skeptic -a claude-code
             </p>
             <p className="mt-2 text-concrete-500">
               # no CLI? copy the folder into your agent&apos;s skills directory
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> cp -R
+              <span className="text-suspec-yellow">$</span> cp -R
               skills/persona-skeptic &lt;your-repo&gt;/.agents/skills/
             </p>
           </TerminalWindow>
         </Panel>
         <p className="text-concrete-400">
           Skills name abstract command slots like{" "}
-          <code className="text-corpus-yellow">cmdTest</code> and{" "}
-          <code className="text-corpus-yellow">cmdLint</code>; your repo&apos;s{" "}
-          <code className="text-corpus-yellow">AGENTS.md</code> supplies the
+          <code className="text-suspec-yellow">cmdTest</code> and{" "}
+          <code className="text-suspec-yellow">cmdLint</code>; your repo&apos;s{" "}
+          <code className="text-suspec-yellow">AGENTS.md</code> supplies the
           real commands. That is what makes them portable across stacks.
         </p>
       </Section>
 
       <Section className="flex flex-col gap-12">
         <div className="max-w-2xl">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+          <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
             <Sparkles className="h-4 w-4" aria-hidden="true" />
             <span>stances.conf — cognitive postures</span>
           </div>
@@ -246,7 +246,7 @@ export default function SkillsPage() {
             return (
               <li key={s.skill}>
                 <a
-                  href={`https://github.com/jcosta33/corpus-skills/tree/main/skills/${s.skill}`}
+                  href={`https://github.com/jcosta33/suspec-skills/tree/main/skills/${s.skill}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${s.skill} skill on GitHub (opens in new tab)`}
@@ -298,7 +298,7 @@ export default function SkillsPage() {
             return (
               <li key={s.skill}>
                 <a
-                  href={`https://github.com/jcosta33/corpus-skills/tree/main/skills/${s.skill}`}
+                  href={`https://github.com/jcosta33/suspec-skills/tree/main/skills/${s.skill}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${s.skill} skill on GitHub (opens in new tab)`}
@@ -350,7 +350,7 @@ export default function SkillsPage() {
           <p className="mt-6">
             <Link
               href="/skills/writing/"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               Read the skill-writing guide →
             </Link>
@@ -372,7 +372,7 @@ export default function SkillsPage() {
             checks, that is{" "}
             <Link
               href="/cli/"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               calma-cli
             </Link>
@@ -380,10 +380,10 @@ export default function SkillsPage() {
           </p>
           <p className="mt-6">
             <Link
-              href="https://github.com/jcosta33/corpus-skills"
+              href="https://github.com/jcosta33/suspec-skills"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+              className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
               Browse the full catalog on GitHub →
             </Link>

@@ -22,8 +22,8 @@ import type {
 
 export type DocHeading = { depth: 2 | 3; id: string; text: string };
 
-const REPO_ROOT = path.join(CANON, ".."); // the corpus repo root (docs/ lives under it)
-const GH_BLOB = "https://github.com/jcosta33/corpus/blob/main/";
+const REPO_ROOT = path.join(CANON, ".."); // the suspec repo root (docs/ lives under it)
+const GH_BLOB = "https://github.com/jcosta33/suspec/blob/main/";
 const repoHas = (repoRel: string): boolean =>
   fs.existsSync(path.join(REPO_ROOT, repoRel));
 
@@ -167,7 +167,7 @@ export async function renderDoc(
 // decisions` must not leak "## Open decisions" into <title>/og/JSON-LD).
 export function titleOf(markdown: string): string {
   const m = markdown.match(/^#\s+(.+)$/m);
-  if (!m) return "Corpus docs";
+  if (!m) return "Suspec docs";
   return m[1]
     .replace(/`/g, "")
     .replace(/(^|\s)#{1,6}\s+/g, "$1")
@@ -238,7 +238,7 @@ export function descriptionOf(markdown: string): string {
     candidates.find((p) => p.text.length >= 40 && !p.text.endsWith(":")) ??
     candidates[0];
   const text = chosen?.text ?? "";
-  if (!text) return "Corpus documentation";
+  if (!text) return "Suspec documentation";
   if (text.length <= 155) return text;
   const slice = text.slice(0, 152);
   const cut = slice.lastIndexOf(" ");

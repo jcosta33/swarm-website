@@ -12,7 +12,7 @@ export function HexBadge({
   color = "yellow",
 }: HexBadgeProps) {
   const colors = {
-    yellow: "border-corpus-yellow/80 text-corpus-yellow",
+    yellow: "border-suspec-yellow/80 text-suspec-yellow",
     orange: "border-hazard-orange/80 text-hazard-orange",
     green: "border-drone-green/80 text-drone-green",
   };

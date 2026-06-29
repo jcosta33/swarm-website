@@ -69,7 +69,7 @@ export function LoopDiagram() {
               </div>
               <div className="flex items-center gap-2">
                 <Icon
-                  className="h-5 w-5 text-corpus-yellow"
+                  className="h-5 w-5 text-suspec-yellow"
                   aria-hidden="true"
                 />
                 <span className="font-heading text-lg font-bold uppercase tracking-tight text-concrete-100">

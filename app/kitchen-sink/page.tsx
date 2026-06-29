@@ -127,7 +127,7 @@ export default function KitchenSinkPage() {
         <TerminalWindow title="terminal">
           <p className="text-concrete-500"># CRT monitor panel</p>
           <p className="text-concrete-100">
-            <span className="text-corpus-yellow">$</span> corpus status
+            <span className="text-suspec-yellow">$</span> suspec status
           </p>
           <p className="mt-1 text-drone-green">✓ all systems nominal</p>
         </TerminalWindow>
@@ -140,7 +140,7 @@ export default function KitchenSinkPage() {
 
       <Section className="flex flex-col gap-6">
         <Heading>Icons</Heading>
-        <div className="flex gap-4 text-corpus-yellow">
+        <div className="flex gap-4 text-suspec-yellow">
           <AlertTriangle aria-label="Warning" />
           <CheckCircle aria-label="Success" />
           <Wrench aria-label="Tools" />
@@ -156,7 +156,7 @@ export default function KitchenSinkPage() {
           <p className="text-concrete-400">
             Secondary text for captions and metadata.
           </p>
-          <p className="text-corpus-yellow">
+          <p className="text-suspec-yellow">
             Accent text for links and highlights.
           </p>
           <p className="text-hazard-orange">

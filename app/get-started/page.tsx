@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 function KitIcon({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-panel border border-panel-border bg-panel-raised text-corpus-yellow shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.45)]">
+    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-panel border border-panel-border bg-panel-raised text-suspec-yellow shadow-[inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_0_rgba(0,0,0,0.45)]">
       <div
         className="brushed-metal absolute inset-0 pointer-events-none z-0"
         aria-hidden="true"
@@ -53,7 +53,7 @@ function KitIcon({ children }: { children: React.ReactNode }) {
 function ListDot() {
   return (
     <span
-      className="mt-2.5 h-2 w-2 shrink-0 rounded-sm bg-corpus-yellow shadow-[0_0_8px_#FFB000]"
+      className="mt-2.5 h-2 w-2 shrink-0 rounded-sm bg-suspec-yellow shadow-[0_0_8px_#FFB000]"
       aria-hidden="true"
     />
   );
@@ -91,7 +91,7 @@ export default function GetStartedPage() {
           </div>
           <Button asChild>
             <Link
-              href="https://github.com/jcosta33/corpus-starter-kit"
+              href="https://github.com/jcosta33/suspec-starter-kit"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -115,7 +115,7 @@ export default function GetStartedPage() {
           </div>
           <Button variant="secondary" asChild>
             <Link
-              href="https://github.com/jcosta33/corpus/blob/main/docs/ADOPTING.md"
+              href="https://github.com/jcosta33/suspec/blob/main/docs/ADOPTING.md"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -127,13 +127,13 @@ export default function GetStartedPage() {
       </Section>
 
       <Section className="flex flex-col gap-6">
-        <div className="flex items-center gap-2 text-xs font-mono uppercase text-corpus-yellow">
+        <div className="flex items-center gap-2 text-xs font-mono uppercase text-suspec-yellow">
           <Terminal className="h-4 w-4" aria-hidden="true" />
           <span>or scaffold it with the cli</span>
         </div>
         <Heading>Prefer the command line?</Heading>
         <p className="max-w-2xl text-concrete-400">
-          <code className="text-corpus-yellow">corpus init</code> scaffolds the
+          <code className="text-suspec-yellow">suspec init</code> scaffolds the
           same workspace into a new or existing repo — conflict-safe, so it
           never clobbers files you already have. The CLI is not on npm under
           that name yet (the name is taken), so install it from source.
@@ -142,25 +142,25 @@ export default function GetStartedPage() {
           <TerminalWindow title="terminal">
             <p className="text-concrete-500">
               # install the CLI from source — the binary it provides is called
-              corpus
+              suspec
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> git clone
-              https://github.com/jcosta33/corpus-cli.git &amp;&amp; cd
-              corpus-cli &amp;&amp; npm install &amp;&amp; npm run build
+              <span className="text-suspec-yellow">$</span> git clone
+              https://github.com/jcosta33/suspec-cli.git &amp;&amp; cd
+              suspec-cli &amp;&amp; npm install &amp;&amp; npm run build
               &amp;&amp; npm link
             </p>
             <p className="mt-2 text-concrete-500">
               # then, in a new or existing repo
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus init{" "}
+              <span className="text-suspec-yellow">$</span> suspec init{" "}
               <span className="text-concrete-500">
                 # scaffold the workspace, conflict-safe
               </span>
             </p>
             <p className="text-concrete-100">
-              <span className="text-corpus-yellow">$</span> corpus check{" "}
+              <span className="text-suspec-yellow">$</span> suspec check{" "}
               <span className="text-concrete-500">
                 # confirm it is well-formed; exit 0/1/2
               </span>
@@ -171,7 +171,7 @@ export default function GetStartedPage() {
           What the CLI does (and deliberately does not):{" "}
           <Link
             href="/cli/"
-            className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+            className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
           >
             the CLI page
           </Link>
@@ -260,10 +260,10 @@ export default function GetStartedPage() {
         <p className="text-concrete-400">
           Not sure which path fits? Read{" "}
           <Link
-            href="https://github.com/jcosta33/corpus/blob/main/docs/ADOPTING.md"
+            href="https://github.com/jcosta33/suspec/blob/main/docs/ADOPTING.md"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-corpus-yellow underline hover:no-underline focus-ring rounded-sm"
+            className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
           >
             docs/ADOPTING.md
           </Link>{" "}

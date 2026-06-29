@@ -1,26 +1,26 @@
 # Content sources and review cadence
 
-This file tracks where the Corpus website's marketing copy comes from and when it
+This file tracks where the Suspec website's marketing copy comes from and when it
 was last checked against the canonical framework docs.
 
 ## Canonical sources
 
-The framework's canonical docs live in the `corpus` repo:
+The framework's canonical docs live in the `suspec` repo:
 
-- <https://github.com/jcosta33/corpus/blob/main/docs/01-what-is-corpus.md>
-- <https://github.com/jcosta33/corpus/blob/main/docs/ADOPTING.md>
-- <https://github.com/jcosta33/corpus/blob/main/README.md>
+- <https://github.com/jcosta33/suspec/blob/main/docs/01-what-is-suspec.md>
+- <https://github.com/jcosta33/suspec/blob/main/docs/ADOPTING.md>
+- <https://github.com/jcosta33/suspec/blob/main/README.md>
 
 ## Page source map
 
-| Page              | Source files in `corpus` repo                                                                        |
+| Page              | Source files in `suspec` repo                                                                        |
 | ----------------- | ---------------------------------------------------------------------------------------------------- |
-| `/` (homepage)    | `docs/01-what-is-corpus.md` (problem statement, feature list), `README.md` (tagline)                 |
-| `/what-is-corpus` | `docs/01-what-is-corpus.md` (definition, is/is-not lists, adjacent-tools table, failure-modes table) |
+| `/` (homepage)    | `docs/01-what-is-suspec.md` (problem statement, feature list), `README.md` (tagline)                 |
+| `/what-is-suspec` | `docs/01-what-is-suspec.md` (definition, is/is-not lists, adjacent-tools table, failure-modes table) |
 | `/the-loop`       | `docs/02-basic-workflow.md`, `specs/design-system/spec.md` (loop diagram)                            |
 | `/get-started`    | `docs/ADOPTING.md` (adoption paths)                                                                  |
-| `/skills`         | `corpus-skills` repo (future work)                                                                   |
-| `/cli`            | `corpus-cli` repo (future work)                                                                      |
+| `/skills`         | `suspec-skills` repo (future work)                                                                   |
+| `/cli`            | `suspec-cli` repo (future work)                                                                      |
 
 ## Quarterly review
 
@@ -29,7 +29,7 @@ result in `findings/content-drift-YYYY-MM.md`.
 
 ## Content workflow
 
-For new copy or updates, follow the Corpus loop:
+For new copy or updates, follow the Suspec loop:
 
 1. Intake item in `intake/`.
 2. Spec in `specs/` referencing the framework ADR or doc.
