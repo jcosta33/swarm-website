@@ -2521,9 +2521,11 @@ body::after {
     width: min(100%, 22rem);
     overflow-x: auto;
     margin-top: 0.98rem;
-    padding-block: 0.05rem 0.22rem;
+    padding: 0.05rem 1.05rem 0.22rem 0;
+    scroll-padding-inline: 0.1rem 1.05rem;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
+    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
   }
 
   .hero-trace::-webkit-scrollbar {
@@ -7308,13 +7310,11 @@ body::after {
   }
 
   .agent-page-nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 6.3rem), 1fr));
     gap: 0.38rem;
-    overflow-x: auto;
-    padding-block: 0.05rem 0.22rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.35rem), transparent);
+    overflow: visible;
+    padding: 0;
   }
 
   .agent-page-nav::-webkit-scrollbar {
@@ -7351,8 +7351,7 @@ body::after {
 
   .agent-page-nav-link {
     min-height: 2.28rem;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+    width: 100%;
     padding: 0.42rem 0.62rem;
   }
 
