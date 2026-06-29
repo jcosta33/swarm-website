@@ -1230,7 +1230,8 @@
 
 @media (max-width: 48rem) {
   .docs-article-header {
-    margin-bottom: 1.95rem;
+    margin-bottom: 1.45rem;
+    padding: 0.92rem 0.9rem 0.95rem;
   }
 
   .docs-article-html > p:first-of-type {
@@ -2923,9 +2924,9 @@
   }
 }
 
-@media (min-width: 34rem) and (max-width: 40rem) {
+@media (min-width: 22rem) and (max-width: 40rem) {
   .docs-layout > aside {
-    grid-template-columns: minmax(0, 1fr) minmax(9.5rem, 0.52fr);
+    grid-template-columns: minmax(0, 1fr) minmax(8.9rem, 0.5fr);
     gap: 0.5rem;
   }
 
