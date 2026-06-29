@@ -201,7 +201,7 @@ const commandFamilies = [
     commands: "worktree · run",
     detail: "Isolate task work and launch agents.",
     icon: GitBranch,
-    signal: "reference",
+    signal: "change",
   },
   {
     label: "JSON",
@@ -226,7 +226,7 @@ const commandSignalKey = [
   },
   {
     label: "Run",
-    role: "reference",
+    role: "change",
     detail: "isolate task work",
   },
   {

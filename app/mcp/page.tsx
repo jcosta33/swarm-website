@@ -170,7 +170,7 @@ const bridgeFlow = [
     detail: "A local process pipe, not a hosted service.",
     icon: Cable,
     href: "#install",
-    signal: "reference",
+    signal: "muted",
   },
   {
     label: "corpus-mcp",
@@ -206,7 +206,7 @@ const bridgeSignalKey = [
   },
   {
     label: "Pipe",
-    role: "reference",
+    role: "muted",
     detail: "local stdio transport",
   },
   {

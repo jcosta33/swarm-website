@@ -8,7 +8,7 @@
      greenfield = literal new-workspace paths, brownfield = existing-project
      adoption, change = active edits/attention, evidence = proof/review,
      reference = manuals and catalogs. Change is a red-oxide signal, separate
-     from the orange-gold core; muted cyan/dusty periwinkle are package accents only.
+     from the orange-gold core; muted cyan/dusty violet are package accents only.
      Brown means existing-project work.
      Green means greenfield, not "good"; sage means evidence, not "new";
      setup alone is not green.
@@ -43,8 +43,8 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #8c8492;
-  --color-interface-blue: #5aa7b7;
+  --color-neon-bridge: #9b8796;
+  --color-interface-blue: #6ab8c4;
   --color-rubedo: #bd4b4f;
   --color-pwr-red: #d2624e;
   --color-olive: var(--color-phosphor);
@@ -73,9 +73,9 @@
   --package-agents: #86a984;
   --package-agents-rgb: 134, 169, 132;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 90, 167, 183;
+  --package-cli-rgb: 106, 184, 196;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 140, 132, 146;
+  --package-mcp-rgb: 155, 135, 150;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -301,8 +301,8 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #8c8492;
-  --c-interface-blue: #5aa7b7;
+  --c-neon-bridge: #9b8796;
+  --c-interface-blue: #6ab8c4;
   --c-rubedo: #bd4b4f;
   --c-pwr-red: #d2624e;
   --c-olive: var(--c-phosphor);
@@ -322,9 +322,9 @@
   --package-agents: #86a984;
   --package-agents-rgb: 134, 169, 132;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 90, 167, 183;
+  --package-cli-rgb: 106, 184, 196;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 140, 132, 146;
+  --package-mcp-rgb: 155, 135, 150;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -4369,22 +4369,22 @@ section.bg-section-band::after {
   }
 
   .mcp-adapter-rail {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0.7rem !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.62rem !important;
   }
 
   .mcp-adapter-step:last-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .mcp-adapter-step-link {
-    min-height: 9rem;
-    padding: 1.05rem 0.9rem 1.1rem;
+    min-height: 0;
+    padding: 0.9rem 0.95rem 0.95rem;
   }
 
   .mcp-adapter-step:last-child .mcp-adapter-step-link {
-    min-height: 5.9rem;
-    padding-block: 0.82rem;
+    min-height: 0;
+    padding-block: 0.9rem;
   }
 
   .mcp-adapter-step-link::before {
@@ -4414,8 +4414,8 @@ section.bg-section-band::after {
   }
 
   .mcp-adapter-detail {
-    margin-top: 0.7rem;
-    max-width: 16rem;
+    margin-top: 0.5rem;
+    max-width: none;
     font-size: 0.82rem;
     line-height: 1.5;
   }
@@ -5520,7 +5520,12 @@ section.bg-section-band::after {
   }
 
   .skill-anatomy-step {
-    min-height: 8.8rem;
+    min-height: 0;
+  }
+
+  .skill-anatomy-step > a {
+    min-height: 0;
+    padding: 0.9rem 1rem;
   }
 
   .skill-folder-ledger {
