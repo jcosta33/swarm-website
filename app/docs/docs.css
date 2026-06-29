@@ -2264,24 +2264,38 @@
   }
 
   .docs-index-legend {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.4rem;
-    padding: 0.44rem 0 0.18rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.38rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0.42rem 1.05rem 0.12rem 0;
+    scroll-padding-inline: 0.1rem 1.05rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
+  }
+
+  .docs-index-legend::-webkit-scrollbar {
+    display: none;
   }
 
   .docs-index-legend-item {
-    min-height: 2.75rem;
+    min-height: 2.35rem;
+    min-width: 5.8rem;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     border-left-width: 1px;
-    padding: 0.42rem 0.22rem;
+    padding: 0.34rem 0.42rem;
   }
 
   .docs-prose .docs-index-legend-item a {
-    min-height: 2.75rem;
-    justify-items: center;
+    min-height: 2.35rem;
+    justify-items: start;
   }
 
   .docs-index-legend-item span {
-    text-align: center;
+    text-align: left;
     white-space: normal;
   }
 
