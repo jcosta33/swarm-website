@@ -442,11 +442,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
         }
         aria-hidden="true"
       >
+        <span className="trace-rail-label">trace</span>
         <span className="trace-rail-track">
           <span className="trace-rail-fill" />
         </span>
         <span className="trace-rail-readout">
-          {String(trace.progress).padStart(3, "0")}
+          {trace.progress.toString().padStart(2, "0")}%
         </span>
       </div>
 
