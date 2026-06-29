@@ -11,7 +11,7 @@
 // The exact complement is reserved for diagnostics; public complements use
 // softer field, sage, umber, readable red-clay, and verdigris roles. Brown means existing
 // project; green means greenfield, not "good"; sage means evidence, not "new".
-// Blue and smoked lavender are reserved for package hero accents, not general
+// Blue and smoked mauve are reserved for package hero accents, not general
 // status or work-state meaning.
 // A role is more than a color: use it for the text, lamp, rail, border, hatch,
 // mark, icon, command plate, and hover state. Setup is not automatically green:
@@ -78,10 +78,10 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#C65852",
-    relationship: "red-clay attention: HSL(3 50% 55%)",
-    wheel: "-31° from core",
-    tone: "muted red clay",
+    hex: "#B95B62",
+    relationship: "red-earth attention: HSL(356 41% 54%)",
+    wheel: "-38° from core",
+    tone: "muted red earth",
     use: "Edits, fixes, run work, blocked states, and attention markers.",
     surface: "angled change hatching and work-in-progress rails",
     pattern: "angled change hatching",

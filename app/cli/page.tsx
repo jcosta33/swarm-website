@@ -271,7 +271,7 @@ export default function CliPage() {
             Scaffold files, run checks, manage worktrees.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            <Badge variant="unverified">Command surface settling</Badge>
+            <Badge variant="draft">Command surface settling</Badge>
             <Badge variant="draft">No verdicts</Badge>
           </div>
         </PageHero>

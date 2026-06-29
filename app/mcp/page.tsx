@@ -263,7 +263,7 @@ export default function McpPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             <Badge variant="ready">v0 surface</Badge>
             <Badge variant="draft">read-only</Badge>
-            <Badge variant="unverified">no verdict</Badge>
+            <Badge signal="muted">no verdict</Badge>
           </div>
         </PageHero>
       </Section>
