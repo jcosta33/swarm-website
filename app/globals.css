@@ -9497,8 +9497,8 @@ body::after {
   }
 
   .colophon-fact-row {
-    grid-template-columns: minmax(5.5rem, 0.42fr) 1fr;
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 0.22rem;
   }
 
   .colophon-paper {
