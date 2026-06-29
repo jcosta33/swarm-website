@@ -2525,13 +2525,16 @@
   position: absolute;
   right: 0.35rem;
   top: 50%;
-  width: 0.42rem;
-  height: 1px;
+  width: 0.44rem;
+  height: 0.44rem;
   pointer-events: none;
-  background: var(--docs-index-signal);
-  opacity: 0.24;
-  transform: translateY(-50%);
-  transition: opacity 0.12s;
+  border-right: 1px solid var(--docs-index-signal);
+  border-bottom: 1px solid var(--docs-index-signal);
+  opacity: 0.32;
+  transform: translateY(-50%) rotate(-45deg);
+  transition:
+    opacity 0.12s,
+    right 0.12s;
 }
 
 .docs-index-item-number {
@@ -2563,6 +2566,7 @@
 .docs-prose .docs-index-list a:hover::after,
 .docs-prose .docs-index-list a:focus-visible::after {
   opacity: 0.72;
+  right: 0.28rem;
 }
 
 .docs-prose .docs-index-section .docs-index-list a:focus-visible {
