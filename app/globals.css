@@ -43,8 +43,8 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #8b8098;
-  --color-interface-blue: #63b8d0;
+  --color-neon-bridge: #9a849e;
+  --color-interface-blue: #72b9d6;
   --color-rubedo: #c15a55;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
@@ -69,12 +69,12 @@
      continues to use the semantic signal roles below. */
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
-  --package-agents: var(--signal-reference);
-  --package-agents-rgb: var(--signal-reference-rgb);
+  --package-agents: #82b89b;
+  --package-agents-rgb: 130, 184, 155;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 99, 184, 208;
+  --package-cli-rgb: 114, 185, 214;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 139, 128, 152;
+  --package-mcp-rgb: 154, 132, 158;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -300,8 +300,8 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #8b8098;
-  --c-interface-blue: #63b8d0;
+  --c-neon-bridge: #9a849e;
+  --c-interface-blue: #72b9d6;
   --c-rubedo: #c15a55;
   --c-olive: var(--c-phosphor);
   --signal-core: var(--color-aurum);
@@ -316,12 +316,12 @@
   --signal-change-rgb: 193, 90, 85;
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
-  --package-agents: var(--signal-reference);
-  --package-agents-rgb: var(--signal-reference-rgb);
+  --package-agents: #82b89b;
+  --package-agents-rgb: 130, 184, 155;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 99, 184, 208;
+  --package-cli-rgb: 114, 185, 214;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 139, 128, 152;
+  --package-mcp-rgb: 154, 132, 158;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -672,16 +672,15 @@ body::after {
   align-items: center;
   gap: 0.65rem;
   overflow: hidden;
-  border: 1px solid rgba(var(--key-rgb), 0.18);
+  border: 1px solid rgba(var(--key-rgb), 0.14);
   border-radius: var(--radius-control);
   background:
-    linear-gradient(90deg, rgba(var(--key-rgb), 0.02), transparent 48%),
-    var(--key-mark),
+    linear-gradient(90deg, rgba(var(--key-rgb), 0.008), transparent 46%),
     var(--signal-pattern-muted),
     rgba(26, 21, 16, 0.78);
   padding: 0.62rem 0.82rem;
   box-shadow:
-    inset 2px 0 0 rgba(var(--key-rgb), 0.18),
+    inset 2px 0 0 rgba(var(--key-rgb), 0.14),
     inset 0 1px 0 rgba(240, 226, 204, 0.055);
 }
 
@@ -691,7 +690,7 @@ body::after {
   width: 1.05rem;
   min-height: 2rem;
   flex: 0 0 auto;
-  border: 1px solid rgba(var(--key-rgb), 0.34);
+  border: 1px solid rgba(var(--key-rgb), 0.3);
   border-radius: calc(var(--radius-control) - 4px);
   background:
     linear-gradient(180deg, rgba(var(--key-rgb), 0.14), transparent 62%),
@@ -711,7 +710,7 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(var(--key-rgb), 0.28),
+    rgba(var(--key-rgb), 0.2),
     transparent
   );
   opacity: 0.44;
@@ -6788,10 +6787,10 @@ body::after {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 1px solid rgba(var(--stat-rgb), 0.16);
+  border: 1px solid rgba(var(--stat-rgb), 0.13);
   border-radius: calc(var(--radius-control) - 2px);
   background:
-    linear-gradient(90deg, rgba(var(--stat-rgb), 0.052), transparent 58%),
+    linear-gradient(90deg, rgba(var(--stat-rgb), 0.026), transparent 58%),
     var(--signal-pattern-muted),
     rgba(10, 7, 5, 0.16);
   padding: 0.85rem 0.9rem;
@@ -6806,10 +6805,10 @@ body::after {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(var(--stat-rgb), 0.58),
+    rgba(var(--stat-rgb), 0.44),
     transparent
   );
-  opacity: 0.68;
+  opacity: 0.56;
 }
 
 .signal-stat-core {
@@ -6817,7 +6816,7 @@ body::after {
   --stat-rgb: var(--signal-core-rgb);
   --stat-pattern: var(--signal-pattern-core);
   --stat-mark: var(--signal-mark-core);
-  border-top-color: rgba(var(--signal-core-rgb), 0.36);
+  border-top-color: rgba(var(--signal-core-rgb), 0.28);
 }
 
 .signal-stat-evidence {
@@ -6825,7 +6824,7 @@ body::after {
   --stat-rgb: var(--signal-evidence-rgb);
   --stat-pattern: var(--signal-pattern-evidence);
   --stat-mark: var(--signal-mark-evidence);
-  border-top-color: rgba(var(--signal-evidence-rgb), 0.34);
+  border-top-color: rgba(var(--signal-evidence-rgb), 0.26);
 }
 
 .signal-stat-greenfield {
@@ -6833,7 +6832,7 @@ body::after {
   --stat-rgb: var(--signal-greenfield-rgb);
   --stat-pattern: var(--signal-pattern-greenfield);
   --stat-mark: var(--signal-mark-greenfield);
-  border-left-color: rgba(var(--signal-greenfield-rgb), 0.52);
+  border-left-color: rgba(var(--signal-greenfield-rgb), 0.4);
 }
 
 .signal-stat-brownfield {
@@ -6841,7 +6840,7 @@ body::after {
   --stat-rgb: var(--signal-brownfield-rgb);
   --stat-pattern: var(--signal-pattern-brownfield);
   --stat-mark: var(--signal-mark-brownfield);
-  border-left-color: rgba(var(--signal-brownfield-rgb), 0.52);
+  border-left-color: rgba(var(--signal-brownfield-rgb), 0.4);
 }
 
 .signal-stat-change {
@@ -6849,7 +6848,7 @@ body::after {
   --stat-rgb: var(--signal-change-rgb);
   --stat-pattern: var(--signal-pattern-change);
   --stat-mark: var(--signal-mark-change);
-  border-bottom-color: rgba(var(--signal-change-rgb), 0.22);
+  border-bottom-color: rgba(var(--signal-change-rgb), 0.18);
 }
 
 .signal-stat-reference {
@@ -6857,7 +6856,7 @@ body::after {
   --stat-rgb: var(--signal-reference-rgb);
   --stat-pattern: var(--signal-pattern-reference);
   --stat-mark: var(--signal-mark-reference);
-  border-top-color: rgba(var(--signal-reference-rgb), 0.3);
+  border-top-color: rgba(var(--signal-reference-rgb), 0.24);
 }
 
 .signal-stat-muted {

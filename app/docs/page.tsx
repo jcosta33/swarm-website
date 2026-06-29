@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const docsLegend = [
   { label: "Start", role: "core", detail: "entry", href: "#start-here" },
   { label: "Tutorial", role: "core", detail: "first pass", href: "#tutorial" },
-  { label: "Examples", role: "change", detail: "worked changes", href: "#examples" },
+  { label: "Examples", role: "muted", detail: "worked pages", href: "#examples" },
   { label: "Reference", role: "reference", detail: "manual", href: "#reference" },
   { label: "ADRs", role: "muted", detail: "decisions", href: "#adrs" },
 ] as const satisfies Array<{
@@ -138,7 +138,7 @@ export default function DocsIndex() {
               <Section
                 id="examples"
                 sec={balancedGrid.examples}
-                role="change"
+                role="muted"
                 className="docs-index-section-examples"
               />
             </div>
@@ -165,7 +165,7 @@ export default function DocsIndex() {
               <Section
                 id="examples"
                 sec={examples}
-                role="change"
+                role="muted"
                 className="docs-index-section-examples"
               />
             ) : null}
