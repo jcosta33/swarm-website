@@ -6088,17 +6088,22 @@ section.bg-section-band::after {
   }
 
   .loop-step-grid-linked {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.72rem;
   }
 
   .loop-step-card {
     min-height: auto;
   }
 
+  .loop-step-grid-linked > li {
+    min-width: 0;
+  }
+
   .loop-step-card-linked {
     gap: 0.55rem;
-    padding: 0.85rem 0.75rem;
+    min-height: 8.9rem;
+    padding: 0.92rem 0.85rem;
   }
 
   .loop-step-card-linked .loop-step-label {
@@ -6112,7 +6117,9 @@ section.bg-section-band::after {
   }
 
   .loop-step-card-linked p {
-    display: none;
+    display: block;
+    font-size: 0.78rem;
+    line-height: 1.38;
   }
 }
 
