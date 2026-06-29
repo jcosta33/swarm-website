@@ -15,7 +15,7 @@ const steps = [
     label: "Pull",
     icon: Inbox,
     description: "Capture the ticket and intent in an intake file.",
-    signal: "reference",
+    signal: "core",
   },
   {
     number: "02",
@@ -30,14 +30,14 @@ const steps = [
     icon: ListChecks,
     description:
       "Hand the agent a bounded packet: scope, do-not-change, verify.",
-    signal: "change",
+    signal: "core",
   },
   {
     number: "04",
     label: "Run",
     icon: Terminal,
     description: "The agent implements and pastes real evidence.",
-    signal: "change",
+    signal: "core",
   },
   {
     number: "05",
@@ -45,14 +45,14 @@ const steps = [
     icon: ScanEye,
     description:
       "Check evidence per requirement; human attention where needed.",
-    signal: "evidence",
+    signal: "core",
   },
   {
     number: "06",
     label: "Close",
     icon: GitMerge,
     description: "Merge, save findings, update the board.",
-    signal: "reference",
+    signal: "core",
   },
 ] as const;
 

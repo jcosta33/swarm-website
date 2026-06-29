@@ -66,12 +66,12 @@ export const metadata: Metadata = {
 };
 
 const loopSteps = [
-  { label: "Pull", signal: "reference", href: "/the-loop/#pull" },
+  { label: "Pull", signal: "core", href: "/the-loop/#pull" },
   { label: "Spec", signal: "core", href: "/the-loop/#spec" },
-  { label: "Task", signal: "change", href: "/the-loop/#task" },
-  { label: "Run", signal: "change", href: "/the-loop/#run" },
-  { label: "Review", signal: "evidence", href: "/the-loop/#review" },
-  { label: "Close", signal: "reference", href: "/the-loop/#close" },
+  { label: "Task", signal: "core", href: "/the-loop/#task" },
+  { label: "Run", signal: "core", href: "/the-loop/#run" },
+  { label: "Review", signal: "core", href: "/the-loop/#review" },
+  { label: "Close", signal: "core", href: "/the-loop/#close" },
 ] as const satisfies Array<{
   label: string;
   signal: SignalRole;

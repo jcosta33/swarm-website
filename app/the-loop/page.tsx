@@ -54,7 +54,7 @@ const steps = [
   {
     number: "01",
     name: "Pull",
-    signal: "reference",
+    signal: "core",
     body: "Copy the request into an intake file. Preserve what was asked before you interpret it.",
     example: {
       title: "intake/INTAKE-42.md",
@@ -109,7 +109,7 @@ const steps = [
   {
     number: "03",
     name: "Task",
-    signal: "change",
+    signal: "core",
     body: "Give the agent scope, limits, and Verify commands.",
     example: {
       title: "tasks/TASK-shell.md",
@@ -127,7 +127,7 @@ const steps = [
   {
     number: "04",
     name: "Run",
-    signal: "change",
+    signal: "core",
     body: "Implement the task and paste real evidence next to the requirement.",
     example: {
       title: "tasks/TASK-shell.md",
@@ -144,7 +144,7 @@ const steps = [
   {
     number: "05",
     name: "Review",
-    signal: "evidence",
+    signal: "core",
     body: "Check evidence per requirement. Escalate missing or unclear evidence.",
     example: {
       title: "reviews/REVIEW-shell.md",
@@ -171,7 +171,7 @@ const steps = [
   {
     number: "06",
     name: "Close",
-    signal: "reference",
+    signal: "core",
     body: "Merge, save useful findings, and update the board.",
     example: {
       title: "findings/FINDING-tailwind-v4-syntax.md",
