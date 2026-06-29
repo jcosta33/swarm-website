@@ -154,7 +154,7 @@ const skillRoutes = [
     count: "10",
     icon: Hammer,
     text: "Feature, fix, refactor, rewrite, migration, performance, tests, docs.",
-    signal: "change",
+    signal: "core",
   },
   {
     label: "Guide format",
@@ -221,7 +221,7 @@ export default function SkillsPage() {
           <p className="repo-manifest-label">guide files</p>
           <div className="repo-manifest-grid">
             <SignalStat label="review" value="4" signal="evidence" />
-            <SignalStat label="change" value="10" signal="change" />
+            <SignalStat label="change" value="10" signal="core" />
             <SignalStat
               label="file"
               value="SKILL.md"
@@ -381,11 +381,11 @@ export default function SkillsPage() {
       <Section
         id="change-guides"
         register="05 / change guides"
-        registerTone="change"
+        registerTone="core"
         className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-change">
+          <div className="section-kicker section-kicker-core">
             <Hammer className="h-4 w-4" aria-hidden="true" />
             <span>change guides</span>
           </div>
@@ -398,7 +398,7 @@ export default function SkillsPage() {
         <Panel
           brushed
           screws
-          className="skill-guide-catalog skill-guide-catalog-change p-0"
+          className="skill-guide-catalog skill-guide-catalog-core p-0"
         >
           <div className="skill-guide-catalog-header">
             <span>change catalog</span>
@@ -414,18 +414,18 @@ export default function SkillsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${s.skill} skill on GitHub (opens in new tab)`}
-                    className="skill-guide-row catalog-row catalog-row-change group focus-ring"
+                    className="skill-guide-row catalog-row catalog-row-core group focus-ring"
                   >
                     <div className="flex min-w-0 items-start gap-4">
                       <HexBadge
-                        color="change"
+                        color="core"
                         className="catalog-row-badge skill-guide-row-badge"
                       >
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </HexBadge>
                       <div className="min-w-0">
                         <h3
-                          className={`catalog-row-title font-mono text-sm font-semibold ${signalRoles.change.text}`}
+                          className={`catalog-row-title font-mono text-sm font-semibold ${signalRoles.core.text}`}
                         >
                           {s.skill}
                         </h3>

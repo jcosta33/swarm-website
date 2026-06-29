@@ -145,7 +145,7 @@ const rosterGroups = [
         label: "Challenge",
         file: "corpus-challenger",
         icon: Swords,
-        signal: "change",
+        signal: "muted",
         use: "Pressure-test a proposal before build work starts.",
       },
     ],
@@ -154,7 +154,7 @@ const rosterGroups = [
     title: "Bounded-authoring lane",
     note: "Draft one named artifact. Review still decides what it means.",
     tone: "write one artifact",
-    signal: "change",
+    signal: "muted",
     items: [
       {
         label: "Spec",
@@ -204,7 +204,7 @@ const agentPageNav = [
   { label: "Roster", href: "#worker-lanes", signal: "reference" },
   { label: "Install", href: "#install", signal: "core" },
   { label: "Read-only", href: "#read-only-workers", signal: "reference" },
-  { label: "Authoring", href: "#bounded-authoring", signal: "change" },
+  { label: "Authoring", href: "#bounded-authoring", signal: "core" },
   { label: "Limits", href: "#limits", signal: "muted" },
   { label: "Portability", href: "#portability", signal: "reference" },
 ] as const satisfies Array<{
@@ -244,7 +244,7 @@ export default function AgentsPage() {
             items={[
               { label: "Role", signal: "reference" },
               { label: "Inputs", signal: "core" },
-              { label: "Tools", signal: "change" },
+              { label: "Tools", signal: "muted" },
               { label: "Evidence", signal: "evidence" },
             ]}
           />
@@ -514,11 +514,11 @@ export default function AgentsPage() {
       <Section
         id="bounded-authoring"
         register="05 / bounded authoring"
-        registerTone="change"
+        registerTone="core"
         className="flex flex-col gap-12"
       >
         <div className="max-w-2xl">
-          <div className={`section-kicker ${signalRoles.change.sectionKicker}`}>
+          <div className={`section-kicker ${signalRoles.core.sectionKicker}`}>
             <Hammer className="h-4 w-4" aria-hidden="true" />
             <span>tier-2.conf — bounded authoring</span>
           </div>
@@ -545,17 +545,17 @@ export default function AgentsPage() {
                   className="group block rounded-sm focus-ring"
                 >
                   <Card
-                    signal="change"
-                    className={`agent-worker-card h-full border-panel-border ${signalRoles.change.hoverBorder}`}
+                    signal="core"
+                    className={`agent-worker-card h-full border-panel-border ${signalRoles.core.hoverBorder}`}
                   >
-                    <div className="catalog-row catalog-row-change flex items-start justify-between gap-4">
+                    <div className="catalog-row catalog-row-core flex items-start justify-between gap-4">
                       <div className="flex items-start gap-4">
-                        <HexBadge color="change" className="catalog-row-badge">
+                        <HexBadge color="core" className="catalog-row-badge">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </HexBadge>
                         <div>
                           <h3
-                            className={`catalog-row-title font-mono text-sm font-semibold ${signalRoles.change.text}`}
+                            className={`catalog-row-title font-mono text-sm font-semibold ${signalRoles.core.text}`}
                           >
                             {a.agent}
                           </h3>

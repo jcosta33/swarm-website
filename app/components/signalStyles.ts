@@ -3,13 +3,13 @@
 // evidence = proof / review / verified output, not generic "green means good"
 // greenfield = literal new-repo or starter-kit paths only
 // brownfield = existing-project adoption and migration paths only
-// change = edits / fixes / run work / blocked or attention states
+// change = attention states, defects, blocked/unverified work, and explicit change records
 // reference = docs / manuals / command catalogs / ledgers / read-only rosters
 // muted = hardware, chrome, and non-semantic labels
 // Prefer these role names over raw color aliases in new component code.
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
 // The exact complement is reserved for diagnostics; public complements use
-// softer field, sage, umber, readable red-oxide, and verdigris roles. Brown means existing
+// softer field, sage, umber, readable red-clay, and verdigris roles. Brown means existing
 // project; green means greenfield, not "good"; sage means evidence, not "new".
 // Cyan and dusty violet are reserved for package hero accents, not general
 // status or work-state meaning.
@@ -79,16 +79,16 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#BD4B4F",
-    relationship: "cinnabar attention: HSL(358 46% 52%)",
-    wheel: "-39° from core",
-    tone: "cinnabar red",
-    use: "Edits, fixes, run work, blocked states, and attention markers.",
+    hex: "#AC4650",
+    relationship: "red-clay attention: HSL(354 42% 47%)",
+    wheel: "-40° from core",
+    tone: "red-clay attention",
+    use: "Defects, blocked states, unverified work, and explicit change records.",
     surface: "angled change hatching and work-in-progress rails",
     pattern: "angled change hatching",
     avoid:
-      "Do not use for normal navigation, reference material, or decorative contrast beside core gold.",
-    example: "Change plans, run work, blocked, unverified, needs attention.",
+      "Do not use for routine operation, normal navigation, reference material, or decorative contrast beside core gold.",
+    example: "Change plans, blocked, unverified, needs attention.",
   },
   reference: {
     label: "reference",

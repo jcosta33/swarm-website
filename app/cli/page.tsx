@@ -148,7 +148,7 @@ const principles = [
     title: "One worktree per task",
     icon: GitBranch,
     text: "Keep parallel runs out of the main checkout.",
-    signal: "change",
+    signal: "reference",
   },
   {
     title: "Markdown is the source of truth",
@@ -200,7 +200,7 @@ const commandFamilies = [
     commands: "worktree · run",
     detail: "Isolate task work and launch agents.",
     icon: GitBranch,
-    signal: "change",
+    signal: "muted",
   },
   {
     label: "JSON",
@@ -215,7 +215,7 @@ const commandFamilies = [
 const cliPageNav = [
   { label: "Families", href: "#command-families", signal: "reference" },
   { label: "Install", href: "#install", signal: "core" },
-  { label: "Run loop", href: "#run-the-loop", signal: "change" },
+  { label: "Run loop", href: "#run-the-loop", signal: "core" },
   { label: "Commands", href: "#commands", signal: "reference" },
   { label: "Notes", href: "#design-notes", signal: "muted" },
   { label: "Source", href: "#source", signal: "reference" },

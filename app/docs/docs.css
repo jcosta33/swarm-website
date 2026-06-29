@@ -2336,12 +2336,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  border: 1px solid rgba(var(--docs-index-rgb), 0.18);
+  border: 1px solid rgba(var(--docs-index-rgb), 0.14);
   border-radius: var(--radius-panel);
   background:
-    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.022), transparent 42%),
-    linear-gradient(0deg, rgba(var(--docs-index-rgb), 0.024) 1px, transparent 1px),
-    var(--docs-index-pattern),
+    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.012), transparent 42%),
+    linear-gradient(0deg, rgba(var(--docs-index-rgb), 0.014) 1px, transparent 1px),
+    var(--signal-pattern-muted),
     rgba(18, 14, 10, 0.62);
   background-size:
     auto,
@@ -2363,13 +2363,13 @@
   width: 0.38rem;
   pointer-events: none;
   background:
-    linear-gradient(180deg, transparent, rgba(var(--docs-index-rgb), 0.28), transparent),
+    linear-gradient(180deg, transparent, rgba(var(--docs-index-rgb), 0.2), transparent),
     repeating-linear-gradient(
       0deg,
-      rgba(var(--docs-index-rgb), 0.14) 0 1px,
+      rgba(var(--docs-index-rgb), 0.08) 0 1px,
       transparent 1px 0.55rem
     );
-  opacity: 0.58;
+  opacity: 0.48;
 }
 
 .docs-index-section-core,
@@ -2442,35 +2442,35 @@
       122deg,
       transparent 0%,
       transparent 38%,
-      rgba(var(--docs-index-rgb), 0.025) 48%,
+      rgba(var(--docs-index-rgb), 0.012) 48%,
       transparent 60%,
       transparent 100%
     ),
-    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.42), transparent 72%)
+    linear-gradient(90deg, rgba(var(--docs-index-rgb), 0.28), transparent 72%)
       left 0.62rem top 0.62rem / 3.2rem 1px no-repeat,
-    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.42), transparent 72%)
+    linear-gradient(180deg, rgba(var(--docs-index-rgb), 0.28), transparent 72%)
       left 0.62rem top 0.62rem / 1px 2.2rem no-repeat,
-    linear-gradient(270deg, rgba(var(--docs-index-rgb), 0.22), transparent 72%)
+    linear-gradient(270deg, rgba(var(--docs-index-rgb), 0.16), transparent 72%)
       right 0.62rem bottom 0.62rem / 3.2rem 1px no-repeat,
-    linear-gradient(0deg, rgba(var(--docs-index-rgb), 0.22), transparent 72%)
+    linear-gradient(0deg, rgba(var(--docs-index-rgb), 0.16), transparent 72%)
       right 0.62rem bottom 0.62rem / 1px 2.2rem no-repeat,
     radial-gradient(
       70% 60% at 16% 0%,
       rgba(240, 226, 204, 0.045),
       transparent 60%
     );
-  opacity: 0.44;
+  opacity: 0.34;
   transition: opacity 180ms ease;
 }
 
 .docs-index-section:hover::after,
 .docs-index-section:focus-within::after {
-  opacity: 0.5;
+  opacity: 0.42;
 }
 
 .docs-index-section:hover,
 .docs-index-section:focus-within {
-  border-color: rgba(var(--docs-index-rgb), 0.44);
+  border-color: rgba(var(--docs-index-rgb), 0.3);
   box-shadow:
     inset 0 1px 0 rgba(240, 226, 204, 0.065),
     0 0 0 1px rgba(var(--docs-index-rgb), 0.055);

@@ -6,8 +6,8 @@
      complement is #2472D8, HSL(214 71% 49%), reserved for diagnostics only so
      the public site stays warm. Public accents are semantic, not decorative:
      greenfield = literal new-workspace paths, brownfield = existing-project
-     adoption, change = active edits/attention, evidence = proof/review,
-     reference = manuals and catalogs. Change is a red-oxide signal, separate
+     adoption, change = attention/change records, evidence = proof/review,
+     reference = manuals and catalogs. Change is a red-clay signal, separate
      from the orange-gold core; muted cyan/dusty violet are package accents only.
      Brown means existing-project work.
      Green means greenfield, not "good"; sage means evidence, not "new";
@@ -43,9 +43,9 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #9b8796;
+  --color-neon-bridge: #8e7d91;
   --color-interface-blue: #6ab8c4;
-  --color-rubedo: #bd4b4f;
+  --color-rubedo: #ac4650;
   --color-pwr-red: #d2624e;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
@@ -60,7 +60,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 189, 75, 79;
+  --signal-change-rgb: 172, 70, 80;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -75,7 +75,7 @@
   --package-cli: var(--color-interface-blue);
   --package-cli-rgb: 106, 184, 196;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 155, 135, 150;
+  --package-mcp-rgb: 142, 125, 145;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -249,7 +249,7 @@
      - evidence: verified output, review/pass states, proof-oriented sections
      - greenfield: new repos, starter-kit setup, and first-run tutorial paths
      - brownfield: existing-project adoption, migration, and repo-history paths
-     - change: edits, fixes, run work, blocked/attention states
+     - change: attention states, defects, and explicit change records
      - reference: docs, ledgers, command catalogs, source metadata
      - muted: hardware, counters, neutral trim
      A role must travel as a set: hue, lamp, rail, hatch, border, and hover.
@@ -301,9 +301,9 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #9b8796;
+  --c-neon-bridge: #8e7d91;
   --c-interface-blue: #6ab8c4;
-  --c-rubedo: #bd4b4f;
+  --c-rubedo: #ac4650;
   --c-pwr-red: #d2624e;
   --c-olive: var(--c-phosphor);
   --color-pwr-red: var(--c-pwr-red);
@@ -316,7 +316,7 @@
   --signal-brownfield: var(--color-brownfield);
   --signal-brownfield-rgb: 169, 107, 64;
   --signal-change: var(--color-rubedo);
-  --signal-change-rgb: 189, 75, 79;
+  --signal-change-rgb: 172, 70, 80;
   --package-skills: var(--signal-evidence);
   --package-skills-rgb: var(--signal-evidence-rgb);
   --package-agents: #86a984;
@@ -324,7 +324,7 @@
   --package-cli: var(--color-interface-blue);
   --package-cli-rgb: 106, 184, 196;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 155, 135, 150;
+  --package-mcp-rgb: 142, 125, 145;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -4028,8 +4028,8 @@ section.bg-section-band::after {
   overflow: hidden;
   background-color: rgba(28, 22, 16, 0.96);
   background-image:
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.001), transparent 34%),
-    linear-gradient(90deg, rgba(var(--process-rgb), 0.008) 0 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.0008), transparent 34%),
+    linear-gradient(90deg, rgba(var(--process-rgb), 0.004) 0 1px, transparent 1px),
     var(--signal-pattern-muted);
   transition:
     border-color 160ms ease,
@@ -4088,7 +4088,7 @@ section.bg-section-band::after {
 .process-strip
   > :is(li, a, div)
   :is(.text-corpus-yellow, .text-olive, .text-brass, .clip-hex, .motion-nudge-x, .motion-nudge-x-centered) {
-  color: color-mix(in oklab, var(--process-signal) 68%, var(--color-concrete-200));
+  color: color-mix(in oklab, var(--process-signal) 54%, var(--color-concrete-200));
 }
 
 .process-strip .hex-badge {
@@ -4096,7 +4096,7 @@ section.bg-section-band::after {
     linear-gradient(180deg, rgba(240, 226, 204, 0.06), transparent 46%),
     radial-gradient(
       86% 76% at 50% 0%,
-      rgba(var(--process-rgb), 0.048),
+      rgba(var(--process-rgb), 0.026),
       transparent 64%
     ),
     rgba(26, 21, 16, 0.98);
@@ -4482,18 +4482,18 @@ section.bg-section-band::after {
   --guardrail-pattern: var(--signal-pattern-reference);
   --plate-signal: var(--guardrail-signal);
   --plate-rgb: var(--guardrail-rgb);
-  border-color: rgba(var(--guardrail-rgb), 0.3);
+  border-color: rgba(var(--guardrail-rgb), 0.16);
   background-image:
     linear-gradient(
       90deg,
-      rgba(var(--guardrail-rgb), 0.12) 0,
-      rgba(var(--guardrail-rgb), 0.12) 2px,
+      rgba(var(--guardrail-rgb), 0.036) 0,
+      rgba(var(--guardrail-rgb), 0.036) 2px,
       transparent 2px
     ),
-    var(--guardrail-pattern),
+    var(--signal-pattern-muted),
     radial-gradient(
       74% 68% at 16% 0%,
-      rgba(var(--guardrail-rgb), 0.12),
+      rgba(var(--guardrail-rgb), 0.026),
       transparent 66%
     );
 }
@@ -5191,24 +5191,31 @@ section.bg-section-band::after {
   overflow: hidden;
   border-color: rgba(var(--skill-guide-rgb), 0.2);
   background:
-    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.016), transparent 44%),
-    var(--skill-guide-mark),
-    var(--skill-guide-pattern),
+    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.01), transparent 44%),
+    var(--signal-mark-muted),
+    var(--signal-pattern-muted),
     var(--color-panel-raised);
+}
+
+.skill-guide-catalog-core {
+  --skill-guide-signal: var(--signal-core);
+  --skill-guide-rgb: var(--signal-core-rgb);
+  --skill-guide-pattern: var(--signal-pattern-muted);
+  --skill-guide-mark: var(--signal-mark-muted);
 }
 
 .skill-guide-catalog-evidence {
   --skill-guide-signal: var(--signal-evidence);
   --skill-guide-rgb: var(--signal-evidence-rgb);
-  --skill-guide-pattern: var(--signal-pattern-evidence);
-  --skill-guide-mark: var(--signal-mark-evidence);
+  --skill-guide-pattern: var(--signal-pattern-muted);
+  --skill-guide-mark: var(--signal-mark-muted);
 }
 
 .skill-guide-catalog-change {
   --skill-guide-signal: var(--signal-change);
   --skill-guide-rgb: var(--signal-change-rgb);
-  --skill-guide-pattern: var(--signal-pattern-change);
-  --skill-guide-mark: var(--signal-mark-change);
+  --skill-guide-pattern: var(--signal-pattern-muted);
+  --skill-guide-mark: var(--signal-mark-muted);
 }
 
 .skill-guide-catalog-header {
@@ -5743,31 +5750,31 @@ section.bg-section-band::after {
 .panel-raised.loop-step-card {
   --plate-signal: var(--loop-step-signal);
   --plate-rgb: var(--loop-step-rgb);
-  border-color: rgba(var(--loop-step-rgb), 0.24);
+  border-color: rgba(var(--loop-step-rgb), 0.16);
   background-image:
     linear-gradient(
       90deg,
-      rgba(var(--loop-step-rgb), 0.12) 0,
-      rgba(var(--loop-step-rgb), 0.12) 2px,
+      rgba(var(--loop-step-rgb), 0.055) 0,
+      rgba(var(--loop-step-rgb), 0.055) 2px,
       transparent 2px
     ),
     var(--loop-step-mark),
     var(--loop-step-pattern),
     radial-gradient(
       80% 70% at 10% 0%,
-      rgba(var(--loop-step-rgb), 0.045),
+      rgba(var(--loop-step-rgb), 0.018),
       transparent 60%
   );
 }
 
 .panel-raised.loop-step-card:hover,
 .panel-raised.loop-step-card:focus-visible {
-  border-color: rgba(var(--loop-step-rgb), 0.36);
+  border-color: rgba(var(--loop-step-rgb), 0.28);
   box-shadow:
     inset 0 1px 0 rgba(232, 222, 203, 0.07),
     inset 0 -1px 0 rgba(0, 0, 0, 0.55),
-    inset 2px 0 0 rgba(var(--loop-step-rgb), 0.2),
-    0 0 0 1px rgba(var(--loop-step-rgb), 0.07),
+    inset 2px 0 0 rgba(var(--loop-step-rgb), 0.12),
+    0 0 0 1px rgba(var(--loop-step-rgb), 0.04),
     0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
@@ -5780,16 +5787,16 @@ section.bg-section-band::after {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(var(--loop-step-rgb), 0.72),
+    rgba(var(--loop-step-rgb), 0.48),
     transparent
   );
-  opacity: 0.64;
+  opacity: 0.46;
   transition: opacity 150ms ease;
 }
 
 .loop-step-card:hover::before,
 .loop-step-card:focus-visible::before {
-  opacity: 0.9;
+  opacity: 0.72;
 }
 
 .loop-step-connector {
@@ -6482,14 +6489,14 @@ section.bg-section-band::after {
 .panel-raised.skill-guide-catalog {
   --plate-signal: var(--skill-guide-signal);
   --plate-rgb: var(--skill-guide-rgb);
-  border-color: rgba(var(--skill-guide-rgb), 0.36);
+  border-color: rgba(var(--skill-guide-rgb), 0.2);
   background-color: var(--color-panel-raised);
   background-image:
-    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.07), transparent 38%),
+    linear-gradient(90deg, rgba(var(--skill-guide-rgb), 0.018), transparent 38%),
     var(--skill-guide-pattern),
     radial-gradient(
       70% 58% at 16% 0%,
-      rgba(var(--skill-guide-rgb), 0.08),
+      rgba(var(--skill-guide-rgb), 0.026),
       transparent 62%
     ),
     radial-gradient(
@@ -6754,7 +6761,7 @@ section.bg-section-band::after {
   --accent-mark: var(--signal-mark-core);
   --plate-signal: var(--accent-signal);
   --plate-rgb: var(--accent-rgb);
-  border-color: rgba(var(--accent-rgb), 0.13);
+  border-color: rgba(var(--accent-rgb), 0.11);
   background-image:
     linear-gradient(
       180deg,
@@ -6763,15 +6770,15 @@ section.bg-section-band::after {
     ),
     linear-gradient(
       90deg,
-      rgba(var(--accent-rgb), 0.055) 0,
-      rgba(var(--accent-rgb), 0.055) 2px,
+      rgba(var(--accent-rgb), 0.028) 0,
+      rgba(var(--accent-rgb), 0.028) 2px,
       transparent 2px
     ),
-    var(--accent-mark),
-    var(--accent-pattern),
+    var(--signal-mark-muted),
+    var(--signal-pattern-muted),
     radial-gradient(
       72% 70% at 12% 0%,
-      rgba(var(--accent-rgb), 0.014),
+      rgba(var(--accent-rgb), 0.008),
       transparent 62%
     );
 }
@@ -7037,11 +7044,11 @@ section.bg-section-band::after {
   --tool-rgb: var(--signal-reference-rgb);
   --tool-pattern: var(--signal-pattern-reference);
   --tool-mark: var(--signal-mark-reference);
-  border-color: rgba(var(--tool-rgb), 0.28);
+  border-color: rgba(var(--tool-rgb), 0.18);
   background-image:
-    linear-gradient(90deg, rgba(var(--tool-rgb), 0.065), transparent 50%),
-    var(--tool-mark),
-    var(--tool-pattern),
+    linear-gradient(90deg, rgba(var(--tool-rgb), 0.018), transparent 50%),
+    var(--signal-mark-muted),
+    var(--signal-pattern-muted),
     linear-gradient(180deg, rgba(240, 226, 204, 0.025), transparent 44%);
 }
 
@@ -7868,11 +7875,11 @@ section.bg-section-band::after {
   --roster-rgb: var(--signal-core-rgb);
   --roster-pattern: var(--signal-pattern-core);
   --roster-mark: var(--signal-mark-core);
-  border-color: rgba(var(--roster-rgb), 0.3);
+  border-color: rgba(var(--roster-rgb), 0.18);
   background:
-    linear-gradient(90deg, rgba(var(--roster-rgb), 0.08), transparent 35%),
-    var(--roster-mark),
-    var(--roster-pattern),
+    linear-gradient(90deg, rgba(var(--roster-rgb), 0.018), transparent 35%),
+    var(--signal-mark-muted),
+    var(--signal-pattern-muted),
     var(--color-panel-raised);
 }
 
@@ -7907,7 +7914,7 @@ section.bg-section-band::after {
   background:
     radial-gradient(
       70% 80% at 12% 0%,
-      rgba(var(--roster-rgb), 0.055),
+      rgba(var(--roster-rgb), 0.024),
       transparent 64%
     ),
     rgba(36, 29, 21, 0.78);
@@ -7941,7 +7948,7 @@ section.bg-section-band::after {
 
 .agent-roster-cells {
   background:
-    linear-gradient(90deg, rgba(var(--roster-rgb), 0.08), transparent 24%),
+    linear-gradient(90deg, rgba(var(--roster-rgb), 0.018), transparent 24%),
     var(--color-panel-border);
 }
 
@@ -7962,11 +7969,11 @@ section.bg-section-band::after {
     ),
     radial-gradient(
       70% 64% at 20% 0%,
-      rgba(var(--cell-rgb), 0.028),
+      rgba(var(--cell-rgb), 0.014),
       transparent 64%
     ),
-    var(--cell-mark),
-    var(--cell-pattern);
+    var(--signal-mark-muted),
+    var(--signal-pattern-muted);
 }
 
 .agent-roster-cell-core {

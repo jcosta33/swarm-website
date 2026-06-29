@@ -83,7 +83,7 @@ const guardrails = [
     text: "It reports facts. Review owns Pass, Fail, Unverified, or Blocked.",
     stamp: "defer",
     icon: MessagesSquare,
-    signal: "change",
+    signal: "muted",
   },
   {
     title: "Root-confined",
@@ -200,7 +200,7 @@ const bridgeFlow = [
 const mcpPageNav = [
   { label: "Bridge", href: "#bridge", signal: "muted" },
   { label: "Config", href: "#mcp-config", signal: "reference" },
-  { label: "Limits", href: "#guardrails", signal: "change" },
+  { label: "Limits", href: "#guardrails", signal: "muted" },
   { label: "Tools", href: "#mcp-tools", signal: "evidence" },
   { label: "Install", href: "#install", signal: "core" },
   { label: "Source", href: "#source", signal: "reference" },
@@ -381,11 +381,11 @@ export default function McpPage() {
       <Section
         id="guardrails"
         register="03 / limits"
-        registerTone="change"
+        registerTone="muted"
         className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-2xl">
-          <div className={`section-kicker ${signalRoles.change.sectionKicker}`}>
+          <div className={`section-kicker ${signalRoles.muted.sectionKicker}`}>
             <DroneIcon className="h-4 w-4" />
             <span>guardrails.ts</span>
           </div>
