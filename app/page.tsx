@@ -159,7 +159,7 @@ const features = [
     title: "Worktree discipline",
     label: "branch",
     text: "One task, one branch, one diff to inspect.",
-    accent: "change",
+    accent: "muted",
   },
   {
     icon: Shield,
@@ -360,7 +360,7 @@ export default function HomePage() {
       <section className="home-review-section py-16 sm:py-20">
         <Section
           register="01 / review signals"
-          registerTone="change"
+          registerTone="evidence"
           className="flex flex-col gap-10"
         >
           <div className="max-w-2xl">

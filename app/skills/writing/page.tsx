@@ -130,7 +130,7 @@ const writingPageNav = [
   { label: "Trigger", href: "#trigger", signal: "core" },
   { label: "Rules", href: "#rules", signal: "reference" },
   { label: "References", href: "#references", signal: "reference" },
-  { label: "Scope", href: "#scope", signal: "change" },
+  { label: "Scope", href: "#scope", signal: "muted" },
   { label: "Source", href: "#source", signal: "muted" },
 ] as const satisfies Array<{
   label: string;
@@ -431,11 +431,11 @@ export default function WritingSkillsPage() {
       <Section
         id="scope"
         register="06 / local knowledge"
-        registerTone="change"
+        registerTone="muted"
         className="flex flex-col gap-8"
       >
         <div className="max-w-2xl">
-          <div className="section-kicker section-kicker-change">
+          <div className="section-kicker section-kicker-muted">
             <Shield className="h-4 w-4" />
             <span>scope</span>
           </div>

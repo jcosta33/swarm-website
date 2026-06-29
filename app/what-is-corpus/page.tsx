@@ -79,7 +79,7 @@ const adjacent = [
   {
     product: "Coding agents",
     role: "execution",
-    signal: "change",
+    signal: "muted",
     examples: "Claude Code, Cursor, Copilot, …",
     does: "write the code",
     relation: "Corpus gives them scoped tasks and review records.",
@@ -119,7 +119,7 @@ const adjacent = [
   {
     product: "Refactoring tooling",
     role: "mechanical change",
-    signal: "change",
+    signal: "muted",
     examples: "codemods, OpenRewrite, …",
     does: "execute mechanical change",
     relation: "A change plan states what must survive and how to check it.",
@@ -262,7 +262,7 @@ export default function WhatIsCorpusPage() {
             items={[
               { label: "Intake", signal: "reference" },
               { label: "Spec", signal: "core" },
-              { label: "Task", signal: "change" },
+              { label: "Task", signal: "core" },
               { label: "Review", signal: "evidence" },
               { label: "Finding", signal: "reference" },
             ]}

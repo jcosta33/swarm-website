@@ -3455,17 +3455,16 @@ section.bg-section-band::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(var(--signal-reference-rgb), 0),
-    rgba(var(--signal-reference-rgb), 0.34) 12%,
-    rgba(var(--signal-change-rgb), 0.36) 42%,
-    rgba(var(--signal-evidence-rgb), 0.38) 66%,
-    rgba(var(--signal-reference-rgb), 0.34) 88%,
-    rgba(var(--signal-reference-rgb), 0)
+    rgba(var(--signal-muted-rgb), 0),
+    rgba(var(--signal-muted-rgb), 0.22) 14%,
+    rgba(var(--signal-core-rgb), 0.26) 50%,
+    rgba(var(--signal-muted-rgb), 0.22) 86%,
+    rgba(var(--signal-muted-rgb), 0)
   );
   box-shadow:
-    0 0 10px rgba(var(--signal-reference-rgb), 0.035),
-    0 0 12px rgba(var(--signal-change-rgb), 0.04);
-  opacity: 0.62;
+    0 0 10px rgba(var(--signal-muted-rgb), 0.03),
+    0 0 12px rgba(var(--signal-core-rgb), 0.03);
+  opacity: 0.5;
 }
 
 .review-signal-node {
