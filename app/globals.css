@@ -2755,23 +2755,14 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .hero-trace {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.34rem;
-    width: min(100%, 22rem);
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
+    width: min(100%, 20.5rem);
+    overflow: visible;
     margin-top: 0.92rem;
-    padding: 0.05rem 1.05rem 0.22rem 0;
-    scroll-padding-inline: 0.1rem 1.05rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
-  }
-
-  .hero-trace::-webkit-scrollbar {
-    display: none;
+    padding: 0.05rem 0 0.1rem;
+    mask-image: none;
   }
 
   .hero-trace::before {
@@ -2779,11 +2770,17 @@ section.bg-section-band::after {
   }
 
   .hero-trace-item {
-    min-width: 4.65rem;
+    min-width: 4.4rem;
     min-height: 2.12rem;
-    flex: 0 0 auto;
+    flex: 1 1 4.4rem;
+    max-width: 6.25rem;
     padding: 0.38rem 0.52rem;
-    scroll-snap-align: start;
+  }
+
+  .hero-trace:is([data-count="5"], [data-count="6"]) .hero-trace-item {
+    min-width: 5.85rem;
+    flex-basis: calc((100% - 0.68rem) / 3);
+    max-width: 6.35rem;
   }
 
   .hero-trace-label {

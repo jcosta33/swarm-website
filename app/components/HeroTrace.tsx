@@ -18,7 +18,11 @@ export function HeroTrace({
   className = "",
 }: HeroTraceProps) {
   return (
-    <ol className={`hero-trace ${className}`} aria-label={ariaLabel}>
+    <ol
+      className={`hero-trace ${className}`}
+      aria-label={ariaLabel}
+      data-count={items.length}
+    >
       {items.map((item, index) => {
         const role = normalizeSignalRole(item.signal);
 
