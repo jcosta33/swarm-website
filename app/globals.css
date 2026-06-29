@@ -7805,6 +7805,14 @@ section.bg-section-band::after {
     gap: 0.38rem;
   }
 
+  .repo-product-page .agent-page-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    padding: 0;
+    mask-image: none;
+  }
+
   .agent-page-nav::-webkit-scrollbar,
   .section-jump-nav::-webkit-scrollbar {
     display: none;
@@ -7844,6 +7852,7 @@ section.bg-section-band::after {
 
   .agent-page-nav-link {
     min-height: 2.18rem;
+    min-width: 0;
     width: auto;
     padding: 0.38rem 0.58rem;
   }
