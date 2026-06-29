@@ -5,6 +5,7 @@ import {
 } from "./signalStyles";
 
 type LegacyLampColor = "amber" | "green" | "red" | "olive";
+type NormalizedLampColor = SignalRole | LegacyLampColor | "off";
 
 export interface PilotLampProps {
   color?: SignalInput | LegacyLampColor | "off";
@@ -15,25 +16,25 @@ export interface PilotLampProps {
 
 function normalizeLampColor(
   color: SignalInput | LegacyLampColor | "off",
-): SignalRole | "off" {
+): NormalizedLampColor {
   if (color === "off") {
     return "off";
   }
 
   if (color === "amber") {
-    return "core";
+    return "amber";
   }
 
   if (color === "red") {
-    return "change";
+    return "red";
   }
 
   if (color === "green") {
-    return "evidence";
+    return "green";
   }
 
   if (color === "olive") {
-    return "evidence";
+    return "olive";
   }
 
   return normalizeSignalRole(color);

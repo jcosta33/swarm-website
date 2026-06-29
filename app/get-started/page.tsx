@@ -224,9 +224,7 @@ export default function GetStartedPage() {
                         >
                           {String(index + 1).padStart(2, "0")}
                         </p>
-                        <h2
-                          className={`font-heading text-lg font-bold ${signalRoles[step.signal].text}`}
-                        >
+                        <h2 className="font-heading text-lg font-bold text-concrete-100">
                           {step.label}
                         </h2>
                       </div>

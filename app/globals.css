@@ -8,7 +8,7 @@
      greenfield = literal new-workspace paths, brownfield = existing-project
      adoption, change = active edits/attention, evidence = proof/review,
      reference = manuals and catalogs. Change is a red-oxide signal, separate
-     from the orange-gold core; cyan/dim violet are package accents only.
+     from the orange-gold core; cyan/faded violet are package accents only.
      Brown means existing-project work.
      Green means greenfield, not "good"; sage means evidence, not "new";
      setup alone is not green.
@@ -43,9 +43,10 @@
   --color-greenfield: #7fbd82;
   --color-brownfield: #a96b40;
   --color-verdigris: #78bdb2;
-  --color-neon-bridge: #9a8198;
-  --color-interface-blue: #58b6c8;
+  --color-neon-bridge: #8e8093;
+  --color-interface-blue: #63bdcb;
   --color-rubedo: #c44f43;
+  --color-pwr-red: #d2624e;
   --color-olive: var(--color-phosphor);
   --color-black-text: #100b07;
 
@@ -72,9 +73,9 @@
   --package-agents: #88ad96;
   --package-agents-rgb: 136, 173, 150;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 88, 182, 200;
+  --package-cli-rgb: 99, 189, 203;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 154, 129, 152;
+  --package-mcp-rgb: 142, 128, 147;
 
   /* Role patterns: hue + mark travel together, so color does not become decoration. */
   --signal-pattern-core: linear-gradient(
@@ -300,8 +301,8 @@
   --c-greenfield: #7fbd82;
   --c-brownfield: #a96b40;
   --c-verdigris: #78bdb2;
-  --c-neon-bridge: #9a8198;
-  --c-interface-blue: #58b6c8;
+  --c-neon-bridge: #8e8093;
+  --c-interface-blue: #63bdcb;
   --c-rubedo: #c44f43;
   --c-olive: var(--c-phosphor);
   --signal-core: var(--color-aurum);
@@ -319,9 +320,9 @@
   --package-agents: #88ad96;
   --package-agents-rgb: 136, 173, 150;
   --package-cli: var(--color-interface-blue);
-  --package-cli-rgb: 88, 182, 200;
+  --package-cli-rgb: 99, 189, 203;
   --package-mcp: var(--color-neon-bridge);
-  --package-mcp-rgb: 154, 129, 152;
+  --package-mcp-rgb: 142, 128, 147;
   --signal-reference: var(--color-verdigris);
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
@@ -3095,8 +3096,9 @@ section.bg-section-band::after {
 }
 
 .page-hero.page-hero-package-mcp .product-name-suffix {
+  color: color-mix(in oklab, var(--package-mcp) 84%, var(--color-concrete-100));
   text-shadow:
-    0 0 8px rgba(var(--product-name-suffix-rgb), 0.028),
+    0 0 8px rgba(var(--product-name-suffix-rgb), 0.018),
     0 1px 0 rgba(0, 0, 0, 0.32);
 }
 
@@ -9168,11 +9170,16 @@ section.bg-section-band::after {
   --lamp-highlight: rgba(255, 248, 224, 0.7);
 }
 
-.pilot-lamp-evidence,
-.pilot-lamp-green {
+.pilot-lamp-evidence {
   --lamp-signal: var(--signal-evidence);
   --lamp-rgb: var(--signal-evidence-rgb);
   --lamp-highlight: rgba(244, 250, 225, 0.68);
+}
+
+.pilot-lamp-green {
+  --lamp-signal: var(--signal-greenfield);
+  --lamp-rgb: var(--signal-greenfield-rgb);
+  --lamp-highlight: rgba(226, 250, 233, 0.66);
 }
 
 .pilot-lamp-greenfield {
@@ -9194,11 +9201,16 @@ section.bg-section-band::after {
   --lamp-highlight: rgba(222, 250, 244, 0.66);
 }
 
-.pilot-lamp-change,
-.pilot-lamp-red {
+.pilot-lamp-change {
   --lamp-signal: var(--signal-change);
   --lamp-rgb: var(--signal-change-rgb);
   --lamp-highlight: rgba(255, 236, 230, 0.7);
+}
+
+.pilot-lamp-red {
+  --lamp-signal: var(--color-pwr-red);
+  --lamp-rgb: 210, 98, 78;
+  --lamp-highlight: rgba(255, 234, 226, 0.72);
 }
 
 .pilot-lamp-off {
@@ -9215,11 +9227,16 @@ section.bg-section-band::after {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.terminal-window .terminal-toolbar .pilot-lamp-change,
-.terminal-window .terminal-toolbar .pilot-lamp-red {
+.terminal-window .terminal-toolbar .pilot-lamp-change {
   --lamp-signal: var(--signal-change);
   --lamp-rgb: var(--signal-change-rgb);
   --lamp-highlight: rgba(255, 236, 230, 0.7);
+}
+
+.terminal-window .terminal-toolbar .pilot-lamp-red {
+  --lamp-signal: var(--color-pwr-red);
+  --lamp-rgb: 210, 98, 78;
+  --lamp-highlight: rgba(255, 234, 226, 0.72);
 }
 
 .terminal-window .terminal-toolbar .pilot-lamp-core,
@@ -9229,11 +9246,16 @@ section.bg-section-band::after {
   --lamp-highlight: rgba(255, 248, 224, 0.7);
 }
 
-.terminal-window .terminal-toolbar .pilot-lamp-evidence,
-.terminal-window .terminal-toolbar .pilot-lamp-green {
+.terminal-window .terminal-toolbar .pilot-lamp-evidence {
   --lamp-signal: var(--signal-evidence);
   --lamp-rgb: var(--signal-evidence-rgb);
   --lamp-highlight: rgba(244, 250, 225, 0.68);
+}
+
+.terminal-window .terminal-toolbar .pilot-lamp-green {
+  --lamp-signal: var(--signal-greenfield);
+  --lamp-rgb: var(--signal-greenfield-rgb);
+  --lamp-highlight: rgba(226, 250, 233, 0.66);
 }
 
 /* Engraved / stamped label text */
