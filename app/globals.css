@@ -1688,6 +1688,12 @@ body::after {
 
 .btn-primary {
   background:
+    linear-gradient(
+      90deg,
+      rgba(16, 11, 7, 0.28) 0 0.52rem,
+      transparent 0.52rem calc(100% - 0.52rem),
+      rgba(16, 11, 7, 0.22) calc(100% - 0.52rem) 100%
+    ),
     linear-gradient(90deg, rgba(16, 11, 7, 0.18), transparent 18%),
     linear-gradient(180deg, #f0b85c 0%, #e19a33 48%, #bf7927 100%);
   box-shadow:
@@ -1716,6 +1722,12 @@ body::after {
 
 .btn-primary:hover {
   background:
+    linear-gradient(
+      90deg,
+      rgba(16, 11, 7, 0.3) 0 0.52rem,
+      transparent 0.52rem calc(100% - 0.52rem),
+      rgba(16, 11, 7, 0.24) calc(100% - 0.52rem) 100%
+    ),
     linear-gradient(90deg, rgba(16, 11, 7, 0.2), transparent 20%),
     linear-gradient(180deg, #ffcb70 0%, #eba140 50%, #ca812b 100%);
 }
