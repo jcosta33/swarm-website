@@ -9,7 +9,7 @@
 // Prefer these role names over raw color aliases in new component code.
 // The hue family is intentional: core starts at gold HSL(34 71% 49%).
 // The exact complement is reserved for diagnostics; public complements use
-// softer field, sage, umber, readable red-clay, and verdigris roles. Brown means existing
+// softer field, sage, umber, readable red-oxide, and verdigris roles. Brown means existing
 // project; green means greenfield, not "good"; sage means evidence, not "new".
 // Cyan and faded violet are reserved for package hero accents, not general
 // status or work-state meaning.
@@ -79,10 +79,10 @@ export const signalRoleMeta = {
   change: {
     label: "change",
     family: "work / attention",
-    hex: "#C26068",
-    relationship: "madder attention: HSL(355 43% 57%)",
+    hex: "#C44F43",
+    relationship: "red-oxide attention: HSL(6 52% 52%)",
     wheel: "-39° from core",
-    tone: "madder red clay",
+    tone: "red oxide",
     use: "Edits, fixes, run work, blocked states, and attention markers.",
     surface: "angled change hatching and work-in-progress rails",
     pattern: "angled change hatching",
