@@ -1,29 +1,22 @@
-# AGENTS.md — corpus-website
+# AGENTS.md — corpus-website (code repo)
 
-<!-- Keep this file short — aim for ~100 lines. Agents read it on every task,
-     so every line spends always-loaded budget. -->
+<!-- Keep this file short — agents read it on every task. This is the CODE repo;
+     the Corpus workspace (specs, tasks, reviews, findings, decisions, the board)
+     lives in the sibling ../corpus-website-works. -->
 
-## Corpus startup
+## Corpus workspace
 
-1. Read the task packet you were given first. Follow its scope.
-2. Read the linked spec (and change plan, if any) before touching code.
-3. Do not implement behavior outside the task's scope — if a requirement can't be
-   met as written, stop and say why instead of improvising.
-4. Run every item under the task's `## Verify` and paste the real output. A claim
-   without output counts as unverified.
-5. Before finishing, re-read your own diff as a skeptic, fill the task's
-   `## Run summary` section, and flip the task's board row in `status.md` to
-   review-ready.
+The specs, tasks, reviews, findings, decisions, and board for this site live in
+**`../corpus-website-works`** — the dedicated Corpus workspace. Read the task packet
+you were given there first; for 1:1 work with no task, read the linked spec in
+`../corpus-website-works/specs/`. Do not implement behavior outside the task's scope.
+Record the run (the spec's `## Execution`, or the task's `## Run summary`) and flip
+the board row in the workspace, not here.
 
-## Workspace
+## The loop
 
-- The loop: Pull → Spec → Task → Run → Review → Close (+ Inventory / Change Plan
-  for structural work).
-- Specs: `specs/<feature>/spec.md` · tasks: `tasks/` · reviews: `reviews/` ·
-  findings: `findings/` · intake: `intake/` · inventories: `inventory/` ·
-  change plans: `change-plans/` · decisions: `decisions/` · board: `status.md`
-- Templates: `templates/`
-- Agent guides: `.agents/skills/` — Claude Code reads them via `.claude/skills`
+Pull → Spec → Task → Run → Review → Close (+ Inventory / Change Plan for structural
+work). Agent guides live in the workspace's `.agents/skills/`.
 
 ## Project facts
 
