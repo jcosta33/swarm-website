@@ -213,15 +213,15 @@ export default function WritingSkillsPage() {
           className="mcp-adapter-panel skill-anatomy-panel p-0"
         >
           <div className="mcp-adapter-header skill-anatomy-header">
-            <p className="m-0 font-mono text-[0.68rem] font-bold tracking-[0.1em] text-suspec-yellow uppercase">
+            <h2 className="m-0 font-mono text-[0.68rem] font-bold tracking-[0.1em] text-suspec-yellow uppercase">
               Skill anatomy
-            </p>
+            </h2>
             <span className="font-mono text-[0.68rem] font-bold tracking-[0.1em] text-concrete-400 uppercase">
               portable context packet
             </span>
           </div>
           <ol
-            className="mcp-adapter-rail skill-anatomy-rail process-strip process-strip-signal-reference grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
+            className="skill-anatomy-rail process-strip process-strip-signal-reference grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-4"
             aria-label="Skill file anatomy"
           >
             {skillAnatomy.map((item, index) => (
@@ -243,13 +243,13 @@ export default function WritingSkillsPage() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="mt-3 font-heading text-xl font-bold text-concrete-100">
+                  <span className="skill-anatomy-label mt-3 font-heading text-xl font-bold text-concrete-100">
                     {item.label}
                   </span>
-                  <span className="mt-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal-reference">
+                  <span className="skill-anatomy-tag mt-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal-reference">
                     {item.tag}
                   </span>
-                  <span className="mt-2 text-sm leading-relaxed text-concrete-400">
+                  <span className="skill-anatomy-copy mt-2 text-sm leading-relaxed text-concrete-400">
                     {item.text}
                   </span>
                 </a>
