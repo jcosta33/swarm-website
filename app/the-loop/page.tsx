@@ -239,19 +239,24 @@ export default function TheLoopPage() {
         registerTone="core"
         className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-start"
       >
-        <div className="order-1 grid gap-4 lg:order-none lg:content-start">
-          <PaperArtifact
-            label="note"
-            title="six points / six steps"
-            meta="Pull · Spec · Task · Run · Review · Close"
+        <div className="contents lg:order-none lg:grid lg:content-start lg:gap-4">
+          <div className="order-1 lg:order-none">
+            <PaperArtifact
+              label="note"
+              title="six points / six steps"
+              meta="Pull · Spec · Task · Run · Review · Close"
+            >
+              <p>
+                Each point creates or checks the record the next point needs.
+                Inventory and Change Plan appear for brownfield or structural
+                work.
+              </p>
+            </PaperArtifact>
+          </div>
+          <Panel
+            variant="inset"
+            className="order-3 p-5 lg:order-none"
           >
-            <p>
-              Each point creates or checks the record the next point needs.
-              Inventory and Change Plan appear for brownfield or structural
-              work.
-            </p>
-          </PaperArtifact>
-          <Panel variant="inset" className="p-5">
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-suspec-yellow">
               prep records
             </p>
@@ -269,9 +274,7 @@ export default function TheLoopPage() {
                 records what must survive.
               </li>
               <li className="py-3 last:pb-0">
-                <span className="font-semibold text-concrete-100">
-                  Finding
-                </span>{" "}
+                <span className="font-semibold text-concrete-100">Finding</span>{" "}
                 carries a reusable lesson forward.
               </li>
             </ul>
