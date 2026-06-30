@@ -8,10 +8,16 @@ const MARK =
   "data:image/svg+xml," +
   encodeURIComponent(
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">` +
-      `<circle cx="16" cy="16" r="15.05" stroke="#d88a24" stroke-width="1.85"/>` +
-      `<polygon points="16,2.55 27.65,9.28 27.65,22.72 16,29.45 4.35,22.72 4.35,9.28" stroke="#d88a24" stroke-width="1.45" stroke-linejoin="round" opacity="0.52"/>` +
-      `<polygon points="27.65,9.28 16,29.45 4.35,9.28" fill="#d88a24" fill-opacity="0.95" stroke="#d88a24" stroke-width="1.05" stroke-linejoin="round"/>` +
-      `<circle cx="16" cy="16.2" r="2.85" fill="#100b07"/>` +
+      `<defs><linearGradient id="g" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#f0b85c"/><stop offset="0.55" stop-color="#d88a24"/><stop offset="1" stop-color="#bf7927"/></linearGradient></defs>` +
+      `<polygon points="16,4.2 26.22,10.1 26.22,21.9 16,27.8 5.78,21.9 5.78,10.1" stroke="url(#g)" stroke-width="1.42" stroke-linejoin="round" opacity="0.68"/>` +
+      `<polygon points="26.22,10.1 16,27.8 5.78,10.1" fill="url(#g)" fill-opacity="0.1" stroke="url(#g)" stroke-width="1.9" stroke-linejoin="round"/>` +
+      `<circle cx="16" cy="4.2" r="1.05" fill="#080604" stroke="url(#g)" stroke-width="1.02" opacity="0.76"/>` +
+      `<circle cx="26.22" cy="21.9" r="1.05" fill="#080604" stroke="url(#g)" stroke-width="1.02" opacity="0.76"/>` +
+      `<circle cx="5.78" cy="21.9" r="1.05" fill="#080604" stroke="url(#g)" stroke-width="1.02" opacity="0.76"/>` +
+      `<circle cx="26.22" cy="10.1" r="2" fill="url(#g)"/>` +
+      `<circle cx="16" cy="27.8" r="2" fill="url(#g)"/>` +
+      `<circle cx="5.78" cy="10.1" r="2" fill="url(#g)"/>` +
+      `<circle cx="16" cy="16" r="1.56" fill="#d88a24"/>` +
       `</svg>`
   );
 

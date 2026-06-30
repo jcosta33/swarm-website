@@ -401,14 +401,14 @@ export default function SkillsPage() {
 
       <Section
         id="review-guides"
-        register="04 / catalog · review stances"
+        register="04 / review catalog"
         registerTone="evidence"
         className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-evidence">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            <span>catalog · review stances</span>
+            <span>stance files</span>
           </div>
           <Heading className="mt-3">Review stances</Heading>
           <p className="mt-4 text-concrete-400">
@@ -431,14 +431,14 @@ export default function SkillsPage() {
 
       <Section
         id="change-guides"
-        register="05 / catalog · working disciplines"
+        register="05 / method catalog"
         registerTone="core"
         className="flex scroll-mt-28 flex-col gap-12"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-core">
             <Hammer className="h-4 w-4" aria-hidden="true" />
-            <span>catalog · working disciplines</span>
+            <span>working methods</span>
           </div>
           <Heading className="mt-3">Working disciplines</Heading>
           <p className="mt-4 text-concrete-400">

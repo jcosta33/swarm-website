@@ -30,15 +30,15 @@ export function TerminalWindow({
       className={`terminal-window relative min-w-0 overflow-hidden rounded-panel border border-panel-border bg-panel-raised shadow-[inset_0_1px_0_rgba(240,226,204,0.08),inset_0_-2px_0_rgba(0,0,0,0.5)] ${className}`}
     >
       <div className="absolute inset-0 brushed-metal pointer-events-none" />
-      <div className="terminal-toolbar relative flex min-w-0 flex-wrap items-center justify-between gap-2 border-b border-panel-border bg-panel-raised px-4 py-2">
+      <div className="terminal-toolbar relative flex min-w-0 items-center gap-3 border-b border-panel-border bg-panel-raised px-4 py-2">
         <div className="terminal-lamp-row flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
           <PilotLamp color="red" label="pwr" />
           <PilotLamp color="amber" pulse label="check" />
           <PilotLamp color="evidence" label="evidence" />
         </div>
-        <div className="flex min-w-0 items-center gap-2">
-          <span className="terminal-title-label hidden min-w-0 items-center gap-2 text-xs font-mono font-medium uppercase tracking-widest engraved sm:flex">
-            <span className="min-w-0 break-words">{title}</span>
+        <div className="terminal-toolbar-actions ml-auto flex min-w-0 flex-1 items-center justify-end gap-2">
+          <span className="terminal-title-label hidden min-w-0 items-center gap-2 font-mono font-medium uppercase engraved sm:flex">
+            <span className="min-w-0 truncate">{title}</span>
             <span className="terminal-title-caret shrink-0" aria-hidden="true" />
           </span>
           {copyText && (
