@@ -283,10 +283,11 @@
 
   --rhythm-kicker-title: clamp(2.1rem, 2.76vw, 2.62rem);
   --rhythm-title-body: clamp(1.02rem, 1.38vw, 1.28rem);
-  --rhythm-register-gap: clamp(3.12rem, 3.92vw, 3.72rem);
+  --rhythm-register-gap: clamp(2.62rem, 3.12vw, 3rem);
   --rhythm-hero-nav-clearance: clamp(2.35rem, 3.1vw, 3rem);
   --rhythm-hero-eyebrow-title: clamp(2.1rem, 2.72vw, 2.62rem);
-  --rhythm-after-page-nav: clamp(1.02rem, 1.42vw, 1.34rem);
+  --rhythm-after-page-nav: clamp(0.22rem, 0.48vw, 0.42rem);
+  --rhythm-page-nav-to-register: clamp(0.22rem, 0.52vw, 0.42rem);
 }
 
 :root {
@@ -1160,14 +1161,14 @@ body::after {
   --section-register-signal: var(--signal-muted);
   --section-register-rgb: var(--signal-muted-rgb);
   position: relative;
-  padding-top: calc(var(--rhythm-register-gap) + clamp(0.22rem, 0.52vw, 0.44rem));
+  padding-top: var(--rhythm-register-gap);
 }
 
 .section-register::before {
   content: attr(data-register);
   position: absolute;
   z-index: 2;
-  top: -1.28rem;
+  top: -1.08rem;
   left: 1.5rem;
   display: inline-flex;
   min-height: 1.35rem;
@@ -1217,7 +1218,7 @@ body::after {
 .section-register::after {
   content: "";
   position: absolute;
-  top: -0.78rem;
+  top: -0.58rem;
   left: 1.5rem;
   width: min(42rem, calc(100% - 3rem));
   height: 0.36rem;
@@ -1298,11 +1299,11 @@ body::after {
 
 @media (max-width: 40rem) {
   .section-register {
-    padding-top: 3.55rem;
+    padding-top: 3.02rem;
   }
 
   .section-register::before {
-    top: -1.08rem;
+    top: -0.95rem;
     left: 1rem;
     max-width: calc(100% - 2rem);
     font-size: 0.62rem;
@@ -1310,7 +1311,7 @@ body::after {
   }
 
   .section-register::after {
-    top: -0.66rem;
+    top: -0.52rem;
     left: 1rem;
     width: calc(100% - 2rem);
   }
@@ -2461,7 +2462,7 @@ section.bg-section-band::after {
 }
 
 .ambient-header::before {
-  top: clamp(2.25rem, 2.85vw, 2.8rem);
+  top: clamp(3.05rem, 3.6vw, 3.55rem);
   width: min(48rem, 86vw);
   height: 8.5rem;
   border-radius: 9999px;
@@ -2529,7 +2530,7 @@ section.bg-section-band::after {
 }
 
 .ambient-header::after {
-  top: clamp(5.1rem, 5.9vw, 5.8rem);
+  top: clamp(5.95rem, 6.72vw, 6.55rem);
   width: min(28rem, 72vw);
   height: 0.8rem;
   opacity: 0.68;
@@ -3061,11 +3062,11 @@ section.bg-section-band::after {
   }
 
   .ambient-header::before {
-    top: 2.28rem;
+    top: 3.1rem;
   }
 
   .ambient-header::after {
-    top: 5.2rem;
+    top: 6rem;
   }
 
   .page-hero {
@@ -8430,26 +8431,26 @@ section.bg-section-band::after {
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page {
-  row-gap: clamp(1.3rem, 1.82vw, 1.75rem) !important;
+  row-gap: clamp(0.58rem, 0.92vw, 0.88rem) !important;
   padding-top: clamp(2.05rem, 2.78vw, 2.45rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap {
-  margin-top: clamp(0rem, 0.3vw, 0.25rem) !important;
+  margin-top: 0 !important;
   margin-bottom: var(--rhythm-after-page-nav);
 }
 
 .repo-product-page > nav.page-nav-wrap {
-  margin-top: clamp(0rem, 0.3vw, 0.25rem) !important;
+  margin-top: 0 !important;
   margin-bottom: var(--rhythm-after-page-nav);
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-0.68rem, -0.52vw, -0.34rem) !important;
+  margin-top: clamp(-1.05rem, -0.82vw, -0.72rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
-  margin-top: clamp(0.72rem, 1.08vw, 0.96rem);
+  margin-top: var(--rhythm-page-nav-to-register);
 }
 
 .writing-page-nav {
@@ -8722,26 +8723,26 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .repo-product-page {
-    row-gap: 2.45rem !important;
-    padding-top: 3.25rem !important;
+    row-gap: 1.45rem !important;
+    padding-top: 3rem !important;
   }
 
   .repo-product-page > .page-nav-wrap {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.82rem;
+    margin-top: 0 !important;
+    margin-bottom: 0.32rem;
   }
 
   .repo-product-page > nav.page-nav-wrap {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.82rem;
+    margin-top: 0 !important;
+    margin-bottom: 0.32rem;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
-    margin-top: 0 !important;
+    margin-top: -0.32rem !important;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 1.12rem;
+    margin-top: 0.42rem;
   }
 
   .agent-page-nav,
@@ -8891,7 +8892,7 @@ section.bg-section-band::after {
 
 @media (min-width: 40.01rem) and (max-width: 48rem) {
   .repo-product-page {
-    row-gap: 2.18rem !important;
+    row-gap: 1.35rem !important;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
@@ -8900,15 +8901,15 @@ section.bg-section-band::after {
 
   .repo-product-page > .page-nav-wrap,
   .repo-product-page > nav.page-nav-wrap {
-    margin-bottom: 1.05rem;
+    margin-bottom: 0.38rem;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 1.08rem;
+    margin-top: 0.42rem;
   }
 
   .repo-product-page > .section-register {
-    padding-top: 3.45rem;
+    padding-top: 3.02rem;
   }
 }
 
