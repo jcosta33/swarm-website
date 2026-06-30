@@ -281,12 +281,12 @@
   --radius-panel: 10px;
   --radius-control: 10px;
 
-  --rhythm-kicker-title: clamp(1.62rem, 2.12vw, 2rem);
-  --rhythm-title-body: clamp(1.02rem, 1.35vw, 1.28rem);
-  --rhythm-register-gap: clamp(2.76rem, 3.42vw, 3.26rem);
+  --rhythm-kicker-title: clamp(1.86rem, 2.42vw, 2.32rem);
+  --rhythm-title-body: clamp(1.24rem, 1.65vw, 1.56rem);
+  --rhythm-register-gap: clamp(2.96rem, 3.7vw, 3.52rem);
   --rhythm-hero-nav-clearance: clamp(2.35rem, 3.1vw, 3rem);
   --rhythm-hero-eyebrow-title: clamp(1.95rem, 2.55vw, 2.45rem);
-  --rhythm-after-page-nav: clamp(0.76rem, 1.12vw, 1.06rem);
+  --rhythm-after-page-nav: clamp(1.02rem, 1.42vw, 1.34rem);
 }
 
 :root {
@@ -1142,7 +1142,7 @@ body::after {
   --section-register-signal: var(--signal-muted);
   --section-register-rgb: var(--signal-muted-rgb);
   position: relative;
-  padding-top: calc(var(--rhythm-register-gap) + clamp(0.18rem, 0.45vw, 0.38rem));
+  padding-top: calc(var(--rhythm-register-gap) + clamp(0.22rem, 0.52vw, 0.44rem));
 }
 
 .section-register::before {
@@ -1280,7 +1280,7 @@ body::after {
 
 @media (max-width: 40rem) {
   .section-register {
-    padding-top: 3.25rem;
+    padding-top: 3.55rem;
   }
 
   .section-register::before {
@@ -8403,7 +8403,7 @@ section.bg-section-band::after {
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page {
-  row-gap: clamp(1.55rem, 2.05vw, 2rem) !important;
+  row-gap: clamp(1.3rem, 1.82vw, 1.75rem) !important;
   padding-top: clamp(2.05rem, 2.78vw, 2.45rem) !important;
 }
 
@@ -8418,11 +8418,11 @@ section.bg-section-band::after {
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-0.74rem, -0.6vw, -0.38rem) !important;
+  margin-top: clamp(-0.68rem, -0.52vw, -0.34rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
-  margin-top: clamp(0.3rem, 0.72vw, 0.58rem);
+  margin-top: clamp(0.72rem, 1.08vw, 0.96rem);
 }
 
 .writing-page-nav {
@@ -8430,8 +8430,12 @@ section.bg-section-band::after {
   margin-bottom: clamp(1rem, 1.55vw, 1.38rem);
 }
 
+.site-main-frame > .flex.flex-col > .ambient-header + .writing-page-nav {
+  margin-top: clamp(-1.35rem, -1.05vw, -0.82rem);
+}
+
 .writing-page-nav + .section-register {
-  margin-top: clamp(0.85rem, 1.35vw, 1.2rem);
+  margin-top: clamp(1.08rem, 1.58vw, 1.42rem);
 }
 
 @media (min-width: 64rem) {
@@ -8692,7 +8696,7 @@ section.bg-section-band::after {
 @media (max-width: 40rem) {
   .repo-product-page {
     row-gap: 2.45rem !important;
-    padding-top: 3.7rem !important;
+    padding-top: 3.25rem !important;
   }
 
   .repo-product-page > .page-nav-wrap {
@@ -8710,7 +8714,7 @@ section.bg-section-band::after {
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.92rem;
+    margin-top: 1.12rem;
   }
 
   .agent-page-nav,
@@ -8860,7 +8864,7 @@ section.bg-section-band::after {
 
 @media (min-width: 40.01rem) and (max-width: 48rem) {
   .repo-product-page {
-    row-gap: 2.5rem !important;
+    row-gap: 2.18rem !important;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
@@ -8873,23 +8877,23 @@ section.bg-section-band::after {
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.78rem;
+    margin-top: 1.08rem;
   }
 
   .repo-product-page > .section-register {
-    padding-top: 3.12rem;
+    padding-top: 3.45rem;
   }
 }
 
 @media (max-width: 40rem) {
   .writing-page-nav {
-    margin-top: 0.68rem;
-    margin-bottom: 1rem;
+    margin-top: -0.82rem;
+    margin-bottom: 1.12rem;
     overflow: visible;
   }
 
   .writing-page-nav + .section-register {
-    margin-top: 0.8rem;
+    margin-top: 1.08rem;
   }
 
   .writing-page-nav::after {
@@ -8897,20 +8901,18 @@ section.bg-section-band::after {
   }
 
   .writing-page-nav .section-jump-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.45rem;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    border: 0;
-    border-radius: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    overflow: visible;
+    border: 1px solid rgba(var(--signal-muted-rgb), 0.18);
+    border-radius: calc(var(--radius-control) - 2px);
     background: transparent;
     box-shadow: none;
-    padding: 0.08rem 1.05rem 0.24rem 0;
-    scroll-padding-inline: 0.1rem 1.05rem;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
+    padding: 0.12rem;
+    scroll-snap-type: none;
+    scrollbar-width: auto;
+    mask-image: none;
   }
 
   .writing-page-nav .section-jump-nav::-webkit-scrollbar {
@@ -8918,10 +8920,10 @@ section.bg-section-band::after {
   }
 
   .writing-page-nav .section-jump-nav-link {
-    flex: 0 0 auto;
-    min-width: 5.45rem;
-    min-height: 1.92rem;
-    scroll-snap-align: start;
+    flex: initial;
+    min-width: 0;
+    min-height: 2.42rem;
+    scroll-snap-align: none;
     border: 1px solid rgba(70, 57, 44, 0.36);
     border-left-color: rgba(var(--agent-nav-rgb), 0.28);
     border-radius: calc(var(--radius-control) - 3px);
@@ -8933,14 +8935,16 @@ section.bg-section-band::after {
     box-shadow:
       inset 1px 0 0 rgba(var(--agent-nav-rgb), 0.08),
       inset 0 1px 0 rgba(240, 226, 204, 0.025);
-    padding: 0.32rem 0.5rem;
+    padding: 0.42rem 0.54rem;
   }
 
   .writing-page-nav .section-jump-nav-link:nth-child(odd):last-child {
-    width: auto;
+    grid-column: 1 / -1;
+    justify-self: stretch;
   }
 
   .writing-page-nav .section-jump-nav-label {
+    font-size: 0.74rem;
     white-space: nowrap;
   }
 }
@@ -10789,7 +10793,7 @@ section.bg-section-band::after {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  padding: 0.2rem 0.42rem 0.18rem;
+  padding: 0.18rem 0.36rem 0.16rem;
   border: 1px solid rgba(var(--signal-muted-rgb), 0.18);
   border-radius: calc(var(--radius-control) - 4px);
   background:
@@ -10803,7 +10807,7 @@ section.bg-section-band::after {
   box-shadow:
     inset 0 1px 0 rgba(240, 226, 204, 0.04),
     0 0 0 1px rgba(0, 0, 0, 0.12);
-  font-size: clamp(0.43rem, 0.62vw, 0.52rem);
+  font-size: clamp(0.39rem, 0.54vw, 0.48rem);
   letter-spacing: 0.025em;
   line-height: 1.12;
   text-overflow: ellipsis;
@@ -10819,19 +10823,21 @@ section.bg-section-band::after {
   grid-column: 3;
   justify-self: end;
   margin-left: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .terminal-toolbar:has(.copy-button) .terminal-title-label {
   grid-column: 2;
-  width: min(100%, clamp(5.4rem, 12vw, 9.6rem));
-  max-width: min(100%, 9.6rem);
+  width: min(100%, clamp(4.8rem, 9.5vw, 8.4rem));
+  max-width: min(100%, 8.4rem);
   justify-self: end;
 }
 
 .terminal-toolbar:not(:has(.copy-button)) .terminal-title-label {
   grid-column: 2;
-  width: min(100%, clamp(7.5rem, 24vw, 18rem));
-  max-width: min(100%, 18rem);
+  width: min(100%, clamp(6.5rem, 22vw, 16rem));
+  max-width: min(100%, 16rem);
   justify-self: end;
 }
 
