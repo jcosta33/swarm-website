@@ -3241,6 +3241,30 @@ section.bg-section-band::after {
   --lamp-rgb: var(--package-mcp-rgb);
 }
 
+.page-hero.page-hero-package-mcp .hero-badge-row .badge-signal {
+  --badge-signal: color-mix(
+    in oklab,
+    var(--package-mcp) 54%,
+    var(--color-concrete-100)
+  );
+  --badge-rgb: var(--package-mcp-rgb);
+  --badge-pattern: repeating-linear-gradient(
+      90deg,
+      rgba(var(--package-mcp-rgb), 0.08) 0 1px,
+      transparent 1px 12px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--package-mcp-rgb), 0.055),
+      transparent 68%
+    );
+  --badge-mark: radial-gradient(
+    circle at 0.7rem 50%,
+    rgba(var(--package-mcp-rgb), 0.24) 0 1px,
+    transparent 1.7px
+  );
+}
+
 .page-hero > .panel-raised {
   --plate-signal: var(--hero-signal);
   --plate-rgb: var(--hero-rgb);
