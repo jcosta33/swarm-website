@@ -95,7 +95,11 @@ export default function ColophonPage() {
         </PageHero>
       </Section>
 
-      <Section className="colophon-section grid content-start gap-5 py-0 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <Section
+        register="01 / production ledger"
+        registerTone="core"
+        className="colophon-section grid content-start gap-5 py-0 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]"
+      >
         <Panel brushed className="colophon-terminal-shell p-1.5 sm:p-2">
           <TerminalWindow
             title="build.manifest"
@@ -189,7 +193,7 @@ export default function ColophonPage() {
           </div>
         </Panel>
 
-        <div className="grid gap-4 sm:grid-cols-3 lg:col-span-2">
+        <div className="colophon-trace-grid grid gap-4 sm:grid-cols-3 lg:col-span-2">
           {trace.map((item, index) => (
             <Card
               key={item.title}
