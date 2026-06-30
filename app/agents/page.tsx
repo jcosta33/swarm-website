@@ -226,6 +226,12 @@ export default function AgentsPage() {
         </PageHero>
       </Section>
 
+      <PageNav
+        items={agentPageNav}
+        ariaLabel="suspec-agents page sections"
+        wrapperClassName="mx-auto w-full max-w-7xl px-6 lg:px-8"
+      />
+
       <Section
         register="01 / roster brief"
         registerTone="reference"
@@ -268,11 +274,6 @@ export default function AgentsPage() {
         registerTone="muted"
         className="agent-roster-grid grid gap-4 lg:grid-cols-[0.62fr_1fr]"
       >
-        <PageNav
-          items={agentPageNav}
-          ariaLabel="Agent page sections"
-          className="lg:col-span-2"
-        />
         {rosterGroups.map((group, groupIndex) => (
           <Panel
             key={group.title}
