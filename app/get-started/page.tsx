@@ -197,7 +197,18 @@ export default function GetStartedPage() {
       </Section>
 
       <Section register="01 / setup path" registerTone="core">
-        <Panel brushed screws className="p-0">
+        <Panel brushed screws className="setup-route-panel p-0">
+          <div className="setup-route-header">
+            <div className="min-w-0">
+              <p className="setup-route-kicker">route ledger</p>
+              <p className="setup-route-title">Starter kit → workspace</p>
+            </div>
+            <div className="setup-route-meta" aria-label="Setup notes">
+              <span>plain files</span>
+              <span>optional cli</span>
+              <span>local rules</span>
+            </div>
+          </div>
           <ol
             className="setup-path-strip process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
             aria-label="Suspec setup paths and next steps"
