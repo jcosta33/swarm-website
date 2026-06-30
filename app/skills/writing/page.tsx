@@ -49,10 +49,10 @@ export const metadata: Metadata = {
 };
 
 const descriptionRules = [
-  "Start with the work: Implement, Review, Audit, Research, Write.",
-  "Name when the skill applies.",
-  "Name what the agent must not do.",
-  "Name when to skip it.",
+  "Start with the work type: implement, review, audit, research, write.",
+  "Name the task shape that admits the skill.",
+  "Name the boundaries and skip cases.",
+  "Keep repo facts out of the description.",
 ];
 
 const skillFolderLayout = [
@@ -78,17 +78,17 @@ const bodyRules = [
   {
     icon: ListOrdered,
     title: "Use numbered rules",
-    text: "Give the agent a small checklist it can follow.",
+    text: "Make the checkpoints explicit enough to audit later.",
   },
   {
     icon: Shield,
     title: "Keep it self-contained",
-    text: "Do not depend on a sibling skill being installed.",
+    text: "Avoid hidden dependencies on another installed guide.",
   },
   {
     icon: CheckCircle,
     title: "Force visible proof",
-    text: "When a rule matters, make the agent leave output the next reader can inspect.",
+    text: "If a rule matters, require evidence the next reader can inspect.",
   },
 ];
 
@@ -104,22 +104,26 @@ const outOfScope = [
 const skillAnatomy = [
   {
     label: "Trigger",
-    text: "The description says when the skill loads.",
+    tag: "admission",
+    text: "Load only when the task matches; name the skips.",
     href: "#trigger",
   },
   {
     label: "Rules",
-    text: "The body gives the agent a short checklist.",
+    tag: "operating",
+    text: "Short checklist, sharp constraints, visible proof.",
     href: "#rules",
   },
   {
     label: "References",
-    text: "Extra examples stay one hop away.",
+    tag: "source pack",
+    text: "Templates and examples stay one hop away.",
     href: "#references",
   },
   {
     label: "Scope",
-    text: "Repo-specific knowledge stays in AGENTS.md.",
+    tag: "local facts",
+    text: "Commands and product policy stay in AGENTS.md.",
     href: "#scope",
   },
 ];
@@ -154,7 +158,7 @@ export default function WritingSkillsPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Write the trigger, the operating rules, and the references.
+            Write the load boundary, operating rules, and source material.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
             Keep local commands, product facts, and team policy in the consuming
@@ -241,6 +245,9 @@ export default function WritingSkillsPage() {
                   </span>
                   <span className="mt-3 font-heading text-xl font-bold text-concrete-100">
                     {item.label}
+                  </span>
+                  <span className="mt-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal-reference">
+                    {item.tag}
                   </span>
                   <span className="mt-2 text-sm leading-relaxed text-concrete-400">
                     {item.text}
