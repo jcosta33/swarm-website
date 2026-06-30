@@ -281,12 +281,12 @@
   --radius-panel: 10px;
   --radius-control: 10px;
 
-  --rhythm-kicker-title: clamp(2.08rem, 2.62vw, 2.62rem);
-  --rhythm-title-body: clamp(1.16rem, 1.5vw, 1.48rem);
-  --rhythm-register-gap: clamp(3.12rem, 3.85vw, 3.72rem);
+  --rhythm-kicker-title: clamp(1.62rem, 2.12vw, 2rem);
+  --rhythm-title-body: clamp(1.02rem, 1.35vw, 1.28rem);
+  --rhythm-register-gap: clamp(2.76rem, 3.42vw, 3.26rem);
   --rhythm-hero-nav-clearance: clamp(2.35rem, 3.1vw, 3rem);
   --rhythm-hero-eyebrow-title: clamp(1.95rem, 2.55vw, 2.45rem);
-  --rhythm-after-page-nav: clamp(1.08rem, 1.65vw, 1.55rem);
+  --rhythm-after-page-nav: clamp(0.76rem, 1.12vw, 1.06rem);
 }
 
 :root {
@@ -647,10 +647,18 @@ body::after {
   margin-top: var(--rhythm-kicker-title) !important;
 }
 
+.section-register .section-kicker + .font-heading {
+  margin-top: var(--rhythm-kicker-title) !important;
+}
+
 .section-register :where(.font-heading + p) {
   margin-top: var(--rhythm-title-body) !important;
   max-width: min(100%, 68ch);
   line-height: 1.68;
+}
+
+.section-register .font-heading + p {
+  margin-top: var(--rhythm-title-body) !important;
 }
 
 @media (min-width: 48rem) {
@@ -2329,12 +2337,12 @@ section.bg-section-band::after {
 }
 
 .repo-product-page > .ambient-header {
-  padding-top: clamp(2.25rem, 2.9vw, 2.85rem);
+  padding-top: clamp(4.15rem, 5.1vw, 4.9rem);
 }
 
 .repo-product-page > .ambient-header .page-hero,
 .site-main-frame > .flex.flex-col > .ambient-header .page-hero {
-  padding-top: clamp(0.62rem, 0.95vw, 0.95rem);
+  padding-top: clamp(0.46rem, 0.76vw, 0.74rem);
 }
 
 .ambient-header:has(.page-hero-tone-core) {
@@ -8395,8 +8403,8 @@ section.bg-section-band::after {
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page {
-  row-gap: clamp(1.92rem, 2.45vw, 2.38rem) !important;
-  padding-top: clamp(3.45rem, 4.85vw, 3.95rem) !important;
+  row-gap: clamp(1.55rem, 2.05vw, 2rem) !important;
+  padding-top: clamp(2.05rem, 2.78vw, 2.45rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap {
@@ -8410,11 +8418,11 @@ section.bg-section-band::after {
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-0.62rem, -0.52vw, -0.28rem) !important;
+  margin-top: clamp(-0.74rem, -0.6vw, -0.38rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
-  margin-top: clamp(0.72rem, 1.12vw, 1rem);
+  margin-top: clamp(0.3rem, 0.72vw, 0.58rem);
 }
 
 .writing-page-nav {
@@ -10815,8 +10823,8 @@ section.bg-section-band::after {
 
 .terminal-toolbar:has(.copy-button) .terminal-title-label {
   grid-column: 2;
-  width: min(100%, clamp(6.4rem, 17vw, 12.5rem));
-  max-width: min(100%, 12.5rem);
+  width: min(100%, clamp(5.4rem, 12vw, 9.6rem));
+  max-width: min(100%, 9.6rem);
   justify-self: end;
 }
 

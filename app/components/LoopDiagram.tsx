@@ -120,16 +120,16 @@ export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
               cy="50"
               r="31"
               fill="none"
-              stroke="rgba(216,138,36,0.36)"
+              stroke="rgba(216,138,36,0.26)"
               strokeWidth="0.8"
             />
             <polygon
               points={sealPath}
               fill="none"
               stroke="var(--color-aurum)"
-              strokeWidth="0.7"
+              strokeWidth="0.56"
               strokeLinejoin="round"
-              opacity="0.18"
+              opacity="0.12"
             />
             {sealPoints.map((point) => (
               <line
@@ -156,7 +156,7 @@ export function LoopDiagram({ linkSteps = false }: { linkSteps?: boolean }) {
               const isSpine = !("optional" in point && point.optional);
 
               return (
-                <g key={point.label} opacity={isSpine ? 1 : 0.58}>
+                <g key={point.label} opacity={isSpine ? 1 : 0.48}>
                   <circle
                     cx={point.x}
                     cy={point.y}
