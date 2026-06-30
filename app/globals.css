@@ -8861,37 +8861,71 @@ section.bg-section-band::after {
   }
 
   .agent-roster-cells {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .agent-roster-cell {
     min-height: auto;
-    padding: 0.85rem 0.75rem;
+    padding: 0.82rem 0.9rem;
   }
 
   .agent-roster-cell > div {
-    gap: 0.55rem;
+    align-items: center;
+    gap: 0.72rem;
   }
 
   .agent-roster-icon {
-    height: 2rem;
-    width: 2rem;
+    margin-top: 0;
+    height: 1.85rem;
+    width: 1.85rem;
+  }
+
+  .agent-roster-cell-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.72rem;
+    align-items: start;
+  }
+
+  .agent-roster-cell-body > div:first-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    gap: 0.34rem;
+    justify-content: flex-end;
+  }
+
+  .agent-roster-cell-body > div:first-child p {
+    font-size: 0.62rem;
+    line-height: 1;
+  }
+
+  .agent-roster-cell-body .motion-nudge-x {
+    opacity: 0.72;
   }
 
   .agent-roster-cell-title {
-    margin-top: 0.45rem;
-    font-size: 1rem;
+    grid-column: 1;
+    margin-top: 0;
+    font-size: 1.02rem;
     line-height: 1.15;
   }
 
   .agent-roster-file {
-    margin-top: 0.55rem;
+    grid-column: 1;
+    margin-top: 0.2rem;
     font-size: 0.66rem;
-    line-height: 1.45;
+    line-height: 1.35;
   }
 
   .agent-roster-use {
-    display: none;
+    grid-column: 1 / -1;
+    display: -webkit-box;
+    margin-top: 0.42rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 0.74rem;
+    line-height: 1.36;
   }
 }
 
