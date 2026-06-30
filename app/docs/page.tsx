@@ -99,11 +99,22 @@ export default function DocsIndex() {
           </p>
         </div>
         <div className="docs-index-manual" aria-label="Documentation metadata">
-          <span>canon manual</span>
-          <span>{nav.length} sections</span>
-          <span>{totalPages} pages</span>
-          <span>markdown source</span>
-          <ul className="docs-index-legend" aria-label="Documentation color key">
+          <p className="docs-index-manual-label">canon manual</p>
+          <dl className="docs-index-manual-stats">
+            <div>
+              <dt>Sections</dt>
+              <dd>{nav.length}</dd>
+            </div>
+            <div>
+              <dt>Pages</dt>
+              <dd>{totalPages}</dd>
+            </div>
+            <div>
+              <dt>Source</dt>
+              <dd>Markdown</dd>
+            </div>
+          </dl>
+          <ul className="docs-index-legend" aria-label="Documentation paths">
             {docsLegend.map((item) => (
               <li
                 key={item.label}
