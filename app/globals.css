@@ -281,9 +281,12 @@
   --radius-panel: 10px;
   --radius-control: 10px;
 
-  --rhythm-kicker-title: clamp(1.9rem, 2.45vw, 2.25rem);
-  --rhythm-title-body: clamp(1.05rem, 1.35vw, 1.28rem);
-  --rhythm-register-gap: clamp(2.6rem, 3.35vw, 3.15rem);
+  --rhythm-kicker-title: clamp(2.1rem, 2.75vw, 2.6rem);
+  --rhythm-title-body: clamp(1.15rem, 1.55vw, 1.45rem);
+  --rhythm-register-gap: clamp(2.85rem, 3.7vw, 3.45rem);
+  --rhythm-hero-nav-clearance: clamp(3.35rem, 4.5vw, 4.25rem);
+  --rhythm-hero-eyebrow-title: clamp(1.95rem, 2.55vw, 2.45rem);
+  --rhythm-after-page-nav: clamp(0.55rem, 0.9vw, 0.8rem);
 }
 
 :root {
@@ -1268,7 +1271,7 @@ body::after {
 
 @media (max-width: 40rem) {
   .section-register {
-    padding-top: 2.55rem;
+    padding-top: 2.8rem;
   }
 
   .section-register::before {
@@ -2317,12 +2320,15 @@ section.bg-section-band::after {
   position: relative;
   isolation: isolate;
   overflow: clip;
-  padding-top: clamp(2.75rem, 3.8vw, 3.55rem);
+  padding-top: var(--rhythm-hero-nav-clearance);
 }
 
-.home-hero-section .ambient-header,
+.home-hero-section .ambient-header {
+  padding-top: clamp(5.4rem, 6.2vw, 5.75rem);
+}
+
 .repo-product-page > .ambient-header {
-  padding-top: clamp(2.2rem, 3.2vw, 2.95rem);
+  padding-top: clamp(3rem, 4vw, 3.8rem);
 }
 
 .ambient-header:has(.page-hero-tone-core) {
@@ -2637,7 +2643,7 @@ section.bg-section-band::after {
 }
 
 .page-hero .page-hero-eyebrow {
-  margin-bottom: clamp(1.7rem, 2.1vw, 2.05rem) !important;
+  margin-bottom: var(--rhythm-hero-eyebrow-title) !important;
 }
 
 .page-hero-title {
@@ -2645,7 +2651,7 @@ section.bg-section-band::after {
 }
 
 .page-hero-datum + p {
-  margin-top: clamp(1.05rem, 1.4vw, 1.28rem) !important;
+  margin-top: clamp(1.18rem, 1.6vw, 1.45rem) !important;
 }
 
 .page-hero > p + p {
@@ -3019,7 +3025,7 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .ambient-header {
-    padding-top: 3.65rem;
+    padding-top: 4.15rem;
   }
 
   .ambient-header::before {
@@ -3099,7 +3105,7 @@ section.bg-section-band::after {
       .page-hero-package-mcp
     )
     .page-hero-eyebrow {
-    margin-bottom: 1.35rem;
+    margin-bottom: 1.7rem;
   }
 
   .page-hero:is(
@@ -3166,7 +3172,7 @@ section.bg-section-band::after {
 }
 
 .ambient-header + .section-register {
-  margin-top: clamp(0.4rem, 1.2vw, 1rem);
+  margin-top: clamp(0.75rem, 1.4vw, 1.25rem);
 }
 
 .page-hero-motif-loop .page-hero-motif {
@@ -8283,25 +8289,25 @@ section.bg-section-band::after {
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page {
   row-gap: clamp(2.25rem, 3.4vw, 3rem) !important;
-  padding-top: clamp(4.35rem, 6.2vw, 4.75rem) !important;
+  padding-top: clamp(4rem, 5.7vw, 4.45rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap {
-  margin-top: clamp(0.35rem, 0.65vw, 0.6rem) !important;
-  margin-bottom: clamp(0.7rem, 1.1vw, 1rem);
+  margin-top: clamp(0.15rem, 0.45vw, 0.42rem) !important;
+  margin-bottom: var(--rhythm-after-page-nav);
 }
 
 .repo-product-page > nav.page-nav-wrap {
-  margin-top: clamp(0.35rem, 0.65vw, 0.6rem) !important;
-  margin-bottom: clamp(0.7rem, 1.1vw, 1rem);
+  margin-top: clamp(0.15rem, 0.45vw, 0.42rem) !important;
+  margin-bottom: var(--rhythm-after-page-nav);
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-1.15rem, -1.4vw, -0.72rem) !important;
+  margin-top: clamp(-0.55rem, -0.7vw, -0.25rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
-  margin-top: clamp(0.75rem, 1.35vw, 1.2rem);
+  margin-top: clamp(0.35rem, 0.7vw, 0.65rem);
 }
 
 .writing-page-nav {
@@ -8565,25 +8571,25 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .repo-product-page {
-    padding-top: 4.15rem !important;
+    padding-top: 3.95rem !important;
   }
 
   .repo-product-page > .page-nav-wrap {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.8rem;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.75rem;
   }
 
   .repo-product-page > nav.page-nav-wrap {
-    margin-top: 0.55rem !important;
-    margin-bottom: 0.8rem;
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.75rem;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
-    margin-top: -0.15rem !important;
+    margin-top: 0 !important;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.7rem;
+    margin-top: 0.6rem;
   }
 
   .agent-page-nav,
@@ -10588,12 +10594,22 @@ section.bg-section-band::after {
   animation: blink 1.15s step-end infinite;
 }
 
+.terminal-toolbar {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.terminal-lamp-row {
+  min-width: 0;
+}
+
 .terminal-title-label {
   position: relative;
   isolation: isolate;
   flex: 1 1 auto;
   min-width: 0;
-  width: min(100%, 18rem);
+  width: min(100%, 14rem);
   max-width: 100%;
   overflow: hidden;
   padding: 0.23rem 0.42rem 0.21rem;
@@ -10610,8 +10626,8 @@ section.bg-section-band::after {
   box-shadow:
     inset 0 1px 0 rgba(240, 226, 204, 0.04),
     0 0 0 1px rgba(0, 0, 0, 0.12);
-  font-size: 0.56rem;
-  letter-spacing: 0.055em;
+  font-size: 0.5rem;
+  letter-spacing: 0.045em;
   line-height: 1.12;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -10620,10 +10636,10 @@ section.bg-section-band::after {
 .terminal-toolbar-actions {
   margin-left: auto;
   display: grid !important;
-  grid-template-columns: minmax(0, 18rem) auto;
+  grid-template-columns: minmax(0, clamp(8rem, 22vw, 14rem)) auto;
   align-items: center;
-  column-gap: 0.65rem;
-  flex: 1 1 18rem;
+  column-gap: 0.7rem;
+  flex: 1 1 auto;
   max-width: none;
   justify-content: flex-end;
   min-width: 0;
@@ -10636,8 +10652,15 @@ section.bg-section-band::after {
 }
 
 .terminal-toolbar:has(.copy-button) .terminal-title-label {
-  width: min(100%, 18rem);
+  width: min(100%, 14rem);
   max-width: 100%;
+}
+
+.terminal-title-label > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .terminal-title-label::before {
