@@ -2945,12 +2945,14 @@ section.bg-section-band::after {
   }
 
   .hero-badge-row {
-    max-width: min(100%, 19.5rem);
+    gap: 0.45rem;
+    max-width: min(100%, 22rem);
     margin-inline: auto;
   }
 
   .hero-badge-row > span {
-    flex: 1 1 8.6rem;
+    flex: 0 1 auto;
+    max-width: 100%;
   }
 }
 
