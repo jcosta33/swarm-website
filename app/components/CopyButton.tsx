@@ -59,12 +59,34 @@ export function CopyButton({
       onClick={handleCopy}
     >
       <Icon className="h-3.5 w-3.5" aria-hidden="true" />
-      <span className="copy-button-label-full" aria-live="polite">
-        {copied ? "Copied" : label}
+      <span
+        className="copy-button-label-full copy-button-label-stack"
+        aria-live="polite"
+      >
+        <span className="copy-button-label-current">
+          {copied ? "Copied" : label}
+        </span>
+        <span className="copy-button-label-sizer" aria-hidden="true">
+          {label}
+        </span>
+        <span className="copy-button-label-sizer" aria-hidden="true">
+          Copied
+        </span>
       </span>
       {compactLabel && (
-        <span className="copy-button-label-compact" aria-hidden="true">
-          {copied ? "Copied" : compactLabel}
+        <span
+          className="copy-button-label-compact copy-button-label-stack"
+          aria-hidden="true"
+        >
+          <span className="copy-button-label-current">
+            {copied ? "Copied" : compactLabel}
+          </span>
+          <span className="copy-button-label-sizer" aria-hidden="true">
+            {compactLabel}
+          </span>
+          <span className="copy-button-label-sizer" aria-hidden="true">
+            Copied
+          </span>
         </span>
       )}
     </button>

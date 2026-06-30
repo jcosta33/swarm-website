@@ -1786,8 +1786,10 @@ body::after {
 .copy-button {
   position: relative;
   isolation: isolate;
+  flex-shrink: 0;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
   box-shadow:
     inset 0 1px 0 rgba(240, 226, 204, 0.08),
     inset 0 -1px 0 rgba(0, 0, 0, 0.36);
@@ -1798,8 +1800,27 @@ body::after {
     box-shadow 140ms ease;
 }
 
-.copy-button-label-compact {
+.copy-button-label-stack {
+  align-items: center;
+}
+
+.copy-button-label-full.copy-button-label-stack {
+  display: inline-grid;
+}
+
+.copy-button-label-compact.copy-button-label-stack {
   display: none;
+}
+
+.copy-button-label-current,
+.copy-button-label-sizer {
+  grid-area: 1 / 1;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.copy-button-label-sizer {
+  visibility: hidden;
 }
 
 .copy-button::after {
@@ -5282,25 +5303,26 @@ section.bg-section-band::after {
 
   .cli-command-link {
     display: flex;
-    min-height: 4.45rem;
-    align-items: center;
-    padding: 0.62rem 0.68rem;
+    min-height: 3.55rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.54rem 0.6rem;
   }
 
   .cli-command-step:last-child .cli-command-link {
-    min-height: 4.45rem;
-    padding-block: 0.62rem;
+    min-height: 3.55rem;
+    padding-block: 0.54rem;
   }
 
   .cli-command-heading {
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.42rem;
     width: 100%;
   }
 
   .cli-command-heading .hex-badge {
-    height: 1.45rem;
-    width: 1.45rem;
+    height: 1.28rem;
+    width: 1.28rem;
   }
 
   .cli-command-heading > div {
@@ -5309,24 +5331,34 @@ section.bg-section-band::after {
   }
 
   .cli-command-heading p {
-    font-size: 0.56rem;
+    font-size: 0.54rem;
     line-height: 1.2;
   }
 
   .cli-command-title {
-    margin-top: 0.08rem;
-    font-size: 0.82rem;
+    margin-top: 0.04rem;
+    font-size: 0.78rem;
     line-height: 1.15;
   }
 
   .cli-command-heading > svg {
     display: block;
     margin-left: auto;
+    width: 0.72rem;
+    height: 0.72rem;
     opacity: 0.58;
   }
 
   .cli-command-code {
-    display: none;
+    display: block;
+    width: 100%;
+    margin-top: 0.32rem;
+    overflow: hidden;
+    color: var(--color-concrete-500);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.56rem;
+    line-height: 1.25;
   }
 
   .cli-command-detail {
@@ -10459,7 +10491,7 @@ section.bg-section-band::after {
   }
 
   .terminal-toolbar .copy-button[data-compact-label="true"] .copy-button-label-compact {
-    display: inline;
+    display: inline-grid;
   }
 
   .terminal-toolbar:has(.copy-button) {
