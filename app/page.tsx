@@ -294,7 +294,7 @@ export default function HomePage() {
 
           <Panel brushed screws className="home-hero-preview mx-auto mt-10 max-w-6xl p-3">
             <div className="grid min-w-0 gap-3 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-              <div className="min-w-0 rounded-panel border border-panel-border bg-panel p-4">
+              <div className="home-hero-run-card min-w-0 rounded-panel border border-panel-border bg-panel p-4">
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-[0.12em] text-signal-reference">

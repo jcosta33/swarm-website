@@ -3835,6 +3835,7 @@ section.bg-section-band::after {
 .home-hero-preview {
   position: relative;
   contain: layout;
+  overflow-anchor: none;
   translate: 0 0;
   scale: 1;
   transform: none;
@@ -3850,6 +3851,20 @@ section.bg-section-band::after {
     0 -18px 54px rgba(var(--signal-core-rgb), 0.045),
     0 18px 44px rgba(0, 0, 0, 0.34),
     inset 0 1px 0 rgba(240, 226, 204, 0.08);
+}
+
+.home-hero-run-card {
+  overflow-anchor: none;
+  transition: none;
+}
+
+.home-hero-run-card:is(:hover, :focus-within) {
+  border-color: var(--color-panel-border);
+  background-color: var(--color-panel);
+  box-shadow: none;
+  translate: 0 0;
+  transform: none;
+  scale: 1;
 }
 
 .home-review-section {
