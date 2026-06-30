@@ -601,7 +601,7 @@ body::after {
 }
 
 .section-flow-tight {
-  --section-flow-gap: clamp(0.9rem, 1.3vw, 1.15rem);
+  --section-flow-gap: clamp(1.35rem, 2vw, 1.75rem);
 }
 
 .section-flow-spacious {
@@ -633,6 +633,16 @@ body::after {
 
 .section-after-panel-note {
   max-width: min(100%, 82ch);
+}
+
+.section-register :where(.section-kicker + .font-heading) {
+  margin-top: clamp(0.95rem, 1.35vw, 1.2rem) !important;
+}
+
+.section-register :where(.font-heading + p) {
+  margin-top: clamp(0.9rem, 1.25vw, 1.1rem) !important;
+  max-width: min(100%, 68ch);
+  line-height: 1.64;
 }
 
 @media (min-width: 48rem) {
@@ -1116,7 +1126,7 @@ body::after {
   --section-register-signal: var(--signal-muted);
   --section-register-rgb: var(--signal-muted-rgb);
   position: relative;
-  padding-top: 0.8rem;
+  padding-top: clamp(1.15rem, 1.6vw, 1.4rem);
 }
 
 .section-register::before {
@@ -1254,7 +1264,7 @@ body::after {
 
 @media (max-width: 40rem) {
   .section-register {
-    padding-top: 0.65rem;
+    padding-top: 1.05rem;
   }
 
   .section-register::before {
@@ -4768,9 +4778,16 @@ section.bg-section-band::after {
 }
 
 .mcp-adapter-rail {
+  position: relative;
   background:
     linear-gradient(90deg, rgba(var(--signal-reference-rgb), 0.1), transparent 22%),
     var(--color-panel-border);
+}
+
+.mcp-adapter-rail::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
 }
 
 .mcp-adapter-step {
@@ -4821,6 +4838,22 @@ section.bg-section-band::after {
 }
 
 @media (min-width: 64rem) {
+  .mcp-adapter-rail::before {
+    left: 2.2rem;
+    right: 2.2rem;
+    top: 50%;
+    z-index: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(var(--signal-reference-rgb), 0.26) 8%,
+      rgba(var(--signal-reference-rgb), 0.34) 50%,
+      rgba(var(--signal-core-rgb), 0.2) 82%,
+      transparent
+    );
+  }
+
   .mcp-adapter-step:not(:last-child) .mcp-adapter-step-link::after {
     content: "";
     position: absolute;
@@ -4859,31 +4892,42 @@ section.bg-section-band::after {
   }
 
   .mcp-adapter-rail {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: 1px !important;
   }
 
-  .mcp-adapter-step:last-child {
-    grid-column: 1 / -1;
+  .mcp-adapter-rail::before {
+    top: 1rem;
+    bottom: 1rem;
+    left: 2.15rem;
+    z-index: 2;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(var(--signal-reference-rgb), 0.44) 12%,
+      rgba(var(--signal-reference-rgb), 0.28) 74%,
+      transparent
+    );
+    box-shadow: 0 0 10px rgba(var(--signal-reference-rgb), 0.08);
   }
 
   .mcp-adapter-step-link {
+    display: block !important;
     min-height: 0;
-    padding: 0.62rem 0.66rem;
-  }
-
-  .mcp-adapter-step:last-child .mcp-adapter-step-link {
-    min-height: 0;
-    padding-block: 0.62rem;
+    padding: 0.72rem 0.76rem 0.72rem 0.8rem;
   }
 
   .mcp-adapter-step-link::before {
-    inset: 0.62rem auto 0.62rem 0;
+    inset: 0.7rem auto 0.7rem 0;
+    width: 3px;
+    opacity: 0.54;
   }
 
   .mcp-adapter-heading {
-    align-items: flex-start;
-    gap: 0.48rem;
+    width: 100%;
+    align-items: center;
+    gap: 0.68rem;
   }
 
   .mcp-adapter-heading > .motion-nudge-x {
@@ -4891,13 +4935,13 @@ section.bg-section-band::after {
   }
 
   .mcp-adapter-heading .hex-badge {
-    height: 1.45rem;
-    width: 1.45rem;
+    height: 1.72rem;
+    width: 1.72rem;
   }
 
   .mcp-adapter-heading .hex-badge :is(svg) {
-    height: 0.82rem;
-    width: 0.82rem;
+    height: 0.9rem;
+    width: 0.9rem;
   }
 
   .mcp-adapter-step-link .mcp-adapter-meta {
@@ -4907,26 +4951,21 @@ section.bg-section-band::after {
   }
 
   .mcp-adapter-title {
-    margin-top: 0.08rem;
-    font-size: 0.82rem;
+    margin-top: 0.04rem;
+    font-size: 0.92rem;
     line-height: 1.15;
   }
 
   .mcp-adapter-detail {
     display: -webkit-box;
-    margin-top: 0.34rem;
+    margin-top: 0.32rem;
+    margin-left: calc(1.72rem + 0.68rem);
     max-width: none;
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     line-height: 1.32;
-  }
-
-  .mcp-adapter-step:last-child .mcp-adapter-detail {
-    margin-top: 0.32rem;
-    max-width: none;
-    -webkit-line-clamp: 1;
   }
 }
 
@@ -8184,7 +8223,11 @@ section.bg-section-band::after {
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page > .page-nav-wrap {
-  margin-bottom: clamp(-3.25rem, -3.2vw, -2.25rem);
+  margin-bottom: clamp(-1.6rem, -1.7vw, -1.1rem);
+}
+
+.repo-product-page > nav.page-nav-wrap {
+  margin-bottom: clamp(-1.6rem, -1.7vw, -1.1rem);
 }
 
 .writing-page-nav {
@@ -8438,7 +8481,11 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .repo-product-page > .page-nav-wrap {
-    margin-bottom: -2rem;
+    margin-bottom: -1rem;
+  }
+
+  .repo-product-page > nav.page-nav-wrap {
+    margin-bottom: -1rem;
   }
 
   .agent-page-nav,
