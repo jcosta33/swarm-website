@@ -560,12 +560,12 @@ body::after {
   min-height: 1.82rem;
   align-items: center;
   gap: 0.55rem;
-  padding: 0.08rem 0.58rem 0.48rem 0.66rem;
-  border-left: 2px solid rgba(var(--section-kicker-rgb), 0.64);
+  padding: 0.08rem 0.64rem 0.5rem 0.7rem;
+  border-left: 2px solid rgba(var(--section-kicker-rgb), 0.56);
   border-bottom: 1px solid var(--section-kicker-rule);
   background: linear-gradient(
     90deg,
-    rgba(var(--section-kicker-rgb), 0.07),
+    rgba(var(--section-kicker-rgb), 0.05),
     transparent 74%
   );
   color: var(--section-kicker-color);
@@ -585,7 +585,7 @@ body::after {
   align-self: flex-end;
   margin-bottom: 0.12rem;
   background: linear-gradient(90deg, var(--section-kicker-rule), transparent);
-  opacity: 0.72;
+  opacity: 0.62;
 }
 
 .section-kicker > svg {
@@ -1134,7 +1134,7 @@ body::after {
   --section-register-signal: var(--signal-muted);
   --section-register-rgb: var(--signal-muted-rgb);
   position: relative;
-  padding-top: var(--rhythm-register-gap);
+  padding-top: calc(var(--rhythm-register-gap) + clamp(0.18rem, 0.45vw, 0.38rem));
 }
 
 .section-register::before {
@@ -1162,7 +1162,7 @@ body::after {
       rgba(var(--section-register-rgb), 0.18) 0 0.38rem,
       transparent 0.42rem
     ),
-    linear-gradient(90deg, rgba(var(--section-register-rgb), 0.16), transparent 64%),
+    linear-gradient(90deg, rgba(var(--section-register-rgb), 0.13), transparent 64%),
     repeating-linear-gradient(
       90deg,
       rgba(var(--section-register-rgb), 0.045) 0 1px,
@@ -1176,7 +1176,7 @@ body::after {
   line-height: 1;
   padding: 0.2rem 0.56rem 0.2rem 1.16rem;
   pointer-events: none;
-  text-shadow: 0 0 8px rgba(var(--section-register-rgb), 0.18);
+  text-shadow: 0 0 8px rgba(var(--section-register-rgb), 0.14);
   text-overflow: ellipsis;
   text-transform: uppercase;
   white-space: nowrap;
@@ -1185,7 +1185,7 @@ body::after {
     inset 0 -1px 0 rgba(0, 0, 0, 0.42),
     inset 1.42rem 0 0 rgba(10, 7, 5, 0.18),
     0 0 0 1px rgba(var(--section-register-rgb), 0.035),
-    0 0 18px rgba(var(--section-register-rgb), 0.045);
+    0 0 18px rgba(var(--section-register-rgb), 0.035);
 }
 
 .section-register::after {
@@ -1211,7 +1211,7 @@ body::after {
       )
       center / 100% 0.36rem no-repeat;
   mask-image: linear-gradient(90deg, #000 0 22%, rgba(0, 0, 0, 0.72) 58%, transparent 96%);
-  opacity: 0.58;
+  opacity: 0.5;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1222,13 +1222,13 @@ body::after {
 
 @keyframes section-register-scan {
   from {
-    opacity: 0.46;
+    opacity: 0.42;
     background-position:
       0 50%,
       0 50%;
   }
   to {
-    opacity: 0.68;
+    opacity: 0.58;
     background-position:
       0 50%,
       1.35rem 50%;
@@ -1272,7 +1272,7 @@ body::after {
 
 @media (max-width: 40rem) {
   .section-register {
-    padding-top: 3.05rem;
+    padding-top: 3.25rem;
   }
 
   .section-register::before {
@@ -7000,12 +7000,12 @@ section.bg-section-band::after {
   background-image:
     linear-gradient(
       90deg,
-      rgba(var(--plate-rgb), 0.045),
+      rgba(var(--plate-rgb), 0.032),
       transparent 24%
     ),
     radial-gradient(
       70% 58% at 16% 0%,
-      rgba(var(--plate-rgb), 0.07),
+      rgba(var(--plate-rgb), 0.048),
       transparent 62%
     ),
     radial-gradient(
@@ -7015,7 +7015,7 @@ section.bg-section-band::after {
     ),
     linear-gradient(
       180deg,
-      rgba(232, 222, 203, 0.045) 0%,
+      rgba(232, 222, 203, 0.035) 0%,
       transparent 38%
     );
   box-shadow:
@@ -7048,12 +7048,12 @@ section.bg-section-band::after {
     :is(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"]))
   ):hover,
 .panel-raised:focus-within {
-  border-color: rgba(var(--plate-rgb), 0.38);
-  background-color: #281f17;
+  border-color: rgba(var(--plate-rgb), 0.32);
+  background-color: #251c15;
   box-shadow:
-    inset 0 1px 0 rgba(232, 222, 203, 0.09),
+    inset 0 1px 0 rgba(232, 222, 203, 0.075),
     inset 0 -1px 0 rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(var(--plate-rgb), 0.06);
+    0 0 0 1px rgba(var(--plate-rgb), 0.045);
 }
 
 .panel-raised.home-hero-preview:has(
@@ -7168,8 +7168,8 @@ section.bg-section-band::after {
     ),
     linear-gradient(
       90deg,
-      rgba(var(--surface-rgb), 0.046) 0,
-      rgba(var(--surface-rgb), 0.046) 2px,
+      rgba(var(--surface-rgb), 0.034) 0,
+      rgba(var(--surface-rgb), 0.034) 2px,
       transparent 2px
     ),
     linear-gradient(90deg, rgba(var(--surface-rgb), 0.004), transparent 34%),
@@ -7177,7 +7177,7 @@ section.bg-section-band::after {
     var(--surface-pattern),
     radial-gradient(
       70% 58% at 16% 0%,
-      rgba(var(--surface-rgb), 0.005),
+      rgba(var(--surface-rgb), 0.004),
       transparent 62%
     ),
     radial-gradient(
@@ -7187,7 +7187,7 @@ section.bg-section-band::after {
     ),
     linear-gradient(
       180deg,
-      rgba(232, 222, 203, 0.04) 0%,
+      rgba(232, 222, 203, 0.032) 0%,
       transparent 38%
     );
 }
@@ -7299,20 +7299,20 @@ section.bg-section-band::after {
 .surface-glint {
   border-radius: inherit;
   mix-blend-mode: screen;
-  opacity: 0.42;
+  opacity: 0.32;
   background:
     linear-gradient(
       122deg,
       transparent 0%,
       transparent 36%,
-      rgba(var(--plate-rgb), 0.085) 46%,
-      rgba(240, 226, 204, 0.035) 50%,
+      rgba(var(--plate-rgb), 0.058) 46%,
+      rgba(240, 226, 204, 0.026) 50%,
       transparent 58%,
       transparent 100%
     ),
     radial-gradient(
       70% 60% at 18% 0%,
-      rgba(var(--plate-rgb), 0.08),
+      rgba(var(--plate-rgb), 0.052),
       transparent 58%
     );
   transition:
@@ -7322,23 +7322,23 @@ section.bg-section-band::after {
 
 .surface-engraving {
   border-radius: inherit;
-  opacity: 0.5;
+  opacity: 0.4;
   background:
-    linear-gradient(90deg, rgba(var(--plate-rgb), 0.14), transparent 22%) left
+    linear-gradient(90deg, rgba(var(--plate-rgb), 0.1), transparent 22%) left
       top / 1px 100% no-repeat,
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 27px,
-      rgba(240, 226, 204, 0.018) 27px,
-      rgba(240, 226, 204, 0.018) 28px
+      rgba(240, 226, 204, 0.012) 27px,
+      rgba(240, 226, 204, 0.012) 28px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 31px,
-      rgba(240, 226, 204, 0.012) 31px,
-      rgba(240, 226, 204, 0.012) 32px
+      rgba(240, 226, 204, 0.009) 31px,
+      rgba(240, 226, 204, 0.009) 32px
     );
   transition:
     opacity 180ms ease,
@@ -7359,11 +7359,11 @@ section.bg-section-band::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(var(--plate-rgb), 0.34),
-    rgba(var(--plate-rgb), 0.09),
+    rgba(var(--plate-rgb), 0.26),
+    rgba(var(--plate-rgb), 0.07),
     transparent
   );
-  opacity: 0.5;
+  opacity: 0.42;
 }
 
 .surface-engraving::after {
@@ -7374,9 +7374,9 @@ section.bg-section-band::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(var(--plate-rgb), 0.34)
-  );
-  opacity: 0.42;
+     rgba(var(--plate-rgb), 0.26)
+   );
+  opacity: 0.34;
 }
 
 .panel-raised:is(a, button):hover > .surface-engraving,
@@ -7385,7 +7385,7 @@ section.bg-section-band::after {
   ):hover
   > .surface-engraving,
 .panel-raised:focus-within > .surface-engraving {
-  opacity: 0.66;
+  opacity: 0.54;
 }
 
 .panel-raised:is(a, button):hover > .surface-glint,
@@ -7394,7 +7394,7 @@ section.bg-section-band::after {
   ):hover
   > .surface-glint,
 .panel-raised:focus-within > .surface-glint {
-  opacity: 0.68;
+  opacity: 0.5;
 }
 
 .panel-raised.home-hero-preview:has(
