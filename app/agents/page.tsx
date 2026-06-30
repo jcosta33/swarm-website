@@ -364,7 +364,7 @@ export default function AgentsPage() {
         id="install"
         register="03 / install"
         registerTone="reference"
-        className="flex flex-col gap-8"
+        className="section-flow section-flow-tight"
       >
         <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
           <DroneIcon className="h-4 w-4" />
@@ -404,7 +404,7 @@ export default function AgentsPage() {
             </p>
           </TerminalWindow>
         </Panel>
-        <p className="text-concrete-400">
+        <p className="section-after-panel-note">
           These are Claude Code agents in{" "}
           <code className="text-suspec-yellow">.claude/agents/</code>.{" "}
           <code className="text-suspec-yellow">npx skills</code> installs the{" "}
@@ -416,7 +416,7 @@ export default function AgentsPage() {
         id="read-only-workers"
         register="04 / read-only"
         registerTone="reference"
-        className="flex flex-col gap-12"
+        className="section-flow"
       >
         <div className="max-w-2xl">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
@@ -482,7 +482,7 @@ export default function AgentsPage() {
         id="bounded-authoring"
         register="05 / bounded authoring"
         registerTone="core"
-        className="flex flex-col gap-12"
+        className="section-flow"
       >
         <div className="max-w-2xl">
           <div className={`section-kicker ${signalRoles.core.sectionKicker}`}>

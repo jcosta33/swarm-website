@@ -290,7 +290,7 @@ export default function TheLoopPage() {
       <Section
         register="02 / operating steps"
         registerTone="core"
-        className="flex flex-col gap-14"
+        className="section-flow section-flow-spacious"
       >
         {steps.map((step, index) => {
           const Icon = stepIcons[index];

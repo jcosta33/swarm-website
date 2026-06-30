@@ -328,7 +328,7 @@ export default function CliPage() {
         id="install"
         register="02 / install"
         registerTone="core"
-        className="flex scroll-mt-28 flex-col gap-8"
+        className="section-flow section-flow-tight scroll-mt-28"
       >
         <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
@@ -379,7 +379,7 @@ export default function CliPage() {
         id="run-the-loop"
         register="03 / run the loop"
         registerTone="core"
-        className="flex scroll-mt-28 flex-col gap-8"
+        className="section-flow section-flow-tight scroll-mt-28"
       >
         <div className="section-kicker section-kicker-core">
           <DroneIcon className="h-4 w-4" />
@@ -428,7 +428,7 @@ export default function CliPage() {
         id="commands"
         register="04 / command reference"
         registerTone="reference"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
         <div className="max-w-5xl">
           <div className="section-kicker section-kicker-reference">
@@ -539,7 +539,7 @@ export default function CliPage() {
         id="design-notes"
         register="05 / design notes"
         registerTone="muted"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-muted">

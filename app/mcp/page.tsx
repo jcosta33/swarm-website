@@ -369,7 +369,7 @@ export default function McpPage() {
         id="guardrails"
         register="03 / limits"
         registerTone="muted"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
         <div className="max-w-2xl">
           <div className={`section-kicker ${signalRoles.muted.sectionKicker}`}>

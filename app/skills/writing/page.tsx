@@ -320,7 +320,7 @@ export default function WritingSkillsPage() {
         id="trigger"
         register="03 / load rule"
         registerTone="core"
-        className="flex flex-col gap-8"
+        className="section-flow section-flow-tight"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-core">
@@ -364,7 +364,7 @@ export default function WritingSkillsPage() {
         id="rules"
         register="04 / checklist"
         registerTone="reference"
-        className="flex flex-col gap-8"
+        className="section-flow section-flow-tight"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-reference">
@@ -439,7 +439,7 @@ export default function WritingSkillsPage() {
         id="scope"
         register="06 / local knowledge"
         registerTone="muted"
-        className="flex flex-col gap-8"
+        className="section-flow section-flow-tight"
       >
         <div className="max-w-2xl">
           <div className="section-kicker section-kicker-muted">

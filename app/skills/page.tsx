@@ -370,7 +370,7 @@ export default function SkillsPage() {
       <Section
         register="03 / install"
         registerTone="reference"
-        className="flex flex-col gap-8"
+        className="section-flow section-flow-tight"
       >
         <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
           <DroneIcon className="h-4 w-4" />
@@ -384,7 +384,7 @@ export default function SkillsPage() {
             </p>
           </TerminalWindow>
         </Panel>
-        <p className="text-concrete-400">
+        <p className="section-after-panel-note">
           This installs the framework-free catalog into any repo. The Suspec kit
           ships separately in{" "}
           <TextLink
@@ -403,19 +403,19 @@ export default function SkillsPage() {
         id="review-guides"
         register="04 / review catalog"
         registerTone="evidence"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
-        <div className="max-w-2xl">
+        <div className="section-intro">
           <div className="section-kicker section-kicker-evidence">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
             <span>stance files</span>
           </div>
-          <Heading className="mt-3">Review stances</Heading>
-          <p className="mt-4 text-concrete-400">
+          <Heading>Review stances</Heading>
+          <p className="text-concrete-400">
             Framework-free catalog stances for judgment, evidence, security, and
             debugging. Installed with <code className="text-suspec-yellow">npx skills</code>.
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             <Badge variant="draft">markdown only</Badge>
             <Badge variant="ready">on demand</Badge>
           </div>
@@ -433,15 +433,15 @@ export default function SkillsPage() {
         id="change-guides"
         register="05 / method catalog"
         registerTone="core"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
-        <div className="max-w-2xl">
+        <div className="section-intro">
           <div className="section-kicker section-kicker-core">
             <Hammer className="h-4 w-4" aria-hidden="true" />
             <span>working methods</span>
           </div>
-          <Heading className="mt-3">Working disciplines</Heading>
-          <p className="mt-4 text-concrete-400">
+          <Heading>Working disciplines</Heading>
+          <p className="text-concrete-400">
             The catalog&apos;s everyday methods: map a codebase, plan a change,
             ship a PR, keep output terse, stabilize a flaky test. Also
             framework-free.
@@ -460,29 +460,34 @@ export default function SkillsPage() {
         id="kit-skills"
         register="06 / kit · suspec-coupled"
         registerTone="reference"
-        className="flex scroll-mt-28 flex-col gap-12"
+        className="section-flow scroll-mt-28"
       >
-        <div className="max-w-2xl">
+        <div className="section-intro">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
             <Puzzle className="h-4 w-4" aria-hidden="true" />
             <span>kit · suspec-coupled</span>
           </div>
-          <Heading className="mt-3">The Suspec kit</Heading>
-          <p className="mt-4 text-concrete-400">
-            These skills operate Suspec concepts — task packets, review packets,
-            specs, findings — so they are not framework-free. They ship in{" "}
-            <TextLink
-              href="https://github.com/jcosta33/suspec-starter-kit"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              suspec-starter-kit
-            </TextLink>{" "}
-            under <code className="text-suspec-yellow">.agents/skills/</code>, not
-            in the <code className="text-suspec-yellow">npx skills</code> catalog.
-            The <code className="text-suspec-yellow">write-*</code> family is opt-in
-            task-implementation depth.
-          </p>
+          <Heading>The Suspec kit</Heading>
+          <div className="section-prose-stack">
+            <p>
+              These skills operate Suspec concepts: task packets, review
+              packets, specs, and findings. They are not framework-free.
+            </p>
+            <p>
+              They ship in{" "}
+              <TextLink
+                href="https://github.com/jcosta33/suspec-starter-kit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                suspec-starter-kit
+              </TextLink>{" "}
+              under <code className="text-suspec-yellow">.agents/skills/</code>,
+              not in the <code className="text-suspec-yellow">npx skills</code>{" "}
+              catalog. The <code className="text-suspec-yellow">write-*</code>{" "}
+              family is opt-in task-implementation depth.
+            </p>
+          </div>
         </div>
         <SkillCatalog
           tone="reference"

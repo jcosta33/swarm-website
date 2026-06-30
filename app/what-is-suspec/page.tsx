@@ -399,7 +399,7 @@ export default function WhatIsSuspecPage() {
         id="nearby-tools"
         register="03 / nearby tools"
         registerTone="reference"
-        className="flex flex-col gap-12"
+        className="section-flow"
       >
         <div className="max-w-2xl">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
@@ -455,7 +455,7 @@ export default function WhatIsSuspecPage() {
         id="failure-modes"
         register="04 / failure modes"
         registerTone="change"
-        className="flex flex-col gap-12"
+        className="section-flow"
       >
         <div className="max-w-2xl">
           <div className={`section-kicker ${signalRoles.change.sectionKicker}`}>

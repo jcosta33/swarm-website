@@ -593,6 +593,48 @@ body::after {
   overflow-wrap: anywhere;
 }
 
+.section-flow {
+  --section-flow-gap: clamp(2rem, 3.2vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-flow-gap);
+}
+
+.section-flow-tight {
+  --section-flow-gap: clamp(0.9rem, 1.3vw, 1.15rem);
+}
+
+.section-flow-spacious {
+  --section-flow-gap: clamp(2.75rem, 4vw, 3.5rem);
+}
+
+.section-intro {
+  display: grid;
+  max-width: min(100%, 42rem);
+  gap: clamp(0.8rem, 1.15vw, 1.05rem);
+}
+
+.section-intro > :where(h1, h2, h3, p, ul, ol, div) {
+  margin-block: 0;
+}
+
+.section-prose-stack {
+  display: grid;
+  max-width: min(100%, 68ch);
+  gap: clamp(0.8rem, 1.35vw, 1.1rem);
+}
+
+.section-prose-stack > p,
+.section-after-panel-note {
+  margin: 0;
+  color: var(--color-concrete-400);
+  line-height: 1.68;
+}
+
+.section-after-panel-note {
+  max-width: min(100%, 82ch);
+}
+
 @media (min-width: 48rem) {
   .section-register :where(.section-kicker + .font-heading) {
     display: flex;
@@ -2235,8 +2277,8 @@ section.bg-section-band::after {
   --ambient-pattern: var(--signal-pattern-reference);
   position: relative;
   isolation: isolate;
-  overflow-x: clip;
-  padding-top: clamp(1.35rem, 2.4vw, 2rem);
+  overflow: clip;
+  padding-top: clamp(2.65rem, 3.8vw, 3.45rem);
 }
 
 .ambient-header:has(.page-hero-tone-core) {
@@ -2337,7 +2379,7 @@ section.bg-section-band::after {
 }
 
 .ambient-header::before {
-  top: -1.5rem;
+  top: 1.1rem;
   width: min(48rem, 86vw);
   height: 8.5rem;
   border-radius: 9999px;
@@ -2405,7 +2447,7 @@ section.bg-section-band::after {
 }
 
 .ambient-header::after {
-  top: 2.35rem;
+  top: 4.85rem;
   width: min(28rem, 72vw);
   height: 0.8rem;
   opacity: 0.68;
@@ -2507,11 +2549,11 @@ section.bg-section-band::after {
 
 .page-hero-motif {
   position: absolute;
-  top: -3.35rem;
+  top: -0.95rem;
   left: 50%;
   z-index: 0;
   width: min(58rem, calc(100vw - 2rem));
-  height: 13.5rem;
+  height: 11.8rem;
   pointer-events: none;
   opacity: var(--hero-motif-opacity-min);
   transform: translateX(-50%);
@@ -2913,7 +2955,7 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .ambient-header {
-    padding-top: 3.85rem;
+    padding-top: 4.35rem;
   }
 
   .page-hero {
@@ -2954,9 +2996,9 @@ section.bg-section-band::after {
   }
 
   .page-hero-motif {
-    top: -2.4rem;
+    top: -0.75rem;
     width: calc(100% + 1rem);
-    height: 12rem;
+    height: 10.75rem;
     opacity: 0.38;
   }
 
@@ -2974,8 +3016,8 @@ section.bg-section-band::after {
       .page-hero-package-mcp
     )
     .page-hero-motif {
-    top: -2rem;
-    height: 10.5rem;
+    top: -0.75rem;
+    height: 10rem;
   }
 
   .page-hero:is(
@@ -6305,11 +6347,11 @@ section.bg-section-band::after {
 @keyframes reveal-in {
   from {
     opacity: 0.78;
-    transform: translateY(10px);
+    filter: saturate(0.92) brightness(0.96);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    filter: none;
   }
 }
 
@@ -6673,17 +6715,24 @@ section.bg-section-band::after {
 :where(
     .panel-raised,
     .home-step-rail-item,
+    .home-hero-preview,
     .home-hero-proof,
+    .review-signal-node,
+    .accent-card,
+    .setup-choice-card,
     .agent-roster-cell,
     .skill-category-link,
+    .skill-guide-row,
     .cli-command-link,
+    .cli-command-row,
     .mcp-adapter-step-link,
+    .loop-step-card,
     .process-strip > :is(li, a, div),
     .docs-index-section,
     .docs-pager-link
   ):is(:hover, :focus-visible, :focus-within) {
-  translate: none !important;
-  scale: none !important;
+  translate: 0 0 !important;
+  scale: 1 !important;
   transform: none !important;
 }
 

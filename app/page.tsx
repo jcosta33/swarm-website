@@ -361,7 +361,7 @@ export default function HomePage() {
         <Section
           register="01 / review signals"
           registerTone="evidence"
-          className="flex flex-col gap-10"
+          className="section-flow"
         >
           <div className="max-w-2xl">
             <Eyebrow icon={<Terminal className="h-4 w-4" aria-hidden="true" />}>
@@ -405,7 +405,7 @@ export default function HomePage() {
         <Section
           register="02 / loop"
           registerTone="core"
-          className="flex flex-col gap-10"
+          className="section-flow"
         >
           <div className="max-w-2xl">
             <Eyebrow>workflow / six steps</Eyebrow>
@@ -461,7 +461,7 @@ export default function HomePage() {
         <Section
           register="04 / pieces"
           registerTone="reference"
-          className="flex flex-col gap-10"
+          className="section-flow"
         >
           <div className="max-w-2xl">
             <Eyebrow>what you get</Eyebrow>
@@ -506,7 +506,7 @@ export default function HomePage() {
         <Section
           register="05 / answers"
           registerTone="reference"
-          className="flex flex-col gap-10"
+          className="section-flow"
         >
           <div className="max-w-2xl">
             <Eyebrow>plain answers</Eyebrow>
