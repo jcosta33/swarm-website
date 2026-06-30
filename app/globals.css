@@ -9342,6 +9342,25 @@ section.bg-section-band::after {
 }
 
 @media (max-width: 40rem) {
+  .overview-summary-grid .overview-terminal-shell {
+    order: 2 !important;
+  }
+
+  .overview-summary-grid .overview-paper-artifact {
+    order: 1 !important;
+  }
+
+  .overview-terminal-content {
+    max-height: 13.5rem;
+    padding: 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .overview-check-grid {
+    gap: 0.25rem;
+  }
+
   .overview-is-list {
     margin-top: 1.1rem;
   }
