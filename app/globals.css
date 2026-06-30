@@ -2893,6 +2893,10 @@ section.bg-section-band::after {
 }
 
 @media (max-width: 40rem) {
+  .ambient-header {
+    padding-top: 4rem;
+  }
+
   .page-hero {
     overflow-x: clip;
   }

@@ -311,7 +311,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
       <header
         data-nav-state={headerIsOpaque ? "opaque" : "transparent"}
-        className={`sticky top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-200 ${
+        className={`fixed inset-x-0 top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-200 ${
           headerIsOpaque
             ? "border-panel-border bg-chassis shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
             : "border-transparent bg-transparent"
