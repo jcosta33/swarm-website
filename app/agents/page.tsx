@@ -336,7 +336,7 @@ export default function AgentsPage() {
                           ).padStart(2, "0")}
                         </p>
                         <ExternalLink
-                          className="motion-nudge-x h-4 w-4 shrink-0 text-brass/70 transition-[opacity,transform] group-hover:opacity-100 group-focus:opacity-100"
+                          className="motion-nudge-x h-4 w-4 shrink-0 text-brass/70 transition-opacity group-hover:opacity-100 group-focus:opacity-100"
                           aria-hidden="true"
                         />
                       </div>
