@@ -45,14 +45,14 @@ export function PageNav({
 
   if (wrapperClassName !== undefined) {
     return (
-      <nav className={wrapperClassName} aria-label={ariaLabel}>
+      <nav className={`page-nav-wrap ${wrapperClassName}`} aria-label={ariaLabel}>
         <div className={`agent-page-nav ${className}`.trimEnd()}>{links}</div>
       </nav>
     );
   }
 
   return (
-    <nav className={`agent-page-nav ${className}`.trimEnd()} aria-label={ariaLabel}>
+    <nav className={`page-nav-wrap agent-page-nav ${className}`.trimEnd()} aria-label={ariaLabel}>
       {links}
     </nav>
   );
