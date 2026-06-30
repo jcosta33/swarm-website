@@ -223,7 +223,7 @@ export default function GetStartedPage() {
                   <a
                     href={step.href}
                     className="focus-ring group block h-full p-5 transition-colors duration-150 hover:bg-panel/80 sm:p-6"
-                    aria-label={`Jump to ${step.label.toLowerCase()} setup step`}
+                    aria-label={`Jump to ${step.label.toLowerCase()} setup step: ${step.text}`}
                   >
                     <div className="flex items-center gap-3">
                       <KitIcon signal={step.signal}>
