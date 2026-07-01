@@ -11082,30 +11082,37 @@ section.bg-section-band::after {
 /* Manuscript artifact — specs, review packets, findings, source notes. */
 .paper-artifact {
   position: relative;
+  isolation: isolate;
   color: var(--color-ink);
   border: 1px solid rgba(184, 135, 58, 0.52);
   border-radius: var(--radius-panel);
   background:
-    linear-gradient(90deg, rgba(191, 179, 158, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 83, 42, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 246, 220, 0.18), transparent 2.6rem),
     repeating-linear-gradient(
       180deg,
       transparent 0,
-      transparent 31px,
-      rgba(111, 119, 130, 0.22) 32px
+      transparent 30px,
+      rgba(77, 69, 58, 0.2) 31px,
+      transparent 32px
     ),
-    linear-gradient(180deg, #ead7b7, #d9c29d);
+    radial-gradient(120% 90% at 12% 0%, rgba(255, 248, 226, 0.34), transparent 48%),
+    linear-gradient(180deg, #e7d1ad, #d6bd93);
   background-size:
-    40px 100%,
+    42px 100%,
+    auto,
     100% 32px,
+    auto,
     auto;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -1px 0 rgba(8, 9, 11, 0.08),
-    0 12px 28px rgba(0, 0, 0, 0.28);
+    inset 0 0 0 1px rgba(255, 246, 220, 0.18),
+    inset 0 -1px 0 rgba(8, 9, 11, 0.1),
+    inset 12px 0 22px rgba(117, 78, 34, 0.08),
+    0 14px 30px rgba(0, 0, 0, 0.3);
   transition:
     border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
+    box-shadow 180ms ease;
 }
 
 .paper-artifact::before {
@@ -11115,11 +11122,22 @@ section.bg-section-band::after {
   border-radius: inherit;
   pointer-events: none;
   background-image:
+    linear-gradient(
+      90deg,
+      transparent 0 1rem,
+      rgba(111, 73, 31, 0.22) 1rem 1.05rem,
+      rgba(255, 247, 222, 0.14) 1.05rem 1.08rem,
+      transparent 1.08rem
+    ),
     radial-gradient(1px 1px at 18px 22px, rgba(16, 11, 7, 0.07), transparent),
     radial-gradient(1px 1px at 84px 66px, rgba(16, 11, 7, 0.05), transparent),
     radial-gradient(1px 1px at 148px 18px, rgba(184, 135, 58, 0.09), transparent);
-  background-size: 180px 120px;
-  opacity: 0.7;
+  background-size:
+    auto,
+    180px 120px,
+    180px 120px,
+    180px 120px;
+  opacity: 0.74;
 }
 
 .paper-artifact::after {
@@ -11133,9 +11151,10 @@ section.bg-section-band::after {
   border-left: 1px solid rgba(16, 11, 7, 0.12);
   border-bottom-left-radius: 0.35rem;
   background:
-    linear-gradient(135deg, rgba(255, 246, 222, 0.82), rgba(188, 155, 104, 0.26));
+    linear-gradient(135deg, rgba(255, 246, 222, 0.74), rgba(166, 127, 68, 0.28));
+  box-shadow: -1px 1px 0 rgba(65, 44, 22, 0.1);
   clip-path: polygon(100% 0, 0 0, 100% 100%);
-  opacity: 0.72;
+  opacity: 0.64;
   pointer-events: none;
 }
 
@@ -11143,8 +11162,10 @@ section.bg-section-band::after {
 .paper-artifact:focus-within {
   border-color: rgba(184, 135, 58, 0.66);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    inset 0 -1px 0 rgba(8, 9, 11, 0.08);
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    inset 0 0 0 1px rgba(255, 246, 220, 0.16),
+    inset 0 -1px 0 rgba(8, 9, 11, 0.1),
+    inset 12px 0 22px rgba(117, 78, 34, 0.08);
 }
 
 .paper-stamp {
@@ -11152,6 +11173,8 @@ section.bg-section-band::after {
   align-items: center;
   border: 1px solid rgba(8, 9, 11, 0.42);
   border-radius: var(--radius-control);
+  background: rgba(234, 215, 183, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 246, 220, 0.08);
   color: var(--color-ink);
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.68rem;
