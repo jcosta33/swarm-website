@@ -154,7 +154,7 @@ const principles = [
   {
     title: "Markdown is the source of truth",
     icon: Terminal,
-    text: "The CLI reads the files. It does not replace them.",
+    text: "The CLI reads Suspec files. The files stay canonical.",
     signal: "reference",
   },
   {
@@ -243,10 +243,7 @@ export default function CliPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Optional CLI for the Suspec workflow.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
-            Scaffold files, run checks, manage worktrees.
+            Optional CLI for setup, checks, task worktrees, and JSON output.
           </p>
           <div className="hero-badge-row mt-8 flex flex-wrap items-center justify-center gap-2">
             <Badge variant="draft">Command surface settling</Badge>
@@ -301,7 +298,7 @@ export default function CliPage() {
                         >
                           {String(index + 1).padStart(2, "0")}
                         </p>
-                        <h2 className="cli-command-title font-heading text-lg font-bold text-concrete-100">
+                        <h2 className="cli-command-title font-heading text-lg font-semibold text-concrete-100">
                           {family.label}
                         </h2>
                       </div>
@@ -485,7 +482,7 @@ export default function CliPage() {
                       </p>
                       <h3
                         id={`${family.id}-heading`}
-                        className="mt-1 font-heading text-xl font-bold text-concrete-100"
+                        className="mt-1 font-heading text-xl font-semibold text-concrete-100"
                       >
                         {family.label} commands
                       </h3>
@@ -570,7 +567,7 @@ export default function CliPage() {
                       >
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </HexBadge>
-                    <h3 className="catalog-row-title font-heading text-sm font-bold uppercase tracking-wide text-concrete-100">
+                    <h3 className="catalog-row-title font-heading text-sm font-semibold uppercase tracking-wide text-concrete-100">
                       {p.title}
                     </h3>
                     <p className="catalog-row-copy mt-2 text-sm leading-relaxed text-concrete-400">

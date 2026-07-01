@@ -5544,7 +5544,7 @@ section.bg-section-band::after {
   }
 
   .cli-command-step:last-child {
-    grid-column: auto;
+    grid-column: 1 / -1;
   }
 
   .cli-command-link {
