@@ -8509,39 +8509,39 @@ section.bg-section-band::after {
 
 /* Agent roster — first-pass worker file map, denser than generic cards. */
 .repo-product-page {
-  row-gap: clamp(0.58rem, 0.92vw, 0.88rem) !important;
+  row-gap: clamp(0.34rem, 0.64vw, 0.58rem) !important;
   padding-top: clamp(2.05rem, 2.78vw, 2.45rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap {
   margin-top: 0 !important;
-  margin-bottom: var(--rhythm-after-page-nav);
+  margin-bottom: clamp(0.46rem, 0.82vw, 0.78rem);
 }
 
 .repo-product-page > nav.page-nav-wrap {
   margin-top: 0 !important;
-  margin-bottom: var(--rhythm-after-page-nav);
+  margin-bottom: clamp(0.46rem, 0.82vw, 0.78rem);
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-0.42rem, -0.38vw, -0.2rem) !important;
+  margin-top: clamp(-0.55rem, -0.48vw, -0.28rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
-  margin-top: var(--rhythm-page-nav-to-register);
+  margin-top: clamp(0.32rem, 0.64vw, 0.62rem);
 }
 
 .writing-page-nav {
-  margin-top: clamp(0.38rem, 0.85vw, 0.72rem);
-  margin-bottom: clamp(1rem, 1.55vw, 1.38rem);
+  margin-top: clamp(0.24rem, 0.62vw, 0.52rem);
+  margin-bottom: clamp(0.58rem, 1vw, 0.92rem);
 }
 
 .site-main-frame > .flex.flex-col > .ambient-header + .writing-page-nav {
-  margin-top: clamp(-1.35rem, -1.05vw, -0.82rem);
+  margin-top: clamp(-1.55rem, -1.18vw, -0.95rem);
 }
 
 .writing-page-nav + .section-register {
-  margin-top: clamp(1.08rem, 1.58vw, 1.42rem);
+  margin-top: clamp(0.42rem, 0.78vw, 0.72rem);
 }
 
 @media (min-width: 64rem) {
@@ -8801,26 +8801,26 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .repo-product-page {
-    row-gap: 1.45rem !important;
+    row-gap: 0.86rem !important;
     padding-top: 3rem !important;
   }
 
   .repo-product-page > .page-nav-wrap {
     margin-top: 0 !important;
-    margin-bottom: 0.82rem;
+    margin-bottom: 0.42rem;
   }
 
   .repo-product-page > nav.page-nav-wrap {
     margin-top: 0 !important;
-    margin-bottom: 0.82rem;
+    margin-bottom: 0.42rem;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
-    margin-top: 0.1rem !important;
+    margin-top: -0.08rem !important;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.9rem;
+    margin-top: 0.36rem;
   }
 
   .agent-page-nav,
@@ -8970,7 +8970,7 @@ section.bg-section-band::after {
 
 @media (min-width: 40.01rem) and (max-width: 48rem) {
   .repo-product-page {
-    row-gap: 1.35rem !important;
+    row-gap: 0.9rem !important;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
@@ -8979,11 +8979,11 @@ section.bg-section-band::after {
 
   .repo-product-page > .page-nav-wrap,
   .repo-product-page > nav.page-nav-wrap {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.52rem;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.9rem;
+    margin-top: 0.42rem;
   }
 
   .repo-product-page > .section-register {
@@ -8993,13 +8993,13 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .writing-page-nav {
-    margin-top: -0.82rem;
-    margin-bottom: 1.12rem;
+    margin-top: -1rem;
+    margin-bottom: 0.58rem;
     overflow: visible;
   }
 
   .writing-page-nav + .section-register {
-    margin-top: 1.08rem;
+    margin-top: 0.48rem;
   }
 
   .writing-page-nav::after {
