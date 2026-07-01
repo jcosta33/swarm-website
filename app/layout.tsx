@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import {
-  Alegreya,
   Inter,
   JetBrains_Mono,
+  Texturina,
 } from "next/font/google";
 import "./globals.css";
 import { Shell } from "./components/Shell";
@@ -67,10 +67,10 @@ const jetbrainsMono = JetBrains_Mono({
   preload: false,
 });
 
-// Manuscript display face for headings and title moments: old-style warmth with
-// sturdier enterprise-friendly weights than a delicate book serif.
-const alegreya = Alegreya({
-  variable: "--font-alegreya",
+// Display face for headings and title moments: a softened blackletter-derived
+// serif, keeping the manuscript/occult signal legible at software-site scale.
+const texturina = Texturina({
+  variable: "--font-texturina",
   subsets: ["latin"],
   display: "swap",
   weight: ["500", "600", "700"],
@@ -133,7 +133,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${alegreya.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${texturina.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-chassis text-concrete-100">
         <JsonLd data={siteGraph} />

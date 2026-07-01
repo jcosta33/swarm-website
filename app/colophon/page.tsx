@@ -23,7 +23,7 @@ const facts = [
   { label: "Styling", value: "Tailwind CSS v4" },
   {
     label: "Fonts",
-    value: "Inter, Alegreya, JetBrains Mono",
+    value: "Inter, Texturina, JetBrains Mono",
   },
   { label: "Icons", value: "Lucide React" },
   { label: "Hosting", value: "Vercel" },
@@ -122,7 +122,7 @@ export default function ColophonPage() {
                 {facts.map((fact) => (
                   <div
                     key={fact.label}
-                    className="colophon-fact-row grid grid-cols-[minmax(5.75rem,7rem)_1fr] gap-3 border-t border-concrete-100/10 pt-3 first:border-t-0 first:pt-0"
+                    className="colophon-fact-row grid grid-cols-[minmax(4.7rem,5.35rem)_1fr] gap-2 border-t border-concrete-100/10 pt-3 first:border-t-0 first:pt-0 sm:grid-cols-[minmax(5.75rem,7rem)_1fr] sm:gap-3"
                   >
                     <dt className="font-mono text-xs uppercase tracking-wide text-brass">
                       {fact.label}
