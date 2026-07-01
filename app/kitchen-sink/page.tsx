@@ -115,35 +115,39 @@ export default function KitchenSinkPage() {
         </PageHero>
       </Section>
 
-      <Section register="00 / specimen register" registerTone="muted">
+      <Section
+        register="00 / specimen register"
+        registerTone="muted"
+        className="kitchen-specimen-section"
+      >
         <nav aria-label="Kitchen sink specimen register">
-          <Panel brushed screws className="p-0">
-            <div className="grid md:grid-cols-[minmax(13rem,0.62fr)_minmax(0,2.38fr)]">
-              <div className="border-b border-panel-border p-4 sm:p-5 md:border-b-0 md:border-r">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wide text-brass">
+          <Panel brushed screws className="kitchen-specimen-panel p-0">
+            <div className="kitchen-specimen-layout">
+              <div className="kitchen-specimen-intro">
+                <p className="kitchen-specimen-kicker font-mono text-xs font-semibold uppercase tracking-wide text-brass">
                   Specimen register
                 </p>
-                <h2 className="mt-2 font-heading text-xl font-bold text-concrete-100 sm:mt-3 sm:text-2xl">
-                  Quick checks, grouped by job.
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-concrete-400 sm:mt-3">
+                <h2 className="kitchen-specimen-title">Component map.</h2>
+                <p className="kitchen-specimen-copy text-sm leading-relaxed text-concrete-400">
                   A small map for catching drift in the design system without
                   turning this page into product theater.
                 </p>
               </div>
               <div className="kitchen-specimen-strip process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-3">
                 {specimenRegister.map((group, index) => (
-                  <div
+                  <article
                     key={group.label}
                     className="kitchen-specimen-group bg-panel-raised/95 p-4 sm:p-5"
                   >
-                    <p className="font-mono text-xs font-semibold uppercase tracking-wide text-suspec-yellow">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-2 font-heading text-lg font-bold text-concrete-100 sm:mt-3 sm:text-xl">
-                      {group.label}
-                    </h3>
-                    <p className="kitchen-specimen-note mt-1 text-sm leading-relaxed text-concrete-400 sm:mt-2">
+                    <header className="kitchen-specimen-group-head">
+                      <p className="kitchen-specimen-index font-mono text-xs font-semibold uppercase tracking-wide text-suspec-yellow">
+                        {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h3 className="kitchen-specimen-label font-heading text-lg font-bold text-concrete-100">
+                        {group.label}
+                      </h3>
+                    </header>
+                    <p className="kitchen-specimen-note text-sm leading-relaxed text-concrete-400">
                       {group.note}
                     </p>
                     <ul className="kitchen-specimen-links mt-3 grid grid-cols-2 gap-x-4 gap-y-0.5 sm:mt-4">
@@ -158,7 +162,7 @@ export default function KitchenSinkPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
