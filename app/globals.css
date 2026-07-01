@@ -8804,13 +8804,28 @@ section.bg-section-band::after {
   }
 
   .repo-product-page > .page-nav-wrap {
+    position: relative;
+    isolation: isolate;
     margin-top: 0 !important;
     margin-bottom: 0.42rem;
   }
 
-  .repo-product-page > nav.page-nav-wrap {
-    margin-top: 0 !important;
-    margin-bottom: 0.42rem;
+  .repo-product-page > .page-nav-wrap::after,
+  .writing-page-nav::after {
+    content: "";
+    position: absolute;
+    top: -0.08rem;
+    right: -0.06rem;
+    bottom: 0;
+    z-index: 2;
+    width: 2.2rem;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(22, 16, 12, 0),
+      rgba(22, 16, 12, 0.78) 62%,
+      rgba(22, 16, 12, 0.94)
+    );
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
@@ -8833,11 +8848,10 @@ section.bg-section-band::after {
     background: transparent;
     box-shadow: none;
     margin-inline: 0;
-    padding: 0.05rem 1.05rem 0.22rem 0;
-    scroll-padding-inline: 0.1rem 1.05rem;
+    padding: 0.05rem 1.8rem 0.22rem 0;
+    scroll-padding-inline: 0.1rem 1.8rem;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
   }
 
   .agent-page-nav {
@@ -8853,8 +8867,8 @@ section.bg-section-band::after {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    padding: 0.04rem 1.08rem 0.22rem 0;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
+    padding: 0.04rem 1.8rem 0.22rem 0;
+    scroll-padding-inline: 0.1rem 1.8rem;
   }
 
   .agent-page-nav::-webkit-scrollbar,
@@ -8984,6 +8998,8 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .writing-page-nav {
+    position: relative;
+    isolation: isolate;
     margin-top: -1rem;
     margin-bottom: 0.58rem;
     overflow: visible;
@@ -8991,10 +9007,6 @@ section.bg-section-band::after {
 
   .writing-page-nav + .section-register {
     margin-top: 0.48rem;
-  }
-
-  .writing-page-nav::after {
-    display: none;
   }
 
   .writing-page-nav .section-jump-nav {
@@ -9006,10 +9018,10 @@ section.bg-section-band::after {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    padding: 0.04rem 1.08rem 0.22rem 0;
+    padding: 0.04rem 1.8rem 0.22rem 0;
+    scroll-padding-inline: 0.1rem 1.8rem;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0 calc(100% - 1.4rem), transparent);
   }
 
   .writing-page-nav .section-jump-nav::-webkit-scrollbar {
@@ -9034,7 +9046,6 @@ section.bg-section-band::after {
       inset 0 1px 0 rgba(240, 226, 204, 0.025);
     padding: 0.42rem 0.54rem;
   }
-
   .writing-page-nav .section-jump-nav-link:nth-child(odd):last-child {
     grid-column: 1 / -1;
     justify-self: stretch;
