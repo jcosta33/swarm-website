@@ -8,7 +8,37 @@
   --cursor-angle-y: 0deg;
 }
 
+body {
+  background:
+    linear-gradient(rgba(70, 57, 44, 0.1) 1px, transparent 1px) fixed,
+    linear-gradient(90deg, rgba(70, 57, 44, 0.08) 1px, transparent 1px) fixed,
+    radial-gradient(120% 80% at 50% -16%, rgba(216, 138, 36, 0.035), transparent 50%) fixed,
+    radial-gradient(90% 70% at 50% 8%, rgba(95, 87, 37, 0.055), transparent 58%) fixed,
+    var(--color-background);
+  background-position:
+    0 0,
+    0 0,
+    center top,
+    center top,
+    center;
+  background-size:
+    48px 48px,
+    48px 48px,
+    auto,
+    auto,
+    auto;
+}
+
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body {
+    background-position:
+      var(--cursor-depth-x) var(--cursor-depth-y),
+      calc(0px - var(--cursor-depth-x)) var(--cursor-depth-y),
+      center top,
+      center top,
+      center;
+  }
+
   .site-main-frame::before {
     content: "";
     position: fixed;
@@ -16,24 +46,12 @@
     z-index: -1;
     pointer-events: none;
     background:
-      linear-gradient(rgba(70, 57, 44, 0.052) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(70, 57, 44, 0.044) 1px, transparent 1px),
-      radial-gradient(
-        46rem 38rem at calc(50% + var(--cursor-depth-x)) calc(10% + var(--cursor-depth-y)),
-        rgba(var(--signal-core-rgb), 0.024),
-        transparent 72%
-      ),
-      radial-gradient(
-        34rem 30rem at calc(50% - var(--cursor-depth-x)) calc(16% - var(--cursor-depth-y)),
-        rgba(var(--signal-reference-rgb), 0.016),
-        transparent 76%
-      );
+      linear-gradient(rgba(70, 57, 44, 0.032) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(70, 57, 44, 0.026) 1px, transparent 1px);
     background-size:
       52px 52px,
-      52px 52px,
-      auto,
-      auto;
-    opacity: 0.84;
+      52px 52px;
+    opacity: 0.38;
     transform: perspective(1400px) rotateX(var(--cursor-angle-x))
       rotateY(var(--cursor-angle-y))
       translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
@@ -426,11 +444,11 @@
   min-height: 100%;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-rows:
-    minmax(0.82rem, auto)
-    minmax(1.45rem, auto)
-    minmax(1.05rem, auto)
-    minmax(2.6rem, auto);
-  row-gap: 0.42rem;
+    0.92rem
+    minmax(1.62rem, auto)
+    minmax(1.22rem, auto)
+    minmax(3.1rem, auto);
+  row-gap: 0.48rem;
 }
 
 .repo-product-page .agent-roster-cell-title,
@@ -459,20 +477,26 @@
 
 .repo-product-page .agent-roster-cell-body .motion-nudge-x {
   grid-row: 1;
+  align-self: start;
+  margin-top: 0.05rem;
 }
 
 .repo-product-page .agent-roster-cell-title {
   grid-row: 2;
   align-self: center;
+  max-width: 16rem;
+  line-height: 1.18;
 }
 
 .repo-product-page .agent-roster-file {
   grid-row: 3;
   align-self: start;
+  line-height: 1.28;
 }
 
 .repo-product-page .agent-roster-use {
   grid-row: 4;
+  line-height: 1.46;
 }
 
 .repo-product-page .agent-roster-icon,
@@ -498,16 +522,16 @@
 }
 
 .repo-product-page .agent-worker-card .catalog-row {
-  min-height: 3.82rem !important;
-  padding-block: 0 !important;
+  min-height: 4.7rem !important;
+  padding: 0.92rem 1.05rem !important;
 }
 
 .repo-product-page .agent-worker-card .catalog-row > div:first-child > div:last-child,
 .skills-page .skill-guide-row.catalog-row > div:first-child > div:last-child {
   display: grid;
   align-content: start;
-  grid-template-rows: minmax(1.3rem, auto) minmax(2.6rem, auto);
-  row-gap: 0.38rem;
+  grid-template-rows: minmax(1.35rem, auto) minmax(2.55rem, auto);
+  row-gap: 0.46rem;
 }
 
 .repo-product-page .agent-worker-card .catalog-row-copy,
@@ -520,6 +544,26 @@
 .skills-page .skill-guide-row .catalog-row-title {
   align-self: start;
   line-height: 1.24;
+}
+
+.repo-product-page .agent-worker-card .catalog-row {
+  display: grid !important;
+  grid-template-columns: 3.05rem minmax(0, 1fr);
+  align-items: start !important;
+  gap: 0.9rem !important;
+}
+
+.repo-product-page .agent-worker-card .catalog-row > div:first-child {
+  display: contents;
+}
+
+.repo-product-page .agent-worker-card .catalog-row-badge {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.repo-product-page .agent-worker-card .catalog-row > div:first-child > div:last-child {
+  grid-column: 2;
 }
 
 .skills-page .skill-guide-list {
@@ -811,14 +855,16 @@
   }
 
   .repo-product-page .agent-worker-card .catalog-row {
-    min-height: 3.82rem !important;
-    padding-block: 0 !important;
+    min-height: 4.45rem !important;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: 0.74rem !important;
+    padding: 0.78rem 0.82rem !important;
   }
 
   .repo-product-page .agent-worker-card .catalog-row > div:first-child > div:last-child,
   .skills-page .skill-guide-row.catalog-row > div:first-child > div:last-child {
     grid-template-rows: auto auto;
-    row-gap: 0.26rem;
+    row-gap: 0.34rem;
   }
 
   .repo-product-page .agent-worker-card .catalog-row,
