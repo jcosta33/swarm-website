@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import {
+  Cormorant_Garamond,
   Fraunces,
   Inter,
   JetBrains_Mono,
-  Space_Grotesk,
 } from "next/font/google";
 import "./globals.css";
 import { Shell } from "./components/Shell";
@@ -63,22 +63,24 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500"],
-  // Mono is only used for code/labels, never the LCP heading — don't let it preload-compete with
-  // Space Grotesk / Inter on the critical path (Lighthouse mobile flagged the extra preload).
+  // Mono is only used for code/labels, never the LCP heading. Keep it from
+  // preload-competing with the display and body faces on the critical path.
   preload: false,
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700"],
-});
-
-// Old-style display face for the title-page voice — enough manuscript/book-cover
-// character for the heroes and wordmark, while compact UI labels stay geometric.
+// Textured old-style face for compact headings: manuscript warmth without turning
+// operational cards into display posters.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+// Sharper book-cover face for title-page moments: more Hermetic manuscript than
+// SaaS dashboard, but sturdy enough at semibold for the wordmark and heroes.
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
   subsets: ["latin"],
   display: "swap",
   weight: ["500", "600", "700"],
@@ -141,7 +143,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable} ${cormorantGaramond.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-chassis text-concrete-100">
         <JsonLd data={siteGraph} />

@@ -275,9 +275,9 @@
 
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
-  --font-heading: var(--font-space-grotesk);
-  --font-display: var(--font-fraunces);
-  --font-title: var(--font-fraunces);
+  --font-heading: var(--font-fraunces);
+  --font-display: var(--font-cormorant-garamond);
+  --font-title: var(--font-cormorant-garamond);
 
   --radius-panel: 10px;
   --radius-control: 10px;
@@ -295,6 +295,11 @@
 
 :root {
   color-scheme: dark;
+  /* Runtime aliases for next/font variables. Tailwind's theme layer also exposes
+     these names for utilities; this keeps computed CSS variables aligned. */
+  --font-heading: var(--font-fraunces);
+  --font-display: var(--font-cormorant-garamond);
+  --font-title: var(--font-cormorant-garamond);
   --color-pwr-red: #d2624e;
   --signal-core: var(--color-aurum);
   --signal-core-rgb: 216, 138, 36;
@@ -506,17 +511,17 @@ body::after {
   );
 }
 
-/* Heading font utility (the geometric sans — for crisp UI headings) */
+/* Heading font utility — warm manuscript serif for compact UI headings. */
 .font-heading {
-  font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-heading), "Iowan Old Style", Palatino, Georgia, serif;
 }
 
-/* Display font — old-style serif, for the title-page voice (heroes, wordmark) */
+/* Display font — sharper old-style serif for title-page voice. */
 .font-display {
   font-family: var(--font-display), "Iowan Old Style", Palatino, Georgia, serif;
 }
 
-/* Title font — warmer and stranger than the UI sans, reserved for brand-scale headings. */
+/* Title font — book-cover scale only: heroes, docs H1, wordmark. */
 .font-title {
   font-family: var(--font-title), "Iowan Old Style", Palatino, Georgia, serif;
 }
@@ -726,7 +731,7 @@ body::after {
 .section-register
   :where(.panel-raised, .panel-inset, .paper-artifact, .terminal-window)
   :where(.section-kicker + .font-heading) {
-  font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-heading), "Iowan Old Style", Palatino, Georgia, serif;
   line-height: inherit;
 }
 

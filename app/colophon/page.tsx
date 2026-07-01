@@ -21,7 +21,10 @@ export const metadata: Metadata = {
 const facts = [
   { label: "Framework", value: "Next.js 16 with App Router" },
   { label: "Styling", value: "Tailwind CSS v4" },
-  { label: "Fonts", value: "Inter, Fraunces, Space Grotesk, JetBrains Mono" },
+  {
+    label: "Fonts",
+    value: "Inter, Cormorant Garamond, Fraunces, JetBrains Mono",
+  },
   { label: "Icons", value: "Lucide React" },
   { label: "Hosting", value: "Vercel" },
 ];
