@@ -10,6 +10,14 @@
   --background-plane-drift-y: 0px;
   --background-header-drift-x: 0px;
   --background-header-drift-y: 0px;
+  --background-plane-normal-x: 0;
+  --background-plane-normal-y: 0;
+  --background-plane-grid-x: 0px;
+  --background-plane-grid-y: 0px;
+  --background-plane-grid-minor-x: 0px;
+  --background-plane-grid-minor-y: 0px;
+  --background-header-grid-x: 0px;
+  --background-header-grid-y: 0px;
 }
 
 body {
@@ -60,14 +68,14 @@ body {
     display: block;
     overflow: hidden;
     pointer-events: none;
-    perspective: 430px;
+    perspective: 310px;
     perspective-origin: var(--background-plane-origin-x) var(--background-plane-origin-y);
     contain: paint;
   }
 
   .site-background-plane {
     position: absolute;
-    inset: -22vmax;
+    inset: -28vmax;
     display: block;
     background:
       linear-gradient(rgba(70, 57, 44, 0.088) 1px, transparent 1px),
@@ -82,17 +90,21 @@ body {
       192px 192px,
       auto;
     background-position:
-      50% 0,
-      50% 0,
-      50% 0,
-      50% 0,
+      calc(50% + var(--background-plane-grid-x))
+        var(--background-plane-grid-y),
+      calc(50% + var(--background-plane-grid-x))
+        var(--background-plane-grid-y),
+      calc(50% + var(--background-plane-grid-minor-x))
+        var(--background-plane-grid-minor-y),
+      calc(50% + var(--background-plane-grid-minor-x))
+        var(--background-plane-grid-minor-y),
       center top;
     opacity: 0.9;
     transform:
-      translate3d(var(--background-plane-drift-x), var(--background-plane-drift-y), -42px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.74))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.62))
-      scale(1.34);
+      translate3d(var(--background-plane-drift-x), var(--background-plane-drift-y), -62px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.92))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.82))
+      scale(1.44);
     transform-origin: 50% 50%;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -112,11 +124,18 @@ body {
   }
 
   .site-main-frame .ambient-header::before {
+    animation-name: ambient-calibration-breathe-pointer;
     transform: translateX(-50%)
-      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 18px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.64))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.72))
+      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 22px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.78))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.84))
       scale(1.1);
+    background-position:
+      calc(50% + var(--background-header-grid-x)) 50%,
+      var(--background-plane-grid-x) var(--background-header-grid-y),
+      calc(50% + var(--background-plane-grid-minor-x))
+        calc(50% + var(--background-header-grid-y)),
+      center;
     transform-origin: center 42%;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -125,10 +144,14 @@ body {
 
   .site-main-frame .ambient-header::after {
     transform: translateX(-50%)
-      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 16px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.48))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.56))
+      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 19px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.62))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.68))
       scale(1.085);
+    background-position:
+      left calc(50% + var(--background-header-grid-y)),
+      right calc(50% + var(--background-header-grid-y)),
+      calc(50% + var(--background-header-grid-x)) center;
     transform-origin: center 50%;
     backface-visibility: hidden;
     will-change: transform;
@@ -137,9 +160,9 @@ body {
   .site-main-frame .page-hero::before,
   .site-main-frame .page-hero::after {
     transform:
-      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 14px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.42))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.5))
+      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 17px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.56))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.62))
       scale(1.074);
     transform-origin: center 42%;
     backface-visibility: hidden;
@@ -147,29 +170,34 @@ body {
   }
 
   .site-main-frame .ambient-header .page-hero-motif {
-    animation-name: page-hero-motif-drift-pointer;
+    animation-name: page-hero-motif-breathe-pointer;
+    transform: translateX(-50%)
+      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 22px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.68))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.78))
+      scale(1.092);
     transform-origin: center 48%;
     will-change: transform;
   }
 }
 
-@keyframes page-hero-motif-drift-pointer {
+@keyframes ambient-calibration-breathe-pointer {
+  from {
+    opacity: 0.46;
+  }
+
+  to {
+    opacity: 0.58;
+  }
+}
+
+@keyframes page-hero-motif-breathe-pointer {
   from {
     opacity: var(--hero-motif-opacity-min);
-    transform: translateX(-50%)
-      translate3d(var(--background-header-drift-x), var(--background-header-drift-y), 18px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.56))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.66))
-      scale(1.084);
   }
 
   to {
     opacity: var(--hero-motif-opacity-max);
-    transform: translateX(-50%)
-      translate3d(var(--background-header-drift-x), calc(var(--background-header-drift-y) + 0.18rem), 18px)
-      rotateX(calc(var(--background-plane-tilt-x) * 1.56))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.66))
-      scale(1.084);
   }
 }
 
