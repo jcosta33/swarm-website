@@ -27,11 +27,11 @@ const stepIcons = [Inbox, FileText, ListChecks, Terminal, ScanEye, GitMerge];
 export const metadata: Metadata = {
   title: "The loop — Suspec",
   description:
-    "Pull, Spec, Task, Run, Review, Close: the Suspec workflow.",
+    "Learn the Suspec loop: write a spec, hand off bounded task work, review evidence, and save findings without letting agents approve themselves.",
   openGraph: {
     title: "The loop — Suspec",
     description:
-      "Pull, Spec, Task, Run, Review, Close: the Suspec workflow.",
+      "Learn the Suspec loop: write a spec, hand off bounded task work, review evidence, and save findings without letting agents approve themselves.",
     type: "website",
     url: "/the-loop/",
     siteName: "Suspec",

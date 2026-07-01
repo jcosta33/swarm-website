@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Suspec — spec and review workflow",
     short_name: "Suspec",
     description:
-      "A markdown workflow for specs, tasks, reviews, findings, and evidence.",
+      "A plain-markdown workflow for specs, tasks, reviews, findings, and evidence when teams use coding agents.",
     start_url: "/",
     display: "standalone",
     theme_color: "#110e0c",

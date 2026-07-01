@@ -33,11 +33,11 @@ import {
 export const metadata: Metadata = {
   title: "Get started — Suspec",
   description:
-    "Set up Suspec in a new repo or an existing project.",
+    "Set up Suspec with the starter kit, adopt it in an existing repo, and add the optional CLI only when you need scaffolding or checks.",
   openGraph: {
     title: "Get started — Suspec",
     description:
-      "Set up Suspec in a new repo or an existing project.",
+      "Set up Suspec with the starter kit, adopt it in an existing repo, and add the optional CLI only when you need scaffolding or checks.",
     type: "website",
     url: "/get-started/",
     siteName: "Suspec",

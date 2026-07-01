@@ -23,7 +23,7 @@ const siteGraph = {
       name: "Suspec",
       url: SITE_URL,
       description:
-        "Suspec is a markdown workflow for coding-agent work.",
+        "Suspec is a plain-markdown workflow for specs, tasks, reviews, findings, and evidence when teams use coding agents.",
       sameAs: [
         "https://github.com/jcosta33/suspec",
         "https://github.com/jcosta33/suspec-starter-kit",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://suspecframework.dev"),
   title: "Suspec — spec and review workflow",
   description:
-    "Suspec is a markdown workflow for specs, tasks, reviews, findings, and evidence.",
+    "Suspec is a plain-markdown workflow for specs, tasks, reviews, findings, and evidence when teams use coding agents.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
