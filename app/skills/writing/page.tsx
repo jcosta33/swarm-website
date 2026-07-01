@@ -25,23 +25,23 @@ import { Heading } from "../../components/Heading";
 import { PilotLamp } from "../../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "Writing a skill — Calma",
+  title: "Writing a skill — Suspec",
   description:
-    "How to write a Calma skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+    "How to write a Suspec skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
   openGraph: {
-    title: "Writing a skill — Calma",
+    title: "Writing a skill — Suspec",
     description:
-      "How to write a Calma skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
+      "How to write a Suspec skill: the open Agent Skills format, directive descriptions, self-contained bodies, forced visible output, and when to ship a task template.",
     type: "website",
     url: "/skills/writing/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-skills.png",
         width: 1200,
         height: 630,
-        alt: "Writing a Calma skill — the open Agent Skills format",
+        alt: "Writing a Suspec skill — the open Agent Skills format",
       },
     ],
   },
@@ -220,10 +220,10 @@ export default function WritingSkillsPage() {
               &nbsp;&nbsp;&nbsp;&nbsp;task-template.md
             </p>
             <p className="mt-3 text-concrete-500">
-              # A persona needs no references folder
+              # A stance can be a single file
             </p>
             <p className="text-concrete-100">
-              skills/persona-skeptic/
+              skills/persona-challenger/
               <br />
               &nbsp;&nbsp;SKILL.md
             </p>

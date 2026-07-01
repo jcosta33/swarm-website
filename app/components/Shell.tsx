@@ -8,7 +8,7 @@ import { Logo } from "./Logo";
 import { Section } from "./Section";
 
 const navLinks = [
-  { label: "What is Calma", href: "/what-is-suspec" },
+  { label: "What is Suspec", href: "/what-is-suspec" },
   { label: "Loop", href: "/the-loop" },
   { label: "Skills", href: "/skills" },
   { label: "CLI", href: "/cli" },
@@ -167,7 +167,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <Link
             href="/"
             className="focus-ring rounded-sm"
-            aria-label="Calma home"
+            aria-label="Suspec home"
           >
             <Logo className="text-lg text-concrete-100" />
           </Link>
@@ -262,13 +262,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col gap-2">
             <Link
               href="/"
-              aria-label="Calma home"
+              aria-label="Suspec home"
               className="focus-ring rounded-sm w-fit"
             >
               <Logo className="text-base text-concrete-100" />
             </Link>
             <p className="text-sm text-concrete-400">
-              Built with Calma. The agents don&apos;t get to grade their own
+              Built with Suspec. The agents don&apos;t get to grade their own
               homework — a different session reviewed it, a human merged it.
             </p>
           </div>
@@ -292,7 +292,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </nav>
 
           <p className="text-sm text-concrete-400">
-            © {new Date().getFullYear()} Calma contributors.
+            © {new Date().getFullYear()} Suspec contributors.
           </p>
         </Section>
       </div>

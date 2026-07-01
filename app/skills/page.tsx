@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Brain,
   Bug,
   ExternalLink,
   FileCode,
-  FileSearch,
   Files,
   FolderSearch,
   Glasses,
   Hammer,
   Layers,
-  PenTool,
   Puzzle,
   Rocket,
   Scale,
-  ScrollText,
   ShieldCheck,
   Sparkles,
   Swords,
@@ -33,23 +29,23 @@ import { PageHero } from "../components/PageHero";
 import { Heading } from "../components/Heading";
 
 export const metadata: Metadata = {
-  title: "Skills — Calma",
+  title: "Skills — Suspec",
   description:
-    "Optional agent guides for Calma workflows: conditioning stances and code-authoring depth. Not shortcuts — discipline prompts that load when the work matches.",
+    "Optional agent guides for Suspec workflows: conditioning stances and code-authoring depth. Not shortcuts — discipline prompts that load when the work matches.",
   openGraph: {
-    title: "Skills — Calma",
+    title: "Skills — Suspec",
     description:
-      "An optional catalog of agent guides for Calma workflows: conditioning stances and code-authoring depth, installable into any agent CLI.",
+      "An optional catalog of agent guides for Suspec workflows: conditioning stances and code-authoring depth, installable into any agent CLI.",
     type: "website",
     url: "/skills/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-skills.png",
         width: 1200,
         height: 630,
-        alt: "Calma skills — conditioning stances and code-authoring depth guides",
+        alt: "Suspec skills — conditioning stances and code-authoring depth guides",
       },
     ],
   },
@@ -60,29 +56,9 @@ export const metadata: Metadata = {
 
 const stances = [
   {
-    skill: "persona-skeptic",
+    skill: "adversarial-review",
     icon: Scale,
     use: "judging another agent's work — refute by default, re-run the checks",
-  },
-  {
-    skill: "persona-architect",
-    icon: PenTool,
-    use: "shaping a spec free of smuggled implementation",
-  },
-  {
-    skill: "persona-auditor",
-    icon: FileSearch,
-    use: "recording present state with file:line findings",
-  },
-  {
-    skill: "persona-documentarian",
-    icon: ScrollText,
-    use: "writing human-facing docs a reader can actually follow",
-  },
-  {
-    skill: "persona-researcher",
-    icon: Brain,
-    use: "depth inquiry against primary sources",
   },
   {
     skill: "persona-surveyor",
@@ -105,7 +81,7 @@ const authoring = [
   {
     skill: "implement-task",
     icon: Terminal,
-    use: "the full Calma task-packet frame, long form",
+    use: "the full Suspec task-packet frame, long form",
   },
   {
     skill: "write-feature",
@@ -159,10 +135,10 @@ export default function SkillsPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="skills.catalog — 18 skills"
+          eyebrow="skills.catalog — install on demand"
           title={
             <>
-              Calma <span className="text-suspec-yellow text-glow">skills</span>
+              Suspec <span className="text-suspec-yellow text-glow">skills</span>
             </>
           }
         >
@@ -196,25 +172,25 @@ export default function SkillsPage() {
             </p>
             <p className="text-concrete-100">
               <span className="text-suspec-yellow">$</span> npx skills add
-              jcosta33/suspec-skills --skill persona-skeptic
+              jcosta33/suspec-skills --skill adversarial-review
             </p>
             <p className="mt-2 text-concrete-500">
               # or install globally / for one agent
             </p>
             <p className="text-concrete-100">
               <span className="text-suspec-yellow">$</span> npx skills add
-              jcosta33/suspec-skills --skill persona-skeptic -g
+              jcosta33/suspec-skills --skill adversarial-review -g
             </p>
             <p className="text-concrete-100">
               <span className="text-suspec-yellow">$</span> npx skills add
-              jcosta33/suspec-skills --skill persona-skeptic -a claude-code
+              jcosta33/suspec-skills --skill adversarial-review -a claude-code
             </p>
             <p className="mt-2 text-concrete-500">
               # no CLI? copy the folder into your agent&apos;s skills directory
             </p>
             <p className="text-concrete-100">
               <span className="text-suspec-yellow">$</span> cp -R
-              skills/persona-skeptic &lt;your-repo&gt;/.agents/skills/
+              skills/adversarial-review &lt;your-repo&gt;/.agents/skills/
             </p>
           </TerminalWindow>
         </Panel>
@@ -341,7 +317,7 @@ export default function SkillsPage() {
             <Terminal className="h-4 w-4" aria-hidden="true" />
             <span>authoring.guide — write your own</span>
           </div>
-          <Heading className="mt-3">How to write a Calma skill</Heading>
+          <Heading className="mt-3">How to write a Suspec skill</Heading>
           <p className="mt-4 text-concrete-400">
             Skills are plain markdown, but their structure is evidence-backed:
             directive descriptions, self-contained bodies, forced visible
@@ -374,7 +350,7 @@ export default function SkillsPage() {
               href="/cli/"
               className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              calma-cli
+              suspec-cli
             </Link>
             . It is real, but the command surface is still settling.
           </p>

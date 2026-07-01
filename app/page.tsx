@@ -34,35 +34,35 @@ import { PageHero } from "./components/PageHero";
 const softwareApp = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Calma",
+  name: "Suspec",
   applicationCategory: "DeveloperApplication",
   operatingSystem: "Any",
   softwareVersion: "0.1.0",
   url: "https://suspecframework.dev",
   description:
-    "Calma is a lightweight spec-and-review workflow that keeps humans in charge of code written by AI agents. Plain markdown, any agent, no runtime.",
+    "Suspec is a lightweight spec-and-review workflow that keeps humans in charge of code written by AI agents. Plain markdown, any agent, no runtime.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   publisher: { "@id": "https://suspecframework.dev/#organization" },
 };
 
 export const metadata: Metadata = {
-  title: "Calma — specs for humans, tasks for agents",
+  title: "Suspec — specs for humans, tasks for agents",
   description:
-    "AI writes code that looks right. Calma is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
+    "AI writes code that looks right. Suspec is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
   openGraph: {
-    title: "Calma — specs for humans, tasks for agents",
+    title: "Suspec — specs for humans, tasks for agents",
     description:
-      "AI writes code that looks right. Calma is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
+      "AI writes code that looks right. Suspec is a lightweight spec-and-review workflow that keeps humans in the driver seat. Plain markdown, any agent, no runtime.",
     type: "website",
     url: "/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Calma — specs for humans, tasks for agents",
+        alt: "Suspec — specs for humans, tasks for agents",
       },
     ],
   },
@@ -114,7 +114,7 @@ const features = [
     title: "Spec-first, not vibes-first",
     command: "suspec new",
     description:
-      "Write the contract once. The task packet bounds scope and tells the agent, in writing, what not to touch.",
+      "Write the contract once. The spec bounds scope and tells the agent, in writing, what not to touch; add task packets only when work splits.",
   },
   {
     title: "Review by exception",
@@ -137,18 +137,18 @@ const features = [
 ];
 
 // Honest, plain-text Q&A — answers a reader (and an AI answer-engine) the real questions, grounded
-// in what Calma actually is. Doubles as FAQPage structured data for generative-engine visibility.
+// in what Suspec actually is. Doubles as FAQPage structured data for generative-engine visibility.
 const faqs = [
   {
-    q: "Is Calma just another spec-driven development tool?",
-    a: "No. Most spec-driven tools optimize generating code from a spec; Calma's emphasis is the review gate. Every change produces a review packet with pasted evidence per requirement, and a human decides when it is good enough. The spec sets scope; the review is where “almost right” has to prove it is right.",
+    q: "Is Suspec just another spec-driven development tool?",
+    a: "No. Most spec-driven tools optimize generating code from a spec; Suspec's emphasis is the review gate. Every change produces a review packet with pasted evidence per requirement, and a human decides when it is good enough. The spec sets scope; the review is where “almost right” has to prove it is right.",
   },
   {
     q: "Do I need a particular AI agent?",
-    a: "No. Calma is plain markdown and conventions, so it works with Claude Code, Cursor, Copilot, or any agent that reads files in your repo. Nothing to integrate, no lock-in.",
+    a: "No. Suspec is plain markdown and conventions, so it works with Claude Code, Cursor, Copilot, or any agent that reads files in your repo. Nothing to integrate, no lock-in.",
   },
   {
-    q: "Does Calma replace code review, CI, or pull requests?",
+    q: "Does Suspec replace code review, CI, or pull requests?",
     a: "No — it rides alongside them. The review packet tells a reviewer where to look; your CI output is the evidence the packet cites. PRs and CI stay exactly where they are.",
   },
   {
@@ -161,7 +161,7 @@ const faqs = [
   },
   {
     q: "Who makes the final call on whether code ships?",
-    a: "A human, every time. Agents draft, run, and paste output; you decide when the evidence is good enough. Calma has no autopilot and no merge-by-vibes — which is where developers already are: in the 2025 Stack Overflow survey, the top reason to keep a person in the loop was “when I don't trust AI's answers.”",
+    a: "A human, every time. Agents draft, run, and paste output; you decide when the evidence is good enough. Suspec has no autopilot and no merge-by-vibes — which is where developers already are: in the 2025 Stack Overflow survey, the top reason to keep a person in the loop was “when I don't trust AI's answers.”",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function HomePage() {
                   <span className="text-suspec-yellow">$</span> suspec status
                 </p>
                 <p className="mt-1 text-concrete-500">
-                  # the gap Calma is built for:
+                  # the gap Suspec is built for:
                 </p>
                 <p className="mt-1 text-concrete-100">
                   Only 33% of developers trust the accuracy of AI output. 84%
@@ -299,7 +299,7 @@ export default function HomePage() {
               >
                 METR
               </Link>
-              ). Calma does not answer that with hustle. It turns every change
+              ). Suspec does not answer that with hustle. It turns every change
               into a spec, a task, and a review packet with pasted evidence — so
               &quot;almost right&quot; has to prove it is right before it ships.
             </p>
@@ -354,9 +354,9 @@ export default function HomePage() {
               The loop
             </h2>
             <p className="mt-4 text-concrete-400">
-              Pull → Spec → Task → Run → Review → Close. Each step produces a
-              file the next step can read. The agent does the work; the human
-              owns the gates.
+              Pull → Spec → Run → Review → Close, with Task when work splits.
+              Each step produces a file the next step can read. The agent does
+              the work; the human owns the gates.
             </p>
           </div>
           <LoopDiagram />
@@ -558,7 +558,7 @@ export default function HomePage() {
             Stop shipping &quot;almost right&quot; code.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-concrete-400">
-            Calma will not make you 10x, and it is not trying to replace you —
+            Suspec will not make you 10x, and it is not trying to replace you —
             it just puts you back in charge of the firehose. Copy the starter
             kit, write one spec, and give your agents a contract they can read.
             You still make the calls; they just finally know what you meant.
@@ -586,7 +586,7 @@ export default function HomePage() {
               href="/what-is-suspec/"
               className="text-suspec-yellow underline hover:no-underline focus-ring rounded-sm"
             >
-              what Calma is
+              what Suspec is
             </Link>{" "}
             or{" "}
             <Link

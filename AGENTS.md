@@ -5,20 +5,20 @@
 
 ## Suspec startup
 
-1. Read the task packet you were given first. Follow its scope.
-2. Read the linked spec (and change plan, if any) before touching code.
-3. Do not implement behavior outside the task's scope — if a requirement can't be
+1. Read the linked spec first. If you were given a task packet, follow that bounded slice.
+2. Read the change plan, if any, before touching code.
+3. Do not implement behavior outside the spec or task scope — if a requirement can't be
    met as written, stop and say why instead of improvising.
-4. Run every item under the task's `## Verify` and paste the real output. A claim
-   without output counts as unverified.
-5. Before finishing, re-read your own diff as a skeptic, fill the task's
-   `## Run summary` section, and flip the task's board row in `status.md` to
-   review-ready.
+4. Run every `Verify with:` or task `## Verify` item and paste the real output. A
+   claim without output counts as unverified.
+5. Before finishing, re-read your own diff as a skeptic, fill the spec's
+   `## Execution` or the task's `## Run summary`, and flip the board row in
+   `status.md` to review-ready.
 
 ## Workspace
 
-- The loop: Pull → Spec → Task → Run → Review → Close (+ Inventory / Change Plan
-  for structural work).
+- The loop: Pull → Spec → Run → Review → Close (+ Task when split, + Inventory /
+  Change Plan for structural work).
 - Specs: `specs/<feature>/spec.md` · tasks: `tasks/` · reviews: `reviews/` ·
   findings: `findings/` · intake: `intake/` · inventories: `inventory/` ·
   change plans: `change-plans/` · decisions: `decisions/` · board: `status.md`

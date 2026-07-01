@@ -24,23 +24,23 @@ import { Badge } from "../components/Badge";
 import { PilotLamp } from "../components/PilotLamp";
 
 export const metadata: Metadata = {
-  title: "CLI — Calma",
+  title: "CLI — Suspec",
   description:
-    "calma-cli is optional command-line help for the Calma workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
+    "suspec-cli is optional command-line help for the Suspec workflow: it checks your specs, sets up one git worktree per task, and prints the board. It never owns the review verdict — that is still you.",
   openGraph: {
-    title: "CLI — Calma",
+    title: "CLI — Suspec",
     description:
-      "calma-cli is the optional reference companion for the Calma framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
+      "suspec-cli is the optional reference companion for the Suspec framework: check specs, scaffold the workspace, isolate tasks in worktrees, print the board. A helper, not an orchestrator.",
     type: "website",
     url: "/cli/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-cli.png",
         width: 1200,
         height: 630,
-        alt: "calma-cli — the optional reference companion for the Calma workflow",
+        alt: "suspec-cli — the optional reference companion for the Suspec workflow",
       },
     ],
   },
@@ -130,15 +130,15 @@ export default function CliPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="calma-cli — reference implementation"
+          eyebrow="suspec-cli — reference implementation"
           title={
             <>
-              calma<span className="text-suspec-yellow text-glow">-cli</span>
+              suspec<span className="text-suspec-yellow text-glow">-cli</span>
             </>
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Optional command-line help for the Calma workflow. The framework is
+            Optional command-line help for the Suspec workflow. The framework is
             just markdown and conventions; the CLI does the chores — checks your
             specs, isolates each task in its own git worktree, reconciles a
             finished run against the diff, and prints the board.
@@ -281,11 +281,11 @@ export default function CliPage() {
             <span>design.md — why a CLI?</span>
           </div>
           <Heading className="mt-3">
-            Why a CLI if Calma is markdown-only?
+            Why a CLI if Suspec is markdown-only?
           </Heading>
           <p className="mt-4 text-concrete-400">
             The workflow itself is just conventions and files — you can run all
-            of Calma with a text editor and a straight face. The CLI is
+            of Suspec with a text editor and a straight face. The CLI is
             optional: it scaffolds the workspace, runs the checks at a gate, and
             keeps one worktree per task so parallel agents do not trample each
             other. It is a helper, not an orchestrator, and it never renders the

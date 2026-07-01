@@ -9,23 +9,23 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { Heading } from "../components/Heading";
 
 export const metadata: Metadata = {
-  title: "Get started — Calma",
+  title: "Get started — Suspec",
   description:
-    "Adopt Calma in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+    "Adopt Suspec in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
   openGraph: {
-    title: "Get started — Calma",
+    title: "Get started — Suspec",
     description:
-      "Adopt Calma in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
+      "Adopt Suspec in a new repo or an existing project. Start writing specs and keeping humans in the loop in plain markdown.",
     type: "website",
     url: "/get-started/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-get-started.png",
         width: 1200,
         height: 630,
-        alt: "Get started with Calma — a new repo or an existing project",
+        alt: "Get started with Suspec — a new repo or an existing project",
       },
     ],
   },
@@ -85,7 +85,7 @@ export default function GetStartedPage() {
           <div>
             <Heading>New repo</Heading>
             <p className="mt-2 text-concrete-400">
-              Use the GitHub template to create a fresh Calma workspace with the
+              Use the GitHub template to create a fresh Suspec workspace with the
               folder structure, templates, and agent guides already in place.
             </p>
           </div>
@@ -224,7 +224,7 @@ export default function GetStartedPage() {
             <ListDot />
             <span>
               <strong className="text-concrete-100">decisions/</strong> — an ADR
-              ledger, seeded with why you adopted Calma.
+              ledger, seeded with why you adopted Suspec.
             </span>
           </li>
         </ul>
@@ -242,8 +242,9 @@ export default function GetStartedPage() {
             <div>
               <Heading>Need more depth?</Heading>
               <p className="mt-2 text-concrete-400">
-                Install optional skills for specific stances and change shapes —
-                persona-skeptic, write-feature, write-fix, and others.
+                Install optional skills for specific review, research, and
+                change-shape disciplines — adversarial-review, write-feature,
+                write-fix, and others.
               </p>
             </div>
           </div>

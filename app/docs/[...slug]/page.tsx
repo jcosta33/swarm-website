@@ -78,7 +78,7 @@ function articleFor(
     author: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Calma",
+      name: "Suspec",
     },
     url,
     mainEntityOfPage: url,
@@ -114,7 +114,7 @@ export async function generateMetadata({
       // image come from the layout default but openGraph is replaced wholesale, so restate them.
       type: "article",
       url: canonical,
-      siteName: "Calma",
+      siteName: "Suspec",
       locale: "en_US",
       images: [
         { url: "/og-home.png", width: 1200, height: 630, alt: titleOf(md) },

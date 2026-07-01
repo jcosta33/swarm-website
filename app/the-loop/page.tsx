@@ -22,23 +22,23 @@ import { Heading } from "../components/Heading";
 const stepIcons = [Inbox, FileText, ListChecks, Terminal, ScanEye, GitMerge];
 
 export const metadata: Metadata = {
-  title: "The loop — Calma",
+  title: "The loop — Suspec",
   description:
-    "Pull → Spec → Task → Run → Review → Close. The six steps that keep a human at every decision gate while agents do the typing.",
+    "Pull → Spec → Run → Review → Close, with Task when work splits. The Suspec loop keeps a human at every decision gate while agents do the typing.",
   openGraph: {
-    title: "The loop — Calma",
+    title: "The loop — Suspec",
     description:
-      "Pull → Spec → Task → Run → Review → Close. The six steps that keep humans in the driver seat while agents do the work.",
+      "Pull → Spec → Run → Review → Close, with Task when work splits. The Suspec loop keeps humans in the driver seat while agents do the work.",
     type: "website",
     url: "/the-loop/",
-    siteName: "Calma",
+    siteName: "Suspec",
     locale: "en_US",
     images: [
       {
         url: "/og-the-loop.png",
         width: 1200,
         height: 630,
-        alt: "The Calma loop — Pull, Spec, Task, Run, Review, Close",
+        alt: "The Suspec loop — Pull, Spec, optional Task, Run, Review, Close",
       },
     ],
   },
@@ -104,7 +104,7 @@ const steps = [
   {
     number: "03",
     name: "Task",
-    body: "Hand the agent a bounded packet: what to change, what not to change, and how to verify. The packet is the contract.",
+    body: "Only when one spec splits into parallel slices, hand each agent a bounded packet: what to change, what not to change, and how to verify.",
     example: {
       title: "tasks/TASK-shell.md",
       lines: [
@@ -121,10 +121,12 @@ const steps = [
   {
     number: "04",
     name: "Run",
-    body: "The agent implements and pastes real evidence — command output, screenshots, links — next to each requirement.",
+    body: "The agent implements the spec, or the task when work is split, and pastes real evidence — command output, screenshots, links — next to each requirement.",
     example: {
-      title: "tasks/TASK-shell.md",
+      title: "specs/shell/spec.md",
       lines: [
+        { prompt: false, text: "## Execution" },
+        { prompt: false, text: "" },
         { prompt: true, text: "npm run build" },
         { prompt: false, text: "✓ Compiled successfully" },
         { prompt: false, text: "Route (app): /, /kitchen-sink" },
@@ -188,7 +190,7 @@ export default function TheLoopPage() {
     <div className="flex flex-col gap-24 py-24">
       <Section>
         <PageHero
-          eyebrow="flight plan — 6 waypoints (+2 for rough terrain)"
+          eyebrow="flight plan — loop waypoints"
           title={
             <>
               The <span className="text-suspec-yellow text-glow">loop</span>
@@ -196,10 +198,10 @@ export default function TheLoopPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Pull → Spec → Task → Run → Review → Close. Each step leaves a file
-            the next one reads. Agents do the work between the gates; you decide
-            at each one. Two more steps — Inventory and Change Plan — switch on
-            only for brownfield or structural work.
+            Pull → Spec → Run → Review → Close, with Task when work splits.
+            Each step leaves a file the next one reads. Agents do the work
+            between the gates; you decide at each one. Inventory and Change
+            Plan switch on only for brownfield or structural work.
           </p>
         </PageHero>
       </Section>

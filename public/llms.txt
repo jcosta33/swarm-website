@@ -1,8 +1,8 @@
-# Calma
+# Suspec
 
-> Calma is a lightweight spec-and-review workflow for teams shipping code with AI coding agents. It is plain markdown and conventions — any agent, no runtime. The framework turns each change into a spec, a bounded task, an agent run, and a review packet with pasted evidence, so "almost right" has to prove it is right before it ships.
+> Suspec is a lightweight spec-and-review workflow for teams shipping code with AI coding agents. It is plain markdown and conventions — any agent, no runtime. The framework turns each change into a bounded spec, an agent run, and review evidence; task packets are added only when work needs split slices, so "almost right" has to prove it is right before it ships.
 
-Calma keeps a human in charge of the firehose. Agents draft, run, and paste the output; the human decides when the evidence is good enough. Every rule states what kind of guarantee it is — convention, checklist, toolable, or enforced — and admits when the honest answer is "nothing checks this yet." An optional reference CLI (`suspec`) does the chores — checking specs, isolating each task in its own git worktree, reconciling a finished run against the diff — but it never renders the review verdict; that stays with a person.
+Suspec keeps a human in charge of the firehose. Agents draft, run, and paste the output; the human decides when the evidence is good enough. Every rule states what kind of guarantee it is — convention, checklist, toolable, or enforced — and admits when the honest answer is "nothing checks this yet." An optional reference CLI (`suspec`) does the chores — checking specs, isolating each task in its own git worktree, reconciling a finished run against the diff — but it never renders the review verdict; that stays with a person.
 
 ## Start here
 
@@ -15,7 +15,7 @@ Calma keeps a human in charge of the firehose. Agents draft, run, and paste the 
 - [Running agents](https://suspecframework.dev/docs/07-running-agents/): Launching a prepared task, one worktree per task.
 - [Reviewing agent output](https://suspecframework.dev/docs/08-reviewing-output/): Review by exception — read the evidence per requirement, not the whole diff.
 - [Saving findings](https://suspecframework.dev/docs/09-saving-findings/): Capturing hard-won lessons so the next session does not re-learn them.
-- [Integrations](https://suspecframework.dev/docs/10-integrations/): Fitting Calma into existing tools and pipelines.
+- [Integrations](https://suspecframework.dev/docs/10-integrations/): Fitting Suspec into existing tools and pipelines.
 
 ## Tutorial
 

@@ -2,12 +2,12 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-// Web app manifest — makes the site installable + gives Android/Chrome a themed icon. Brand "Calma"
+// Web app manifest — makes the site installable + gives Android/Chrome a themed icon. Brand "Suspec"
 // matches the current chrome; the icon paths are the build-generated app/icon + app/apple-icon.
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Calma — a spec-and-review workflow for coding agents",
-    short_name: "Calma",
+    name: "Suspec — a spec-and-review workflow for coding agents",
+    short_name: "Suspec",
     description:
       "A lightweight spec-and-review workflow that keeps humans in charge of code written by AI agents. Plain markdown, any agent, no runtime.",
     start_url: "/",
