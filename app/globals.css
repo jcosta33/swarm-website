@@ -669,6 +669,9 @@ body::after {
 .section-register > :where(div, header):first-child
   :where(.eyebrow, .section-kicker)
   + :where(.font-heading, h1, h2, h3) {
+  font-family: var(--font-title), "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: var(--font-weight-title);
+  line-height: 1.05;
   margin-top: var(--rhythm-kicker-title) !important;
 }
 
@@ -714,7 +717,17 @@ body::after {
 }
 
 .section-register .section-kicker + .font-heading {
+  font-family: var(--font-title), "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: var(--font-weight-title);
+  line-height: 1.05;
   margin-top: var(--rhythm-kicker-title) !important;
+}
+
+.section-register
+  :where(.panel-raised, .panel-inset, .paper-artifact, .terminal-window)
+  :where(.section-kicker + .font-heading) {
+  font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  line-height: inherit;
 }
 
 .section-register :where(.font-heading + p) {
