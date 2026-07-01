@@ -78,7 +78,7 @@ const fraunces = Fraunces({
 });
 
 // Sharper book-cover face for title-page moments: more Hermetic manuscript than
-// SaaS dashboard, but sturdy enough at semibold for the wordmark and heroes.
+// SaaS dashboard, with enough weight range for a sturdy wordmark and lighter heroes.
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
   subsets: ["latin"],
