@@ -347,6 +347,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
         Skip to main content
       </a>
 
+      <div className="site-background-perspective" aria-hidden="true">
+        <span className="site-background-plane" />
+      </div>
+
       <header
         data-nav-state={headerIsOpaque ? "opaque" : "transparent"}
         className={`fixed inset-x-0 top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-200 ${

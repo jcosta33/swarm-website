@@ -29,6 +29,10 @@ body {
     auto;
 }
 
+.site-background-perspective {
+  display: none;
+}
+
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
   body {
     background:
@@ -45,12 +49,22 @@ body {
       auto;
   }
 
-  .site-main-frame::before {
-    content: "";
+  .site-background-perspective {
     position: fixed;
-    inset: -12vmax;
-    z-index: -1;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
     pointer-events: none;
+    perspective: 520px;
+    perspective-origin: 50% 46%;
+    contain: paint;
+  }
+
+  .site-background-plane {
+    position: absolute;
+    inset: -16vmax;
+    display: block;
     background:
       linear-gradient(rgba(70, 57, 44, 0.088) 1px, transparent 1px),
       linear-gradient(90deg, rgba(70, 57, 44, 0.072) 1px, transparent 1px),
@@ -64,38 +78,50 @@ body {
       192px 192px,
       auto;
     background-position:
-      calc(50% + var(--background-grid-x) * -0.34) calc(0% + var(--background-grid-y) * -0.26),
-      calc(50% + var(--background-grid-x) * -0.34) calc(0% + var(--background-grid-y) * -0.26),
-      calc(50% + var(--background-grid-x) * 0.42) calc(0% + var(--background-grid-y) * 0.32),
-      calc(50% + var(--background-grid-x) * 0.42) calc(0% + var(--background-grid-y) * 0.32),
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
       center top;
-    opacity: 0.72;
-    transform: perspective(620px)
+    opacity: 0.82;
+    transform:
       rotateX(calc(var(--background-plane-tilt-x) * 1.34))
       rotateY(calc(var(--background-plane-tilt-y) * 1.28))
       translate3d(
-        calc(var(--background-grid-x) * -1.05),
-        calc(var(--background-grid-y) * -0.74),
-        0
+        calc(var(--background-grid-x) * -0.38),
+        calc(var(--background-grid-y) * -0.28),
+        -18px
       )
       translateZ(0)
-      scale(1.14);
-    transform-origin: 50% 44vh;
+      scale(1.2);
+    transform-origin: 50% 50%;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     will-change: transform;
   }
 
+  .site-main-frame,
+  .site-footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-main-frame .ambient-header {
+    perspective: 620px;
+    perspective-origin: 50% 42%;
+  }
+
   .site-main-frame .ambient-header::before {
     transform: translateX(-50%)
+      perspective(560px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.22))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.26))
       translate3d(
-        calc(var(--background-grid-x) * 0.26),
-        calc(var(--background-grid-y) * 0.18),
-        0
+        calc(var(--background-grid-x) * 0.56),
+        calc(var(--background-grid-y) * 0.4),
+        12px
       )
-      perspective(700px) rotateX(calc(var(--background-plane-tilt-x) * 1.02))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.08))
-      scale(1.038);
+      scale(1.07);
     transform-origin: center 42%;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -104,14 +130,15 @@ body {
 
   .site-main-frame .ambient-header::after {
     transform: translateX(-50%)
+      perspective(560px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.1))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.14))
       translate3d(
-        calc(var(--background-grid-x) * 0.2),
-        calc(var(--background-grid-y) * 0.14),
-        0
+        calc(var(--background-grid-x) * 0.48),
+        calc(var(--background-grid-y) * 0.34),
+        10px
       )
-      perspective(720px) rotateX(calc(var(--background-plane-tilt-x) * 0.88))
-      rotateY(calc(var(--background-plane-tilt-y) * 0.94))
-      scale(1.03);
+      scale(1.058);
     transform-origin: center 50%;
     backface-visibility: hidden;
     will-change: transform;
@@ -119,14 +146,15 @@ body {
 
   .site-main-frame .page-hero::before,
   .site-main-frame .page-hero::after {
-    transform: translate3d(
-        calc(var(--background-grid-x) * 0.2),
-        calc(var(--background-grid-y) * 0.14),
-        0
+    transform: perspective(580px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.02))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.08))
+      translate3d(
+        calc(var(--background-grid-x) * 0.42),
+        calc(var(--background-grid-y) * 0.3),
+        10px
       )
-      perspective(720px) rotateX(calc(var(--background-plane-tilt-x) * 0.84))
-      rotateY(calc(var(--background-plane-tilt-y) * 0.92))
-      scale(1.028);
+      scale(1.052);
     transform-origin: center 42%;
     backface-visibility: hidden;
     will-change: transform;
@@ -143,27 +171,29 @@ body {
   from {
     opacity: var(--hero-motif-opacity-min);
     transform: translateX(-50%)
+      perspective(560px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.16))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.2))
       translate3d(
-        calc(var(--background-grid-x) * 0.22),
-        calc(var(--background-grid-y) * 0.16),
-        0
+        calc(var(--background-grid-x) * 0.5),
+        calc(var(--background-grid-y) * 0.36),
+        14px
       )
-      perspective(700px) rotateX(calc(var(--background-plane-tilt-x) * 1))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.08))
-      scale(1.034);
+      scale(1.065);
   }
 
   to {
     opacity: var(--hero-motif-opacity-max);
     transform: translateX(-50%)
+      perspective(560px)
+      rotateX(calc(var(--background-plane-tilt-x) * 1.16))
+      rotateY(calc(var(--background-plane-tilt-y) * 1.2))
       translate3d(
-        calc(var(--background-grid-x) * 0.22),
-        calc(0.18rem + var(--background-grid-y) * 0.16),
-        0
+        calc(var(--background-grid-x) * 0.5),
+        calc(0.18rem + var(--background-grid-y) * 0.36),
+        14px
       )
-      perspective(700px) rotateX(calc(var(--background-plane-tilt-x) * 1))
-      rotateY(calc(var(--background-plane-tilt-y) * 1.08))
-      scale(1.034);
+      scale(1.065);
   }
 }
 
