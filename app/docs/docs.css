@@ -2658,9 +2658,27 @@
 }
 
 .docs-index-item-label {
+  position: relative;
   min-width: 0;
-  border-bottom: 1px solid rgba(var(--docs-index-rgb), 0.36);
+  padding-bottom: 0.02rem;
   line-height: 1.26;
+}
+
+.docs-index-item-label::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.08rem;
+  left: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--docs-index-rgb), 0.48),
+    rgba(var(--docs-index-rgb), 0.18) 52%,
+    transparent
+  );
+  opacity: 0.7;
 }
 
 .docs-prose .docs-index-list a:hover,
