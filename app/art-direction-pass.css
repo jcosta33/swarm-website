@@ -144,19 +144,55 @@
 
 .repo-product-page .agent-roster-cell-body {
   min-height: 100%;
-  grid-template-rows: 0.88rem minmax(1.38rem, auto) minmax(1.05rem, auto) 1fr;
-  row-gap: 0.54rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows:
+    minmax(0.82rem, auto)
+    minmax(1.45rem, auto)
+    minmax(1.05rem, auto)
+    minmax(2.6rem, auto);
+  row-gap: 0.42rem;
 }
 
 .repo-product-page .agent-roster-cell-title,
 .repo-product-page .agent-roster-file,
 .repo-product-page .agent-roster-use {
+  margin-block: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.repo-product-page p.agent-roster-file.mt-2 {
+  margin-block-start: 0 !important;
   margin-top: 0 !important;
 }
 
 .repo-product-page .agent-roster-use {
   align-self: start;
   max-width: 32rem;
+}
+
+.repo-product-page .agent-roster-cell-body > div:first-child p {
+  grid-row: 1;
+}
+
+.repo-product-page .agent-roster-cell-body .motion-nudge-x {
+  grid-row: 1;
+}
+
+.repo-product-page .agent-roster-cell-title {
+  grid-row: 2;
+  align-self: center;
+}
+
+.repo-product-page .agent-roster-file {
+  grid-row: 3;
+  align-self: start;
+}
+
+.repo-product-page .agent-roster-use {
+  grid-row: 4;
 }
 
 .repo-product-page .agent-roster-icon,
@@ -190,8 +226,8 @@
 .skills-page .skill-guide-row.catalog-row > div:first-child > div:last-child {
   display: grid;
   align-content: start;
-  grid-template-rows: minmax(1.32rem, auto) 1fr;
-  row-gap: 0.42rem;
+  grid-template-rows: minmax(1.3rem, auto) minmax(2.6rem, auto);
+  row-gap: 0.38rem;
 }
 
 .repo-product-page .agent-worker-card .catalog-row-copy,
@@ -202,7 +238,7 @@
 
 .repo-product-page .agent-worker-card .catalog-row-title,
 .skills-page .skill-guide-row .catalog-row-title {
-  align-self: end;
+  align-self: start;
   line-height: 1.24;
 }
 
