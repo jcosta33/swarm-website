@@ -276,7 +276,8 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
   --font-heading: var(--font-space-grotesk);
-  --font-display: var(--font-eb-garamond);
+  --font-display: var(--font-fraunces);
+  --font-title: var(--font-fraunces);
 
   --radius-panel: 10px;
   --radius-control: 10px;
@@ -513,6 +514,11 @@ body::after {
 /* Display font — old-style serif, for the title-page voice (heroes, wordmark) */
 .font-display {
   font-family: var(--font-display), "Iowan Old Style", Palatino, Georgia, serif;
+}
+
+/* Title font — warmer and stranger than the UI sans, reserved for brand-scale headings. */
+.font-title {
+  font-family: var(--font-title), "Iowan Old Style", Palatino, Georgia, serif;
 }
 
 /* Focus ring */

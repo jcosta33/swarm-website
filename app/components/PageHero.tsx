@@ -65,7 +65,7 @@ export function PageHero({
         {eyebrow}
       </Eyebrow>
       <h1
-        className={`page-hero-title max-w-full break-words font-heading text-4xl font-bold tracking-[0] text-concrete-100 ${TITLE_SIZES[titleSize]}`}
+        className={`page-hero-title max-w-full break-words font-title text-4xl font-semibold tracking-[0] text-concrete-100 ${TITLE_SIZES[titleSize]}`}
       >
         {title}
         {cursor && <TerminalCursor className="ml-2 align-middle" />}

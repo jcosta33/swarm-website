@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import {
+  Fraunces,
   Inter,
   JetBrains_Mono,
   Space_Grotesk,
-  EB_Garamond,
 } from "next/font/google";
 import "./globals.css";
 import { Shell } from "./components/Shell";
@@ -75,16 +75,13 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["600", "700"],
 });
 
-// Old-style serif for the title-page voice — the hero headings and the wordmark
-// carry the "Suspec Hermeticum" book character; the rest of the UI stays in the
-// geometric sans for the straight, scientific read. This is the hero's LCP font,
-// so it preloads (default).
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+// Old-style display face for the title-page voice — enough manuscript/book-cover
+// character for the heroes and wordmark, while compact UI labels stay geometric.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -144,7 +141,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${ebGaramond.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-chassis text-concrete-100">
         <JsonLd data={siteGraph} />
