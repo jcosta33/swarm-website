@@ -232,12 +232,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
     let tracking = false;
 
     const resetPointer = () => {
-      root.style.removeProperty("--cursor-x");
-      root.style.removeProperty("--cursor-y");
-      root.style.removeProperty("--cursor-depth-x");
-      root.style.removeProperty("--cursor-depth-y");
-      root.style.removeProperty("--cursor-angle-x");
-      root.style.removeProperty("--cursor-angle-y");
+      root.style.removeProperty("--background-grid-x");
+      root.style.removeProperty("--background-grid-y");
     };
 
     const updatePointer = () => {
@@ -247,12 +243,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
       const normalX = Math.max(-1, Math.min(1, (pointerX / width - 0.5) * 2));
       const normalY = Math.max(-1, Math.min(1, (pointerY / height - 0.5) * 2));
 
-      root.style.setProperty("--cursor-x", `${pointerX}px`);
-      root.style.setProperty("--cursor-y", `${pointerY}px`);
-      root.style.setProperty("--cursor-depth-x", `${(-normalX * 7).toFixed(2)}px`);
-      root.style.setProperty("--cursor-depth-y", `${(-normalY * 5).toFixed(2)}px`);
-      root.style.setProperty("--cursor-angle-x", `${(-normalY * 0.42).toFixed(3)}deg`);
-      root.style.setProperty("--cursor-angle-y", `${(normalX * 0.5).toFixed(3)}deg`);
+      root.style.setProperty("--background-grid-x", `${(-normalX * 7).toFixed(2)}px`);
+      root.style.setProperty("--background-grid-y", `${(-normalY * 5).toFixed(2)}px`);
     };
 
     const onPointerMove = (event: PointerEvent) => {

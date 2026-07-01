@@ -2,10 +2,8 @@
    Scoped overrides only: keep the core design system in globals.css intact. */
 
 :root {
-  --cursor-depth-x: 0px;
-  --cursor-depth-y: 0px;
-  --cursor-angle-x: 0deg;
-  --cursor-angle-y: 0deg;
+  --background-grid-x: 0px;
+  --background-grid-y: 0px;
 }
 
 body {
@@ -16,8 +14,8 @@ body {
     radial-gradient(90% 70% at 50% 8%, rgba(95, 87, 37, 0.055), transparent 58%) fixed,
     var(--color-background);
   background-position:
-    0 0,
-    0 0,
+    var(--background-grid-x) var(--background-grid-y),
+    calc(var(--background-grid-x) * -0.65) calc(var(--background-grid-y) * 0.65),
     center top,
     center top,
     center;
@@ -30,15 +28,6 @@ body {
 }
 
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  body {
-    background-position:
-      var(--cursor-depth-x) var(--cursor-depth-y),
-      calc(0px - var(--cursor-depth-x)) var(--cursor-depth-y),
-      center top,
-      center top,
-      center;
-  }
-
   .site-main-frame::before {
     content: "";
     position: fixed;
@@ -51,44 +40,11 @@ body {
     background-size:
       52px 52px,
       52px 52px;
+    background-position:
+      calc(var(--background-grid-x) * -0.45) calc(var(--background-grid-y) * -0.45),
+      calc(var(--background-grid-x) * 0.35) calc(var(--background-grid-y) * -0.35);
     opacity: 0.38;
-    transform: perspective(1400px) rotateX(var(--cursor-angle-x))
-      rotateY(var(--cursor-angle-y))
-      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
-    transform-origin: center 16vh;
-    will-change: transform;
-  }
-
-  .home-hero-seal-field,
-  .page-hero-motif {
-    transform: perspective(1300px) rotateX(var(--cursor-angle-x))
-      rotateY(var(--cursor-angle-y))
-      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
-    transform-origin: center;
-    will-change: transform;
-  }
-
-  .ambient-header::before {
-    transform: translate3d(
-        calc(-50% + var(--cursor-depth-x)),
-        var(--cursor-depth-y),
-        0
-      )
-      perspective(1300px) rotateX(var(--cursor-angle-x))
-      rotateY(var(--cursor-angle-y));
-    transform-origin: center;
-    will-change: transform;
-  }
-
-  section.bg-section-band::before {
-    transform: translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
-    will-change: transform;
-  }
-
-  section.bg-section-band::after {
-    transform: scaleX(-1)
-      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
-    will-change: transform;
+    will-change: background-position;
   }
 }
 

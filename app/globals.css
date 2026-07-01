@@ -323,8 +323,8 @@
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
   --signal-muted-rgb: 184, 132, 74;
-  --cursor-x: 50vw;
-  --cursor-y: -12vh;
+  --background-grid-x: 0px;
+  --background-grid-y: 0px;
 }
 
 html {
@@ -390,26 +390,12 @@ body {
   background:
     linear-gradient(rgba(70, 57, 44, 0.1) 1px, transparent 1px) fixed,
     linear-gradient(90deg, rgba(70, 57, 44, 0.08) 1px, transparent 1px) fixed,
-    radial-gradient(
-        36rem 36rem at var(--cursor-x) var(--cursor-y),
-        rgba(var(--signal-core-rgb), 0.032),
-        transparent 68%
-      )
-      fixed,
-    radial-gradient(
-        28rem 28rem at calc(var(--cursor-x) + 7rem) calc(var(--cursor-y) + 5rem),
-        rgba(var(--signal-reference-rgb), 0.022),
-        transparent 72%
-      )
-      fixed,
     radial-gradient(120% 80% at 50% -16%, rgba(216, 138, 36, 0.035), transparent 50%) fixed,
     radial-gradient(90% 70% at 50% 8%, rgba(95, 87, 37, 0.055), transparent 58%) fixed,
     var(--color-background);
   background-size:
     48px 48px,
     48px 48px,
-    auto,
-    auto,
     auto,
     auto,
     auto;
