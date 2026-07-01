@@ -286,11 +286,11 @@
   --font-weight-title-compact: 600;
   --rhythm-kicker-title: clamp(1.16rem, 1.58vw, 1.42rem);
   --rhythm-title-body: clamp(1.02rem, 1.38vw, 1.28rem);
-  --rhythm-register-gap: clamp(3rem, 3.65vw, 3.45rem);
+  --rhythm-register-gap: clamp(2.42rem, 3.05vw, 2.9rem);
   --rhythm-hero-nav-clearance: clamp(5.15rem, 6.4vw, 5.85rem);
   --rhythm-hero-eyebrow-title: clamp(2.1rem, 2.72vw, 2.62rem);
-  --rhythm-after-page-nav: clamp(0.22rem, 0.48vw, 0.42rem);
-  --rhythm-page-nav-to-register: clamp(0.22rem, 0.52vw, 0.42rem);
+  --rhythm-after-page-nav: clamp(0.95rem, 1.45vw, 1.28rem);
+  --rhythm-page-nav-to-register: clamp(0.88rem, 1.38vw, 1.18rem);
 }
 
 :root {
@@ -8519,7 +8519,7 @@ section.bg-section-band::after {
 }
 
 .repo-product-page > .ambient-header + .page-nav-wrap {
-  margin-top: clamp(-1.05rem, -0.82vw, -0.72rem) !important;
+  margin-top: clamp(-0.42rem, -0.38vw, -0.2rem) !important;
 }
 
 .repo-product-page > .page-nav-wrap + .section-register {
@@ -8802,20 +8802,20 @@ section.bg-section-band::after {
 
   .repo-product-page > .page-nav-wrap {
     margin-top: 0 !important;
-    margin-bottom: 0.32rem;
+    margin-bottom: 0.82rem;
   }
 
   .repo-product-page > nav.page-nav-wrap {
     margin-top: 0 !important;
-    margin-bottom: 0.32rem;
+    margin-bottom: 0.82rem;
   }
 
   .repo-product-page > .ambient-header + .page-nav-wrap {
-    margin-top: -0.32rem !important;
+    margin-top: 0.1rem !important;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.42rem;
+    margin-top: 0.9rem;
   }
 
   .agent-page-nav,
@@ -8974,11 +8974,11 @@ section.bg-section-band::after {
 
   .repo-product-page > .page-nav-wrap,
   .repo-product-page > nav.page-nav-wrap {
-    margin-bottom: 0.38rem;
+    margin-bottom: 0.9rem;
   }
 
   .repo-product-page > .page-nav-wrap + .section-register {
-    margin-top: 0.42rem;
+    margin-top: 0.9rem;
   }
 
   .repo-product-page > .section-register {
