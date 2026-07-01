@@ -4,6 +4,8 @@
 :root {
   --background-grid-x: 0px;
   --background-grid-y: 0px;
+  --background-plane-tilt-x: 0deg;
+  --background-plane-tilt-y: 0deg;
 }
 
 body {
@@ -31,7 +33,7 @@ body {
   .site-main-frame::before {
     content: "";
     position: fixed;
-    inset: -7vmax;
+    inset: -10vmax;
     z-index: -1;
     pointer-events: none;
     background:
@@ -44,7 +46,50 @@ body {
       calc(var(--background-grid-x) * -0.45) calc(var(--background-grid-y) * -0.45),
       calc(var(--background-grid-x) * 0.35) calc(var(--background-grid-y) * -0.35);
     opacity: 0.38;
-    will-change: background-position;
+    transform: perspective(1200px) rotateX(var(--background-plane-tilt-x))
+      rotateY(var(--background-plane-tilt-y))
+      translate3d(
+        calc(var(--background-grid-x) * 0.35),
+        calc(var(--background-grid-y) * 0.35),
+        0
+      );
+    transform-origin: center 18vh;
+    will-change: transform, background-position;
+  }
+
+  .site-main-frame > .flex.flex-col > .ambient-header::before,
+  .repo-product-page > .ambient-header::before {
+    transform: translateX(calc(-50% + var(--background-grid-x) * 0.28))
+      translateY(calc(var(--background-grid-y) * 0.18))
+      perspective(1200px) rotateX(calc(var(--background-plane-tilt-x) * 0.34))
+      rotateY(calc(var(--background-plane-tilt-y) * 0.38));
+    transform-origin: center 42%;
+    will-change: transform, background-position;
+  }
+
+  .site-main-frame > .flex.flex-col > .ambient-header .page-hero-motif,
+  .repo-product-page > .ambient-header .page-hero-motif {
+    animation-name: page-hero-motif-drift-pointer;
+    transform-origin: center 48%;
+    will-change: transform;
+  }
+}
+
+@keyframes page-hero-motif-drift-pointer {
+  from {
+    opacity: var(--hero-motif-opacity-min);
+    transform: translateX(calc(-50% + var(--background-grid-x) * 0.22))
+      translateY(calc(var(--background-grid-y) * 0.12))
+      perspective(1200px) rotateX(calc(var(--background-plane-tilt-x) * 0.3))
+      rotateY(calc(var(--background-plane-tilt-y) * 0.34));
+  }
+
+  to {
+    opacity: var(--hero-motif-opacity-max);
+    transform: translateX(calc(-50% + var(--background-grid-x) * 0.22))
+      translateY(calc(0.18rem + var(--background-grid-y) * 0.12))
+      perspective(1200px) rotateX(calc(var(--background-plane-tilt-x) * 0.3))
+      rotateY(calc(var(--background-plane-tilt-y) * 0.34));
   }
 }
 

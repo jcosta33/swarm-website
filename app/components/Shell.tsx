@@ -234,6 +234,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
     const resetPointer = () => {
       root.style.removeProperty("--background-grid-x");
       root.style.removeProperty("--background-grid-y");
+      root.style.removeProperty("--background-plane-tilt-x");
+      root.style.removeProperty("--background-plane-tilt-y");
     };
 
     const updatePointer = () => {
@@ -245,6 +247,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
       root.style.setProperty("--background-grid-x", `${(-normalX * 7).toFixed(2)}px`);
       root.style.setProperty("--background-grid-y", `${(-normalY * 5).toFixed(2)}px`);
+      root.style.setProperty("--background-plane-tilt-x", `${(normalY * 1.35).toFixed(3)}deg`);
+      root.style.setProperty("--background-plane-tilt-y", `${(-normalX * 1.55).toFixed(3)}deg`);
     };
 
     const onPointerMove = (event: PointerEvent) => {
