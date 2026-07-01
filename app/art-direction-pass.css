@@ -1,6 +1,79 @@
 /* Art-direction refinement layer.
    Scoped overrides only: keep the core design system in globals.css intact. */
 
+:root {
+  --cursor-depth-x: 0px;
+  --cursor-depth-y: 0px;
+  --cursor-angle-x: 0deg;
+  --cursor-angle-y: 0deg;
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .site-main-frame::before {
+    content: "";
+    position: fixed;
+    inset: -7vmax;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(70, 57, 44, 0.052) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(70, 57, 44, 0.044) 1px, transparent 1px),
+      radial-gradient(
+        46rem 38rem at calc(50% + var(--cursor-depth-x)) calc(10% + var(--cursor-depth-y)),
+        rgba(var(--signal-core-rgb), 0.024),
+        transparent 72%
+      ),
+      radial-gradient(
+        34rem 30rem at calc(50% - var(--cursor-depth-x)) calc(16% - var(--cursor-depth-y)),
+        rgba(var(--signal-reference-rgb), 0.016),
+        transparent 76%
+      );
+    background-size:
+      52px 52px,
+      52px 52px,
+      auto,
+      auto;
+    opacity: 0.84;
+    transform: perspective(1400px) rotateX(var(--cursor-angle-x))
+      rotateY(var(--cursor-angle-y))
+      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
+    transform-origin: center 16vh;
+    will-change: transform;
+  }
+
+  .home-hero-seal-field,
+  .page-hero-motif {
+    transform: perspective(1300px) rotateX(var(--cursor-angle-x))
+      rotateY(var(--cursor-angle-y))
+      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .ambient-header::before {
+    transform: translate3d(
+        calc(-50% + var(--cursor-depth-x)),
+        var(--cursor-depth-y),
+        0
+      )
+      perspective(1300px) rotateX(var(--cursor-angle-x))
+      rotateY(var(--cursor-angle-y));
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  section.bg-section-band::before {
+    transform: translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
+    will-change: transform;
+  }
+
+  section.bg-section-band::after {
+    transform: scaleX(-1)
+      translate3d(var(--cursor-depth-x), var(--cursor-depth-y), 0);
+    will-change: transform;
+  }
+}
+
 .home-hero-section .page-hero-title {
   position: relative;
   width: fit-content;

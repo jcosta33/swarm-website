@@ -225,20 +225,38 @@ export function Shell({ children }: { children: React.ReactNode }) {
     const canTrackPointer = window.matchMedia(
       "(pointer: fine) and (prefers-reduced-motion: no-preference)",
     );
-    if (!canTrackPointer.matches) return;
-
     const root = document.documentElement;
     let frame = 0;
     let pointerX = window.innerWidth / 2;
     let pointerY = window.innerHeight * 0.18;
+    let tracking = false;
+
+    const resetPointer = () => {
+      root.style.removeProperty("--cursor-x");
+      root.style.removeProperty("--cursor-y");
+      root.style.removeProperty("--cursor-depth-x");
+      root.style.removeProperty("--cursor-depth-y");
+      root.style.removeProperty("--cursor-angle-x");
+      root.style.removeProperty("--cursor-angle-y");
+    };
 
     const updatePointer = () => {
       frame = 0;
+      const width = Math.max(window.innerWidth, 1);
+      const height = Math.max(window.innerHeight, 1);
+      const normalX = Math.max(-1, Math.min(1, (pointerX / width - 0.5) * 2));
+      const normalY = Math.max(-1, Math.min(1, (pointerY / height - 0.5) * 2));
+
       root.style.setProperty("--cursor-x", `${pointerX}px`);
       root.style.setProperty("--cursor-y", `${pointerY}px`);
+      root.style.setProperty("--cursor-depth-x", `${(-normalX * 7).toFixed(2)}px`);
+      root.style.setProperty("--cursor-depth-y", `${(-normalY * 5).toFixed(2)}px`);
+      root.style.setProperty("--cursor-angle-x", `${(-normalY * 0.42).toFixed(3)}deg`);
+      root.style.setProperty("--cursor-angle-y", `${(normalX * 0.5).toFixed(3)}deg`);
     };
 
     const onPointerMove = (event: PointerEvent) => {
+      if (!tracking) return;
       pointerX = event.clientX;
       pointerY = event.clientY;
       if (frame === 0) {
@@ -246,14 +264,38 @@ export function Shell({ children }: { children: React.ReactNode }) {
       }
     };
 
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-    updatePointer();
+    const startTracking = () => {
+      if (tracking) return;
+      tracking = true;
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      updatePointer();
+    };
+
+    const stopTracking = () => {
+      if (!tracking) return;
+      tracking = false;
+      window.removeEventListener("pointermove", onPointerMove);
+      if (frame !== 0) {
+        window.cancelAnimationFrame(frame);
+        frame = 0;
+      }
+      resetPointer();
+    };
+
+    const syncTracking = () => {
+      if (canTrackPointer.matches) {
+        startTracking();
+      } else {
+        stopTracking();
+      }
+    };
+
+    syncTracking();
+    canTrackPointer.addEventListener("change", syncTracking);
 
     return () => {
-      window.removeEventListener("pointermove", onPointerMove);
-      if (frame !== 0) window.cancelAnimationFrame(frame);
-      root.style.removeProperty("--cursor-x");
-      root.style.removeProperty("--cursor-y");
+      canTrackPointer.removeEventListener("change", syncTracking);
+      stopTracking();
     };
   }, []);
 
