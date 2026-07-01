@@ -144,7 +144,7 @@ const writingPageNav = [
 
 export default function WritingSkillsPage() {
   return (
-    <div className="flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
+    <div className="writing-skill-page flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
       <Section className="ambient-header">
         <PageHero
           eyebrow="SKILL.md"
@@ -158,19 +158,16 @@ export default function WritingSkillsPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Write the load boundary, operating rules, and source material.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-concrete-400">
-            Keep local commands, product facts, and team policy in the consuming
-            repo.
+            Write the load boundary, operating rules, and source material. Keep
+            local commands and team policy in the consuming repo.
           </p>
           <HeroTrace
             ariaLabel="Skill file anatomy trace"
             items={[
-              { label: "Trigger", signal: "reference" },
-              { label: "Rules", signal: "core" },
-              { label: "References", signal: "reference" },
-              { label: "Scope", signal: "reference" },
+              { label: "Load", signal: "reference" },
+              { label: "Act", signal: "core" },
+              { label: "Prove", signal: "reference" },
+              { label: "Stop", signal: "muted" },
             ]}
           />
         </PageHero>
@@ -243,7 +240,7 @@ export default function WritingSkillsPage() {
                       aria-hidden="true"
                     />
                   </span>
-                  <span className="skill-anatomy-label mt-3 font-heading text-xl font-bold text-concrete-100">
+                  <span className="skill-anatomy-label mt-3 font-heading text-xl font-semibold text-concrete-100">
                     {item.label}
                   </span>
                   <span className="skill-anatomy-tag mt-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-signal-reference">
@@ -272,8 +269,9 @@ export default function WritingSkillsPage() {
           </div>
           <Heading className="mt-3">Use a small folder</Heading>
           <p className="mt-4 text-concrete-400">
-            A simple skill has one `SKILL.md`. Add references only when the body
-            would become too long.
+            A simple skill has one{" "}
+            <code className="text-suspec-yellow">SKILL.md</code>. Add references
+            only when the body would become too long.
           </p>
           <dl className="skill-folder-ledger mt-6">
             <div>
@@ -417,8 +415,9 @@ export default function WritingSkillsPage() {
           </div>
           <Heading className="mt-3">Use references sparingly</Heading>
           <p className="mt-4 text-concrete-400">
-            Put long templates or examples in `references/`. Keep them one hop
-            away from `SKILL.md`.
+            Put long templates or examples in{" "}
+            <code className="text-suspec-yellow">references/</code>. Keep them
+            one hop away from <code className="text-suspec-yellow">SKILL.md</code>.
           </p>
         </Card>
 

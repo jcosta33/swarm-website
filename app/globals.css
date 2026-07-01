@@ -6408,6 +6408,36 @@ section.bg-section-band::after {
 }
 
 /* Skill anatomy rail — small manual index for SKILL.md. */
+.writing-skill-page {
+  row-gap: clamp(2.75rem, 4vw, 4rem);
+}
+
+.writing-skill-page > .ambient-header {
+  margin-bottom: -0.45rem;
+}
+
+.writing-skill-page .page-hero {
+  max-width: 50rem !important;
+}
+
+.writing-skill-page .hero-trace {
+  margin-top: 1.15rem !important;
+}
+
+.writing-skill-page .section-register {
+  scroll-margin-top: 7rem;
+}
+
+.writing-skill-page .section-kicker + .font-heading,
+.writing-skill-page .section-kicker + :where(h1, h2, h3) {
+  margin-top: 0.95rem;
+}
+
+.writing-skill-page .font-heading + p,
+.writing-skill-page :where(h1, h2, h3) + p {
+  margin-top: 0.86rem;
+}
+
 .skill-anatomy-panel {
   border-color: rgba(var(--signal-reference-rgb), 0.34);
   background:
@@ -6465,6 +6495,24 @@ section.bg-section-band::after {
     );
 }
 
+.writing-skill-page .skill-anatomy-step {
+  min-height: 8.55rem !important;
+}
+
+.writing-skill-page .skill-anatomy-step > a {
+  min-height: 8.55rem !important;
+  padding: 1.08rem 1.1rem !important;
+}
+
+.writing-skill-page .skill-anatomy-label {
+  font-size: 1.08rem;
+  line-height: 1.16;
+}
+
+.writing-skill-page .skill-anatomy-copy {
+  max-width: 16rem;
+}
+
 .skill-folder-brief {
   position: relative;
   min-height: 100%;
@@ -6512,6 +6560,26 @@ section.bg-section-band::after {
 }
 
 @media (max-width: 40rem) {
+  .writing-skill-page {
+    row-gap: 2.35rem;
+  }
+
+  .writing-skill-page > .ambient-header {
+    margin-bottom: -0.25rem;
+  }
+
+  .writing-skill-page .page-hero {
+    max-width: 20.5rem !important;
+  }
+
+  .writing-skill-page .hero-trace {
+    margin-top: 0.95rem !important;
+  }
+
+  .writing-skill-page .section-register {
+    padding-top: 2.72rem;
+  }
+
   .skill-anatomy-header {
     align-items: center;
     flex-direction: row;
@@ -6544,6 +6612,11 @@ section.bg-section-band::after {
   .skill-anatomy-step > a {
     min-height: 0;
     padding: 0.78rem 0.74rem;
+  }
+
+  .writing-skill-page .skill-anatomy-step > a {
+    min-height: 0 !important;
+    padding: 0.76rem 0.72rem !important;
   }
 
   .skill-anatomy-step > a > span:first-child {
