@@ -27,7 +27,7 @@ import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 const mcpDescription =
-  "suspec-mcp exposes Suspec workspace facts through a verdict-free MCP server.";
+  "suspec-mcp is a local stdio MCP adapter that exposes Suspec workspace status, checks, artifacts, and review data without writing verdicts.";
 
 export const metadata: Metadata = {
   title: "suspec-mcp — Suspec",
@@ -249,7 +249,8 @@ export default function McpPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Local MCP access to Suspec status, checks, artifacts, and review data over stdio.
+            Local stdio access to Suspec status, checks, artifacts, and review
+            data. It exposes records; it does not decide correctness.
           </p>
           <div className="hero-badge-row mt-8 flex flex-wrap items-center justify-center gap-2">
             <Badge variant="ready">v0.2 surface</Badge>
@@ -604,7 +605,8 @@ export default function McpPage() {
             </div>
             <Heading className="mt-3">Read the adapter code</Heading>
             <p className="mt-2 max-w-2xl text-concrete-400">
-              Source, issues, and tests live on GitHub.
+              Source, issues, and tests live on GitHub. The integration notes
+              explain where MCP fits in the Suspec workflow.
             </p>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -623,6 +625,17 @@ export default function McpPage() {
               touchTarget
             >
               See the CLI <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </TextLink>
+            <TextLink
+              href="/docs/10-integrations/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read the integration notes docs (opens in new tab)"
+              className="w-fit gap-2 text-base font-semibold"
+              touchTarget
+            >
+              Integration notes{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </TextLink>
           </div>
         </Card>

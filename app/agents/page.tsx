@@ -31,7 +31,7 @@ import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 const agentsDescription =
-  "Claude Code worker files for Suspec review, challenge, and authoring.";
+  "suspec-agents provides Claude Code worker files for Suspec review, challenge, research, spec, audit, and docs roles; workers return evidence, not verdicts.";
 
 export const metadata: Metadata = {
   title: "suspec-agents — Suspec",
@@ -282,7 +282,8 @@ export default function AgentsPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Claude Code worker files for roles that need their own operating context.
+            Claude Code worker files for review, challenge, research, spec,
+            audit, and docs roles. They return evidence, not verdicts.
           </p>
           <HeroTrace
             ariaLabel="Agent role trace"
@@ -343,8 +344,17 @@ export default function AgentsPage() {
             />
           </div>
           <p className="repo-manifest-note">
-            This page is a roster. The repo holds the files; the docs explain
-            when to delegate.
+            This page is a roster. The repo holds the files;{" "}
+            <TextLink
+              href="/docs/07-running-agents/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read the running agents docs (opens in new tab)"
+              touchTarget={false}
+            >
+              the docs explain when to delegate
+            </TextLink>
+            .
           </p>
         </Card>
       </Section>

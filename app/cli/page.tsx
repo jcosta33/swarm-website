@@ -26,7 +26,7 @@ import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
 
 const cliDescription =
-  "suspec-cli scaffolds workspaces, runs checks, manages task worktrees, and prints the board.";
+  "suspec-cli scaffolds Suspec workspaces, runs checks, manages task worktrees, reviews evidence, and emits JSON without deciding correctness.";
 
 export const metadata: Metadata = {
   title: "CLI — Suspec",
@@ -258,7 +258,8 @@ export default function CliPage() {
           }
         >
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-400">
-            Optional CLI for setup, checks, task worktrees, and JSON output.
+            Optional CLI for setup, checks, task worktrees, evidence review,
+            and JSON output. It reports facts; people decide.
           </p>
           <div className="hero-badge-row mt-8 flex flex-wrap items-center justify-center gap-2">
             <Badge variant="draft">Command surface settling</Badge>
@@ -607,16 +608,30 @@ export default function CliPage() {
           <div>
             <Heading>Don&apos;t need the CLI yet?</Heading>
             <p className="mt-2 text-concrete-400">
-              Use the starter kit and write a spec. Add the CLI later.
+              Use the starter kit and write a spec. Add the CLI later when you
+              want scaffolding, checks, worktrees, or JSON output.
             </p>
           </div>
-          <TextLink
-            href="/get-started/"
-            className="mt-auto w-fit gap-2 text-base font-semibold"
-            touchTarget
-          >
-            Get started <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </TextLink>
+          <div className="mt-auto flex flex-col gap-3">
+            <TextLink
+              href="/get-started/"
+              className="w-fit gap-2 text-base font-semibold"
+              touchTarget
+            >
+              Get started <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </TextLink>
+            <TextLink
+              href="/docs/ADOPTING/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read the adopting notes docs (opens in new tab)"
+              className="w-fit gap-2 text-base font-semibold"
+              touchTarget
+            >
+              Read the adopting notes{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </TextLink>
+          </div>
         </Card>
 
         <Card
