@@ -2976,6 +2976,10 @@ section.bg-section-band::after {
     mask-image: none;
   }
 
+  .hero-trace:is([data-count="5"], [data-count="6"]) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .hero-trace::before {
     display: none;
   }
@@ -2994,12 +2998,6 @@ section.bg-section-band::after {
 
   .hero-trace:is([data-count="5"], [data-count="6"]) .hero-trace-item {
     min-width: 5.85rem;
-  }
-
-  .hero-trace[data-count="5"] .hero-trace-item:last-child {
-    grid-column: 1 / -1;
-    width: calc((100% - 0.34rem) / 2);
-    justify-self: center;
   }
 
   .hero-trace-label {
