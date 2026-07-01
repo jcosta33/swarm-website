@@ -932,6 +932,51 @@ body {
     margin-top: 0.7rem !important;
   }
 
+  .repo-product-page > .page-nav-wrap::after {
+    content: "";
+    position: absolute;
+    top: -0.08rem;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 2.35rem;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(22, 16, 12, 0),
+      rgba(22, 16, 12, 0.74) 62%,
+      rgba(22, 16, 12, 0.92)
+    );
+  }
+
+  .repo-product-page .agent-page-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.38rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0.04rem 1.85rem 0.24rem 0 !important;
+    scroll-padding-inline: 0.1rem 1.85rem !important;
+    scroll-snap-type: x proximity !important;
+    scrollbar-width: none;
+  }
+
+  .repo-product-page .agent-page-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .repo-product-page .agent-page-nav-link {
+    flex: 0 0 auto !important;
+    min-width: 6.08rem !important;
+    min-height: 2.34rem !important;
+    width: auto !important;
+    scroll-snap-align: start !important;
+  }
+
   .docs-prose .docs-index-list a {
     display: grid !important;
     grid-template-columns: 0.28rem 1.25rem minmax(0, 1fr);
@@ -1265,29 +1310,49 @@ body {
     margin-bottom: 0.92rem !important;
   }
 
+  .writing-page-nav::after {
+    width: 2.35rem !important;
+    background: linear-gradient(
+      90deg,
+      rgba(22, 16, 12, 0),
+      rgba(22, 16, 12, 0.74) 62%,
+      rgba(22, 16, 12, 0.92)
+    ) !important;
+  }
+
   .writing-page-nav + .section-register {
     margin-top: 0.74rem !important;
   }
 
   .writing-page-nav .section-jump-nav {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 0.38rem !important;
+    width: auto !important;
     margin-inline: 0 !important;
-    padding-inline: 0 !important;
-    overflow: visible !important;
-    gap: 0.45rem !important;
+    padding: 0.04rem 1.85rem 0.24rem 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    scroll-padding-inline: 0.1rem 1.85rem !important;
+    scroll-snap-type: x proximity !important;
+    scrollbar-width: none;
   }
 
   .writing-page-nav .section-jump-nav-link {
+    flex: 0 0 auto !important;
     width: auto !important;
-    min-width: 0 !important;
+    min-width: 6.08rem !important;
     justify-content: flex-start !important;
     padding: 0.5rem 0.62rem !important;
+    scroll-snap-align: start !important;
   }
 
   .writing-page-nav .section-jump-nav-link:nth-child(odd):last-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .writing-page-nav .section-jump-nav-label {
