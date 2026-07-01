@@ -4805,10 +4805,10 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .setup-route-header {
-    align-items: center;
-    flex-direction: row;
-    gap: 0.72rem;
-    padding: 0.72rem 0.78rem 0.68rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.62rem;
+    padding: 0.72rem 0.78rem 0.72rem;
   }
 
   .setup-route-kicker {
@@ -4822,19 +4822,15 @@ section.bg-section-band::after {
   }
 
   .setup-route-meta {
-    flex: 0 0 auto;
-    justify-content: flex-end;
-    gap: 0.22rem;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.24rem;
   }
 
   .setup-route-meta span {
     min-height: 1.45rem;
-    padding-inline: 0.34rem;
+    padding-inline: 0.38rem;
     font-size: 0.5rem;
-  }
-
-  .setup-route-meta span:nth-child(n + 2) {
-    display: none;
   }
 }
 
