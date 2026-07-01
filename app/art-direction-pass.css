@@ -348,6 +348,16 @@
   padding-top: clamp(0.18rem, 0.5vw, 0.42rem);
 }
 
+.overview-section-nav-shell {
+  width: min(100%, 64rem);
+}
+
+@media (min-width: 64rem) {
+  .overview-section-nav-shell {
+    max-width: min(64rem, calc(100% - 4rem)) !important;
+  }
+}
+
 .repo-product-page :where(.cli-command-catalog, .mcp-adapter-panel, .skill-guide-catalog) {
   background:
     radial-gradient(92% 64% at 50% 0%, rgba(240, 226, 204, 0.028), transparent 62%),
