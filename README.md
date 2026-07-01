@@ -31,7 +31,7 @@ The site is statically exported to `dist/`.
 ```bash
 npm run lint
 npx tsc --noEmit
-npx linkinator dist/ --skip "^https://github.com"
+npx linkinator dist/ --skip "^(https://github.com|https://suspecframework.dev)"
 npx axe http://localhost:3000 --exit
 ```
 

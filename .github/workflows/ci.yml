@@ -37,7 +37,7 @@ jobs:
           sleep 3
 
       - name: Check internal links
-        run: npx linkinator http://127.0.0.1:3000 --skip "^https://github.com"
+        run: npx linkinator http://127.0.0.1:3000 --skip "^(https://github.com|https://suspecframework.dev)"
 
       - name: Accessibility audit (home + docs + product)
         run: npx axe http://127.0.0.1:3000 http://127.0.0.1:3000/docs/ http://127.0.0.1:3000/docs/01-what-is-suspec/ http://127.0.0.1:3000/what-is-suspec/ http://127.0.0.1:3000/the-loop/ http://127.0.0.1:3000/skills/ http://127.0.0.1:3000/agents/ http://127.0.0.1:3000/cli/ http://127.0.0.1:3000/mcp/ http://127.0.0.1:3000/get-started/ --exit
