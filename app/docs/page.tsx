@@ -44,7 +44,6 @@ function Section({
     >
       <div className="docs-index-section-heading">
         <h2>{sec.title}</h2>
-        <span>{sec.items.length}</span>
       </div>
       {intro ? <p className="docs-index-section-intro">{intro}</p> : null}
       <ul className="docs-index-list">
@@ -81,7 +80,6 @@ export default function DocsIndex() {
   const examples = find("Examples");
   const reference = find("Reference");
   const adrs = find("ADRs");
-  const totalPages = nav.reduce((sum, section) => sum + section.items.length, 0);
   const balancedGrid =
     startHere && tutorial && examples ? { startHere, tutorial, examples } : null;
 
@@ -100,20 +98,6 @@ export default function DocsIndex() {
         </div>
         <div className="docs-index-manual" aria-label="Documentation metadata">
           <p className="docs-index-manual-label">canon manual</p>
-          <dl className="docs-index-manual-stats">
-            <div>
-              <dt>Sections</dt>
-              <dd>{nav.length}</dd>
-            </div>
-            <div>
-              <dt>Pages</dt>
-              <dd>{totalPages}</dd>
-            </div>
-            <div>
-              <dt>Source</dt>
-              <dd>Markdown</dd>
-            </div>
-          </dl>
           <ul className="docs-index-legend" aria-label="Documentation paths">
             {docsLegend.map((item) => (
               <li
@@ -206,12 +190,11 @@ export default function DocsIndex() {
           >
             <div className="docs-index-section-heading">
               <h2>ADRs</h2>
-              <span>{adrs.items.length}</span>
             </div>
             <p>
               Decision records for the framework.{" "}
               <Link href="/docs/adrs/README/">
-                Browse {adrs.items.length} ADRs
+                Browse ADRs
               </Link>
             </p>
           </section>

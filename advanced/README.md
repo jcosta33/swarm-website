@@ -38,6 +38,6 @@ Conditioning stances (the personas) and long-form implementation guides per chan
 shape (feature, fix, refactor, rewrite, migration, performance, testing,
 documentation, flaky tests) live in the
 [suspec-skills catalog](https://github.com/jcosta33/suspec-skills). Install them with
-`npx skills add jcosta33/suspec-skill`.
+`npx skills add jcosta33/suspec-skills`.
 
 Copy what you need; ignore the rest. Full instructions: `docs/ADOPTING.md` in the Suspec repo.

@@ -5792,7 +5792,7 @@ section.bg-section-band::after {
   );
 }
 
-.cli-command-count {
+.cli-command-family-tag {
   display: inline-flex;
   min-height: 1.75rem;
   align-items: center;
@@ -5877,7 +5877,7 @@ section.bg-section-band::after {
     line-height: 1.18;
   }
 
-  .cli-command-count {
+  .cli-command-family-tag {
     min-height: 1.45rem;
     padding: 0.12rem 0.42rem;
     font-size: 0.58rem;
@@ -9523,31 +9523,6 @@ section.bg-section-band::after {
   padding: 1.25rem;
 }
 
-.agent-roster-manifest {
-  display: grid;
-  min-width: 4.3rem;
-  justify-items: end;
-  gap: 0.18rem;
-  padding-top: 0.1rem;
-  color: var(--roster-signal);
-  font-family: var(--font-mono), ui-monospace, monospace;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.agent-roster-manifest span:first-child {
-  color: var(--color-concrete-100);
-  font-family: var(--font-heading), var(--font-sans), sans-serif;
-  font-size: 2rem;
-  font-weight: 650;
-}
-
-.agent-roster-manifest span:last-child {
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
 .agent-roster-cells {
   gap: 0.55rem !important;
   padding: 0.75rem;
@@ -9725,14 +9700,6 @@ section.bg-section-band::after {
     min-height: 0;
     gap: 0.9rem;
     padding: 0.86rem 0.9rem;
-  }
-
-  .agent-roster-manifest {
-    min-width: 3.1rem;
-  }
-
-  .agent-roster-manifest span:first-child {
-    font-size: 1.42rem;
   }
 
   .agent-roster-header h2 {

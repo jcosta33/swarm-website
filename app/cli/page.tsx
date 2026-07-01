@@ -460,7 +460,7 @@ export default function CliPage() {
         <Panel brushed screws className="cli-command-catalog p-0">
           <div className="cli-command-catalog-header">
             <span>command catalog</span>
-            <span>{commands.length} commands / 5 families</span>
+            <span>public surface</span>
           </div>
           <div className="cli-command-catalog-body">
             {commandFamilies.map((family) => {
@@ -487,10 +487,7 @@ export default function CliPage() {
                         {family.label} commands
                       </h3>
                     </div>
-                    <span className="cli-command-count">
-                      {familyCommands.length} command
-                      {familyCommands.length === 1 ? "" : "s"}
-                    </span>
+                    <span className="cli-command-family-tag">family</span>
                   </div>
                   <ul className="cli-command-list">
                     {familyCommands.map((c) => {

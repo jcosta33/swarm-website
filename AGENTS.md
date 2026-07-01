@@ -2,15 +2,15 @@
 
 <!-- Keep this file short — agents read it on every task. This is the CODE repo;
      the Suspec workspace (specs, tasks, reviews, findings, decisions, the board)
-     lives in the sibling ../suspec-website-works. -->
+     may live outside this public repo. -->
 
 ## Suspec workspace
 
-The specs, tasks, reviews, findings, decisions, and board for this site live in
-**`../suspec-website-works`** — the dedicated Suspec workspace. Read the spec first;
-if you were given a task packet, follow that bounded slice. Do not implement behavior
-outside the spec or task scope. Record the run (the spec's `## Execution`, or the
-task's `## Run summary`) and flip the board row in the workspace, not here.
+Site work may be governed by a private Suspec workspace outside this repository.
+Read the spec first; if you were given a task packet, follow that bounded slice.
+Do not implement behavior outside the spec or task scope. Record the run (the
+spec's `## Execution`, or the task's `## Run summary`) and update the workspace
+board when one is provided; do not create process records in this code repo.
 
 ## The loop
 

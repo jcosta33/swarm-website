@@ -417,7 +417,7 @@ export default function McpPage() {
         <Card signal="reference" screws className="mcp-fact-card border-panel-border">
           <div className={`section-kicker ${signalRoles.reference.sectionKicker}`}>
             <Cable className="h-4 w-4" aria-hidden="true" />
-            <span>tools / 12</span>
+            <span>tools</span>
           </div>
           <Heading className="mt-3">MCP tools</Heading>
           <p className="mt-4 text-concrete-400">

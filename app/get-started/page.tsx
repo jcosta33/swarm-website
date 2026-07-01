@@ -103,7 +103,7 @@ const kitContents = [
     icon: BookOpen,
   },
   {
-    name: "Nine templates",
+    name: "Templates",
     role: "record shapes",
     text: "Intake, spec, task, review, finding, status, inventory, change plan, ADR.",
     icon: LayoutTemplate,

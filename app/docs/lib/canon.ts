@@ -49,7 +49,7 @@ export function docDates(slug: string): DocDate | null {
 // Every .md under the canon, as a slug ('01-what-is-suspec', 'reference/checks', 'adrs/0091-...').
 // Guard: if the canon is absent (e.g. a CI/Vercel build without the sibling suspec repo), return []
 // rather than throwing — the build degrades to an empty docs tree instead of a hard crash. W3 must
-// make the canon available to the build (submodule or pre-build sync). [skeptic REVISE]
+// make the canon available to the build (submodule or pre-build sync).
 export function listDocs(): string[] {
   if (!canonAvailable()) return [];
   const out: string[] = [];

@@ -14,7 +14,6 @@ const norm = (p: string) => p.replace(/\/+$/, "");
 export function DocsNav({ nav }: { nav: NavSection[] }) {
   const current = norm(usePathname() || "");
   const isActive = (slug: string) => norm(`/docs/${slug}`) === current;
-  const pageCount = nav.reduce((sum, sec) => sum + sec.items.length, 0);
 
   const groups = nav.map((sec) => {
     const items = sec.items.map((it) => {
@@ -53,9 +52,7 @@ export function DocsNav({ nav }: { nav: NavSection[] }) {
       <input type="checkbox" id="docs-nav-toggle" className="docs-nav-toggle" aria-label="Toggle documentation menu" />
       <label htmlFor="docs-nav-toggle" className="docs-nav-summary">
         <span className="docs-nav-summary-main">Manual index</span>
-        <span className="docs-nav-summary-count">
-          {nav.length} sections / {pageCount} pages
-        </span>
+        <span className="docs-nav-summary-detail">Browse sections</span>
       </label>
       <nav className="docs-nav" aria-label="Documentation">
         {groups}

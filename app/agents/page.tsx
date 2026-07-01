@@ -308,8 +308,18 @@ export default function AgentsPage() {
         >
           <p className="repo-manifest-label">role files</p>
           <div className="repo-manifest-grid">
-            <SignalStat label="workers" value="6" signal="reference" />
-            <SignalStat label="hooks" value="2" signal="muted" />
+            <SignalStat
+              label="workers"
+              value="role files"
+              signal="reference"
+              valueClassName="font-mono text-sm uppercase text-concrete-300"
+            />
+            <SignalStat
+              label="hooks"
+              value="optional"
+              signal="muted"
+              valueClassName="font-mono text-sm uppercase text-concrete-300"
+            />
             <SignalStat
               label="home"
               value=".claude/agents"
@@ -351,13 +361,6 @@ export default function AgentsPage() {
                 <p className="mt-2 text-sm leading-relaxed text-concrete-400">
                   {group.note}
                 </p>
-              </div>
-              <div
-                className={`agent-roster-manifest grid min-w-16 justify-items-end gap-1 font-mono uppercase leading-none ${signalRoles[group.signal].text}`}
-                aria-hidden="true"
-              >
-                <span>{group.items.length}</span>
-                <span>files</span>
               </div>
             </div>
             <div
@@ -635,7 +638,7 @@ export default function AgentsPage() {
           </div>
           <Heading className="mt-3">The full catalog</Heading>
           <p className="mt-4 text-concrete-400">
-            Six workers and two hooks. Read the file before you copy it.
+            Worker files and optional hooks. Read the file before you copy it.
           </p>
           <p className="mt-6">
             <TextLink

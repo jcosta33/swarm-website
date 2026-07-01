@@ -68,11 +68,11 @@ export const metadata: Metadata = {
 const catalogInstallCommand = "npx skills add jcosta33/suspec-skills";
 
 // Tier 1 — the universal catalog (suspec-skills). Framework-free disciplines and
-// stances, installable into any repo via `npx skills` with zero Suspec knowledge.
+// methods, installable into any repo via `npx skills` with zero Suspec knowledge.
 const catalogRepo = "https://github.com/jcosta33/suspec-skills/tree/main/skills";
 
-// Review / judgment stances in the catalog.
-const stances = [
+// Market / review methods in the catalog.
+const methods = [
   {
     skill: "adversarial-review",
     icon: Swords,
@@ -84,9 +84,9 @@ const stances = [
     use: "pressure-test a proposal before build work starts",
   },
   {
-    skill: "persona-surveyor",
+    skill: "market-research",
     icon: FolderSearch,
-    use: "survey patterns across examples",
+    use: "synthesize market and UX-pattern evidence",
   },
   {
     skill: "empirical-proof",
@@ -105,7 +105,7 @@ const stances = [
   },
 ];
 
-// Working disciplines in the catalog — the everyday methods, not stances.
+// Working disciplines in the catalog — the everyday methods.
 const disciplines = [
   {
     skill: "codebase-exploration",
@@ -207,21 +207,19 @@ const kitSkills = [
   },
 ];
 
-const catalogCount = stances.length + disciplines.length;
-
 const skillRoutes = [
   {
     label: "Review catalog",
     href: "#review-guides",
-    count: String(stances.length),
+    tag: "method guides",
     icon: ShieldCheck,
-    text: "Judgment, evidence, security, and debugging stances.",
+    text: "Judgment, evidence, market research, security, and debugging methods.",
     signal: "evidence",
   },
   {
     label: "Method catalog",
     href: "#change-guides",
-    count: String(disciplines.length),
+    tag: "work guides",
     icon: Hammer,
     text: "Exploration, planning, PRs, concision, and flaky tests.",
     signal: "core",
@@ -229,7 +227,7 @@ const skillRoutes = [
   {
     label: "Suspec-coupled kit",
     href: "#kit-skills",
-    count: String(kitSkills.length),
+    tag: "loop guides",
     icon: Puzzle,
     text: "Loop-specific guides that ship with suspec-starter-kit.",
     signal: "reference",
@@ -293,13 +291,15 @@ export default function SkillsPage() {
           <div className="repo-manifest-grid">
             <SignalStat
               label="catalog"
-              value={String(catalogCount)}
+              value="any repo"
               signal="evidence"
+              valueClassName="font-mono text-sm uppercase text-concrete-300"
             />
             <SignalStat
               label="kit"
-              value={String(kitSkills.length)}
+              value="Suspec loop"
               signal="core"
+              valueClassName="font-mono text-sm uppercase text-concrete-300"
             />
             <SignalStat
               label="file"
@@ -341,7 +341,7 @@ export default function SkillsPage() {
                       <p
                         className={`font-mono text-xs font-semibold uppercase tracking-wide ${signalRoles[route.signal].text}`}
                       >
-                        {String(index + 1).padStart(2, "0")} / {route.count}
+                        {String(index + 1).padStart(2, "0")} / {route.tag}
                       </p>
                       <h2 className="skill-category-title font-heading text-lg font-bold text-concrete-100">
                         {route.label}
@@ -403,11 +403,11 @@ export default function SkillsPage() {
         <div className="section-intro">
           <div className="section-kicker section-kicker-evidence">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            <span>stance files</span>
+            <span>method files</span>
           </div>
-          <Heading>Review stances</Heading>
+          <Heading>Market and review methods</Heading>
           <p className="text-concrete-400">
-            Framework-free catalog stances for judgment, evidence, security, and
+            Framework-free catalog methods for judgment, evidence, market research, security, and
             debugging. Installed with <code className="text-suspec-yellow">npx skills</code>.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -417,7 +417,7 @@ export default function SkillsPage() {
         </div>
         <SkillCatalog
           tone="evidence"
-          skills={stances}
+          skills={methods}
           repo={catalogRepo}
           headerLabel="suspec-skills catalog"
           guidesLabel="guides"

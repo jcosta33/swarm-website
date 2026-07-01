@@ -170,10 +170,6 @@ export default async function DocPage({
   };
   const prev = i > 0 ? seq[i - 1] : null;
   const next = i >= 0 && i < seq.length - 1 ? seq[i + 1] : null;
-  const sequenceLabel =
-    i >= 0
-      ? `${String(i + 1).padStart(2, "0")} / ${String(seq.length).padStart(2, "0")}`
-      : null;
 
   return (
     <>
@@ -211,22 +207,6 @@ export default async function DocPage({
               </span>
             )}
           </div>
-          <dl className="docs-article-ledger" data-pagefind-ignore>
-            <div>
-              <dt>Sections</dt>
-              <dd>{headings.length}</dd>
-            </div>
-            <div>
-              <dt>Format</dt>
-              <dd>Markdown</dd>
-            </div>
-            {sequenceLabel && (
-              <div>
-                <dt>Order</dt>
-                <dd>{sequenceLabel}</dd>
-              </div>
-            )}
-          </dl>
         </header>
         <DocsCodeCopy />
         <div className="docs-article-html" dangerouslySetInnerHTML={{ __html: html }} />
