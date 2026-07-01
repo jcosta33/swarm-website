@@ -10200,7 +10200,7 @@ section.bg-section-band::after {
   }
 }
 
-/* Overview summary — keep the artifact pair present, but let boundaries arrive sooner. */
+/* Overview summary — command evidence first, manuscript record second. */
 .overview-summary-grid {
   align-items: stretch;
 }
@@ -10290,11 +10290,15 @@ section.bg-section-band::after {
 
 @media (max-width: 40rem) {
   .overview-summary-grid .overview-terminal-shell {
-    order: 2 !important;
+    order: 1 !important;
   }
 
   .overview-summary-grid .overview-paper-artifact {
-    order: 1 !important;
+    order: 2 !important;
+  }
+
+  .overview-paper-artifact > div:last-child {
+    line-height: 1.46;
   }
 
   .overview-terminal-content {
@@ -10322,6 +10326,10 @@ section.bg-section-band::after {
 
   .overview-artifact-chain li:not(:last-child)::after {
     margin-left: 0.34rem;
+  }
+
+  .overview-artifact-lines {
+    gap: 0.08rem;
   }
 
   .overview-is-list {
