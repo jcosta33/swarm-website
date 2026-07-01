@@ -1,15 +1,20 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildNav, canonAvailable, type NavSection } from "./lib/canon";
+import { JsonLd } from "../components/JsonLd";
 import type { SignalRole } from "../components/signalStyles";
+
+const SITE_URL = "https://suspecframework.dev";
+const docsDescription =
+  "The Suspec manual for workflow steps, artifact formats, checks, examples, ADRs, and glossary.";
 
 export const metadata: Metadata = {
   title: "Documentation · Suspec",
-  description: "The Suspec documentation.",
+  description: docsDescription,
   alternates: { canonical: "/docs/" },
   openGraph: {
     title: "Documentation · Suspec",
-    description: "The Suspec documentation.",
+    description: docsDescription,
     type: "website",
     url: "/docs/",
     siteName: "Suspec",
@@ -97,9 +102,37 @@ export default function DocsIndex() {
   const adrs = find("ADRs");
   const balancedGrid =
     startHere && tutorial && examples ? { startHere, tutorial, examples } : null;
+  const listedSections = [startHere, tutorial, examples, reference, adrs].filter(
+    (section): section is NavSection => Boolean(section),
+  );
+  const docsIndexJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/docs/#collection`,
+    name: "Suspec docs",
+    url: `${SITE_URL}/docs/`,
+    description: docsDescription,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: {
+      "@type": "SoftwareApplication",
+      name: "Suspec",
+      url: SITE_URL,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Suspec documentation sections",
+      itemListElement: listedSections.map((section, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: section.title,
+        url: `${SITE_URL}/docs/#${section.title.toLowerCase().replaceAll(" ", "-")}`,
+      })),
+    },
+  };
 
   return (
     <div className="docs-prose docs-index-prose" data-pagefind-body>
+      <JsonLd data={docsIndexJsonLd} />
       <header className="docs-index-cover">
         <div className="docs-index-cover-copy">
           <p className="docs-index-kicker" data-pagefind-ignore>
@@ -107,8 +140,9 @@ export default function DocsIndex() {
           </p>
           <h1>Suspec docs</h1>
           <p className="docs-index-lede">
-            Start with the numbered pages. Use the tutorial for one pass
-            through the loop.
+            Start with the numbered pages, use the tutorial for one loop, and
+            keep the reference pages nearby for artifact formats, checks,
+            glossary terms, and ADRs.
           </p>
         </div>
         <div className="docs-index-manual" aria-label="Documentation metadata">
