@@ -863,6 +863,10 @@ body {
     row-gap: 1.22rem !important;
   }
 
+  .repo-product-page > .ambient-header + .page-nav-wrap {
+    margin-top: 0.72rem !important;
+  }
+
   .repo-product-page > .page-nav-wrap,
   .repo-product-page > nav.page-nav-wrap {
     margin-bottom: 0.92rem !important;
@@ -1198,6 +1202,15 @@ body {
     font-size: 0.74rem !important;
     line-height: 1.35 !important;
     color: var(--color-concrete-400);
+  }
+
+  .writing-page-nav {
+    margin-top: 0.46rem !important;
+    margin-bottom: 0.92rem !important;
+  }
+
+  .writing-page-nav + .section-register {
+    margin-top: 0.74rem !important;
   }
 
   .writing-page-nav .section-jump-nav {
