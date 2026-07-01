@@ -2988,8 +2988,12 @@ section.bg-section-band::after {
     mask-image: none;
   }
 
-  .hero-trace:is([data-count="5"], [data-count="6"]) {
+  .hero-trace:is([data-count="6"]) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-trace:is([data-count="5"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-trace::before {
@@ -3008,8 +3012,12 @@ section.bg-section-band::after {
     padding: 0.34rem 0.52rem;
   }
 
-  .hero-trace:is([data-count="5"], [data-count="6"]) .hero-trace-item {
+  .hero-trace:is([data-count="6"]) .hero-trace-item {
     min-width: 5.85rem;
+  }
+
+  .hero-trace:is([data-count="5"]) .hero-trace-item:last-child {
+    grid-column: 1 / -1;
   }
 
   .hero-trace-label {
