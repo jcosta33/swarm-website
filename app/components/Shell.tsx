@@ -232,8 +232,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
     let tracking = false;
 
     const resetPointer = () => {
-      root.style.removeProperty("--background-grid-x");
-      root.style.removeProperty("--background-grid-y");
       root.style.removeProperty("--background-plane-tilt-x");
       root.style.removeProperty("--background-plane-tilt-y");
     };
@@ -245,8 +243,6 @@ export function Shell({ children }: { children: React.ReactNode }) {
       const normalX = Math.max(-1, Math.min(1, (pointerX / width - 0.5) * 2));
       const normalY = Math.max(-1, Math.min(1, (pointerY / height - 0.5) * 2));
 
-      root.style.setProperty("--background-grid-x", `${(-normalX * 2.4).toFixed(2)}px`);
-      root.style.setProperty("--background-grid-y", `${(-normalY * 1.8).toFixed(2)}px`);
       root.style.setProperty("--background-plane-tilt-x", `${(normalY * 5.6).toFixed(3)}deg`);
       root.style.setProperty("--background-plane-tilt-y", `${(-normalX * 6.6).toFixed(3)}deg`);
     };

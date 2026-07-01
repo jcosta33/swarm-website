@@ -323,8 +323,6 @@
   --signal-reference-rgb: 120, 189, 178;
   --signal-muted: var(--color-brass);
   --signal-muted-rgb: 184, 132, 74;
-  --background-grid-x: 0px;
-  --background-grid-y: 0px;
 }
 
 html {
