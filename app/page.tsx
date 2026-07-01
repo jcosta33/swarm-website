@@ -260,7 +260,7 @@ export default function HomePage() {
             eyebrow="workflow / six steps"
             motif="loop"
             titleSize="default"
-            title="Trust humans, not agents."
+            title="Show, not tell"
           >
             <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-concrete-100">
               Structured agent work, checked at every step.

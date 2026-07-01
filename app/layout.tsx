@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import {
-  Alegreya,
   Inter,
   JetBrains_Mono,
+  Spectral,
 } from "next/font/google";
 import "./globals.css";
 import { Shell } from "./components/Shell";
@@ -67,13 +67,13 @@ const jetbrainsMono = JetBrains_Mono({
   preload: false,
 });
 
-// Display face for headings and title moments: literary and a little strange,
-// but still sturdy enough for a technical product surface.
-const alegreya = Alegreya({
-  variable: "--font-alegreya",
+// Display face for headings and title moments: sharp editorial serif for the
+// archive/manual layer, with enough restraint for a technical product surface.
+const spectral = Spectral({
+  variable: "--font-spectral",
   subsets: ["latin"],
   display: "swap",
-  weight: "variable",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -133,7 +133,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${alegreya.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${spectral.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-chassis text-concrete-100">
         <JsonLd data={siteGraph} />
