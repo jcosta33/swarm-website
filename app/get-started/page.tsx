@@ -24,6 +24,7 @@ import { PageHero } from "../components/PageHero";
 import { HeroTrace } from "../components/HeroTrace";
 import { PilotLamp } from "../components/PilotLamp";
 import { SignalKey } from "../components/SignalKey";
+import { CopyButton } from "../components/CopyButton";
 import { JsonLd } from "../components/JsonLd";
 import {
   setupPathSignalKey,
@@ -71,6 +72,8 @@ const cliInitCommands = [
   "suspec init",
   "suspec check",
 ].join("\n");
+
+const manualCopyCommand = "cp -R path/to/suspec-starter-kit/. <project>-works/";
 
 function KitIcon({
   children,
@@ -269,6 +272,21 @@ export default function GetStartedPage() {
               <span>local rules</span>
             </div>
           </div>
+          <div
+            className="setup-command-strip"
+            aria-label="Manual starter kit copy command"
+          >
+            <div className="setup-command-copy">
+              <span className="setup-command-label">manual copy</span>
+              <code>{manualCopyCommand}</code>
+            </div>
+            <CopyButton
+              text={manualCopyCommand}
+              label="Copy command"
+              compactLabel="Copy"
+              className="setup-command-button"
+            />
+          </div>
           <ol
             className="setup-path-strip process-strip process-strip-signal-muted grid gap-px bg-panel-border sm:grid-cols-2 lg:grid-cols-5"
             aria-label="Suspec setup paths and next steps"
@@ -434,7 +452,7 @@ export default function GetStartedPage() {
               <dd>Suspec records beside the code.</dd>
             </div>
           </dl>
-          <code className="setup-choice-command">cp -R suspec-starter-kit/* .</code>
+          <code className="setup-choice-command">{manualCopyCommand}</code>
           <span className="setup-choice-action inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold underline underline-offset-4 transition-colors">
             Read the adopting guide{" "}
             <ArrowRight
