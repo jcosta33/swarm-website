@@ -1169,32 +1169,38 @@ body {
   }
 
   .mcp-adapter-rail {
-    gap: 0.56rem !important;
-    padding: 0.58rem !important;
+    gap: 0.42rem !important;
+    padding: 0.48rem !important;
   }
 
   .mcp-adapter-rail::before {
-    left: 2.05rem !important;
-    opacity: 0.78;
+    left: 1.75rem !important;
+    opacity: 0.58;
+  }
+
+  .mcp-adapter-step {
+    border-color: rgba(var(--package-mcp-rgb), 0.13) !important;
+    border-left-color: rgba(var(--package-mcp-rgb), 0.3) !important;
+    background-color: rgba(20, 16, 12, 0.88) !important;
   }
 
   .mcp-adapter-step-link {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr);
-    min-height: 5.35rem !important;
-    padding: 0.74rem 0.78rem 0.76rem !important;
+    min-height: 4.72rem !important;
+    padding: 0.62rem 0.68rem 0.66rem !important;
   }
 
   .mcp-adapter-heading {
     display: grid !important;
-    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    grid-template-columns: 1.7rem minmax(0, 1fr) auto;
     align-items: center !important;
-    gap: 0.68rem !important;
+    gap: 0.56rem !important;
   }
 
   .mcp-adapter-heading .hex-badge {
-    height: 1.9rem !important;
-    width: 1.9rem !important;
+    height: 1.7rem !important;
+    width: 1.7rem !important;
   }
 
   .mcp-adapter-heading > .min-w-0 {
@@ -1205,32 +1211,32 @@ body {
     display: block !important;
     grid-column: 3;
     margin-left: 0 !important;
-    opacity: 0.72;
+    opacity: 0.48;
   }
 
   .mcp-adapter-step-link .mcp-adapter-meta {
-    font-size: 0.56rem;
+    font-size: 0.52rem;
     letter-spacing: 0.08em;
   }
 
   .mcp-adapter-title {
-    margin-top: 0.08rem !important;
-    font-size: 0.95rem !important;
+    margin-top: 0.05rem !important;
+    font-size: 0.9rem !important;
   }
 
   .mcp-adapter-detail {
-    margin-top: 0.42rem !important;
-    margin-left: calc(1.9rem + 0.68rem) !important;
+    margin-top: 0.3rem !important;
+    margin-left: calc(1.7rem + 0.56rem) !important;
     -webkit-line-clamp: 2 !important;
-    font-size: 0.74rem !important;
-    line-height: 1.36 !important;
+    font-size: 0.72rem !important;
+    line-height: 1.32 !important;
   }
 
   .cli-command-catalog-header,
   .skill-guide-catalog-header,
   .mcp-adapter-header {
-    min-height: 2.8rem;
-    padding-block: 0.72rem;
+    min-height: 2.55rem;
+    padding-block: 0.62rem;
   }
 
   .cli-command-section {
