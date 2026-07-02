@@ -11,8 +11,26 @@ import type { SignalRole } from "../components/signalStyles";
 
 export const metadata: Metadata = {
   title: "Colophon — Suspec",
-  description: "How the Suspec website is built.",
+  description:
+    "How the Suspec website is built, sourced, reviewed, exported, and shipped through the same plain-markdown workflow.",
   robots: "noindex",
+  openGraph: {
+    title: "Colophon — Suspec",
+    description:
+      "How the Suspec website is built, sourced, reviewed, exported, and shipped through the same plain-markdown workflow.",
+    type: "website",
+    url: "/colophon/",
+    siteName: "Suspec",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "Suspec site colophon",
+      },
+    ],
+  },
   alternates: {
     canonical: "/colophon/",
   },

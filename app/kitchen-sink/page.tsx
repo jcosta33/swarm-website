@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     url: "/kitchen-sink/",
     siteName: "Suspec",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "Suspec website component preview",
+      },
+    ],
   },
   alternates: {
     canonical: "/kitchen-sink/",
