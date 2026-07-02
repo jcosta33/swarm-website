@@ -53,6 +53,9 @@ export function CopyButton({
     <button
       type="button"
       data-copied={copied ? "true" : "false"}
+      data-copy-text={text}
+      data-copy-label={label}
+      data-copy-compact-label={compactLabel}
       data-compact-label={compactLabel ? "true" : "false"}
       className={`copy-button focus-ring inline-flex min-h-11 items-center gap-1.5 rounded-[var(--radius-control)] border border-panel-border bg-panel-recessed/80 px-3 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-concrete-300 transition-[background-color,border-color,color,box-shadow] ${className}`}
       aria-label={copied ? "Copied" : label}

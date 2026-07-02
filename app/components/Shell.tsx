@@ -179,6 +179,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const headerIsOpaque = scrolled || menuOpen;
 
   useEffect(() => {
+    document.documentElement.dataset.shellReact = "ready";
+    return () => {
+      delete document.documentElement.dataset.shellReact;
+    };
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -337,68 +344,67 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </button>
         </Section>
 
-        {menuOpen && (
-          <div
-            ref={menuRef}
-            id="mobile-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
-            className="mobile-menu-panel border-t border-panel-border bg-panel-recessed lg:hidden"
+        <div
+          ref={menuRef}
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          hidden={!menuOpen}
+          className="mobile-menu-panel border-t border-panel-border bg-panel-recessed lg:hidden"
+        >
+          <Section
+            as="nav"
+            className="mobile-menu-shell"
+            aria-label="Mobile"
           >
-            <Section
-              as="nav"
-              className="mobile-menu-shell"
-              aria-label="Mobile"
-            >
-              <div className="mobile-menu-register" aria-hidden="true">
-                <span>Browse Suspec</span>
-                <span>{folioLabel}</span>
-              </div>
-              {mobileNavGroups.map((group) => (
-                <div
-                  key={group.title}
-                  className={`mobile-menu-group mobile-menu-group-${group.tone}`}
-                >
-                  <p className="mobile-menu-group-title">{group.title}</p>
-                  <div className="mobile-menu-link-list">
-                    {group.links.map((link) => {
-                      const active = isActiveLink(link.href, pathname);
-                      return (
-                        <NavLink
-                          key={link.label}
-                          link={link}
-                          isActive={active}
-                          onClick={() => setMenuOpen(false)}
-                          className="mobile-menu-link min-h-11 text-base font-medium transition-[background-color,border-color,color] focus-ring"
-                        />
-                      );
-                    })}
-                  </div>
+            <div className="mobile-menu-register" aria-hidden="true">
+              <span>Browse Suspec</span>
+              <span>{folioLabel}</span>
+            </div>
+            {mobileNavGroups.map((group) => (
+              <div
+                key={group.title}
+                className={`mobile-menu-group mobile-menu-group-${group.tone}`}
+              >
+                <p className="mobile-menu-group-title">{group.title}</p>
+                <div className="mobile-menu-link-list">
+                  {group.links.map((link) => {
+                    const active = isActiveLink(link.href, pathname);
+                    return (
+                      <NavLink
+                        key={link.label}
+                        link={link}
+                        isActive={active}
+                        onClick={() => setMenuOpen(false)}
+                        className="mobile-menu-link min-h-11 text-base font-medium transition-[background-color,border-color,color] focus-ring"
+                      />
+                    );
+                  })}
                 </div>
+              </div>
+            ))}
+            <ul className="mobile-menu-proof" aria-label="Suspec notes">
+              {mobileProofs.map((item) => (
+                <li
+                  key={item.label}
+                  className={`mobile-menu-proof-item mobile-menu-proof-${item.tone}`}
+                >
+                  {item.label}
+                </li>
               ))}
-              <ul className="mobile-menu-proof" aria-label="Suspec notes">
-                {mobileProofs.map((item) => (
-                  <li
-                    key={item.label}
-                    className={`mobile-menu-proof-item mobile-menu-proof-${item.tone}`}
-                  >
-                    {item.label}
-                  </li>
-                ))}
-              </ul>
-            </Section>
-          </div>
-        )}
+            </ul>
+          </Section>
+        </div>
       </header>
 
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-30 bg-night"
-          aria-hidden="true"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
+      <div
+        className="fixed inset-0 z-30 bg-night"
+        aria-hidden="true"
+        data-mobile-menu-overlay
+        hidden={!menuOpen}
+        onClick={() => setMenuOpen(false)}
+      />
 
       <div
         className="trace-rail"
