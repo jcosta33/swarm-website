@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
@@ -21,9 +22,24 @@ import {
 } from "../components/signalStyles";
 import { AlertTriangle, CheckCircle, Wrench } from "lucide-react";
 
-export const metadata = {
+const kitchenSinkDescription =
+  "Internal Suspec website component preview for checking surfaces, state, and artifact treatments.";
+
+export const metadata: Metadata = {
   title: "Kitchen sink — Suspec",
+  description: kitchenSinkDescription,
   robots: "noindex, nofollow",
+  openGraph: {
+    title: "Kitchen sink — Suspec",
+    description: kitchenSinkDescription,
+    type: "website",
+    url: "/kitchen-sink/",
+    siteName: "Suspec",
+    locale: "en_US",
+  },
+  alternates: {
+    canonical: "/kitchen-sink/",
+  },
 };
 
 const specimenRegister = [
