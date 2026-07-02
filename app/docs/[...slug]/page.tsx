@@ -18,6 +18,11 @@ import { canonicalAlternates } from "../../seo";
 export const dynamicParams = false;
 
 const SITE_URL = "https://suspecframework.dev";
+const DOC_SOURCE_PATH_ALIASES: Record<string, string> = {
+  // The public canon route is still /reference/future-cli/ for compatibility,
+  // but the upstream source file was renamed to docs/reference/cli.md.
+  "reference/future-cli": "reference/cli",
+};
 
 // Build a BreadcrumbList. A section dir links to its README page when one exists; a section with no
 // README (e.g. reference/) emits a name-only, NON-navigable intermediate crumb (no `item`) rather
@@ -153,7 +158,8 @@ export default async function DocPage({
     }
     return /^\d{2}-/.test(slug[0]) ? "Start here" : "Manual";
   })();
-  const sourceLabel = `suspec/docs/${slugPath}.md`;
+  const sourcePath = DOC_SOURCE_PATH_ALIASES[slugPath] ?? slugPath;
+  const sourceLabel = `suspec/docs/${sourcePath}.md`;
   const titleClassName = [
     "docs-article-title",
     title.length > 56 ? "docs-article-title-long" : "",
@@ -197,7 +203,7 @@ export default async function DocPage({
             <span className="docs-source-path">
               <span className="docs-source-label">Source:</span>{" "}
               <Link
-                href={`https://github.com/jcosta33/suspec/blob/main/docs/${slugPath}.md`}
+                href={`https://github.com/jcosta33/suspec/blob/main/docs/${sourcePath}.md`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

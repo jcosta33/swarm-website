@@ -25,6 +25,9 @@ export type DocHeading = { depth: 2 | 3; id: string; text: string };
 
 const REPO_ROOT = path.join(process.cwd(), ".suspec-canon"); // the suspec repo root mirror
 const GH_BLOB = "https://github.com/jcosta33/suspec/blob/main/";
+const DEAD_EXTERNAL_LINKS = new Set([
+  "https://github.com/jcosta33/suspec-works/issues/58",
+]);
 const repoHas = (repoRel: string): boolean => {
   const root = path.resolve(REPO_ROOT);
   const target = path.resolve(REPO_ROOT, repoRel);
@@ -65,16 +68,20 @@ const mdastText = (n: {
 const rewriteMdLinks: Plugin<[string], Root> = (currentDir) => (tree) => {
   visit(tree, "link", (node, index, parent) => {
     const u = node.url ?? "";
-    if (/^(https?:|mailto:|#|\/)/.test(u)) return; // external / pure-anchor / already-absolute
-    const hash = u.indexOf("#");
-    const pathPart = hash >= 0 ? u.slice(0, hash) : u;
-    const anchor = hash >= 0 ? u.slice(hash) : "";
-    if (pathPart === "") return;
     const unwrap = () => {
       if (index !== undefined && parent) {
         parent.children[index] = { type: "text", value: mdastText(node) };
       }
     };
+    if (DEAD_EXTERNAL_LINKS.has(u)) {
+      unwrap();
+      return;
+    }
+    if (/^(https?:|mailto:|#|\/)/.test(u)) return; // external / pure-anchor / already-absolute
+    const hash = u.indexOf("#");
+    const pathPart = hash >= 0 ? u.slice(0, hash) : u;
+    const anchor = hash >= 0 ? u.slice(hash) : "";
+    if (pathPart === "") return;
     // repo-relative target (docs/<currentDir>/<pathPart>, normalized)
     const repoTarget = path.posix.normalize(
       path.posix.join("docs", currentDir, pathPart),
