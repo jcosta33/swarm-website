@@ -42,7 +42,7 @@
   --color-complement: #2472d8;
   --color-phosphor: #b7c96c;
   --color-greenfield: #7fbd82;
-  --color-brownfield: #a96b40;
+  --color-brownfield: #b6784c;
   --color-verdigris: #78bdb2;
   --color-neon-bridge: #9a839b;
   --color-interface-blue: #7fa6d9;
@@ -59,7 +59,7 @@
   --signal-greenfield: var(--color-greenfield);
   --signal-greenfield-rgb: 127, 189, 130;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 169, 107, 64;
+  --signal-brownfield-rgb: 182, 120, 76;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 207, 112, 121;
   --signal-reference: var(--color-verdigris);
@@ -308,7 +308,7 @@
   --signal-greenfield: var(--color-greenfield);
   --signal-greenfield-rgb: 127, 189, 130;
   --signal-brownfield: var(--color-brownfield);
-  --signal-brownfield-rgb: 169, 107, 64;
+  --signal-brownfield-rgb: 182, 120, 76;
   --signal-change: var(--color-rubedo);
   --signal-change-rgb: 207, 112, 121;
   --package-skills: var(--signal-evidence);
