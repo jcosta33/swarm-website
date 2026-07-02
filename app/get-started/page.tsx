@@ -24,20 +24,23 @@ import { PageHero } from "../components/PageHero";
 import { HeroTrace } from "../components/HeroTrace";
 import { PilotLamp } from "../components/PilotLamp";
 import { SignalKey } from "../components/SignalKey";
+import { JsonLd } from "../components/JsonLd";
 import {
   setupPathSignalKey,
   signalRoles,
   type SignalRole,
 } from "../components/signalStyles";
 
+const SITE_URL = "https://suspecframework.dev";
+const getStartedDescription =
+  "Set up Suspec with the starter kit, adopt it in an existing repo, and add the optional CLI only when you need scaffolding or checks.";
+
 export const metadata: Metadata = {
   title: "Get started — Suspec",
-  description:
-    "Set up Suspec with the starter kit, adopt it in an existing repo, and add the optional CLI only when you need scaffolding or checks.",
+  description: getStartedDescription,
   openGraph: {
     title: "Get started — Suspec",
-    description:
-      "Set up Suspec with the starter kit, adopt it in an existing repo, and add the optional CLI only when you need scaffolding or checks.",
+    description: getStartedDescription,
     type: "website",
     url: "/get-started/",
     siteName: "Suspec",
@@ -210,8 +213,30 @@ const setupHeroTrace = [
 }>;
 
 export default function GetStartedPage() {
+  const setupJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/get-started/#webpage`,
+    name: "Get started with Suspec",
+    url: `${SITE_URL}/get-started/`,
+    description: getStartedDescription,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Suspec setup path",
+      itemListElement: setupPath.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: step.label,
+        url: `${SITE_URL}/get-started/${step.href}`,
+        description: step.text,
+      })),
+    },
+  };
+
   return (
     <div className="get-started-page flex flex-col gap-12 py-14 sm:gap-16 sm:py-16">
+      <JsonLd data={setupJsonLd} />
       <Section className="ambient-header">
         <PageHero
           eyebrow="setup / first workspace"
@@ -269,9 +294,9 @@ export default function GetStartedPage() {
                         >
                           {String(index + 1).padStart(2, "0")}
                         </p>
-                        <h2 className="font-heading text-lg font-semibold text-concrete-100">
+                        <p className="setup-path-step-title font-heading text-lg font-semibold text-concrete-100">
                           {step.label}
-                        </h2>
+                        </p>
                       </div>
                       <ArrowRight
                         className="motion-nudge-x ml-auto h-4 w-4 shrink-0 text-brass/70"
