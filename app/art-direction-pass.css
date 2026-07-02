@@ -112,7 +112,9 @@ body {
     transform-origin: var(--background-plane-origin-x) var(--background-plane-origin-y);
     transform-style: preserve-3d;
     backface-visibility: hidden;
-    transition: transform 80ms linear;
+    transition:
+      transform 80ms linear,
+      background-position 80ms linear;
     will-change: transform, background-position;
   }
 
