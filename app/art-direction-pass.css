@@ -1121,7 +1121,7 @@ body {
   .repo-product-page .agent-page-nav-link {
     flex: initial !important;
     min-width: 0 !important;
-    min-height: 2.34rem !important;
+    min-height: 2.75rem !important;
     width: auto !important;
     scroll-snap-align: none !important;
   }
@@ -1630,6 +1630,7 @@ body {
     flex: initial !important;
     width: auto !important;
     min-width: 0 !important;
+    min-height: 2.75rem !important;
     justify-content: flex-start !important;
     padding: 0.46rem 0.56rem !important;
     scroll-snap-align: none !important;
