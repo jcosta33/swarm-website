@@ -345,13 +345,13 @@ export default function AgentsPage() {
         id="roster-brief"
         register="01 / roster brief"
         registerTone="reference"
-        className="manifest-pair grid gap-5 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:items-stretch"
+        className="manifest-pair grid gap-5 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:items-start"
       >
         <PaperArtifact
           label="note"
           title="delegation record"
           meta="worker identity · inputs · tools · evidence"
-          className="h-full"
+          className="manifest-paper-fit lg:self-start"
         >
           <p>A worker can return evidence. It cannot certify its own result.</p>
         </PaperArtifact>

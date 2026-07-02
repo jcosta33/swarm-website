@@ -8945,6 +8945,10 @@ section.bg-section-band::after {
     inset 0 0 0 1px rgba(16, 11, 7, 0.12);
 }
 
+.manifest-pair .paper-artifact.manifest-paper-fit {
+  min-height: auto;
+}
+
 .manifest-pair .paper-artifact > div:first-child {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
