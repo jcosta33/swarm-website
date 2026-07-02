@@ -22,6 +22,7 @@ import { Heading } from "../../components/Heading";
 import { JsonLd } from "../../components/JsonLd";
 import { TextLink } from "../../components/TextLink";
 import { signalRoles, type SignalRole } from "../../components/signalStyles";
+import { canonicalAlternates } from "../../seo";
 
 const SITE_URL = "https://suspecframework.dev";
 const pageDescription =
@@ -46,9 +47,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/skills/writing/",
-  },
+  alternates: canonicalAlternates("/skills/writing/"),
 };
 
 const descriptionRules = [

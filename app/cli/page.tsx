@@ -24,6 +24,7 @@ import { TextLink } from "../components/TextLink";
 import { PageNav } from "../components/PageNav";
 import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const cliDescription =
   "suspec-cli scaffolds Suspec workspaces, runs checks, manages task worktrees, reviews evidence, and emits JSON without deciding correctness.";
@@ -47,9 +48,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/cli/",
-  },
+  alternates: canonicalAlternates("/cli/"),
 };
 
 const cliInstallCommands = [

@@ -29,6 +29,7 @@ import { SignalStat } from "../components/SignalStat";
 import { PageNav } from "../components/PageNav";
 import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const agentsDescription =
   "suspec-agents provides Claude Code worker files for Suspec review, challenge, research, spec, audit, and docs roles; workers return evidence, not verdicts.";
@@ -52,9 +53,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/agents/",
-  },
+  alternates: canonicalAlternates("/agents/"),
 };
 
 const agentInstallCommands = [

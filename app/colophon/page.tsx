@@ -8,6 +8,7 @@ import { TerminalWindow } from "../components/TerminalWindow";
 import { PaperArtifact } from "../components/PaperArtifact";
 import { PageHero } from "../components/PageHero";
 import type { SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 export const metadata: Metadata = {
   title: "Colophon — Suspec",
@@ -31,9 +32,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/colophon/",
-  },
+  alternates: canonicalAlternates("/colophon/"),
 };
 
 const facts = [

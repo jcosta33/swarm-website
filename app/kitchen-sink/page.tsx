@@ -21,6 +21,7 @@ import {
   type SignalRole,
 } from "../components/signalStyles";
 import { AlertTriangle, CheckCircle, Wrench } from "lucide-react";
+import { canonicalAlternates } from "../seo";
 
 const kitchenSinkDescription =
   "Internal Suspec website component preview for checking surfaces, state, and artifact treatments.";
@@ -45,9 +46,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/kitchen-sink/",
-  },
+  alternates: canonicalAlternates("/kitchen-sink/"),
 };
 
 const specimenRegister = [

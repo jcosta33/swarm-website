@@ -22,6 +22,7 @@ import { LoopDiagram } from "../components/LoopDiagram";
 import { TextLink } from "../components/TextLink";
 import { JsonLd } from "../components/JsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const SITE_URL = "https://suspecframework.dev";
 const stepIcons = [Inbox, FileText, ListChecks, Terminal, ScanEye, GitMerge];
@@ -47,9 +48,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/the-loop/",
-  },
+  alternates: canonicalAlternates("/the-loop/"),
 };
 
 const steps = [

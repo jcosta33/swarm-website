@@ -8,6 +8,7 @@ import "./globals.css";
 import "./art-direction-pass.css";
 import { Shell } from "./components/Shell";
 import { JsonLd } from "./components/JsonLd";
+import { canonicalAlternates } from "./seo";
 
 const SITE_URL = "https://suspecframework.dev";
 
@@ -108,17 +109,8 @@ export const metadata: Metadata = {
     // so every route gets its own card instead of inheriting the home page's everywhere.
     card: "summary_large_image",
   },
-  alternates: {
-    canonical: "/",
-    // Surface the llms.txt files to agents/crawlers that look for a text/markdown alternate in the
-    // head. The Metadata API renders these as <link rel="alternate" type="text/markdown" href=...>.
-    types: {
-      "text/markdown": [
-        { url: "/llms.txt", title: "llms.txt" },
-        { url: "/llms-full.txt", title: "llms-full.txt" },
-      ],
-    },
-  },
+  // Surface llms.txt files to agents/crawlers that look for markdown alternates in the head.
+  alternates: canonicalAlternates("/"),
 };
 
 export const viewport: Viewport = {

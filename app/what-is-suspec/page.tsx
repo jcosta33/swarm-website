@@ -13,6 +13,7 @@ import { JsonLd } from "../components/JsonLd";
 import { PilotLamp } from "../components/PilotLamp";
 import { TextLink } from "../components/TextLink";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 import {
   ArrowRight,
   CheckCircle,
@@ -48,9 +49,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/what-is-suspec/",
-  },
+  alternates: canonicalAlternates("/what-is-suspec/"),
 };
 
 const isList = [

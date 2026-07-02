@@ -25,6 +25,7 @@ import { TextLink } from "../components/TextLink";
 import { PageNav } from "../components/PageNav";
 import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles, type SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const mcpDescription =
   "suspec-mcp is a local stdio MCP adapter that exposes Suspec workspace status, checks, artifacts, and review data without writing verdicts.";
@@ -48,9 +49,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/mcp/",
-  },
+  alternates: canonicalAlternates("/mcp/"),
 };
 
 const mcpConfigSnippet = `{

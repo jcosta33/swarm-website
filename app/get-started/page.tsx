@@ -31,6 +31,7 @@ import {
   signalRoles,
   type SignalRole,
 } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const SITE_URL = "https://suspecframework.dev";
 const getStartedDescription =
@@ -55,9 +56,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/get-started/",
-  },
+  alternates: canonicalAlternates("/get-started/"),
 };
 
 const cliInitCommands = [

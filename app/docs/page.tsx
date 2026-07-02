@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { buildNav, canonAvailable, type NavSection } from "./lib/canon";
 import { JsonLd } from "../components/JsonLd";
 import type { SignalRole } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const SITE_URL = "https://suspecframework.dev";
 const docsDescription =
@@ -11,7 +12,7 @@ const docsDescription =
 export const metadata: Metadata = {
   title: "Documentation · Suspec",
   description: docsDescription,
-  alternates: { canonical: "/docs/" },
+  alternates: canonicalAlternates("/docs/"),
   openGraph: {
     title: "Documentation · Suspec",
     description: docsDescription,

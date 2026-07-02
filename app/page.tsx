@@ -26,6 +26,7 @@ import { PilotLamp } from "./components/PilotLamp";
 import { Section } from "./components/Section";
 import { TerminalWindow } from "./components/TerminalWindow";
 import { signalRoles, type SignalRole } from "./components/signalStyles";
+import { canonicalAlternates } from "./seo";
 
 const softwareApp = {
   "@context": "https://schema.org",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "/" },
+  alternates: canonicalAlternates("/"),
 };
 
 const loopSteps = [

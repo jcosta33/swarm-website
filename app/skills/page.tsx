@@ -39,6 +39,7 @@ import { SignalStat } from "../components/SignalStat";
 import { SkillCatalog } from "../components/SkillCatalog";
 import { PackageJsonLd } from "../components/PackageJsonLd";
 import { signalRoles } from "../components/signalStyles";
+import { canonicalAlternates } from "../seo";
 
 const skillsDescription =
   "Two tiers of agent guides: the framework-free suspec-skills catalog and the Suspec-coupled kit that ships in suspec-starter-kit.";
@@ -62,9 +63,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/skills/",
-  },
+  alternates: canonicalAlternates("/skills/"),
 };
 
 const catalogInstallCommand = "npx skills add jcosta33/suspec-skills";

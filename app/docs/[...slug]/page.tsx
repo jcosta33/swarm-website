@@ -13,6 +13,7 @@ import { renderDoc, titleOf, descriptionOf } from "../lib/render";
 import { JsonLd } from "../../components/JsonLd";
 import { DocsCodeCopy } from "../components/DocsCodeCopy";
 import { DocsToc } from "../components/DocsToc";
+import { canonicalAlternates } from "../../seo";
 
 export const dynamicParams = false;
 
@@ -105,11 +106,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const md = readDoc(slug.join("/"));
   const canonical = `/docs/${slug.join("/")}/`;
-  if (!md) return { title: "Suspec docs", alternates: { canonical } };
+  if (!md) {
+    return { title: "Suspec docs", alternates: canonicalAlternates(canonical) };
+  }
   return {
     title: `${titleOf(md)} · Suspec`,
     description: descriptionOf(md),
-    alternates: { canonical }, // self-canonical (was inheriting the home page's "/")
+    alternates: canonicalAlternates(canonical),
     openGraph: {
       // og:type=article (a doc is an article) + og:url=canonical so reshares consolidate; siteName +
       // image come from the layout default but openGraph is replaced wholesale, so restate them.
