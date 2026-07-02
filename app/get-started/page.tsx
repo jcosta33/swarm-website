@@ -498,7 +498,7 @@ export default function GetStartedPage() {
           <Terminal className="h-4 w-4" aria-hidden="true" />
           <span>or scaffold it with the cli</span>
         </div>
-        <Heading>Prefer the command line?</Heading>
+        <Heading>Command-line setup</Heading>
         <p className="max-w-2xl text-concrete-400">
           <code className="text-suspec-yellow">suspec init</code> scaffolds the
           same workspace into a new or existing repo. It refuses to overwrite
