@@ -32,6 +32,8 @@
     let pointerX = window.innerWidth / 2;
     let pointerY = window.innerHeight * 0.42;
     let tracking = false;
+    const pointerMoveEvent =
+      "PointerEvent" in window ? "pointermove" : "mousemove";
 
     function resetPointer() {
       for (const property of resetProperties) root.style.removeProperty(property);
@@ -130,26 +132,17 @@
     function startTracking() {
       if (tracking) return;
       tracking = true;
-      document.addEventListener("pointermove", queuePointer, {
+      document.addEventListener(pointerMoveEvent, queuePointer, {
         capture: true,
         passive: true,
       });
-      window.addEventListener("pointermove", queuePointer, { passive: true });
-      document.addEventListener("mousemove", queuePointer, {
-        capture: true,
-        passive: true,
-      });
-      window.addEventListener("mousemove", queuePointer, { passive: true });
       updatePointer();
     }
 
     function stopTracking() {
       if (!tracking) return;
       tracking = false;
-      document.removeEventListener("pointermove", queuePointer, true);
-      window.removeEventListener("pointermove", queuePointer);
-      document.removeEventListener("mousemove", queuePointer, true);
-      window.removeEventListener("mousemove", queuePointer);
+      document.removeEventListener(pointerMoveEvent, queuePointer, true);
       if (frame !== 0) window.cancelAnimationFrame(frame);
       frame = 0;
       resetPointer();
